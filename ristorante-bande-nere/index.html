@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ristorante Bande Nere — Pizza al forno a legna, Milano</title>
+<meta name="description" content="Pizzeria a Piazzale Bande Nere, Milano: impasto a lievitazione naturale di 48 ore, forno a legna e topping di stagione dal mercato. Prenota un tavolo o chiama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Progressive-enhancement gate: only opt into hidden-then-reveal motion when JS runs
+     AND the visitor has not asked for reduced motion. Without .anim every section is
+     fully visible, so JS-off / reduced-motion users never see a blank page. -->
+<script>
+  (function(){
+    var d = document.documentElement;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) d.classList.add('anim');
+  })();
+</script>
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Palette */
+  --ink:        #141210;
+  --ink-90:     #1e1b17;
+  --ink-80:     #2a2620;
+  --cream:      #F4EFE6;
+  --cream-2:    #EDE5D4;  /* warmer sand */
+  --cream-3:    #E6DDD0;
+  --ember:      #E4531F;
+  --ember-dk:   #BF3E0E;
+  --rosso:      #C8102E;
+  --verde:      #3A4A3F;
+  --verde-pale: #EAF0EB;
+  --oro:        #B8842A;
+  --oro-light:  #D9A84A;
+
+  /* Strokes & fills */
+  --line:       rgba(20,18,16,.11);
+  --line-md:    rgba(20,18,16,.18);
+  --line-dark:  rgba(244,239,230,.13);
+  --line-dark2: rgba(244,239,230,.22);
+
+  /* Shadows */
+  --sh-card:  0 2px 10px rgba(20,18,16,.06), 0 1px 3px rgba(20,18,16,.04);
+  --sh-hover: 0 12px 40px rgba(20,18,16,.14), 0 4px 12px rgba(20,18,16,.08);
+  --sh-ember: 0 16px 48px -20px rgba(228,83,31,.45);
+  --sh-rail:  0 40px 100px -28px rgba(20,18,16,.75), 0 8px 24px rgba(20,18,16,.28);
+
+  /* Spacing scale */
+  --sp-xs:  clamp(8px,  1vw,  12px);
+  --sp-sm:  clamp(14px, 2vw,  20px);
+  --sp-md:  clamp(20px, 3vw,  32px);
+  --sp-lg:  clamp(32px, 5vw,  56px);
+  --sp-xl:  clamp(56px, 8vw,  96px);
+  --sp-2xl: clamp(80px,11vw, 128px);
+
+  /* Layout */
+  --rail-w: clamp(252px, 22vw, 316px);
+  --shell:  1260px;
+  --pad:    clamp(22px, 5vw, 64px);
+  --r:      6px;
+  --r-sm:   3px;
+
+  /* Easing */
+  --ease-proof: cubic-bezier(.16, 1, .3, 1);
+  --ease-out:   cubic-bezier(.22, 1, .36, 1);
+
+  font-synthesis: none;
+}
+
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box }
+html, body { overflow-x: clip }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(16px, 1.05vw + .5px, 17.5px);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: anywhere;
+}
+img { display: block; max-width: 100%; height: auto }
+a { color: inherit }
+h1,h2,h3,h4 {
+  margin: 0;
+  line-height: 1.02;
+  font-family: "Archivo", "Inter", sans-serif;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+p { margin: 0 }
+ul { margin: 0; padding: 0; list-style: none }
+blockquote { margin: 0 }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.shell {
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.eyebrow {
+  font-family: "Archivo Narrow", "Archivo", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: .72rem;
+  color: var(--ember);
+  margin: 0;
+}
+
+/* Ember rule: visible, intentional, 4px weight */
+.rule {
+  height: 4px;
+  width: 72px;
+  background: var(--ember);
+  border: 0;
+  margin: 0;
+  border-radius: 2px;
+}
+
+.ticket-no {
+  font-family: "Archivo Narrow", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--oro);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  font-family: "Archivo", "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: .025em;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  padding: .9em 1.7em;
+  min-height: 50px;
+  border-radius: var(--r-sm);
+  font-size: .96rem;
+  line-height: 1;
+  transition:
+    transform  .55s var(--ease-proof),
+    background .35s ease,
+    box-shadow .45s ease,
+    color      .3s  ease,
+    border-color .3s ease;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--ember);
+  outline-offset: 3px;
+}
+.btn--primary {
+  background: var(--ember);
+  color: #fff;
+  box-shadow: var(--sh-ember);
+}
+.btn--primary:hover {
+  background: var(--ember-dk);
+  box-shadow: 0 20px 52px -16px rgba(228,83,31,.72);
+  transform: translateY(-3px);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line-md);
+}
+.btn--ghost:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-card);
+}
+.btn--dark {
+  background: var(--ink);
+  color: var(--cream);
+  border: 1.5px solid transparent;
+}
+.btn--dark:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -14px rgba(20,18,16,.55);
+}
+
+/* ============================================================
+   TOP NAV
+   ============================================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(244,239,230,.88);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 66px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  text-decoration: none;
+  font-family: "Archivo Narrow", "Archivo", sans-serif;
+}
+.brand b {
+  font-weight: 700;
+  letter-spacing: .05em;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.brand span {
+  font-size: .65rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ember);
+  font-weight: 700;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+.nav a {
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .025em;
+  color: var(--ink);
+  opacity: .75;
+  transition: opacity .25s ease;
+}
+.nav a:hover { opacity: 1 }
+.nav a:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
+.nav__cta { margin-left: .6rem }
+.navtoggle {
+  display: none;
+  background: transparent;
+  border: 1.5px solid var(--line-md);
+  border-radius: var(--r-sm);
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  padding: 0;
+  color: var(--ink);
+  transition: border-color .25s ease;
+}
+.navtoggle:hover { border-color: var(--ink) }
+.navtoggle:focus-visible { outline: 2px solid var(--ember); outline-offset: 2px }
+.navtoggle svg { display: block; margin: auto }
+
+/* ============================================================
+   PAGE FRAME: content column + sticky rail
+   ============================================================ */
+.frame {
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+  display: grid;
+  grid-template-columns: minmax(0,1fr) var(--rail-w);
+  gap: clamp(28px, 4vw, 60px);
+  align-items: start;
+}
+.content { min-width: 0 }
+
+/* ============================================================
+   RESERVATION RAIL (sticky)
+   ============================================================ */
+.rail {
+  position: sticky;
+  top: 86px;
+  align-self: start;
+}
+/* Sticky settle: the card eases down into its docked position (damped, not a hard
+   snap) the moment the rail reaches its sticky offset. JS toggles .docked. */
+html.anim .rail__card {
+  transition:
+    transform  .8s var(--ease-proof),
+    box-shadow .6s ease,
+    background .35s ease;
+}
+html.anim .rail:not(.docked) .rail__card {
+  transform: translateY(12px);
+  box-shadow: 0 18px 50px -26px rgba(20,18,16,.55);
+}
+html.anim .rail.docked .rail__card {
+  transform: translateY(0);
+}
+.rail__card {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--r);
+  padding: 1.6rem 1.5rem 1.4rem;
+  box-shadow: var(--sh-rail);
+  /* warm ember glow from bottom */
+  background-image: radial-gradient(ellipse 80% 40% at 50% 110%, rgba(228,83,31,.22) 0%, transparent 70%);
+}
+.rail__tag {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1.1rem;
+}
+.rail__tag .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ember);
+  flex: none;
+}
+.rail__card h3 {
+  font-size: 1.5rem;
+  line-height: 1.05;
+  margin-bottom: .18rem;
+  color: var(--cream);
+}
+.rail__card .sub {
+  color: rgba(244,239,230,.58);
+  font-size: .86rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+.field { margin-bottom: .85rem }
+.field label {
+  display: block;
+  font-size: .66rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(244,239,230,.55);
+  margin-bottom: .38rem;
+  font-weight: 700;
+}
+.field input, .field select {
+  width: 100%;
+  background: rgba(244,239,230,.07);
+  border: 1px solid var(--line-dark2);
+  color: var(--cream);
+  border-radius: var(--r-sm);
+  padding: .75em .9em;
+  font: inherit;
+  font-size: .92rem;
+  min-height: 46px;
+  transition: border-color .25s ease, background .25s ease;
+}
+.field input:focus, .field select:focus {
+  outline: 2px solid var(--ember);
+  outline-offset: 1px;
+  border-color: transparent;
+  background: rgba(244,239,230,.10);
+}
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg,  transparent 50%, var(--ember) 50%),
+    linear-gradient(135deg, var(--ember) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  background-color: rgba(244,239,230,.07);
+}
+.rail__card .btn { width: 100%; margin-top: .55rem }
+.rail__phone {
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line-dark);
+  text-align: center;
+}
+.rail__phone .lbl {
+  font-size: .66rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(244,239,230,.5);
+  display: block;
+  margin-bottom: .25rem;
+}
+.rail__phone a {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 1.28rem;
+  letter-spacing: .01em;
+  color: var(--cream);
+  text-decoration: none;
+  transition: color .25s ease;
+}
+.rail__phone a:hover { color: var(--ember) }
+.rail__phone a:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
+.rail__trust {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: .82rem;
+  color: rgba(244,239,230,.68);
+}
+.rail__trust strong { color: var(--cream); font-family: "Archivo", sans-serif }
+.stars { color: var(--oro-light); letter-spacing: .08em }
+
+/* ============================================================
+   HERO — magazine-cover masthead (the wow)
+   ============================================================ */
+.hero {
+  position: relative;
+  background: var(--ink);
+  color: var(--cream);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Full-bleed photography */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 64% 48%;
+}
+
+/* Layered scrims: left text column + global darkening + bottom lift */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(102deg,
+      rgba(14,11,9,.92)  0%,
+      rgba(14,11,9,.72) 36%,
+      rgba(14,11,9,.28) 60%,
+      rgba(14,11,9,.44) 100%),
+    linear-gradient(0deg,
+      rgba(14,11,9,.88) 0%,
+      rgba(14,11,9,.10) 40%,
+      rgba(14,11,9,.00) 65%);
+}
+
+/* Ambient ember-heat — more visible, single looping effect */
+.hero__heat {
+  position: absolute;
+  z-index: 1;
+  right: -5%;
+  bottom: -15%;
+  width: 65%;
+  height: 85%;
+  background: radial-gradient(
+    closest-side,
+    rgba(228,83,31,.65) 0%,
+    rgba(228,83,31,.28) 45%,
+    rgba(184,132,42,.12) 68%,
+    transparent 78%
+  );
+  filter: blur(32px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  /* Opacity is scroll-linked (set by JS via --heat); the loop only breathes the
+     shape via transform/filter so the two effects never fight for the opacity channel. */
+  opacity: calc(.5 + var(--heat, 0) * .5);
+  will-change: transform, opacity;
+  animation: heat 7s ease-in-out infinite alternate;
+}
+@keyframes heat {
+  from { transform: scale(.97) translate( 2%, -1%); filter: blur(30px) brightness(.92) }
+  to   { transform: scale(1.06) translate(-2%,  1%); filter: blur(34px) brightness(1.12) }
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding: clamp(30px,6vw,60px) var(--pad) clamp(48px,8vw,96px);
+  min-height: clamp(580px, 90vh, 900px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Piazza overline + ember rule */
+.hero__over {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: clamp(16px, 2.8vw, 28px);
+  animation: heroRise .6s var(--ease-proof) .05s both;
+}
+/* Simple vertical proofing-rise used for the non-wordmark hero pieces (subcopy, CTA).
+   The wordmark itself uses the distinct horizontal split reveal below. */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(22px) }
+  to   { opacity: 1; transform: none }
+}
+.hero__over span {
+  font-family: "Archivo Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .32em;
+  font-size: .78rem;
+  font-weight: 700;
+  color: rgba(244,239,230,.88);
+}
+.hero__over .rule { width: clamp(44px, 8vw, 104px) }
+
+/* The centrepiece wordmark */
+.wordmark {
+  font-family: "Archivo", "Archivo Narrow", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+  line-height: .84;
+  color: var(--cream);
+  margin: 0;
+}
+.wordmark span { display: block }
+/* BANDE slides in from the LEFT — the one-time horizontal split entrance,
+   deliberately different from the vertical proofing-rise used everywhere else. */
+.wordmark .w1 {
+  font-size: clamp(3.8rem, 17vw, 12.5rem);
+  animation: slideL 1.05s var(--ease-proof) .18s both;
+  color: var(--cream);
+  will-change: transform, opacity;
+}
+/* NERE slides in from the RIGHT — bold outline, locks into its off-center spot */
+.wordmark .w2 {
+  font-size: clamp(3.8rem, 17vw, 12.5rem);
+  margin-left: clamp(30px, 12vw, 3em);
+  color: transparent;
+  -webkit-text-stroke: 3px var(--cream);
+  text-stroke: 3px var(--cream);
+  animation: slideR 1.05s var(--ease-proof) .18s both;
+  will-change: transform, opacity;
+}
+@keyframes slideL {
+  from { opacity: 0; transform: translateX(-24%) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes slideR {
+  from { opacity: 0; transform: translateX(24%) }
+  to   { opacity: 1; transform: none }
+}
+
+.hero__lede {
+  max-width: 46ch;
+  margin-top: clamp(20px, 3vw, 32px);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: rgba(244,239,230,.88);
+  line-height: 1.65;
+  text-shadow: 0 1px 6px rgba(0,0,0,.35);
+  animation: heroRise .6s var(--ease-proof) .5s both;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+  margin-top: clamp(22px, 3vw, 32px);
+  align-items: center;
+  animation: heroRise .6s var(--ease-proof) .62s both;
+}
+.hero__phone {
+  font-size: .9rem;
+  color: rgba(244,239,230,.70);
+}
+.hero__phone a {
+  color: var(--cream);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ember);
+  padding-bottom: 1px;
+  transition: color .25s ease, border-color .25s ease;
+}
+.hero__phone a:hover { color: var(--ember) }
+
+/* Right-edge hero metadata — editorial caption */
+.hero__meta {
+  position: absolute;
+  top: clamp(24px, 4.5vw, 48px);
+  right: var(--pad);
+  z-index: 2;
+  text-align: right;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: .76rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(244,239,230,.62);
+  line-height: 2.1;
+}
+.hero__meta b { color: var(--ember) }
+
+/* ============================================================
+   CHAPTER FRAME — shared chapter wrapper
+   ============================================================ */
+.chapter {
+  padding-block: var(--sp-xl);
+  position: relative;
+}
+
+/* Chapter-level section backgrounds */
+#fire     { background: var(--cream) }
+#board    { background: var(--cream-2) }
+#craft    { background: var(--ink); color: var(--cream) }
+#room     { background: var(--cream) }
+#reserve  { background: var(--cream-2) }
+#market   { background: var(--cream) }
+#location { background: var(--cream-2) }
+#reviews  { background: var(--cream) }
+
+/* Chapter heading cluster */
+.chead {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(28px, 4.5vw, 52px);
+}
+.chead .num {
+  font-family: "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: .96rem;
+  color: var(--ember);
+  letter-spacing: .06em;
+  flex: none;
+}
+.chead h2 {
+  font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+  flex: 1 1 240px;
+  min-width: 0;
+}
+.chead .kicker {
+  width: 100%;
+  order: -1;
+}
+
+/* Override heading color in dark craft section */
+#craft .chead h2  { color: var(--cream) }
+#craft .chead .num { color: var(--ember) }
+
+.lead-p {
+  max-width: 58ch;
+  font-size: clamp(1.02rem, 1.3vw, 1.16rem);
+  color: rgba(20,18,16,.78);
+  line-height: 1.72;
+}
+#craft .lead-p { color: rgba(244,239,230,.82) }
+
+/* ============================================================
+   01 — THE FIRE
+   ============================================================ */
+.fire {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(28px, 4.5vw, 56px);
+  align-items: center;
+}
+.fire__img {
+  position: relative;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: 0 28px 72px -32px rgba(20,18,16,.38), 0 6px 18px rgba(20,18,16,.12);
+}
+.fire__img img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: 50% 28%;
+  display: block;
+}
+/* Ember cast at the bottom of the fire portrait */
+.fire__img::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 35%;
+  background: linear-gradient(0deg, rgba(228,83,31,.30) 0%, transparent 100%);
+  pointer-events: none;
+}
+.fire__body h3 {
+  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+  margin: 1.6rem 0 .7rem;
+}
+.fire__body p { color: rgba(20,18,16,.75) }
+
+/* Spec strip — dark panel, bolder numbers */
+.spec {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-top: 1.8rem;
+  background: var(--ink);
+  box-shadow: 0 12px 36px -16px rgba(20,18,16,.55);
+}
+.spec div {
+  background: var(--ink);
+  padding: 1.25rem 1rem;
+  border-right: 1px solid rgba(244,239,230,.1);
+  position: relative;
+}
+.spec div:last-child { border-right: 0 }
+/* Ember accent line atop each spec cell */
+.spec div::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--ember);
+  opacity: .6;
+}
+.spec div:first-child::before { opacity: 1 }
+.spec b {
+  display: block;
+  font-family: "Archivo", sans-serif;
+  font-size: 2rem;
+  color: var(--cream);
+  line-height: 1;
+  font-weight: 900;
+}
+.spec span {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: rgba(244,239,230,.55);
+  margin-top: .4rem;
+  display: block;
+}
+
+/* ============================================================
+   02 — THE BOARD
+   ============================================================ */
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+}
+.pizza {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sh-card);
+  transition: transform .65s var(--ease-proof), box-shadow .55s ease;
+}
+.pizza:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--sh-hover), 0 2px 8px rgba(228,83,31,.10);
+}
+.pizza:focus-within {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+.pizza__ph {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-3);
+}
+.pizza__ph img {
+  width: 100%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  object-position: center 55%;
+  transition: transform .8s var(--ease-proof), filter .65s ease;
+}
+.pizza:hover .pizza__ph img {
+  transform: scale(1.06);
+  filter: saturate(1.15) contrast(1.05) brightness(1.03);
+}
+/* Slight bottom fade for card legibility */
+.pizza__ph::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 28%;
+  background: linear-gradient(0deg, rgba(20,18,16,.22) 0%, transparent 100%);
+  pointer-events: none;
+}
+.pizza__tag {
+  position: absolute;
+  top: .8rem;
+  left: .8rem;
+  background: rgba(20,18,16,.82);
+  color: var(--cream);
+  font-size: .65rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .38em .75em;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.pizza__b {
+  padding: 1.15rem 1.2rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--cream);
+}
+.pizza__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .8rem;
+}
+/* Ember underline draws on hover */
+.pizza__name {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 1.22rem;
+  position: relative;
+  letter-spacing: -.01em;
+}
+.pizza__name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  background: var(--ember);
+  border-radius: 2px;
+  transition: width .65s var(--ease-proof);
+}
+.pizza:hover .pizza__name::after { width: 100% }
+.pizza__price {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: var(--ember);
+  white-space: nowrap;
+}
+.pizza__desc {
+  font-size: .9rem;
+  color: rgba(20,18,16,.65);
+  margin-top: .55rem;
+  line-height: 1.55;
+}
+.board__note {
+  margin-top: 1.6rem;
+  font-size: .78rem;
+  color: rgba(20,18,16,.45);
+  font-style: italic;
+}
+
+/* ============================================================
+   03 — THE 48-HOUR CRAFT (dark section)
+   ============================================================ */
+.craft {
+  display: grid;
+  grid-template-columns: .88fr 1.12fr;
+  gap: clamp(28px, 5vw, 68px);
+  align-items: start;
+}
+.craft__media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  position: sticky;
+  top: 96px;
+}
+.craft__media img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: var(--r-sm);
+  box-shadow: 0 16px 48px rgba(0,0,0,.45);
+}
+.craft__media img:first-child {
+  object-position: center 40%;
+  margin-top: 0;
+}
+.craft__media img:last-child {
+  object-position: center 35%;
+  margin-top: 38px;
+  box-shadow: 0 20px 56px rgba(0,0,0,.5);
+}
+
+/* Dough timeline */
+.timeline {
+  position: relative;
+  padding-left: 2.6rem;
+}
+/* Track */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background: rgba(244,239,230,.16);
+  border-radius: 3px;
+}
+/* Scroll-driven ember fill */
+.timeline__fill {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--oro-light), var(--ember));
+  border-radius: 3px;
+  height: 0;
+  /* will be set by JS */
+}
+.step {
+  position: relative;
+  padding-bottom: 2.4rem;
+}
+.step:last-child { padding-bottom: 0 }
+/* Step dot — ember ring on dark bg */
+.step::before {
+  content: "";
+  position: absolute;
+  left: -2.6rem;
+  top: 3px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid var(--ember);
+  box-shadow: 0 0 0 5px var(--ink), 0 0 0 6px rgba(228,83,31,.28);
+}
+.step h4 {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.28rem;
+  color: var(--cream);
+  letter-spacing: -.015em;
+}
+.step .t {
+  font-family: "Archivo Narrow", sans-serif;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .72rem;
+  color: var(--oro-light);
+  margin-bottom: .28rem;
+}
+.step p {
+  font-size: .96rem;
+  color: rgba(244,239,230,.72);
+  margin-top: .45rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   04 — THE ROOM
+   ============================================================ */
+.room {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(14px, 2.2vw, 22px);
+}
+.room__big {
+  grid-row: 1 / span 2;
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+}
+.room__big img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  object-position: 50% 45%;
+  display: block;
+}
+.room__small {
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+}
+.room__small img {
+  width: 100%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.room__note {
+  align-self: center;
+  padding: .5rem .2rem;
+}
+.room__note h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  margin-bottom: .6rem;
+  letter-spacing: -.02em;
+}
+.room__note p {
+  font-size: .96rem;
+  color: rgba(20,18,16,.72);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   05 — RESERVE (full section, inside cream-2 background)
+   ============================================================ */
+.reserve {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--r);
+  padding: clamp(30px, 4.5vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4.5vw, 60px);
+  align-items: center;
+  box-shadow: 0 32px 80px -32px rgba(20,18,16,.55);
+  background-image: radial-gradient(ellipse 70% 50% at 25% 110%, rgba(228,83,31,.18) 0%, transparent 65%);
+}
+.reserve h2 {
+  color: var(--cream);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+.reserve .eyebrow { color: var(--ember) }
+.reserve p {
+  color: rgba(244,239,230,.80);
+  margin-top: 1.1rem;
+  max-width: 44ch;
+  line-height: 1.7;
+}
+.reserve__pts {
+  margin-top: 1.8rem;
+  display: grid;
+  gap: .9rem;
+}
+.reserve__pts li {
+  display: flex;
+  gap: .75rem;
+  font-size: .96rem;
+  color: rgba(244,239,230,.85);
+  align-items: flex-start;
+}
+.reserve__pts svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--ember);
+}
+.reserve__form {
+  background: rgba(244,239,230,.06);
+  border: 1px solid var(--line-dark2);
+  border-radius: var(--r-sm);
+  padding: clamp(22px, 3vw, 32px);
+}
+.reserve__form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem;
+}
+.reserve__form .btn { width: 100%; margin-top: .5rem }
+.reserve__call {
+  text-align: center;
+  margin-top: 1.1rem;
+  font-size: .9rem;
+  color: rgba(244,239,230,.65);
+}
+.reserve__call a {
+  color: var(--cream);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ember);
+  padding-bottom: 1px;
+  transition: color .25s ease;
+}
+.reserve__call a:hover { color: var(--ember) }
+
+/* ============================================================
+   06 — MARKET / INGREDIENTS
+   ============================================================ */
+.market {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4.5vw, 56px);
+  align-items: center;
+}
+.market__img {
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+}
+.market__img img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 55%;
+}
+.supp {
+  display: grid;
+  gap: 0;
+  margin-top: 1.6rem;
+}
+.supp li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .7rem 1rem;
+  align-items: baseline;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.supp li:last-child { border-bottom: 0 }
+.supp b {
+  font-family: "Archivo", sans-serif;
+  color: var(--verde);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.supp span {
+  font-size: .9rem;
+  color: rgba(20,18,16,.68);
+}
+
+/* ============================================================
+   07 — LOCATION
+   ============================================================ */
+.loc {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(24px, 4.5vw, 56px);
+  align-items: stretch;
+}
+.loc__img {
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 24px 64px -28px rgba(20,18,16,.38);
+}
+.loc__img img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: 50% 62%;
+}
+.loc__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.addr {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 1.5rem 1.4rem;
+  box-shadow: var(--sh-card);
+}
+.addr h3 {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.22rem;
+  margin-bottom: .55rem;
+}
+.addr p { font-size: .96rem; color: rgba(20,18,16,.78); line-height: 1.65 }
+.pin {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .9rem;
+}
+.pin .ring {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+.pin .ring i {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  background: var(--ember);
+  border-radius: 50%;
+}
+/* One slow single-ring pulse, fired once when the location chapter enters view
+   (JS adds .pulse). Finite — distinct from the hero's looping ember shimmer. */
+.pin .ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2.5px solid var(--ember);
+  border-radius: 50%;
+  opacity: 0;
+}
+html.anim .pin.pulse .ring::after {
+  animation: pulse 2.6s var(--ease-proof) 1 forwards;
+}
+@keyframes pulse {
+  0%   { transform: scale(.5);  opacity: .9 }
+  100% { transform: scale(2.5); opacity: 0 }
+}
+.pin b {
+  font-family: "Archivo Narrow", sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: .8rem;
+  color: var(--ember);
+  font-weight: 700;
+}
+.metro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.1rem;
+}
+.metro .m {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .82rem;
+  font-weight: 600;
+  background: var(--cream-2);
+  border-radius: 20px;
+  padding: .38em .9em;
+}
+.metro .dot-r {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rosso);
+  flex: none;
+}
+
+/* ============================================================
+   08 — REVIEWS
+   ============================================================ */
+.rev {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: clamp(28px, 5vw, 60px);
+  align-items: center;
+}
+.rev__score {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--r);
+  padding: clamp(28px, 4vw, 44px);
+  text-align: center;
+  box-shadow: 0 32px 72px -32px rgba(20,18,16,.55);
+  background-image: radial-gradient(ellipse 80% 55% at 50% 115%, rgba(228,83,31,.30) 0%, transparent 70%);
+}
+.rev__score .big {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(4.4rem, 12vw, 7rem);
+  line-height: .88;
+  color: var(--cream);
+  letter-spacing: -.04em;
+}
+.rev__score .out {
+  color: rgba(244,239,230,.45);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.rev__score .stars {
+  font-size: 1.7rem;
+  display: block;
+  margin: .7rem 0 .6rem;
+  letter-spacing: .14em;
+}
+.rev__score .cnt {
+  font-size: .96rem;
+  color: rgba(244,239,230,.75);
+  letter-spacing: .02em;
+}
+.rev__score .cnt strong { color: var(--cream) }
+.rev__score .src {
+  margin-top: 1.1rem;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: rgba(244,239,230,.42);
+}
+/* Rating distribution */
+.dist {
+  display: grid;
+  gap: .6rem;
+  margin: 1.5rem 0;
+}
+.dist__row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  gap: .75rem;
+  align-items: center;
+  font-size: .83rem;
+  color: rgba(20,18,16,.65);
+}
+.dist__bar {
+  height: 9px;
+  background: var(--cream-3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.dist__bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--oro), var(--ember));
+  border-radius: 6px;
+}
+.rev__quote {
+  font-family: "Archivo", sans-serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.36;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  position: relative;
+  padding-left: 1.4rem;
+}
+.rev__quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .2em;
+  bottom: .2em;
+  width: 4px;
+  background: var(--ember);
+  border-radius: 2px;
+}
+.rev__quote small {
+  display: block;
+  margin-top: .75rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: .78rem;
+  letter-spacing: .015em;
+  color: rgba(20,18,16,.48);
+  font-style: italic;
+}
+.rev__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.8rem;
+  align-items: center;
+}
+.rev__cta .note {
+  font-size: .83rem;
+  color: rgba(20,18,16,.55);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot {
+  background: var(--ink);
+  color: var(--cream);
+  margin-top: clamp(48px, 7vw, 88px);
+  background-image: radial-gradient(ellipse 55% 45% at 8% 105%, rgba(228,83,31,.20) 0%, transparent 65%);
+}
+.foot__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: clamp(24px, 4vw, 52px);
+  padding-block: clamp(48px, 7vw, 80px);
+}
+.foot h4 {
+  font-family: "Archivo Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .76rem;
+  color: var(--ember);
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+}
+.foot .fmark {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.85rem;
+  letter-spacing: -.02em;
+  line-height: .95;
+}
+.foot .fmark span { color: var(--ember) }
+.foot p, .foot li {
+  color: rgba(244,239,230,.75);
+  font-size: .93rem;
+  line-height: 1.9;
+}
+.foot a { color: rgba(244,239,230,.75); text-decoration: none; transition: color .25s ease }
+.foot a:hover { color: var(--ember) }
+.foot a:focus-visible { outline: 2px solid var(--ember); outline-offset: 2px; border-radius: 2px }
+.hours { display: grid; gap: .3rem }
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px dotted rgba(244,239,230,.14);
+  padding: .25rem 0;
+}
+.foot__cta {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+.foot__bar {
+  border-top: 1px solid rgba(244,239,230,.1);
+  padding-block: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.4rem;
+  justify-content: space-between;
+  font-size: .76rem;
+  color: rgba(244,239,230,.42);
+}
+.disclaimer {
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding: 0 var(--pad) 2.2rem;
+  font-size: .72rem;
+  color: rgba(244,239,230,.36);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ============================================================
+   SCROLL REVEAL — the recurring "proofing rise" motif.
+   All hidden-then-reveal states are gated behind html.anim, which is
+   only added when JS runs AND reduced-motion is off. So with JS disabled
+   or reduced-motion on, every section is fully visible immediately.
+   Reveals are varied BY ROLE, not one identical fade everywhere.
+   ============================================================ */
+
+/* Default: gentle vertical proofing rise */
+html.anim .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s var(--ease-proof), transform .8s var(--ease-proof);
+  will-change: opacity, transform;
+}
+html.anim .reveal.in { opacity: 1; transform: none }
+
+/* Heading role: an ink-like clip wipe that uncovers the line upward */
+html.anim .reveal--head {
+  clip-path: inset(-10% -10% 100% -10%);
+  transform: translateY(12px);
+  transition: clip-path .95s var(--ease-proof), opacity .8s var(--ease-proof), transform .8s var(--ease-proof);
+}
+html.anim .reveal--head.in { clip-path: inset(-10% -10% -10% -10%); transform: none }
+
+/* Media role: settle up with a faint scale, so photos "arrive" with mass */
+html.anim .reveal--media { transform: translateY(34px) scale(.986); transform-origin: 50% 100% }
+html.anim .reveal--media.in { transform: none }
+
+/* Board role: the signature proof-rise applied to a LIST — rows enter bottom-up
+   on a 60ms stagger with a soft overshoot (translateY passes resting, then settles). */
+html.anim .board-rise .pizza {
+  opacity: 0;
+  transform: translateY(42px);
+  transition: opacity .55s ease, transform .72s cubic-bezier(.22, 1.18, .36, 1);
+  will-change: opacity, transform;
+}
+html.anim .board-rise.in .pizza { opacity: 1; transform: none }
+html.anim .board-rise.in .pizza:nth-child(1) { transition-delay: 0s }
+html.anim .board-rise.in .pizza:nth-child(2) { transition-delay: .06s }
+html.anim .board-rise.in .pizza:nth-child(3) { transition-delay: .12s }
+html.anim .board-rise.in .pizza:nth-child(4) { transition-delay: .18s }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__heat, .pin .ring::after, .wordmark .w1, .wordmark .w2,
+  .hero__over, .hero__lede, .hero__cta { animation: none !important }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+/* Collapse sticky rail at 1040px */
+@media (max-width: 1040px) {
+  .frame {
+    grid-template-columns: 1fr;
+  }
+  .rail {
+    position: static;
+    order: 2;
+    margin-top: 10px;
+  }
+  .rail__card { max-width: 520px }
+  .nav { display: none }
+  .nav.open {
+    display: flex;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--cream);
+    border-bottom: 2px solid var(--line-md);
+    padding: .5rem var(--pad) 1.1rem;
+    box-shadow: 0 12px 32px rgba(20,18,16,.12);
+    z-index: 50;
+  }
+  .nav.open a {
+    padding: .95rem 0;
+    border-bottom: 1px solid var(--line);
+    opacity: 1;
+  }
+  .nav.open .nav__cta { margin: .9rem 0 0 }
+  .navtoggle { display: inline-flex; align-items: center; justify-content: center }
+  .craft__media { position: static }
+}
+
+/* Two-column → one-column at 840px */
+@media (max-width: 840px) {
+  .fire, .craft, .market, .loc, .rev, .reserve {
+    grid-template-columns: 1fr;
+  }
+  .craft__media {
+    grid-template-columns: 1fr 1fr;
+  }
+  .craft__media img:last-child { margin-top: 0 }
+  .foot__grid { grid-template-columns: 1fr 1fr }
+  .spec { grid-template-columns: repeat(3,1fr) } /* keep */
+}
+
+/* Single column below 600px */
+@media (max-width: 600px) {
+  .board { grid-template-columns: 1fr }
+  .room {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  .room__big { grid-row: auto }
+  .room__big img { min-height: 0; aspect-ratio: 16/11 }
+  .spec { grid-template-columns: 1fr }
+  .foot__grid { grid-template-columns: 1fr }
+  .reserve__form .row { grid-template-columns: 1fr }
+  .hero__meta { display: none }
+  /* Mobile wow: constrain hero height, keep pizza in frame */
+  .hero__inner {
+    min-height: 84vh;
+    justify-content: flex-end;
+    padding-bottom: 2.2rem;
+  }
+  .hero__media img {
+    object-position: 58% 36%;
+  }
+  .wordmark .w1,
+  .wordmark .w2 { font-size: clamp(3.2rem, 21vw, 6rem) }
+  .wordmark .w2 { margin-left: 1.2rem }
+}
+
+/* Minimum viewport (360px) safety net */
+@media (max-width: 400px) {
+  :root { --pad: 18px }
+  .reserve { padding: 1.6rem 1.2rem }
+  .rail__card { padding: 1.3rem 1.1rem }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Top navigation ===== -->
+<header class="topbar">
+  <div class="shell topbar__inner">
+    <a class="brand" href="#top" aria-label="Ristorante Bande Nere, home">
+      <b>Bande Nere</b><span>Milano</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigazione principale">
+      <a href="#fire">Il forno</a>
+      <a href="#board">Il tagliere</a>
+      <a href="#craft">48 ore</a>
+      <a href="#room">La sala</a>
+      <a href="#location">Dove siamo</a>
+      <a class="btn btn--primary nav__cta" data-cta href="tel:+393396755915">Chiama per prenotare</a>
+    </nav>
+    <button class="navtoggle" id="navtoggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ===== HERO — magazine-cover masthead (the wow) ===== -->
+<section class="hero" aria-label="Ristorante Bande Nere — pizza al forno a legna">
+  <div class="hero__media">
+    <img src="assets/hero-pizza-launch.jpg" alt="A pizza sliding off a wooden peel into a blazing wood-fired oven" fetchpriority="high">
+  </div>
+  <div class="hero__scrim"></div>
+  <div class="hero__heat" aria-hidden="true"></div>
+
+  <div class="hero__meta" aria-hidden="true">
+    Forno a legna<br>
+    Impasto <b>48 h</b><br>
+    Piazzale Bande Nere
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__over">
+      <hr class="rule">
+      <span>Piazzale Bande Nere · Milano</span>
+    </div>
+    <h1 class="wordmark">
+      <span class="w1">Bande</span>
+      <span class="w2">Nere</span>
+    </h1>
+    <p class="hero__lede">Pizza napoletana al forno a legna, due volte al giorno. Impasto a lievitazione naturale di 48 ore, tirato a mano, cotto in pochi secondi — non una consegna qualsiasi.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" data-cta href="tel:+393396755915">Chiama per prenotare</a>
+      <a class="btn btn--ghost" href="#board" style="color:var(--cream);border-color:rgba(244,239,230,.38)">Guarda il tagliere</a>
+      <span class="hero__phone">oppure <a href="tel:+393396755915">+39&nbsp;339&nbsp;675&nbsp;5915</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Frame: content + sticky reservation rail ===== -->
+<div class="frame">
+  <main class="content">
+
+    <!-- 01 — The fire -->
+    <section class="chapter" id="fire">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 01 — Il fuoco</span>
+        <span class="num">01</span>
+        <h2>Un vero forno a legna, non una cucina da delivery</h2>
+      </div>
+      <div class="fire">
+        <figure class="fire__img reveal reveal--media">
+          <img src="assets/forno-fornaio.jpg" alt="A pizzaiolo tending pizzas in the wood-fired oven">
+        </figure>
+        <div class="fire__body reveal">
+          <p class="lead-p">Il cuore del locale è un forno a legna acceso ogni servizio. La cupola arriva a temperatura, il fornaio infila la pala e la pizza cuoce in una manciata di secondi: il cornicione si gonfia, si macchia, prende il profumo del fuoco. È il gesto — e la mano che lo fa — che una cucina di sole consegne non può imitare.</p>
+          <h3>La fiamma detta i tempi, non l'app.</h3>
+          <p style="font-size:.96rem;color:rgba(20,18,16,.72);margin-top:.5rem">Ogni pizza esce al bancone appena sfornata. Nessun tempo di attesa in uno zaino: il momento giusto per mangiarla è adesso, seduti a due passi dal forno.</p>
+          <div class="spec">
+            <div><b>485°</b><span>Cupola a regime</span></div>
+            <div><b>~70″</b><span>Cottura in forno</span></div>
+            <div><b>2×</b><span>Infornata al giorno</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — The board -->
+    <section class="chapter" id="board">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 02 — Il tagliere</span>
+        <span class="num">02</span>
+        <h2>Il tagliere del giorno</h2>
+      </div>
+      <p class="lead-p reveal" style="margin-bottom:clamp(22px,3.5vw,38px)">Una lista corta che ruota con la stagione. Prezzi chiari, ingredienti dichiarati: scegli la pizza prima ancora di sederti.</p>
+      <div class="board board-rise">
+        <article class="pizza">
+          <div class="pizza__ph"><span class="pizza__tag">Sempre in carta</span><img src="assets/board-margherita.jpg" alt="A Margherita pizza seen from above"></div>
+          <div class="pizza__b">
+            <div class="pizza__row"><span class="pizza__name">Margherita</span><span class="pizza__price">8&nbsp;€</span></div>
+            <p class="pizza__desc">Pomodoro San Marzano, fiordilatte, basilico, filo d'olio. La prova del forno.</p>
+          </div>
+        </article>
+        <article class="pizza">
+          <div class="pizza__ph"><span class="pizza__tag">Piccante</span><img src="assets/board-diavola.jpg" alt="A spicy salame diavola pizza seen from above"></div>
+          <div class="pizza__b">
+            <div class="pizza__row"><span class="pizza__name">Diavola</span><span class="pizza__price">10&nbsp;€</span></div>
+            <p class="pizza__desc">Salame piccante che si arriccia in cottura, fiordilatte, peperoncino, cornicione bruciacchiato.</p>
+          </div>
+        </article>
+        <article class="pizza">
+          <div class="pizza__ph"><span class="pizza__tag">Senza mozzarella</span><img src="assets/board-marinara.jpg" alt="A marinara pizza seen from above"></div>
+          <div class="pizza__b">
+            <div class="pizza__row"><span class="pizza__name">Marinara</span><span class="pizza__price">7&nbsp;€</span></div>
+            <p class="pizza__desc">Pomodoro lucido, aglio in lamelle, origano. Solo impasto e fuoco: la più onesta.</p>
+          </div>
+        </article>
+        <article class="pizza">
+          <div class="pizza__ph"><span class="pizza__tag">Di stagione</span><img src="assets/board-seasonal-white.jpg" alt="A seasonal white pizza seen from above"></div>
+          <div class="pizza__b">
+            <div class="pizza__row"><span class="pizza__name">Bianca di stagione</span><span class="pizza__price">12&nbsp;€</span></div>
+            <p class="pizza__desc">Fiordilatte, verdura del mercato (porcini o zucchine), scaglie di formaggio, crosta dorata.</p>
+          </div>
+        </article>
+      </div>
+      <p class="board__note reveal">Prezzi indicativi a titolo dimostrativo: il listino definitivo e le pizze in rotazione sono confermati dal ristorante.</p>
+    </section>
+
+    <!-- 03 — The 48-hour craft -->
+    <section class="chapter" id="craft">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 03 — La lavorazione</span>
+        <span class="num">03</span>
+        <h2>48 ore, dalla farina al fuoco</h2>
+      </div>
+      <div class="craft">
+        <div class="craft__media reveal">
+          <img src="assets/dough-proofing.jpg" alt="Rows of soft pizza dough balls proofing in a tray">
+          <img src="assets/dough-stretch-hands.jpg" alt="Flour-dusted hands stretching pizza dough by hand">
+        </div>
+        <div class="timeline reveal" id="timeline">
+          <div class="timeline__fill" id="tlfill" aria-hidden="true"></div>
+          <div class="step">
+            <p class="t">Ora 0 · Impasto</p>
+            <h4>Farina, acqua, lievito madre</h4>
+            <p>Pochi ingredienti, tanta idratazione. L'impasto nasce lento, senza forzature, con lievito naturale.</p>
+          </div>
+          <div class="step">
+            <p class="t">Ora 2 · Puntata</p>
+            <h4>Riposo di massa</h4>
+            <p>La massa riposa e prende forza. È qui che si costruisce la leggerezza del cornicione.</p>
+          </div>
+          <div class="step">
+            <p class="t">Ora 24 · Staglio</p>
+            <h4>I panetti a lievitare</h4>
+            <p>Divisione a mano nei panetti, poi di nuovo a riposo in cella. Bolle vive, profumo dolce.</p>
+          </div>
+          <div class="step">
+            <p class="t">Ora 48 · Stesura</p>
+            <h4>Tirata a mano, mai al mattarello</h4>
+            <p>Il disco si allarga con i polpastrelli, l'aria resta nel bordo. Nessuna pressa, nessuna scorciatoia.</p>
+          </div>
+          <div class="step">
+            <p class="t">Ora 48 · Cottura</p>
+            <h4>Nel forno a legna</h4>
+            <p>Settanta secondi sulla platea rovente. Due giorni di lavoro chiusi in un minuto di fuoco.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — The room -->
+    <section class="chapter" id="room">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 04 — La sala</span>
+        <span class="num">04</span>
+        <h2>Una sala d'angolo, da sedersi</h2>
+      </div>
+      <div class="room">
+        <figure class="room__big reveal reveal--media"><img src="assets/dining-room.jpg" alt="The warm tiled interior dining room of the pizzeria"></figure>
+        <figure class="room__small reveal reveal--media"><img src="assets/table-setting-detail.jpg" alt="A set table with pizza and wine in the dining room"></figure>
+        <div class="room__note reveal">
+          <h3>Non uno sportello d'asporto.</h3>
+          <p>Pavimento a piastrelle, tavoli di legno scuro, luce calda e il bagliore del forno sul fondo. Una stanza d'angolo che dà da mangiare allo stesso quartiere da anni — il posto giusto per una pausa pranzo vera o una cena infrasettimanale senza fretta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — Reserve a table (full section) -->
+    <section class="chapter" id="reserve" style="border-top:0">
+      <div class="reserve reveal">
+        <div>
+          <p class="eyebrow">Ordine N.º 05 — Prenota</p>
+          <h2 style="margin-top:.5rem">Tieni il tuo tavolo</h2>
+          <p>Manda la richiesta con giorno, orario e coperti: ti richiamiamo noi per confermare. Oppure, per fare prima, chiama direttamente il ristorante.</p>
+          <ul class="reserve__pts">
+            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5 6.75 13 3 9.2"/></svg>Conferma diretta con la sala, senza intermediari</li>
+            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5 6.75 13 3 9.2"/></svg>Tavoli per pranzo e cena, anche gruppi</li>
+            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5 6.75 13 3 9.2"/></svg>A due fermate di metro dal Duomo</li>
+          </ul>
+        </div>
+        <form class="reserve__form" onsubmit="return false" aria-label="Richiesta di prenotazione">
+          <div class="row">
+            <div class="field"><label for="r-day">Giorno</label><input id="r-day" type="date" inputmode="none"></div>
+            <div class="field"><label for="r-time">Orario</label>
+              <select id="r-time"><option>Pranzo · 12:30</option><option>Pranzo · 13:30</option><option>Cena · 19:30</option><option>Cena · 20:30</option><option>Cena · 21:30</option></select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="r-cov">Coperti</label>
+              <select id="r-cov"><option>2 persone</option><option>3 persone</option><option>4 persone</option><option>5 persone</option><option>6+ persone</option></select>
+            </div>
+            <div class="field"><label for="r-name">Nome</label><input id="r-name" type="text" placeholder="Il tuo nome" autocomplete="name"></div>
+          </div>
+          <a class="btn btn--primary" data-cta href="tel:+393396755915">Chiama per confermare</a>
+          <p class="reserve__call">Prenotazione telefonica al <a href="tel:+393396755915">+39&nbsp;339&nbsp;675&nbsp;5915</a></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 06 — Straight from Milan's markets -->
+    <section class="chapter" id="market">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 06 — Il mercato</span>
+        <span class="num">06</span>
+        <h2>Dritto dai mercati di Milano</h2>
+      </div>
+      <div class="market">
+        <figure class="market__img reveal reveal--media"><img src="assets/ingredients-market.jpg" alt="A flat-lay of fresh tomatoes, mozzarella, basil and olive oil"></figure>
+        <div class="reveal">
+          <p class="lead-p">Il tagliere cambia perché cambia il banco. La verità del prodotto arriva prima della ricetta: pomodoro, mozzarella, basilico, olio — scelti freschi, non ordinati a scatola chiusa. È il motivo per cui vale la pena tornare: la carta non è mai identica a se stessa.</p>
+          <ul class="supp">
+            <li><b>Pomodoro San Marzano</b><span>Base rossa lucida, poca cottura, tutta la dolcezza.</span></li>
+            <li><b>Fiordilatte &amp; mozzarella</b><span>Latticini freschi, strappati a mano sulla pizza.</span></li>
+            <li><b>Verdura di stagione</b><span>Porcini, zucchine, quello che il mercato offre quella settimana.</span></li>
+            <li><b>Olio &amp; basilico</b><span>A crudo, in uscita, per chiudere il profumo.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — Location -->
+    <section class="chapter" id="location">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 07 — Come arrivare</span>
+        <span class="num">07</span>
+        <h2>Bande Nere &amp; come arrivare</h2>
+      </div>
+      <div class="loc">
+        <figure class="loc__img reveal reveal--media"><img src="assets/storefront-corner.jpg" alt="The pizzeria storefront on a Milan corner at dusk"></figure>
+        <div class="loc__panel reveal">
+          <div class="addr">
+            <div class="pin"><span class="ring" aria-hidden="true"><i></i></span><b>Piazzale Bande Nere</b></div>
+            <h3>Nel cuore di Bande Nere</h3>
+            <p>Quartiere Bande Nere / De Angeli, Milano ovest — a due fermate di metropolitana da Piazza Duomo. L'angolo con le vetrine calde al calar della sera.</p>
+            <div class="metro">
+              <span class="m"><span class="dot-r"></span>M1 · Bande Nere</span>
+              <span class="m">Zona De Angeli</span>
+            </div>
+            <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&query=Ristorante+Bande+Nere+Milano" target="_blank" rel="noopener" style="margin-top:1.3rem">Apri in Google Maps</a>
+          </div>
+          <div class="addr">
+            <h3>Prima di passare</h3>
+            <p>Chiama per verificare disponibilità e orari del giorno: <a href="tel:+393396755915" style="color:var(--ember);font-weight:700;text-decoration:none">+39&nbsp;339&nbsp;675&nbsp;5915</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 — Reviews & reputation -->
+    <section class="chapter" id="reviews">
+      <div class="chead reveal reveal--head">
+        <span class="ticket-no kicker">Ordine N.º 08 — Reputazione</span>
+        <span class="num">08</span>
+        <h2>Il quartiere ci torna</h2>
+      </div>
+      <div class="rev">
+        <div class="rev__score reveal">
+          <div class="big">3,8<span class="out">&thinsp;/&thinsp;5</span></div>
+          <span class="stars" aria-hidden="true">★★★★<span style="opacity:.32">★</span></span>
+          <p class="cnt">su <strong>596 recensioni</strong></p>
+          <p class="src">Valutazione media · Google</p>
+        </div>
+        <div class="reveal">
+          <p class="lead-p">Un giudizio costruito su quasi seicento voci del quartiere — non una manciata di opinioni, ma un flusso costante di clienti che tornano per la stessa pizza fatta come si deve.</p>
+          <div class="dist" aria-hidden="true">
+            <div class="dist__row"><span>5 ★</span><span class="dist__bar"><i style="width:52%"></i></span><span>52%</span></div>
+            <div class="dist__row"><span>4 ★</span><span class="dist__bar"><i style="width:24%"></i></span><span>24%</span></div>
+            <div class="dist__row"><span>3 ★</span><span class="dist__bar"><i style="width:13%"></i></span><span>13%</span></div>
+            <div class="dist__row"><span>2 ★</span><span class="dist__bar"><i style="width:6%"></i></span><span>6%</span></div>
+            <div class="dist__row"><span>1 ★</span><span class="dist__bar"><i style="width:5%"></i></span><span>5%</span></div>
+          </div>
+          <blockquote class="rev__quote">Il sentimento che torna più spesso nelle recensioni: un impasto leggero, il profumo del forno a legna e l'accoglienza di una pizzeria di quartiere.
+            <small>Sintesi del tono generale delle recensioni pubbliche — non una citazione attribuita.</small>
+          </blockquote>
+          <div class="rev__cta">
+            <a class="btn btn--primary" data-cta href="tel:+393396755915">Chiama per prenotare</a>
+            <a class="btn btn--ghost" href="tel:+393396755915">Scrivici o chiama</a>
+            <span class="note">Contatto diretto: +39&nbsp;339&nbsp;675&nbsp;5915</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Sticky reservation rail ===== -->
+  <aside class="rail" aria-label="Prenotazione rapida">
+    <div class="rail__card">
+      <div class="rail__tag"><span class="dot"></span><span class="ticket-no" style="color:var(--cream);opacity:.65">Il tuo tavolo</span></div>
+      <h3>Prenota da Bande&nbsp;Nere</h3>
+      <p class="sub">Pranzo o cena, a due passi dal Duomo.</p>
+      <div class="field"><label for="q-time">Servizio</label>
+        <select id="q-time"><option>Pranzo · 12:30 – 14:30</option><option>Cena · 19:30 – 22:30</option></select>
+      </div>
+      <div class="field"><label for="q-cov">Coperti</label>
+        <select id="q-cov"><option>2 persone</option><option>4 persone</option><option>6+ persone</option></select>
+      </div>
+      <a class="btn btn--primary" data-cta href="tel:+393396755915">Chiama per prenotare</a>
+      <div class="rail__phone">
+        <span class="lbl">Telefono diretto</span>
+        <a href="tel:+393396755915">+39&nbsp;339&nbsp;675&nbsp;5915</a>
+      </div>
+      <div class="rail__trust">
+        <span class="stars" aria-hidden="true">★★★★</span>
+        <span><strong>3,8</strong>/5 · 596 recensioni Google</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="foot" id="contact">
+  <div class="shell foot__grid">
+    <div>
+      <p class="fmark">Bande&nbsp;<span>Nere</span></p>
+      <p style="margin-top:1.1rem;max-width:34ch">Pizzeria al forno a legna a Piazzale Bande Nere, Milano. Impasto 48 ore, tirato a mano, cotto nel fuoco.</p>
+      <div class="foot__cta">
+        <a class="btn btn--primary" data-cta href="tel:+393396755915" style="align-self:flex-start">Chiama per prenotare</a>
+        <span style="font-size:.86rem;color:rgba(244,239,230,.65)">+39&nbsp;339&nbsp;675&nbsp;5915</span>
+      </div>
+    </div>
+    <div>
+      <h4>Orari</h4>
+      <ul class="hours">
+        <li><span>Lun</span><span>Chiuso</span></li>
+        <li><span>Mar – Ven</span><span>12:00 – 15:00 · 19:00 – 23:30</span></li>
+        <li><span>Sab</span><span>19:00 – 24:00</span></li>
+        <li><span>Dom</span><span>12:00 – 15:00 · 19:00 – 23:00</span></li>
+      </ul>
+      <p style="margin-top:.7rem;font-size:.76rem;color:rgba(244,239,230,.42);font-style:italic">Orari a titolo dimostrativo.</p>
+    </div>
+    <div>
+      <h4>Contatti</h4>
+      <p>Piazzale Bande Nere<br>Milano ovest · M1 Bande Nere</p>
+      <p style="margin-top:.65rem"><a href="tel:+393396755915">+39 339 675 5915</a></p>
+      <p><a href="https://www.google.com/maps/search/?api=1&query=Ristorante+Bande+Nere+Milano" target="_blank" rel="noopener">Apri in Google Maps →</a></p>
+    </div>
+  </div>
+  <div class="shell foot__bar">
+    <span>© Ristorante Bande Nere · Milano</span>
+    <span>Pizza al forno a legna · Impasto 48 ore</span>
+  </div>
+  <p class="disclaimer">Anteprima dimostrativa. Numero di telefono e valutazione media (3,8/5 su 596 recensioni) sono reali. Listino, orari e indicazioni di zona sono esempi indicativi da confermare con il ristorante prima della pubblicazione.</p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* .anim is present only when JS ran AND reduced-motion is off.
+     If it's absent, we run the essential interactions (nav) but skip every
+     animation and leave all content at its natural, fully-visible state. */
+  var animate = document.documentElement.classList.contains('anim');
+  var hasIO   = 'IntersectionObserver' in window;
+  var mqDesktop = window.matchMedia('(min-width: 1041px)');
+
+  /* ---------- Mobile nav toggle (always active) ---------- */
+  (function(){
+    var t = document.getElementById('navtoggle');
+    var n = document.getElementById('nav');
+    if (!t || !n) return;
+    function close(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.setAttribute('aria-label','Apri il menu'); }
+    t.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      t.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+    });
+    n.addEventListener('click', function(e){ if (e.target.tagName === 'A') close(); });
+    document.addEventListener('click', function(e){
+      if (!t.contains(e.target) && !n.contains(e.target)) close();
+    });
+  })();
+
+  /* ---------- Reveal on scroll (proofing-rise motif + role variants) ---------- */
+  var revealEls = [].slice.call(document.querySelectorAll('.reveal, .board-rise'));
+  if (!animate || !hasIO) {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- Map pin: one finite heat-pulse when location enters ---------- */
+  if (animate && hasIO) {
+    var pin = document.querySelector('#location .pin');
+    if (pin) {
+      var po = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if (en.isIntersecting){ en.target.classList.add('pulse'); po.unobserve(en.target); }
+        });
+      }, { threshold: .55 });
+      po.observe(pin);
+    }
+  }
+
+  var fill = document.getElementById('tlfill');
+
+  /* Reduced-motion / no-JS-anim: show the dough timeline as a complete static line
+     (never an empty track) and skip all scroll-linked work. */
+  if (!animate) {
+    if (fill) fill.style.height = '100%';
+    return;
+  }
+
+  /* ---------- Single rAF-batched scroll handler ----------
+     Drives three scroll-linked effects at once: hero ember-heat intensity,
+     dough-timeline fill, and the booking-rail dock state. */
+  var heat = document.querySelector('.hero__heat');
+  var hero = document.querySelector('.hero');
+  var tl   = document.getElementById('timeline');
+  var rail = document.querySelector('.rail');
+  var ticking = false;
+
+  function frame(){
+    ticking = false;
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var y  = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+    /* Hero ember-heat shimmer intensifies as you scroll into the hero */
+    if (heat && hero) {
+      var hh = hero.offsetHeight || vh;
+      var hp = Math.max(0, Math.min(1, y / (hh * 0.9)));
+      heat.style.setProperty('--heat', hp.toFixed(3));
+    }
+
+    /* Dough-timeline ember line fills from mix to fire with scroll depth */
+    if (tl && fill) {
+      var r = tl.getBoundingClientRect();
+      var start = vh * 0.78, end = vh * 0.22;
+      var span = r.height - (start - end);
+      var tp = span > 0 ? (start - r.top) / span : 0;
+      tp = Math.max(0, Math.min(1, tp));
+      fill.style.height = (tp * 100).toFixed(2) + '%';
+    }
+
+    /* Booking rail eases into its docked state once it reaches the sticky offset */
+    if (rail) {
+      if (mqDesktop.matches) {
+        rail.classList.toggle('docked', rail.getBoundingClientRect().top <= 88);
+      } else {
+        rail.classList.remove('docked');
+      }
+    }
+  }
+
+  function onScroll(){
+    if (!ticking){ ticking = true; requestAnimationFrame(frame); }
+  }
+
+  frame();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+})();
+</script>
+</body>
+</html>

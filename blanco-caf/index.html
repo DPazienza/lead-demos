@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blanco Café — Il caffè-bar tutto bianco di Milano</title>
+<meta name="description" content="Blanco Café: un caffè-bar milanese interamente bianco, dal primo espresso delle 07:00 allo Spritz del golden hour. Una sala luminosa dove l'unico colore è nel bicchiere. Prenota un tavolo a Milano." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+<script>
+  /* Progressive-enhancement flag: set BEFORE body paints so reveal-hidden
+     styles apply with no flash. Only opt in to motion if the user allows it. */
+  (function () {
+    try {
+      var el = document.documentElement;
+      el.classList.add('js');
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.classList.add('anim');
+      }
+    } catch (e) {}
+  })();
+</script>
+<style>
+/* ============================================================
+   TOKENS & RESET
+   ============================================================ */
+:root {
+  --paper:      #F6F3EE;
+  --white:      #FFFFFF;
+  --stone:      #E7E1D6;
+  --orange:     #EA5A1F;
+  --amber:      #F4B23C;
+  --ink:        #1C1D1A;
+  --sage:       #3B4A3E;
+  --warm-glow:  #FFF8EF;   /* aperitivo tint */
+
+  --grotesk: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --serif:   "Newsreader", Georgia, "Times New Roman", serif;
+
+  --rail:  76px;
+  --maxw:  1240px;
+  --ease:  cubic-bezier(.22,.61,.36,1);
+  --exit:  cubic-bezier(0.16, 1, 0.3, 1);
+  --r:     6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration-skip-ink: auto; }
+
+/* Universal focus ring */
+:focus-visible {
+  outline: 2.5px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Grotesque elements */
+h1, h2, h3,
+.nav-brand, .btn, .timestamp,
+.eyebrow, .kicker, .stat b,
+.book-phone, .menu-row .price,
+.rating-num, .foot-brand,
+.dayclock, .hours .row {
+  font-family: var(--grotesk);
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE
+   ============================================================ */
+.kicker, .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: .66rem;
+  font-weight: 600;
+  color: var(--sage);
+}
+
+.timestamp {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5em;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .18em;
+  color: var(--orange);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.timestamp .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--orange);
+  display: inline-block;
+  transform: translateY(-1px);
+  flex: none;
+}
+
+h2.title {
+  font-size: clamp(2.1rem, 5.6vw, 3.6rem);
+  line-height: 1.0;
+  letter-spacing: -.03em;
+  font-weight: 700;
+  margin: 0 0 .55em;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(1.08rem, 1.8vw, 1.34rem);
+  line-height: 1.55;
+  max-width: 46ch;
+  color: #2e2f2a;
+}
+
+p {
+  max-width: 62ch;
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: #33342f;
+}
+p:last-child { margin-bottom: 0; }
+
+.fignote {
+  font-family: var(--grotesk);
+  font-size: .67rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9a968d;
+  margin-top: 10px;
+}
+
+/* ============================================================
+   LAYOUT WRAPPERS
+   ============================================================ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 40px);
+}
+
+.chapter {
+  position: relative;
+  padding: clamp(72px, 10vh, 112px) 0;
+}
+
+/* Day-arc background progression */
+#caffe   { background: var(--white); }
+#stanza  { background: var(--paper); }
+#aperitivo { background: var(--warm-glow); }
+#bancone { background: var(--white); }
+#mani    { background: var(--paper); }
+#quartiere { background: var(--white); }
+#proof   { background: var(--warm-glow); }
+#faq     { background: var(--paper); }
+
+/* Section separators — visible but light */
+.chapter + .chapter { border-top: 1px solid rgba(28,29,26,.12); }
+
+/* ============================================================
+   TOP NAV
+   ============================================================ */
+.topbar {
+  position: fixed; inset: 0 0 auto 0; z-index: 60;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px clamp(16px, 4vw, 36px);
+  background: rgba(246,243,238,.82);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid rgba(28,29,26,.1);
+  box-shadow: 0 1px 0 rgba(28,29,26,.04), 0 4px 20px -4px rgba(28,29,26,.08);
+  transition: box-shadow .4s var(--ease), background .4s var(--ease);
+}
+.topbar.scrolled {
+  background: rgba(246,243,238,.94);
+  box-shadow: 0 1px 0 rgba(28,29,26,.06), 0 8px 30px -8px rgba(28,29,26,.16);
+}
+
+.nav-brand {
+  font-family: var(--grotesk);
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.nav-brand span { color: var(--orange); }
+
+.nav-links {
+  display: flex; gap: clamp(12px, 2vw, 26px); align-items: center;
+  list-style: none; margin: 0; padding: 0;
+}
+.nav-links a:not(.btn) {
+  text-decoration: none;
+  font-family: var(--grotesk);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .03em;
+  color: #3a3b36;
+  position: relative;
+  transition: color .2s;
+}
+/* underline draw on hover */
+.nav-links a:not(.btn)::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -5px;
+  height: 2px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .28s var(--ease);
+}
+.nav-links a:not(.btn):hover { color: var(--orange); }
+.nav-links a:not(.btn):hover::after { transform: scaleX(1); }
+
+.nav-cta { margin-left: 4px; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: .5em;
+  font-family: var(--grotesk);
+  font-size: .84rem; font-weight: 600; letter-spacing: .03em;
+  text-decoration: none; cursor: pointer;
+  padding: 11px 22px; border-radius: 999px;
+  min-height: 44px;
+  border: 1.5px solid transparent;
+  transition: background .25s var(--ease), color .25s var(--ease),
+              border-color .25s var(--ease), box-shadow .25s var(--ease),
+              transform .2s var(--ease);
+}
+.btn svg { width: 15px; height: 15px; flex: none; }
+
+.btn-primary {
+  background: var(--orange); color: #fff;
+  border-color: var(--orange);
+  box-shadow: 0 4px 14px -3px rgba(234,90,31,.42);
+}
+.btn-primary:hover {
+  background: #d24d15; border-color: #d24d15;
+  box-shadow: 0 6px 20px -4px rgba(234,90,31,.5);
+  transform: translateY(-2px);
+}
+.btn-primary:active { transform: translateY(0); box-shadow: none; }
+
+.btn-ghost {
+  background: transparent; color: var(--ink);
+  border-color: rgba(28,29,26,.3);
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  box-shadow: 0 2px 8px -2px rgba(28,29,26,.12);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   HAMBURGER
+   ============================================================ */
+.hamburger {
+  display: none; border: 0; background: transparent; cursor: pointer;
+  width: 44px; height: 44px; padding: 8px; border-radius: 10px;
+}
+.hamburger span {
+  display: block; height: 2px; background: var(--ink); margin: 5px 0;
+  border-radius: 2px;
+  transition: transform .3s var(--ease), opacity .2s;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   SCROLL PROGRESS BAR (mobile equivalent of the day-clock advance)
+   ============================================================ */
+.scroll-prog {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 61;
+  transform: scaleX(0); transform-origin: left;
+  background: linear-gradient(90deg, var(--amber), var(--orange));
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ============================================================
+   COLOUR-TEMPERATURE DRIFT OVERLAY (scroll-linked)
+   ============================================================ */
+.temp-overlay {
+  position: fixed; inset: 0; z-index: 3;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0;                       /* driven by scroll in JS */
+  background: linear-gradient(180deg,
+    #ffffff 0%,
+    #ffffff 18%,
+    #FBE3B8 55%,
+    #F4B23C 82%,
+    #EA5A1F 100%);
+  will-change: opacity;
+}
+
+/* ============================================================
+   DAY-CLOCK RAIL
+   ============================================================ */
+.dayclock {
+  position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail); z-index: 40;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 104px 0 44px;
+  pointer-events: none;
+}
+
+/* The gradient spine — 2px wide so it's actually visible */
+.dayclock::before {
+  content: "";
+  position: absolute; top: 104px; bottom: 44px; left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg,
+    var(--stone) 0%,
+    var(--stone) 35%,
+    var(--amber) 65%,
+    var(--orange) 100%);
+  transform: translateX(-1px);
+  border-radius: 2px;
+}
+
+/* Progress fill riding the spine — grows as you descend */
+.spine-fill {
+  position: absolute; top: 104px; bottom: 44px; left: 50%;
+  width: 3px; margin-left: -1.5px;
+  background: linear-gradient(180deg, var(--amber), var(--orange));
+  border-radius: 3px;
+  transform: scaleY(0); transform-origin: top;
+  box-shadow: 0 0 10px rgba(234,90,31,.4);
+  will-change: transform;
+  z-index: 1;
+}
+
+.dayclock ol {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; justify-content: space-between;
+  flex: 1; width: 100%; position: relative; z-index: 2;
+}
+.dayclock li { position: relative; pointer-events: auto; }
+
+.dayclock a {
+  display: flex; align-items: center; justify-content: center;
+  width: var(--rail); height: 28px;
+  text-decoration: none;
+  font-family: var(--grotesk); font-size: .56rem; font-weight: 600;
+  letter-spacing: .06em; color: #a09c92;
+  transition: color .3s var(--ease);
+}
+
+/* Dot markers — 9px, prominent */
+.dayclock a::before {
+  content: "";
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--stone);
+  position: absolute; z-index: 1;
+  transition: transform .45s var(--exit), background .45s var(--exit),
+              border-color .45s var(--exit), box-shadow .45s var(--exit);
+}
+
+/* Tooltip label */
+.dayclock a span {
+  position: absolute;
+  left: calc(var(--rail) + 4px);
+  background: var(--paper);
+  border: 1px solid var(--stone);
+  padding: 3px 8px; border-radius: 4px;
+  white-space: nowrap;
+  font-size: .62rem; color: var(--ink);
+  opacity: 0; transform: translateX(-8px);
+  transition: opacity .3s, transform .3s var(--exit);
+  pointer-events: none;
+  box-shadow: 0 2px 8px -2px rgba(28,29,26,.14);
+}
+
+/* Active state: dot slides + grows into an orange halo ring */
+.dayclock li.active a { color: var(--orange); }
+.dayclock li.active a::before {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: scale(2);
+  box-shadow: 0 0 0 5px rgba(234,90,31,.16);
+}
+.dayclock li.active a span {
+  opacity: 1;
+  transform: none;
+}
+
+/* Rail inset for content */
+.rail-inset { padding-left: var(--rail); }
+
+/* ============================================================
+   HERO — the wow moment
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  overflow: clip;
+  background: var(--white);
+}
+
+.hero-media {
+  position: absolute; inset: 0; z-index: 1; overflow: clip;
+  will-change: transform, filter;
+}
+.hero-media video,
+.hero-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 58% 48%;
+}
+
+/* Layered scrim: strong left panel + bottom fade */
+.hero-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.5) 0%,
+      rgba(255,255,255,0) 22%,
+      rgba(255,255,255,0) 52%,
+      rgba(246,243,238,.92) 100%),
+    linear-gradient(90deg,
+      rgba(255,255,255,.78) 0%,
+      rgba(255,255,255,.52) 28%,
+      rgba(255,255,255,0) 52%);
+}
+
+/* HERO EXPOSURE BLOOM — the room lights up from dawn under-exposure */
+html.anim .hero-media { animation: heroBloom 1.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes heroBloom {
+  0%   { filter: brightness(.52) contrast(1.14) saturate(.62); }
+  60%  { filter: brightness(.9)  contrast(1.03) saturate(.9); }
+  100% { filter: brightness(1)   contrast(1)    saturate(1); }
+}
+
+/* Giant BLANCO wordmark — the O ghosts behind the Spritz glass */
+.hero-wordmark {
+  position: absolute; z-index: 2;
+  left: 0; right: 0; top: 18%;
+  text-align: center;
+  pointer-events: none;
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: clamp(4.5rem, 20vw, 17.5rem);
+  letter-spacing: -.035em; line-height: .82;
+  color: rgba(28,29,26,.9);
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+/* The O — faint ghost sitting behind the glass */
+.hero-wordmark .lit {
+  color: rgba(28,29,26,.28);
+}
+
+/* Hero copy — bottom-left */
+.hero-copy {
+  position: relative; z-index: 3;
+  align-self: end;
+  max-width: var(--maxw); margin: 0 auto; width: 100%;
+  padding: 0 clamp(18px, 5vw, 48px) clamp(44px, 9vh, 100px);
+}
+.hero-copy .timestamp { font-size: .9rem; }
+
+.hero h1 {
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: clamp(1.75rem, 3.8vw, 3.1rem);
+  line-height: 1.04; letter-spacing: -.025em;
+  max-width: 17ch;
+  margin: .12em 0 .5em;
+  color: var(--ink);
+}
+.hero-sub {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.65vw, 1.24rem);
+  max-width: 42ch; color: #2e2f2a;
+  margin: 0 0 28px; line-height: 1.55;
+}
+.hero-actions {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+}
+.hero-phone {
+  font-family: var(--grotesk); font-size: .82rem;
+  color: #555750; letter-spacing: .02em;
+}
+.hero-phone b { color: var(--ink); font-weight: 600; }
+
+/* HERO STAGGERED ENTRANCE (heading -> subcopy -> CTA) */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+html.anim .hero-copy .timestamp { animation: heroRise .6s var(--exit) .15s both; }
+html.anim .hero h1              { animation: heroRise .7s var(--exit) .28s both; }
+html.anim .hero-sub            { animation: heroRise .7s var(--exit) .42s both; }
+html.anim .hero-actions        { animation: heroRise .7s var(--exit) .56s both; }
+html.anim .colour-note         { animation: heroRise .8s var(--exit) .8s both; }
+
+/* Colour-note callout — top-right, with legibility backing */
+.colour-note {
+  position: absolute; z-index: 3;
+  right: clamp(18px, 4vw, 48px); top: 104px;
+  max-width: 200px; text-align: right;
+  font-family: var(--serif);
+  font-size: .84rem; color: #2e2f2a; line-height: 1.45;
+  background: rgba(246,243,238,.86);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid rgba(231,225,214,.9);
+}
+.colour-note b {
+  display: block;
+  font-family: var(--grotesk); font-weight: 700;
+  color: var(--orange); font-size: .64rem;
+  letter-spacing: .25em; text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+/* ============================================================
+   EDITORIAL SPLIT
+   ============================================================ */
+.split {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: clamp(32px, 5.5vw, 72px);
+  align-items: center;
+}
+.split.reverse {
+  grid-template-columns: 5fr 7fr;
+}
+.split.reverse .split-media { order: -1; }
+
+.split-media { position: relative; }
+.split-media img {
+  width: 100%;
+  border-radius: var(--r);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  box-shadow: 0 28px 64px -14px rgba(28,29,26,.2), 0 4px 16px -4px rgba(28,29,26,.1);
+}
+.split-media.wide img {
+  aspect-ratio: 16/11;
+  object-position: center 40%;
+}
+
+.body-copy p + p { margin-top: .9em; }
+
+/* Stat row */
+.stat-row {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(28,29,26,.1);
+}
+.stat b {
+  display: block;
+  font-size: 1.9rem; font-weight: 700;
+  color: var(--ink); line-height: 1;
+  letter-spacing: -.02em;
+}
+.stat span {
+  font-family: var(--grotesk);
+  font-size: .75rem; color: #78746b;
+  letter-spacing: .02em;
+  margin-top: 2px; display: block;
+}
+
+/* ============================================================
+   ROOM — full-bleed architecture
+   ============================================================ */
+.room-full {
+  position: relative; overflow: clip;
+  margin: 0;
+}
+.room-full img {
+  width: 100%;
+  height: clamp(380px, 68vh, 720px);
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+.room-caption {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  padding: clamp(24px, 5vw, 56px);
+  max-width: 560px;
+  background: linear-gradient(0deg,
+    rgba(246,243,238,.96) 0%,
+    rgba(246,243,238,.7) 60%,
+    rgba(246,243,238,0) 100%);
+}
+.room-caption p {
+  color: var(--ink); font-size: 1.04rem; line-height: 1.55;
+  max-width: 44ch;
+}
+
+/* ============================================================
+   MENU — Il Bancone
+   ============================================================ */
+/* Amber accent top-stripe */
+#bancone::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--amber) 0%, var(--orange) 100%);
+  position: absolute; top: 0; left: 0; right: 0;
+}
+
+.menu-head {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 40px; align-items: end;
+  margin-bottom: 40px;
+  position: relative;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 56px;
+}
+.menu-col h3 {
+  font-family: var(--grotesk);
+  font-size: .66rem; letter-spacing: .28em;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--sage);
+  margin: 32px 0 4px;
+}
+.menu-col h3:first-child { margin-top: 0; }
+
+.menu-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline; gap: 14px;
+  padding: 13px 10px 13px 14px;
+  border-bottom: 1px solid rgba(28,29,26,.09);
+  transition: background .25s var(--ease), padding-left .25s var(--ease);
+  position: relative;
+  cursor: default;
+}
+.menu-row:hover { background: rgba(246,243,238,.7); padding-left: 20px; }
+
+/* Accent bar — 4px wide so it registers */
+.menu-row::before {
+  content: "";
+  position: absolute; left: 0; top: 10px; bottom: 10px;
+  width: 4px; border-radius: 2px;
+  background: var(--amber);
+  opacity: 0;
+  transform: scaleY(.4); transform-origin: top;
+  transition: opacity .25s var(--ease), transform .3s var(--ease);
+}
+.menu-row:hover::before { opacity: 1; transform: scaleY(1); }
+
+/* Condensation hairline that slides in on hover (right of the glass) */
+.menu-row::after {
+  content: "";
+  position: absolute; right: 78px; top: 8px; bottom: 8px;
+  width: 2px; border-radius: 2px;
+  background: linear-gradient(180deg,
+    rgba(180,205,220,0) 0%,
+    rgba(150,190,215,.85) 45%,
+    rgba(180,205,220,0) 100%);
+  opacity: 0; transform: translateX(8px);
+  transition: opacity .3s var(--ease), transform .35s var(--ease);
+  pointer-events: none;
+  filter: blur(.3px);
+}
+.menu-row:hover::after { opacity: 1; transform: translateX(0); }
+
+.menu-row .name { font-family: var(--serif); font-size: 1.04rem; color: var(--ink); }
+.menu-row .name small {
+  display: block;
+  font-family: var(--grotesk);
+  font-size: .7rem; letter-spacing: .02em;
+  color: #8a8680; margin-top: 1px;
+}
+.menu-row .price {
+  font-weight: 700; font-size: .98rem;
+  color: var(--ink); white-space: nowrap;
+  transition: transform .28s var(--exit), color .28s var(--ease);
+}
+/* price ticks up on hover */
+.menu-row:hover .price { transform: translateY(-3px); color: var(--orange); }
+
+.menu-media { margin-top: 40px; }
+.menu-media img {
+  width: 100%;
+  aspect-ratio: 21/9;
+  object-fit: cover;
+  object-position: center 52%;
+  border-radius: var(--r);
+  box-shadow: 0 16px 48px -10px rgba(28,29,26,.16);
+}
+
+/* THE SPRITZ FILL gauge — amber rises on entering the drinks chapter */
+.spritz-gauge {
+  position: absolute; top: -6px; right: 0;
+  width: 46px; height: 110px;
+  border: 2px solid rgba(28,29,26,.22);
+  border-radius: 5px 5px 12px 12px;
+  background: rgba(255,255,255,.5);
+  overflow: hidden;
+}
+.spritz-gauge .liquid {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #FFC862 0%, var(--amber) 40%, var(--orange) 100%);
+  transform: translateY(101%);
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+/* the meniscus — a bright surface band at the top of the liquid */
+.spritz-gauge .liquid::after {
+  content: "";
+  position: absolute; top: -4px; left: -3%;
+  width: 106%; height: 9px; border-radius: 50%;
+  background: rgba(255,238,200,.95);
+}
+.spritz-gauge.filled .liquid { transform: translateY(22%); }
+/* settling wobble on the surface, twice, then still — no infinite loop */
+.spritz-gauge.filled .liquid::after {
+  animation: meniscusWobble 1.5s var(--ease) 1.1s 2;
+}
+@keyframes meniscusWobble {
+  0%, 100% { transform: translateY(0) scaleX(1); }
+  25%      { transform: translateY(-2.5px) scaleX(1.04); }
+  60%      { transform: translateY(1.5px) scaleX(.98); }
+}
+
+/* ============================================================
+   TEAM — Le Mani Dietro il Banco
+   ============================================================ */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 52px);
+  align-items: start;
+}
+
+/* Second card offset down — intentional asymmetry for depth */
+.team-card:nth-child(2) { margin-top: 52px; }
+
+.team-card img {
+  width: 100%;
+  aspect-ratio: 4/5; object-fit: cover;
+  border-radius: var(--r);
+  box-shadow: 0 24px 56px -12px rgba(28,29,26,.2);
+  transition: transform .5s var(--exit), box-shadow .5s var(--exit);
+}
+.team-card:hover img {
+  transform: translateY(-6px);
+  box-shadow: 0 34px 70px -14px rgba(28,29,26,.28);
+}
+.team-card h3 {
+  font-family: var(--grotesk);
+  font-weight: 700; font-size: 1.15rem;
+  margin: 18px 0 2px; letter-spacing: -.01em;
+}
+.team-card .role {
+  font-family: var(--grotesk);
+  font-size: .66rem; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--orange);
+  font-weight: 600; margin-bottom: 10px;
+  display: block;
+}
+.team-card p { font-size: .96rem; }
+
+/* ============================================================
+   NEIGHBOURHOOD — Il Quartiere
+   ============================================================ */
+.hood {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4.5vw, 60px);
+  align-items: center;
+}
+.hood-media { overflow: clip; border-radius: var(--r); }
+.hood-media img {
+  width: 100%;
+  aspect-ratio: 5/4; object-fit: cover;
+  object-position: center 55%;
+  border-radius: var(--r);
+  box-shadow: 0 24px 56px -12px rgba(28,29,26,.18);
+  transition: transform .7s var(--exit);
+}
+.hood-media:hover img { transform: scale(1.03); }
+
+.address-block {
+  font-size: 1.06rem; line-height: 1.7; color: var(--ink);
+}
+.address-block strong {
+  font-family: var(--grotesk);
+  font-weight: 700; font-size: 1.18rem; letter-spacing: -.01em;
+}
+.address-block .line-muted {
+  color: #7c786f; font-size: .84rem;
+  font-family: var(--grotesk); display: block; margin-top: 4px;
+}
+
+.hours { margin: 22px 0; border-top: 1px solid rgba(28,29,26,.11); }
+.hours .row {
+  display: flex; justify-content: space-between;
+  padding: 9px 0; border-bottom: 1px solid rgba(28,29,26,.08);
+  font-family: var(--grotesk); font-size: .86rem; color: var(--ink);
+  font-weight: 500;
+}
+.hours .row span:last-child { color: #55524c; font-weight: 400; }
+
+/* ============================================================
+   SOCIAL PROOF — La Sala Piena
+   ============================================================ */
+.proof-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(32px, 5.5vw, 68px);
+  align-items: center;
+}
+
+.rating-hero { text-align: left; }
+
+/* Huge rating number in orange — the emotional anchor */
+.rating-num {
+  font-weight: 700;
+  font-size: clamp(5rem, 13vw, 9rem);
+  line-height: .82; letter-spacing: -.05em;
+  color: var(--orange);
+}
+.rating-num sup {
+  font-size: .28em; font-weight: 500;
+  color: #9a9690; vertical-align: super;
+  letter-spacing: -.01em;
+}
+
+.stars {
+  display: inline-flex; gap: 4px;
+  margin: 16px 0 8px;
+}
+.stars svg { width: 24px; height: 24px; }
+
+.rating-meta {
+  font-family: var(--grotesk);
+  font-size: .9rem; color: #555751; letter-spacing: .02em;
+}
+.rating-meta b { color: var(--ink); }
+
+.distro {
+  margin-top: 24px; display: grid; gap: 7px;
+  max-width: 300px;
+}
+.distro .bar {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center; gap: 10px;
+  font-family: var(--grotesk); font-size: .72rem; color: #7c786f;
+}
+.distro .track {
+  height: 8px; border-radius: 4px;
+  background: var(--stone); overflow: hidden;
+}
+.distro .fill {
+  height: 100%; background: var(--amber); border-radius: 4px;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* distribution bars sweep out when the proof section reveals */
+html:not(.anim) .distro .fill { transform: scaleX(1); }
+.distro.grown .fill { transform: scaleX(1); }
+
+.proof-para {
+  font-size: 1.1rem; color: #2e2f2a;
+  margin-top: 22px; max-width: 38ch;
+  font-style: italic;
+}
+
+/* Proof photo — full height of the grid cell */
+.proof-media {
+  position: relative; overflow: clip;
+  border-radius: var(--r);
+  box-shadow: 0 24px 56px -12px rgba(28,29,26,.18);
+}
+.proof-media img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  border-radius: var(--r);
+}
+/* Warm amber overlay at bottom of proof photo */
+.proof-media::after {
+  content: "";
+  position: absolute; inset: auto 0 0 0;
+  height: 38%;
+  background: linear-gradient(0deg,
+    rgba(244,178,60,.28) 0%,
+    rgba(244,178,60,0) 100%);
+  border-radius: 0 0 var(--r) var(--r);
+}
+
+/* ============================================================
+   FAQ — La Prima Volta
+   ============================================================ */
+.faq { max-width: 760px; }
+
+.faq details {
+  border-bottom: 1px solid rgba(28,29,26,.12);
+  padding: 4px 0;
+}
+.faq summary {
+  list-style: none; cursor: pointer;
+  padding: 20px 48px 20px 0;
+  position: relative;
+  font-family: var(--grotesk); font-weight: 600;
+  font-size: 1.08rem; letter-spacing: -.01em;
+  color: var(--ink);
+  transition: color .2s;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--orange); }
+
+/* Plus / Minus toggle — orange, large enough to see, rotates */
+.faq summary::after {
+  content: "+";
+  position: absolute; right: 6px; top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  font-family: var(--grotesk); font-weight: 400;
+  font-size: 1.6rem; color: var(--orange);
+  line-height: 1;
+  transition: transform .3s var(--exit);
+}
+.faq details[open] summary::after { transform: translateY(-50%) rotate(135deg); }
+
+.faq details[open] summary { color: var(--orange); }
+
+/* Answer text with left orange accent + a gentle open reveal */
+.faq details p {
+  padding: 0 0 22px 16px;
+  margin: 0;
+  color: #2e2f2a;
+  border-left: 4px solid var(--amber);
+  font-size: 1rem;
+}
+html.anim .faq details[open] p { animation: faqOpen .4s var(--exit) both; }
+@keyframes faqOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   RISERVA — booking & contact
+   ============================================================ */
+.riserva {
+  background: var(--ink);
+  color: var(--paper);
+}
+.riserva .timestamp { color: var(--amber); }
+.riserva .timestamp .dot { background: var(--amber); }
+.riserva h2.title { color: var(--white); }
+.riserva .lede { color: #d9d5cb; }
+.riserva p { color: #d9d5cb; }
+
+.riserva-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(32px, 5.5vw, 72px);
+  align-items: start;
+}
+
+/* Riserva photo */
+.riserva-media {
+  position: relative; overflow: clip;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  box-shadow: 0 24px 56px -12px rgba(0,0,0,.36);
+}
+.riserva-media img {
+  width: 100%;
+  aspect-ratio: 4/3; object-fit: cover;
+  object-position: center 40%;
+  display: block; border-radius: 10px;
+}
+/* Amber glow at bottom of riserva photo */
+.riserva-media::after {
+  content: "";
+  position: absolute; inset: auto 0 0 0; height: 42%;
+  background: linear-gradient(0deg,
+    rgba(234,90,31,.32) 0%,
+    rgba(234,90,31,0) 100%);
+  border-radius: 0 0 10px 10px;
+}
+
+.riserva-note { font-size: .95rem; color: #cdc9c0; line-height: 1.6; }
+.riserva-note a { color: var(--amber); font-weight: 600; }
+
+/* Colour-in-the-glass callout strip */
+.glass-echo {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 24px;
+}
+.glass-echo .swatch {
+  width: 36px; height: 36px; border-radius: 50%; flex: none;
+  background: linear-gradient(150deg, var(--amber) 0%, var(--orange) 100%);
+  box-shadow: 0 0 0 5px rgba(244,178,60,.18), 0 0 0 10px rgba(244,178,60,.07);
+}
+.glass-echo span {
+  font-family: var(--grotesk); font-size: .8rem;
+  color: #bdb9af; letter-spacing: .03em; line-height: 1.4;
+}
+
+/* Booking card */
+.book-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 16px; padding: 28px 28px 24px;
+  position: sticky; top: 96px;
+  box-shadow:
+    0 0 0 1px rgba(244,178,60,.22),
+    0 32px 64px -20px rgba(0,0,0,.5);
+}
+.book-card h3 {
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: 1.12rem; margin: 0 0 4px; color: #fff;
+  letter-spacing: -.01em;
+}
+.book-card p.small {
+  font-size: .88rem; color: #bdb9af; margin: 0 0 18px;
+  max-width: none; line-height: 1.5;
+}
+
+.book-phone {
+  display: block;
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: 2rem; letter-spacing: .01em;
+  color: var(--amber); text-decoration: none;
+  margin: 6px 0 6px;
+  transition: color .2s;
+}
+.book-phone:hover { color: #fff; }
+
+.book-actions { display: grid; gap: 10px; margin-top: 20px; }
+.book-actions .btn { width: 100%; justify-content: center; }
+
+.btn-amber {
+  background: var(--amber); border-color: var(--amber);
+  color: var(--ink);
+  box-shadow: 0 4px 14px -4px rgba(244,178,60,.5);
+}
+.btn-amber:hover {
+  background: #fff; border-color: #fff;
+  box-shadow: 0 6px 20px -4px rgba(255,255,255,.3);
+  transform: translateY(-2px);
+}
+
+.btn-line {
+  background: transparent; border-color: rgba(255,255,255,.28);
+  color: var(--paper);
+}
+.btn-line:hover { border-color: rgba(255,255,255,.7); transform: translateY(-2px); }
+
+.trust-strip {
+  margin-top: 22px; padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex; gap: 18px; flex-wrap: wrap;
+  font-family: var(--grotesk); font-size: .74rem;
+  color: #a09c92; letter-spacing: .02em;
+}
+.trust-strip b { color: var(--white); }
+
+/* ============================================================
+   BOOKING PILL MORPH — persistent pill expands into a panel
+   ============================================================ */
+.book-pill {
+  position: fixed; right: clamp(14px, 3vw, 26px); bottom: clamp(14px, 3vw, 26px);
+  z-index: 58;
+  font-family: var(--grotesk);
+}
+.pill-shell {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px -8px rgba(28,29,26,.5), 0 0 0 1px rgba(244,178,60,.28);
+  width: max-content; max-width: min(320px, calc(100vw - 28px));
+  transition: border-radius .5s var(--exit), box-shadow .5s var(--exit);
+}
+.book-pill.open .pill-shell { border-radius: 20px; }
+
+.pill-trigger {
+  display: flex; align-items: center; gap: .55em;
+  padding: 14px 22px;
+  font-size: .84rem; font-weight: 600; letter-spacing: .02em;
+  color: #fff; cursor: pointer;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.pill-trigger svg { width: 16px; height: 16px; flex: none; color: var(--amber); transition: transform .5s var(--exit); }
+.book-pill.open .pill-trigger svg { transform: rotate(45deg); }
+.pill-trigger:hover { color: var(--amber); }
+
+.pill-panel {
+  max-height: 0; opacity: 0;
+  transform: translateY(6px);
+  transition: max-height .5s var(--exit), opacity .35s ease, transform .5s var(--exit);
+  padding: 0 22px;
+}
+.book-pill.open .pill-panel {
+  max-height: 260px; opacity: 1; transform: none;
+  padding: 0 22px 20px;
+}
+.pill-panel p {
+  font-size: .8rem; color: #bdb9af; margin: 0 0 12px; line-height: 1.5;
+  max-width: none;
+}
+.pill-phone {
+  display: block; text-decoration: none;
+  font-weight: 700; font-size: 1.5rem; color: var(--amber);
+  margin-bottom: 12px; letter-spacing: .01em;
+}
+.pill-phone:hover { color: #fff; }
+.pill-panel .btn { width: 100%; justify-content: center; }
+
+/* ============================================================
+   SCROLL REVEALS (progressive enhancement — only under html.anim)
+   ============================================================ */
+html.anim .rv {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s var(--exit), transform .8s var(--exit);
+  transition-delay: var(--rvd, 0ms);
+}
+html.anim .rv-media {
+  opacity: 0; transform: translateY(30px) scale(.965);
+  transition: opacity .8s var(--exit), transform .9s var(--exit);
+  transition-delay: var(--rvd, 0ms);
+}
+html.anim .rv-title {
+  opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(8px);
+  transition: opacity .5s ease, clip-path .85s var(--exit), transform .85s var(--exit);
+  transition-delay: var(--rvd, 0ms);
+}
+html.anim .rv.in,
+html.anim .rv-media.in { opacity: 1; transform: none; }
+html.anim .rv-title.in { opacity: 1; clip-path: inset(0 0 0 0); transform: none; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1080px) {
+  .rail-inset { padding-left: 0; }
+  .dayclock    { display: none; }
+}
+
+@media (max-width: 860px) {
+  /* Mobile nav drawer */
+  .nav-links {
+    position: fixed; inset: 62px 0 auto 0; z-index: 55;
+    flex-direction: column; align-items: flex-start; gap: 2px;
+    background: var(--paper);
+    border-bottom: 1px solid rgba(28,29,26,.12);
+    padding: 12px 22px 24px; margin: 0;
+    transform: translateY(-140%);
+    transition: transform .4s var(--exit);
+    box-shadow: 0 20px 40px -20px rgba(28,29,26,.4);
+  }
+  .nav-links.open { transform: none; }
+  .nav-links li   { width: 100%; }
+  .nav-links a:not(.btn) { display: block; padding: 13px 0; font-size: 1rem; width: 100%; }
+  .nav-links a:not(.btn)::after { display: none; }
+  .nav-links .nav-cta     { margin: 8px 0 0; }
+  .nav-links .nav-cta .btn { width: 100%; justify-content: center; }
+  .hamburger { display: block; }
+
+  /* Collapse grids */
+  .split, .split.reverse     { grid-template-columns: 1fr; gap: 28px; }
+  .split.reverse .split-media { order: 0; }
+  .split-media img,
+  .split-media.wide img      { aspect-ratio: 4/3; }
+
+  .menu-head  { grid-template-columns: 1fr; gap: 14px; padding-right: 60px; }
+  .menu-grid  { grid-template-columns: 1fr; }
+  .menu-row::after { right: 64px; }
+  .team-grid  { grid-template-columns: 1fr; }
+  .team-card:nth-child(2) { margin-top: 0; }
+  .hood       { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .riserva-grid { grid-template-columns: 1fr; }
+  .book-card  { position: static; }
+
+  /* Hero mobile: stack */
+  .colour-note { display: none; }
+  .hero        { min-height: auto; }
+  .hero-media  { position: relative; height: 60svh; min-height: 320px; }
+  .hero-media video, .hero-media img { object-position: 52% 38%; }
+  .hero-wordmark {
+    position: relative; top: auto;
+    margin: 24px 0 -8px;
+    font-size: 21vw;
+    mix-blend-mode: normal;
+    color: var(--ink);
+    letter-spacing: -.04em;
+  }
+  .hero-wordmark .lit { color: var(--orange); }
+  .hero-copy { padding: 20px 22px 48px; }
+  .hero-copy .timestamp { font-size: .8rem; }
+
+  /* Proof media on mobile: shorter */
+  .proof-media img { aspect-ratio: 16/9; }
+}
+
+@media (max-width: 520px) {
+  .chapter { padding: 60px 0; }
+  .stat-row { gap: 22px; }
+  .stat b   { font-size: 1.6rem; }
+  .rating-num { font-size: clamp(4.5rem, 20vw, 6.5rem); }
+  .distro { max-width: 100%; }
+  .spritz-gauge { width: 40px; height: 96px; }
+  .pill-trigger span { font-size: .8rem; }
+}
+
+/* ============================================================
+   REDUCED MOTION — everything visible, no motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .temp-overlay { display: none !important; }
+  .spine-fill, .scroll-prog { display: none !important; }
+  .spritz-gauge .liquid { transform: translateY(22%) !important; }
+  .distro .fill { transform: scaleX(1) !important; }
+  .rv, .rv-media, .rv-title { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll progress bar (mobile-visible day-arc cue) -->
+<div class="scroll-prog" aria-hidden="true"></div>
+<!-- Scroll-linked colour-temperature drift -->
+<div class="temp-overlay" aria-hidden="true"></div>
+
+<!-- ===== Top nav ===== -->
+<header class="topbar" id="topbar">
+  <a class="nav-brand" href="#top">BLANC<span>O</span></a>
+  <nav aria-label="Navigazione principale">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#caffe">Il Caffè</a></li>
+      <li><a href="#stanza">La Stanza</a></li>
+      <li><a href="#aperitivo">Aperitivo</a></li>
+      <li><a href="#bancone">Il Bancone</a></li>
+      <li><a href="#quartiere">Dove siamo</a></li>
+      <li class="nav-cta"><a class="btn btn-primary" data-cta href="tel:+393938801520">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+        Chiama per prenotare</a></li>
+    </ul>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== Day-clock rail spine ===== -->
+<aside class="dayclock" aria-label="Le ore della giornata">
+  <span class="spine-fill" aria-hidden="true"></span>
+  <ol>
+    <li data-clock="top"><a href="#top">07<span>07:00 · La sala si sveglia</span></a></li>
+    <li data-clock="caffe"><a href="#caffe">07·30<span>07:30 · Il Caffè</span></a></li>
+    <li data-clock="stanza"><a href="#stanza">10<span>La Stanza Bianca</span></a></li>
+    <li data-clock="aperitivo"><a href="#aperitivo">18<span>18:00 · L'Aperitivo</span></a></li>
+    <li data-clock="bancone"><a href="#bancone">19<span>Il Bancone</span></a></li>
+    <li data-clock="mani"><a href="#mani">20<span>Le mani dietro il banco</span></a></li>
+    <li data-clock="quartiere"><a href="#quartiere">21<span>Il Quartiere</span></a></li>
+    <li data-clock="proof"><a href="#proof">22<span>La sala piena</span></a></li>
+    <li data-clock="faq"><a href="#faq">23<span>La prima volta</span></a></li>
+    <li data-clock="riserva"><a href="#riserva">24<span>Riserva</span></a></li>
+  </ol>
+</aside>
+
+<div class="rail-inset">
+<main id="top">
+
+  <!-- ===== 07:00 HERO (wow moment) ===== -->
+  <section class="hero" aria-label="Blanco Café, la sala tutto bianca al golden hour">
+    <div class="hero-media" id="heroMedia">
+      <video autoplay muted loop playsinline poster="assets/hero-white-room-spritz.jpg">
+        <source src="assets/hero-cinemagraph.mp4" type="video/mp4" />
+        <img src="assets/hero-white-room-spritz.jpg" alt="A tall Spritz cocktail glowing amber on a white marble counter inside Blanco Café's all-white room at golden hour" />
+      </video>
+    </div>
+
+    <div class="hero-wordmark" id="heroWordmark" aria-hidden="true">BLANC<span class="lit">O</span></div>
+
+    <aside class="colour-note" aria-hidden="true">
+      <b>Un solo colore</b>
+      L'ambra dello Spritz, la ruota d'arancia, la luce: l'unica saturazione in una sala di puro bianco.
+    </aside>
+
+    <div class="hero-copy">
+      <span class="timestamp"><span class="dot"></span>07:00 — La sala si sveglia</span>
+      <h1>Una stanza tutta bianca a Milano, dove l'unico colore è nel bicchiere.</h1>
+      <p class="hero-sub">Dal primo espresso in piedi delle sette allo Spritz del golden hour. Una sola sala luminosa, un solo drink fatto bene.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-cta href="tel:+393938801520">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+          Chiama per prenotare</a>
+        <a class="btn btn-ghost" href="#bancone">Guarda il bancone</a>
+        <span class="hero-phone">oppure chiama <b>393 880 1520</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 07:30 Il Caffè ===== -->
+  <section class="chapter" id="caffe">
+    <div class="wrap">
+      <div class="split">
+        <div class="body-copy">
+          <span class="timestamp rv"><span class="dot"></span>07:30 — Il Caffè</span>
+          <h2 class="title rv-title">Prima di essere un bar,<br />Blanco è un caffè.</h2>
+          <p class="lede rv">Alle sette e mezza la macchina è già calda. Un espresso in piedi al bancone di marmo, due parole, e si riparte: è il rito che apre ogni giornata milanese.</p>
+          <p class="rv">Estraiamo su chicchi tostati per noi, con una crema densa e nocciolata servita nella tazzina bianca — la stessa che a mezzogiorno diventa un macchiato veloce e alle cinque un caffè freddo prima dell'aperitivo. Nessuna fila caotica: la sala bianca tiene il ritmo lento e ordinato di chi sa esattamente cosa ordinare.</p>
+          <div class="stat-row">
+            <div class="stat rv"><b>07:00</b><span>Apertura, tutti i giorni</span></div>
+            <div class="stat rv"><b>€1,20</b><span>Espresso al banco</span></div>
+            <div class="stat rv"><b>&lt; 2 min</b><span>Dal banco alla strada</span></div>
+          </div>
+        </div>
+        <div class="split-media rv-media">
+          <img src="assets/morning-espresso-pull.jpg" alt="A barista's hands pulling an espresso shot on a chrome machine in Blanco Café's white morning interior" loading="lazy" />
+          <p class="fignote">Il primo espresso della giornata, sulla macchina cromata.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== La Stanza Bianca ===== -->
+  <section class="chapter" id="stanza" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="timestamp rv"><span class="dot"></span>La Stanza Bianca</span>
+      <h2 class="title rv-title" style="max-width:16ch">Quasi ogni bar di Milano è scuro. Blanco fa l'esatto opposto.</h2>
+      <p class="lede rv" style="margin-bottom:36px">Ottone, legni scuri, luci basse: l'aperitivo milanese di solito è penombra. Qui le pareti sono di calce bianca, il pavimento in terrazzo chiaro, il bancone in marmo di Carrara. Il colore non è tolto per freddezza — è tolto per far spazio alla luce e a ciò che hai nel bicchiere.</p>
+    </div>
+    <figure class="room-full rv-media" style="margin:0">
+      <img src="assets/the-white-room-architecture.jpg" alt="The empty all-white architectural interior of Blanco Café with marble bar and tall daylit windows" loading="lazy" />
+      <figcaption class="room-caption">
+        <p style="margin:0;font-size:1.02rem;color:#33342f">Vetrate alte, marmo, rovere pallido e lino: una sola stanza architettonica che cambia carattere ora dopo ora, seguendo la luce di Milano dal mattino freddo al golden hour caldo.</p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ===== 18:00 L'Ora dell'Aperitivo ===== -->
+  <section class="chapter" id="aperitivo">
+    <div class="wrap">
+      <div class="split reverse">
+        <div class="split-media wide rv-media">
+          <img src="assets/aperitivo-spread.jpg" alt="A Milanese aperitivo spread of Spritz, wine and snacks on white marble at Blanco Café" loading="lazy" />
+          <p class="fignote">Spritz, calici e piccola cucina sul marmo bianco.</p>
+        </div>
+        <div class="body-copy">
+          <span class="timestamp rv"><span class="dot"></span>18:00 — L'Ora dell'Aperitivo</span>
+          <h2 class="title rv-title">Alle sei la stanza si accende d'ambra.</h2>
+          <p class="lede rv">È il momento in cui i regolari tornano. Il sole basso entra dalle vetrate, lava di dorato le pareti bianche, e l'unico colore vivo diventa l'arancione dello Spritz in mano.</p>
+          <p class="rv">Ogni aperitivo arriva con la nostra piccola cucina del banco: olive, taralli, focaccia calda. Niente buffet, niente confusione — solo ciò che accompagna bene un drink fatto come si deve. Vieni in piedi al banco o prenota un tavolo per restare fino al tramonto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Il Bancone (menu + prices) ===== -->
+  <section class="chapter" id="bancone">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <span class="timestamp rv"><span class="dot"></span>Il Bancone</span>
+          <h2 class="title rv-title">La carta del banco.</h2>
+        </div>
+        <p class="rv" style="color:#4a4b45">Dalla tazzina del mattino al signature del tramonto. La lista qui sotto è un esempio dimostrativo dei nostri classici — il titolare potrà confermare voci e prezzi definitivi.</p>
+        <div class="spritz-gauge" id="spritzGauge" aria-hidden="true"><span class="liquid"></span></div>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-col">
+          <h3 class="rv">Il mattino</h3>
+          <div class="menu-row rv"><span class="name">Espresso<small>Miscela della casa</small></span><span class="price">€1,20</span></div>
+          <div class="menu-row rv"><span class="name">Cappuccino<small>Latte montato a mano</small></span><span class="price">€1,80</span></div>
+          <div class="menu-row rv"><span class="name">Caffè freddo shakerato<small>Con o senza zucchero</small></span><span class="price">€3,50</span></div>
+          <div class="menu-row rv"><span class="name">Cornetto vuoto o farcito<small>Del forno del quartiere</small></span><span class="price">€1,60</span></div>
+
+          <h3 class="rv">Vini & bollicine</h3>
+          <div class="menu-row rv"><span class="name">Calice di Franciacorta<small>Brut, servito ghiacciato</small></span><span class="price">€7,00</span></div>
+          <div class="menu-row rv"><span class="name">Bianco fermo del giorno<small>Selezione al calice</small></span><span class="price">€6,00</span></div>
+        </div>
+
+        <div class="menu-col">
+          <h3 class="rv">I signature</h3>
+          <div class="menu-row rv"><span class="name">Spritz Blanco<small>Il nostro, l'unico arancione nella sala</small></span><span class="price">€8,00</span></div>
+          <div class="menu-row rv"><span class="name">Negroni Bianco<small>Gin, vermouth bianco, bitter chiaro</small></span><span class="price">€10,00</span></div>
+          <div class="menu-row rv"><span class="name">Americano<small>Bitter, vermouth, soda</small></span><span class="price">€7,00</span></div>
+          <div class="menu-row rv"><span class="name">Coupe del banco<small>Twist d'agrumi, sfera di ghiaccio</small></span><span class="price">€11,00</span></div>
+
+          <h3 class="rv">Accompagna</h3>
+          <div class="menu-row rv"><span class="name">Tagliere di focaccia & olive<small>La piccola cucina del banco</small></span><span class="price">€6,00</span></div>
+          <div class="menu-row rv"><span class="name">Analcolico d'autore<small>Agrumi, tonica, botaniche</small></span><span class="price">€6,00</span></div>
+        </div>
+      </div>
+
+      <div class="menu-media rv-media">
+        <img src="assets/signature-cocktail-detail.jpg" alt="Macro detail of a pale signature cocktail with a citrus twist and ice sphere on white marble" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Le Mani Dietro il Banco ===== -->
+  <section class="chapter" id="mani">
+    <div class="wrap">
+      <span class="timestamp rv"><span class="dot"></span>Le Mani Dietro il Banco</span>
+      <h2 class="title rv-title" style="max-width:14ch">Chi fa il drink è parte del drink.</h2>
+      <p class="lede rv" style="margin-bottom:40px">In una sala così essenziale, il gesto conta. Dietro il marmo lavora un piccolo team che conosce i regolari per nome e costruisce ogni bicchiere con la stessa cura del primo espresso.</p>
+      <div class="team-grid">
+        <div class="team-card rv">
+          <img src="assets/bartender-portrait.jpg" alt="A bartender in a white shirt concentrating while building a cocktail behind Blanco Café's marble bar" loading="lazy" />
+          <h3>Al banco dei cocktail</h3>
+          <p class="role">Bar Manager</p>
+          <p>Costruisce i signature: mano ferma sul bar spoon, occhio all'equilibrio, e quella precisione svizzera che la sala bianca pretende. È da qui che nasce lo Spritz Blanco.</p>
+        </div>
+        <div class="team-card rv">
+          <img src="assets/service-pour-team.jpg" alt="A Blanco Café staff member in a white apron pouring prosecco into a Spritz at the counter" loading="lazy" />
+          <h3>Al servizio del banco</h3>
+          <p class="role">Sala & Aperitivo</p>
+          <p>Versa, accoglie, tiene il ritmo dell'ora di punta senza mai alzare la voce. Il grembiule bianco, la bollicina che sale nel bicchiere: il golden hour passa dalle sue mani.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Il Quartiere ===== -->
+  <section class="chapter" id="quartiere">
+    <div class="wrap">
+      <span class="timestamp rv"><span class="dot"></span>Il Quartiere</span>
+      <h2 class="title rv-title" style="margin-bottom:36px">Dove siamo a Milano.</h2>
+      <div class="hood">
+        <div class="hood-media rv-media">
+          <img src="assets/milano-facade-street.jpg" alt="The white corner facade of Blanco Café on a quiet Milanese street with pavement tables and tram tracks" loading="lazy" />
+        </div>
+        <div>
+          <div class="address-block rv">
+            <strong>Blanco Café</strong><br />
+            Milano<br />
+            <span class="line-muted">Angolo tranquillo di quartiere, tavolini sul marciapiede, binari del tram a due passi.</span>
+          </div>
+
+          <div class="hours rv">
+            <div class="row"><span>Lun — Ven</span><span>07:00 — 24:00</span></div>
+            <div class="row"><span>Sabato</span><span>08:00 — 01:00</span></div>
+            <div class="row"><span>Domenica</span><span>08:00 — 22:00</span></div>
+          </div>
+
+          <div class="rv" style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Blanco+Caf%C3%A9+Milano" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Apri in Google Maps</a>
+            <a class="btn btn-primary" data-cta href="tel:+393938801520">Chiama il locale</a>
+          </div>
+          <p class="fignote" style="margin-top:14px">Orari indicativi a scopo dimostrativo, da confermare con il locale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== La Sala Piena (social proof) ===== -->
+  <section class="chapter proof" id="proof">
+    <div class="wrap">
+      <span class="timestamp rv"><span class="dot"></span>La Sala Piena</span>
+      <h2 class="title rv-title" style="margin-bottom:36px">Al golden hour, la stanza è viva.</h2>
+      <div class="proof-grid">
+        <div class="rating-hero">
+          <div class="rating-num rv">4,2<sup>/5</sup></div>
+          <div class="stars rv" aria-label="4,2 stelle su 5">
+            <svg viewBox="0 0 24 24" fill="#F4B23C" aria-hidden="true"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B23C" aria-hidden="true"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B23C" aria-hidden="true"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B23C" aria-hidden="true"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="q" x1="0" x2="1" y1="0" y2="0"><stop offset="20%" stop-color="#F4B23C"/><stop offset="20%" stop-color="#E7E1D6"/></linearGradient></defs><path fill="url(#q)" d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <p class="rating-meta rv"><b>4,2 su 5</b> — da <b>384 recensioni</b> reali.</p>
+          <div class="distro rv" id="distro" aria-hidden="true">
+            <div class="bar"><span>5★</span><div class="track"><div class="fill" style="width:58%"></div></div></div>
+            <div class="bar"><span>4★</span><div class="track"><div class="fill" style="width:24%"></div></div></div>
+            <div class="bar"><span>3★</span><div class="track"><div class="fill" style="width:11%"></div></div></div>
+            <div class="bar"><span>2★</span><div class="track"><div class="fill" style="width:4%"></div></div></div>
+            <div class="bar"><span>1★</span><div class="track"><div class="fill" style="width:3%"></div></div></div>
+          </div>
+          <p class="proof-para rv">Un giudizio costruito nel tempo, recensione dopo recensione — non un picco isolato, ma una media tenuta alta da centinaia di clienti che tornano.</p>
+        </div>
+        <div class="proof-media rv-media">
+          <img src="assets/golden-hour-full-room.jpg" alt="Blanco Café's white room full of people holding Spritz at golden-hour aperitivo" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== La Prima Volta (FAQ) ===== -->
+  <section class="chapter" id="faq">
+    <div class="wrap">
+      <span class="timestamp rv"><span class="dot"></span>La Prima Volta</span>
+      <h2 class="title rv-title" style="margin-bottom:32px">Com'è la prima volta da Blanco.</h2>
+      <div class="faq">
+        <details class="rv" open>
+          <summary>Devo prenotare o posso venire al banco?</summary>
+          <p>Il banco è sempre libero: entra, ordina un espresso o uno Spritz e resta in piedi come fanno i milanesi. Se invece vuoi un tavolo — soprattutto all'ora dell'aperitivo — meglio chiamare prima, così ti teniamo il posto migliore nella sala.</p>
+        </details>
+        <details class="rv">
+          <summary>A che ora è l'aperitivo?</summary>
+          <p>La sala si accende d'ambra dalle 18:00. È il momento più pieno e più bello, quando il sole basso lava di dorato le pareti bianche. Arriva verso le 18:30 se cerchi un tavolo con calma, o più tardi se ti va l'energia dell'ora di punta.</p>
+        </details>
+        <details class="rv">
+          <summary>Posso prenotare per un gruppo?</summary>
+          <p>Sì. Per gruppi e piccole occasioni chiamaci al <a href="tel:+393938801520" style="color:var(--orange)">393 880 1520</a>: organizziamo lo spazio e la piccola cucina del banco in base a quante persone siete.</p>
+        </details>
+        <details class="rv">
+          <summary>Che tipo di posto è, esattamente?</summary>
+          <p>Un caffè-bar tutto bianco: la mattina un caffè da rito veloce, il pomeriggio una pausa luminosa, la sera l'aperitivo. Una sola stanza architettonica dove l'unico colore vivo è quello che hai nel bicchiere.</p>
+        </details>
+        <details class="rv">
+          <summary>C'è qualcosa senza alcol?</summary>
+          <p>Certo. Facciamo analcolici d'autore costruiti con la stessa cura dei cocktail — agrumi, tonica e botaniche — perché lo Spritz sia una scelta, non un obbligo.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Riserva (booking + contact) ===== -->
+  <section class="chapter riserva" id="riserva">
+    <div class="wrap">
+      <span class="timestamp rv"><span class="dot"></span>Riserva</span>
+      <h2 class="title rv-title">Tieniti un posto nella sala bianca.</h2>
+      <p class="lede rv" style="margin-bottom:40px">Un tavolo per l'aperitivo, un caffè al banco domani mattina, o una serata per il tuo gruppo. Bastano due minuti al telefono.</p>
+      <div class="riserva-grid">
+        <div>
+          <div class="riserva-media rv-media">
+            <img src="assets/counter-marble-hands-detail.jpg" alt="Hands resting beside a Spritz and espresso cup on Blanco Café's veined white marble counter" loading="lazy" />
+          </div>
+          <p class="riserva-note rv">Preferisci scrivere? Puoi contattarci per messaggio o e-mail per informazioni e prenotazioni di gruppo — indicaci giorno, orario e numero di persone e ti confermiamo il tavolo. <br /><a href="tel:+393938801520">393 880 1520</a></p>
+          <div class="glass-echo rv">
+            <span class="swatch" aria-hidden="true"></span>
+            <span>Ci trovi facile: siamo l'unico punto d'ambra in una via di puro bianco.</span>
+          </div>
+        </div>
+
+        <div class="book-card rv">
+          <h3>Prenota chiamando</h3>
+          <p class="small">Rispondiamo dal banco negli orari di apertura. Chiama per un tavolo, un gruppo o solo per sapere se c'è posto ora.</p>
+          <a class="book-phone" data-cta href="tel:+393938801520">393 880 1520</a>
+          <div class="book-actions">
+            <a class="btn btn-amber" data-cta href="tel:+393938801520">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+              Chiama per prenotare</a>
+            <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Blanco+Caf%C3%A9+Milano" target="_blank" rel="noopener">Come arrivare</a>
+          </div>
+          <div class="trust-strip">
+            <div><b>4,2 / 5</b> · 384 recensioni</div>
+            <div>Aperti dalle <b>07:00</b></div>
+            <div>Milano</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">BLANC<span>O</span> · Café</div>
+      <div style="font-family:var(--grotesk);font-size:.82rem">
+        <a href="tel:+393938801520" style="text-decoration:none;color:#cfccc3">393 880 1520</a> · Milano
+      </div>
+    </div>
+    <p class="disclaimer">Anteprima dimostrativa realizzata per Blanco Café. Il punteggio di 4,2/5 su 384 recensioni è reale; voci di listino, orari e indirizzo esatto sono esempi indicativi e verranno confermati dal locale prima della pubblicazione. Le immagini sono a scopo illustrativo.</p>
+  </div>
+</footer>
+
+<!-- ===== Booking pill (morphs into a reservation panel) ===== -->
+<div class="book-pill" id="bookPill">
+  <div class="pill-shell">
+    <div class="pill-trigger" id="pillTrigger" role="button" tabindex="0" aria-expanded="false" aria-controls="pillPanel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v3M16 2v3M3.5 8h17M5 5h14a1.5 1.5 0 0 1 1.5 1.5V19A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19V6.5A1.5 1.5 0 0 1 5 5Z"/></svg>
+      <span>Riserva un tavolo</span>
+    </div>
+    <div class="pill-panel" id="pillPanel">
+      <p>Chiamaci per un tavolo all'aperitivo o un caffè al banco. Rispondiamo negli orari di apertura.</p>
+      <a class="pill-phone" data-cta href="tel:+393938801520">393 880 1520</a>
+      <a class="btn btn-amber" data-cta href="tel:+393938801520">Chiama per prenotare</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Core motion (self-contained, progressive enhancement) ===== -->
+<script>
+(function () {
+  var docEl = document.documentElement;
+  var reduce = false;
+  try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+  /* ---- Mobile nav toggle (always active) ---- */
+  var burger = document.getElementById('hamburger');
+  var links = document.getElementById('navLinks');
+  if (burger && links) {
+    burger.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        links.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---- Booking pill morph (always active) ---- */
+  var pill = document.getElementById('bookPill');
+  var trigger = document.getElementById('pillTrigger');
+  if (pill && trigger) {
+    var togglePill = function () {
+      var open = pill.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    trigger.addEventListener('click', togglePill);
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePill(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (pill.classList.contains('open') && !pill.contains(e.target)) {
+        pill.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---- Day-clock active marker (works even without motion) ---- */
+  var clockItems = document.querySelectorAll('.dayclock li');
+  if (clockItems.length && 'IntersectionObserver' in window) {
+    var clockMap = {};
+    clockItems.forEach(function (li) { clockMap[li.getAttribute('data-clock')] = li; });
+    var clockObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          clockItems.forEach(function (li) { li.classList.remove('active'); });
+          var m = clockMap[en.target.id];
+          if (m) m.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['top','caffe','stanza','aperitivo','bancone','mani','quartiere','proof','faq','riserva'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) clockObs.observe(el);
+    });
+  }
+
+  /* Everything below is pure motion — skip entirely if reduced-motion. */
+  if (reduce || !docEl.classList.contains('anim')) {
+    // ensure any reveal-tagged content is fully shown
+    document.querySelectorAll('.rv, .rv-media, .rv-title').forEach(function (el) { el.classList.add('in'); });
+    var d0 = document.getElementById('distro'); if (d0) d0.classList.add('grown');
+    var g0 = document.getElementById('spritzGauge'); if (g0) g0.classList.add('filled');
+    return;
+  }
+
+  /* ---- Staggered scroll reveals (grouped top-to-bottom) ---- */
+  if ('IntersectionObserver' in window) {
+    var revealEls = Array.prototype.slice.call(document.querySelectorAll('.rv, .rv-media, .rv-title'));
+
+    // assign a per-section stagger index so groups cascade in order
+    document.querySelectorAll('.chapter').forEach(function (sec) {
+      var kids = sec.querySelectorAll('.rv, .rv-media, .rv-title');
+      kids.forEach(function (el, i) {
+        el.style.setProperty('--rvd', Math.min(i, 8) * 65 + 'ms');
+      });
+    });
+
+    var revObs = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          obs.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+    revealEls.forEach(function (el) { revObs.observe(el); });
+
+    // failsafe: never leave content hidden
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        revealEls.forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight) el.classList.add('in');
+        });
+      }, 200);
+    });
+  } else {
+    document.querySelectorAll('.rv, .rv-media, .rv-title').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---- The Spritz fill + distribution bars (trigger on entry) ---- */
+  if ('IntersectionObserver' in window) {
+    var gauge = document.getElementById('spritzGauge');
+    if (gauge) {
+      var gaugeObs = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { gauge.classList.add('filled'); obs.disconnect(); }
+        });
+      }, { threshold: 0.35 });
+      gaugeObs.observe(gauge);
+    }
+    var distro = document.getElementById('distro');
+    if (distro) {
+      var distObs = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { distro.classList.add('grown'); obs.disconnect(); }
+        });
+      }, { threshold: 0.4 });
+      distObs.observe(distro);
+    }
+  }
+
+  /* ---- Single rAF-batched scroll handler ----
+     Drives: colour-temp drift, spine advance, scroll bar, hero parallax,
+     nav shadow. Only transform/opacity are animated. */
+  var tempOverlay = document.querySelector('.temp-overlay');
+  var spineFill   = document.querySelector('.spine-fill');
+  var scrollProg  = document.querySelector('.scroll-prog');
+  var heroMedia   = document.getElementById('heroMedia');
+  var heroWord    = document.getElementById('heroWordmark');
+  var topbar      = document.getElementById('topbar');
+  var heroSection = document.querySelector('.hero');
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.pageYOffset || docEl.scrollTop || 0;
+    var max = (document.body.scrollHeight - window.innerHeight) || 1;
+    var prog = Math.min(1, Math.max(0, y / max));
+
+    if (tempOverlay) tempOverlay.style.opacity = (prog * 0.22).toFixed(3);
+    if (spineFill)   spineFill.style.transform = 'scaleY(' + prog.toFixed(4) + ')';
+    if (scrollProg)  scrollProg.style.transform = 'scaleX(' + prog.toFixed(4) + ')';
+    if (topbar)      topbar.classList.toggle('scrolled', y > 24);
+
+    // Hero parallax: counter (media) drifts slower than the foreground wordmark
+    var hh = heroSection ? heroSection.offsetHeight : 0;
+    if (heroMedia && y < hh) {
+      heroMedia.style.transform = 'translate3d(0,' + (y * 0.14) + 'px,0) scale(1.06)';
+      if (heroWord) heroWord.style.transform = 'translate3d(0,' + (y * 0.34) + 'px,0)';
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+})();
+</script>
+
+<!-- ===== Optional spring enhancement via Motion (fails silently) ===== -->
+<script type="module">
+  try {
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      const { animate } = await import("https://cdn.jsdelivr.net/npm/motion@latest/+esm");
+      // Springy press feedback on the booking pill trigger — enhancement only
+      var trigger = document.getElementById('pillTrigger');
+      if (trigger && animate) {
+        trigger.addEventListener('pointerdown', function () {
+          animate(trigger, { scale: 0.94 }, { type: 'spring', stiffness: 700, damping: 22 });
+        });
+        var release = function () {
+          animate(trigger, { scale: 1 }, { type: 'spring', stiffness: 500, damping: 18 });
+        };
+        trigger.addEventListener('pointerup', release);
+        trigger.addEventListener('pointerleave', release);
+      }
+    }
+  } catch (e) { /* content already fully functional without the library */ }
+</script>
+</body>
+</html>

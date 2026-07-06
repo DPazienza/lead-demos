@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ai Muciaccia · Pizzeria Pugliese a Milano</title>
+<meta name="description" content="Ai Muciaccia — pizzeria pugliese a Milano. Impasto ad alta idratazione lievitato 48 ore, forno a legna, ingredienti di Puglia. Prenota il tuo tavolo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root {
+  --cream:    #FBF4E9;
+  --cream-2:  #F0E4D0;
+  --cream-3:  #E8D8BF;
+  --red:      #D93A18;
+  --red-dk:   #B83214;
+  --ochre:    #E4A11B;
+  --green:    #3E5C3A;
+  --ink:      #241A15;
+  --ink-72:   rgba(36,26,21,.72);
+  --ink-46:   rgba(36,26,21,.46);
+  --ink-14:   rgba(36,26,21,.14);
+  --cream-a8: rgba(251,244,233,.08);
+  --cream-a2: rgba(251,244,233,.22);
+  --maxw:  1180px;
+  --gap:   clamp(1.25rem,4vw,2.5rem);
+  --py:    clamp(4.5rem,10vw,8rem);
+  --r:     16px;
+  --sans:  "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif: "Newsreader",Georgia,"Times New Roman",serif;
+}
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+*,*::before,*::after { box-sizing:border-box; }
+html,body { overflow-x:clip; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:clamp(1rem,.9rem + .4vw,1.15rem);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img { max-width:100%; display:block; }
+a { color:inherit; }
+p { overflow-wrap:anywhere; margin:0 0 1em; }
+p:last-child { margin-bottom:0; }
+h1,h2,h3,.eyebrow { font-family:var(--sans); }
+h1,h2,h3 { line-height:1.0; letter-spacing:-.025em; margin:0; font-weight:800; }
+
+/* =========================================================
+   LAYOUT HELPERS
+   ========================================================= */
+.wrap { width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gap); }
+.section { padding-block:var(--py); position:relative; }
+
+.eyebrow {
+  font-size:.78rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.22em; color:var(--red); margin:0 0 1.2rem;
+  display:flex; align-items:center; gap:.75rem;
+}
+.eyebrow::before {
+  content:""; width:30px; height:5px;
+  background:var(--red); border-radius:999px; flex-shrink:0;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+a.skip {
+  position:absolute; left:-999px; top:0;
+  background:var(--ink); color:var(--cream);
+  padding:.7rem 1rem; z-index:200; border-radius:0 0 8px 0;
+}
+a.skip:focus { left:0; }
+:focus-visible { outline:3px solid var(--ochre); outline-offset:3px; border-radius:3px; }
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  font-family:var(--sans); font-weight:700; font-size:.97rem; letter-spacing:-.01em;
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.95rem 1.8rem; border-radius:999px; border:2px solid transparent;
+  text-decoration:none; cursor:pointer; min-height:52px; line-height:1;
+  transition:transform .5s cubic-bezier(.16,1,.3,1),
+             background .4s, color .4s, box-shadow .4s;
+}
+.btn-primary {
+  background:var(--red); color:var(--cream);
+  box-shadow:0 12px 32px -14px rgba(217,58,24,.75);
+}
+.btn-primary:hover {
+  transform:translateY(-3px); background:var(--red-dk);
+  box-shadow:0 20px 40px -14px rgba(217,58,24,.85);
+}
+.btn-ghost {
+  background:transparent; color:var(--ink);
+  border-color:rgba(36,26,21,.3);
+}
+.btn-ghost:hover { border-color:var(--ink); transform:translateY(-3px); }
+.btn-light { background:var(--cream); color:var(--ink); }
+.btn-light:hover { transform:translateY(-3px); background:#fff; }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+header.nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(251,244,233,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1.5px solid rgba(36,26,21,.13);
+}
+.nav-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; min-height:70px;
+}
+.brand {
+  font-family:var(--sans); font-weight:800; font-size:1.22rem;
+  letter-spacing:-.03em; text-decoration:none; color:var(--ink); white-space:nowrap;
+}
+.brand span { color:var(--red); }
+.nav-links {
+  display:flex; align-items:center; gap:1.8rem;
+  list-style:none; margin:0; padding:0;
+}
+.nav-links a {
+  font-family:var(--sans); font-weight:600; font-size:.88rem;
+  text-decoration:none; color:var(--ink-72);
+  transition:color .25s;
+}
+.nav-links a:hover { color:var(--red); }
+.nav-cta { display:flex; align-items:center; gap:1rem; }
+.nav-phone {
+  font-family:var(--sans); font-weight:700; font-size:.9rem;
+  text-decoration:none; color:var(--ink); white-space:nowrap;
+  transition:color .25s;
+}
+.nav-phone:hover { color:var(--red); }
+.nav-toggle {
+  display:none; background:none; border:0;
+  padding:.4rem; cursor:pointer; width:44px; height:44px;
+}
+.nav-toggle span {
+  display:block; width:24px; height:2.5px;
+  background:var(--ink); margin:5px auto; border-radius:2px;
+  transition:transform .4s, opacity .4s;
+}
+.nav-toggle.open span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity:0; }
+.nav-toggle.open span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* =========================================================
+   HERO / TONDO
+   ========================================================= */
+.hero {
+  padding-block:clamp(2rem,5vw,4rem) clamp(3.5rem,8vw,6rem);
+  text-align:center; position:relative; overflow:hidden;
+  background:
+    radial-gradient(70% 55% at 50% 0%, rgba(228,161,27,.13) 0%, transparent 70%),
+    var(--cream);
+}
+.hero-kicker {
+  font-family:var(--sans); font-weight:700; font-size:.82rem;
+  letter-spacing:.28em; text-transform:uppercase; color:var(--green);
+  margin:0 0 .5rem;
+}
+
+/* ---- tondo ---- */
+.tondo {
+  position:relative;
+  width:min(88vw,700px);
+  aspect-ratio:1/1;
+  margin:1.7rem auto;
+}
+/* linen plate background */
+.tondo::before {
+  content:""; position:absolute; inset:4%; border-radius:50%;
+  background:radial-gradient(circle at 50% 40%,
+    #fff 0%, var(--cream-2) 52%, var(--cream-3) 100%);
+  box-shadow:
+    0 60px 120px -40px rgba(36,26,21,.55),
+    0 0 0 1px rgba(36,26,21,.07);
+}
+/* visible outer ring */
+.tondo-rim {
+  position:absolute; inset:3%; border-radius:50%;
+  border:3px solid rgba(36,26,21,.18);
+  pointer-events:none; z-index:3;
+}
+/* inner photo */
+.tondo-photo {
+  position:absolute; inset:13%; width:74%; height:74%;
+  border-radius:50%; object-fit:cover; object-position:center 40%;
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,.75),
+    0 0 0 8px rgba(36,26,21,.09),
+    0 24px 56px -20px rgba(36,26,21,.75);
+  z-index:1;
+}
+/* arc type */
+.tondo-type {
+  position:absolute; inset:0; width:100%; height:100%;
+  z-index:4; overflow:visible;
+}
+.tondo-type text {
+  font-family:var(--sans); font-weight:800;
+  fill:var(--ink); letter-spacing:.055em; text-transform:uppercase;
+}
+.tondo-type .arc-main { font-size:6.8px; }
+.tondo-type .arc-sub  { font-size:5.1px; fill:var(--red); letter-spacing:.13em; }
+.tondo-star { fill:var(--ochre); }
+
+.hero-lead {
+  max-width:46ch; margin:0 auto 1.9rem;
+  font-size:clamp(1.05rem,.96rem + .6vw,1.3rem);
+  color:var(--ink-72);
+}
+.hero-lead strong { color:var(--ink); font-weight:500; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; }
+.hero-phone {
+  display:block; margin-top:1.1rem;
+  font-family:var(--sans); font-weight:600; font-size:.92rem; color:var(--ink-72);
+}
+.hero-phone a {
+  color:var(--ink); text-decoration:none;
+  border-bottom:2.5px solid var(--ochre); padding-bottom:.06em;
+  transition:color .25s, border-color .25s;
+}
+.hero-phone a:hover { color:var(--red); border-color:var(--red); }
+
+/* =========================================================
+   SPLIT LAYOUT
+   ========================================================= */
+.split {
+  display:grid; gap:clamp(2rem,5.5vw,5rem);
+  align-items:center; grid-template-columns:1fr;
+}
+@media(min-width:860px){
+  .split { grid-template-columns:1fr 1fr; }
+  .split.reverse .split-media { order:2; }
+}
+.split-media { position:relative; }
+/* default split image */
+.split-media > img {
+  width:100%; border-radius:var(--r); object-fit:cover;
+  box-shadow:0 34px 72px -28px rgba(36,26,21,.62);
+  aspect-ratio:5/4;
+}
+
+.lead-title {
+  font-size:clamp(2.1rem,1.4rem + 3.3vw,3.6rem);
+  margin:0 0 1.3rem; font-weight:800;
+}
+.lead-title em {
+  font-style:italic; font-family:var(--serif);
+  font-weight:400; color:var(--red);
+}
+.measure { max-width:52ch; }
+
+/* chips */
+.chips { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.8rem; }
+.chip {
+  font-family:var(--sans); font-weight:600; font-size:.82rem;
+  padding:.52rem 1.05rem; border-radius:999px;
+  background:#fff; border:1.5px solid var(--ink-14);
+  color:var(--ink-72);
+  transition:border-color .25s, color .25s;
+}
+.chip:hover { border-color:var(--ochre); color:var(--ink); }
+
+/* =========================================================
+   L'IMPASTO — detail card
+   ========================================================= */
+.impasto-detail {
+  margin-top:2rem;
+  display:grid; grid-template-columns:130px 1fr;
+  gap:1.1rem; align-items:center;
+  background:var(--cream-2);
+  border-left:5px solid var(--ochre);
+  border-radius:0 var(--r) var(--r) 0;
+  padding:1.1rem 1.4rem;
+  box-shadow:0 10px 28px -10px rgba(36,26,21,.28);
+}
+.impasto-detail img {
+  width:130px; height:115px;
+  border-radius:10px; object-fit:cover; object-position:center;
+  box-shadow:0 8px 18px -6px rgba(36,26,21,.45);
+}
+.impasto-detail p { margin:0; font-size:.93rem; color:var(--ink-72); }
+.impasto-detail strong {
+  font-family:var(--sans); font-size:.97rem; display:block;
+  color:var(--ink); margin-bottom:.28rem;
+}
+
+/* =========================================================
+   IL FORNO
+   ========================================================= */
+.forno {
+  background:
+    radial-gradient(100% 70% at 50% 115%, rgba(217,58,24,.42) 0%, transparent 55%),
+    linear-gradient(170deg,#1c130e 0%,#241A15 55%,#180f09 100%);
+  color:var(--cream); position:relative; overflow:hidden;
+}
+.forno .eyebrow { color:var(--ochre); }
+.forno .eyebrow::before { background:var(--ochre); }
+
+.forno-grid {
+  display:grid; gap:clamp(2rem,5.5vw,4rem);
+  grid-template-columns:1fr; align-items:center;
+}
+@media(min-width:860px){ .forno-grid { grid-template-columns:1.1fr .9fr; } }
+
+.forno-media {
+  position:relative; border-radius:var(--r); overflow:hidden;
+  box-shadow:0 44px 90px -30px rgba(0,0,0,.75);
+}
+.forno-media img {
+  width:100%; display:block;
+  object-fit:cover; object-position:center 32%;
+  aspect-ratio:4/3; min-height:340px;
+}
+/* fire-glow overlay on the image */
+.forno-media::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(
+    0deg,
+    rgba(217,58,24,.58) 0%,
+    rgba(217,58,24,.18) 35%,
+    transparent 60%
+  );
+  border-radius:var(--r); pointer-events:none;
+}
+.ember-glow {
+  position:absolute; inset:auto -18% -38% -18%; height:68%;
+  background:radial-gradient(52% 100% at 50% 100%,
+    rgba(228,161,27,.82) 0%,
+    rgba(217,58,24,.34) 42%,
+    transparent 68%);
+  pointer-events:none; filter:blur(10px);
+}
+
+.forno-title {
+  font-size:clamp(2.2rem,1.5rem + 3.6vw,4rem);
+  color:var(--cream); margin:0 0 1.2rem;
+}
+.forno p { color:rgba(251,244,233,.86); }
+
+.forno-steps {
+  list-style:none; margin:2rem 0 0; padding:0; display:grid; gap:0;
+}
+.forno-steps li {
+  display:grid; grid-template-columns:auto 1fr;
+  gap:.5rem 1.1rem; align-items:baseline;
+  padding:1.15rem 0;
+  border-top:1px solid rgba(251,244,233,.13);
+}
+.forno-steps li:first-child { border-top:0; padding-top:0; }
+.forno-steps b {
+  font-family:var(--sans); color:var(--ochre);
+  font-size:1.45rem; font-weight:800; line-height:1;
+}
+.forno-steps span { color:rgba(251,244,233,.82); font-size:.97rem; line-height:1.55; }
+
+/* =========================================================
+   LA CARTA
+   ========================================================= */
+.carta { background:var(--cream-2); }
+
+.carta-head {
+  text-align:center; max-width:58ch;
+  margin:0 auto clamp(2.5rem,6vw,4.5rem);
+}
+.carta-head h2 {
+  font-size:clamp(2.2rem,1.5rem + 3.5vw,3.9rem);
+  margin:0 0 1rem;
+}
+.carta-head p { color:var(--ink-72); }
+
+.carta-layout {
+  display:grid; gap:clamp(2rem,5vw,3.5rem);
+  grid-template-columns:1fr;
+}
+@media(min-width:900px){
+  .carta-layout { grid-template-columns:1fr 1.2fr; align-items:start; }
+}
+
+.carta-feature {
+  position:relative; border-radius:var(--r); overflow:hidden;
+  box-shadow:0 44px 88px -30px rgba(36,26,21,.68);
+}
+.carta-feature img {
+  width:100%; display:block;
+  object-fit:cover; object-position:center 38%;
+  min-height:440px; aspect-ratio:3/4;
+}
+.carta-feature figcaption {
+  position:absolute; left:0; right:0; bottom:0;
+  padding:2.2rem 1.7rem 1.6rem;
+  background:linear-gradient(
+    0deg,
+    rgba(14,9,5,.94) 0%,
+    rgba(14,9,5,.6) 50%,
+    transparent 100%
+  );
+  color:var(--cream); font-family:var(--sans);
+}
+.carta-feature figcaption b {
+  display:block; font-size:1.3rem; font-weight:800; margin-bottom:.35rem;
+}
+.carta-feature figcaption small {
+  font-family:var(--serif); font-style:italic;
+  color:rgba(251,244,233,.88); font-size:1rem;
+}
+
+.menu-list { margin:0; padding:0; list-style:none; }
+.menu-row {
+  position:relative;
+  display:grid; grid-template-columns:1fr auto;
+  gap:.3rem 1rem; align-items:baseline;
+  padding:1.15rem 0 1.15rem .6rem;
+  border-bottom:1px solid rgba(36,26,21,.12);
+  border-radius:6px;
+  transition:transform .45s cubic-bezier(.16,1,.3,1), background .3s;
+}
+/* girata accent bar — grows on hover */
+.menu-row::before {
+  content:""; position:absolute; left:-.1rem; top:.6rem; bottom:.6rem; width:3.5px;
+  background:var(--red); border-radius:3px;
+  transform:scaleY(0); transform-origin:center top;
+  transition:transform .45s cubic-bezier(.16,1,.3,1);
+}
+.menu-row:hover, .menu-row:focus-within {
+  transform:translateX(6px);
+  background:rgba(255,255,255,.55);
+}
+.menu-row:hover::before, .menu-row:focus-within::before { transform:scaleY(1); }
+.menu-row:first-child { padding-top:0; }
+
+.menu-name {
+  font-family:var(--sans); font-weight:700; font-size:1.1rem; line-height:1.2;
+}
+.menu-price {
+  font-family:var(--sans); font-weight:800; font-size:1.08rem;
+  color:var(--red); white-space:nowrap;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+/* price & ingredients nudge in from the right on hover */
+.menu-row:hover .menu-price, .menu-row:focus-within .menu-price { transform:translateX(-5px); }
+.menu-desc {
+  grid-column:1/-1; margin:.28rem 0 0;
+  font-size:.91rem; color:var(--ink-72); line-height:1.52;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.menu-row:hover .menu-desc, .menu-row:focus-within .menu-desc { transform:translateX(4px); }
+.menu-tag {
+  display:inline-block; font-family:var(--sans); font-size:.64rem;
+  font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--green); background:rgba(62,92,58,.1);
+  border:1.5px solid rgba(62,92,58,.35); border-radius:999px;
+  padding:.16rem .58rem; margin-left:.5rem; vertical-align:middle;
+}
+
+/* =========================================================
+   PUGLIA A MILANO
+   ========================================================= */
+#puglia .split-media { display:grid; }
+#puglia .split-media > img { aspect-ratio:4/3; }
+
+.ingredient-note {
+  margin-top:-2.8rem; margin-left:auto; max-width:76%;
+  position:relative; z-index:2;
+  background:var(--cream);
+  border:1.5px solid rgba(36,26,21,.12);
+  border-left:5px solid var(--green);
+  border-radius:0 var(--r) var(--r) 0;
+  padding:1.3rem 1.5rem;
+  box-shadow:0 28px 60px -28px rgba(36,26,21,.55);
+}
+.ingredient-note p { margin:0; font-size:.93rem; color:var(--ink-72); }
+.ingredient-note strong {
+  font-family:var(--sans); color:var(--green);
+  display:block; margin-bottom:.28rem;
+}
+
+/* =========================================================
+   IL PIZZAIOLO
+   ========================================================= */
+.pizzaiolo { background:linear-gradient(180deg,var(--cream) 0%,#fff 100%); }
+#pizzaiolo .split-media > img { aspect-ratio:3/4; }
+
+.pull {
+  font-size:clamp(1.45rem,1.1rem + 2.1vw,2.25rem);
+  font-family:var(--serif); font-style:italic;
+  line-height:1.32; margin:0 0 1.4rem; color:var(--ink);
+  position:relative; padding-left:1.5rem;
+}
+.pull::before {
+  content:"\201C";
+  position:absolute; left:-.1rem; top:-.15em;
+  font-size:4em; line-height:.78; font-style:normal;
+  font-family:var(--serif); color:rgba(217,58,24,.22);
+  pointer-events:none;
+}
+
+.signature { font-family:var(--sans); font-weight:700; margin-top:1.9rem; font-size:1rem; }
+.signature small {
+  display:block; font-weight:400;
+  color:var(--ink-46); font-size:.85rem; letter-spacing:.02em; margin-top:.18rem;
+}
+
+/* =========================================================
+   IL LOCALE & PRIMA VISITA
+   ========================================================= */
+.locale { background:linear-gradient(180deg,#fff 0%,var(--cream) 100%); }
+
+.locale-media { position:relative; }
+.locale-media .locale-main {
+  width:100%; border-radius:var(--r); object-fit:cover;
+  aspect-ratio:4/3;
+  box-shadow:0 34px 72px -28px rgba(36,26,21,.62);
+}
+/* second image — hidden on mobile to prevent overflow */
+.locale-secondary { display:none; }
+@media(min-width:860px){
+  .locale-media { padding-bottom:2.2rem; padding-right:2.2rem; }
+  .locale-secondary {
+    display:block;
+    position:absolute; bottom:0; right:0;
+    width:58%; aspect-ratio:4/3;
+    object-fit:cover; border-radius:var(--r);
+    border:4px solid #fff;
+    box-shadow:0 28px 56px -20px rgba(36,26,21,.72);
+    z-index:2;
+  }
+}
+
+.visit-cards {
+  display:grid; gap:1.1rem; grid-template-columns:1fr; margin-top:2rem;
+}
+@media(min-width:580px){ .visit-cards { grid-template-columns:repeat(3,1fr); } }
+.visit-card {
+  background:#fff; border-radius:var(--r);
+  padding:1.5rem 1.3rem 1.3rem;
+  border:1.5px solid var(--ink-14);
+  border-top:5px solid var(--ochre);
+  box-shadow:0 8px 22px -12px rgba(36,26,21,.24);
+}
+.visit-card .num {
+  font-family:var(--sans); font-weight:800; color:var(--ochre);
+  font-size:1.6rem; display:block; margin-bottom:.65rem; line-height:1;
+}
+.visit-card b {
+  font-family:var(--sans); display:block; font-size:1.05rem;
+  font-weight:700; margin-bottom:.4rem; color:var(--ink);
+}
+.visit-card p { margin:0; font-size:.91rem; color:var(--ink-72); }
+
+/* =========================================================
+   LE VOCI — social proof
+   ========================================================= */
+.voci {
+  position:relative; overflow:hidden;
+  background:var(--ink); color:var(--cream);
+}
+/* table-scene atmospheric background — right panel */
+.voci-scene {
+  position:absolute; top:0; right:0; bottom:0; width:55%; z-index:0;
+  overflow:hidden;
+}
+.voci-scene img {
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  opacity:.28; filter:saturate(.55) sepia(.15);
+}
+.voci-scene::before {
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(
+    90deg,
+    var(--ink) 0%,
+    rgba(36,26,21,.82) 38%,
+    rgba(36,26,21,.58) 100%
+  );
+}
+/* subtle warm ember in bottom corner */
+.voci::before {
+  content:""; position:absolute; inset:auto -10% -20% auto;
+  width:55%; height:60%; z-index:0;
+  background:radial-gradient(50% 70% at 80% 100%,
+    rgba(228,161,27,.18) 0%, transparent 65%);
+  pointer-events:none;
+}
+
+.voci-grid {
+  position:relative; z-index:1;
+  display:grid; gap:clamp(2.5rem,6vw,5rem);
+  grid-template-columns:1fr; align-items:center;
+}
+@media(min-width:860px){ .voci-grid { grid-template-columns:.85fr 1.15fr; } }
+
+.voci .eyebrow { color:var(--ochre); }
+.voci .eyebrow::before { background:var(--ochre); }
+
+.rating-block {
+  text-align:center;
+  background:rgba(228,161,27,.11);
+  border:2px solid rgba(228,161,27,.42);
+  border-radius:var(--r);
+  padding:2.4rem 2rem;
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.55);
+}
+.rating-num {
+  font-family:var(--sans); font-weight:800;
+  font-size:clamp(4rem,3rem + 6vw,6.8rem);
+  line-height:.92; color:var(--ochre);
+}
+.rating-scale { font-size:1.7rem; color:rgba(251,244,233,.5); }
+.stars {
+  font-size:1.75rem; letter-spacing:.1em;
+  color:var(--ochre); margin:.75rem 0 .45rem;
+}
+.stars .half { color:rgba(228,161,27,.35); }
+.rating-count {
+  font-family:var(--sans); font-weight:600; font-size:1.05rem;
+  color:rgba(251,244,233,.88);
+}
+.rating-count b {
+  color:var(--ochre); font-size:1.38rem; font-weight:800;
+}
+.rating-src { font-size:.84rem; color:rgba(251,244,233,.52); margin-top:.55rem; }
+
+.voci-body h2 {
+  font-size:clamp(2rem,1.4rem + 3.2vw,3.5rem);
+  margin:0 0 1.3rem; color:var(--cream);
+}
+.voci-body p { color:rgba(251,244,233,.86); }
+
+.themes { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.6rem; }
+.theme {
+  font-family:var(--sans); font-weight:600; font-size:.84rem;
+  padding:.62rem 1.15rem; border-radius:999px;
+  background:var(--cream-a8); border:1.5px solid var(--cream-a2);
+  color:rgba(251,244,233,.92);
+}
+
+/* =========================================================
+   PRENOTA & CONTATTI
+   ========================================================= */
+.contatti { background:var(--cream); }
+.contatti-grid {
+  display:grid; gap:clamp(2rem,5vw,3.5rem);
+  grid-template-columns:1fr; align-items:start;
+}
+@media(min-width:900px){ .contatti-grid { grid-template-columns:1.2fr .8fr; } }
+
+.contatti h2 {
+  font-size:clamp(2.2rem,1.5rem + 3.5vw,3.9rem); margin:0 0 1.2rem;
+}
+.contatti .measure { color:var(--ink-72); }
+
+.info-list {
+  list-style:none; margin:2rem 0 0; padding:0; display:grid; gap:1.4rem;
+}
+.info-list li {
+  display:grid; grid-template-columns:6.5rem 1fr;
+  gap:.4rem 1rem; align-items:baseline;
+}
+.info-list .k {
+  font-family:var(--sans); font-weight:700; font-size:.74rem;
+  text-transform:uppercase; letter-spacing:.18em; color:var(--red); padding-top:.2rem;
+}
+.info-list a {
+  color:var(--ink); text-decoration:none;
+  border-bottom:2.5px solid var(--ochre); padding-bottom:.06em;
+  transition:color .25s, border-color .25s;
+}
+.info-list a:hover { color:var(--red); border-color:var(--red); }
+
+.hours-table { width:100%; border-collapse:collapse; margin-top:.5rem; font-size:.95rem; }
+.hours-table td { padding:.48rem 0; border-bottom:1px solid rgba(36,26,21,.11); }
+.hours-table td:last-child {
+  text-align:right; font-family:var(--sans); font-weight:600; font-size:.91rem;
+}
+.hours-table tr:last-child td { border-bottom:0; }
+
+/* booking rail */
+.booking-rail {
+  position:sticky; top:90px;
+  background:var(--ink); color:var(--cream);
+  border-radius:var(--r); padding:2.1rem;
+  box-shadow:0 44px 88px -30px rgba(36,26,21,.78);
+  border:1px solid rgba(255,255,255,.06);
+}
+.booking-rail h3 {
+  font-family:var(--sans); color:var(--cream);
+  font-size:1.5rem; font-weight:800; margin:0 0 .75rem;
+}
+.booking-rail > p {
+  color:rgba(251,244,233,.78); font-size:.95rem;
+  margin:0 0 1.5rem; line-height:1.55;
+}
+.booking-phone {
+  display:block; font-family:var(--sans); font-weight:800;
+  font-size:1.55rem; color:var(--ochre); text-decoration:none;
+  margin:.3rem 0 1.5rem; letter-spacing:-.015em;
+  transition:color .25s;
+}
+.booking-phone:hover { color:#f4b830; }
+.booking-rail .btn { width:100%; margin-bottom:.8rem; }
+.rail-trust {
+  margin-top:1.4rem; padding-top:1.4rem;
+  border-top:1px solid rgba(251,244,233,.16);
+  font-size:.83rem; color:rgba(251,244,233,.72);
+  display:flex; align-items:center; gap:.65rem;
+}
+.rail-trust b { color:var(--ochre); font-family:var(--sans); }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background:var(--ink); color:rgba(251,244,233,.72); padding-block:3rem;
+}
+.foot-inner {
+  display:flex; flex-wrap:wrap; gap:1rem;
+  justify-content:space-between; align-items:center;
+}
+.foot-brand {
+  font-family:var(--sans); font-weight:800;
+  font-size:1.22rem; color:var(--cream);
+}
+.foot-brand span { color:var(--red); }
+.disclaimer {
+  font-size:.78rem; color:rgba(251,244,233,.44);
+  max-width:64ch; margin-top:1.5rem; line-height:1.62;
+  border-top:1px solid rgba(251,244,233,.1); padding-top:1.3rem;
+}
+
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+@media(max-width:820px){
+  .nav-links {
+    position:fixed; inset:70px 0 auto 0;
+    flex-direction:column; gap:0;
+    background:rgba(251,244,233,.97);
+    backdrop-filter:blur(14px);
+    border-bottom:1.5px solid rgba(36,26,21,.14);
+    padding:.5rem 0;
+    transform:translateY(-140%);
+    transition:transform .5s cubic-bezier(.16,1,.3,1);
+    box-shadow:0 24px 50px -20px rgba(36,26,21,.42);
+  }
+  .nav-links.open { transform:translateY(0); }
+  .nav-links li { width:100%; }
+  .nav-links a {
+    display:block; padding:1rem var(--gap);
+    font-size:1.05rem; border-bottom:1px solid rgba(36,26,21,.08);
+  }
+  .nav-toggle { display:block; }
+  .nav-phone  { display:none; }
+}
+
+/* =========================================================
+   MOTION LAYER  (progressive enhancement — only under html.js
+   and only when the visitor hasn't asked for reduced motion)
+   ========================================================= */
+
+/* will-change hints for the scroll-driven transforms */
+html.js .tondo-photo { will-change:transform; }
+html.js #puglia .split-media > img,
+html.js #puglia .ingredient-note { will-change:transform; }
+
+@media (prefers-reduced-motion: no-preference){
+
+  /* --- hero load: staggered rise (kicker → tondo → lead → CTA → phone) --- */
+  html.js .hero-kicker  { animation:mRise .7s  cubic-bezier(.16,1,.3,1) .05s both; }
+  html.js .tondo        { animation:mRise .85s cubic-bezier(.16,1,.3,1) .12s both; }
+  html.js .hero-lead    { animation:mRise .7s  cubic-bezier(.16,1,.3,1) .30s both; }
+  html.js .hero-actions { animation:mRise .7s  cubic-bezier(.16,1,.3,1) .42s both; }
+  html.js .hero-phone   { animation:mRise .7s  cubic-bezier(.16,1,.3,1) .54s both; }
+
+  /* --- circular arc logotype: one-time settle after the photo resolves --- */
+  html.js .tondo-type { transform-origin:50% 50%; animation:mArc 1.15s cubic-bezier(.16,1,.3,1) .62s both; }
+
+  /* --- scroll reveals, varied by content role --- */
+  html.js [data-rev]{
+    opacity:0;
+    transition:opacity .85s cubic-bezier(.16,1,.3,1),
+               transform .85s cubic-bezier(.16,1,.3,1),
+               clip-path .95s cubic-bezier(.16,1,.3,1);
+    transition-delay:var(--rd,0ms);
+  }
+  html.js [data-rev="block"]{ transform:translateY(26px); }         /* text rises & settles */
+  html.js [data-rev="media"]{ transform:translateY(26px) scale(.965); } /* media scales in */
+  html.js [data-rev="title"]{ clip-path:inset(0 0 104% 0); transform:translateY(2px); } /* heading wipes up */
+  html.js [data-rev].in{ opacity:1; transform:none; clip-path:inset(0 0 -6% 0); }
+
+  /* --- list cascade: rows proof upward one after another --- */
+  html.js .rev-list > *{
+    opacity:0; transform:translateY(20px);
+    transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+    transition-delay:var(--rd,0ms);
+  }
+  html.js .rev-list.in > *{ opacity:1; transform:none; }
+
+  /* --- oven ember: breathes as the section enters (finite, settles lit) --- */
+  html.js .forno.lit .ember-glow      { animation:mEmber 3.4s ease-in-out 3; }
+  html.js .forno.lit .forno-media::after { animation:mEmber2 3.4s ease-in-out 3; }
+}
+
+@keyframes mRise  { from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:none;} }
+@keyframes mArc   { from{opacity:0; transform:rotate(-7deg) scale(1.05);} to{opacity:1; transform:rotate(0) scale(1);} }
+@keyframes mEmber {
+  0%  { opacity:.4;  filter:blur(10px) brightness(.85); }
+  50% { opacity:1;   filter:blur(13px) brightness(1.3); }
+  100%{ opacity:.62; filter:blur(10px) brightness(1); }
+}
+@keyframes mEmber2 { 0%{opacity:.68;} 50%{opacity:1;} 100%{opacity:.85;} }
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media(prefers-reduced-motion:reduce){
+  html { scroll-behavior:auto; }
+  *,*::before,*::after {
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#carta">Vai al menu</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Ai <span>Muciaccia</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#impasto">L'Impasto</a></li>
+      <li><a href="#forno">Il Forno</a></li>
+      <li><a href="#carta">La Carta</a></li>
+      <li><a href="#puglia">Puglia a Milano</a></li>
+      <li><a href="#voci">Recensioni</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+390248000917">+39 02 4800 0917</a>
+      <a class="btn btn-primary" data-cta href="tel:+390248000917">Chiama</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Apri il menu di navigazione" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ TONDO HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="hero-kicker">Pizzeria Pugliese · Milano</p>
+      <h1 id="hero-title" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Ai Muciaccia — Pizzeria Pugliese a Milano</h1>
+
+      <figure class="tondo" role="img" aria-label="Pizza pugliese cotta nel forno a legna, vista dall'alto, con la scritta Ai Muciaccia · Pizzeria Pugliese · Milano disposta in cerchio attorno al bordo">
+        <span class="tondo-rim" aria-hidden="true"></span>
+        <img class="tondo-photo" src="assets/hero-tondo.jpg" alt="Vista dall'alto di una pizza pugliese cotta a legna con cornicione leopardato su tovaglia color crema">
+        <svg class="tondo-type" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <path id="arcTop" d="M 8,50 A 42,42 0 0 1 92,50"></path>
+            <path id="arcBot" d="M 92,50 A 42,42 0 0 1 8,50"></path>
+          </defs>
+          <text class="arc-main"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">Ai Muciaccia</textPath></text>
+          <text class="arc-sub"><textPath href="#arcBot" startOffset="50%" text-anchor="middle">Pizzeria Pugliese · Milano</textPath></text>
+          <text class="tondo-star" x="50" y="14.5" text-anchor="middle" font-size="5.5">★</text>
+          <text class="tondo-star" x="50" y="90.5" text-anchor="middle" font-size="5.5">★</text>
+        </svg>
+      </figure>
+
+      <p class="hero-lead">Impasto ad alta idratazione lievitato <strong>48 ore</strong>, cotto nel forno a legna. Il cornicione leopardato e gli ingredienti di Puglia — burrata, cime di rapa, San Marzano — portano la mano di Bari a tavola a Milano.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-cta href="tel:+390248000917">Chiama per prenotare</a>
+        <a class="btn btn-ghost" href="#carta">Sfoglia la carta</a>
+      </div>
+      <p class="hero-phone">Prenotazioni al telefono · <a href="tel:+390248000917">+39 02 4800 0917</a></p>
+    </div>
+  </section>
+
+  <!-- ============ L'IMPASTO ============ -->
+  <section class="section" id="impasto" aria-labelledby="impasto-title">
+    <div class="wrap split reverse">
+      <div class="split-media">
+        <img src="assets/dough-impasto.jpg" alt="Mani infarinate che stendono un impasto ad alta idratazione su un banco di legno">
+      </div>
+      <div>
+        <p class="eyebrow">01 — L'Impasto</p>
+        <h2 id="impasto-title" class="lead-title">Quarantotto ore di <em>lievitazione</em>, non un minuto di meno.</h2>
+        <p class="measure">Tutto parte dalla farina e dal tempo. Il nostro impasto ad alta idratazione riposa per 48 ore a temperatura controllata: una maturazione lenta che rende la pizza leggera, digeribile e profondamente saporita. È il contrario del template napoletano fatto in fretta — è pasta che si lascia aspettare.</p>
+        <div class="chips">
+          <span class="chip">Alta idratazione</span>
+          <span class="chip">Lievito madre + biga</span>
+          <span class="chip">Maturazione 48h</span>
+          <span class="chip">Farine macinate a pietra</span>
+        </div>
+        <div class="impasto-detail">
+          <img src="assets/detail-cornicione.jpg" alt="Macro del bordo di una pizza a legna, cornicione carbonizzato a macchie di leopardo">
+          <p><strong>Il cornicione leopardato</strong>Le bolle scure sul bordo non sono un difetto: sono la firma di una lunga lievitazione incontrata dal fuoco vivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL FORNO ============ -->
+  <section class="section forno" id="forno" aria-labelledby="forno-title">
+    <div class="wrap forno-grid">
+      <div class="forno-media">
+        <img src="assets/oven-forno.jpg" alt="Forno a legna in mattoni con fiamma viva e una pizza in cottura">
+        <span class="ember-glow" aria-hidden="true"></span>
+      </div>
+      <div>
+        <p class="eyebrow">02 — Il Forno</p>
+        <h2 id="forno-title" class="forno-title">Novanta secondi sopra la fiamma viva.</h2>
+        <p>Il forno a legna è il cuore sensoriale della pizzeria. La temperatura sale oltre i 400°C e la pizza cuoce in poco più di un minuto: il calore secco gonfia il cornicione, brucia appena i bordi e sigilla dentro tutta la fragranza. È qui che il tempo lento dell'impasto incontra il tempo rapido del fuoco.</p>
+        <ul class="forno-steps">
+          <li><b>430°</b><span>La cupola in mattoni tiene il calore costante per una cottura uniforme.</span></li>
+          <li><b>90″</b><span>Il tempo esatto sopra la brace: cornicione alto, fondo croccante.</span></li>
+          <li><b>La girata</b><span>Ogni pizza viene ruotata sulla pala perché coloni in modo uniforme.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA CARTA ============ -->
+  <section class="section carta" id="carta" aria-labelledby="carta-title">
+    <div class="wrap">
+      <div class="carta-head">
+        <p class="eyebrow" style="justify-content:center;">03 — La Carta</p>
+        <h2 id="carta-title">Le pizze della casa</h2>
+        <p>Una selezione firmata, con ingredienti di Puglia in evidenza. Ogni pizza nasce dallo stesso impasto lievitato 48 ore e passa dal forno a legna.</p>
+      </div>
+      <div class="carta-layout">
+        <figure class="carta-feature">
+          <img src="assets/signature-pizza.jpg" alt="Pizza pugliese della casa con burrata e cime di rapa">
+          <figcaption>
+            <b>La Muciaccia</b>
+            <small>Burrata pugliese, cime di rapa saltate, filo d'olio EVO</small>
+          </figcaption>
+        </figure>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-name">La Muciaccia <span class="menu-tag">La firma</span></span>
+            <span class="menu-price">14 €</span>
+            <p class="menu-desc">Fiordilatte, cime di rapa saltate all'aglio, burrata pugliese aggiunta a crudo, olio EVO del Salento.</p>
+          </li>
+          <li class="menu-row">
+            <span class="menu-name">San Marzano DOP</span>
+            <span class="menu-price">9 €</span>
+            <p class="menu-desc">Pomodoro San Marzano, fiordilatte, basilico, olio EVO. La margherita come dovrebbe essere.</p>
+          </li>
+          <li class="menu-row">
+            <span class="menu-name">Burrata &amp; Crudo</span>
+            <span class="menu-price">15 €</span>
+            <p class="menu-desc">Base bianca, burrata di Andria, crudo di Parma, pomodorini confit a crudo.</p>
+          </li>
+          <li class="menu-row">
+            <span class="menu-name">Cime di Rapa &amp; Salsiccia</span>
+            <span class="menu-price">13 €</span>
+            <p class="menu-desc">Il gusto di Puglia: salsiccia pugliese, cime di rapa, provola affumicata.</p>
+          </li>
+          <li class="menu-row">
+            <span class="menu-name">Marinara del Sud <span class="menu-tag">Vegana</span></span>
+            <span class="menu-price">8 €</span>
+            <p class="menu-desc">San Marzano, aglio, origano di montagna, olio EVO. Nessun latticino, tutto sapore.</p>
+          </li>
+          <li class="menu-row">
+            <span class="menu-name">Diavola Pugliese</span>
+            <span class="menu-price">12 €</span>
+            <p class="menu-desc">Fiordilatte, 'nduja, salame piccante, pomodorini e un tocco di miele.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PUGLIA A MILANO ============ -->
+  <section class="section puglia" id="puglia" aria-labelledby="puglia-title">
+    <div class="wrap split">
+      <div class="split-media">
+        <img src="assets/ingredients-puglia.jpg" alt="Flat-lay di ingredienti pugliesi: burrata, pomodori San Marzano, cime di rapa e olio d'oliva">
+        <div class="ingredient-note">
+          <p><strong>Dal Sud, ogni settimana.</strong> Burrata e latticini di Andria, olio extravergine del Salento, ortaggi di stagione: la dispensa arriva dalla Puglia, non dal grossista dietro l'angolo.</p>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">04 — Puglia a Milano</p>
+        <h2 id="puglia-title" class="lead-title">Il nome <em>Muciaccia</em> è una promessa di provenienza.</h2>
+        <p class="measure">Muciaccia è un cognome che a Bari conoscono bene. Da lì viene la nostra idea di pizza: generosa, legata alla terra, fatta con quello che il Sud sa fare meglio. A Milano, dove la maggior parte delle pizzerie ripete un unico canovaccio napoletano, portiamo una mano davvero pugliese — l'impasto, il forno e la dispensa.</p>
+        <div class="chips">
+          <span class="chip">Burrata di Andria</span>
+          <span class="chip">Olio EVO del Salento</span>
+          <span class="chip">Cime di rapa</span>
+          <span class="chip">San Marzano</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL PIZZAIOLO ============ -->
+  <section class="section pizzaiolo" id="pizzaiolo" aria-labelledby="pizzaiolo-title">
+    <div class="wrap split reverse">
+      <div class="split-media">
+        <img src="assets/pizzaiolo-portrait.jpg" alt="Il pizzaiolo con il grembiule gira una pizza nel forno a legna con la pala">
+      </div>
+      <div>
+        <p class="eyebrow">05 — Il Pizzaiolo</p>
+        <h2 id="pizzaiolo-title" class="lead-title">La mano dietro la <em>pala</em>.</h2>
+        <p class="pull">«La pizza buona non si improvvisa: si aspetta. Io do all'impasto il suo tempo, e il forno fa il resto.»</p>
+        <p class="measure">Dietro ogni pizza c'è una persona, non una catena. Il nostro pizzaiolo lavora l'impasto ogni mattina, sorveglia la lievitazione e sta al forno tutta la sera, girando le pizze una a una sulla pala. È questa attenzione — misurata in ore, non in minuti — che tiene la sala piena.</p>
+        <p class="signature">Il pizzaiolo di Ai Muciaccia<small>Al forno, ogni sera di apertura</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL LOCALE & PRIMA VISITA ============ -->
+  <section class="section locale" id="locale" aria-labelledby="locale-title">
+    <div class="wrap split">
+      <div class="split-media locale-media">
+        <img class="locale-main" src="assets/dining-room.jpg" alt="Interno luminoso e accogliente della sala della pizzeria con tavoli in legno apparecchiati">
+        <img class="locale-secondary" src="assets/table-scene.jpg" alt="Tavolata condivisa con pizze e mani che servono durante una cena animata">
+      </div>
+      <div>
+        <p class="eyebrow">06 — Il Locale &amp; la prima visita</p>
+        <h2 id="locale-title" class="lead-title">Un tavolo per due, o per sei.</h2>
+        <p class="measure">Una sala calda e informale nel cuore di Milano, con il forno a vista e le luci basse: il posto giusto per una cena del venerdì in due o per una tavolata tra colleghi. Consigliamo di prenotare per il weekend — chiamaci e ti troviamo il tavolo giusto.</p>
+        <div class="visit-cards">
+          <div class="visit-card">
+            <span class="num">01</span>
+            <b>Prenota</b>
+            <p>Una telefonata e fissiamo giorno, ora e numero di coperti.</p>
+          </div>
+          <div class="visit-card">
+            <span class="num">02</span>
+            <b>Siediti</b>
+            <p>Tavolo vicino al forno o angolo tranquillo: lo scegli tu.</p>
+          </div>
+          <div class="visit-card">
+            <span class="num">03</span>
+            <b>Assaggia</b>
+            <p>Dalla firma alla marinara: ordina e lascia fare al fuoco.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LE VOCI ============ -->
+  <section class="section voci" id="voci" aria-labelledby="voci-title">
+    <!-- atmospheric background from the dining scene -->
+    <div class="voci-scene" aria-hidden="true">
+      <img src="assets/table-scene.jpg" alt="">
+    </div>
+    <div class="wrap voci-grid">
+      <div class="rating-block">
+        <div class="rating-num">4,0<span class="rating-scale">/5</span></div>
+        <div class="stars" aria-hidden="true">★★★★<span class="half">★</span></div>
+        <p class="rating-count">da <b data-countup="1039">1.039</b> recensioni</p>
+        <p class="rating-src">Valutazione media verificata · Google</p>
+      </div>
+      <div class="voci-body">
+        <p class="eyebrow">07 — Le Voci</p>
+        <h2 id="voci-title">Più di mille passaggi, e la sala resta piena.</h2>
+        <p>Il numero che conta davvero non è solo la media: è il volume. Oltre mille recensioni raccontano una cosa semplice — non è una serata fortunata, è una costanza. La gente torna per l'impasto, per il forno e per quella cucina del Sud che a Milano è più rara di quanto sembri.</p>
+        <div class="themes" role="list" aria-label="Temi ricorrenti nelle recensioni">
+          <span class="theme" role="listitem">Impasto leggero</span>
+          <span class="theme" role="listitem">Cornicione perfetto</span>
+          <span class="theme" role="listitem">Sapori del Sud</span>
+          <span class="theme" role="listitem">Sala accogliente</span>
+        </div>
+        <p style="margin-top:1.5rem;font-size:.84rem;color:rgba(251,244,233,.52);">Temi ricorrenti sintetizzati dalle recensioni pubbliche, non attribuiti a singole persone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRENOTA & CONTATTI ============ -->
+  <section class="section contatti" id="contatti" aria-labelledby="contatti-title">
+    <div class="wrap contatti-grid">
+      <div>
+        <p class="eyebrow">08 — Prenota &amp; Contatti</p>
+        <h2 id="contatti-title">Vieni a trovarci a Milano.</h2>
+        <p class="measure">Le prenotazioni si fanno al telefono: una chiamata veloce e il tavolo è tuo. Per gruppi e tavolate numerose chiamaci con qualche giorno di anticipo così organizziamo tutto al meglio.</p>
+        <ul class="info-list">
+          <li>
+            <span class="k">Telefono</span>
+            <span><a href="tel:+390248000917">+39 02 4800 0917</a></span>
+          </li>
+          <li>
+            <span class="k">Zona</span>
+            <span>Milano — la posizione esatta è confermata al momento della prenotazione.</span>
+          </li>
+          <li>
+            <span class="k">Mappa</span>
+            <span><a href="https://www.google.com/maps/search/?api=1&query=Ai+Muciaccia+Pizzeria+Milano" target="_blank" rel="noopener">Apri in Google Maps ↗</a></span>
+          </li>
+          <li>
+            <span class="k">Orari</span>
+            <span>
+              <table class="hours-table">
+                <tbody>
+                  <tr><td>Lunedì</td><td>Chiuso</td></tr>
+                  <tr><td>Martedì – Venerdì</td><td>19:00 – 23:30</td></tr>
+                  <tr><td>Sabato</td><td>12:30 – 15:00 · 19:00 – 24:00</td></tr>
+                  <tr><td>Domenica</td><td>19:00 – 23:00</td></tr>
+                </tbody>
+              </table>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="booking-rail" aria-label="Prenota un tavolo">
+        <h3>Prenota un tavolo</h3>
+        <p>Chiama e fissa il tuo tavolo: ti diamo conferma subito, con giorno, ora e numero di coperti.</p>
+        <a class="booking-phone" href="tel:+390248000917">+39 02 4800 0917</a>
+        <a class="btn btn-primary" data-cta href="tel:+390248000917">Chiama per prenotare</a>
+        <a class="btn btn-light" href="#carta">Guarda la carta</a>
+        <div class="rail-trust">
+          <span aria-hidden="true">★</span>
+          <span><b>4,0/5</b> su oltre <b>1.039</b> recensioni · la sala resta piena</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <span class="foot-brand">Ai <span>Muciaccia</span></span>
+      <a class="btn btn-primary" data-cta href="tel:+390248000917">Chiama · +39 02 4800 0917</a>
+    </div>
+    <p class="disclaimer">Ai Muciaccia · Pizzeria Pugliese · Milano. Valutazione 4,0/5 su 1.039 recensioni Google (dato reale verificato). Le voci di menu, i prezzi e gli orari mostrati in questa pagina dimostrativa sono indicativi e vanno confermati dal locale; il numero di telefono e la valutazione sono reali.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- mobile nav (always on) ---------- */
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  if(toggle && links){
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- respect reduced motion: bail before any animation ---------- */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;   // content is fully visible; no motion applied
+
+  /* ---------- count-up helpers (defined first so recovery can use them) ---------- */
+  var countEl = document.querySelector('[data-countup]');
+  var FINAL   = countEl ? parseInt(countEl.getAttribute('data-countup'), 10) : 0;
+  function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function setCount(n){ if(countEl) countEl.textContent = fmt(n); }
+
+  function revealEverything(){
+    var i, els = document.querySelectorAll('[data-rev], .rev-list');
+    for(i=0;i<els.length;i++) els[i].classList.add('in');
+    var f = document.querySelector('.forno'); if(f) f.classList.add('lit');
+    setCount(FINAL);
+  }
+
+  try {
+    /* ---------- parallax targets (Puglia sourcing flat-lay) ---------- */
+    var parallax = [];
+    var pImg  = document.querySelector('#puglia .split-media > img');
+    var pNote = document.querySelector('#puglia .ingredient-note');
+    if(pImg)  parallax.push({ el:pImg,  k: 0.08 });
+    if(pNote) parallax.push({ el:pNote, k:-0.05 });
+
+    /* ---------- tag reveal targets, varied by role, cascaded per section ---------- */
+    var sections = document.querySelectorAll('main .section');
+    sections.forEach(function(sec){
+      if(sec.classList.contains('hero')) return;   // hero handled by load animation
+      var idx = 0;
+      function delay(el){ el.style.setProperty('--rd', (Math.min(idx++, 7) * 80) + 'ms'); }
+
+      // media → scales in
+      sec.querySelectorAll('.split-media, .forno-media, .carta-feature, .rating-block').forEach(function(m){
+        if(sec.id === 'puglia' && m.classList.contains('split-media')) return; // parallax instead
+        m.setAttribute('data-rev','media'); delay(m);
+      });
+      // headings → wipe up
+      sec.querySelectorAll('h2').forEach(function(h){ h.setAttribute('data-rev','title'); delay(h); });
+      // meaningful lists → children cascade
+      sec.querySelectorAll('.menu-list, .visit-cards, .forno-steps').forEach(function(list){
+        list.classList.add('rev-list');
+        [].slice.call(list.children).forEach(function(c,i){ c.style.setProperty('--rd', (i*70) + 'ms'); });
+      });
+      // remaining text blocks → rise & settle
+      sec.querySelectorAll('.eyebrow, p, .chips, .impasto-detail, .signature, .themes, .info-list, .booking-rail').forEach(function(el){
+        if(el.hasAttribute('data-rev')) return;
+        if(el.closest('.rev-list')) return;
+        if(el.closest('[data-rev]')) return;
+        if(el.closest('.carta-feature')) return;
+        if(sec.id === 'puglia' && el.closest('.split-media')) return;
+        el.setAttribute('data-rev','block'); delay(el);
+      });
+    });
+
+    /* ---------- count-up (numeric, easeOut) ---------- */
+    var counted = false;
+    function runCount(){
+      if(counted || !countEl) return; counted = true;
+      var dur = 1600, start = null;
+      function step(ts){
+        if(start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var e = 1 - Math.pow(1 - p, 3);
+        setCount(Math.round(e * FINAL));
+        if(p < 1) requestAnimationFrame(step); else setCount(FINAL);
+      }
+      requestAnimationFrame(step);
+    }
+
+    /* ---------- entrance observers ---------- */
+    if(!('IntersectionObserver' in window)){
+      revealEverything();
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting) return;
+          en.target.classList.add('in');
+          if(en.target.classList.contains('forno')) en.target.classList.add('lit');
+          io.unobserve(en.target);
+        });
+      }, { threshold:0.16, rootMargin:'0px 0px -8% 0px' });
+
+      document.querySelectorAll('[data-rev]').forEach(function(e){ io.observe(e); });
+      document.querySelectorAll('.rev-list').forEach(function(e){ io.observe(e); });
+      var forno = document.querySelector('.forno'); if(forno) io.observe(forno);
+
+      var rb = document.querySelector('.rating-block');
+      if(rb && countEl){
+        setCount(0);
+        var io2 = new IntersectionObserver(function(es){
+          es.forEach(function(en){ if(en.isIntersecting){ runCount(); io2.unobserve(en.target); } });
+        }, { threshold:0.4 });
+        io2.observe(rb);
+      }
+    }
+
+    /* ---------- scroll-linked: hero tondo 'girata' + ingredient parallax ---------- */
+    var tondoPhoto = document.querySelector('.tondo-photo');
+    var puglia     = document.getElementById('puglia');
+    var ticking    = false;
+    function frame(){
+      var vh = window.innerHeight || 1;
+      if(tondoPhoto){
+        var y   = window.pageYOffset || 0;
+        var deg = Math.min(y / (vh * 0.9), 1.5) * 22;   // a few quiet degrees, capped ~33°
+        tondoPhoto.style.transform = 'rotate(' + deg.toFixed(2) + 'deg)';
+      }
+      if(puglia && parallax.length){
+        var r = puglia.getBoundingClientRect();
+        var off = (vh / 2) - (r.top + r.height / 2);     // signed distance from viewport centre
+        for(var i=0;i<parallax.length;i++){
+          parallax[i].el.style.transform = 'translate3d(0,' + (off * parallax[i].k).toFixed(2) + 'px,0)';
+        }
+      }
+      ticking = false;
+    }
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    window.addEventListener('resize', onScroll, { passive:true });
+    frame();
+
+  } catch(err){
+    /* never leave content stranded if anything above fails */
+    revealEverything();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mario Barber Shop — Barbiere a Milano | Taglio, Barba, Rasoio</title>
+<meta name="description" content="Mario Barber Shop, barbiere a Milano. Fade di precisione, barba e rasatura con rasoio a mano libera. Guarda i tagli, i prezzi e prenota la tua poltrona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+/* ===================================================================
+   DESIGN TOKENS
+=================================================================== */
+:root {
+  /* Palette */
+  --paper:     #F3EEE6;
+  --ink:       #20201E;
+  --pine:      #173A34;
+  --pine-deep: #0E2620;
+  --cinnabar:  #D9401F;
+  --chalk:     #E9DECB;
+  --stone:     #8A8378;
+
+  /* Layout */
+  --rail-w:  clamp(62px, 6.5vw, 88px);
+  --measure: 66ch;
+  --gap:     clamp(1.5rem, 3vw, 2.75rem);
+  --pad-x:   clamp(1.25rem, 5.5vw, 5rem);
+  --pad-y:   clamp(4.5rem, 10vw, 8rem);
+  --r-sm:    10px;
+  --r:       18px;
+  --r-lg:    26px;
+
+  /* Motion */
+  --ease: cubic-bezier(.16,.68,.28,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --dur:  760ms;
+
+  /* Typography */
+  --font-head: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Newsreader', Georgia, serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 10px rgba(32,32,30,.09);
+  --shadow-md: 0 8px 32px rgba(32,32,30,.13);
+  --shadow-lg: 0 20px 60px rgba(32,32,30,.19);
+  --shadow-xl: 0 32px 80px rgba(32,32,30,.26);
+}
+
+/* ===================================================================
+   RESET & BASE
+=================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
+body { overflow-x: clip; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: clamp(1rem, .9rem + .45vw, 1.15rem);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain texture — non-representational SVG noise, sits atop everything */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+  opacity: .038;
+}
+@media (prefers-reduced-motion: reduce) { body::after { display: none; } }
+
+img, video { max-width: 100%; display: block; height: auto; }
+a { color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  line-height: 1.04;
+  margin: 0;
+  letter-spacing: -.028em;
+}
+p { overflow-wrap: anywhere; }
+
+/* ===================================================================
+   ACCESSIBILITY
+=================================================================== */
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--paper);
+  padding: .75rem 1.1rem; z-index: 200; border-radius: 0 0 8px 0;
+  font-family: var(--font-head); font-weight: 700; font-size: .9rem;
+}
+.skip:focus { left: 0; }
+:focus-visible { outline: 3px solid var(--cinnabar); outline-offset: 3px; }
+
+/* ===================================================================
+   HELIX RIBBON — cinnabar / chalk gap / pine tricolor (centerpiece)
+=================================================================== */
+.ribbon {
+  --stripe: 24px;
+  background: repeating-linear-gradient(
+    60deg,
+    var(--cinnabar)  0                          var(--stripe),
+    var(--chalk)     var(--stripe)               calc(var(--stripe) * 1.6),
+    var(--pine)      calc(var(--stripe) * 1.6)   calc(var(--stripe) * 2.65),
+    var(--chalk)     calc(var(--stripe) * 2.65)  calc(var(--stripe) * 3.25)
+  );
+  box-shadow:
+    0 10px 44px -8px rgba(32,32,30,.48),
+    inset 0 2px 0 rgba(255,255,255,.25),
+    inset 0 -1px 0 rgba(32,32,30,.18);
+  pointer-events: none;
+}
+
+/* ===================================================================
+   TOP NAV
+=================================================================== */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+  padding: .85rem var(--pad-x);
+  background: color-mix(in srgb, var(--paper) 91%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 2px solid color-mix(in srgb, var(--ink) 9%, transparent);
+}
+.nav__brand {
+  font-family: var(--font-head); font-weight: 800;
+  letter-spacing: -.032em; font-size: 1.18rem;
+  text-decoration: none; display: flex; align-items: center; gap: .65rem;
+  color: var(--ink); flex-shrink: 0;
+}
+.nav__pole {
+  width: 18px; height: 30px; border-radius: 9px;
+  --stripe: 5px; display: inline-block; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(32,32,30,.22), 0 0 0 1.5px rgba(32,32,30,.1);
+}
+.nav__links {
+  display: flex; gap: clamp(.8rem, 2vw, 1.75rem);
+  list-style: none; margin: 0; padding: 0; align-items: center;
+}
+.nav__links a {
+  text-decoration: none; font-family: var(--font-head); font-weight: 600;
+  font-size: .875rem; letter-spacing: .01em; color: var(--ink);
+  transition: color .22s;
+}
+.nav__links a:hover { color: var(--cinnabar); }
+.nav__cta {
+  background: var(--cinnabar); color: var(--paper) !important;
+  padding: .6rem 1.15rem; border-radius: 100px; font-size: .85rem;
+  text-decoration: none; font-family: var(--font-head); font-weight: 700;
+  white-space: nowrap;
+  transition: background .25s, transform .25s, box-shadow .25s;
+  box-shadow: 0 4px 16px rgba(217,64,31,.3);
+}
+.nav__cta:hover { background: #c2380f; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(217,64,31,.42); }
+.nav__toggle {
+  display: none; background: none;
+  border: 2px solid color-mix(in srgb, var(--ink) 42%, transparent);
+  border-radius: 8px; padding: .42rem .58rem; cursor: pointer;
+}
+.nav__toggle span {
+  display: block; width: 20px; height: 2px; background: var(--ink);
+  margin: 4px 0; border-radius: 1px;
+  transition: transform .3s var(--ease), opacity .3s;
+}
+
+/* ===================================================================
+   PAGE GRID — 2-column ledger with sticky left rail
+=================================================================== */
+.page {
+  display: grid;
+  grid-template-columns: var(--rail-w) 1fr;
+  align-items: start;
+  position: relative;
+}
+
+/* --- Sticky helix rail --- */
+.rail {
+  position: sticky; top: 60px;
+  align-self: start;
+  height: calc(100vh - 60px);
+  max-height: 820px;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 1.5rem .5rem 1.25rem;
+  border-right: 2px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--chalk) 100%);
+}
+.rail__label {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-family: var(--font-head); font-weight: 700; font-size: .68rem;
+  letter-spacing: .3em; text-transform: uppercase; color: var(--stone);
+  margin-bottom: 1.4rem;
+}
+.rail__helix {
+  position: relative; flex: 1; width: 22px; border-radius: 11px;
+  overflow: hidden; --stripe: 8px; min-height: 140px;
+  box-shadow: 0 0 0 2px rgba(32,32,30,.14), var(--shadow-sm);
+}
+/* fill: scroll progress, starts at 8% opacity so it's never invisible */
+.rail__fill {
+  position: absolute; inset: 0; top: 0;
+  background: linear-gradient(180deg, var(--pine) 0%, var(--cinnabar) 100%);
+  height: 8%; opacity: .55;
+  transition: height .15s linear, opacity .3s;
+}
+.rail__prenota {
+  margin-top: 1.3rem; writing-mode: vertical-rl; transform: rotate(180deg);
+  background: var(--pine); color: var(--paper); text-decoration: none;
+  font-family: var(--font-head); font-weight: 800; font-size: .78rem;
+  letter-spacing: .22em; text-transform: uppercase;
+  padding: 1.15rem .58rem; border-radius: 100px;
+  transition: background .3s var(--ease), box-shadow .3s;
+  box-shadow: var(--shadow-md);
+}
+.rail__prenota:hover { background: var(--cinnabar); box-shadow: var(--shadow-lg); }
+
+.content { min-width: 0; }
+
+/* ===================================================================
+   SECTION BASE STYLES
+=================================================================== */
+section { padding: var(--pad-y) var(--pad-x); position: relative; }
+
+.chapter-tag {
+  display: flex; align-items: baseline; gap: .9rem;
+  margin-bottom: 1.7rem; flex-wrap: wrap;
+}
+.chapter-num {
+  font-family: var(--font-head); font-weight: 800; font-size: .82rem;
+  color: var(--cinnabar); letter-spacing: .07em;
+}
+.chapter-clock {
+  font-family: var(--font-head); font-weight: 700; font-size: .9rem;
+  background: var(--ink); color: var(--paper);
+  padding: .2rem .65rem; border-radius: 6px; letter-spacing: .07em;
+  font-variant-numeric: tabular-nums;
+}
+.chapter-kicker {
+  font-family: var(--font-head); font-weight: 600; font-size: .74rem;
+  letter-spacing: .28em; text-transform: uppercase; color: var(--stone);
+}
+
+.lede {
+  font-size: clamp(1.15rem, 1rem + .65vw, 1.52rem);
+  max-width: var(--measure);
+  color: color-mix(in srgb, var(--ink) 80%, var(--paper));
+  line-height: 1.55; margin-top: .95rem;
+}
+
+h2 { font-size: clamp(2.2rem, 1.4rem + 4.2vw, 4.6rem); }
+
+/* ===================================================================
+   BUTTONS
+=================================================================== */
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: var(--font-head); font-weight: 700; font-size: .975rem;
+  text-decoration: none; padding: 1rem 1.65rem; border-radius: 100px;
+  transition: transform .3s var(--ease), background .3s var(--ease),
+              color .28s, box-shadow .3s; border: 2px solid transparent;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--cinnabar); color: var(--paper);
+  box-shadow: 0 4px 22px rgba(217,64,31,.34);
+}
+.btn--primary:hover { transform: translateY(-2px); background: #c2380f; box-shadow: 0 8px 32px rgba(217,64,31,.48); }
+.btn--ghost {
+  background: transparent; color: var(--paper);
+  border-color: rgba(243,238,230,.48);
+}
+.btn--ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.btn--dark { background: var(--ink); color: var(--paper); box-shadow: var(--shadow-sm); }
+.btn--dark:hover { background: var(--cinnabar); transform: translateY(-2px); box-shadow: 0 6px 26px rgba(217,64,31,.36); }
+.btn--pine { background: var(--pine); color: var(--paper); box-shadow: var(--shadow-sm); }
+.btn--pine:hover { background: var(--cinnabar); transform: translateY(-2px); }
+
+/* ===================================================================
+   DIVIDER RIBBON (threading the helix through the page)
+=================================================================== */
+.divider-ribbon {
+  height: clamp(42px, 6vw, 68px);
+  width: 132%; margin-left: -16%;
+  --stripe: clamp(20px, 3vw, 32px);
+  transform: rotate(-2.5deg);
+  box-shadow:
+    0 8px 36px rgba(32,32,30,.2),
+    inset 0 2px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(32,32,30,.14);
+}
+
+/* ===================================================================
+   1. HERO / INSEGNA
+=================================================================== */
+.hero {
+  padding: 0; position: relative;
+  min-height: clamp(580px, 92vh, 980px);
+  overflow: hidden; display: flex; align-items: flex-end;
+  background: var(--pine-deep); isolation: isolate;
+}
+.hero__portrait {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 58% 18%;
+  z-index: 0;
+  animation: heroDrift 20s var(--ease) both;
+}
+/* Multi-layer scrim: subtle at top for portrait legibility, deep at bottom for type */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(14,38,32,.42)  0%,
+    rgba(14,38,32,.06)  30%,
+    rgba(14,38,32,.0)   48%,
+    rgba(14,38,32,.52)  72%,
+    rgba(14,38,32,.88)  100%
+  );
+}
+.hero__ribbon {
+  position: absolute; z-index: 2;
+  left: -22%; right: -22%; top: 49%;
+  height: clamp(100px, 14vh, 178px);
+  transform: rotate(-27deg);
+  transform-origin: center;
+  --stripe: clamp(24px, 3.5vw, 42px);
+  animation: ribbonIn 1100ms var(--ease) both;
+}
+.hero__inner {
+  position: relative; z-index: 3; width: 100%;
+  padding: clamp(2rem, 6vw, 6rem) var(--pad-x) clamp(2.5rem, 6vw, 5.5rem);
+  color: var(--paper);
+}
+.hero__eyebrow {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-family: var(--font-head); font-weight: 600; font-size: .76rem;
+  letter-spacing: .26em; text-transform: uppercase;
+  background: rgba(14,38,32,.7);
+  padding: .48rem .95rem; border-radius: 100px; margin-bottom: 1.35rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,.14);
+}
+.hero__wordmark {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(3.8rem, 13.5vw, 11.5rem);
+  line-height: .84; letter-spacing: -.042em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 64px rgba(0,0,0,.52), 0 2px 14px rgba(0,0,0,.32);
+  margin: 0;
+}
+.hero__wordmark span { display: block; overflow: hidden; }
+.hero__wordmark b { display: block; font-weight: 800; animation: maskUp 900ms var(--ease) both; }
+.hero__wordmark .l2 { color: var(--cinnabar); }
+.hero__wordmark .l2 b { animation-delay: 120ms; }
+.hero__sub {
+  max-width: 60ch; margin-top: 1.55rem;
+  font-size: clamp(1.05rem, .95rem + .5vw, 1.32rem);
+  color: rgba(243,238,230,.88); line-height: 1.5;
+}
+.hero__meta {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.6rem;
+  margin-top: 1.65rem; align-items: center;
+  font-size: .92rem; color: rgba(243,238,230,.78);
+  font-family: var(--font-head); font-weight: 500;
+}
+.hero__stars { color: #F5C451; font-family: var(--font-head); font-weight: 700; letter-spacing: .07em; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+
+/* ===================================================================
+   2. APERTURA & PRENOTAZIONE
+=================================================================== */
+.apertura__grid { display: grid; grid-template-columns: 1fr; gap: var(--gap); }
+
+.booking-card {
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--r-lg);
+  padding: clamp(1.75rem, 4.5vw, 3rem);
+  display: grid; gap: 1.25rem;
+  box-shadow: var(--shadow-xl);
+  border-top: 5px solid var(--cinnabar);
+  position: relative; overflow: hidden;
+}
+/* Warm cinnabar glow in bottom-right corner */
+.booking-card::after {
+  content: "";
+  position: absolute; bottom: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(217,64,31,.2) 0%, transparent 65%);
+  pointer-events: none;
+}
+.booking-card h3 { font-size: 1.7rem; line-height: 1.08; }
+.booking-card .phone {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.65rem, 1.2rem + 2.8vw, 2.8rem);
+  color: var(--paper); text-decoration: none;
+  letter-spacing: -.022em; display: inline-block;
+  transition: color .25s;
+}
+.booking-card .phone:hover { color: var(--cinnabar); }
+
+.booking-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: .85rem; }
+.booking-steps li {
+  display: flex; gap: .9rem; align-items: flex-start;
+  color: rgba(243,238,230,.82); font-size: .96rem;
+}
+.booking-steps b {
+  font-family: var(--font-head); color: var(--cinnabar);
+  flex: none; min-width: 1.5rem; font-weight: 800;
+}
+.trust-strip {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.22); padding-top: 1.1rem;
+  font-size: .86rem; color: rgba(243,238,230,.7);
+  font-family: var(--font-head); font-weight: 500;
+}
+
+/* Photo alongside booking card */
+.aper-visual {
+  border-radius: var(--r-lg); overflow: hidden;
+  position: relative; aspect-ratio: 4/3;
+  box-shadow: var(--shadow-xl);
+  min-height: 220px;
+}
+.aper-visual img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 42%;
+}
+
+/* ===================================================================
+   3. IL LISTINO
+=================================================================== */
+.listino { background: var(--chalk); }
+.listino__head {
+  display: grid; grid-template-columns: 1fr .82fr;
+  gap: var(--gap); align-items: end; margin-bottom: 2.9rem;
+}
+.listino__figure {
+  border-radius: var(--r); overflow: hidden;
+  aspect-ratio: 16/10; box-shadow: var(--shadow-md);
+}
+.listino__figure img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 28%;
+}
+
+/* The ledger */
+.ledger { list-style: none; margin: 0; padding: 0; max-width: var(--measure); }
+.ledger li {
+  display: grid; grid-template-columns: 1fr auto; gap: .6rem 1.4rem;
+  align-items: baseline; padding: 1.3rem 0; position: relative;
+}
+.ledger li::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--ink) 65%, transparent),
+    color-mix(in srgb, var(--ink) 8%, transparent)
+  );
+}
+.ledger .svc {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: clamp(1.15rem, 1rem + .9vw, 1.55rem);
+}
+.ledger .svc small {
+  display: block; font-family: var(--font-body); font-weight: 400;
+  font-size: .9rem; color: var(--pine); letter-spacing: 0;
+  margin-top: .22rem; line-height: 1.45;
+}
+.ledger .price {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.25rem, 1rem + 1.1vw, 1.8rem);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums; letter-spacing: -.015em;
+}
+.ledger .price .dur {
+  display: block; text-align: right; font-family: var(--font-body);
+  font-weight: 400; font-size: .8rem; color: var(--stone); margin-top: .1rem;
+}
+/* Featured service row — 5px left bar + warm tint */
+.ledger li.feat {
+  background: color-mix(in srgb, var(--cinnabar) 7%, var(--chalk));
+  border-radius: var(--r-sm); padding-inline: 1.1rem; margin-inline: -1.1rem;
+  border-left: 5px solid var(--cinnabar);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cinnabar) 16%, transparent);
+}
+.ledger li.feat::after { display: none; }
+.ledger li.feat .badge {
+  display: inline-block; background: var(--cinnabar); color: var(--paper);
+  font-family: var(--font-head); font-weight: 700; font-size: .6rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .12rem .48rem; border-radius: 4px;
+  margin-left: .58rem; vertical-align: middle;
+}
+.listino__note {
+  margin-top: 1.9rem; font-size: .87rem; color: var(--stone);
+  max-width: var(--measure); font-style: italic; line-height: 1.6;
+}
+
+/* ===================================================================
+   4. IL RITO DEL RASOIO — deep pine immersive
+=================================================================== */
+.rito { background: var(--pine-deep); color: var(--paper); overflow: hidden; }
+.rito__grid { display: grid; grid-template-columns: 1fr; gap: var(--gap); align-items: center; }
+
+.rito__figure {
+  position: relative; border-radius: var(--r); overflow: hidden;
+  aspect-ratio: 4/3; box-shadow: var(--shadow-xl);
+}
+.rito__figure img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 38%;
+}
+/* Subtle bottom fade — atmospheric, not a whitewash */
+.rito__figure::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(14,38,32,.0)  0%,
+    rgba(14,38,32,.0)  55%,
+    rgba(14,38,32,.65) 100%
+  );
+}
+.rito h2 { color: var(--paper); }
+.rito .lede { color: rgba(243,238,230,.84); }
+.rito__list {
+  list-style: none; margin: 1.85rem 0 0; padding: 0;
+  display: grid; gap: 1.05rem; max-width: var(--measure);
+}
+.rito__list li { display: flex; gap: .9rem; align-items: flex-start; font-size: .97rem; }
+.rito__list li::before {
+  content: "—"; color: var(--cinnabar); flex: none;
+  font-weight: 700; font-family: var(--font-head);
+}
+.rito__list b { font-family: var(--font-head); color: var(--chalk); font-weight: 700; }
+
+/* ===================================================================
+   5. MARIO, IL MAESTRO
+=================================================================== */
+.maestro { position: relative; }
+.maestro__grid { display: grid; grid-template-columns: 1fr; gap: var(--gap); align-items: start; }
+.maestro__figure {
+  border-radius: var(--r); overflow: hidden;
+  aspect-ratio: 4/5; box-shadow: var(--shadow-lg);
+}
+.maestro__figure img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 22%;
+}
+.stat-row { display: flex; flex-wrap: wrap; gap: 1.8rem 3rem; margin-top: 2.1rem; }
+.stat b {
+  display: block; font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(2rem, 1.5rem + 2.8vw, 3.4rem);
+  color: var(--cinnabar); line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.stat span {
+  font-size: .86rem; color: var(--stone);
+  font-family: var(--font-head); font-weight: 500; letter-spacing: .01em;
+}
+
+/* Pull-quote blockquote — large, typographic, cinnabar accent */
+.maestro blockquote {
+  position: relative;
+  margin: 2.4rem 0 0;
+  padding: 1.5rem 1.75rem 1.5rem 3rem;
+  font-style: italic; font-family: var(--font-body);
+  font-size: clamp(1.35rem, 1.1rem + 1.6vw, 2.05rem);
+  line-height: 1.35; max-width: 48ch;
+  color: var(--ink);
+  border-left: 5px solid var(--cinnabar);
+  background: color-mix(in srgb, var(--cinnabar) 6%, var(--paper));
+  border-radius: 0 var(--r) var(--r) 0;
+  box-shadow: var(--shadow-sm);
+}
+/* Large decorative quotation mark at 30% opacity — perceptible but not dominating */
+.maestro blockquote::before {
+  content: '\201C';
+  position: absolute; left: .7rem; top: .1rem;
+  font-size: 5.5rem; line-height: 1;
+  color: var(--cinnabar); opacity: .3;
+  font-style: normal; font-family: var(--font-body); font-weight: 400;
+  pointer-events: none;
+}
+
+/* ===================================================================
+   6. LA BOTTEGA — gallery (2 unique images: interior + products)
+=================================================================== */
+.bottega { background: var(--chalk); }
+.gallery { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2.3rem; }
+.gallery figure {
+  margin: 0; border-radius: var(--r); overflow: hidden;
+  position: relative; background: var(--ink);
+  box-shadow: var(--shadow-md); min-height: 240px;
+}
+/* Images fill their figure with absolute positioning */
+.gallery img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .95s var(--ease);
+}
+.gallery figure:hover img { transform: scale(1.05); }
+.gallery figcaption {
+  position: absolute; left: 0; bottom: 0; right: 0;
+  padding: 1.4rem 1.2rem .95rem;
+  color: var(--paper);
+  font-family: var(--font-head); font-weight: 600; font-size: .88rem;
+  letter-spacing: .02em;
+  background: linear-gradient(
+    to top,
+    rgba(32,32,30,.85) 0%,
+    rgba(32,32,30,.55) 45%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* ===================================================================
+   7. IL QUARTIERE
+=================================================================== */
+.quartiere__grid { display: grid; grid-template-columns: 1fr; gap: var(--gap); align-items: stretch; }
+.quartiere__figure { border-radius: var(--r); overflow: hidden; aspect-ratio: 16/11; box-shadow: var(--shadow-lg); }
+.quartiere__figure img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 42%;
+}
+.address-block {
+  background: var(--ink); color: var(--paper); border-radius: var(--r);
+  padding: clamp(1.7rem, 4.5vw, 2.8rem); display: grid; gap: 1.2rem;
+  align-content: start; box-shadow: var(--shadow-xl);
+  border-top: 5px solid var(--pine);
+}
+.address-block h3 { font-size: 1.6rem; }
+.address-block dl { margin: 0; display: grid; gap: .85rem; }
+.address-block .row {
+  display: flex; justify-content: space-between; gap: 1rem;
+  border-bottom: 1px dashed rgba(255,255,255,.3);
+  padding-bottom: .65rem;
+}
+.address-block dt {
+  font-family: var(--font-head); font-weight: 600;
+  color: rgba(243,238,230,.68); font-size: .9rem;
+}
+.address-block dd { margin: 0; font-family: var(--font-head); font-weight: 700; }
+
+/* ===================================================================
+   8. LA REPUTAZIONE — deep pine, center-composed
+=================================================================== */
+.rep {
+  background: var(--pine-deep); color: var(--paper);
+  text-align: center; position: relative; overflow: hidden;
+}
+/* Ghost star — depth element, 4% opacity keeps it structural not distracting */
+.rep::before {
+  content: "★";
+  position: absolute; right: -3vw; top: 50%; transform: translateY(-50%);
+  font-size: clamp(20rem, 40vw, 40rem); line-height: 1;
+  color: rgba(243,238,230,.04);
+  pointer-events: none;
+  font-family: var(--font-head); font-weight: 800; user-select: none;
+}
+.rep__score {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .55rem; margin: 2.1rem auto 0; position: relative;
+}
+.rep__big {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(5rem, 12vw, 10.5rem); line-height: .8;
+  color: var(--paper); font-variant-numeric: tabular-nums;
+}
+.rep__big em { font-style: normal; color: var(--cinnabar); font-size: .38em; vertical-align: super; }
+.rep__stars { font-size: clamp(1.8rem, 4.5vw, 2.8rem); color: #F5C451; letter-spacing: .2em; }
+.rep__count {
+  font-size: 1.05rem; color: rgba(243,238,230,.75);
+  font-family: var(--font-head); font-weight: 500;
+}
+.rep__bars { max-width: 500px; margin: 2.6rem auto 0; display: grid; gap: .7rem; text-align: left; }
+.rep__bar {
+  display: grid; grid-template-columns: 2.9rem 1fr 3rem; gap: .8rem;
+  align-items: center; font-size: .82rem;
+  font-family: var(--font-head); font-weight: 600;
+  color: rgba(243,238,230,.82);
+}
+.rep__track {
+  height: 11px; border-radius: 100px;
+  background: rgba(243,238,230,.22); overflow: hidden;
+}
+.rep__track span { display: block; height: 100%; background: var(--cinnabar); border-radius: 100px; }
+.rep__quotes {
+  display: grid; grid-template-columns: 1fr;
+  gap: 1.3rem; max-width: 900px; margin: 2.9rem auto 0;
+}
+.rep__quote {
+  background: rgba(243,238,230,.08);
+  border: 1px solid rgba(243,238,230,.2);
+  border-radius: var(--r); padding: 1.65rem;
+  font-style: italic; font-size: 1.1rem; text-align: left; line-height: 1.62;
+}
+.rep__quote span {
+  display: block; font-style: normal; font-family: var(--font-head);
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--stone); margin-top: .95rem;
+}
+.rep__source {
+  margin-top: 2.1rem; font-size: .82rem;
+  color: rgba(243,238,230,.52); max-width: 60ch;
+  margin-inline: auto; line-height: 1.6;
+}
+
+/* ===================================================================
+   9. LA PRIMA VOLTA — FAQ
+=================================================================== */
+.faq__list { max-width: var(--measure); margin-top: 1.9rem; }
+.faq details {
+  border-bottom: 2px solid color-mix(in srgb, var(--ink) 11%, transparent);
+  padding: .3rem 0;
+}
+.faq summary {
+  list-style: none; cursor: pointer;
+  font-family: var(--font-head); font-weight: 700;
+  font-size: clamp(1.1rem, 1rem + .55vw, 1.38rem);
+  padding: 1.05rem 2.6rem 1.05rem 0; position: relative;
+  transition: color .22s; line-height: 1.2;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--cinnabar); }
+.faq summary::after {
+  content: "+"; position: absolute; right: 0; top: .9rem;
+  font-weight: 700; color: var(--cinnabar); font-size: 1.65rem;
+  line-height: 1; transition: transform .3s var(--ease);
+  font-family: var(--font-head);
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details[open] { padding-bottom: .5rem; }
+.faq details p {
+  margin: .25rem 0 1.2rem;
+  padding: 1rem 1.2rem;
+  color: color-mix(in srgb, var(--ink) 84%, var(--paper));
+  background: color-mix(in srgb, var(--chalk) 65%, var(--paper));
+  border-radius: var(--r-sm); font-size: .97rem; line-height: 1.68;
+}
+
+/* ===================================================================
+   10. CHIUSURA & PRENOTA
+=================================================================== */
+.chiusura {
+  background: var(--ink); color: var(--paper);
+  text-align: center; overflow: hidden; position: relative;
+}
+/* Atmospheric pine glow at the bottom */
+.chiusura::before {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 110%, rgba(23,58,52,.75) 0%, transparent 58%);
+}
+.chiusura > * { position: relative; }
+.chiusura__loop {
+  max-width: 360px; margin: 0 auto 2.1rem;
+  border-radius: var(--r-lg); overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: var(--shadow-xl);
+}
+.chiusura__loop video { width: 100%; height: auto; display: block; }
+.chiusura h2 { font-size: clamp(2.5rem, 1.6rem + 4.8vw, 5.8rem); }
+.chiusura .phone-big {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.95rem, 1.4rem + 3.2vw, 3.8rem);
+  color: var(--paper); text-decoration: none;
+  display: inline-block; margin-top: .85rem;
+  letter-spacing: -.022em; transition: color .25s;
+}
+.chiusura .phone-big:hover { color: var(--cinnabar); }
+.chiusura__hours {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .6rem 2.2rem; margin-top: 1.85rem;
+  color: rgba(243,238,230,.7);
+  font-family: var(--font-head); font-weight: 500; font-size: .9rem;
+}
+.chiusura__actions { display: flex; flex-wrap: wrap; gap: .9rem; justify-content: center; margin-top: 2.1rem; }
+
+/* ===================================================================
+   FOOTER
+=================================================================== */
+footer {
+  background: var(--ink); color: var(--stone);
+  padding: 2.6rem var(--pad-x) 3.75rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.footer__grid { display: flex; flex-wrap: wrap; gap: 1.2rem 2.5rem; justify-content: space-between; align-items: center; }
+footer a { color: rgba(243,238,230,.72); text-decoration: none; transition: color .22s; }
+footer a:hover { color: var(--cinnabar); }
+.footer__disclaimer {
+  margin-top: 1.7rem; font-size: .76rem; line-height: 1.62;
+  max-width: 70ch; color: rgba(138,131,120,.8);
+}
+
+/* ===================================================================
+   MOBILE BOTTOM BOOKING BAR
+=================================================================== */
+.mbar {
+  display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom));
+  background: rgba(32,32,30,.97);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255,255,255,.12);
+  gap: .85rem; align-items: center;
+  box-shadow: 0 -6px 28px rgba(0,0,0,.28);
+}
+.mbar .m-rating { color: var(--paper); font-size: .8rem; font-family: var(--font-head); line-height: 1.2; flex: 1; }
+.mbar .m-rating b { color: #F5C451; }
+.mbar a { flex: none; }
+
+/* ===================================================================
+   KEYFRAMES (structure pass — kept intact)
+=================================================================== */
+@keyframes maskUp    { from { transform: translateY(105%); } to { transform: translateY(0); } }
+@keyframes ribbonIn  { from { opacity: 0; transform: rotate(-27deg) translateX(-8%); } to { opacity: 1; transform: rotate(-27deg) translateX(0); } }
+@keyframes heroDrift { from { transform: scale(1.1) translateY(1.5%); } to { transform: scale(1.03) translateY(0); } }
+
+/* ===================================================================
+   RESPONSIVE — DESKTOP (≥760px)
+=================================================================== */
+@media (min-width: 760px) {
+  .apertura__grid { grid-template-columns: 1.15fr .85fr; }
+  .listino__head  { grid-template-columns: 1fr .82fr; }
+  .rito__grid     { grid-template-columns: 1fr 1fr; }
+  .maestro__grid  { grid-template-columns: .85fr 1.15fr; }
+  .quartiere__grid { grid-template-columns: 1.25fr .75fr; }
+  .rep__quotes    { grid-template-columns: 1fr 1fr; }
+  .ledger .svc small { max-width: 52ch; }
+
+  /* Bottega gallery: 2 images, interior wide, products narrow, equal height */
+  .gallery {
+    grid-template-columns: 1.5fr 1fr;
+    height: clamp(300px, 38vw, 440px);
+  }
+  .gallery figure { min-height: unset; }
+
+  /* Interior image: slightly tighter crop on the focal point */
+  .gallery figure:first-child img { object-position: 50% 35%; }
+  /* Products shelf: keep centered */
+  .gallery figure:last-child img  { object-position: 50% 50%; }
+}
+
+/* ===================================================================
+   RESPONSIVE — NAV DRAWER (≤920px)
+=================================================================== */
+@media (max-width: 920px) {
+  .nav__links {
+    position: fixed; inset: 0 0 0 auto; width: min(82vw, 330px);
+    flex-direction: column; align-items: flex-start; justify-content: center;
+    gap: 1.55rem; padding: 2.5rem 2rem;
+    background: var(--paper);
+    box-shadow: -28px 0 70px rgba(0,0,0,.22);
+    transform: translateX(106%); transition: transform .42s var(--ease);
+    z-index: 110;
+  }
+  .nav__links.open { transform: translateX(0); }
+  .nav__links a { font-size: 1.32rem; }
+  .nav__toggle { display: block; z-index: 120; }
+  .nav__cta.desk { display: none; }
+  .nav__links .nav__cta { color: var(--paper) !important; }
+}
+
+/* ===================================================================
+   RESPONSIVE — MOBILE (≤640px)
+=================================================================== */
+@media (max-width: 640px) {
+  .page { grid-template-columns: 1fr; }
+  .rail { display: none; }
+  .mbar { display: flex; }
+  body { padding-bottom: 5rem; }
+
+  .hero { min-height: 88vh; align-items: flex-end; }
+  .hero__portrait { object-position: 56% 18%; }
+  .hero__ribbon {
+    top: auto; bottom: 31%;
+    height: 72px; left: -35%; right: -35%;
+    transform: rotate(-34deg);
+  }
+  .hero__wordmark { font-size: clamp(3.4rem, 18vw, 5.8rem); }
+
+  .divider-ribbon { height: 40px; }
+
+  /* Listino: hide image on narrow screens, let ledger breathe */
+  .listino__head { grid-template-columns: 1fr; }
+  .listino__figure { display: none; }
+
+  /* Gallery: single column, fixed heights */
+  .gallery { grid-template-columns: 1fr; height: auto; }
+  .gallery figure { min-height: 260px; }
+
+  .maestro blockquote { font-size: clamp(1.25rem, 5vw, 1.55rem); padding-left: 2.2rem; }
+  .chiusura__loop { max-width: 290px; }
+  .booking-card { border-radius: var(--r); }
+  .aper-visual  { border-radius: var(--r); }
+}
+
+@media (min-width: 641px) { .mbar { display: none !important; } }
+
+/* ===================================================================
+   MOTION LAYER (pass 3)
+   All initial-hidden states are gated on `html.motion`, which JS adds
+   ONLY when motion is allowed. With JS off or reduced-motion, the class
+   is never added, so every section renders fully visible — no payload
+   is ever stranded waiting on the observer.
+=================================================================== */
+
+/* Nav deepens its shadow once the page is scrolled */
+.nav.scrolled { box-shadow: var(--shadow-md); border-bottom-color: color-mix(in srgb, var(--ink) 18%, transparent); }
+.nav { transition: box-shadow .3s var(--ease-out), border-color .3s; }
+
+/* Top scroll-progress bar — the helix affordance carried to mobile
+   (where the sticky rail is hidden) and a subtle global cue elsewhere */
+#topProgress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 150;
+  transform: scaleX(0); transform-origin: left;
+  background: linear-gradient(90deg, var(--cinnabar), var(--pine));
+  box-shadow: 0 0 12px rgba(217,64,31,.5);
+}
+
+/* Continuous scroll-linked elements */
+.hero__portrait { will-change: transform; }
+[data-ribbon]   { will-change: transform, background-position; }
+
+/* Hero load entrance — heading (mask) → subcopy → meta → CTA.
+   Pure CSS so it plays with the library absent; disabled under reduced-motion. */
+.hero__eyebrow { animation: heroRise 680ms var(--ease-out) both; animation-delay: .12s; }
+.hero__sub     { animation: heroRise 680ms var(--ease-out) both; animation-delay: .40s; }
+.hero__meta    { animation: heroRise 680ms var(--ease-out) both; animation-delay: .54s; }
+.hero__actions { animation: heroRise 680ms var(--ease-out) both; animation-delay: .68s; }
+@keyframes heroRise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+/* ---- Scroll reveals, varied by content role ---- */
+html.motion .reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s var(--ease-out) var(--d,0s), transform .7s var(--ease-out) var(--d,0s);
+}
+html.motion .reveal.in { opacity: 1; transform: none; }
+
+html.motion .reveal-media {
+  opacity: 0; transform: scale(.94); will-change: transform, opacity;
+  transition: opacity .8s var(--ease-out) var(--d,0s), transform .8s var(--ease-out) var(--d,0s);
+}
+html.motion .reveal-media.in { opacity: 1; transform: none; }
+
+/* Headings clip/mask up out of nothing — echoes the hero wordmark reveal */
+html.motion .reveal-head {
+  opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0);
+  transition: opacity .7s var(--ease-out) var(--d,0s),
+              transform .8s var(--ease-out) var(--d,0s),
+              clip-path .8s var(--ease-out) var(--d,0s);
+}
+html.motion .reveal-head.in { opacity: 1; transform: none; clip-path: inset(0 0 -14% 0); }
+
+/* Service-ledger rows inking in: baseline draws left→right, then name+price settle */
+html.motion .ledger li::after {
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .75s var(--ease-out) var(--d,0s);
+}
+html.motion .ledger li.in::after { transform: scaleX(1); }
+html.motion .ledger li .svc,
+html.motion .ledger li .price {
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .55s var(--ease-out), transform .55s var(--ease-out);
+}
+html.motion .ledger li.in .svc   { opacity: 1; transform: none; transition-delay: calc(var(--d,0s) + .24s); }
+html.motion .ledger li.in .price { opacity: 1; transform: none; transition-delay: calc(var(--d,0s) + .34s); }
+
+/* Straight-razor shave wipe: a frosted panel cleared by one L→R blade sweep */
+.rito__wipe {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(243,238,230,.50) 0%, rgba(243,238,230,.62) 74%, rgba(255,255,255,.94) 100%);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  border-right: 2px solid rgba(255,255,255,.85);
+  box-shadow: 2px 0 22px rgba(255,255,255,.5);
+  transform: translateX(101%);            /* default: cleared → image fully visible (PE) */
+}
+html.motion .rito__wipe { transform: translateX(0); }               /* frosted, waiting */
+html.motion .rito__figure.in .rito__wipe {
+  transform: translateX(101%); transition: transform 1s var(--ease-out);   /* blade passes */
+}
+
+/* Rating bars fill via transform (no layout thrash), staggered per row */
+html.motion .rep__track span {
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .9s var(--ease-out) var(--d,0s);
+}
+html.motion .rep__bars.in .rep__track span { transform: scaleX(1); }
+
+/* Pointer-only micro-interaction: hover a ledger row → price nudges, a scissor snips the divider */
+@media (hover: hover) {
+  .ledger li .price { transition: transform .24s var(--ease-out), color .24s; }
+  .ledger li:hover .price { transform: translateX(-6px); color: var(--cinnabar); }
+  .ledger li::before {
+    content: "\2702"; position: absolute; right: .05rem; bottom: -.62rem;
+    font-size: .9rem; line-height: 1; color: var(--cinnabar);
+    opacity: 0; transform: translateX(10px) rotate(-8deg);
+    transition: opacity .2s, transform .26s var(--ease-out);
+    pointer-events: none; z-index: 2;
+  }
+  .ledger li:hover::before { opacity: 1; transform: translateX(0) rotate(0); }
+}
+
+/* ===================================================================
+   REDUCED MOTION — all gates must pass
+=================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:       .001ms !important;
+    animation-iteration-count: 1     !important;
+    transition-duration:      .001ms !important;
+    scroll-behavior:          auto   !important;
+  }
+  .hero__wordmark b { animation: none !important; transform: none !important; }
+  .hero__portrait   { animation: none !important; transform: none !important; }
+  .hero__ribbon     { animation: none !important; opacity: 1; transform: rotate(-27deg) !important; }
+  .hero__eyebrow, .hero__sub, .hero__meta, .hero__actions { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .gallery figure:hover img { transform: none; }
+  .rito__wipe { display: none !important; }
+  #topProgress { display: none !important; }
+  body::after { display: none; }
+}
+</style>
+</head>
+<body>
+<div id="topProgress" aria-hidden="true"></div>
+<a class="skip" href="#listino">Salta al listino</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Navigazione principale">
+  <a class="nav__brand" href="#top">
+    <span class="nav__pole ribbon" aria-hidden="true"></span>
+    Mario<span style="color:var(--cinnabar)">.</span>
+  </a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Apri il menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav__links" id="primary-menu">
+    <li><a href="#apertura">Prenota</a></li>
+    <li><a href="#listino">Listino</a></li>
+    <li><a href="#rito">Il rasoio</a></li>
+    <li><a href="#maestro">Mario</a></li>
+    <li><a href="#quartiere">Dove siamo</a></li>
+    <li><a href="#reputazione">Recensioni</a></li>
+    <li><a class="nav__cta" data-cta href="tel:+393405567788">Chiama · +39 340 5567788</a></li>
+  </ul>
+</nav>
+
+<div class="page" id="top">
+
+  <!-- ============ STICKY BOOKING / HELIX RAIL ============ -->
+  <aside class="rail" aria-label="Prenotazione rapida">
+    <span class="rail__label">Il Registro di Mario</span>
+    <div class="rail__helix ribbon" aria-hidden="true">
+      <span class="rail__fill" id="railFill"></span>
+    </div>
+    <a class="rail__prenota" data-cta href="tel:+393405567788" aria-label="Chiama per prenotare, +39 340 5567788">Chiama · Prenota</a>
+  </aside>
+
+  <div class="content">
+
+    <!-- ============ 1. INSEGNA (HERO) ============ -->
+    <header class="hero" id="insegna">
+      <img class="hero__portrait" src="assets/hero-mario-portrait.jpg" alt="Mario cutting a client's hair mid-fade in his Milano barber shop">
+      <div class="hero__ribbon ribbon" data-ribbon data-rot="-27" data-spin="9" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <span class="hero__eyebrow">Barbiere · Milano dal quartiere</span>
+        <h1 class="hero__wordmark">
+          <span class="l1"><b>Mario</b></span>
+          <span class="l2"><b>Barber Shop</b></span>
+        </h1>
+        <p class="hero__sub">Fade di precisione, barba disegnata e la rasatura col rasoio a mano libera. Ora puoi vederli, scegliere il prezzo e fissare la tua poltrona — senza sperare che non ci sia coda.</p>
+        <div class="hero__meta">
+          <span class="hero__stars">★★★★★ 4,7</span>
+          <span>128 recensioni verificate</span>
+          <span aria-hidden="true">·</span>
+          <span>Taglio · Barba · Rasoio</span>
+        </div>
+        <div class="hero__actions">
+          <a class="btn btn--primary" data-cta href="tel:+393405567788">Chiama per prenotare</a>
+          <a class="btn btn--ghost" href="#listino">Guarda il listino</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ 2. APERTURA & PRENOTAZIONE ============ -->
+    <section id="apertura" aria-labelledby="apertura-h">
+      <div class="chapter-tag">
+        <span class="chapter-num">Cap. I</span>
+        <span class="chapter-clock" data-clock="08:00">08:00</span>
+        <span class="chapter-kicker">Apertura &amp; Prenotazione</span>
+      </div>
+      <h2 id="apertura-h">Si apre il registro.<br>La prima poltrona è tua.</h2>
+      <p class="lede">Fino a ieri, l'unico modo per sederti da Mario era passare e sperare. Da oggi il banco ha una pagina online: scegli il servizio, guarda il prezzo, e blocchi un orario preciso attorno alla tua giornata.</p>
+
+      <div class="apertura__grid" style="margin-top:2.5rem">
+        <div class="booking-card">
+          <h3>Prenota la tua poltrona</h3>
+          <p style="margin:0;color:rgba(243,238,230,.8)">Un colpo di telefono e sei sul registro. Mario ti conferma l'orario e il barbiere.</p>
+          <a class="phone" data-cta href="tel:+393405567788">+39 340 5567788</a>
+          <ol class="booking-steps">
+            <li><b>1.</b> Dicci il servizio — taglio, barba o rasoio a mano libera.</li>
+            <li><b>2.</b> Scegli il giorno e la fascia oraria che preferisci.</li>
+            <li><b>3.</b> Ricevi conferma. Ti aspettiamo alla poltrona, senza coda.</li>
+          </ol>
+          <div class="trust-strip">
+            <span>★ 4,7/5 su 128 recensioni</span>
+            <span>Pagamenti carta &amp; contanti</span>
+            <span>Cancellazione gratuita</span>
+          </div>
+          <a class="btn btn--primary" data-cta href="tel:+393405567788" style="justify-self:start">Chiama ora</a>
+        </div>
+        <div class="aper-visual">
+          <img src="assets/workstation-tools.jpg" alt="A barber's scissors, razor, brush and comb arranged on a marble counter">
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-ribbon ribbon" data-ribbon data-rot="-2.5" data-spin="7" aria-hidden="true"></div>
+
+    <!-- ============ 3. IL LISTINO ============ -->
+    <section id="listino" class="listino" aria-labelledby="listino-h">
+      <div class="chapter-tag">
+        <span class="chapter-num">Cap. II</span>
+        <span class="chapter-clock" data-clock="10:15">10:15</span>
+        <span class="chapter-kicker">Il Listino</span>
+      </div>
+      <div class="listino__head">
+        <div>
+          <h2 id="listino-h">Il listino, riga per riga.</h2>
+          <p class="lede">Nomi chiari, tempi onesti, prezzi in chiaro. Così scegli prima di sederti — e sai già cosa aspettarti quando lo specchio ti guarda.</p>
+        </div>
+        <div class="listino__figure">
+          <img src="assets/finished-cut-result.jpg" alt="A freshly finished precise fade seen from behind">
+        </div>
+      </div>
+
+      <ul class="ledger">
+        <li>
+          <span class="svc">Taglio classico<small>Forbici e macchinetta, lavaggio e finish. Il taglio di sempre, fatto bene.</small></span>
+          <span class="price">€22<span class="dur">≈ 30 min</span></span>
+        </li>
+        <li>
+          <span class="svc">Fade / Sfumatura di precisione<small>Sfumatura pulita dal rasato al pieno, disegnata a mano sul tuo attaccatura.</small></span>
+          <span class="price">€26<span class="dur">≈ 40 min</span></span>
+        </li>
+        <li>
+          <span class="svc">Barba disegnata<small>Rifinitura, contorni netti e olio da barba. Forma studiata sul tuo viso.</small></span>
+          <span class="price">€15<span class="dur">≈ 25 min</span></span>
+        </li>
+        <li class="feat">
+          <span class="svc">Rasoio a mano libera &amp; asciugamano caldo<span class="badge">Firma</span><small>Il rito lento: panno caldo, lama a mano libera, dopobarba. Vedi il capitolo dedicato.</small></span>
+          <span class="price">€28<span class="dur">≈ 40 min</span></span>
+        </li>
+        <li>
+          <span class="svc">Taglio + Barba<small>Il completo: taglio su misura e barba disegnata nella stessa seduta.</small></span>
+          <span class="price">€35<span class="dur">≈ 55 min</span></span>
+        </li>
+      </ul>
+      <p class="listino__note">Prezzi e durate indicativi, pensati per farti scegliere in anticipo: Mario conferma il preventivo esatto in poltrona in base al servizio.</p>
+    </section>
+
+    <!-- ============ 4. IL RITO DEL RASOIO ============ -->
+    <section id="rito" class="rito" aria-labelledby="rito-h">
+      <div class="chapter-tag">
+        <span class="chapter-num" style="color:var(--paper)">Cap. III</span>
+        <span class="chapter-clock" data-clock="12:30">12:30</span>
+        <span class="chapter-kicker">Il Rito del Rasoio</span>
+      </div>
+      <div class="rito__grid">
+        <div class="rito__figure">
+          <img src="assets/detail-straight-razor.jpg" alt="Close-up of a straight razor shave with fresh lather along the jaw">
+          <div class="rito__wipe" aria-hidden="true"></div>
+        </div>
+        <div>
+          <h2 id="rito-h">La lama passa una volta sola.</h2>
+          <p class="lede">Qui non c'è il nastro trasportatore della catena. C'è l'asciugamano caldo che apre la pelle, la schiuma montata a pennello, e il rasoio a mano libera che segue la mascella con calma. È il gesto che ti fa uscire diverso.</p>
+          <ul class="rito__list">
+            <li><b>Panno caldo —</b> prepara la pelle e ammorbidisce la barba prima della lama.</li>
+            <li><b>Schiuma a pennello —</b> montata al momento, non spray dalla bomboletta.</li>
+            <li><b>Mano libera —</b> rasatura precisa, contorni netti, zero fretta.</li>
+            <li><b>Finish —</b> dopobarba e panno freddo per chiudere i pori.</li>
+          </ul>
+          <a class="btn btn--primary" data-cta href="tel:+393405567788" style="margin-top:1.75rem">Prenota il rasoio · Chiama</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. MARIO, IL MAESTRO ============ -->
+    <section id="maestro" class="maestro" aria-labelledby="maestro-h">
+      <div class="chapter-tag">
+        <span class="chapter-num">Cap. IV</span>
+        <span class="chapter-clock" data-clock="14:00">14:00</span>
+        <span class="chapter-kicker">Mario, il maestro</span>
+      </div>
+      <div class="maestro__grid">
+        <div class="maestro__figure">
+          <img src="assets/mario-at-work-hands.jpg" alt="The barber's hands adjusting clippers at his workstation">
+        </div>
+        <div>
+          <h2 id="maestro-h">L'uomo dietro la poltrona.</h2>
+          <p class="lede">Un barbiere di quartiere che le recensioni le ha guadagnate una testa alla volta. Mani ferme, occhio per la forma, e la testardaggine di rifare un contorno finché non è giusto.</p>
+          <div class="stat-row">
+            <div class="stat"><b>4,7</b><span>media su 128 recensioni</span></div>
+            <div class="stat"><b>128+</b><span>clienti che hanno lasciato un voto</span></div>
+            <div class="stat"><b>1</b><span>poltrona, tutta la sua attenzione</span></div>
+          </div>
+          <blockquote>"Un taglio finisce quando è giusto, non quando suona il timer."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-ribbon ribbon" data-ribbon data-rot="-2.5" data-spin="7" aria-hidden="true"></div>
+
+    <!-- ============ 6. LA BOTTEGA ============ -->
+    <section id="bottega" class="bottega" aria-labelledby="bottega-h">
+      <div class="chapter-tag">
+        <span class="chapter-num">Cap. V</span>
+        <span class="chapter-clock" data-clock="16:20">16:20</span>
+        <span class="chapter-kicker">La Bottega</span>
+      </div>
+      <h2 id="bottega-h">Dove ti siedi.</h2>
+      <p class="lede">Poltrone in fila davanti agli specchi, luce che entra dalla vetrina, gli scaffali dei prodotti a portata di mano. Sai già cosa trovi quando spingi la porta.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/interior-bottega.jpg" alt="Interior of Mario Barber Shop with barber chairs facing mirrors">
+          <figcaption>Le poltrone e gli specchi</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/products-shelf.jpg" alt="Shelf of pomades, beard oils and aftershave in the barber shop">
+          <figcaption>Pomate, oli e dopobarba</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 7. IL QUARTIERE ============ -->
+    <section id="quartiere" aria-labelledby="quartiere-h">
+      <div class="chapter-tag">
+        <span class="chapter-num">Cap. VI</span>
+        <span class="chapter-clock" data-clock="17:45">17:45</span>
+        <span class="chapter-kicker">Il Quartiere</span>
+      </div>
+      <h2 id="quartiere-h">Trovaci a Milano.</h2>
+      <p class="lede">Una vetrina verde pino e l'insegna dipinta a mano: quando la vedi, sei arrivato. Ecco come raggiungerci e gli orari con cui organizzarti.</p>
+      <div class="quartiere__grid" style="margin-top:2.3rem">
+        <div class="quartiere__figure">
+          <img src="assets/shopfront-milano.jpg" alt="The green facade and sign of Mario Barber Shop on a Milano street">
+        </div>
+        <div class="address-block">
+          <h3>Mario Barber Shop</h3>
+          <p style="margin:0;color:rgba(243,238,230,.78)">Milano — a due passi dalle vie del centro. Indirizzo esatto in conferma quando prenoti.</p>
+          <dl>
+            <div class="row"><dt>Lun</dt><dd>Chiuso</dd></div>
+            <div class="row"><dt>Mar – Ven</dt><dd>09:00 – 19:30</dd></div>
+            <div class="row"><dt>Sab</dt><dd>09:00 – 18:00</dd></div>
+            <div class="row"><dt>Dom</dt><dd>Chiuso</dd></div>
+          </dl>
+          <a class="btn btn--pine" href="https://www.google.com/maps/search/?api=1&query=Mario+Barber+Shop+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          <a class="btn btn--dark" data-cta href="tel:+393405567788">Chiama · +39 340 5567788</a>
+          <p style="margin:.2rem 0 0;font-size:.8rem;color:var(--stone)">Orari indicativi da confermare con la bottega.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. LA REPUTAZIONE ============ -->
+    <section id="reputazione" class="rep" aria-labelledby="rep-h">
+      <div class="chapter-tag" style="justify-content:center">
+        <span class="chapter-num" style="color:var(--paper)">Cap. VII</span>
+        <span class="chapter-clock" data-clock="18:30">18:30</span>
+        <span class="chapter-kicker">La Reputazione</span>
+      </div>
+      <h2 id="rep-h" style="color:var(--paper)">Il voto se l'è guadagnato.</h2>
+      <div class="rep__score">
+        <div class="rep__big">4,7<em>/5</em></div>
+        <div class="rep__stars" aria-hidden="true">★★★★★</div>
+        <div class="rep__count">128 recensioni · una media rimasta alta nel tempo</div>
+      </div>
+
+      <div class="rep__bars" aria-label="Distribuzione indicativa delle valutazioni">
+        <div class="rep__bar"><span>5 ★</span><span class="rep__track"><span style="width:78%"></span></span><span>78%</span></div>
+        <div class="rep__bar"><span>4 ★</span><span class="rep__track"><span style="width:16%"></span></span><span>16%</span></div>
+        <div class="rep__bar"><span>3 ★</span><span class="rep__track"><span style="width:4%"></span></span><span>4%</span></div>
+        <div class="rep__bar"><span>2 ★</span><span class="rep__track"><span style="width:1%"></span></span><span>1%</span></div>
+        <div class="rep__bar"><span>1 ★</span><span class="rep__track"><span style="width:1%"></span></span><span>1%</span></div>
+      </div>
+
+      <div class="rep__quotes">
+        <blockquote class="rep__quote">Il sentimento che torna più spesso nelle recensioni: fade puliti e contorni precisi, rifatti finché non sono giusti.<span>Sintesi delle recensioni · non attribuita</span></blockquote>
+        <blockquote class="rep__quote">E poi la calma del rasoio a mano libera con l'asciugamano caldo — il dettaglio che i clienti citano come la differenza dalle catene.<span>Sintesi delle recensioni · non attribuita</span></blockquote>
+      </div>
+      <p class="rep__source">Valutazione aggregata reale: 4,7/5 su 128 recensioni. Le frasi qui sopra riassumono il tono generale dei giudizi e non sono citazioni attribuite a singole persone. La distribuzione delle stelle è una stima illustrativa.</p>
+    </section>
+
+    <!-- ============ 9. LA PRIMA VOLTA ============ -->
+    <section id="faq" class="faq" aria-labelledby="faq-h">
+      <div class="chapter-tag">
+        <span class="chapter-num">Cap. VIII</span>
+        <span class="chapter-clock" data-clock="19:00">19:00</span>
+        <span class="chapter-kicker">La Prima Volta</span>
+      </div>
+      <h2 id="faq-h">La prima volta da Mario.</h2>
+      <p class="lede">Le domande che fai prima di prenotare, con risposte dirette — così niente ti frena dal fissare l'orario.</p>
+      <div class="faq__list">
+        <details open>
+          <summary>Serve prenotare o posso passare?</summary>
+          <p>Puoi tentare il walk-in, ma la poltrona non è garantita. Una chiamata al +39 340 5567788 ti assicura l'orario e ti evita la coda: è il motivo per cui esiste questa pagina.</p>
+        </details>
+        <details>
+          <summary>Quanto dura una rasatura col rasoio?</summary>
+          <p>Il rito completo — asciugamano caldo, schiuma a pennello, lama a mano libera e finish — dura circa 40 minuti. Non è un servizio da fare di corsa, ed è proprio questo il punto.</p>
+        </details>
+        <details>
+          <summary>Come si paga?</summary>
+          <p>Si accettano carte e contanti direttamente in bottega. Nessun anticipo richiesto per prenotare al telefono.</p>
+        </details>
+        <details>
+          <summary>Posso disdire o spostare l'appuntamento?</summary>
+          <p>Sì. Ti chiediamo solo di avvisare con un po' di anticipo con una chiamata, così la poltrona resta libera per un altro cliente. La cancellazione è gratuita.</p>
+        </details>
+        <details>
+          <summary>Fate anche solo la sistemata di barba?</summary>
+          <p>Certo. La barba disegnata è un servizio a sé (contorni, rifinitura e olio), oppure la abbini al taglio nel pacchetto completo. Trovi tutto nel <a href="#listino" style="color:var(--cinnabar)">listino</a>.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ 10. CHIUSURA & PRENOTA ============ -->
+    <section id="contatti" class="chiusura" aria-labelledby="chiusura-h">
+      <div class="chapter-tag" style="justify-content:center">
+        <span class="chapter-num" style="color:var(--paper)">Cap. IX</span>
+        <span class="chapter-clock" data-clock="19:30">19:30</span>
+        <span class="chapter-kicker">Chiusura &amp; Prenota</span>
+      </div>
+      <div class="chiusura__loop">
+        <video autoplay muted loop playsinline poster="assets/shopfront-milano.jpg" aria-label="Mario Barber Shop — brand loop">
+          <source src="assets/loop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h2 id="chiusura-h">Si chiude il registro.<br>La tua poltrona ti aspetta.</h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto;color:rgba(243,238,230,.84)">Un colpo di telefono e sei sulla pagina di domani. Nessuna coda, nessuna attesa a caso.</p>
+      <a class="phone-big" data-cta href="tel:+393405567788">+39 340 5567788</a>
+      <div class="chiusura__hours">
+        <span>Mar – Ven · 09:00 – 19:30</span>
+        <span>Sab · 09:00 – 18:00</span>
+        <span>Lun &amp; Dom · Chiuso</span>
+      </div>
+      <div class="chiusura__actions">
+        <a class="btn btn--primary" data-cta href="tel:+393405567788">Chiama per prenotare</a>
+        <a class="btn btn--ghost" href="https://instagram.com/mariobarbermilano" target="_blank" rel="noopener">Seguici su Instagram</a>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="footer__grid">
+        <div>
+          <span style="font-family:var(--font-head);font-weight:800;color:var(--paper);font-size:1.18rem">Mario Barber Shop</span><br>
+          <span>Barbiere · Milano</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem 1.5rem">
+          <a data-cta href="tel:+393405567788">+39 340 5567788</a>
+          <a href="https://instagram.com/mariobarbermilano" target="_blank" rel="noopener">@mariobarbermilano</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Mario+Barber+Shop+Milano" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+      </div>
+      <p class="footer__disclaimer">Pagina dimostrativa preparata per Mario Barber Shop. La valutazione 4,7/5 su 128 recensioni è reale; prezzi, durate e orari sono indicativi e da confermare con la bottega, e l'indirizzo esatto viene comunicato in fase di prenotazione. Le sintesi delle recensioni non sono citazioni attribuite a singole persone.</p>
+    </footer>
+
+  </div><!-- /.content -->
+</div><!-- /.page -->
+
+<!-- Mobile sticky booking bar -->
+<div class="mbar" role="region" aria-label="Prenota">
+  <span class="m-rating"><b>★ 4,7</b> · 128 recensioni<br>Mario Barber Shop</span>
+  <a class="btn btn--primary" data-cta href="tel:+393405567788">Chiama · Prenota</a>
+</div>
+
+<script>
+/* ---- Mobile nav toggle — runs regardless of motion preference ---- */
+(function(){
+  var t=document.querySelector('.nav__toggle'), m=document.getElementById('primary-menu');
+  if(!t||!m)return;
+  t.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+    t.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+  });
+  m.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ m.classList.remove('open'); t.setAttribute('aria-expanded','false'); }
+  });
+})();
+</script>
+
+<script>
+/* ===================================================================
+   MOTION LAYER — progressive enhancement.
+   Everything below is skipped entirely under prefers-reduced-motion,
+   and no hidden state exists in CSS unless `html.motion` is present,
+   so content is always fully visible without this script.
+=================================================================== */
+(function(){
+  var html = document.documentElement;
+  html.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  html.classList.add('motion');
+
+  var qsa = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+  /* single-shot IntersectionObserver helper */
+  function onEnter(els, cb, opts){
+    if(!('IntersectionObserver' in window)){ els.forEach(cb); return; }
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting){ cb(e.target); io.unobserve(e.target); }
+      });
+    }, opts || { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  try {
+    /* ---------- 1. assign reveal roles ---------- */
+    qsa('#apertura h2,#listino h2,#rito h2,#maestro h2,#bottega h2,#quartiere h2,#reputazione h2,#faq h2,#contatti h2')
+      .forEach(function(el){ el.classList.add('reveal-head'); });
+
+    qsa('.aper-visual,.listino__figure,.maestro__figure,.quartiere__figure,.chiusura__loop,.gallery figure,.rep__quote')
+      .forEach(function(el){ el.classList.add('reveal-media'); });
+
+    qsa('#apertura .lede,#listino .lede,#rito .lede,#maestro .lede,#bottega .lede,#quartiere .lede,#faq .lede,#contatti .lede,'
+      + '.booking-card,.listino__note,.rito__list,.stat-row,.address-block,.rep__score,.rep__source,'
+      + '.faq details,.chiusura__hours,.chiusura__actions,.footer__grid,.footer__disclaimer')
+      .forEach(function(el){ el.classList.add('reveal'); });
+
+    /* stagger a few groups by setting a per-item delay var */
+    [['.gallery figure',0.10],['.rep__quote',0.12],['.faq__list details',0.07]].forEach(function(g){
+      qsa(g[0]).forEach(function(el,i){ el.style.setProperty('--d',(i*g[1]).toFixed(2)+'s'); });
+    });
+
+    onEnter(qsa('.reveal,.reveal-media,.reveal-head'), function(el){ el.classList.add('in'); });
+
+    /* ---------- 2. razor-shave wipe ---------- */
+    onEnter(qsa('.rito__figure'), function(el){ el.classList.add('in'); },
+      { rootMargin: '0px 0px -18% 0px', threshold: 0.35 });
+
+    /* ---------- 3. service-ledger rows inking in ---------- */
+    onEnter(qsa('.ledger'), function(ul){
+      qsa('li', ul).forEach(function(li,i){
+        li.style.setProperty('--d',(i*0.09).toFixed(2)+'s');
+        li.classList.add('in');
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+
+    /* ---------- 4. rating bars filling ---------- */
+    onEnter(qsa('.rep__bars'), function(box){
+      qsa('.rep__bar', box).forEach(function(bar,i){ bar.style.setProperty('--d',(i*0.09).toFixed(2)+'s'); });
+      box.classList.add('in');
+    }, { threshold: 0.3 });
+
+    /* ---------- 5. chapter time-stamp count-up ---------- */
+    function countClock(el){
+      var target = el.getAttribute('data-clock') || el.textContent.trim();
+      var parts = target.split(':'); if(parts.length!==2){ return; }
+      var total = (parseInt(parts[0],10)||0)*60 + (parseInt(parts[1],10)||0);
+      var dur = 900, start = null;
+      function frame(t){
+        if(start===null) start=t;
+        var p = Math.min(1,(t-start)/dur);
+        var eased = 1 - Math.pow(1-p,3);
+        var cur = Math.round(total*eased);
+        el.textContent = String(Math.floor(cur/60)).padStart(2,'0')+':'+String(cur%60).padStart(2,'0');
+        if(p<1) requestAnimationFrame(frame); else el.textContent = target;
+      }
+      requestAnimationFrame(frame);
+    }
+    onEnter(qsa('.chapter-clock'), countClock, { threshold: 0.9, rootMargin: '0px 0px -8% 0px' });
+
+    /* ---------- 6+7. single rAF scroll handler:
+         helix ribbon rotate + stripe advance, hero parallax,
+         sticky-rail fill + button intensify, top progress, nav shadow ---------- */
+    var ribbons  = qsa('[data-ribbon]');
+    var portrait = document.querySelector('.hero__portrait');
+    var railFill = document.getElementById('railFill');
+    var railBtn  = document.querySelector('.rail__prenota');
+    var topProg  = document.getElementById('topProgress');
+    var nav      = document.querySelector('.nav');
+    var ticking  = false, railHot = false;
+
+    function update(){
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var prog = max > 0 ? y / max : 0;
+      var vh = window.innerHeight;
+
+      /* the pole turns through the day: rotate each ribbon by its viewport
+         progress and advance the stripe pattern with global scroll */
+      if (y > 0) {
+        for (var i=0;i<ribbons.length;i++){
+          var r = ribbons[i];
+          var base = parseFloat(r.getAttribute('data-rot')) || 0;
+          var spin = parseFloat(r.getAttribute('data-spin')) || 0;
+          var rect = r.getBoundingClientRect();
+          var vp = (vh - rect.top) / (vh + rect.height);
+          vp = vp < 0 ? 0 : (vp > 1 ? 1 : vp);
+          r.style.transform = 'rotate(' + (base + (vp - 0.5) * spin).toFixed(2) + 'deg)';
+          r.style.backgroundPositionX = (y * 0.5).toFixed(1) + 'px';
+        }
+        if (portrait) portrait.style.transform = 'translate3d(0,' + (y * 0.12).toFixed(1) + 'px,0) scale(1.06)';
+      }
+
+      if (railFill){
+        railFill.style.height = (8 + prog * 92).toFixed(1) + '%';
+        railFill.style.opacity = (0.55 + prog * 0.45).toFixed(2);
+      }
+      /* the Prenota button intensifies to cinnabar near the end of the day */
+      if (railBtn){
+        var hot = prog > 0.72;
+        if (hot !== railHot){ railBtn.style.background = hot ? 'var(--cinnabar)' : ''; railHot = hot; }
+      }
+      if (topProg) topProg.style.transform = 'scaleX(' + prog.toFixed(4) + ')';
+      if (nav) nav.classList.toggle('scrolled', y > 8);
+    }
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+
+  } catch(err){
+    /* if anything above fails, never leave content stranded hidden */
+    qsa('.reveal,.reveal-media,.reveal-head,.rito__figure,.rep__bars').forEach(function(el){ el.classList.add('in'); });
+    qsa('.ledger li').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* final safety net: reveal anything still hidden after 3s */
+  setTimeout(function(){
+    qsa('.reveal,.reveal-media,.reveal-head,.rito__figure,.rep__bars,.ledger li').forEach(function(el){
+      if(!el.classList.contains('in')) el.classList.add('in');
+    });
+  }, 3000);
+})();
+</script>
+</body>
+</html>

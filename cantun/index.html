@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cantun — bottega di quartiere a Porta Genova, Milano</title>
+<meta name="description" content="Cantun: la bottega-bistrot che tre amici hanno aperto nei backstreet dei Navigli nel 2016. Panificio e caffè all'alba, cucina conviviale la sera, e una vita itinerante tra i mercati di Milano.">
+<script>
+  /* Progressive-enhancement flag: hidden-then-reveal styles apply ONLY with JS.
+     Reduced-motion is flagged here too so the CSS never hides content it won't animate. */
+  (function(){
+    var r = document.documentElement;
+    r.classList.add('js');
+    try{ if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('reduce'); }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root{
+  /* Palette — warm, honest, Milanese independent */
+  --ink:       #2A1E17;
+  --ink-deep:  #1C1209;
+  --cream:     #F6EDDF;
+  --cream-2:   #EDE5D2;
+  --cream-3:   #E3D8C4;
+  --red:       #D94F39;   /* terracotta — one deliberate accent */
+  --ochre:     #C08B35;   /* brass / crust gold */
+  --olive:     #6E7B54;
+  --clay:      #7A5840;   /* warm mid brown */
+
+  /* Semantic alphas */
+  --ink-80:rgba(42,30,23,.80);
+  --ink-60:rgba(42,30,23,.60);
+  --ink-40:rgba(42,30,23,.40);
+  --ink-16:rgba(42,30,23,.16);
+  --ink-08:rgba(42,30,23,.08);
+  --cream-90:rgba(246,237,223,.90);
+
+  /* Layout */
+  --maxw:  1200px;
+  --rail-w: 78px;
+  --r:     16px;     /* base border-radius */
+
+  /* Motion (pass 3 will expand this) */
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+
+/* ================================================================
+   RESET / GLOBAL SAFETY
+   ================================================================ */
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{
+  margin:0; padding:0;
+  overflow-x:clip;
+  background:var(--cream);
+  color:var(--ink);
+}
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:17px; line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:anywhere; word-break:normal;
+}
+img,video{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3,h4,p{ margin:0; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+
+/* ================================================================
+   TYPE SYSTEM
+   ================================================================ */
+h1,h2,h3,h4,.display{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700;
+  line-height:1.0;
+  letter-spacing:-.03em;
+}
+
+/* Kicker / eyebrow — the time marker */
+.kicker{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600;
+  font-size:.78rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--red);
+  display:flex; align-items:center; gap:.8em;
+}
+.kicker::before{
+  content:"";
+  width:32px; height:5px;      /* visible, not a hairline */
+  border-radius:3px;
+  background:var(--red);
+  display:inline-block; flex:none;
+}
+.kicker .hh{ font-variant-numeric:tabular-nums; color:var(--ochre); }
+
+/* Body lede */
+.lede{
+  font-size:clamp(1.08rem,1.6vw,1.22rem);
+  line-height:1.62;
+  color:var(--ink-80);
+  max-width:58ch;
+}
+
+/* Layout container */
+.wrap{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding-inline:clamp(18px,4vw,36px);
+}
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn{
+  display:inline-flex; align-items:center; gap:.55em;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700; font-size:.98rem;
+  padding:16px 28px; border-radius:999px; border:2px solid transparent;
+  line-height:1; min-height:50px;
+  transition:transform .4s var(--ease), background .25s, box-shadow .4s var(--ease), border-color .25s;
+  text-align:center; white-space:nowrap;
+}
+.btn:hover{ transform:translateY(-3px); }
+.btn:focus-visible{ outline:3px solid var(--red); outline-offset:4px; border-radius:999px; }
+
+.btn-primary{
+  background:var(--red); color:var(--cream);
+  box-shadow:0 12px 30px -14px rgba(217,79,57,.85);
+}
+.btn-primary:hover{ box-shadow:0 18px 38px -14px rgba(217,79,57,.95); background:#c94433; }
+
+.btn-ghost{
+  background:transparent; color:var(--ink);
+  border-color:var(--ink-40);
+}
+.btn-ghost:hover{ border-color:var(--ink); background:var(--ink-08); }
+
+.btn-cream{
+  background:var(--cream); color:var(--ink);
+  box-shadow:0 4px 16px -8px rgba(42,30,23,.4);
+}
+.btn-cream:hover{ background:#fff; box-shadow:0 8px 22px -10px rgba(42,30,23,.5); }
+
+/* ================================================================
+   HEADER / NAV
+   ================================================================ */
+.site-head{
+  position:sticky; top:0; z-index:60;
+  background:rgba(246,237,223,.88);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--ink-16);
+}
+.site-head .bar{
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  height:66px;
+}
+.brand{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:1.45rem; letter-spacing:.01em;
+  display:flex; align-items:center; gap:.5em;
+}
+.brand .dot{
+  width:10px; height:10px; border-radius:50%; background:var(--red);
+  display:inline-block; flex:none;
+  box-shadow:0 0 0 3px rgba(217,79,57,.22);
+}
+.nav-links{ display:flex; align-items:center; gap:28px; }
+.nav-links a{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:.93rem; font-weight:600; color:var(--ink-60);
+  transition:color .25s;
+}
+.nav-links a:hover{ color:var(--ink); }
+.nav-links a:focus-visible{ outline:3px solid var(--red); outline-offset:3px; border-radius:4px; }
+
+.nav-cta{ display:flex; align-items:center; gap:12px; }
+.nav-tel{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700; font-size:.93rem; white-space:nowrap; color:var(--ink-80);
+}
+.nav-toggle{
+  display:none; width:48px; height:48px;
+  border:1.5px solid var(--ink-40); border-radius:var(--r);
+  background:transparent;
+  flex-direction:column; justify-content:center; align-items:center; gap:5px;
+  transition:border-color .25s;
+}
+.nav-toggle:hover{ border-color:var(--ink); }
+.nav-toggle:focus-visible{ outline:3px solid var(--red); outline-offset:3px; border-radius:var(--r); }
+.nav-toggle span{
+  display:block; width:20px; height:2px; background:var(--ink);
+  border-radius:2px; transition:transform .3s var(--ease), opacity .3s;
+}
+.mobile-menu{ display:none; }
+
+/* ================================================================
+   ORA RAIL — persistent day-clock sidebar
+   ================================================================ */
+.ora-rail{
+  position:fixed; top:0; left:0; bottom:0; width:var(--rail-w); z-index:40;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+  padding:90px 0 28px;
+  background:var(--cream-2);
+  border-right:2px solid var(--ink-16);
+  pointer-events:none;
+}
+/* subtle warm gradient on the rail */
+.ora-rail::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(246,237,223,.0) 0%, rgba(192,139,53,.06) 50%, rgba(246,237,223,.0) 100%);
+  pointer-events:none;
+}
+.ora-rail .rail-label{
+  writing-mode:vertical-rl; transform:rotate(180deg);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700; font-size:.62rem; letter-spacing:.36em;
+  text-transform:uppercase; color:var(--ink-40);
+  margin-bottom:20px;
+}
+.ora-rail ul{ display:flex; flex-direction:column; gap:3px; pointer-events:auto; }
+.ora-rail li a{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:46px; height:46px; border-radius:12px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600; font-size:.63rem; line-height:1.15;
+  color:var(--ink-60); text-align:center;
+  transition:all .35s var(--ease);
+}
+.ora-rail li a .hh{
+  font-size:.8rem; color:var(--ink); font-variant-numeric:tabular-nums; font-weight:700;
+}
+.ora-rail li a:hover{ background:var(--ink-08); color:var(--ink); }
+.ora-rail li a:focus-visible{ outline:3px solid var(--red); outline-offset:2px; border-radius:12px; }
+.ora-rail li a.active{
+  background:var(--ink); color:var(--cream);
+  box-shadow:0 4px 14px -6px rgba(42,30,23,.6);
+}
+.ora-rail li a.active .hh{ color:var(--cream); }
+
+/* Content shifts right of the rail on desktop */
+@media(min-width:981px){
+  .page{ padding-left:var(--rail-w); }
+  .full-bleed{ margin-left:calc(-1 * var(--rail-w)); }
+}
+
+/* ================================================================
+   BRASS BADGE — Aperto / Chiuso plate (the wow centerpiece)
+   ================================================================ */
+.brass-badge{
+  --plate:linear-gradient(142deg,
+    #d4ae68 0%,
+    #b28930 18%,
+    #e8c97c 38%,
+    #9b741f 58%,
+    #d4a84a 78%,
+    #8c6618 100%);
+  position:relative; display:inline-flex; flex-direction:column; gap:7px;
+  padding:17px 24px 15px; border-radius:15px;
+  background:var(--plate);
+  color:#27200a;
+  border:1px solid rgba(255,255,255,.38);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.44) inset,
+    0 -4px 7px rgba(60,40,8,.45) inset,
+    0 22px 40px -16px rgba(30,20,6,.8),
+    0 4px 0 rgba(0,0,0,.15);
+  text-align:left; min-width:216px;
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease);
+  overflow:hidden;
+}
+/* Screw heads */
+.brass-badge::before,.brass-badge::after{
+  content:""; position:absolute;
+  width:8px; height:8px; border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,#f5e0a0,#7a5a1a);
+  box-shadow:0 1px 2px rgba(0,0,0,.45); top:10px;
+}
+.brass-badge::before{ left:10px; }
+.brass-badge::after{ right:10px; }
+
+/* Specular glint sweep on hover */
+.brass-badge .glint{
+  position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(112deg,transparent 35%,rgba(255,255,255,.6) 47%,transparent 59%);
+  transform:translateX(-130%);
+  transition:transform .75s var(--ease);
+}
+.brass-badge:hover,.brass-badge:focus-visible{
+  transform:translateY(2px) scale(.985);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.3) inset,
+    0 -2px 8px rgba(60,40,8,.6) inset,
+    0 8px 18px -10px rgba(30,20,6,.85),
+    0 2px 0 rgba(0,0,0,.2);
+  outline:none;
+}
+.brass-badge:hover .glint,.brass-badge:focus-visible .glint{ transform:translateX(130%); }
+
+.brass-status{
+  display:flex; align-items:center; gap:10px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:1.55rem; letter-spacing:.01em; line-height:1;
+}
+.brass-status .lamp{
+  width:13px; height:13px; border-radius:50%; flex:none;
+  background:#6a1810;
+  box-shadow:0 0 0 2px rgba(0,0,0,.18) inset;
+  transition:background .4s, box-shadow .4s;
+}
+.brass-badge[data-open="true"] .lamp{
+  background:#2d6e22;
+  box-shadow:0 0 0 2px rgba(0,0,0,.12) inset, 0 0 12px 2px rgba(70,180,50,.9);
+}
+.brass-sub{
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:600; font-size:.76rem; letter-spacing:.04em;
+  text-transform:uppercase; color:#4a3a0e;
+}
+.brass-plate-label{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600; font-size:.61rem; letter-spacing:.36em;
+  text-transform:uppercase; color:#5c480f;
+  border-top:1px solid rgba(60,40,8,.28);
+  padding-top:8px; margin-top:3px;
+}
+
+/* ================================================================
+   HERO — Alba / Dawn
+   ================================================================ */
+.hero{
+  position:relative; min-height:94vh; display:flex; align-items:flex-end;
+  overflow:hidden; background:var(--ink-deep);
+  isolation:isolate;
+}
+.hero-media{ position:absolute; inset:0; z-index:0; }
+.hero-media img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:50% 38%;
+  display:block;
+}
+.hero-media video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:50% 38%;
+}
+/* Directional sweep overlay (dawn light) */
+.hero-sweep{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(98deg,
+    rgba(28,18,9,.78) 0%,
+    rgba(28,18,9,.42) 30%,
+    rgba(192,139,53,.12) 50%,
+    rgba(28,18,9,.30) 70%,
+    rgba(28,18,9,.74) 100%);
+}
+/* Bottom legibility scrim — strong enough to guarantee text contrast */
+.hero-scrim{
+  position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(28,18,9,.22) 0%,
+    rgba(28,18,9,.0)  22%,
+    rgba(28,18,9,.0)  50%,
+    rgba(28,18,9,.65) 76%,
+    rgba(28,18,9,.92) 100%);
+}
+
+.hero-badge-slot{
+  position:absolute; top:24px; left:20px; z-index:6;
+}
+@media(min-width:981px){
+  .hero-badge-slot{ left:calc(var(--rail-w) + 26px); top:28px; }
+}
+
+.hero-inner{
+  position:relative; z-index:5; width:100%;
+  padding-block:44px 60px;
+  color:var(--cream);
+}
+.hero-wordmark{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800;
+  font-size:clamp(4.8rem,22vw,17rem);
+  line-height:.82; letter-spacing:-.04em;
+  margin:0 0 .14em -.03em;
+  /* Subtle text-shadow for legibility over image */
+  text-shadow:0 2px 0 rgba(28,18,9,.12), 0 12px 50px rgba(28,18,9,.55);
+}
+.hero-tag{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:500;
+  font-size:clamp(1.05rem,2.5vw,1.6rem);
+  color:rgba(246,237,223,.96); max-width:36ch; margin-bottom:28px;
+  text-shadow:0 2px 20px rgba(28,18,9,.7);
+  line-height:1.38;
+}
+.hero-tag b{ color:var(--ochre); font-weight:700; }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+.hero-meta{
+  display:flex; flex-wrap:wrap; gap:10px 28px; align-items:center;
+  margin-top:28px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:.88rem; color:rgba(246,237,223,.78);
+  padding-top:22px;
+  border-top:1px solid rgba(246,237,223,.16);
+}
+.hero-meta .mi{ display:flex; align-items:center; gap:8px; }
+.hero-meta .mi strong{ font-weight:700; color:var(--cream); }
+.hero-rating .stars{ color:var(--ochre); letter-spacing:3px; font-size:1em; }
+
+/* ================================================================
+   CHAPTERS — generic section rhythm
+   ================================================================ */
+section{ position:relative; }
+.chapter{
+  padding-block:clamp(72px,10vw,136px);
+}
+.chapter-head{
+  max-width:62ch;
+  margin-bottom:clamp(40px,5vw,64px);
+}
+.chapter-head h2{
+  font-size:clamp(2.2rem,5.2vw,3.8rem);
+  margin:.38em 0 .5em;
+}
+
+/* ================================================================
+   CRAFT BAND — editorial strip (bread-detail-hands)
+   ================================================================ */
+.craft-band{
+  height:clamp(200px,26vw,340px);
+  overflow:hidden; position:relative;
+}
+.craft-band img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:50% 55%;
+  display:block;
+}
+/* warm overlay so it reads as a deliberate editorial moment */
+.craft-band::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,
+    rgba(28,18,9,.22) 0%,
+    rgba(28,18,9,.0) 40%,
+    rgba(28,18,9,.0) 60%,
+    rgba(28,18,9,.28) 100%);
+  pointer-events:none;
+}
+
+/* ================================================================
+   AL BANCO — morning counter
+   ================================================================ */
+.banco-grid{
+  display:grid; grid-template-columns:1.08fr .92fr;
+  gap:0; align-items:center;
+}
+.banco-photo{ position:relative; z-index:1; }
+.banco-photo img{
+  width:100%; aspect-ratio:4/5;
+  object-fit:cover; object-position:50% 62%;
+  border-radius:20px;
+  box-shadow:0 48px 80px -44px rgba(42,30,23,.70);
+}
+.banco-photo .tag-detail{
+  position:absolute; bottom:-28px; right:-22px; width:42%; z-index:2;
+  border-radius:16px; overflow:hidden;
+  box-shadow:0 18px 40px -18px rgba(42,30,23,.65);
+  border:7px solid var(--cream);
+}
+.banco-photo .tag-detail img{
+  width:100%; aspect-ratio:1/1;
+  object-fit:cover; object-position:50% 45%;
+}
+.banco-text{
+  position:relative; z-index:3;
+  background:var(--cream);
+  padding:clamp(28px,4vw,44px);
+  border-radius:20px;
+  margin-left:-60px;
+  box-shadow:0 36px 70px -46px rgba(42,30,23,.55), 0 0 0 1px var(--ink-08);
+  /* warm left-edge accent */
+  border-left:5px solid var(--ochre);
+}
+.banco-list{ margin-top:28px; display:grid; gap:0; }
+.banco-list li{
+  display:grid; grid-template-columns:1fr auto; gap:14px; align-items:baseline;
+  padding:14px 0; border-bottom:1px dashed var(--ink-16);
+}
+.banco-list li:last-child{ border-bottom:0; }
+.banco-list .it{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600; font-size:1.06rem;
+}
+.banco-list .de{
+  display:block; font-family:'Inter',system-ui,sans-serif;
+  font-size:.84rem; color:var(--ink-60); font-weight:400; margin-top:3px;
+}
+.banco-list .pr{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700; color:var(--ochre); white-space:nowrap;
+  font-variant-numeric:tabular-nums; font-size:1rem;
+}
+
+/* ================================================================
+   I TRE AMICI — founders (dark section)
+   ================================================================ */
+.amici{
+  background:var(--ink-deep);
+  color:var(--cream);
+  /* warm grain added by the grain-canvas pseudo */
+  position:relative; isolation:isolate;
+}
+/* warm ambient glow in the upper-right of the dark section */
+.amici::before{
+  content:"";
+  position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(ellipse 60% 50% at 80% 20%,rgba(192,139,53,.14) 0%,transparent 72%);
+}
+.amici .wrap{ position:relative; z-index:1; }
+.amici .kicker{ color:var(--ochre); }
+.amici .kicker::before{ background:var(--ochre); }
+.amici-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(36px,5.5vw,72px); align-items:center;
+}
+.amici-photo{
+  position:relative;
+  /* slight angle for asymmetry */
+}
+.amici-photo img{
+  width:100%; aspect-ratio:3/4;
+  object-fit:cover; object-position:50% 22%;
+  border-radius:20px;
+  box-shadow:0 48px 80px -40px rgba(0,0,0,.7);
+}
+/* gold frame accent on amici photo */
+.amici-photo::after{
+  content:"";
+  position:absolute; inset:-1px; border-radius:21px;
+  box-shadow:0 0 0 1px rgba(192,139,53,.35);
+  pointer-events:none;
+}
+.amici h2{
+  font-size:clamp(2.2rem,5.2vw,3.8rem);
+  margin-bottom:.52em; color:var(--cream);
+  line-height:1.02;
+}
+.amici .lede{ color:rgba(246,237,223,.80); }
+.amici p+p{ margin-top:1.15em; }
+
+/* Hand-drawn underline on "tre amici" */
+.ink-underline{ position:relative; white-space:nowrap; color:var(--ochre); }
+.ink-underline svg{
+  position:absolute; left:0; right:0; bottom:-.26em;
+  width:100%; height:.5em; overflow:visible;
+}
+.ink-underline path{
+  stroke:var(--red); stroke-width:6; fill:none; stroke-linecap:round;
+  stroke-dasharray:520; stroke-dashoffset:520;
+  transition:stroke-dashoffset 1.5s var(--ease);
+}
+.amici.drawn .ink-underline path{ stroke-dashoffset:0; }
+
+.amici-facts{
+  display:flex; flex-wrap:wrap; gap:30px; margin-top:36px;
+  padding-top:30px; border-top:1px solid rgba(246,237,223,.12);
+}
+.amici-facts .f b{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:2.2rem; color:var(--ochre);
+  display:block; line-height:1;
+}
+.amici-facts .f span{ font-size:.84rem; color:rgba(246,237,223,.62); }
+
+/* ================================================================
+   IN CUCINA — bistrot craft
+   ================================================================ */
+.cucina-grid{
+  display:grid; grid-template-columns:.92fr 1.08fr;
+  gap:0; align-items:center;
+}
+.cucina-text{
+  position:relative; z-index:3;
+  background:var(--cream-2);
+  padding:clamp(28px,4vw,44px);
+  border-radius:20px;
+  margin-right:-60px;
+  box-shadow:0 36px 70px -46px rgba(42,30,23,.55), 0 0 0 1px var(--ink-08);
+  border-right:5px solid var(--red);
+}
+.cucina-photo{ position:relative; z-index:1; }
+.cucina-photo img{
+  width:100%; aspect-ratio:4/5;
+  object-fit:cover; object-position:50% 40%;
+  border-radius:20px;
+  box-shadow:0 48px 80px -44px rgba(42,30,23,.70);
+}
+.chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.chip{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600; font-size:.84rem;
+  padding:9px 16px; border-radius:999px;
+  background:var(--cream); border:1.5px solid var(--ink-16);
+  color:var(--ink); transition:background .25s, border-color .25s;
+}
+.chip:hover{ background:var(--cream-3); border-color:var(--ink-40); }
+
+/* ================================================================
+   CANTUN ITINERANTE — fixed vs markets split
+   ================================================================ */
+.itinerante{
+  background:var(--clay);
+  color:var(--cream);
+  overflow:hidden;
+  position:relative; isolation:isolate;
+}
+/* warm depth gradient on itinerante bg */
+.itinerante::before{
+  content:"";
+  position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:linear-gradient(160deg, rgba(28,18,9,.35) 0%, transparent 50%, rgba(28,18,9,.28) 100%);
+}
+.itinerante .wrap{ position:relative; z-index:1; }
+
+.split-head{
+  max-width:66ch; margin:0 auto clamp(36px,5vw,56px);
+  text-align:center;
+}
+.split-head .kicker{ justify-content:center; color:rgba(246,237,223,.88); }
+.split-head .kicker::before{ background:rgba(246,237,223,.88); }
+.split-head h2{
+  font-size:clamp(2.2rem,5.2vw,3.8rem);
+  color:var(--cream); margin:.42em 0 .5em;
+}
+.split-head .lede{
+  color:rgba(246,237,223,.80); margin-inline:auto;
+}
+
+.split-toggle{
+  display:inline-flex;
+  background:rgba(28,18,9,.36);
+  border-radius:999px; padding:5px; gap:4px;
+  margin:0 auto 36px;
+  position:relative; left:50%; transform:translateX(-50%);
+  box-shadow:0 0 0 1px rgba(246,237,223,.14);
+}
+.split-toggle button{
+  border:0; background:transparent;
+  color:rgba(246,237,223,.72);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600; font-size:.96rem;
+  padding:12px 24px; border-radius:999px;
+  transition:all .5s var(--ease); min-height:46px;
+}
+.split-toggle button:hover{ color:var(--cream); background:rgba(246,237,223,.1); }
+.split-toggle button:focus-visible{ outline:3px solid var(--cream); outline-offset:3px; border-radius:999px; }
+.split-toggle button[aria-selected="true"]{
+  background:var(--cream); color:var(--ink);
+  box-shadow:0 4px 14px -6px rgba(28,18,9,.5);
+}
+
+.split-stage{ position:relative; overflow:hidden; border-radius:22px; }
+.split-track{
+  display:grid; grid-template-columns:1fr 1fr; width:200%;
+  transition:transform .85s var(--ease);
+}
+.split-track[data-view="itinerante"]{ transform:translateX(-50%); }
+.split-panel{
+  position:relative; min-height:480px;
+  display:flex; align-items:flex-end; overflow:hidden;
+}
+.split-panel img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover;
+}
+/* Casa madre panel — object-position to show interior warmth */
+#panel-fissa img{ object-position:50% 45%; }
+/* Market stall panel */
+#panel-itin img{ object-position:50% 40%; }
+
+.split-panel .sp-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(28,18,9,.06) 0%, rgba(28,18,9,.0) 30%, rgba(28,18,9,.82) 100%);
+}
+.split-panel .sp-body{
+  position:relative; z-index:2;
+  padding:clamp(28px,4vw,46px); max-width:54ch;
+}
+.split-panel h3{
+  font-size:clamp(1.7rem,3.8vw,2.6rem);
+  color:var(--cream); margin-bottom:.42em;
+}
+.split-panel p{ color:rgba(246,237,223,.92); line-height:1.6; }
+.split-panel .sp-tag{
+  display:inline-block;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700; font-size:.72rem;
+  letter-spacing:.24em; text-transform:uppercase;
+  color:var(--ochre); margin-bottom:14px;
+}
+.split-note{
+  text-align:center; margin-top:24px;
+  font-size:.88rem; color:rgba(246,237,223,.68);
+}
+
+/* ================================================================
+   IL QUARTIERE — neighbourhood
+   ================================================================ */
+.quartiere-grid{
+  display:grid; grid-template-columns:1.2fr .8fr;
+  gap:clamp(28px,4vw,54px); align-items:stretch;
+}
+.quartiere-photo{
+  position:relative; border-radius:20px; overflow:hidden;
+  min-height:420px;
+}
+.quartiere-photo img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:50% 55%;
+  position:absolute; inset:0;
+}
+/* bottom fade for the pin card legibility */
+.quartiere-photo::before{
+  content:"";
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg,transparent 50%,rgba(28,18,9,.68) 100%);
+  pointer-events:none;
+}
+.quartiere-photo .qp-pin{
+  position:absolute; left:20px; bottom:20px; z-index:2;
+  background:var(--cream); border-radius:14px; padding:15px 20px;
+  box-shadow:0 20px 44px -22px rgba(42,30,23,.8); max-width:78%;
+}
+.quartiere-photo .qp-pin b{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:1.05rem; display:block; margin-bottom:2px;
+}
+.quartiere-photo .qp-pin span{ font-size:.86rem; color:var(--ink-60); }
+
+.quartiere-info{
+  background:var(--cream-2); border-radius:20px;
+  padding:clamp(28px,3.5vw,40px);
+  display:flex; flex-direction:column; gap:18px;
+  border:1px solid var(--ink-08);
+}
+.addr-block{ font-style:normal; font-size:1.05rem; line-height:1.72; }
+.addr-block .street{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:700; font-size:1.25rem; display:block; margin-bottom:3px;
+}
+.info-row{
+  display:flex; gap:14px; align-items:flex-start;
+  padding-top:17px; border-top:1.5px solid var(--ink-08);
+}
+.info-row .ic{ width:22px; flex:none; color:var(--red); font-size:1rem; line-height:1.5; }
+.info-row b{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:1rem;
+}
+
+/* ================================================================
+   VOCI DI QUARTIERE — social proof (dark section)
+   ================================================================ */
+.voci{
+  background:var(--ink-deep); color:var(--cream);
+  text-align:center; position:relative; isolation:isolate;
+}
+/* large warm radial glow behind the rating number */
+.voci::before{
+  content:"";
+  position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:min(700px,100%); height:60%;
+  background:radial-gradient(ellipse 70% 80% at 50% 0%,rgba(192,139,53,.18) 0%,transparent 70%);
+  pointer-events:none; z-index:0;
+}
+.voci .wrap{ position:relative; z-index:1; }
+.voci .kicker{ justify-content:center; color:var(--ochre); }
+.voci .kicker::before{ background:var(--ochre); }
+
+.rating-hero{
+  display:flex; flex-direction:column; align-items:center;
+  gap:8px; margin:18px 0 10px;
+}
+.rating-num{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:clamp(5.5rem,18vw,11rem);
+  line-height:.82; color:var(--cream);
+  /* very subtle text-glow so it reads as warm, not sterile */
+  text-shadow:0 0 80px rgba(192,139,53,.35);
+}
+.rating-num small{
+  font-size:.26em; color:rgba(246,237,223,.55); font-weight:600;
+}
+.rating-stars{
+  font-size:2rem; letter-spacing:7px; color:var(--ochre);
+}
+.rating-stars .half{ opacity:.45; }
+.rating-count{
+  font-size:1.06rem; color:rgba(246,237,223,.75);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:500;
+}
+.rating-count b{ color:var(--cream); font-weight:700; }
+
+.voci-strip{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:18px; margin-top:52px;
+  max-width:920px; margin-inline:auto;
+  margin-top:52px;
+}
+.voce-card{
+  background:rgba(246,237,223,.08);
+  border:1.5px solid rgba(246,237,223,.16);
+  border-radius:18px; padding:26px; text-align:left;
+  transition:background .3s, border-color .3s;
+}
+.voce-card:hover{
+  background:rgba(246,237,223,.12);
+  border-color:rgba(246,237,223,.24);
+}
+/* large opening quote mark */
+.voce-card::before{
+  content:"\201C";
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:3rem; line-height:1; color:var(--ochre); opacity:.6;
+  display:block; margin-bottom:8px; font-weight:800;
+}
+.voce-card .q{
+  font-size:1rem; line-height:1.58;
+  color:rgba(246,237,223,.90);
+}
+.voce-card .src{
+  margin-top:16px; font-size:.76rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ochre);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:700;
+}
+.voci-disclaimer{
+  margin-top:28px; font-size:.78rem; color:rgba(246,237,223,.44);
+}
+
+/* ================================================================
+   PASSA A TROVARCI — contact + hours
+   ================================================================ */
+.visita-grid{
+  display:grid; grid-template-columns:1.12fr .88fr;
+  gap:clamp(28px,4vw,52px); align-items:start;
+}
+.hours-card{
+  background:var(--cream); border:1.5px solid var(--ink-16);
+  border-radius:20px; padding:clamp(28px,3.5vw,42px);
+  box-shadow:0 32px 64px -50px rgba(42,30,23,.5);
+}
+.hours-table{ width:100%; margin-top:10px; }
+.hours-table .hrow{
+  display:grid; grid-template-columns:auto 1fr auto;
+  gap:12px; align-items:center;
+  padding:14px 0; border-bottom:1.5px solid var(--ink-08);
+}
+.hours-table .hrow:last-child{ border-bottom:0; }
+.hours-table .dy{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:600; font-size:1rem;
+}
+.hours-table .hh{
+  font-variant-numeric:tabular-nums; color:var(--ink-60);
+  text-align:right; font-size:.94rem;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:500;
+}
+.hours-table .hrow.is-today{
+  background:linear-gradient(90deg,rgba(217,79,57,.10),rgba(217,79,57,.04) 60%,transparent);
+  margin-inline:-14px; padding-inline:14px;
+  border-radius:12px; border-bottom-color:transparent;
+}
+.hours-table .hrow.is-today .dy::after{
+  content:"oggi";
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:600; font-size:.65rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--red); margin-left:9px;
+  vertical-align:middle;
+}
+.hours-table .closed{ color:var(--ink-40); font-style:italic; }
+
+/* sticky contact rail */
+.contact-rail{ position:sticky; top:86px; display:flex; flex-direction:column; gap:18px; }
+.contact-card{
+  background:var(--ink);
+  color:var(--cream);
+  border-radius:20px;
+  padding:clamp(26px,3.5vw,36px);
+  display:flex; flex-direction:column; gap:18px;
+  /* warm directional gradient */
+  background:linear-gradient(148deg, #2f231b 0%, #1e1409 100%);
+  box-shadow:0 32px 60px -36px rgba(28,18,9,.7);
+  border:1px solid rgba(192,139,53,.22);
+}
+.contact-card h3{
+  color:var(--cream);
+  font-size:1.5rem;
+}
+.contact-card .lead-sm{
+  color:rgba(246,237,223,.75); font-size:.96rem; line-height:1.58;
+}
+.contact-card .badge-inline{ align-self:flex-start; }
+.phone-display{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:1.55rem; letter-spacing:.01em; color:var(--cream);
+}
+.phone-display span{
+  display:block; font-family:'Inter',system-ui,sans-serif;
+  font-weight:500; font-size:.76rem; letter-spacing:.12em;
+  text-transform:uppercase; color:rgba(246,237,223,.52); margin-bottom:3px;
+}
+.contact-actions{ display:flex; flex-direction:column; gap:10px; }
+.contact-actions .btn{ width:100%; justify-content:center; }
+
+.contact-channels{ display:flex; flex-wrap:wrap; gap:10px; }
+.channel{
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(246,237,223,.08);
+  border:1.5px solid rgba(246,237,223,.18);
+  border-radius:999px; padding:10px 16px;
+  font-size:.84rem; font-weight:500; min-height:42px;
+  transition:background .25s, border-color .25s;
+}
+.channel:hover{ background:rgba(246,237,223,.16); border-color:rgba(246,237,223,.32); }
+.channel:focus-visible{ outline:3px solid var(--ochre); outline-offset:3px; border-radius:999px; }
+
+.trust-strip{
+  background:var(--cream-2); border-radius:18px;
+  padding:22px 26px; display:flex; align-items:center; gap:18px;
+  font-size:.9rem; color:var(--ink-60);
+  border:1px solid var(--ink-08);
+}
+.trust-strip .ts-num{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:2rem; color:var(--ochre); line-height:1; flex:none;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.site-foot{
+  background:var(--ink-deep); color:rgba(246,237,223,.62);
+  padding-block:56px 44px;
+  position:relative; isolation:isolate;
+}
+/* subtle warm highlight on footer top */
+.site-foot::before{
+  content:"";
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--clay), var(--ochre), var(--clay));
+  opacity:.6;
+}
+.foot-top{
+  display:flex; flex-wrap:wrap; justify-content:space-between;
+  gap:28px; align-items:flex-start;
+}
+.foot-brand{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-weight:800; font-size:2rem; color:var(--cream);
+  letter-spacing:-.02em;
+}
+.foot-links{ display:flex; flex-wrap:wrap; gap:22px; }
+.foot-links a{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:.9rem; font-weight:600; transition:color .25s;
+}
+.foot-links a:hover{ color:var(--cream); }
+.foot-links a:focus-visible{ outline:3px solid var(--ochre); outline-offset:3px; border-radius:4px; }
+.foot-note{
+  margin-top:38px; padding-top:24px;
+  border-top:1px solid rgba(246,237,223,.12);
+  font-size:.77rem; color:rgba(246,237,223,.40); max-width:72ch;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media(max-width:980px){
+  .ora-rail{ display:none; }
+  .nav-links, .nav-cta .nav-tel, .nav-cta .btn-ghost{ display:none; }
+  .nav-toggle{ display:flex; }
+  .site-head.open .nav-toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .site-head.open .nav-toggle span:nth-child(2){ opacity:0; }
+  .site-head.open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .mobile-menu{
+    display:block; max-height:0; overflow:hidden;
+    transition:max-height .5s var(--ease);
+    border-top:1px solid transparent;
+  }
+  .site-head.open .mobile-menu{
+    max-height:440px; border-top-color:var(--ink-16);
+  }
+  .mobile-menu ul{ padding:14px 0 22px; }
+  .mobile-menu a{
+    display:block; padding:14px 0;
+    font-family:'Bricolage Grotesque',system-ui,sans-serif;
+    font-weight:700; font-size:1.12rem;
+    border-bottom:1px solid var(--ink-08);
+    transition:color .2s;
+  }
+  .mobile-menu a:hover{ color:var(--red); }
+  .mobile-menu .mm-cta{ display:flex; flex-direction:column; gap:10px; padding-top:18px; }
+  .mobile-menu .mm-cta .btn{ width:100%; justify-content:center; }
+
+  .banco-grid, .cucina-grid, .amici-grid, .quartiere-grid, .visita-grid{
+    grid-template-columns:1fr;
+  }
+  .banco-text{ margin-left:0; margin-top:-36px; margin-inline:12px; border-left:5px solid var(--ochre); border-right:0; }
+  .cucina-text{ margin-right:0; margin-top:-36px; margin-inline:12px; order:2; border-right:5px solid var(--red); border-left:0; }
+  .cucina-photo{ order:1; }
+  .banco-photo .tag-detail{ right:0; bottom:-18px; width:36%; }
+  .contact-rail{ position:static; }
+  .amici-photo{ order:-1; }
+  .quartiere-photo{ min-height:300px; }
+}
+
+@media(max-width:640px){
+  body{ font-size:16px; }
+  .hero{ min-height:86vh; }
+  .hero-media img,.hero-media video{ object-position:50% 36%; }
+  .hero-wordmark{ font-size:clamp(3.8rem,28vw,7rem); }
+  .voci-strip{ grid-template-columns:1fr; }
+  .banco-photo .tag-detail{ display:none; }
+  .split-panel{ min-height:380px; }
+  .btn{ width:100%; justify-content:center; }
+  .hero-actions .btn{ width:auto; }
+  .craft-band{ height:clamp(140px,42vw,220px); }
+  .amici-photo img{ aspect-ratio:4/3; }
+}
+
+@media(max-width:400px){
+  .hero-actions .btn{ width:100%; }
+  .brass-badge{ min-width:186px; padding:14px 18px 12px; }
+  .brass-status{ font-size:1.35rem; }
+}
+
+/* ================================================================
+   MOTION LAYER
+   Every hidden-then-reveal state is gated behind `.js:not(.reduce)`
+   so with JS off — or under reduced-motion — all content is fully
+   visible at rest, never stranded at opacity:0 waiting on a script.
+   ================================================================ */
+
+/* ---- Scroll reveals, varied by content role ------------------- */
+/* base fade + proofing rise (default role) */
+.js:not(.reduce) .reveal{
+  opacity:0; transform:translateY(28px) scale(.984);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+  will-change:opacity, transform;
+}
+.js:not(.reduce) .reveal.in{ opacity:1; transform:none; will-change:auto; }
+
+/* headings / chapter intros: a bottom-up clip (mask) reveal */
+.js:not(.reduce) .reveal.r-head{
+  opacity:0; transform:translateY(20px);
+  clip-path:inset(0 0 14% 0);
+  transition:opacity .8s var(--ease), transform .9s var(--ease), clip-path .95s var(--ease);
+}
+.js:not(.reduce) .reveal.r-head.in{ opacity:1; transform:none; clip-path:inset(0 0 -4% 0); }
+
+/* media: a gentle scale-in (photo swells to settle) */
+.js:not(.reduce) .reveal.r-media{
+  opacity:0; transform:translateY(26px) scale(.93);
+  transition:opacity 1s var(--ease), transform 1.15s var(--ease);
+}
+.js:not(.reduce) .reveal.r-media.in{ opacity:1; transform:none; }
+
+/* generic cascade group (voci cards) */
+.js:not(.reduce) .stagger>*{
+  opacity:0; transform:translateY(22px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+.js:not(.reduce) .stagger.in>*{ opacity:1; transform:none; }
+.js:not(.reduce) .stagger.in>*:nth-child(2){ transition-delay:.10s; }
+.js:not(.reduce) .stagger.in>*:nth-child(3){ transition-delay:.20s; }
+
+/* ---- Proofing stagger: dough-swell overshoot on the menu rows -- */
+.js:not(.reduce) .proof>li{
+  opacity:0; transform:translateY(20px) scale(.95);
+}
+.js:not(.reduce) .proof.in>li{
+  opacity:1; transform:none;
+  /* the overshoot bezier makes each row swell up a hair before settling */
+  transition:opacity .5s var(--ease), transform .72s cubic-bezier(.34,1.44,.5,1);
+}
+.js:not(.reduce) .proof.in>li:nth-child(1){ transition-delay:.06s; }
+.js:not(.reduce) .proof.in>li:nth-child(2){ transition-delay:.16s; }
+.js:not(.reduce) .proof.in>li:nth-child(3){ transition-delay:.26s; }
+.js:not(.reduce) .proof.in>li:nth-child(4){ transition-delay:.36s; }
+
+/* ---- Hero on-load: settle (no fly-in) ------------------------- */
+.js:not(.reduce) .hero-inner{
+  opacity:0; transform:translateY(20px);
+  transition:opacity 1.05s var(--ease), transform 1.05s var(--ease);
+}
+.js:not(.reduce) .hero-inner.settled{ opacity:1; transform:none; }
+
+/* ---- Dawn light-sweep: one-time L→R drift across the shopfront - */
+.hero-sweep{ opacity:1; }                              /* legibility overlay stays without JS */
+.js:not(.reduce) .hero-sweep{ opacity:0; }
+.js:not(.reduce) .hero-sweep.swept{ animation:dawnSweep 2.8s var(--ease) .25s both; }
+@keyframes dawnSweep{
+  0%  { opacity:0; background-position:0% 0; transform:translateX(-14%); }
+  22% { opacity:1; }
+  100%{ opacity:1; background-position:100% 0; transform:translateX(0); }
+}
+/* give the sweep gradient room to actually travel L→R */
+.hero-sweep{ background-size:180% 100%; background-position:0% 0; }
+
+/* ---- Founders underline: draw-in on section enter (no-JS shows it) */
+.ink-underline path{ stroke-dashoffset:0; }
+.js:not(.reduce) .ink-underline path{ stroke-dashoffset:520; }
+
+/* ---- Hero scroll cinema, tier 2: native CSS scroll-driven push-in.
+   Cheap, GPU-only, everywhere it's supported; static fallback otherwise. */
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .js .hero-media img,
+    .js .hero-media video{
+      transform-origin:50% 42%;
+      animation:heroPush linear both;
+      animation-timeline:scroll(root);
+      animation-range:0 92vh;
+    }
+    @keyframes heroPush{
+      from{ transform:scale(1); }
+      to  { transform:scale(1.14); }
+    }
+  }
+}
+
+/* ---- Sticky day-clock rail: scroll-progress fill down the rail - */
+.rail-fill{
+  position:absolute; left:0; top:0; width:4px; height:100%;
+  background:linear-gradient(180deg, var(--ochre), var(--red));
+  transform:scaleY(var(--sp,0)); transform-origin:top center;
+  opacity:.9; z-index:2; pointer-events:none;
+}
+
+/* ---- Mobile equivalent cue: slim scroll-progress bar ---------- */
+.scroll-progress{
+  position:fixed; top:66px; left:0; right:0; height:4px; z-index:55;
+  background:var(--ink-08); display:none;
+}
+.scroll-progress span{
+  display:block; height:100%; width:100%;
+  transform:scaleX(var(--sp,0)); transform-origin:left center;
+  background:linear-gradient(90deg, var(--ochre), var(--red));
+}
+@media(max-width:980px){ .scroll-progress{ display:block; } }
+
+/* ---- Extra micro-interactions (the motif, echoed in hovers) --- */
+/* nav links: an underline that draws in from the left */
+.nav-links a{ position:relative; }
+.nav-links a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-5px; height:2px;
+  background:var(--red); border-radius:2px;
+  transform:scaleX(0); transform-origin:left center;
+  transition:transform .25s var(--ease);
+}
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after{ transform:scaleX(1); }
+
+/* review cards raise like a hand resting on the counter */
+.voce-card{ transition:background .3s, border-color .3s, transform .35s var(--ease); }
+.voce-card:hover{ transform:translateY(-5px); }
+
+/* trust strips + info rows: quiet lift */
+.trust-strip{ transition:transform .35s var(--ease), box-shadow .35s var(--ease); }
+.trust-strip:hover{ transform:translateY(-3px); }
+
+/* the map / channel chips already lift via their own transitions */
+.channel{ transition:background .25s, border-color .25s, transform .25s var(--ease); }
+.channel:hover{ transform:translateY(-2px); }
+.chip{ transition:background .25s, border-color .25s, transform .25s var(--ease); }
+.chip:hover{ transform:translateY(-2px); }
+
+/* ---- Full reduced-motion honouring ---------------------------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal, .hero-inner, .stagger>*, .proof>li{ opacity:1 !important; transform:none !important; clip-path:none !important; }
+  .hero-sweep{ opacity:1; animation:none; }
+  .ink-underline path{ stroke-dashoffset:0 !important; }
+  .hero-media video{ display:none; }
+  .hero-media img{ transform:none !important; animation:none !important; }
+}
+
+:focus-visible{
+  outline:3px solid var(--red);
+  outline-offset:3px;
+  border-radius:6px;
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile equivalent of the day-clock rail: a slim scroll-progress cue under the header -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-head" id="siteHead">
+  <div class="wrap bar">
+    <a href="#top" class="brand"><span class="dot"></span>Cantun</a>
+    <nav class="nav-links" aria-label="Navigazione principale">
+      <a href="#banco">Al banco</a>
+      <a href="#amici">I tre amici</a>
+      <a href="#cucina">In cucina</a>
+      <a href="#itinerante">Itinerante</a>
+      <a href="#quartiere">Il quartiere</a>
+      <a href="#voci">Voci</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-tel">+39 339 142 7790</span>
+      <a class="btn btn-primary" data-cta href="tel:+393391427790">Chiama</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <ul>
+        <li><a href="#banco">Al banco</a></li>
+        <li><a href="#amici">I tre amici</a></li>
+        <li><a href="#cucina">In cucina</a></li>
+        <li><a href="#itinerante">Cantun itinerante</a></li>
+        <li><a href="#quartiere">Il quartiere</a></li>
+        <li><a href="#voci">Voci di quartiere</a></li>
+        <li><a href="#visita">Passa a trovarci</a></li>
+      </ul>
+      <div class="mm-cta">
+        <a class="btn btn-primary" data-cta href="tel:+393391427790">Chiama · +39 339 142 7790</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ORA RAIL ============================ -->
+<aside class="ora-rail" aria-label="Le ore della giornata al Cantun">
+  <span class="rail-fill" id="railFill" aria-hidden="true"></span>
+  <span class="rail-label">La giornata</span>
+  <ul>
+    <li><a href="#top" data-ora="top"><span class="hh">07</span>alba</a></li>
+    <li><a href="#banco" data-ora="banco"><span class="hh">08</span>banco</a></li>
+    <li><a href="#amici" data-ora="amici"><span class="hh">10</span>amici</a></li>
+    <li><a href="#cucina" data-ora="cucina"><span class="hh">13</span>cucina</a></li>
+    <li><a href="#itinerante" data-ora="itinerante"><span class="hh">17</span>giro</a></li>
+    <li><a href="#quartiere" data-ora="quartiere"><span class="hh">19</span>zona</a></li>
+    <li><a href="#voci" data-ora="voci"><span class="hh">21</span>voci</a></li>
+    <li><a href="#visita" data-ora="visita"><span class="hh">23</span>saluti</a></li>
+  </ul>
+</aside>
+
+<div class="page" id="top">
+
+<!-- ============================ HERO / ALBA ============================ -->
+<section class="hero full-bleed" id="alba" aria-label="Cantun all'alba">
+  <div class="hero-media">
+    <img src="assets/hero-shopfront-dawn.jpg" alt="Cantun's lit shopfront and open door on a quiet Milanese street at dawn" fetchpriority="high">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-shopfront-dawn.jpg" aria-hidden="true">
+      <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-sweep" id="heroSweep" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <!-- WOW centerpiece #1: the brass shop sign, anchored top-left -->
+  <div class="hero-badge-slot">
+    <div class="brass-badge" id="brassBadgeHero" tabindex="0" role="status" aria-live="polite" data-open="false">
+      <span class="glint" aria-hidden="true"></span>
+      <span class="brass-status"><span class="lamp" aria-hidden="true"></span><span class="bb-word">Chiuso</span></span>
+      <span class="brass-sub bb-sub">Apre alle 07:00</span>
+      <span class="brass-plate-label">Cantun · Via Polibio</span>
+    </div>
+  </div>
+
+  <div class="wrap hero-inner" id="heroInner">
+    <p class="kicker" style="color:var(--ochre)"><span class="hh">07:00</span> · Alba sui Navigli</p>
+    <h1 class="hero-wordmark">CANTUN</h1>
+    <p class="hero-tag">La <b>bottega di quartiere</b> che apre all'alba per un caffè-e-brioche e torna la sera come cucina conviviale. Nei backstreet di Porta Genova dal 2016.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" data-cta href="tel:+393391427790">Chiama Cantun</a>
+      <a class="btn btn-cream" href="#visita">Orari &amp; indirizzo</a>
+    </div>
+    <div class="hero-meta">
+      <span class="mi hero-rating"><span class="stars" aria-hidden="true">★★★★</span> <strong>4,1</strong> su 552 recensioni</span>
+      <span class="mi">Panificio · Caffè · Bistrot · Itinerante</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AL BANCO ============================ -->
+<section class="chapter" id="banco">
+  <div class="wrap">
+    <div class="chapter-head reveal r-head">
+      <p class="kicker"><span class="hh">08:00</span> · Al banco</p>
+      <h2>Il mattino comincia con la porta che si apre</h2>
+      <p class="lede">Caffè della macchina che sbuffa, brioche appena sfornate, il pane ancora caldo sul bancone. È il motivo per cui il quartiere spinge la porta ogni mattina — la stessa ragione per cui Google lo segna come <em>bar caffè</em>.</p>
+    </div>
+    <div class="banco-grid">
+      <div class="banco-photo reveal r-media">
+        <img src="assets/counter-pastry-line.jpg" alt="Freshly baked pastries and breads along Cantun's morning counter">
+        <div class="tag-detail">
+          <img src="assets/coffee-in-hand.jpg" alt="A cappuccino and pastry on Cantun's wooden counter in morning light">
+        </div>
+      </div>
+      <div class="banco-text reveal">
+        <p class="kicker"><span class="hh">Il listino del banco</span></p>
+        <ul class="banco-list proof" id="bancoProof">
+          <li><span class="it">Caffè &amp; cappuccino<span class="de">Miscela della casa, al banco o al tavolo</span></span><span class="pr">1,30 – 1,80</span></li>
+          <li><span class="it">Brioche del giorno<span class="de">Vuota, crema, marmellata, integrale</span></span><span class="pr">1,50</span></li>
+          <li><span class="it">Pane a lievitazione naturale<span class="de">Sfornato in giornata, a peso</span></span><span class="pr">al kg</span></li>
+          <li><span class="it">Colazione salata<span class="de">Focaccia farcita, quiche del giorno</span></span><span class="pr">3,50 – 5,00</span></li>
+        </ul>
+        <p style="margin-top:18px;font-size:.83rem;color:var(--ink-60)">Voci e prezzi qui sopra sono un esempio da confermare con la casa: il listino reale del Cantun prende il loro posto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CRAFT BAND (bread-detail-hands) ============================ -->
+<div class="craft-band full-bleed" aria-hidden="true">
+  <img src="assets/bread-detail-hands.jpg" alt="A baker's flour-dusted hands with a rustic loaf at Cantun">
+</div>
+
+<!-- ============================ I TRE AMICI ============================ -->
+<section class="chapter amici" id="amici">
+  <div class="wrap">
+    <div class="amici-grid">
+      <div class="amici-photo reveal r-media">
+        <img src="assets/founders-three.jpg" alt="The three friends who founded Cantun together in their bakery-bistrot">
+      </div>
+      <div class="amici-copy reveal">
+        <p class="kicker"><span class="hh">10:00</span> · L'origine</p>
+        <h2>Nel 2016, <span class="ink-underline">tre amici<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 60 4, 120 18, 175 9 S 270 6, 296 11"/></svg></span> e un bar d'angolo</h2>
+        <p class="lede">Filippo e i suoi due soci hanno preso il vecchio bar d'angolo di Via Polibio e lo hanno trasformato in una bottega-bistrot. Non un marchio, non una catena: un posto vero, con le stesse mani che impastano il pane del banco e cucinano ai fornelli la sera.</p>
+        <p style="margin-top:1.2em;color:rgba(246,237,223,.78)">È questa la doppia vita del Cantun — fissa in quartiere, itinerante per la città — e resta la ragione per cui qui ti riconoscono ancora per nome.</p>
+        <div class="amici-facts">
+          <div class="f"><b>2016</b><span>l'anno in cui è nato Cantun</span></div>
+          <div class="f"><b>3</b><span>amici, un solo bancone</span></div>
+          <div class="f"><b>20144</b><span>Milano, Porta Genova</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ IN CUCINA ============================ -->
+<section class="chapter" id="cucina">
+  <div class="wrap">
+    <div class="chapter-head reveal r-head">
+      <p class="kicker"><span class="hh">13:00</span> · In cucina</p>
+      <h2>Dal banco ai fornelli, la stessa mano</h2>
+      <p class="lede">Il pomeriggio il Cantun cambia passo: piatti cucinati, ingredienti di stagione, presentazione senza fronzoli. Gusto e convivialità, come dice chi ci lavora — un bistrot di quartiere più che una cucina da vetrina.</p>
+    </div>
+    <div class="cucina-grid">
+      <div class="cucina-text reveal">
+        <p class="kicker"><span class="hh">Cosa esce dai fornelli</span></p>
+        <p style="margin-top:14px;color:var(--ink-60)">Piatti onesti che seguono il mercato e la stagione, pensati per essere condivisi. La carta cambia spesso: chiedi cosa c'è oggi.</p>
+        <div class="chips">
+          <span class="chip">Piatti di stagione</span>
+          <span class="chip">Pane della casa</span>
+          <span class="chip">Aperitivo conviviale</span>
+          <span class="chip">Tavolate tra vicini</span>
+          <span class="chip">Vino al calice</span>
+        </div>
+        <a class="btn btn-ghost" href="#visita" style="margin-top:26px">Vieni a provare la cucina</a>
+      </div>
+      <div class="cucina-photo reveal r-media">
+        <img src="assets/cucina-plate.jpg" alt="A rustic bistrot plate being finished in Cantun's kitchen">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CANTUN ITINERANTE ============================ -->
+<section class="chapter itinerante full-bleed" id="itinerante">
+  <div class="wrap">
+    <div class="split-head reveal">
+      <p class="kicker"><span class="hh">17:00</span> · La doppia vita</p>
+      <h2>Cantun itinerante</h2>
+      <p class="lede">Una porta sola non basta a contenerlo. Cantun vive due vite: la casa madre di Via Polibio e il banco che gira tra mercati ed eventi di Milano. Le stesse mani, due indirizzi.</p>
+    </div>
+
+    <div class="split-toggle" role="tablist" aria-label="Fissa o itinerante">
+      <button role="tab" id="tab-fissa" aria-controls="panel-fissa" aria-selected="true" data-view="fissa">La casa · Via Polibio</button>
+      <button role="tab" id="tab-itin" aria-controls="panel-itin" aria-selected="false" data-view="itinerante">Il giro · Mercati</button>
+    </div>
+
+    <div class="split-stage reveal r-media" id="splitStage">
+      <div class="split-track" id="splitTrack" data-view="fissa">
+        <article class="split-panel" id="panel-fissa" role="tabpanel" aria-labelledby="tab-fissa">
+          <img src="assets/interior-room.jpg" alt="The warm, lived-in interior dining room of Cantun">
+          <div class="sp-scrim" aria-hidden="true"></div>
+          <div class="sp-body">
+            <span class="sp-tag">La casa madre</span>
+            <h3>Fissa, in Via Polibio</h3>
+            <p>Tavoli di legno, sedie spaiate, mensole con barattoli e bottiglie. È qui che il quartiere torna: la mattina per il caffè, la sera per l'aperitivo. La stanza in cui tutto è cominciato nel 2016.</p>
+          </div>
+        </article>
+        <article class="split-panel" id="panel-itin" role="tabpanel" aria-labelledby="tab-itin" hidden>
+          <img src="assets/itinerante-market-stall.jpg" alt="Cantun's itinerant market stall with breads and baked goods at a Milanese event">
+          <div class="sp-scrim" aria-hidden="true"></div>
+          <div class="sp-body">
+            <span class="sp-tag">Il banco che gira</span>
+            <h3>Itinerante, per la città</h3>
+            <p>Cassette di legno, pane e forni portatili: Cantun monta il banco ai mercati e agli eventi di Milano. Molti scoprono qui il pane, poi cercano la casa madre in Via Polibio.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="split-note">Tocca le due voci per scorrere tra la casa e il giro. Le date del banco itinerante cambiano ogni settimana — chiedi al banco o chiama per sapere dove trovarci.</p>
+  </div>
+</section>
+
+<!-- ============================ IL QUARTIERE ============================ -->
+<section class="chapter" id="quartiere">
+  <div class="wrap">
+    <div class="chapter-head reveal r-head">
+      <p class="kicker"><span class="hh">19:00</span> · Il quartiere</p>
+      <h2>Porta Genova, i Navigli, e una via tranquilla</h2>
+      <p class="lede">Il Cantun sta dove Milano rallenta: le case basse dietro Porta Genova, i Navigli a due passi, le biciclette contro il muro. Il quartiere è parte della ricetta.</p>
+    </div>
+    <div class="quartiere-grid">
+      <div class="quartiere-photo reveal r-media">
+        <img src="assets/neighbourhood-navigli.jpg" alt="A quiet backstreet in Milan's Porta Genova / Navigli district where Cantun sits">
+        <div class="qp-pin">
+          <b>Cantun</b>
+          <span>Via Polibio · 20144 Milano</span>
+        </div>
+      </div>
+      <div class="quartiere-info reveal">
+        <p class="kicker"><span class="hh">Come arrivare</span></p>
+        <address class="addr-block">
+          <span class="street">Via Polibio</span>
+          20144 Milano · Porta Genova / Navigli
+        </address>
+        <div class="info-row">
+          <span class="ic" aria-hidden="true">▸</span>
+          <div><b>In metro &amp; tram</b><br><span style="color:var(--ink-60)">Vicino a Porta Genova (M2) e alle linee dei Navigli.</span></div>
+        </div>
+        <div class="info-row">
+          <span class="ic" aria-hidden="true">▸</span>
+          <div><b>A piedi dai Navigli</b><br><span style="color:var(--ink-60)">Pochi minuti dall'alzaia, nelle vie residenziali dietro la Darsena.</span></div>
+        </div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Cantun+Via+Polibio+Milano" target="_blank" rel="noopener" style="margin-top:8px">Apri in Google Maps</a>
+        <p style="font-size:.81rem;color:var(--ink-40)">Il numero civico esatto è confermato dalla casa: qui indichiamo la via e il quartiere reali.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VOCI DI QUARTIERE ============================ -->
+<section class="chapter voci" id="voci">
+  <div class="wrap">
+    <p class="kicker reveal"><span class="hh">21:00</span> · Voci di quartiere</p>
+    <div class="rating-hero reveal">
+      <div class="rating-num">4,1<small>/5</small></div>
+      <div class="rating-stars" aria-hidden="true">★★★★<span class="half">★</span></div>
+      <p class="rating-count"><b>552</b> recensioni su Google</p>
+    </div>
+    <p class="lede reveal" style="color:rgba(246,237,223,.80);margin:22px auto 0;text-align:center;">Un giudizio costruito su un volume di recensioni importante, non su un colpo di fortuna: mattina dopo mattina, lo stesso quartiere che torna e racconta.</p>
+
+    <div class="voci-strip stagger reveal">
+      <div class="voce-card">
+        <p class="q">Il posto dove il quartiere si dà appuntamento per il caffè e resta per l'aperitivo — atmosfera di casa, senza pose.</p>
+        <p class="src">Sentimento ricorrente · Google</p>
+      </div>
+      <div class="voce-card">
+        <p class="q">Pane e brioche sfornati in giornata, e la sensazione di essere riconosciuti quando entri: la differenza di una bottega vera.</p>
+        <p class="src">Sentimento ricorrente · Google</p>
+      </div>
+      <div class="voce-card">
+        <p class="q">Li avevo scoperti al banco itinerante di un mercato, poi ho cercato la casa madre in Via Polibio: ne è valsa la pena.</p>
+        <p class="src">Sentimento ricorrente · Google</p>
+      </div>
+    </div>
+    <p class="voci-disclaimer">Valutazione aggregata reale (4,1/5 su 552 recensioni Google). Le frasi qui sopra sono una sintesi non attribuita del sentimento delle recensioni, non citazioni di singole persone.</p>
+  </div>
+</section>
+
+<!-- ============================ PASSA A TROVARCI ============================ -->
+<section class="chapter" id="visita">
+  <div class="wrap">
+    <div class="chapter-head reveal r-head">
+      <p class="kicker"><span class="hh">23:00</span> · Passa a trovarci</p>
+      <h2>La porta è aperta — o sta per aprirsi</h2>
+      <p class="lede">Orari, indirizzo e un numero vero all'altro capo. Chiama per un tavolo, per il pane su ordinazione o per sapere dove gira il banco itinerante questa settimana.</p>
+    </div>
+
+    <div class="visita-grid">
+      <!-- HOURS -->
+      <div class="hours-card reveal">
+        <p class="kicker"><span class="hh">Orari della settimana</span></p>
+        <div class="hours-table" id="hoursTable">
+          <div class="hrow" data-day="1"><span class="dy">Lunedì</span><span></span><span class="hh">07:00 – 22:00</span></div>
+          <div class="hrow" data-day="2"><span class="dy">Martedì</span><span></span><span class="hh">07:00 – 22:00</span></div>
+          <div class="hrow" data-day="3"><span class="dy">Mercoledì</span><span></span><span class="hh">07:00 – 22:00</span></div>
+          <div class="hrow" data-day="4"><span class="dy">Giovedì</span><span></span><span class="hh">07:00 – 23:00</span></div>
+          <div class="hrow" data-day="5"><span class="dy">Venerdì</span><span></span><span class="hh">07:00 – 23:00</span></div>
+          <div class="hrow" data-day="6"><span class="dy">Sabato</span><span></span><span class="hh">08:00 – 23:00</span></div>
+          <div class="hrow" data-day="0"><span class="dy">Domenica</span><span></span><span class="hh closed">Chiuso</span></div>
+        </div>
+        <p style="margin-top:16px;font-size:.81rem;color:var(--ink-40)">Orari indicativi da confermare con la casa. La targa "Aperto / Chiuso" in alto legge questi orari in tempo reale.</p>
+        <div class="trust-strip" style="margin-top:24px">
+          <span class="ts-num">4,1★</span>
+          <span>Il giudizio di <b>552 vicini</b> su Google — la ragione più semplice per spingere la porta.</span>
+        </div>
+      </div>
+
+      <!-- STICKY CONTACT RAIL -->
+      <div class="contact-rail">
+        <div class="contact-card reveal">
+          <div class="brass-badge badge-inline" id="brassBadgeContact" tabindex="0" role="status" aria-live="polite" data-open="false">
+            <span class="glint" aria-hidden="true"></span>
+            <span class="brass-status"><span class="lamp" aria-hidden="true"></span><span class="bb-word">Chiuso</span></span>
+            <span class="brass-sub bb-sub">Apre alle 07:00</span>
+            <span class="brass-plate-label">Cantun · Via Polibio</span>
+          </div>
+          <div class="phone-display"><span>Chiama la bottega</span>+39 339 142 7790</div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" data-cta href="tel:+393391427790">Chiama per prenotare</a>
+            <a class="btn btn-cream" href="https://www.google.com/maps/search/?api=1&query=Cantun+Via+Polibio+Milano" target="_blank" rel="noopener">Come arrivare</a>
+          </div>
+          <div class="contact-channels" aria-label="Altri canali">
+            <a class="channel" href="tel:+393391427790">☎ Telefono</a>
+            <a class="channel" href="#itinerante">◷ Dove gira il banco</a>
+            <a class="channel" href="#visita">◔ Orari di oggi</a>
+          </div>
+          <p class="lead-sm">Preferisci scrivere? Chiedici in bottega il canale WhatsApp: lo attiviamo su richiesta, così un messaggio basta per un tavolo o per il pane.</p>
+        </div>
+        <div class="trust-strip reveal">
+          <span class="ts-num">2016</span>
+          <span>Tre amici, una bottega di quartiere aperta ogni giorno tranne la domenica.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.page -->
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">Cantun</div>
+        <p style="margin-top:10px;max-width:34ch">Bottega-bistrot di quartiere. Panificio, caffè, cucina conviviale e banco itinerante a Milano.</p>
+      </div>
+      <nav class="foot-links" aria-label="Navigazione footer">
+        <a href="#banco">Al banco</a>
+        <a href="#amici">I tre amici</a>
+        <a href="#itinerante">Itinerante</a>
+        <a href="#quartiere">Il quartiere</a>
+        <a href="#visita">Contatti</a>
+      </nav>
+      <div>
+        <div class="phone-display" style="color:var(--cream)"><span style="color:rgba(246,237,223,.52)">Telefono</span>+39 339 142 7790</div>
+        <a class="btn btn-primary" data-cta href="tel:+393391427790" style="margin-top:16px">Chiama Cantun</a>
+      </div>
+    </div>
+    <p class="foot-note">Via Polibio · 20144 Milano (Porta Genova / Navigli). Valutazione 4,1/5 su 552 recensioni Google. Alcuni orari e voci di listino sono indicativi e da confermare con la casa; l'indirizzo mostra via e quartiere reali. Anteprima dimostrativa realizzata per la presentazione al titolare.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Mobile nav ---------- */
+  var head = document.getElementById('siteHead');
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var open = head.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true':'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menu':'Apri il menu');
+    });
+    menu.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        head.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- Brass Aperto/Chiuso badge (real clock) ---------- */
+  // Illustrative weekly hours [openMin, closeMin] or null (closed). Day 0 = Sunday.
+  var HOURS = {
+    0:null,
+    1:[7*60,22*60],2:[7*60,22*60],3:[7*60,22*60],
+    4:[7*60,23*60],5:[7*60,23*60],6:[8*60,23*60]
+  };
+  var DAY_NAMES=['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+  function pad(n){return (n<10?'0':'')+n;}
+  function fmt(min){return pad(Math.floor(min/60))+':'+pad(min%60);}
+  function nextOpen(day){
+    for(var i=1;i<=7;i++){
+      var d=(day+i)%7; if(HOURS[d]){return {day:d,min:HOURS[d][0]};}
+    }
+    return null;
+  }
+  function updateBadges(){
+    var now = new Date();
+    var day = now.getDay();
+    var mins = now.getHours()*60 + now.getMinutes();
+    var today = HOURS[day];
+    var isOpen=false, word='Chiuso', sub='';
+    if(today && mins>=today[0] && mins<today[1]){
+      isOpen=true; word='Aperto';
+      sub='Fino alle '+fmt(today[1]);
+    } else if(today && mins<today[0]){
+      sub='Apre alle '+fmt(today[0]);
+    } else {
+      var nx=nextOpen(day);
+      if(nx){
+        sub = (nx.day===((day+1)%7) ? 'Riapre domani' : 'Riapre '+DAY_NAMES[nx.day]) + ' alle '+fmt(nx.min);
+      }
+    }
+    var badges=document.querySelectorAll('.brass-badge');
+    for(var i=0;i<badges.length;i++){
+      badges[i].setAttribute('data-open', isOpen?'true':'false');
+      var w=badges[i].querySelector('.bb-word'); if(w) w.textContent=word;
+      var s=badges[i].querySelector('.bb-sub'); if(s) s.textContent=sub;
+      badges[i].setAttribute('aria-label','Cantun è '+word+'. '+sub);
+    }
+  }
+  updateBadges();
+  setInterval(updateBadges, 30000);
+
+  /* ---------- Highlight today's row in hours table ---------- */
+  (function(){
+    var today = new Date().getDay();
+    var rows = document.querySelectorAll('#hoursTable .hrow');
+    for(var i=0;i<rows.length;i++){
+      if(parseInt(rows[i].getAttribute('data-day'),10)===today){
+        rows[i].classList.add('is-today');
+      }
+    }
+  })();
+
+  /* ---------- Fixed vs Itinerante: scroll-linked wipe + click ----------
+     Cantun's double life reads as a horizontal wipe between the Via
+     Polibio room and the market stall, driven by scroll through the
+     section. Clicking a tab takes manual control until the section
+     leaves the viewport, which re-arms the scroll wipe. */
+  var track=document.getElementById('splitTrack');
+  var stage=document.getElementById('splitStage');
+  var itinSection=document.getElementById('itinerante');
+  var tabs=document.querySelectorAll('.split-toggle button');
+  var panelFissa=document.getElementById('panel-fissa');
+  var panelItin=document.getElementById('panel-itin');
+  var splitManual=false;
+
+  function setTabState(view){
+    tabs.forEach(function(t){
+      t.setAttribute('aria-selected', t.getAttribute('data-view')===view ? 'true':'false');
+    });
+  }
+  // both panels stay rendered so the wipe reveals real content, not a blank
+  if(panelFissa) panelFissa.hidden=false;
+  if(panelItin) panelItin.hidden=false;
+
+  function setViewManual(view){
+    splitManual=true;
+    if(track){
+      track.style.transition='';                 // restore the .85s eased wipe
+      track.style.transform='';                  // hand back to the [data-view] CSS
+      track.setAttribute('data-view',view);
+    }
+    setTabState(view);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ setViewManual(t.getAttribute('data-view')); });
+  });
+  // re-arm scroll driving whenever the section fully leaves the viewport
+  if(itinSection && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      if(!es[0].isIntersecting) splitManual=false;
+    },{threshold:0}).observe(itinSection);
+  }
+
+  /* ---------- Hero settle + one-time dawn light-sweep ---------- */
+  var heroInner=document.getElementById('heroInner');
+  var heroSweep=document.getElementById('heroSweep');
+  if(reduce){
+    if(heroInner) heroInner.classList.add('settled');
+  } else {
+    requestAnimationFrame(function(){
+      setTimeout(function(){
+        if(heroInner) heroInner.classList.add('settled');
+        if(heroSweep) heroSweep.classList.add('swept');
+      },120);
+    });
+  }
+
+  /* ---------- Hero scroll cinema, tier 3: desktop-only currentTime scrub.
+     Gated hard: fine pointer + desktop width + metadata loaded + not reduced.
+     Never on touch (iOS seeks badly). Falls back to the autoplay loop. */
+  var heroVideo=document.getElementById('heroVideo');
+  var heroSection=document.getElementById('alba');
+  var canScrub = !reduce && heroVideo && heroSection &&
+                 window.matchMedia('(pointer:fine)').matches &&
+                 window.innerWidth>=981;
+  if(canScrub){
+    var scrubReady=false, scrubActive=false, scrubRAF=null, vdur=0;
+    function initScrub(){
+      if(scrubReady) return;
+      vdur=heroVideo.duration;
+      if(!vdur || !isFinite(vdur) || vdur<=0) return;   // keep looping if metadata is odd
+      scrubReady=true;
+      try{ heroVideo.pause(); }catch(e){}
+      new IntersectionObserver(function(es){
+        scrubActive=es[0].isIntersecting;
+        if(scrubActive){ if(scrubRAF==null) scrubRAF=requestAnimationFrame(scrubLoop); }
+      },{threshold:0}).observe(heroSection);
+    }
+    function scrubLoop(){
+      var r=heroSection.getBoundingClientRect();
+      var prog=Math.min(1, Math.max(0, -r.top / Math.max(1,r.height)));
+      var t=prog*(vdur-0.05);
+      if(isFinite(t)){ try{ heroVideo.currentTime=t; }catch(e){} }
+      scrubRAF = scrubActive ? requestAnimationFrame(scrubLoop) : null;
+    }
+    if(heroVideo.readyState>=1) initScrub();
+    else heroVideo.addEventListener('loadedmetadata', initScrub);
+  }
+
+  /* ---------- Scroll reveals (varied by role) + proofing + underline ---------- */
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          if(en.target.id==='amici') en.target.classList.add('drawn');
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal, .proof').forEach(function(el){io.observe(el);});
+    var amici=document.getElementById('amici'); if(amici) io.observe(amici);
+  } else {
+    document.querySelectorAll('.reveal, .proof').forEach(function(el){el.classList.add('in');});
+    var a=document.getElementById('amici'); if(a) a.classList.add('drawn');
+  }
+
+  /* ---------- Single batched scroll handler:
+     ora-rail active state + rail fill + mobile progress + split wipe ---------- */
+  var docEl=document.documentElement;
+  var railFill=document.getElementById('railFill');
+  var progressBar=document.getElementById('scrollProgressBar');
+  var railLinks=document.querySelectorAll('.ora-rail a[data-ora]');
+  var sections=[];
+  railLinks.forEach(function(l){
+    var s=document.getElementById(l.getAttribute('href').slice(1));
+    if(s) sections.push({link:l,el:s});
+  });
+
+  function frame(){
+    ticking=false;
+    var scrollTop=window.scrollY || docEl.scrollTop || 0;
+    var docH=(docEl.scrollHeight - window.innerHeight) || 1;
+    var sp=Math.min(1, Math.max(0, scrollTop/docH));
+
+    if(railFill) railFill.style.setProperty('--sp', sp.toFixed(4));
+    if(progressBar) progressBar.style.setProperty('--sp', sp.toFixed(4));
+
+    // ora rail: which chapter of the day are we in
+    var y=scrollTop + window.innerHeight*0.35;
+    var current=sections.length?sections[0]:null;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i].el.offsetTop<=y) current=sections[i];
+    }
+    for(var j=0;j<sections.length;j++) sections[j].link.classList.remove('active');
+    if(current) current.link.classList.add('active');
+
+    // split wipe — direct scroll mapping (no transition) while scroll-driven
+    if(track && stage && itinSection && !splitManual && !reduce){
+      var r=itinSection.getBoundingClientRect();
+      var vh=window.innerHeight;
+      var prog=(vh*0.78 - r.top) / Math.max(1, r.height*0.55);
+      prog=Math.min(1, Math.max(0, prog));
+      track.style.transition='none';
+      track.style.transform='translateX('+(-50*prog)+'%)';
+      setTabState(prog>=0.5 ? 'itinerante' : 'fissa');
+    }
+  }
+
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){ ticking=true; window.requestAnimationFrame(frame); }
+  },{passive:true});
+  window.addEventListener('resize',function(){
+    if(!ticking){ ticking=true; window.requestAnimationFrame(frame); }
+  },{passive:true});
+  frame();
+})();
+</script>
+</body>
+</html>

@@ -1,2099 +1,2179 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script>document.documentElement.classList.add("js");</script>
-<title>Lo Scoglio sul Naviglio — Pizza, Carne e Pesce sul Naviglio Grande, Milano</title>
-<meta name="description" content="Trattoria-pizzeria di quartiere sul Naviglio Grande a Milano. Pizza napoletana, carne alla griglia e pesce fresco da un'unica cucina. Pranzo, cena e consegna a domicilio." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,500;0,600;0,700;1,500&family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lo Scoglio sul Naviglio — Pizzeria e cucina di mare a Milano</title>
+<meta name="description" content="Pizzeria di quartiere sul Naviglio Pavese a Milano: forno a legna e cucina di mare in una sola tavola. Pizza, pesce fresco e couscous a prezzi popolari. Prenota un tavolo o chiamaci.">
+
+<link rel="canonical" href="https://www.loscogliosulnaviglio.it/">
+
+<meta property="og:title" content="Lo Scoglio sul Naviglio — Forno e mare, sul Naviglio">
+<meta property="og:description" content="Pizzeria di quartiere a Milano: forno a legna e cucina di mare in una sola tavola. Pizza, pesce fresco e couscous a prezzi popolari, sui Navigli.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-forno.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- add .js as early as possible so reveal base-states apply without a flash;
+     with JS off this never runs and every section stays fully visible -->
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Lo Scoglio sul Naviglio",
+  "servesCuisine": ["Pizza", "Pesce", "Mediterranea"],
+  "priceRange": "€€",
+  "telephone": "+393337587705",
+  "image": "assets/hero-forno.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Lodovico il Moro 55",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "3.9",
+    "reviewCount": "364"
+  }
+}
+</script>
+
 <style>
-/* ============================================================
-   DESIGN TOKENS
-   ============================================================ */
+/* =====================================================
+   BRAND TOKENS — defined once, referenced everywhere
+   ===================================================== */
 :root {
-  --ink:        #0E1A17;
-  --teal-deep:  #14312B;
-  --teal-mid:   #1D4A40;
-  --teal:       #2E9C8E;
-  --teal-pale:  rgba(46,156,142,.14);
-  --cream:      #E9E2D0;
-  --cream-soft: #F3EEE1;
-  --cream-dim:  rgba(233,226,208,.78);
-  --rosso:      #C6402F;
-  --rosso-dim:  rgba(198,64,47,.18);
-  --giallo:     #F4B03A;
+  --brand-ink:        #241610;
+  --brand-surface:    #FAF3E9;
+  --brand-surface-alt:#F2E7D7;
+  --brand-accent:     #B4472A;
+  --brand-accent-ink: #FBF4EB;
+  --brand-muted:      #6B5140;
+  --brand-line:       #E4D5C1;
+  --brand-accent-2:   #1F2B47;
 
-  --font-body:  "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
-  --font-head:  "Archivo", "Archivo Narrow", Impact, system-ui, sans-serif;
-  --font-cond:  "Archivo Narrow", "Archivo", system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Instrument Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
 
-  --ease-plate: cubic-bezier(.22,1,.36,1);
-  --ease-out:   cubic-bezier(.16,1,.3,1);
+  --ease-signature: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-micro:     cubic-bezier(0.33, 0, 0.2, 1);
+  --dur-reveal:     720ms;
+  --dur-micro:      200ms;
+  --stagger:        90ms;
 
-  --r-sm:  4px;
-  --r-md:  8px;
-  --r-lg:  12px;
+  --space-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --container:     min(1180px, 92vw);
+  --radius:        10px;
 
-  --shadow-card:  0 8px 32px -10px rgba(0,0,0,.45), 0 2px 8px -4px rgba(0,0,0,.25);
-  --shadow-lift:  0 24px 56px -20px rgba(0,0,0,.6), 0 6px 16px -8px rgba(0,0,0,.3);
-  --shadow-hero:  0 48px 96px -40px rgba(0,0,0,.9);
-
-  --rail-w:  19.5rem;
-  --maxw:    80rem;
-
-  --space-xs: .5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2.4rem;
-  --space-xl: clamp(3.5rem,7vw,6.5rem);
+  --fs-hero: clamp(2.9rem, 1.6rem + 5.6vw, 6.4rem);
+  --fs-h2:   clamp(1.7rem, 1.15rem + 2.3vw, 3.4rem);
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
 }
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
+/* =====================================================
+   RESET & GLOBAL
+   ===================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
 html { scroll-behavior: smooth; }
+
+::selection { background: var(--brand-accent); color: var(--brand-accent-ink); }
+
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
-  color: var(--cream);
-  background: var(--teal-deep);
+  color: var(--brand-ink);
+  background: var(--brand-surface);
   -webkit-font-smoothing: antialiased;
   overflow-wrap: anywhere;
+  /* OpenType craft */
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
 }
-img, video { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-ul { margin: 0; padding: 0; list-style: none; }
-p { margin: 0; }
 
-h1, h2, h3, h4 {
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0; max-inline-size: 66ch; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   margin: 0;
-  font-family: var(--font-head);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -.025em;
-  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* tabular nums on numbers/prices */
+.price, .rating-big, .ch-value, .hours-list, .nav-tel, .hero-proof strong {
+  font-variant-numeric: tabular-nums;
 }
 
 :focus-visible {
-  outline: 3px solid var(--giallo);
+  outline: 3px solid var(--brand-accent);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
-/* ============================================================
-   LAYOUT HELPERS
-   ============================================================ */
-.wrap {
-  max-width: var(--maxw);
-  margin-inline: auto;
-  padding-inline: clamp(1.1rem, 4vw, 2.8rem);
+/* =====================================================
+   GRAIN TEXTURE OVERLAY
+   ===================================================== */
+.grain-overlay {
+  position: fixed;
+  top: -14px; left: -14px;
+  width: calc(100% + 28px);
+  height: calc(100% + 28px);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.048;
+  mix-blend-mode: soft-light;
 }
 
-/* ============================================================
-   EYEBROW — visible accent bar (≥5 px so it registers)
-   ============================================================ */
-.eyebrow {
-  font-family: var(--font-cond);
-  text-transform: uppercase;
-  letter-spacing: .22em;
-  font-size: .75rem;
-  font-weight: 700;
-  color: var(--teal);
-  margin: 0 0 1rem;
-  display: flex;
-  align-items: center;
-  gap: .7rem;
+/* =====================================================
+   LAYOUT UTILITIES
+   ===================================================== */
+.container { width: var(--container); margin-inline: auto; }
+
+.band { padding-block: var(--space-section); }
+.band--alt { background: var(--brand-surface-alt); }
+
+/* uneven rhythm — each section breathes differently */
+#quartiere    { padding-block: clamp(3rem, 2rem + 3vw, 5.5rem) clamp(4.5rem, 3rem + 5vw, 8rem); }
+#dal-forno    { padding-block: clamp(5.5rem, 3.5rem + 7vw, 10rem) clamp(4rem, 2.5rem + 5vw, 7rem); }
+#dal-mare     { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+#non-solo-pizza { padding-block: clamp(4.5rem, 3rem + 5vw, 8rem) clamp(3rem, 2rem + 3vw, 5.5rem); }
+#combo        { padding-block: clamp(4rem, 2.5rem + 4vw, 7rem); }
+#ordina       { padding-block: clamp(5.5rem, 3.5rem + 7vw, 10rem); }
+#dove         { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+#recensioni   { padding-block: clamp(5rem, 3.5rem + 6vw, 9rem) clamp(6rem, 4rem + 7vw, 12rem); }
+
+section { scroll-margin-top: 80px; }
+
+/* =====================================================
+   MOTIF — la linea d'acqua
+   Applied ONLY: under eyebrows, section dividers,
+   fam-card bottom edge, hero seam, active nav
+   ===================================================== */
+.linea-acqua {
+  position: relative;
+  height: 3px;          /* 3px so it registers in a screenshot */
+  background: var(--brand-accent);
+  border: 0;
+  width: clamp(56px, 12vw, 120px);
+  margin: 0;
+  display: block;
 }
-.eyebrow::before {
+.linea-acqua::after {
   content: "";
-  display: inline-block;
-  width: 2rem;
-  height: 5px;          /* raised from 2px — must register visually */
-  background: var(--rosso);
-  border-radius: 2px;
-  flex: none;
+  position: absolute;
+  left: 0; right: 0;
+  top: 5px;
+  height: 2px;
+  background: var(--brand-accent-2);
+  opacity: .35;
+  filter: blur(0.5px);
 }
 
-/* ============================================================
+/* full-width divider between sections */
+.linea-acqua--full {
+  width: 100%;
+  height: 4px;
+}
+.linea-acqua--full::after {
+  height: 3px;
+  opacity: .38;
+}
+
+.section-divider {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+/* =====================================================
+   EYEBROW LABELS
+   ===================================================== */
+.eyebrow {
+  font-size: .72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--brand-accent);
+  margin: 0 0 .9rem;
+  display: inline-block;
+}
+
+/* section head block */
+.section-head { max-width: 58ch; margin-bottom: 2.8rem; }
+.section-head h2 { font-size: var(--fs-h2); margin-bottom: 1rem; }
+.section-head .linea-acqua { margin-bottom: 1.3rem; }
+.lede { color: var(--brand-muted); font-size: 1.08rem; max-width: 54ch; line-height: 1.7; }
+
+/* =====================================================
    BUTTONS
-   ============================================================ */
+   ===================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .55rem;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-size: .92rem;
-  line-height: 1;
-  padding: .95rem 1.5rem;
-  border-radius: var(--r-sm);
-  border: 2px solid transparent;
+  gap: .5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .9rem 1.65rem;
+  border-radius: var(--radius);
+  border: 1.5px solid transparent;
   cursor: pointer;
   min-height: 48px;
   transition:
-    transform .22s var(--ease-plate),
-    box-shadow .22s var(--ease-plate),
-    background .2s,
-    border-color .2s,
-    color .2s;
+    transform var(--dur-micro) var(--ease-micro),
+    background var(--dur-micro) var(--ease-micro),
+    box-shadow var(--dur-micro) var(--ease-micro),
+    border-color var(--dur-micro) var(--ease-micro);
 }
-.btn svg { width: 1.1em; height: 1.1em; flex: none; }
-
 .btn--primary {
-  background: var(--rosso);
-  color: #fff;
-  box-shadow: 0 6px 20px -8px rgba(198,64,47,.65);
+  background: var(--brand-accent);
+  color: var(--brand-accent-ink);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--brand-accent) 35%, transparent);
 }
 .btn--primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px -12px rgba(198,64,47,.85);
+  background: color-mix(in srgb, var(--brand-accent) 88%, #000);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--brand-accent) 45%, transparent);
 }
-
-.btn--gold {
-  background: var(--giallo);
-  color: var(--ink);
-  box-shadow: 0 6px 18px -8px rgba(244,176,58,.5);
-}
-.btn--gold:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px -10px rgba(244,176,58,.7);
-}
-
+.btn--primary:active { transform: translateY(1px); box-shadow: none; }
 .btn--ghost {
   background: transparent;
-  color: var(--cream);
-  border-color: rgba(233,226,208,.4);
+  color: var(--brand-ink);
+  border-color: var(--brand-line);
 }
-.btn--ghost:hover { border-color: var(--giallo); color: var(--giallo); }
-
-.btn--dark {
-  background: var(--ink);
-  color: var(--cream);
-  border-color: rgba(233,226,208,.12);
+.btn--ghost:hover {
+  border-color: var(--brand-accent);
+  background: color-mix(in srgb, var(--brand-surface-alt) 60%, transparent);
 }
-.btn--dark:hover { transform: translateY(-2px); border-color: rgba(233,226,208,.3); }
+.btn--ghost:active { transform: translateY(1px); }
 
-.btn--block { width: 100%; }
-
-/* ============================================================
-   TOP NAV
-   ============================================================ */
-.topbar {
+/* =====================================================
+   SITE HEADER / NAV
+   ===================================================== */
+.site-header {
   position: sticky;
   top: 0;
   z-index: 60;
-  background: rgba(11,20,17,.92);
-  backdrop-filter: blur(14px);
-  border-bottom: 2px solid rgba(46,156,142,.3);
-}
-.topbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 68px;
-}
-.brand {
-  display: flex;
-  align-items: baseline;
-  gap: .5rem;
-  font-family: var(--font-head);
-  text-transform: uppercase;
-}
-.brand b {
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: -.02em;
-  color: var(--cream);
-}
-.brand span {
-  font-family: var(--font-cond);
-  font-weight: 600;
-  font-size: .7rem;
-  letter-spacing: .2em;
-  color: var(--teal);
+  background: color-mix(in srgb, var(--brand-surface) 93%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--brand-line);
+  box-shadow: 0 1px 0 0 var(--brand-line);
 }
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
-}
-.nav a {
-  font-family: var(--font-cond);
-  text-transform: uppercase;
-  letter-spacing: .09em;
-  font-size: .82rem;
-  font-weight: 700;
-  color: var(--cream);
-  opacity: .8;
-  transition: opacity .18s, color .18s;
-}
-.nav a:hover { opacity: 1; color: var(--giallo); }
-
-/* Nav CTA: styled as inline button */
-.nav__cta {
-  background: var(--rosso) !important;
-  color: #fff !important;
-  opacity: 1 !important;
-  padding: .5rem 1.1rem;
-  border-radius: var(--r-sm);
-  box-shadow: 0 4px 14px -6px rgba(198,64,47,.6);
-}
-.nav__cta:hover {
-  background: #a8321f !important;
-  color: #fff !important;
-  transform: translateY(-1px);
-}
-
-.navtoggle {
-  display: none;
-  background: none;
-  border: 2px solid rgba(233,226,208,.3);
-  border-radius: var(--r-sm);
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  cursor: pointer;
-  color: var(--cream);
-  transition: border-color .18s;
-}
-.navtoggle:hover { border-color: rgba(233,226,208,.6); }
-.navtoggle svg { width: 22px; height: 22px; margin: auto; }
-
-/* ============================================================
-   PAGE GRID — MAIN COLUMN + STICKY RAIL
-   ============================================================ */
-.pass {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) var(--rail-w);
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: start;
-}
-.pass__main { min-width: 0; }
-
-/* ============================================================
-   STICKY ORDER RAIL
-   ============================================================ */
-.rail { position: sticky; top: 84px; align-self: start; }
-.rail__card {
-  background: var(--cream-soft);
-  color: var(--ink);
-  border-radius: var(--r-lg);
-  padding: 1.5rem 1.4rem 1.4rem;
-  box-shadow: var(--shadow-lift);
-  border-top: 5px solid var(--rosso);   /* vivid accent — must register */
-}
-.rail__head {
-  font-family: var(--font-head);
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 900;
-  color: var(--teal-deep);
-  letter-spacing: -.01em;
-}
-.rail__sub {
-  font-size: .82rem;
-  color: #5b5140;
-  margin: .2rem 0 1.1rem;
-  line-height: 1.45;
-}
-.rail__actions { display: grid; gap: .6rem; }
-.rail__phone {
-  display: block;
-  text-align: center;
-  font-family: var(--font-head);
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: var(--teal-deep);
-  letter-spacing: -.01em;
-  margin-top: .1rem;
-  transition: color .18s;
-}
-.rail__phone:hover { color: var(--rosso); }
-.rail__note { font-size: .72rem; color: #7a6e5c; text-align: center; margin-top: .1rem; }
-
-.rail__trust {
-  margin-top: 1.2rem;
-  padding-top: 1.1rem;
-  border-top: 1px solid rgba(20,49,43,.2);
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-}
-.rail__trust b {
-  font-family: var(--font-head);
-  font-size: 1.9rem;
-  font-weight: 900;
-  color: var(--teal-deep);
-  line-height: 1;
-}
-.rail__trust small { display: block; font-size: .72rem; color: #6a5f4c; line-height: 1.4; }
-.rail__trust small b { font-size: .85rem; }
-
-.rail__hours {
-  margin-top: .9rem;
-  font-size: .8rem;
-  color: #6a5f4c;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-.dot {
-  width: .65rem;
-  height: .65rem;
-  border-radius: 50%;
-  background: #b5a88c;
-  flex: none;
-  transition: background .4s, box-shadow .4s;
-}
-.dot.is-open {
-  background: var(--teal);
-  box-shadow: 0 0 0 4px rgba(46,156,142,.22);
-}
-
-/* ============================================================
-   HERO — THE PASS WOW
-   ============================================================ */
-.hero { position: relative; padding-top: clamp(1.6rem, 4vw, 3.2rem); }
-
-.hero__frame {
-  position: relative;
-  border-radius: var(--r-lg);
-  overflow: clip;
-  isolation: isolate;
-  aspect-ratio: 16 / 11;
-  background: var(--ink);
-  box-shadow: var(--shadow-hero);
-}
-
-.hero__media { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__media img,
-.hero__media video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 42%;
-}
-
-/* Two-layer scrim: top vignette + strong bottom panel */
-.hero__scrim {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg,
-      rgba(10,18,14,.7)  0%,
-      rgba(10,18,14,.06) 28%,
-      rgba(10,18,14,.12) 55%,
-      rgba(10,18,14,.92) 100%
-    );
-}
-/* Extra left-side vignette on desktop so wordmark reads over image edge */
-.hero__scrim::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(10,18,14,.38) 0%, transparent 55%);
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(1.1rem, 3.5vw, 2.6rem);
-}
-.hero__tag {
-  font-family: var(--font-cond);
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  font-size: .7rem;
-  font-weight: 700;
-  color: rgba(233,226,208,.88);
-}
-.hero__wordblock { margin-top: auto; }
-
-.hero__word {
-  font-family: var(--font-head);
-  text-transform: uppercase;
-  color: var(--cream);
-  font-size: clamp(2.8rem, 9.5vw, 6.8rem);
-  line-height: .86;
-  letter-spacing: -.03em;
-  font-weight: 900;
-  text-shadow: 0 6px 40px rgba(0,0,0,.75), 0 2px 8px rgba(0,0,0,.5);
-}
-.hero__word .lo {
-  display: block;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  font-size: .32em;
-  letter-spacing: .14em;
-  opacity: .92;
-  margin-bottom: .05em;
-}
-.hero__word .scoglio { display: block; }
-.hero__naviglio {
-  display: inline-block;
-  position: relative;
-  color: var(--giallo);
-  font-size: .43em;
-  margin-top: .18em;
-  letter-spacing: .01em;
-}
-.hero__rule {
-  display: block;
-  height: 5px;        /* thicker than default — must read as a signature element */
-  width: 0;
-  background: var(--teal);
-  margin-top: .4rem;
-  border-radius: 2px;
-  animation: ruleDraw 900ms var(--ease-plate) 500ms forwards;
-}
-
-.hero__dishes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  margin-top: 1.2rem;
-}
-.dish-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  background: rgba(10,18,14,.58);
-  border: 1.5px solid rgba(233,226,208,.35);
-  backdrop-filter: blur(6px);
-  padding: .48rem .95rem;
-  border-radius: 100px;
-  font-family: var(--font-cond);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: .8rem;
-  font-weight: 700;
-  color: var(--cream);
-  opacity: 0;
-  transform: translateY(14px);
-  animation: plateUp .6s var(--ease-plate) forwards;
-}
-.dish-chip::before {
-  content: "";
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-  flex: none;
-}
-.dish-chip.c1::before { background: var(--rosso); }
-.dish-chip.c2::before { background: var(--giallo); }
-.dish-chip.c3::before { background: var(--teal); }
-.dish-chip.c1 { animation-delay: .55s; }
-.dish-chip.c2 { animation-delay: .67s; }
-.dish-chip.c3 { animation-delay: .79s; }
-
-.hero__lede {
-  max-width: 34rem;
-  margin: 1.8rem 0 0;
-  font-size: 1.06rem;
-  line-height: 1.65;
-  color: var(--cream-dim);
-}
-.hero__ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8rem;
-  margin-top: 1.4rem;
-}
-
-@keyframes ruleDraw { to { width: min(100%, 18rem); } }
-@keyframes plateUp  { to { opacity: 1; transform: none; } }
-
-/* Scroll-driven scale — desktop only, supported browsers only */
-@supports (animation-timeline: scroll()) {
-  @media (min-width: 960px) and (prefers-reduced-motion: no-preference) {
-    .hero__media {
-      animation: heroScrub linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 70vh;
-      transform-origin: center 42%;
-    }
-    @keyframes heroScrub {
-      from { transform: scale(1.14); }
-      to   { transform: scale(1); }
-    }
-  }
-}
-
-/* ============================================================
-   SECTION SHELL
-   ============================================================ */
-section { padding-block: var(--space-xl); }
-
-/* Visible section dividers — 2px at .28 opacity reads clearly */
-.band { border-top: 2px solid rgba(46,156,142,.28); }
-
-/* ============================================================
-   IL QUARTIERE
-   ============================================================ */
-.quart {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: clamp(1.8rem, 5vw, 3.6rem);
-  align-items: center;
-}
-.quart__media {
-  position: relative;
-  border-radius: var(--r-lg);
-  overflow: clip;
-  aspect-ratio: 4 / 5;
-  box-shadow: var(--shadow-lift);
-}
-.quart__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 38%;   /* frame hands + dough on the pizzaiolo */
-}
-.quart__badge {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  background: var(--giallo);
-  color: var(--ink);
-  font-family: var(--font-cond);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-size: .78rem;
-  padding: .5rem .9rem;
-  border-radius: var(--r-sm);
-  box-shadow: 0 4px 12px -4px rgba(0,0,0,.4);
-}
-.quart__body h2 {
-  font-size: clamp(2rem, 5vw, 3.3rem);
-  color: var(--cream);
-  line-height: .92;
-}
-.quart__body > p {
-  margin-top: 1.2rem;
-  color: var(--cream-dim);
-  font-size: 1.03rem;
-}
-
-/* Stat facts — left-border accent treatment */
-.quart__facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .9rem;
-  margin-top: 2rem;
-}
-.fact {
-  padding: .9rem .85rem;
-  border-left: 5px solid var(--teal);   /* visible accent — 5px reads clearly */
-  background: rgba(46,156,142,.08);
-  border-radius: 0 var(--r-sm) var(--r-sm) 0;
-}
-.fact b {
-  display: block;
-  font-family: var(--font-head);
-  font-size: 1.9rem;
-  font-weight: 900;
-  color: var(--teal);
-  line-height: 1;
-}
-.fact span { font-size: .8rem; color: rgba(233,226,208,.68); line-height: 1.4; }
-
-/* quart__strip removed — pizzaiolo-at-work.jpg is now the main portrait */
-
-/* ============================================================
-   LE TRE COTTURE — TRIPTYCH
-   ============================================================ */
-.cotture {
-  background: var(--cream-soft);
-  color: var(--ink);
-  border-radius: var(--r-lg);
-  overflow: clip;
-  box-shadow: var(--shadow-hero);   /* lifts triptych off the dark page */
-}
-.cotture__head {
-  padding: clamp(2.2rem, 5vw, 3.4rem) clamp(1.5rem, 4vw, 3rem) 1.6rem;
-}
-.cotture__head .eyebrow { color: var(--rosso); }
-.cotture__head .eyebrow::before { background: var(--teal-deep); }
-.cotture__head h2 {
-  color: var(--teal-deep);
-  font-size: clamp(2.1rem, 5.5vw, 3.6rem);
-  line-height: .9;
-}
-.cotture__head p {
-  margin-top: 1.1rem;
-  color: #5b5140;
-  max-width: 46rem;
-  font-size: 1.03rem;
-}
-
-.triptych {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-.fire {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: var(--cream-soft);
-  border-left: 2px solid rgba(20,49,43,.1);
-}
-.fire:first-child { border-left: none; }
-
-.fire__media {
-  aspect-ratio: 4 / 5;
-  overflow: clip;
-  position: relative;
-}
-.fire__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .65s var(--ease-plate);
-}
-/* Per-dish framing */
-.fire.f1 .fire__media img { object-position: center 35%; }
-.fire.f2 .fire__media img { object-position: center 45%; }
-.fire.f3 .fire__media img { object-position: center 42%; }
-
-/* Subtle bottom fade on each dish image — cream blends into card body */
-.fire__media::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 35%;
-  background: linear-gradient(to top, var(--cream-soft), transparent);
-  pointer-events: none;
-}
-.fire:hover .fire__media img { transform: scale(1.06); }
-
-.fire__body {
-  padding: 1.4rem 1.5rem 1.8rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.fire__no {
-  font-family: var(--font-cond);
-  font-size: .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #a89d82;
-  font-weight: 700;
-}
-.fire__ttl {
-  font-family: var(--font-head);
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--teal-deep);
-  margin-top: .2rem;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  line-height: 1;
-}
-.fire__ttl i {
-  width: .75rem;
-  height: .75rem;
-  border-radius: 50%;
-  flex: none;
-}
-.fire.f1 i { background: var(--rosso); }
-.fire.f2 i { background: var(--giallo); }
-.fire.f3 i { background: var(--teal); }
-
-.fire__desc { color: #5b5140; font-size: .94rem; margin-top: .65rem; line-height: 1.55; }
-
-.fire__list { margin-top: 1.1rem; display: grid; gap: .6rem; margin-top: auto; padding-top: 1rem; }
-.fire__row {
-  display: flex;
   justify-content: space-between;
   gap: 1rem;
-  align-items: baseline;
-  padding-bottom: .55rem;
-  border-bottom: 1px dashed rgba(20,49,43,.16);
-}
-.fire__row:last-child { border-bottom: none; padding-bottom: 0; }
-.fire__row span { font-weight: 600; font-size: .93rem; color: var(--teal-deep); }
-.fire__row em {
-  font-style: normal;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  color: var(--rosso);
-  white-space: nowrap;
-  font-size: 1rem;
-}
-.fire__row small {
-  display: block;
-  font-weight: 400;
-  color: #7a7057;
-  font-size: .76rem;
+  padding: .75rem 0;
 }
 
-.cotture__foot {
-  padding: 1.4rem clamp(1.5rem, 4vw, 3rem) clamp(2rem, 4vw, 2.8rem);
+/* CSS wordmark logotype */
+.brandmark {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: .97;
+  text-decoration: none;
+  color: var(--brand-ink);
+  gap: 1px;
+}
+.brandmark .bm-1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.03em;
+}
+.brandmark .bm-2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: .98rem;
+  color: var(--brand-muted);
+  position: relative;
+  align-self: flex-start;
+  padding-bottom: 4px;
+}
+.brandmark .bm-2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 58%;
+  height: 2px;
+  background: var(--brand-accent-2);
+  border-radius: 1px;
+}
+
+.nav-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: .9rem;
   align-items: center;
-  justify-content: space-between;
-  background: rgba(20,49,43,.08);
-  border-top: 2px solid rgba(20,49,43,.1);
+  gap: 1.6rem;
 }
-.cotture__foot p { color: #5b5140; font-size: .92rem; max-width: 34rem; }
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: .94rem;
+  color: var(--brand-ink);
+  padding: .3rem 0;
+  position: relative;
+}
+.nav-links a:hover { color: var(--brand-accent); }
+.nav-links a.active { color: var(--brand-accent); }
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 100%; height: 3px;
+  background: var(--brand-accent);
+  border-radius: 2px;
+}
+/* reflection under active nav indicator — the linea d'acqua motif */
+.nav-links a.active::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -8px;
+  width: 100%; height: 2px;
+  background: var(--brand-accent-2);
+  opacity: .32;
+  filter: blur(0.5px);
+}
 
-/* ============================================================
-   UNA TAVOLA DA LO SCOGLIO — EXPERIENCE CARDS
-   ============================================================ */
-.tavola__grid {
+.nav-cta { display: flex; align-items: center; gap: 1rem; }
+.nav-tel { font-weight: 600; text-decoration: none; font-size: .94rem; white-space: nowrap; }
+.nav-tel:hover { color: var(--brand-accent); }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1.5px solid var(--brand-line);
+  border-radius: 8px;
+  width: 46px; height: 46px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  display: block;
+  width: 20px; height: 2px;
+  background: var(--brand-ink);
+  position: relative;
+  transition: transform var(--dur-micro) var(--ease-micro), opacity var(--dur-micro);
+}
+.nav-toggle span::before { position: absolute; top: -6px; }
+.nav-toggle span::after  { position: absolute; top:  6px; }
+.nav-toggle[aria-expanded="true"] span              { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-6px) rotate(-45deg); }
+
+/* =====================================================
+   HERO DIPTYCH — the wow
+   ===================================================== */
+.hero { position: relative; overflow: hidden; }
+
+.hero-diptych {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1.2rem, 3vw, 2rem);
-}
-.tavola__lead {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: clamp(1.5rem, 4vw, 3.2rem);
-  align-items: end;
-  margin-bottom: .6rem;
-}
-.tavola__lead h2 {
-  font-size: clamp(2rem, 5vw, 3.3rem);
-  color: var(--cream);
-  line-height: .92;
-}
-.tavola__lead > p { color: var(--cream-dim); font-size: 1.03rem; }
-
-/* Step cards — real visual presence */
-.step {
-  background: rgba(233,226,208,.065);
-  border: 1.5px solid rgba(46,156,142,.3);
-  border-radius: var(--r-md);
-  overflow: clip;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 32px -12px rgba(0,0,0,.4);
-  transition: box-shadow .25s var(--ease-plate), transform .25s var(--ease-plate);
-}
-.step:hover {
-  box-shadow: 0 16px 44px -14px rgba(0,0,0,.55);
-  transform: translateY(-2px);
-}
-.step__media { aspect-ratio: 16 / 10; overflow: clip; }
-.step__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .65s var(--ease-plate);
-}
-.step:hover .step__media img { transform: scale(1.04); }
-
-/* Per-step image framing */
-.step:nth-child(2) .step__media img { object-position: center 55%; }
-.step:nth-child(3) .step__media img { object-position: center 40%; }
-
-.step__body { padding: 1.4rem 1.4rem 1.6rem; }
-.step__n {
-  font-family: var(--font-head);
-  font-weight: 900;
-  color: var(--giallo);
-  font-size: .92rem;
-  letter-spacing: .1em;
-}
-.step__body h3 {
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: 900;
-  color: var(--cream);
-  margin-top: .3rem;
-  line-height: 1.05;
-}
-.step__body p { color: rgba(233,226,208,.76); font-size: .95rem; margin-top: .6rem; }
-
-.step--wide { grid-column: 1 / -1; flex-direction: row; }
-.step--wide .step__media {
-  flex: 1 1 46%;
-  aspect-ratio: auto;
-  min-height: 22rem;
-}
-.step--wide .step__media img { object-position: center 50%; }
-.step--wide .step__body {
-  flex: 1 1 54%;
-  align-self: center;
-  padding: 2rem 2rem 2rem 2.2rem;
-}
-.step--wide .step__body h3 { font-size: 1.45rem; }
-.step--wide .step__body p { font-size: 1.03rem; }
-
-/* ============================================================
-   ORARI — LIVE TIMETABLE
-   ============================================================ */
-.orari {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: clamp(1.8rem, 4vw, 3.6rem);
-  align-items: center;
-}
-.orari__intro h2 {
-  font-size: clamp(2rem, 5vw, 3.3rem);
-  color: var(--cream);
-  line-height: .92;
-}
-.orari__intro > p { margin-top: 1.1rem; color: var(--cream-dim); font-size: 1.03rem; }
-
-.live {
-  margin-top: 1.4rem;
-  display: inline-flex;
-  align-items: center;
-  gap: .65rem;
-  background: rgba(46,156,142,.12);
-  border: 1.5px solid rgba(46,156,142,.45);
-  border-radius: 100px;
-  padding: .55rem 1.1rem;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .09em;
-  font-size: .82rem;
-}
-.live .dot { width: .72rem; height: .72rem; }
-.orari__all {
-  margin-top: 1rem;
-  font-size: .85rem;
-  color: rgba(233,226,208,.65);
-  line-height: 1.55;
+  min-height: min(88svh, 760px);
 }
 
-.bands { display: grid; gap: 1rem; }
-.band-row {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 1rem;
-  align-items: center;
-  background: var(--cream-soft);
-  color: var(--ink);
-  border-radius: var(--r-md);
-  padding: 1.2rem 1.4rem;
+.hero-half {
   position: relative;
-  overflow: clip;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow .25s;
+  overflow: hidden;
+  background: var(--brand-surface-alt);
 }
-.band-row__icon {
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--teal-deep);
-  color: var(--giallo);
-  flex: none;
+/* photos & video fill each half */
+.hero-half > img,
+.hero-half > video {
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
-.band-row__icon svg { width: 1.25rem; height: 1.25rem; }
-.band-row h3 {
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--teal-deep);
-  line-height: 1;
-}
-.band-row small { color: #6a5f4c; font-size: .8rem; display: block; margin-top: .2rem; }
-.band-row__time {
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 1.3rem;
-  color: var(--teal-deep);
-  white-space: nowrap;
-  line-height: 1;
-}
+.hero-half.hero-forno > video { object-position: center 30%; }
+.hero-half.hero-mare  > img  { object-position: center 40%; }
 
-/* Active band — visible static state + animation glow */
-.band-row.is-active {
-  outline: 2.5px solid var(--teal);
-  outline-offset: -1px;
-}
-.band-row.is-active::after {
+/* per-half dark gradient for framing */
+.hero-half::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--r-md);
-  animation: breathe 2.6s ease-in-out infinite;
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    175deg,
+    rgba(36,22,16,.08) 0%,
+    rgba(36,22,16,.28) 55%,
+    rgba(36,22,16,.62) 100%
+  );
   pointer-events: none;
 }
-.band-row__flag {
-  display: none;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: .68rem;
-  letter-spacing: .1em;
-  color: #fff;
-  background: var(--teal);
-  padding: .22rem .55rem;
-  border-radius: 100px;
-  margin-left: .5rem;
-}
-.band-row.is-active .band-row__flag { display: inline-block; }
 
-@keyframes breathe {
-  0%, 100% { box-shadow: inset 0 0 0 2px rgba(46,156,142,.3); }
-  50%       { box-shadow: inset 0 0 0 3px rgba(46,156,142,.85); }
-}
+/* opening animations */
+.hero-forno { transform: translateX(-2px); background: var(--brand-ink); }
+.hero-mare  { transform: translateX(2px); }
+.hero-diptych.open .hero-forno { animation: seam-left var(--dur-reveal) var(--ease-signature) both; }
+.hero-diptych.open .hero-mare  { animation: seam-right var(--dur-reveal) var(--ease-signature) both; }
+@keyframes seam-left  { from { transform: translateX(-28px); } to { transform: translateX(-2px); } }
+@keyframes seam-right { from { transform: translateX(28px);  } to { transform: translateX(2px);  } }
+@keyframes seam-up    { from { transform: translateY(-22px); } to { transform: translateY(0);    } }
+@keyframes seam-down  { from { transform: translateY(22px);  } to { transform: translateY(0);    } }
 
-/* ============================================================
-   SUL NAVIGLIO — PARALLAX CANAL BAND
-   ============================================================ */
-.canal {
-  position: relative;
-  border-radius: var(--r-lg);
-  overflow: clip;
-  isolation: isolate;
-  min-height: 28rem;
-  display: flex;
-  align-items: flex-end;
-  box-shadow: var(--shadow-hero);
-}
-.canal__bg { position: absolute; inset: 0; z-index: -1; overflow: clip; }
-.canal__bg img {
-  width: 100%;
-  height: 120%;
-  object-fit: cover;
-  object-position: center 40%;
-}
-/* Left-side panel scrim — strong enough for text, light enough to let
-   the canal water texture read through (left anchor pulled to .80). */
-.canal__scrim {
+/* central water-line seam */
+.hero-seam {
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg,
-      rgba(10,18,14,.80) 0%,
-      rgba(10,18,14,.64) 42%,
-      rgba(10,18,14,.26) 70%,
-      rgba(10,18,14,.06) 100%
-    );
-}
-/* Bottom fade regardless of scrim angle */
-.canal__scrim::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(10,18,14,.65) 100%);
-}
-.canal__card {
-  padding: clamp(2rem, 4vw, 3.2rem);
-  max-width: 36rem;
-  position: relative;
-  z-index: 1;
-}
-.canal__card h2 {
-  font-size: clamp(2rem, 5vw, 3.1rem);
-  color: var(--cream);
-  line-height: .92;
-}
-.canal__addr {
-  margin-top: 1.2rem;
-  font-size: 1.1rem;
-  color: var(--cream);
-  line-height: 1.5;
-}
-.canal__addr b {
-  font-family: var(--font-head);
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  font-weight: 900;
-  display: block;
-  letter-spacing: -.01em;
-  margin-bottom: .15rem;
-}
-.canal__meta { margin-top: .9rem; color: var(--cream-dim); font-size: .97rem; }
-.canal__ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
-
-/* Canal parallax is JS-driven (rAF-batched) so it also reaches mobile — see script. */
-
-/* ============================================================
-   DELIVERY — JUST EAT
-   ============================================================ */
-.delivery {
-  display: grid;
-  grid-template-columns: .95fr 1.05fr;
-  gap: clamp(1.8rem, 4vw, 3.6rem);
-  align-items: center;
-}
-.delivery__media {
-  border-radius: var(--r-lg);
-  overflow: clip;
-  aspect-ratio: 5 / 4;
-  box-shadow: var(--shadow-lift);
-}
-.delivery__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 55%;
-}
-.delivery__body h2 {
-  font-size: clamp(2rem, 5vw, 3.1rem);
-  color: var(--cream);
-  line-height: .92;
-}
-.delivery__body > p { margin-top: 1.1rem; color: var(--cream-dim); font-size: 1.03rem; }
-.delivery__points { margin-top: 1.5rem; display: grid; gap: .8rem; }
-.delivery__points li {
-  display: flex;
-  gap: .75rem;
-  align-items: flex-start;
-  color: rgba(233,226,208,.9);
-  font-size: .97rem;
-}
-.delivery__points svg {
-  width: 1.1rem;
-  height: 1.1rem;
-  color: var(--teal);
-  flex: none;
-  margin-top: .25rem;
-}
-.delivery__cta { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
-
-/* ============================================================
-   RECENSIONI — RATING SECTION
-   ============================================================ */
-.rev {
-  background: linear-gradient(148deg, #0C1512 0%, #14312B 60%, #0E2220 100%);
-  border-radius: var(--r-lg);
-  padding: clamp(2.2rem, 5vw, 3.8rem);
-  border-top: 5px solid var(--giallo);   /* visible accent — anchors the section */
-  position: relative;
-  overflow: clip;
-  box-shadow: var(--shadow-lift);
-}
-/* Subtle dot-screen texture — printed/editorial feel, NOT luxury grain */
-.rev::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(46,156,142,.11) 1px, transparent 1px);
-  background-size: 26px 26px;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
   pointer-events: none;
 }
-.rev__grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(1.8rem, 5vw, 3.6rem);
-  align-items: center;
+.hero-seam-line {
   position: relative;
-  z-index: 1;
+  height: 4px;               /* thick enough to read over two photos */
+  background: var(--brand-accent);
+  width: 100%;
 }
-.rev__score { text-align: center; }
-.rev__score b {
-  font-family: var(--font-head);
-  font-size: clamp(4.5rem, 12vw, 7.5rem);
-  font-weight: 900;
-  line-height: .85;
-  color: var(--giallo);
-  display: block;
-  letter-spacing: -.04em;
-}
-.rev__score .of {
-  font-family: var(--font-cond);
-  color: rgba(233,226,208,.55);
-  font-size: 1rem;
-  display: block;
-  margin-top: .1rem;
-}
-.stars {
-  display: inline-flex;
-  gap: .25rem;
-  margin-top: .7rem;
-}
-.stars svg { width: 1.5rem; height: 1.5rem; }
-.rev__count { color: rgba(233,226,208,.65); font-size: .88rem; margin-top: .5rem; }
-
-.rev__body h2 {
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-  color: var(--cream);
-  line-height: .92;
-}
-.rev__body > p { margin-top: 1.1rem; color: var(--cream-dim); font-size: 1.03rem; }
-
-.rev__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  margin-top: 1.5rem;
-}
-.rev__tag {
-  background: rgba(46,156,142,.16);
-  border: 1.5px solid rgba(46,156,142,.45);
-  color: var(--cream);
-  border-radius: 100px;
-  padding: .45rem .95rem;
-  font-size: .83rem;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  letter-spacing: .05em;
-}
-.rev__src {
-  margin-top: 1.4rem;
-  font-size: .78rem;
-  color: rgba(233,226,208,.48);
-  line-height: 1.5;
+.hero-seam-line::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 7px;
+  height: 3px;
+  background: var(--brand-accent-2);
+  opacity: .40;
+  filter: blur(0.5px);
 }
 
-/* ============================================================
-   CONTATTI FOOTER
-   ============================================================ */
-.contatti {
-  background: var(--ink);
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
-  border-top: 5px solid rgba(46,156,142,.5);
-}
-.contatti__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
-}
-.contatti h2 {
-  font-size: clamp(2.1rem, 5.5vw, 3.5rem);
-  color: var(--cream);
-  line-height: .9;
-}
-.contatti__lede {
-  margin-top: 1.1rem;
-  color: var(--cream-dim);
-  font-size: 1.03rem;
-  max-width: 34rem;
-}
-.contatti__actions { margin-top: 2rem; display: grid; gap: .7rem; max-width: 22rem; }
-
-.contatti__list { display: grid; gap: 1.2rem; align-content: start; }
-.cline { display: flex; gap: .9rem; align-items: flex-start; }
-.cline svg { width: 1.25rem; height: 1.25rem; color: var(--teal); flex: none; margin-top: .22rem; }
-.cline b {
-  display: block;
-  font-family: var(--font-cond);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: .72rem;
-  font-weight: 700;
-  color: rgba(233,226,208,.55);
-}
-.cline span { font-size: 1rem; color: var(--cream); display: block; margin-top: .1rem; }
-.cline a:hover { color: var(--giallo); }
-
-.footnote {
-  border-top: 1px solid rgba(46,156,142,.2);
-  margin-top: 2.8rem;
-  padding-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem 1.5rem;
-  justify-content: space-between;
-  align-items: center;
-}
-.footnote p { font-size: .76rem; color: rgba(233,226,208,.4); max-width: 46rem; line-height: 1.55; }
-
-/* ============================================================
-   MOBILE DOCK BAR
-   ============================================================ */
-.dockbar {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 70;
-  display: none;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(46,156,142,.35);
-  transform: translateY(120%);
-  transition: transform .5s var(--ease-plate);
-  box-shadow: 0 -12px 36px -18px rgba(0,0,0,.9);
-}
-.dockbar.is-in { transform: none; }
-.dockbar a {
+/* content layer over both halves */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .28rem;
-  padding: .65rem .2rem calc(.65rem + env(safe-area-inset-bottom));
-  background: var(--teal-deep);
-  color: var(--cream);
-  font-family: var(--font-cond);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: .65rem;
-  letter-spacing: .05em;
-  min-height: 58px;
-  transition: background .18s;
+  text-align: center;
+  padding: 2rem clamp(1rem, 4vw, 3rem);
+  pointer-events: none;
 }
-.dockbar a:hover { background: var(--teal-mid); }
-.dockbar a.is-primary { background: var(--rosso); }
-.dockbar a.is-primary:hover { background: #a8321f; }
-.dockbar svg { width: 1.3rem; height: 1.3rem; }
+.hero-content > * { pointer-events: auto; }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 1050px) {
-  :root { --rail-w: 16.5rem; }
-}
-
-@media (max-width: 900px) {
-  /* Collapse desktop nav */
-  .nav { display: none; }
-  .nav.is-open {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    position: absolute;
-    left: 0; right: 0; top: 100%;
-    background: var(--ink);
-    border-bottom: 2px solid rgba(46,156,142,.3);
-    padding: .5rem 0;
-  }
-  .nav.is-open a {
-    padding: .9rem clamp(1.1rem,4vw,2.5rem);
-    border-top: 1px solid rgba(46,156,142,.14);
-    opacity: 1;
-  }
-  .nav.is-open .nav__cta {
-    margin: .6rem clamp(1.1rem,4vw,2.5rem);
-    border-radius: var(--r-sm);
-    text-align: center;
-  }
-  .navtoggle { display: flex; }
-  .topbar { position: relative; }
-
-  /* Collapse rail below main */
-  .pass { grid-template-columns: 1fr; }
-  .rail { position: static; order: 2; margin-top: 2.6rem; }
-  .rail__card { max-width: 30rem; margin-inline: auto; }
-
-  /* Single-column sections */
-  .quart,
-  .orari,
-  .delivery,
-  .contatti__grid,
-  .tavola__lead { grid-template-columns: 1fr; }
-
-  .rev__grid { grid-template-columns: 1fr; text-align: center; }
-  .rev__score { margin-inline: auto; }
-  .stars { justify-content: center; }
-  .rev__tags { justify-content: center; }
-
-  .triptych { grid-template-columns: 1fr; }
-  .fire { border-left: none; border-top: 2px solid rgba(20,49,43,.1); }
-  .fire:first-child { border-top: none; }
-  .fire__media { aspect-ratio: 16 / 9; }
-
-  .tavola__grid { grid-template-columns: 1fr; }
-  .step--wide { flex-direction: column; }
-  .step--wide .step__media { aspect-ratio: 16 / 10; min-height: auto; }
-  .step--wide .step__body { padding: 1.4rem 1.4rem 1.6rem; }
-
-  .quart__facts { grid-template-columns: 1fr 1fr; }
-
-  .dockbar { display: grid; }
-}
-
-@media (max-width: 560px) {
-  .hero__frame { aspect-ratio: 4 / 5; }
-  .hero__media img,
-  .hero__media video { object-position: 50% 28%; }
-  .canal__scrim {
-    background: linear-gradient(180deg,
-      rgba(10,18,14,.45) 0%,
-      rgba(10,18,14,.92) 68%
-    );
-  }
-  .canal__scrim::after { display: none; }
-  .canal { align-items: flex-end; min-height: 30rem; }
-}
-
-/* ============================================================
-   MOTION LAYER  (pass 3) — the "plating" language: unhurried, weighted
-   ============================================================ */
-
-/* Hero load sequence — heading → subcopy → CTAs settle upward.
-   Pure CSS so it runs even if the enhancement script never loads. */
-@keyframes heroRise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
-.hero__tag  { animation: heroRise .55s var(--ease-out) both; }
-.hero__word { animation: heroRise .70s var(--ease-out) .08s both; }
-.hero__lede { animation: heroRise .60s var(--ease-out) .22s both; }
-.hero__ctas { animation: heroRise .60s var(--ease-out) .34s both; }
-
-/* Hero video seam-mask — a brief opacity dip at the loop boundary
-   hides the restart cut (JS toggles .seam near the wrap). */
-.hero__media video { transition: opacity .4s ease; }
-.hero__media video.seam { opacity: .5; }
-
-/* Scroll reveals — gated behind .js so all content is visible without JS. */
-.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .7s var(--ease-plate), transform .7s var(--ease-plate);
-  will-change: opacity, transform;
-}
-.js [data-reveal].in { opacity: 1; transform: none; }
-.js [data-reveal="left"]  { transform: translateX(-44px); }
-.js [data-reveal="right"] { transform: translateX(44px); }
-.js [data-reveal="left"].in,
-.js [data-reveal="right"].in { transform: none; }
-.js [data-reveal="zoom"]    { opacity: 0; transform: scale(1.09); }
-.js [data-reveal="zoom"].in { opacity: 1; transform: scale(1); }
-
-/* Heading clip-reveal, left-to-right — the same directional gesture as the
-   hero underline, recurring as a motif across every section title. */
-.js [data-reveal="mask"] {
-  opacity: 0;
-  transform: none;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path .85s var(--ease-plate), opacity .4s ease;
-}
-.js [data-reveal="mask"].in { opacity: 1; clip-path: inset(0 0 0 0); }
-
-/* Staggered groups — children cascade in; per-child delay set in JS. */
-.js [data-stagger] > * {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .6s var(--ease-plate), transform .6s var(--ease-plate);
-}
-.js [data-stagger].in > * { opacity: 1; transform: none; }
-
-/* Dish-card hover lift — tactile press; the price nudges toward the plate. */
-.fire { transition: transform .25s var(--ease-plate), box-shadow .25s var(--ease-plate); }
-.fire:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 48px -22px rgba(0,0,0,.6);
-  z-index: 2;
-}
-.fire__row em { transition: transform .2s var(--ease-out); }
-.fire:hover .fire__row em { transform: translateX(-5px); }
-
-/* Canal image — JS parallax drift; hint the compositor. */
-.canal__bg img { will-change: transform; }
-
-/* ============================================================
-   SECTION HEADER VARIETY — breaks the eyebrow+mask formula
-   ============================================================ */
-
-/* Bare text label: no red bar, toned-down, used in sections 7–9
-   to rotate the pattern after it's been established. */
-.section-label {
-  font-family: var(--font-cond);
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  font-size: .72rem;
-  font-weight: 700;
-  color: rgba(233,226,208,.48);
-  margin: 0 0 1rem;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-.section-label::before {
+/* centered radial vignette so text is always legible */
+.hero-content::before {
   content: "";
-  display: inline-block;
-  width: .55rem;
-  height: .55rem;
-  border-radius: 50%;
-  background: var(--teal);
-  flex: none;
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    ellipse 75% 65% at 50% 50%,
+    rgba(36,22,16,.52) 0%,
+    rgba(36,22,16,.22) 58%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Large muted chapter number for sections that need a
-   typographic rather than labelled opener (e.g. Orari). */
-.chap-num {
-  font-family: var(--font-head);
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-weight: 900;
-  line-height: .85;
-  letter-spacing: -.06em;
-  color: rgba(46,156,142,.18);
-  margin-bottom: -.35em;
+.hero-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--brand-accent-ink);
+  text-shadow: 0 2px 28px rgba(36,22,16,.90);
+  margin-bottom: .5rem;
+}
+.hero-wordmark .hw-1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-hero);
+  letter-spacing: -0.03em;
+  line-height: .93;
+}
+.hero-wordmark .hw-2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.4rem, .9rem + 2.4vw, 3rem);
+  position: relative;
+  padding-bottom: 9px;
+  margin-top: .12rem;
+}
+.hero-wordmark .hw-2::after {
+  content: "";
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 0;
+  width: 130px; max-width: 65%;
+  height: 3px;
+  background: var(--brand-accent-2);
+  border-radius: 2px;
+  opacity: .88;
+}
+
+.hero-tagline {
+  color: var(--brand-accent-ink);
+  font-size: clamp(1.05rem, .95rem + .5vw, 1.4rem);
+  font-weight: 500;
+  text-shadow: 0 2px 18px rgba(36,22,16,.72);
+  margin-bottom: 1.5rem;
+  max-width: 34ch;
+  line-height: 1.5;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+.hero-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  background: color-mix(in srgb, var(--brand-ink) 62%, transparent);
+  color: var(--brand-accent-ink);
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.stars { color: var(--brand-accent); letter-spacing: 1px; font-size: 1rem; }
+.stars .s-empty { color: color-mix(in srgb, var(--brand-accent-ink) 55%, transparent); }
+
+.hero-tel-note {
+  color: var(--brand-accent-ink);
+  font-size: .85rem;
+  margin-top: .85rem;
+  opacity: .88;
+  text-shadow: 0 1px 10px rgba(36,22,16,.65);
+  font-variant-numeric: tabular-nums;
+}
+
+/* =====================================================
+   QUARTIERE — image bleeds past left edge on desktop
+   ===================================================== */
+.quartiere {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+.quartiere-media {
+  position: relative;
+  border-radius: 0 var(--radius) var(--radius) 0;   /* left edge bleeds */
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(36,22,16,.14), 0 2px 8px rgba(36,22,16,.09);
+}
+.quartiere-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 45%;  /* water reflections prominent */
+  aspect-ratio: 4 / 3;
+  display: block;
+}
+.quartiere-text p + p { margin-top: 1.05rem; }
+.quartiere-text p { max-inline-size: 52ch; }
+
+/* =====================================================
+   MENU FAMILY CARDS (Dal forno)
+   ===================================================== */
+.families {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.35rem;
+}
+
+.fam-card {
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-line);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.6rem 1.7rem;
+  position: relative;
+  overflow: hidden;
+  /* water-line motif via box-shadow: terracotta bar + reflection below the card */
+  box-shadow:
+    0 3px 0 0 var(--brand-accent),
+    0 7px 0 0 color-mix(in srgb, var(--brand-accent-2) 28%, transparent),
+    0 4px 22px rgba(36,22,16,.07),
+    0 1px 4px rgba(36,22,16,.06);
+}
+/* no inner ::after/::before needed — motif lives in box-shadow */
+.fam-card::after,
+.fam-card::before { display: none; }
+
+.fam-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+.fam-card p {
+  color: var(--brand-muted);
+  font-size: .97rem;
+  max-inline-size: 40ch;
+}
+
+/* Feature card: Crea la tua pizza */
+.fam-card.feature {
+  grid-column: span 2;
+  background: var(--brand-ink);
+  color: var(--brand-surface);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  padding: 0;
+  align-items: stretch;
+  /* override box-shadow — feature card has its own depth */
+  box-shadow:
+    0 12px 44px rgba(36,22,16,.22),
+    0 2px 8px rgba(36,22,16,.15);
+}
+.fam-card.feature .feature-body {
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .7rem;
+}
+.fam-card.feature h3 {
+  color: var(--brand-surface);
+  font-size: 1.7rem;
+}
+.fam-card.feature p {
+  color: color-mix(in srgb, var(--brand-surface) 76%, transparent);
+  max-inline-size: 38ch;
+}
+.fam-card.feature .feature-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.fam-card.feature .feature-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;  /* show hands + toppings */
+  min-height: 240px;
+  display: block;
+}
+/* slight warm overlay on the feature image */
+.fam-card.feature .feature-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(36,22,16,.25) 0%, transparent 50%);
+}
+
+/* =====================================================
+   DISH LISTS
+   ===================================================== */
+.dish-list { margin-top: 1rem; }
+.dish-list li {
+  display: flex;
+  gap: .75rem;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--brand-line);
+  align-items: baseline;
+  font-size: .98rem;
+}
+.dish-list li:last-child { border-bottom: 0; }
+.dish-list .bullet {
+  color: var(--brand-accent);
+  font-weight: 700;
+  flex: 0 0 auto;
+  line-height: 1.4;
+  font-size: .8rem;
+}
+
+/* =====================================================
+   MENU SPLIT (Dal mare / Non solo pizza)
+   ===================================================== */
+.menu-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.menu-split.reverse .menu-split-media { order: 2; }
+
+.menu-split-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(36,22,16,.11), 0 2px 6px rgba(36,22,16,.07);
+  position: sticky;
+  top: 100px; /* stick while scrolling through dish lists */
+}
+.menu-split-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  aspect-ratio: 5 / 4;
   display: block;
 }
 
-/* ============================================================
-   DESKTOP RAIL ENTRANCE — "plating up" gesture on hero-clear
-   ============================================================ */
-/* On desktop the rail settles in when the hero exits viewport
-   (same observer as the mobile dock). Initially offset downward. */
-@media (min-width: 901px) {
-  .js .rail__card {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .75s var(--ease-plate), transform .75s var(--ease-plate);
+#dal-mare    .menu-split-media img { object-position: center 38%; }
+#non-solo-pizza .menu-split-media img { object-position: center center; }
+
+.menu-split h3 {
+  font-size: 1.35rem;
+  margin: 1.5rem 0 .45rem;
+}
+.menu-split h3:first-child { margin-top: 0; }
+
+/* =====================================================
+   IL MENU COMBO
+   ===================================================== */
+.combo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: var(--brand-ink);
+  color: var(--brand-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 14px 50px rgba(36,22,16,.22), 0 3px 10px rgba(36,22,16,.14);
+}
+.combo-media {
+  position: relative;
+  overflow: hidden;
+}
+.combo-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  min-height: 300px;
+  display: block;
+}
+/* warm overlay on combo image */
+.combo-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 40%, rgba(36,22,16,.35) 100%);
+}
+
+.combo-body {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.combo-body .eyebrow {
+  color: color-mix(in srgb, var(--brand-accent) 85%, #fff);
+}
+.combo-body h2 {
+  color: var(--brand-surface);
+  font-size: var(--fs-h2);
+  margin-bottom: 1rem;
+}
+.combo-body > p {
+  color: color-mix(in srgb, var(--brand-surface) 78%, transparent);
+}
+
+.combo-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5rem;
+  margin: 1.6rem 0;
+}
+.combo-price .price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.8rem, 1.8rem + 3vw, 4.2rem);
+  color: var(--brand-accent);
+  position: relative;
+  padding-bottom: 7px;
+  line-height: 1;
+}
+/* the price underline sweep — the linea d'acqua motif on the price */
+.combo-price .price::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 3px;
+  background: var(--brand-accent);
+  border-radius: 2px;
+}
+.combo-price .price::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 100%; height: 2px;
+  background: var(--brand-accent-2);
+  opacity: .32;
+  filter: blur(0.5px);
+}
+.combo-price .price-note {
+  color: color-mix(in srgb, var(--brand-surface) 72%, transparent);
+  font-size: .95rem;
+}
+
+.combo-includes { margin: 0 0 1.8rem; }
+.combo-includes li {
+  padding: .38rem 0;
+  display: flex;
+  gap: .65rem;
+  align-items: baseline;
+  color: color-mix(in srgb, var(--brand-surface) 88%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-surface) 12%, transparent);
+  font-size: .98rem;
+}
+.combo-includes li:last-child { border-bottom: 0; }
+.combo-includes .bullet { color: var(--brand-accent); font-weight: 700; font-size: .8rem; }
+
+/* =====================================================
+   COME SI ORDINA — channel grid
+   Chiamaci: tall featured card (accent bg)
+   Middle pair: WhatsApp + Telefono
+   Just Eat: full-width horizontal
+   ===================================================== */
+.ordina-grid {
+  display: grid;
+  grid-template-columns: 1fr;    /* mobile: 1 col */
+  gap: 1.3rem;
+}
+
+.channel {
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-line);
+  border-radius: var(--radius);
+  padding: 1.55rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform var(--dur-micro) var(--ease-micro),
+    border-color var(--dur-micro) var(--ease-micro),
+    box-shadow var(--dur-micro) var(--ease-micro);
+  box-shadow: 0 2px 12px rgba(36,22,16,.055), 0 1px 3px rgba(36,22,16,.07);
+}
+a.channel:hover {
+  border-color: var(--brand-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(36,22,16,.12), 0 2px 6px rgba(36,22,16,.08);
+}
+
+.channel .ch-icon {
+  width: 44px; height: 44px;
+  color: var(--brand-accent-2);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brand-line);
+  border-radius: 8px;
+  background: var(--brand-surface-alt);
+  margin-bottom: .25rem;
+}
+.channel h3 { font-size: 1.18rem; }
+.channel p  { color: var(--brand-muted); font-size: .93rem; line-height: 1.55; }
+.channel .ch-value { font-weight: 600; color: var(--brand-ink); font-size: .97rem; }
+.channel .ch-tag {
+  font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--brand-muted); font-weight: 600;
+}
+
+/* ===== desktop ordina layout ===== */
+@media (min-width: 620px) {
+  .ordina-grid {
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: auto auto auto;
   }
-  .js .rail__card.rail-in {
-    opacity: 1;
-    transform: none;
+
+  /* Chiamaci: tall primary card */
+  .channel:first-child {
+    grid-row: 1 / span 2;
+    background: var(--brand-accent);
+    border-color: transparent;
+    color: var(--brand-accent-ink);
+    padding: 2.2rem 1.9rem;
+    box-shadow:
+      0 6px 32px color-mix(in srgb, var(--brand-accent) 38%, transparent),
+      0 2px 8px  color-mix(in srgb, var(--brand-accent) 28%, transparent);
+    justify-content: flex-end; /* value + phone anchored at bottom */
+  }
+  .channel:first-child .ch-icon {
+    color: var(--brand-accent-ink);
+    background: color-mix(in srgb, var(--brand-accent-ink) 15%, transparent);
+    border-color: color-mix(in srgb, var(--brand-accent-ink) 25%, transparent);
+    width: 52px; height: 52px;
+    margin-bottom: auto; /* push rest down */
+  }
+  .channel:first-child .ch-tag {
+    color: color-mix(in srgb, var(--brand-accent-ink) 72%, transparent);
+    margin-top: auto;
+  }
+  .channel:first-child h3 {
+    color: var(--brand-accent-ink);
+    font-size: 1.5rem;
+  }
+  .channel:first-child p {
+    color: color-mix(in srgb, var(--brand-accent-ink) 80%, transparent);
+  }
+  .channel:first-child .ch-value {
+    color: var(--brand-accent-ink);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  a.channel:first-child:hover {
+    background: color-mix(in srgb, var(--brand-accent) 88%, #000);
+    border-color: transparent;
+    transform: translateY(-3px);
+  }
+
+  /* Just Eat: full-width horizontal at bottom */
+  .channel:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    column-gap: 1.5rem;
+    row-gap: .25rem;
+    align-items: center;
+    background: var(--brand-surface-alt);
+  }
+  .channel:last-child .ch-icon {
+    grid-row: 1 / span 5;
+    align-self: center;
+    width: 56px; height: 56px;
+    margin-bottom: 0;
+  }
+  .channel:last-child .ch-tag   { grid-column: 2; }
+  .channel:last-child h3         { grid-column: 2; }
+  .channel:last-child p          { grid-column: 2; }
+  .channel:last-child .ch-value  { grid-column: 2; }
+}
+
+/* =====================================================
+   DOVE SIAMO
+   ===================================================== */
+.dove {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+.dove-media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 340px;
+  box-shadow: 0 8px 36px rgba(36,22,16,.13), 0 2px 7px rgba(36,22,16,.08);
+}
+.dove-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;  /* show the lit facade/entrance */
+  position: absolute; inset: 0;
+  display: block;
+}
+/* scrim for pin legibility */
+.dove-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(36,22,16,.45) 0%, transparent 50%);
+}
+
+.map-pin {
+  position: absolute;
+  left: 12%;
+  bottom: 10%;          /* percentage-based, well inside container */
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  background: var(--brand-surface);
+  color: var(--brand-ink);
+  padding: .55rem .95rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .84rem;
+  box-shadow: 0 6px 22px rgba(36,22,16,.30);
+  max-width: 74%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.map-pin .dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--brand-accent);
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-accent) 28%, transparent);
+}
+
+.dove-info { display: flex; flex-direction: column; gap: 1.6rem; justify-content: center; }
+.info-block h3 { font-size: 1.15rem; margin-bottom: .45rem; }
+.info-block p  { color: var(--brand-muted); }
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .38rem 0;
+  border-bottom: 1px solid var(--brand-line);
+}
+.hours-list li:last-child { border-bottom: 0; }
+.hours-list .day { color: var(--brand-ink); font-weight: 500; }
+.hours-list .hrs { color: var(--brand-muted); }
+
+/* =====================================================
+   LE RECENSIONI — now 3-column with tavoli photo
+   ===================================================== */
+.reviews {
+  display: grid;
+  grid-template-columns: 1.05fr .78fr 1.17fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.reviews-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  align-self: stretch;
+  box-shadow: 0 8px 36px rgba(36,22,16,.12), 0 2px 7px rgba(36,22,16,.07);
+}
+.reviews-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  min-height: 320px;
+  display: block;
+}
+
+.rating-card {
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-line);
+  border-radius: var(--radius);
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  text-align: center;
+  box-shadow:
+    0 3px 0 0 var(--brand-accent),
+    0 7px 0 0 color-mix(in srgb, var(--brand-accent-2) 28%, transparent),
+    0 4px 22px rgba(36,22,16,.07);
+  align-self: start;
+}
+.rating-big {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.6rem, 2rem + 5vw, 5.8rem);
+  color: var(--brand-accent);
+  line-height: 1;
+}
+.rating-big span { font-size: .38em; color: var(--brand-muted); }
+.rating-card .stars { font-size: 1.55rem; display: block; margin: .65rem 0; }
+.rating-count  { color: var(--brand-muted); font-weight: 500; font-size: .97rem; }
+.rating-source { color: var(--brand-muted); font-size: .82rem; margin-top: .55rem; }
+
+.reviews-copy { padding-top: .5rem; }
+.reviews-copy p + p { margin-top: 1.05rem; }
+.reviews-copy p { max-inline-size: 48ch; }
+.reviews-copy .pull {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.32rem;
+  color: var(--brand-ink);
+  line-height: 1.38;
+  padding-left: 1.15rem;
+  border-left: 4px solid var(--brand-accent);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.site-footer {
+  background: var(--brand-ink);
+  color: color-mix(in srgb, var(--brand-surface) 83%, transparent);
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 2rem;
+}
+.footer-brand .bm-1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.45rem;
+  color: var(--brand-surface);
+  letter-spacing: -0.03em;
+}
+.footer-brand .bm-2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: color-mix(in srgb, var(--brand-surface) 68%, transparent);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.footer-brand .bm-2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 56%; height: 2px;
+  background: var(--brand-accent-2);
+  border-radius: 1px;
+}
+.footer-brand p { margin-top: 1.1rem; max-width: 34ch; font-size: .95rem; line-height: 1.6; }
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--brand-surface);
+  font-size: .76rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footer-col a,
+.footer-col p {
+  color: color-mix(in srgb, var(--brand-surface) 80%, transparent);
+  text-decoration: none;
+  font-size: .95rem;
+  display: block;
+  padding: .22rem 0;
+  line-height: 1.55;
+}
+.footer-col a:hover { color: var(--brand-accent-ink); }
+
+.footer-bottom {
+  margin-top: 2.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--brand-surface) 18%, transparent);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: .8rem;
+  color: color-mix(in srgb, var(--brand-surface) 58%, transparent);
+}
+.disclaimer {
+  font-size: .78rem;
+  color: color-mix(in srgb, var(--brand-surface) 50%, transparent);
+  max-width: 60ch;
+}
+
+/* =====================================================
+   STICKY MOBILE ACTION BAR
+   ===================================================== */
+.action-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 70;
+  display: none;
+  gap: .65rem;
+  padding: .65rem .85rem calc(.65rem + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--brand-surface) 96%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--brand-line);
+  box-shadow: 0 -6px 28px rgba(36,22,16,.15);
+  align-items: center;
+}
+.action-bar .btn { flex: 1; padding: .78rem .5rem; }
+.action-bar .ab-proof {
+  display: flex; flex-direction: column;
+  line-height: 1.05;
+  font-size: .7rem; color: var(--brand-muted); text-align: center;
+  flex: 0 0 auto; padding-inline: .35rem;
+}
+.action-bar .ab-proof strong {
+  color: var(--brand-accent);
+  font-size: 1rem;
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+/* =====================================================
+   MOTION LAYER  — one language: rise 16px + settle,
+   the linea d'acqua distends from the left, its reflection
+   fades in beneath. All hidden states gated behind html.js
+   so no-JS keeps every section fully visible.
+   ===================================================== */
+
+/* scroll progress — a thin terracotta linea d'acqua at the top edge.
+   Decorative only; carries no content, so scaleX(0) when unsupported is fine. */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px; width: 100%;
+  background: var(--brand-accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 80;
+  pointer-events: none;
+}
+.scroll-progress::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 3px;
+  height: 2px;
+  background: var(--brand-accent-2);
+  opacity: .32;
+  filter: blur(0.5px);
+}
+
+/* --- generic rise+fade --- */
+html.js .reveal { opacity: 0; transform: translateY(16px); }
+html.js .reveal.in {
+  opacity: 1; transform: none;
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature);
+}
+
+/* --- media: scale-in (image settles onto the surface) --- */
+html.js .reveal-media { opacity: 0; transform: scale(1.04); }
+html.js .reveal-media.in {
+  opacity: 1; transform: scale(1);
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature);
+}
+
+/* --- staggered cascade (menu voci rise 90ms apart) --- */
+html.js .stagger > * { opacity: 0; transform: translateY(16px); }
+html.js .stagger.in > * {
+  opacity: 1; transform: none;
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .stagger.in > *:nth-child(1)  { transition-delay: 0ms; }
+html.js .stagger.in > *:nth-child(2)  { transition-delay: var(--stagger); }
+html.js .stagger.in > *:nth-child(3)  { transition-delay: calc(var(--stagger)*2); }
+html.js .stagger.in > *:nth-child(4)  { transition-delay: calc(var(--stagger)*3); }
+html.js .stagger.in > *:nth-child(5)  { transition-delay: calc(var(--stagger)*4); }
+html.js .stagger.in > *:nth-child(6)  { transition-delay: calc(var(--stagger)*5); }
+html.js .stagger.in > *:nth-child(7)  { transition-delay: calc(var(--stagger)*6); }
+html.js .stagger.in > *:nth-child(8)  { transition-delay: calc(var(--stagger)*7); }
+html.js .stagger.in > *:nth-child(9)  { transition-delay: calc(var(--stagger)*8); }
+html.js .stagger.in > *:nth-child(10) { transition-delay: calc(var(--stagger)*9); }
+
+/* --- section-head: choreographed group (eyebrow → linea draw → heading mask → lede) --- */
+html.js .section-head .eyebrow { opacity: 0; transform: translateY(14px); }
+html.js .section-head.in .eyebrow {
+  opacity: 1; transform: none;
+  transition: opacity var(--dur-reveal) var(--ease-signature),
+              transform var(--dur-reveal) var(--ease-signature);
+}
+
+/* the linea d'acqua distends from the left, then its reflection dissolves in */
+html.js .section-head .linea-acqua { transform: scaleX(0); transform-origin: 0 50%; }
+html.js .section-head.in .linea-acqua {
+  transform: scaleX(1);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: .12s;
+}
+html.js .section-head .linea-acqua::after { opacity: 0; }
+html.js .section-head.in .linea-acqua::after {
+  opacity: .35;
+  transition: opacity var(--dur-reveal) var(--ease-micro);
+  transition-delay: .5s;
+}
+
+/* heading line-mask — the real <h2> stays one selectable node; JS wraps its text
+   in .mask-inner so the line rises into being. Padding+margin keep descenders clear. */
+html.js .section-head h2 { overflow: hidden; padding-bottom: .12em; margin-bottom: calc(1rem - .12em); }
+html.js .section-head h2 > .mask-inner { display: block; transform: translateY(115%); }
+html.js .section-head.in h2 > .mask-inner {
+  transform: translateY(0);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: .14s;
+}
+
+html.js .section-head .lede { opacity: 0; transform: translateY(16px); }
+html.js .section-head.in .lede {
+  opacity: 1; transform: none;
+  transition: opacity var(--dur-reveal) var(--ease-signature),
+              transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: .3s;
+}
+
+/* --- full-width divider: the linea d'acqua distends from the left on entry --- */
+html.js .section-divider.linea-acqua--full { transform: scaleX(0); transform-origin: 0 50%; }
+html.js .section-divider.linea-acqua--full.in {
+  transform: scaleX(1);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .section-divider.linea-acqua--full::after { opacity: 0; }
+html.js .section-divider.linea-acqua--full.in::after {
+  opacity: .38;
+  transition: opacity var(--dur-reveal) var(--ease-micro);
+  transition-delay: .45s;
+}
+
+/* =====================================================
+   MOMENT 1 — apertura del dittico (the signature)
+   The claim rises on the water-line as the halves part.
+   ===================================================== */
+html.js .hero-seam-line { transform: scaleX(0); transform-origin: 50% 50%; }
+html.js .hero-diptych.open .hero-seam-line {
+  transform: scaleX(1);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: .15s;
+}
+html.js .hero-content > * { opacity: 0; transform: translateY(16px); }
+html.js .hero-diptych.open .hero-content > * {
+  opacity: 1; transform: none;
+  transition: opacity var(--dur-reveal) var(--ease-signature),
+              transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .hero-diptych.open .hero-content > *:nth-child(1) { transition-delay: .24s; }
+html.js .hero-diptych.open .hero-content > *:nth-child(2) { transition-delay: .36s; }
+html.js .hero-diptych.open .hero-content > *:nth-child(3) { transition-delay: .48s; }
+html.js .hero-diptych.open .hero-content > *:nth-child(4) { transition-delay: .60s; }
+html.js .hero-diptych.open .hero-content > *:nth-child(5) { transition-delay: .72s; }
+
+/* =====================================================
+   MOMENT 4 — tratto sul prezzo del Menù Combo
+   A terracotta sweep draws under 11,50€ once on scroll-in.
+   ===================================================== */
+html.js .combo-price .price::after  { transform: scaleX(0); transform-origin: 0 50%; }
+html.js .combo-price .price::before { transform: scaleX(0); transform-origin: 0 50%; }
+html.js .combo.in .combo-price .price::after {
+  transform: scaleX(1);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: .35s;
+}
+html.js .combo.in .combo-price .price::before {
+  transform: scaleX(1);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: .46s;
+}
+
+/* =====================================================
+   MOMENT 6 — discesa del pin sulla mappa
+   The marker drops and settles with a single small bounce.
+   ===================================================== */
+html.js .map-pin { opacity: 0; }
+html.js .dove-media.in .map-pin { animation: pin-drop .95s var(--ease-signature) .3s both; }
+@keyframes pin-drop {
+  0%   { opacity: 0; transform: translateY(-40px); }
+  55%  { opacity: 1; transform: translateY(5px); }
+  78%  { transform: translateY(-2px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   MOMENT 5 — barra d'ordine che si aggancia (mobile rail)
+   Detaches from the hero and settles at the bottom with a
+   shadow lift once the hero has scrolled away.
+   ===================================================== */
+@media (max-width: 860px) {
+  html.js .action-bar {
+    transform: translateY(125%);
+    box-shadow: none;
+    transition:
+      transform var(--dur-reveal) var(--ease-signature),
+      box-shadow var(--dur-reveal) var(--ease-signature);
+  }
+  html.js .action-bar.docked {
+    transform: translateY(0);
+    box-shadow: 0 -6px 28px rgba(36,22,16,.15);
   }
 }
 
-/* ============================================================
-   REDUCED MOTION SAFETY NET
-   ============================================================ */
+/* =====================================================
+   POINTER MICRO-INTERACTIONS (desktop, fine pointer only)
+   ===================================================== */
+@media (hover: hover) and (pointer: fine) {
+  /* nav links draw an underline from the left (skip the active one) */
+  html.js .nav-links a:not(.active)::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 100%; height: 3px;
+    background: var(--brand-accent);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform var(--dur-micro) var(--ease-micro);
+  }
+  html.js .nav-links a:not(.active):hover::after,
+  html.js .nav-links a:not(.active):focus-visible::after { transform: scaleX(1); }
+
+  /* image bulge on media hover — warm, minimal */
+  .quartiere-media img,
+  .menu-split-media img,
+  .combo-media img,
+  .dove-media img,
+  .reviews-media img,
+  .fam-card.feature .feature-media img {
+    transition: transform 640ms var(--ease-signature);
+  }
+  .quartiere-media:hover img,
+  .menu-split-media:hover img,
+  .combo:hover .combo-media img,
+  .dove-media:hover img,
+  .reviews-media:hover img,
+  .fam-card.feature:hover .feature-media img { transform: scale(1.06); }
+
+  /* magnetic primary CTA is translated by JS — give it a soft return */
+  .magnetic { transition: transform var(--dur-micro) var(--ease-micro); }
+}
+
+/* =====================================================
+   AMBIENT — sub-perceptual drift on the grain wash only.
+   If you consciously notice it, it's too strong.
+   ===================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .grain-overlay {
+    animation: grain-drift 19s var(--ease-micro) infinite alternate;
+  }
+  @keyframes grain-drift {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-9px, 7px, 0); }
+  }
+}
+
+/* =====================================================
+   NATIVE SCROLL-DRIVEN — progressive enhancement.
+   Scroll progress bar + a gentle hero push-in as it exits.
+   No-support default equals the final static layout.
+   ===================================================== */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .scroll-progress {
+      animation: progress-grow linear both;
+      animation-timeline: scroll(root);
+    }
+    @keyframes progress-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 861px) {
+    html.js .hero-half > img,
+    html.js .hero-half > video {
+      animation: hero-push linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+      transform-origin: center center;
+    }
+    @keyframes hero-push { to { transform: scale(1.09); } }
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 860px) {
+  /* nav */
+  .nav-links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--brand-surface);
+    border-bottom: 1px solid var(--brand-line);
+    padding: 0 4vw;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--dur-micro) var(--ease-micro);
+  }
+  .nav-links.open { max-height: 360px; padding-block: 1rem; }
+  .nav-links a { width: 100%; padding: .85rem 0; border-bottom: 1px solid var(--brand-line); }
+  .nav-links a:last-child { border-bottom: 0; }
+  .nav-toggle { display: inline-flex; }
+  .nav-tel { display: none; }
+
+  /* hero mobile: stacked halves, content overlaid on both */
+  .hero-diptych {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: min(90svh, 760px);
+  }
+  .hero-forno { transform: none; }
+  .hero-mare  { transform: none; }
+  .hero-diptych.open .hero-forno { animation: seam-up   var(--dur-reveal) var(--ease-signature) both; }
+  .hero-diptych.open .hero-mare  { animation: seam-down var(--dur-reveal) var(--ease-signature) both; }
+  .hero-half::after {
+    background: linear-gradient(
+      180deg,
+      rgba(36,22,16,.50) 0%,
+      rgba(36,22,16,.28) 42%,
+      rgba(36,22,16,.28) 58%,
+      rgba(36,22,16,.55) 100%
+    );
+  }
+  .hero-seam { top: 50%; transform: translateY(-50%); }
+  .hero-content { padding: 1.6rem 1.3rem; }
+  .hero-tagline { max-width: 100%; }
+
+  /* collapse grids */
+  .quartiere       { grid-template-columns: 1fr; }
+  .quartiere-media { border-radius: var(--radius); margin-left: 0; }
+  .menu-split      { grid-template-columns: 1fr; }
+  .menu-split.reverse .menu-split-media { order: 0; }
+  .menu-split-media { position: static; }
+  .combo           { grid-template-columns: 1fr; }
+  .combo-media img { min-height: 220px; }
+  .dove            { grid-template-columns: 1fr; }
+  .reviews         { grid-template-columns: 1fr; }
+  .fam-card.feature       { grid-column: auto; grid-template-columns: 1fr; }
+  .fam-card.feature .feature-media { border-radius: 0 0 var(--radius) var(--radius); }
+  .footer-grid     { grid-template-columns: 1fr; }
+
+  /* sticky bar */
+  .action-bar { display: flex; }
+  body { padding-bottom: 78px; }
+  .site-footer { padding-bottom: calc(clamp(3rem, 2rem + 4vw, 5rem) + 72px); }
+}
+
+@media (max-width: 520px) {
+  .hero-wordmark .hw-1 { font-size: clamp(2.4rem, 7vw, 3.4rem); }
+  .families { grid-template-columns: 1fr; }
+  .hero-actions .btn { flex: 1; }
+}
+
+@media (min-width: 861px) {
+  .action-bar { display: none !important; }
+
+  /* quartiere image bleeds past container left edge on desktop */
+  .quartiere-media {
+    margin-left: calc(-1 * ((100vw - var(--container)) / 2) - 1.5rem);
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
+  * {
+    animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
+    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .hero__rule  { width: min(100%, 18rem); }
-  .hero__tag, .hero__word, .hero__lede, .hero__ctas {
-    animation: none !important; opacity: 1 !important; transform: none !important;
-  }
-  .dish-chip   { opacity: 1; transform: none; }
-  .dockbar     { transition: none; }
-  /* Never leave a reveal element stuck hidden when motion is off. */
-  .js [data-reveal],
-  .js [data-stagger] > * {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-  }
-  .hero__media video.seam { opacity: 1 !important; }
-  /* Rail card must already be visible — no entrance when motion off. */
-  .js .rail__card { opacity: 1 !important; transform: none !important; }
+  /* every motion hook resolves to the final, fully-visible layout */
+  html.js .reveal,
+  html.js .reveal-media,
+  html.js .stagger > *,
+  html.js .section-head .eyebrow,
+  html.js .section-head .lede,
+  html.js .hero-content > *,
+  html.js .map-pin { opacity: 1 !important; transform: none !important; }
+
+  html.js .section-head .linea-acqua,
+  html.js .section-divider.linea-acqua--full,
+  html.js .hero-seam-line,
+  html.js .section-head h2 > .mask-inner,
+  html.js .combo-price .price::after,
+  html.js .combo-price .price::before { transform: none !important; }
+
+  html.js .section-head .linea-acqua::after,
+  html.js .section-divider.linea-acqua--full::after { opacity: .35 !important; }
+
+  html.js .section-head h2 { overflow: visible !important; padding-bottom: 0 !important; margin-bottom: 1rem !important; }
+
+  html.js .scroll-progress { display: none !important; }
+  html.js .action-bar { transform: none !important; }
+
+  .hero-diptych.open .hero-forno,
+  .hero-diptych.open .hero-mare { animation: none !important; }
+  html.js .dove-media.in .map-pin { animation: none !important; }
+  html.js .grain-overlay { animation: none !important; }
+  html.js .hero-half > img,
+  html.js .hero-half > video { animation: none !important; }
 }
 </style>
 </head>
 <body>
 
-<!-- ============ TOP NAV ============ -->
-<header class="topbar">
-  <div class="wrap topbar__inner">
-    <a class="brand" href="#top" aria-label="Lo Scoglio sul Naviglio, home">
-      <b>Lo Scoglio</b><span>sul Naviglio</span>
+<!-- feTurbulence grain — fixed overlay, not an image -->
+<svg class="grain-overlay" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <filter id="grain-f" x="0%" y="0%" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0" in="noise"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain-f)"/>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brandmark" href="#top" aria-label="Lo Scoglio sul Naviglio — torna in cima">
+      <span class="bm-1">Lo Scoglio</span>
+      <span class="bm-2">sul Naviglio</span>
     </a>
-    <nav class="nav" id="nav" aria-label="Navigazione principale">
-      <a href="#quartiere">Il quartiere</a>
-      <a href="#cotture">Le tre cotture</a>
-      <a href="#orari">Orari</a>
-      <a href="#naviglio">Dove siamo</a>
-      <a href="#recensioni">Recensioni</a>
-      <a class="nav__cta" href="#contatti">Contatti</a>
+    <nav aria-label="Navigazione principale">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu di navigazione">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#quartiere">Il quartiere</a></li>
+        <li><a href="#dal-forno">Dal forno</a></li>
+        <li><a href="#dal-mare">Dal mare</a></li>
+        <li><a href="#combo">Menù Combo</a></li>
+        <li><a href="#ordina">Come si ordina</a></li>
+        <li><a href="#dove">Dove siamo</a></li>
+      </ul>
     </nav>
-    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+    <div class="nav-cta">
+      <a class="nav-tel" href="tel:+393337587705">333&#8239;758&#8239;7705</a>
+      <a class="btn btn--primary" data-cta href="tel:+393337587705">Chiama</a>
+    </div>
   </div>
 </header>
 
 <main id="top">
-<div class="wrap pass">
-  <!-- ==== PASS MAIN COLUMN ==== -->
-  <div class="pass__main">
 
-    <!-- 1 · HERO — THE PASS -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__frame">
-        <div class="hero__media">
-          <video id="heroVid" autoplay muted loop playsinline preload="auto" poster="assets/hero-pass-counter.jpg" aria-hidden="true">
-            <source src="assets/hero-cinemagraph.mp4" type="video/mp4" />
-          </video>
-          <img src="assets/hero-pass-counter.jpg" alt="Vista dall'alto del pass di Lo Scoglio: una pizza, un piatto di pesce e una tagliata di carne sul bancone in marmo e acciaio" style="display:none" />
+  <!-- ============ HERO DITTICO ============ -->
+  <section class="hero" aria-label="Lo Scoglio sul Naviglio — forno e mare">
+    <div class="hero-diptych" id="heroDiptych">
+      <div class="hero-half hero-forno">
+        <video autoplay muted loop playsinline poster="assets/hero-forno.jpg" aria-label="Pizza dalla crosta gonfia appena estratta dal forno a legna">
+          <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+          <img src="assets/hero-forno.jpg" alt="Pizza dalla crosta gonfia appena estratta dal forno a legna">
+        </video>
+      </div>
+      <div class="hero-half hero-mare">
+        <img src="assets/hero-mare.jpg" alt="Piatto fumante di antipasto di mare con cozze e gamberi">
+      </div>
+      <div class="hero-seam" aria-hidden="true">
+        <div class="hero-seam-line"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-wordmark">
+          <span class="hw-1">Lo Scoglio</span>
+          <span class="hw-2">sul Naviglio</span>
         </div>
-        <div class="hero__scrim"></div>
-        <div class="hero__overlay">
-          <p class="hero__tag">Pizzeria · Trattoria · Navigli, Milano</p>
-          <div class="hero__wordblock">
-            <h1 class="hero__word" id="hero-title">
-              <span class="lo">Lo</span>
-              <span class="scoglio">Scoglio</span>
-              <span class="hero__naviglio">sul&nbsp;Naviglio<span class="hero__rule"></span></span>
-            </h1>
-            <div class="hero__dishes" aria-hidden="true">
-              <span class="dish-chip c1">Pizza</span>
-              <span class="dish-chip c2">Carne</span>
-              <span class="dish-chip c3">Pesce</span>
-            </div>
+        <p class="hero-tagline">Forno e mare, sul Naviglio.<br>Pizza dal forno a legna e cucina di pesce, in una sola tavola.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" data-cta href="tel:+393337587705">Chiama per prenotare</a>
+          <a class="btn btn--ghost" href="#ordina" style="color:var(--brand-accent-ink);border-color:rgba(251,244,235,.55);">Come si ordina</a>
+        </div>
+        <span class="hero-proof">
+          <span class="stars" aria-hidden="true">★★★★<span class="s-empty">★</span></span>
+          <span><strong>3,9</strong> su 364 recensioni nel quartiere</span>
+        </span>
+        <p class="hero-tel-note">Prenotazioni al telefono: 333&#8239;758&#8239;7705</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL QUARTIERE ============ -->
+  <section class="band" id="quartiere">
+    <div class="container quartiere">
+      <div class="quartiere-media reveal-media">
+        <img src="assets/canal-dusk.jpg" alt="Il Naviglio Pavese di sera con le luci calde riflesse sull'acqua">
+      </div>
+      <div class="quartiere-text reveal">
+        <span class="eyebrow">Il quartiere</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>Sul Naviglio Pavese, sull'acqua della Barona.</h2>
+        <p>Siamo la pizzeria di quartiere su Via Lodovico il Moro.</p>
+        <p>La sera, quando le luci si accendono sul Naviglio, arriva chi vive qui: famiglie della Barona, coppie, comitive di amici.</p>
+        <p>Si cena bene senza spendere tanto. È un posto senza pretese, dove ci si trova come a casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
+
+  <!-- ============ DAL FORNO ============ -->
+  <section class="band" id="dal-forno">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Dal forno</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>Il cuore del menu esce dal forno a legna.</h2>
+        <p class="lede">Le pizze classiche, la bufala, le speciali, lo sfilatino, i calzoni e le focacce. E se vuoi, la componi tu.</p>
+      </div>
+      <div class="families stagger">
+        <div class="fam-card">
+          <h3>Classiche</h3>
+          <p>Margherita, marinara, capricciosa, diavola. Le pizze di sempre, impasto leggero e crosta gonfia.</p>
+        </div>
+        <div class="fam-card">
+          <h3>Bufala</h3>
+          <p>Con mozzarella di bufala aggiunta a fine cottura, così resta morbida e fresca.</p>
+        </div>
+        <div class="fam-card">
+          <h3>Speciali</h3>
+          <p>Gli abbinamenti della casa, per chi vuole uscire dai classici.</p>
+        </div>
+        <div class="fam-card">
+          <h3>Sfilatino</h3>
+          <p>La pizza lunga da dividere e passare in tavola. Pensata per le comitive.</p>
+        </div>
+        <div class="fam-card">
+          <h3>Calzoni</h3>
+          <p>Ripieni e chiusi al forno, farciti come una pizza intera.</p>
+        </div>
+        <div class="fam-card">
+          <h3>Focacce</h3>
+          <p>Da condividere prima di ordinare, o da portare via.</p>
+        </div>
+        <div class="fam-card feature">
+          <div class="feature-body">
+            <span class="eyebrow" style="color:color-mix(in srgb,var(--brand-accent) 82%, #fff);">Crea la tua pizza</span>
+            <h3>La pizza la scegli tu.</h3>
+            <p>Parti dalla base e aggiungi quello che ti piace. Te la sforniamo come la vuoi.</p>
+          </div>
+          <div class="feature-media">
+            <img src="assets/crea-la-tua-pizza.jpg" alt="Mani che completano una pizza da comporre con condimenti freschi">
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="hero__lede">
-        Un'unica cucina sul Naviglio Grande che accende tre fuochi: pizza napoletana dal cornicione
-        alveolato, carne alla griglia e pesce fresco. Cucina onesta di quartiere — a tavola o a casa.
-      </p>
-      <div class="hero__ctas">
-        <a class="btn btn--primary" data-cta href="tel:+393337587705">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-          Chiama per prenotare
-        </a>
-        <a class="btn btn--ghost" href="#cotture">Vedi le tre cotture</a>
-      </div>
-    </section>
-  </div>
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
 
-  <!-- ==== PERSISTENT ORDER RAIL ==== -->
-  <aside class="rail" aria-label="Ordina e contatta">
-    <div class="rail__card">
-      <p class="rail__head">Il pass, sempre aperto</p>
-      <p class="rail__sub">Prenota un tavolo, ordina a domicilio o trovaci sul Naviglio.</p>
-      <div class="rail__actions">
-        <a class="btn btn--primary btn--block" data-cta href="tel:+393337587705">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-          Chiama
-        </a>
-        <a class="rail__phone" href="tel:+393337587705">+39 333 758 7705</a>
-        <p class="rail__note">Tutti i giorni · pranzo e cena</p>
-        <a class="btn btn--dark btn--block" href="#contatti">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 20l1-3.9a8.4 8.4 0 1 1 17-4.6Z"/></svg>
-          Scrivici su WhatsApp
-        </a>
-        <a class="btn btn--gold btn--block" href="#casa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9h14l-1 11H6L5 9Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-          Ordina a domicilio
-        </a>
-        <a class="btn btn--ghost btn--block" href="#naviglio" style="color:var(--teal-deep);border-color:rgba(20,49,43,.3)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Come arrivare
-        </a>
+  <!-- ============ DAL MARE ============ -->
+  <section class="band band--alt" id="dal-mare">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Dal mare</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>La stessa cucina fa anche il pesce.</h2>
+        <p class="lede">È la parte che non ti aspetti da una pizzeria di quartiere. Pesce fresco, dall'antipasto al secondo.</p>
       </div>
-
-      <div class="rail__trust">
-        <b>3,9</b>
-        <small>Valutazione media Google<br>su <b>364</b> recensioni</small>
-      </div>
-      <div class="rail__hours">
-        <span class="dot" id="railDot"></span>
-        <span id="railStatus">Verifica orari…</span>
+      <div class="menu-split">
+        <div class="menu-split-media reveal-media">
+          <img src="assets/secondo-pesce.jpg" alt="Secondo di pesce alla griglia con limone e prezzemolo">
+        </div>
+        <div class="stagger">
+          <h3>Antipasti di mare</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Cozze, gamberi e crudità di stagione, a seconda del mercato.</li>
+          </ul>
+          <h3>Primi di pesce</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Paste con il pesce, servite come si fa a casa.</li>
+          </ul>
+          <h3>Secondi di pesce</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Pesce alla griglia con limone, olio e prezzemolo.</li>
+          </ul>
+          <h3>Pizze di pesce</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Il forno e il mare sulla stessa pizza. La doppia anima del locale, in un piatto solo.</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </aside>
-</div>
+  </section>
 
-<!-- 2 · IL QUARTIERE -->
-<section class="band" id="quartiere">
-  <div class="wrap quart">
-    <div class="quart__media" data-reveal="left">
-      <img src="assets/pizzaiolo-at-work.jpg" alt="Il pizzaiolo stende l'impasto a mano sul bancone di marmo nella cucina di Lo Scoglio" loading="lazy" />
-      <span class="quart__badge">L'impasto fatto a mano · ogni servizio</span>
-    </div>
-    <div class="quart__body">
-      <p class="eyebrow">Il quartiere · chi siamo</p>
-      <h2 data-reveal="mask">Una cucina onesta<br>sul canale</h2>
-      <p>
-        Lo Scoglio è una trattoria-pizzeria di quartiere, non una vetrina da strada turistica.
-        Sul Naviglio Grande, in via Lodovico il Moro, cuciniamo per chi ci abita e ci lavora
-        intorno: prezzo giusto, porzioni vere, la stessa cura sul cornicione della pizza e
-        sulla brace del pesce. Niente scenografie — solo lavoro fatto ogni giorno, allo stesso modo.
-      </p>
-      <div class="quart__facts" data-stagger>
-        <div class="fact"><b>3</b><span>fuochi in un'unica cucina: pizza, carne, pesce</span></div>
-        <div class="fact"><b>7/7</b><span>aperti tutti i giorni, pranzo e cena</span></div>
-        <div class="fact"><b>0</b><span>metri dal canale: siamo sull'acqua</span></div>
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
+
+  <!-- ============ NON SOLO PIZZA ============ -->
+  <section class="band" id="non-solo-pizza">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Non solo pizza</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>Qui ognuno trova qualcosa.</h2>
+        <p class="lede">Oltre al forno e al mare, la carta va anche più in là. Anche il couscous.</p>
+      </div>
+      <div class="menu-split reverse">
+        <div class="menu-split-media reveal-media">
+          <img src="assets/couscous-bowl.jpg" alt="Ciotola di couscous di pesce fumante">
+        </div>
+        <div class="stagger">
+          <h3>Couscous</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Fumante, con il pesce e le verdure. Insolito per il quartiere, e uno dei motivi per tornare.</li>
+          </ul>
+          <h3>Secondi di terra</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Per chi al tavolo non vuole il pesce.</li>
+          </ul>
+          <h3>Piadine e panini con pasta di pizza</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Lo stesso impasto del forno, farcito e piegato. Più veloce.</li>
+          </ul>
+          <h3>Insalatone</h3>
+          <ul class="dish-list">
+            <li><span class="bullet" aria-hidden="true">◆</span> Grandi e ricche, per chi vuole mangiare leggero.</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 3 · LE TRE COTTURE -->
-<section class="band" id="cotture">
-  <div class="wrap">
-    <div class="cotture">
-      <div class="cotture__head">
-        <p class="eyebrow">Il menù · le tre cotture</p>
-        <h2 data-reveal="mask">Pizza. Carne. Pesce.<br>Un solo pass.</h2>
-        <p>
-          La maggior parte delle trattorie sceglie una specialità. Noi ne teniamo tre, con la
-          stessa mano. Ecco il nostro spartito — così un tavolo può condividere una napoletana
-          e un piatto di pesce senza uscire dal quartiere né dal prezzo.
-        </p>
-      </div>
-      <div class="triptych">
-        <!-- PIZZA -->
-        <article class="fire f1">
-          <div class="fire__media" data-reveal="zoom"><img src="assets/menu-pizza.jpg" alt="Pizza napoletana cotta a legna con cornicione bruciacchiato a leopardo e basilico" loading="lazy" /></div>
-          <div class="fire__body" data-reveal="left">
-            <span class="fire__no">01 — la cottura a legna</span>
-            <h3 class="fire__ttl"><i></i>Pizza</h3>
-            <p class="fire__desc">Impasto a lunga lievitazione, cornicione alveolato e bruciato al punto giusto. Napoletana vera, dal forno a legna.</p>
-            <div class="fire__list">
-              <div class="fire__row"><span>Margherita<small>Pomodoro, fiordilatte, basilico</small></span><em>7,50 €</em></div>
-              <div class="fire__row"><span>Diavola<small>Salame piccante, fiordilatte</small></span><em>9,00 €</em></div>
-              <div class="fire__row"><span>Scoglio<small>Frutti di mare, pomodoro, aglio</small></span><em>13,50 €</em></div>
-            </div>
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
+
+  <!-- ============ IL MENU COMBO ============ -->
+  <section class="band band--alt" id="combo">
+    <div class="container">
+      <div class="combo reveal">
+        <div class="combo-media">
+          <img src="assets/combo-margherita.jpg" alt="Menù combo con pizza margherita, patatine e bibita">
+        </div>
+        <div class="combo-body">
+          <span class="eyebrow">Il Menù Combo</span>
+          <h2>Il Menù Margherita.</h2>
+          <p>La cena completa senza pensarci troppo. Pizza, patatine e da bere, tutto insieme.</p>
+          <div class="combo-price">
+            <span class="price">11,50&nbsp;€</span>
+            <span class="price-note">a persona</span>
           </div>
-        </article>
-        <!-- CARNE -->
-        <article class="fire f2">
-          <div class="fire__media" data-reveal="zoom"><img src="assets/menu-carne.jpg" alt="Tagliata di manzo alla griglia affettata su un tagliere di legno" loading="lazy" /></div>
-          <div class="fire__body" data-reveal="right">
-            <span class="fire__no">02 — la brace</span>
-            <h3 class="fire__ttl"><i></i>Carne</h3>
-            <p class="fire__desc">Tagli italiani alla griglia, cuore rosa, rosmarino e sale grosso. La cottura semplice che chiede solo buona materia prima.</p>
-            <div class="fire__list">
-              <div class="fire__row"><span>Tagliata di manzo<small>Rucola e grana, 300 g</small></span><em>18,00 €</em></div>
-              <div class="fire__row"><span>Costata alla griglia<small>Al peso, con contorno</small></span><em>22,00 €</em></div>
-              <div class="fire__row"><span>Grigliata mista<small>Selezione del giorno</small></span><em>19,50 €</em></div>
-            </div>
-          </div>
-        </article>
-        <!-- PESCE -->
-        <article class="fire f3">
-          <div class="fire__media" data-reveal="zoom"><img src="assets/menu-pesce.jpg" alt="Piatto di pesce fresco alla griglia con limone, olio ed erbe aromatiche" loading="lazy" /></div>
-          <div class="fire__body" data-reveal="left">
-            <span class="fire__no">03 — il fresco</span>
-            <h3 class="fire__ttl"><i></i>Pesce</h3>
-            <p class="fire__desc">Pesce fresco alla griglia, limone, olio e prezzemolo. Presentazione pulita, sapore diretto — come sul mare.</p>
-            <div class="fire__list">
-              <div class="fire__row"><span>Grigliata di pesce<small>Selezione del giorno</small></span><em>20,00 €</em></div>
-              <div class="fire__row"><span>Branzino alla griglia<small>Con verdure di stagione</small></span><em>17,00 €</em></div>
-              <div class="fire__row"><span>Spaghetti allo scoglio<small>Frutti di mare misti</small></span><em>15,00 €</em></div>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="cotture__foot">
-        <p>Il menù completo cambia con il mercato e la stagione: chiedi al pass i piatti del giorno.</p>
-        <a class="btn btn--primary" data-cta href="tel:+393337587705">Chiama per prenotare un tavolo</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4 · UNA TAVOLA DA LO SCOGLIO -->
-<section class="band" id="tavola">
-  <div class="wrap">
-    <div class="tavola__grid" data-reveal>
-      <div class="tavola__lead">
-        <div>
-          <p class="eyebrow">L'esperienza · una tavola da Lo Scoglio</p>
-          <h2>Com'è la prima volta qui</h2>
-        </div>
-        <p>Se non ci sei mai stato, ecco come va una tavola da noi — dal momento in cui entri fino all'ultimo giro di vino della casa.</p>
-      </div>
-
-      <article class="step">
-        <div class="step__media"><img src="assets/neighborhood-facade.jpg" alt="La facciata della trattoria Lo Scoglio sul Naviglio affacciata sul canale, in via Lodovico il Moro" loading="lazy" /></div>
-        <div class="step__body">
-          <span class="step__n">01</span>
-          <h3>Entri e ti siedi</h3>
-          <p>Una sala semplice e luminosa, tavoli di legno apparecchiati con calma prima del servizio. Nessuna coreografia: ti sistemi e sei subito a tuo agio.</p>
-        </div>
-      </article>
-
-      <article class="step">
-        <div class="step__media"><img src="assets/table-experience.jpg" alt="Commensali che condividono pizza e pesce a tavola nella trattoria, mentre si versa il vino della casa" loading="lazy" /></div>
-        <div class="step__body">
-          <span class="step__n">02</span>
-          <h3>Condividete i tre fuochi</h3>
-          <p>Una napoletana in mezzo, un piatto di pesce, una tagliata da spartire. Il bello è ordinare tutto insieme: qui non devi scegliere una sola cucina.</p>
-        </div>
-      </article>
-
-      <article class="step step--wide">
-        <div class="step__media"><img src="assets/interior-room.jpg" alt="La sala di Lo Scoglio apparecchiata per la cena, luce soffusa e tavoli ravvicinati in un'atmosfera da trattoria di quartiere" loading="lazy" /></div>
-        <div class="step__body">
-          <span class="step__n">03</span>
-          <h3>Ti fermi, senza fretta</h3>
-          <p>A pranzo un piatto veloce e ben fatto tra le 11:00 e le 14:50; a cena una tavola lunga dalle 18:00 in poi. Il ritmo è quello del quartiere: ci si ferma il tempo che serve, con il vino della casa e il dolce se resta spazio.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 5 · ORARI -->
-<section class="band" id="orari">
-  <div class="wrap orari">
-    <div class="orari__intro">
-      <span class="chap-num" aria-hidden="true">05</span>
-      <h2>Due servizi,<br>tutti i giorni</h2>
-      <p>Siamo aperti sette giorni su sette su due fasce. La riga attiva qui accanto è il servizio in corso adesso.</p>
-      <span class="live"><span class="dot" id="liveDot"></span><span id="liveText">Verifica in corso…</span></span>
-      <p class="orari__all">Aperti tutti i giorni della settimana, festivi inclusi. Per gruppi numerosi conviene una telefonata.</p>
-    </div>
-    <div class="bands" data-stagger>
-      <div class="band-row" data-band="lunch" data-open="11:00" data-close="14:50">
-        <div class="band-row__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
-        </div>
-        <div>
-          <h3>Pranzo <span class="band-row__flag">Aperto ora</span></h3>
-          <small>Il piatto veloce e ben fatto del quartiere</small>
-        </div>
-        <div class="band-row__time">11:00–14:50</div>
-      </div>
-      <div class="band-row" data-band="dinner" data-open="18:00" data-close="23:19">
-        <div class="band-row__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-        </div>
-        <div>
-          <h3>Cena <span class="band-row__flag">Aperto ora</span></h3>
-          <small>La tavola lunga, con calma, sul Naviglio</small>
-        </div>
-        <div class="band-row__time">18:00–23:19</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 · SUL NAVIGLIO -->
-<section class="band" id="naviglio">
-  <div class="wrap">
-    <div class="canal">
-      <div class="canal__bg"><img src="assets/canal-address-strip.jpg" alt="Il Naviglio Grande lungo la via Lodovico il Moro a Milano, con l'acqua che riflette la luce del pomeriggio" loading="lazy" /></div>
-      <div class="canal__scrim"></div>
-      <div class="canal__card">
-        <p class="section-label">Dove siamo</p>
-        <h2>Sull'acqua, in via Lodovico il Moro</h2>
-        <div class="canal__addr">
-          <b>Via Lodovico il Moro, 55</b>
-          20142 Milano — sul Naviglio Grande
-        </div>
-        <p class="canal__meta">A pochi passi dal canale, sul lato residenziale dei Navigli. Parcheggio lungo la via e fermate dei mezzi nelle vicinanze.</p>
-        <div class="canal__ctas">
-          <a class="btn btn--gold" href="https://www.google.com/maps/search/?api=1&query=Lo+Scoglio+Via+Lodovico+il+Moro+55+Milano" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Apri in Google Maps
-          </a>
-          <a class="btn btn--ghost" data-cta href="tel:+393337587705">Chiama per informazioni</a>
+          <ul class="combo-includes">
+            <li><span class="bullet" aria-hidden="true">◆</span> Pizza margherita dal forno a legna</li>
+            <li><span class="bullet" aria-hidden="true">◆</span> Patatine fritte</li>
+            <li><span class="bullet" aria-hidden="true">◆</span> Una bibita</li>
+          </ul>
+          <a class="btn btn--primary" data-cta href="tel:+393337587705">Chiama e ordina — 333&#8239;758&#8239;7705</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 7 · A CASA CON JUST EAT -->
-<section class="band" id="casa">
-  <div class="wrap delivery">
-    <div class="delivery__media" data-reveal="left">
-      <img src="assets/delivery-box.jpg" alt="Cartone della pizza e sacchetto d'asporto consegnati sul bancone di una cucina di casa" loading="lazy" />
-    </div>
-    <div class="delivery__body">
-      <p class="section-label">A domicilio</p>
-      <h2 data-reveal="left">La stessa cucina,<br>a casa tua</h2>
-      <p>Molti del quartiere non lo sanno: le nostre pizze e i piatti della trattoria arrivano anche a domicilio, tramite Just Eat. La stessa napoletana del pass, nel tuo salotto.</p>
-      <ul class="delivery__points" data-stagger>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span>Pizza napoletana e piatti di trattoria, consegnati caldi.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span>Consegna nella zona Navigli e nei dintorni.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span>Preferisci l'asporto? Chiama e passa a ritirare al pass.</span></li>
-      </ul>
-      <div class="delivery__cta">
-        <a class="btn btn--gold" href="https://www.just-eat.it/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9h14l-1 11H6L5 9Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-          Ordina su Just Eat
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
+
+  <!-- ============ COME SI ORDINA ============ -->
+  <section class="band" id="ordina">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Come si ordina</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>Prenota, chiama o fatti consegnare a casa.</h2>
+        <p class="lede">Quattro modi per sederti da noi o mangiare la nostra pizza sul divano.</p>
+      </div>
+      <div class="ordina-grid stagger">
+
+        <a class="channel" data-cta href="tel:+393337587705">
+          <span class="ch-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="ch-tag">Prenota un tavolo</span>
+          <h3>Chiamaci</h3>
+          <p>Ti teniamo il tavolo per la sera. Il modo più semplice per prenotare.</p>
+          <span class="ch-value">333&#8239;758&#8239;7705</span>
         </a>
-        <a class="btn btn--ghost" data-cta href="tel:+393337587705">Oppure chiama per l'asporto</a>
+
+        <div class="channel">
+          <span class="ch-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </span>
+          <span class="ch-tag">WhatsApp</span>
+          <h3>Scrivici un messaggio</h3>
+          <p>Per due parole veloci: un tavolo, un dubbio sul menu, un ordine da ritirare.</p>
+          <span class="ch-value">333&#8239;758&#8239;7705</span>
+        </div>
+
+        <a class="channel" href="tel:+393337587705">
+          <span class="ch-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          </span>
+          <span class="ch-tag">Telefono</span>
+          <h3>Chiama per ordinare</h3>
+          <p>Prendi da asporto o organizza la serata. Rispondiamo noi.</p>
+          <span class="ch-value">+39&#8239;333&#8239;758&#8239;7705</span>
+        </a>
+
+        <div class="channel">
+          <span class="ch-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14l-1 11a2 2 0 0 1-2 1.8H8A2 2 0 0 1 6 20L5 9z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          </span>
+          <span class="ch-tag">Consegna a domicilio</span>
+          <h3>Just Eat</h3>
+          <p>La margherita col combo, a casa tua. Consegna sempre attiva sul quartiere.</p>
+          <span class="ch-value">Cerca &#8220;Lo Scoglio sul Naviglio&#8221; su Just Eat</span>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 8 · RECENSIONI -->
-<section class="band" id="recensioni">
-  <div class="wrap">
-    <div class="rev">
-      <div class="rev__grid">
-        <div class="rev__score">
-          <b>3,9</b>
-          <span class="of">su 5</span>
-          <div class="stars" id="stars" aria-hidden="true"></div>
-          <p class="rev__count">364 recensioni su Google</p>
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
+
+  <!-- ============ DOVE SIAMO ============ -->
+  <section class="band band--alt" id="dove">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Dove siamo</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>Ci trovi sul Naviglio, a Milano.</h2>
+      </div>
+      <div class="dove">
+        <div class="dove-media reveal-media">
+          <img src="assets/esterno-insegna.jpg" alt="L'ingresso illuminato della pizzeria sul Naviglio la sera">
+          <span class="map-pin"><span class="dot" aria-hidden="true"></span>Via Lodovico il Moro, sul Naviglio</span>
         </div>
-        <div class="rev__body">
-          <h2 data-reveal="zoom">Un giudizio vero, senza ritocchi</h2>
-          <p>
-            Non inventiamo cinque stelle. La nostra media reale è 3,9 su 364 recensioni Google —
-            il voto di un quartiere che torna. Chi ci sceglie parla di porzioni oneste, della pizza
-            cotta a legna e del fatto raro di trovare pizza, carne e pesce buoni sotto lo stesso tetto,
-            a un prezzo di quartiere.
-          </p>
-          <div class="rev__tags" data-stagger>
-            <span class="rev__tag">Pizza a legna</span>
-            <span class="rev__tag">Porzioni oneste</span>
-            <span class="rev__tag">Pesce fresco</span>
-            <span class="rev__tag">Prezzo giusto</span>
-            <span class="rev__tag">Atmosfera di quartiere</span>
+        <div class="dove-info reveal">
+          <div class="info-block">
+            <h3>Indirizzo</h3>
+            <p>Via Lodovico il Moro 55<br>20142 Milano — zona Barona / Naviglio Pavese</p>
+            <p style="margin-top:.9rem;">
+              <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Lo+Scoglio+sul+Naviglio+Via+Lodovico+il+Moro+55+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+            </p>
           </div>
-          <p class="rev__src">Fonte: valutazione aggregata Google — 3,9/5 su 364 recensioni. I temi qui sopra sintetizzano il sentiment complessivo, non citazioni di singole persone.</p>
+          <div class="info-block">
+            <h3>Orari</h3>
+            <ul class="hours-list">
+              <li><span class="day">Martedì – Domenica</span><span class="hrs">Cena, fino alle 23:00</span></li>
+              <li><span class="day">Lunedì</span><span class="hrs">Su richiesta</span></li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h3>Telefono</h3>
+            <p><a href="tel:+393337587705" style="color:var(--brand-accent);font-weight:600;text-decoration:none;font-variant-numeric:tabular-nums;">+39&#8239;333&#8239;758&#8239;7705</a></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 9 · CONTATTI -->
-<section class="contatti" id="contatti">
-  <div class="wrap" style="padding-block:clamp(3.2rem,7vw,5.8rem)">
-    <div class="contatti__grid">
-      <div>
-        <p class="section-label">Contatti</p>
-        <h2 data-reveal="mask">Prenota, ordina,<br>o passa e basta</h2>
-        <p class="contatti__lede">
-          Il modo più veloce per un tavolo è una telefonata: rispondiamo dal pass. Per il domicilio
-          c'è Just Eat, per trovarci c'è la mappa. Tutto in un posto solo.
-        </p>
-        <div class="contatti__actions">
-          <a class="btn btn--primary btn--block" data-cta href="tel:+393337587705">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-            Chiama per prenotare — +39 333 758 7705
-          </a>
-          <a class="btn btn--gold btn--block" href="https://www.just-eat.it/" target="_blank" rel="noopener">Ordina a domicilio su Just Eat</a>
-          <a class="btn btn--ghost btn--block" href="https://www.google.com/maps/search/?api=1&query=Lo+Scoglio+Via+Lodovico+il+Moro+55+Milano" target="_blank" rel="noopener">Apri la mappa</a>
-        </div>
+  <hr class="linea-acqua linea-acqua--full section-divider" aria-hidden="true">
+
+  <!-- ============ LE RECENSIONI ============ -->
+  <section class="band" id="recensioni">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Le recensioni</span>
+        <hr class="linea-acqua" aria-hidden="true">
+        <h2>Il quartiere ci frequenta da anni.</h2>
       </div>
-
-      <div class="contatti__list" data-stagger>
-        <div class="cline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-          <div><b>Telefono</b><span><a href="tel:+393337587705">+39 333 758 7705</a></span></div>
+      <div class="reviews">
+        <div class="reviews-media reveal-media">
+          <img src="assets/tavoli-affollati.jpg" alt="Sala della pizzeria affollata di persone che mangiano insieme">
         </div>
-        <div class="cline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 20l1-3.9a8.4 8.4 0 1 1 17-4.6Z"/></svg>
-          <div><b>WhatsApp</b><span>Scrivici allo stesso numero per prenotazioni e info</span></div>
+        <div class="rating-card reveal">
+          <div class="rating-big">3,9<span>/5</span></div>
+          <span class="stars" aria-hidden="true">★★★★<span class="s-empty">★</span></span>
+          <p class="rating-count">su <strong><span class="countup" data-count-to="364">364</span> recensioni</strong></p>
+          <p class="rating-source">Valutazione aggregata dei clienti</p>
         </div>
-        <div class="cline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><b>Indirizzo</b><span>Via Lodovico il Moro, 55 — 20142 Milano, sul Naviglio Grande</span></div>
-        </div>
-        <div class="cline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <div><b>Orari</b><span>Tutti i giorni · Pranzo 11:00–14:50 · Cena 18:00–23:19</span></div>
-        </div>
-        <div class="cline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9h14l-1 11H6L5 9Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-          <div><b>A domicilio</b><span>Consegna a casa tramite Just Eat, nella zona Navigli</span></div>
+        <div class="reviews-copy reveal">
+          <p class="pull">&#8220;Centinaia di serate, un giudizio che resta costante nel tempo.&#8221;</p>
+          <p>364 recensioni non sono poche per una pizzeria di quartiere. Sono le famiglie della Barona, le coppie e le comitive che tornano.</p>
+          <p>Chi ci sceglie racconta la stessa cosa: si mangia bene, si spende il giusto, ci si sente a casa. Forno e mare, senza pretese.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="footnote">
-      <p>© Lo Scoglio sul Naviglio — Milano. Pagina dimostrativa. Le voci e i prezzi del menù riportati sono esempi indicativi, da confermare con il locale; telefono, indirizzo, orari e valutazione Google (3,9/5 su 364 recensioni) sono dati reali dell'attività.</p>
-      <a class="btn btn--dark" data-cta href="tel:+393337587705" style="flex:none">Chiama ora</a>
-    </div>
-  </div>
-</section>
 </main>
 
-<!-- MOBILE DOCK BAR -->
-<nav class="dockbar" id="dockbar" aria-label="Azioni rapide">
-  <a class="is-primary" data-cta href="tel:+393337587705">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-    Chiama
-  </a>
-  <a href="#contatti">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 20l1-3.9a8.4 8.4 0 1 1 17-4.6Z"/></svg>
-    WhatsApp
-  </a>
-  <a href="#casa">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9h14l-1 11H6L5 9Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-    Just Eat
-  </a>
-  <a href="#naviglio">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-    Mappa
-  </a>
-</nav>
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contatti">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="bm-1">Lo Scoglio</span><br>
+        <span class="bm-2">sul Naviglio</span>
+        <p>Forno e mare, sul Naviglio. La pizzeria di quartiere dove il forno a legna e la cucina di pesce condividono una sola tavola.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="tel:+393337587705">+39&#8239;333&#8239;758&#8239;7705</a>
+        <p>Via Lodovico il Moro 55<br>20142 Milano</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Lo+Scoglio+sul+Naviglio+Via+Lodovico+il+Moro+55+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Orari &amp; ordini</h4>
+        <p>Cena fino alle 23:00</p>
+        <p>Prenotazioni al telefono</p>
+        <p>Consegna a domicilio con Just Eat</p>
+        <a href="#ordina">Come si ordina</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Lo Scoglio sul Naviglio — Milano</span>
+      <span class="disclaimer">Anteprima dimostrativa. Menù, prezzi e orari sono indicativi: confermeremo insieme ogni dettaglio prima della pubblicazione.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile action bar -->
+<div class="action-bar" role="region" aria-label="Contatti rapidi">
+  <span class="ab-proof"><strong>3,9</strong>364 recens.</span>
+  <a class="btn btn--ghost" href="#ordina">Ordina</a>
+  <a class="btn btn--primary" data-cta href="tel:+393337587705">Chiama</a>
+</div>
 
 <script>
-(function(){
-  "use strict";
+(function () {
+  var docEl  = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine   = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ---- mobile nav toggle ---- */
-  var toggle = document.getElementById("navtoggle");
-  var nav    = document.getElementById("nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
+  /* -------- mobile nav -------- */
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu di navigazione');
     });
-    nav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
       }
     });
   }
 
-  /* ---- partial-fill star rating (3.9 / 5) ---- */
-  var starsEl = document.getElementById("stars");
-  if (starsEl) {
-    var rating = 3.9, html = "";
-    for (var i = 1; i <= 5; i++) {
-      var fill = Math.max(0, Math.min(1, rating - (i - 1)));
-      var pct  = Math.round(fill * 100);
-      html += '<svg viewBox="0 0 24 24" role="img" aria-hidden="true">'
-        + '<defs><linearGradient id="sg' + i + '" x1="0" x2="1" y1="0" y2="0">'
-        + '<stop offset="' + pct + '%" stop-color="#F4B03A"/>'
-        + '<stop offset="' + pct + '%" stop-color="rgba(233,226,208,.25)"/>'
-        + '</linearGradient></defs>'
-        + '<path fill="url(#sg' + i + ')" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/>'
-        + '</svg>';
-    }
-    starsEl.innerHTML = html;
+  /* -------- heading line-mask: wrap each section-head <h2> text in one
+     .mask-inner span. The <h2> stays a single selectable node. -------- */
+  document.querySelectorAll('.section-head h2').forEach(function (h) {
+    var span = document.createElement('span');
+    span.className = 'mask-inner';
+    while (h.firstChild) { span.appendChild(h.firstChild); }
+    h.appendChild(span);
+  });
+
+  var revealEls = document.querySelectorAll(
+    '.reveal, .reveal-media, .stagger, .section-head, .section-divider'
+  );
+
+  /* -------- MOMENT 1: hero diptych opens (curtain) -------- */
+  var hero = document.getElementById('heroDiptych');
+
+  /* Failsafe / reduced-motion / no-IO: everything visible immediately. */
+  function revealAll() {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+    if (hero) hero.classList.add('open');
   }
 
-  /* ---- live service band ---- */
-  function toMin(hhmm) { var p = hhmm.split(":"); return (+p[0]) * 60 + (+p[1]); }
-  function updateHours() {
-    var now  = new Date();
-    var mins = now.getHours() * 60 + now.getMinutes();
-    var rows = document.querySelectorAll(".band-row");
-    var openBand = null;
-    rows.forEach(function (r) {
-      var o = toMin(r.getAttribute("data-open"));
-      var c = toMin(r.getAttribute("data-close"));
-      var active = mins >= o && mins <= c;
-      r.classList.toggle("is-active", active);
-      if (active) openBand = r.getAttribute("data-band");
-    });
-    var lunchO = toMin("11:00"), lunchC = toMin("14:50");
-    var dinO   = toMin("18:00"), dinC   = toMin("23:19");
-    var isOpen, txt;
-    if      (openBand === "lunch")             { isOpen = true;  txt = "Aperti ora · pranzo fino alle 14:50"; }
-    else if (openBand === "dinner")            { isOpen = true;  txt = "Aperti ora · cena fino alle 23:19"; }
-    else if (mins < lunchO)                    { isOpen = false; txt = "Chiuso · apre alle 11:00 per il pranzo"; }
-    else if (mins > lunchC && mins < dinO)     { isOpen = false; txt = "Chiuso · apre alle 18:00 per la cena"; }
-    else                                       { isOpen = false; txt = "Chiuso · apre domani alle 11:00"; }
-
-    var lt = document.getElementById("liveText"),  ld = document.getElementById("liveDot");
-    var rs = document.getElementById("railStatus"), rd = document.getElementById("railDot");
-    if (lt) lt.textContent = txt;
-    if (ld) ld.classList.toggle("is-open", isOpen);
-    if (rs) rs.textContent = txt;
-    if (rd) rd.classList.toggle("is-open", isOpen);
-  }
-  updateHours();
-  setInterval(updateHours, 30000);
-
-  /* ---- mobile dock bar + desktop rail entrance: trigger when hero exits ---- */
-  var dock     = document.getElementById("dockbar");
-  var railCard = document.querySelector(".rail__card");
-  var hero     = document.querySelector(".hero");
-  if (hero && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var gone = !e.isIntersecting;
-        if (dock)     dock.classList.toggle("is-in", gone);
-        if (railCard) railCard.classList.toggle("rail-in", gone);
-      });
-    }, { rootMargin: "-40% 0px 0px 0px" });
-    io.observe(hero);
+  if (reduce || !('IntersectionObserver' in window)) {
+    revealAll();
   } else {
-    if (dock)     dock.classList.add("is-in");
-    if (railCard) railCard.classList.add("rail-in");
-  }
+    try {
+      if (hero) {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { hero.classList.add('open'); });
+        });
+      }
 
-  /* ==========================================================
-     MOTION ENHANCEMENTS — all guarded by reduced-motion
-     ========================================================== */
-  var reduced = !window.matchMedia
-    || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---- scroll reveals + staggered groups ---- */
-  if (!reduced && "IntersectionObserver" in window) {
-    // Pre-assign per-child delays so each group cascades on reveal.
-    document.querySelectorAll("[data-stagger]").forEach(function (g) {
-      Array.prototype.forEach.call(g.children, function (child, i) {
-        child.style.transitionDelay = (i * 0.09) + "s";
-      });
-    });
-    var revealObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          revealObs.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
-    document.querySelectorAll("[data-reveal], [data-stagger]").forEach(function (el) {
-      revealObs.observe(el);
-    });
-  }
-
-  /* ---- Canal parallax: image drifts ~0.85x scroll speed (rAF-batched) ---- */
-  if (!reduced) {
-    var canalBg  = document.querySelector(".canal__bg");
-    var canalImg = canalBg && canalBg.querySelector("img");
-    if (canalImg) {
-      var canalTick = false;
-      var canalFrame = function () {
-        canalTick = false;
-        var r = canalBg.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > window.innerHeight) return;
-        // element progress through the viewport, centred at 0
-        var prog  = (window.innerHeight - r.top) / (window.innerHeight + r.height) - 0.5;
-        var shift = prog * r.height * 0.16; // ~0.85x depth, stays within the 120% overscan
-        canalImg.style.transform = "translate3d(0," + shift.toFixed(1) + "px,0)";
-      };
-      window.addEventListener("scroll", function () {
-        if (!canalTick) { canalTick = true; requestAnimationFrame(canalFrame); }
-      }, { passive: true });
-      canalFrame();
+      /* one rAF-batched IntersectionObserver for every reveal */
+      var queued = [];
+      var scheduled = false;
+      function flush() {
+        scheduled = false;
+        queued.forEach(function (el) { el.classList.add('in'); });
+        queued = [];
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            queued.push(en.target);
+            io.unobserve(en.target);
+            if (!scheduled) { scheduled = true; requestAnimationFrame(flush); }
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } catch (err) {
+      revealAll();
     }
   }
 
-  /* ---- Hero scroll-cinema ----
-     Base layer (always on): the <video> autoplays muted+loop with a poster.
-     Seam-mask: dip opacity briefly at the loop boundary to hide the cut.
-     Desktop-only scrub: map scroll progress across the hero to currentTime. */
-  var vid = document.getElementById("heroVid");
-  if (vid && !reduced) {
-    var dur = 0, scrubbing = false;
-    var readMeta = function () { dur = vid.duration || 0; };
-    if (vid.readyState >= 1) readMeta();
-    vid.addEventListener("loadedmetadata", readMeta);
+  /* -------- count-up on the real review count (fires once) -------- */
+  var counters = document.querySelectorAll('.countup');
+  function runCount(el) {
+    var target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+    if (reduce) { el.textContent = String(target); return; }
+    var start = null, dur = 1100;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3); /* ease-out cubic */
+      el.textContent = String(Math.round(eased * target));
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = String(target);
+    }
+    requestAnimationFrame(step);
+  }
+  if (counters.length && 'IntersectionObserver' in window && !reduce) {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { runCount(en.target); co.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { c.textContent = '0'; co.observe(c); });
+  }
 
-    // Seam-mask crossfade — only while the clip is actually looping (not scrubbing).
-    vid.addEventListener("timeupdate", function () {
-      if (scrubbing || !dur) return;
-      var near = vid.currentTime > dur - 0.45 || vid.currentTime < 0.28;
-      vid.classList.toggle("seam", near);
-    });
+  /* -------- MOMENT 5: order rail docks once the hero scrolls away -------- */
+  var bar = document.querySelector('.action-bar');
+  if (bar && hero && 'IntersectionObserver' in window && !reduce) {
+    var bo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        bar.classList.toggle('docked', !en.isIntersecting);
+      });
+    }, { rootMargin: '-40% 0px 0px 0px' });
+    bo.observe(hero);
+  }
 
-    // Desktop-only scrub: pointer:fine + wide viewport, never on touch.
-    var canScrub = window.matchMedia("(pointer:fine)").matches && window.innerWidth >= 1024;
-    if (canScrub) {
-      var heroSec = document.querySelector(".hero");
-      var vidTick = false;
-      var scrubFrame = function () {
-        vidTick = false;
-        if (!dur || !heroSec) return;
-        var r = heroSec.getBoundingClientRect();
-        var p = Math.min(1, Math.max(0, -r.top / r.height));
-        if (p <= 0.002) {
-          // At rest near the top: keep the hero alive as a loop.
-          if (scrubbing) { scrubbing = false; vid.classList.remove("seam"); vid.play().catch(function () {}); }
-        } else {
-          // Scrolling through the hero: scrub the clip forward.
-          if (!scrubbing) { scrubbing = true; vid.classList.remove("seam"); vid.pause(); }
-          var t = p * dur;
-          if (Math.abs(vid.currentTime - t) > 0.02) { try { vid.currentTime = t; } catch (err) {} }
+  /* -------- active nav link -------- */
+  var sections = document.querySelectorAll('main section[id]');
+  var navMap   = {};
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    navMap[a.getAttribute('href')] = a;
+  });
+  if ('IntersectionObserver' in window && sections.length) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          var lnk = navMap['#' + en.target.id];
+          if (lnk) {
+            Object.keys(navMap).forEach(function (k) { navMap[k].classList.remove('active'); });
+            lnk.classList.add('active');
+          }
         }
-      };
-      window.addEventListener("scroll", function () {
-        if (!vidTick) { vidTick = true; requestAnimationFrame(scrubFrame); }
-      }, { passive: true });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { so.observe(s); });
+  }
+
+  /* -------- seamless hero loop: soften the restart with a brief dip -------- */
+  var heroVid = document.querySelector('.hero-forno video');
+  if (heroVid && !reduce) {
+    heroVid.style.transition = 'opacity 380ms var(--ease-micro)';
+    heroVid.addEventListener('timeupdate', function () {
+      var d = heroVid.duration;
+      if (!d || isNaN(d)) return;
+      var t = heroVid.currentTime;
+      heroVid.style.opacity = (d - t < 0.38 || t < 0.38) ? '0.82' : '1';
+    });
+  }
+
+  /* -------- magnetic primary CTA (desktop only, one button, capped) -------- */
+  if (fine && !reduce) {
+    var magnet = document.querySelector('.hero-content a.btn--primary[data-cta]');
+    if (magnet) {
+      magnet.classList.add('magnetic');
+      var CAP = 10;
+      magnet.addEventListener('pointermove', function (e) {
+        var r = magnet.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+        var dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+        magnet.style.transform = 'translate(' +
+          Math.max(-1, Math.min(1, dx)) * CAP + 'px,' +
+          Math.max(-1, Math.min(1, dy)) * CAP + 'px)';
+      });
+      magnet.addEventListener('pointerleave', function () { magnet.style.transform = ''; });
     }
   }
-})();
+}());
 </script>
+
 </body>
 </html>

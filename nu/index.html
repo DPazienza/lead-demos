@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nu · pure asian cuisine — sushi e specialità giapponesi a Milano est</title>
+<meta name="description" content="nu è la sala serale di Milano est per la cucina giapponese pura: sushi e specialità servite solo dalle 19:30, in una stanza di mattoni e luce ambra. Prenota la tua cena." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<!-- Add .js as early as possible so hidden-then-reveal states only apply when JS runs -->
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined once, referenced everywhere
+   ============================================================ */
+:root {
+  --brand-ink: #EFE6D9;
+  --brand-surface: #17110D;
+  --brand-surface-alt: #1F1712;
+  --brand-accent: #D98E4F;
+  --brand-accent-ink: #1A120B;
+  --brand-muted: #BAA794;
+  --brand-line: #3A2C21;
+
+  --font-display: "Marcellus", "Optima", "Palatino Linotype", Georgia, serif;
+  --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  --ease-signature: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-micro: cubic-bezier(0.33, 0, 0.2, 1);
+  --dur-reveal: 900ms;
+  --dur-micro: 260ms;
+  --stagger: 90ms;
+
+  --space-section: clamp(4.5rem, 8vw, 9rem);
+  --container: min(1180px, 92vw);
+  --radius: 4px;
+  --nav-h: 68px;
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+::selection { background: var(--brand-accent); color: var(--brand-surface); }
+
+/* ============================================================
+   RESET / BASELINE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--brand-surface);
+  color: var(--brand-ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+  line-height: 1.67;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-optical-sizing: auto;
+  text-wrap: pretty;
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+}
+
+h2 { font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.6rem); }
+h3 { font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem); }
+
+p { margin: 0 0 1rem; overflow-wrap: anywhere; }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container { width: var(--container); margin-inline: auto; }
+
+/* ============================================================
+   GRAIN TEXTURE — inline SVG feTurbulence, never an image
+   ============================================================ */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.048;
+  mix-blend-mode: soft-light;
+}
+.grain svg { width: 100%; height: 100%; }
+
+/* ============================================================
+   SKIP LINK
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  background: var(--brand-accent);
+  color: var(--brand-accent-ink);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  transition: top var(--dur-micro) var(--ease-micro);
+}
+.skip-link:focus { top: 1rem; }
+
+/* ============================================================
+   WORDMARK
+   ============================================================ */
+.wordmark {
+  font-family: var(--font-display);
+  letter-spacing: 0.30em;
+  text-transform: lowercase;
+  color: var(--brand-ink);
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+}
+.wordmark .ember {
+  color: var(--brand-accent);
+  font-size: 0.42em;
+  vertical-align: super;
+  letter-spacing: 0;
+  margin-left: 0.05em;
+  text-shadow: 0 0 14px color-mix(in srgb, var(--brand-accent) 80%, transparent);
+}
+.wordmark--nav { font-size: 1.5rem; padding-right: 0.3em; }
+
+/* ============================================================
+   THE SLIT MOTIF — 2px vertical amber bar with visible glow
+   ============================================================ */
+.slit {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  vertical-align: -0.15em;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--brand-accent) 30%,
+    var(--brand-accent) 70%,
+    transparent
+  );
+  box-shadow: 0 0 7px 2px color-mix(in srgb, var(--brand-accent) 55%, transparent);
+}
+
+.ember-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-accent);
+  box-shadow:
+    0 0 10px 3px color-mix(in srgb, var(--brand-accent) 60%, transparent),
+    0 0 3px 1px color-mix(in srgb, var(--brand-accent) 90%, transparent);
+}
+
+/* EYEBROW */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-muted);
+  margin: 0 0 1.4rem;
+}
+/* The slit motif as eyebrow prefix — glow makes the 2px bar legible */
+.eyebrow::before {
+  content: "";
+  flex: none;
+  width: 2px;
+  height: 1.8em;
+  background: linear-gradient(to bottom, transparent 0%, var(--brand-accent) 38%, var(--brand-accent) 62%, transparent 100%);
+  box-shadow: 0 0 9px 2px color-mix(in srgb, var(--brand-accent) 55%, transparent);
+}
+
+/* SECTION DIVIDER — 3px tall with a warm glow so it registers */
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--brand-line);
+  position: relative;
+  margin: 0;
+}
+.divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 72px;
+  height: 3px;
+  background: linear-gradient(to right, var(--brand-accent) 0%, transparent 100%);
+  box-shadow: 0 0 14px 3px color-mix(in srgb, var(--brand-accent) 42%, transparent);
+}
+.divider--center { max-width: 2px; margin-inline: auto; height: 3rem; background: linear-gradient(to bottom, var(--brand-accent), transparent); box-shadow: 0 0 16px 3px color-mix(in srgb, var(--brand-accent) 42%, transparent); }
+.divider--center::after { display: none; }
+
+/* SECTION LABEL */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.lede {
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);
+  font-family: var(--font-display);
+  line-height: 1.35;
+  color: var(--brand-ink);
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--brand-surface) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--brand-line);
+}
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.4vw, 2.2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--brand-muted);
+  padding: 0.35rem 0;
+  position: relative;
+  transition: color var(--dur-micro) var(--ease-micro);
+}
+.nav-links a:hover,
+.nav-links a.is-active { color: var(--brand-ink); }
+.nav-links a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: linear-gradient(to right, var(--brand-accent), color-mix(in srgb, var(--brand-accent) 15%, transparent));
+  box-shadow: 0 0 7px 1px color-mix(in srgb, var(--brand-accent) 50%, transparent);
+}
+.nav-cta {
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-accent);
+  border: 1px solid color-mix(in srgb, var(--brand-accent) 48%, transparent);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition:
+    box-shadow var(--dur-micro) var(--ease-micro),
+    background var(--dur-micro) var(--ease-micro);
+}
+.nav-cta:hover {
+  background: color-mix(in srgb, var(--brand-accent) 10%, transparent);
+  box-shadow: 0 0 20px -2px color-mix(in srgb, var(--brand-accent) 48%, transparent);
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--brand-ink);
+}
+.nav-toggle svg { display: block; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  min-height: 48px;
+  transition:
+    box-shadow var(--dur-micro) var(--ease-micro),
+    background var(--dur-micro) var(--ease-micro),
+    border-color var(--dur-micro) var(--ease-micro);
+}
+.btn--primary {
+  background: var(--brand-accent);
+  color: var(--brand-accent-ink);
+}
+.btn--primary:hover {
+  box-shadow: 0 0 30px 3px color-mix(in srgb, var(--brand-accent) 52%, transparent);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--brand-ink);
+  border-color: var(--brand-line);
+}
+.btn--ghost:hover {
+  border-color: color-mix(in srgb, var(--brand-accent) 55%, transparent);
+  box-shadow: 0 0 16px -4px color-mix(in srgb, var(--brand-accent) 30%, transparent);
+}
+
+/* ============================================================
+   HERO — THE DOORWAY
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: clip;
+  padding-top: var(--nav-h);
+  background: #090604;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__media video,
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 42%;
+}
+/* Amber pool of light — the warm centrepiece */
+.hero__pool {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(52% 48% at 63% 46%,
+      color-mix(in srgb, var(--brand-accent) 32%, transparent) 0%,
+      color-mix(in srgb, var(--brand-accent) 9%, transparent) 48%,
+      transparent 68%);
+  mix-blend-mode: screen;
+  animation: pool-breathe 9s var(--ease-signature) infinite alternate;
+}
+@keyframes pool-breathe {
+  from { opacity: 0.75; }
+  to   { opacity: 1; }
+}
+/* Readability scrim — heavy at bottom and top edges, light through the mid */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(to top,
+      rgba(9,6,4,0.97) 0%,
+      rgba(9,6,4,0.62) 28%,
+      rgba(9,6,4,0.22) 50%,
+      rgba(9,6,4,0.65) 100%),
+    linear-gradient(to right,
+      rgba(9,6,4,0.72) 0%,
+      transparent 50%);
+}
+.hero__inner {
+  position: relative;
+  z-index: 3;
+  width: var(--container);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+.hero .wordmark--hero {
+  display: block;
+  font-size: clamp(4rem, 2rem + 14vw, 11rem);
+  letter-spacing: 0.22em;
+  margin-bottom: 0.45rem;
+  text-shadow:
+    0 0 90px color-mix(in srgb, var(--brand-accent) 18%, transparent),
+    0 4px 40px rgba(0,0,0,0.6);
+}
+.hero .wordmark--hero .ember { font-size: 0.28em; }
+.hero__tagline {
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 0.6rem + 0.35vw, 0.9rem);
+  color: var(--brand-muted);
+  margin: 0 0 2rem;
+}
+.hero__lead {
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+  color: var(--brand-ink);
+  line-height: 1.62;
+  max-width: 30rem;
+  margin-bottom: 2.25rem;
+}
+.hero__lead .accent { color: var(--brand-accent); }
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.1rem;
+  align-items: center;
+}
+.hero__phone {
+  font-size: 0.88rem;
+  color: var(--brand-muted);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.hero__phone strong { color: var(--brand-ink); font-weight: 500; }
+.hero__meta {
+  position: absolute;
+  z-index: 3;
+  right: max(4vw, 1.5rem);
+  bottom: clamp(2rem, 5vw, 3.5rem);
+  text-align: right;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--brand-muted) 78%, transparent);
+  max-width: 38vw;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SECTION SCAFFOLD
+   ============================================================ */
+main { position: relative; z-index: 1; }
+section { position: relative; }
+
+/* ============================================================
+   THE ROOM — full-bleed image on desktop breaks the column
+   ============================================================ */
+.room {
+  background: var(--brand-surface);
+  border-top: 1px solid var(--brand-line);
+  overflow: clip;
+  /* Desktop: no block padding — internal padding lives in .room__body */
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+/* Default (mobile-first): normal contained grid */
+.room .container {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+.room__figure {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: clip;
+  box-shadow: 0 28px 72px rgba(0,0,0,0.5);
+}
+.room__figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.room__figure::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 70% at 50% 28%, transparent 38%, rgba(9,6,4,0.26) 100%),
+    linear-gradient(to bottom, rgba(9,6,4,0.14), transparent 40%);
+  pointer-events: none;
+}
+.room__body p {
+  color: var(--brand-muted);
+  max-inline-size: 44ch;
+}
+.room__body p strong { color: var(--brand-ink); font-weight: 500; }
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.8rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+.pill-row li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--brand-ink);
+  letter-spacing: 0.01em;
+}
+.pill-row li::before {
+  content: "";
+  flex: none;
+  width: 2px;
+  height: 1.4em;
+  background: linear-gradient(to bottom, transparent, var(--brand-accent), transparent);
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--brand-accent) 48%, transparent);
+}
+
+/* ============================================================
+   THE COUNTER
+   ============================================================ */
+.counter {
+  position: relative;
+  overflow: clip;
+  min-height: clamp(480px, 65vh, 800px);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(5rem, 10vw, 11rem);
+}
+.counter__bg { position: absolute; inset: 0; z-index: 0; }
+.counter__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+.counter__bg::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right,
+      rgba(9,6,4,0.96) 0%,
+      rgba(9,6,4,0.84) 34%,
+      rgba(9,6,4,0.55) 55%,
+      rgba(9,6,4,0.18) 78%,
+      transparent 100%),
+    linear-gradient(to bottom,
+      rgba(9,6,4,0.28),
+      transparent 30%,
+      transparent 70%,
+      rgba(9,6,4,0.38));
+}
+.counter .container { position: relative; z-index: 1; }
+.counter__body { max-width: 32rem; }
+.counter__body p { color: var(--brand-ink); max-inline-size: 44ch; }
+.counter__body p + p { color: var(--brand-muted); margin-top: 1rem; }
+
+/* ============================================================
+   THE BOARD (menu)
+   ============================================================ */
+.board {
+  padding-block: clamp(4.5rem, 8vw, 9rem) clamp(5rem, 9vw, 10rem);
+  background: var(--brand-surface-alt);
+  border-top: 1px solid var(--brand-line);
+  border-bottom: 1px solid var(--brand-line);
+}
+.board__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.board__head p { color: var(--brand-muted); max-width: 34ch; margin: 0; }
+.board__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* Menu — slit rail on the left edge */
+.menu {
+  position: relative;
+  padding-left: 2rem;
+  view-timeline-name: --menu-rail;
+  view-timeline-axis: block;
+}
+/* Track line */
+.menu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--brand-line) 20%, var(--brand-line) 80%, transparent);
+}
+/* Amber slit indicator — 4px so it registers in a static screenshot.
+   Default state (no JS / no scroll-timeline support) = full-height visible rail. */
+.menu__rail {
+  position: absolute;
+  left: -1px;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 4px;
+  transform-origin: top center;
+  background: linear-gradient(to bottom,
+    transparent,
+    var(--brand-accent) 12%,
+    var(--brand-accent) 88%,
+    transparent);
+  box-shadow:
+    0 0 14px 4px color-mix(in srgb, var(--brand-accent) 52%, transparent),
+    0 0 4px 1px color-mix(in srgb, var(--brand-accent) 80%, transparent);
+}
+/* The amber sliver draws downward as the menu scrolls through — a linear scrub */
+@supports (animation-timeline: view()) {
+  html.js .menu__rail {
+    transform: scaleY(0.001);
+    animation: rail-draw both linear;
+    animation-timeline: --menu-rail;
+    animation-range: cover 2% cover 96%;
+  }
+}
+@keyframes rail-draw { to { transform: scaleY(1); } }
+.menu__group + .menu__group { margin-top: 2.75rem; }
+.menu__group h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.menu__group h3 .section-label { font-size: 0.68rem; }
+.menu__list { list-style: none; margin: 0; padding: 0; }
+.menu__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.3rem 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--brand-line);
+}
+.menu__item:last-child { border-bottom: 0; }
+.menu__name {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--brand-ink);
+  letter-spacing: -0.01em;
+}
+.menu__price {
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-accent);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.menu__desc {
+  grid-column: 1 / -1;
+  font-size: 0.88rem;
+  color: var(--brand-muted);
+  margin: 0.2rem 0 0;
+  max-inline-size: 46ch;
+}
+
+/* Gallery — 2×2 on desktop with alternating portrait/landscape rhythm */
+.board__gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+.board__gallery figure {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: clip;
+}
+.board__gallery figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--dur-reveal) var(--ease-signature);
+}
+/* Individual framing per image */
+.board__gallery figure:nth-child(1) img { object-position: center 40%; }
+.board__gallery figure:nth-child(2) img { object-position: center 45%; }
+.board__gallery figure:nth-child(3) img { object-position: center 38%; }
+.board__gallery figure:nth-child(4) img { object-position: center 42%; }
+/* Hover rim-light — a radial amber highlight physically SHIFTS across the
+   dish (moving background-position), as if a lamp is being adjusted over it —
+   distinct from a plain opacity change. */
+.board__gallery figure::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(38% 38% at 50% 50%,
+    color-mix(in srgb, var(--brand-accent) 32%, transparent), transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 190% 190%;
+  background-position: 8% 6%;
+  opacity: 0;
+  transition:
+    opacity var(--dur-micro) var(--ease-micro),
+    background-position var(--dur-reveal) var(--ease-signature);
+  pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .board__gallery figure:hover::after { opacity: 1; background-position: 88% 82%; }
+  .board__gallery figure:hover img { transform: scale(1.025); }
+}
+.board__gallery figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 1.1rem 1rem 0.9rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+  background: linear-gradient(to top, rgba(9,6,4,0.9) 0%, rgba(9,6,4,0.42) 65%, transparent 100%);
+}
+
+/* ============================================================
+   A TABLE IN PENOMBRA + BOOKING RAIL
+   ============================================================ */
+.table {
+  padding-block: clamp(5rem, 9vw, 10rem) clamp(4.5rem, 8vw, 9rem);
+  background: var(--brand-surface);
+}
+.table .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+}
+.table__figures { display: grid; gap: 1rem; }
+.table__figures figure { margin: 0; border-radius: var(--radius); overflow: clip; }
+.table__figures figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 32%;
+}
+.table__lead p { color: var(--brand-muted); max-inline-size: 40ch; }
+.table__lead p strong { color: var(--brand-ink); font-weight: 500; }
+
+/* Rail */
+.rail {
+  position: sticky;
+  top: calc(var(--nav-h) + 1.25rem);
+  background: var(--brand-surface-alt);
+  border: 1px solid var(--brand-line);
+  border-left: 3px solid color-mix(in srgb, var(--brand-accent) 58%, transparent);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  display: grid;
+  gap: 1.15rem;
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.45),
+    0 2px 12px rgba(0,0,0,0.3);
+}
+.rail__status {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--brand-muted);
+}
+.rail__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex: none;
+  background: var(--brand-accent);
+  box-shadow: 0 0 8px 1px color-mix(in srgb, var(--brand-accent) 55%, transparent);
+}
+/* One-shot heartbeat the first time the rail enters view, then it holds */
+.rail__dot.is-pulsed { animation: ember-pulse 2.4s var(--ease-signature) 1; }
+@keyframes ember-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-accent) 65%, transparent); }
+  60%  { box-shadow: 0 0 0 10px color-mix(in srgb, var(--brand-accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-accent) 0%, transparent); }
+}
+.rail h3 { font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.6rem); }
+.rail__hours {
+  font-size: 0.95rem;
+  color: var(--brand-ink);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.7;
+}
+.rail__hours span { color: var(--brand-accent); }
+.rail .btn { width: 100%; }
+.rail__phone {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--brand-muted);
+  font-variant-numeric: tabular-nums;
+}
+.rail__phone a { color: var(--brand-ink); }
+.rail__note {
+  border-top: 1px solid var(--brand-line);
+  padding-top: 1.1rem;
+  font-size: 0.82rem;
+  color: var(--brand-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   FELTRE / MILANO EST
+   ============================================================ */
+.place {
+  position: relative;
+  overflow: clip;
+  min-height: clamp(440px, 62vh, 760px);
+  display: flex;
+  align-items: flex-end;
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+.place__bg { position: absolute; inset: 0; z-index: 0; }
+.place__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+.place__bg::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top,
+      rgba(9,6,4,0.97) 0%,
+      rgba(9,6,4,0.72) 32%,
+      rgba(9,6,4,0.32) 62%,
+      rgba(9,6,4,0.62) 100%),
+    linear-gradient(to right, rgba(9,6,4,0.48), transparent 60%);
+}
+.place .container { position: relative; z-index: 1; }
+.place__card {
+  background: color-mix(in srgb, var(--brand-surface-alt) 92%, transparent);
+  border: 1px solid var(--brand-line);
+  border-radius: var(--radius);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  max-width: 34rem;
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 color-mix(in srgb, var(--brand-ink) 6%, transparent);
+}
+.place__card address {
+  font-style: normal;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--brand-ink);
+  margin: 0.6rem 0 1.4rem;
+  letter-spacing: -0.01em;
+}
+.place__card p { color: var(--brand-muted); max-inline-size: 40ch; }
+
+/* ============================================================
+   LA SALA PARLA (social proof)
+   ============================================================ */
+.proof {
+  padding-block: clamp(5.5rem, 10vw, 11rem);
+  background: var(--brand-surface-alt);
+  border-top: 1px solid var(--brand-line);
+  border-bottom: 1px solid var(--brand-line);
+  text-align: center;
+  position: relative;
+  overflow: clip;
+}
+/* Subtle ambient glow — warm radial warmth visible in the background */
+.proof::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(55% 55% at 50% 42%,
+    color-mix(in srgb, var(--brand-accent) 6%, transparent) 0%,
+    transparent 70%);
+}
+.proof .container {
+  max-width: 54rem;
+  position: relative;
+  z-index: 1;
+}
+.proof .eyebrow { justify-content: center; }
+/* The proof section h2 is used as a visual subtitle — styled as a label, not a heading */
+.proof__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-muted);
+  font-weight: 400;
+  margin: 0 0 2.5rem;
+  display: block;
+}
+.proof__rating {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 2rem + 14vw, 10rem);
+  line-height: 0.85;
+  color: var(--brand-ink);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.04em;
+}
+.proof__rating span {
+  color: var(--brand-accent);
+  font-size: 0.37em;
+  letter-spacing: -0.01em;
+}
+.stars {
+  display: inline-flex;
+  gap: 0.4rem;
+  margin: 0.75rem 0 1rem;
+}
+.stars svg { width: 28px; height: 28px; }
+.proof__count {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-muted);
+  margin-bottom: 3rem;
+  font-variant-numeric: tabular-nums;
+}
+/* Vertical slit as proof-section divider — 2px wide bar with strong glow */
+.proof__divider {
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--brand-accent) 0%, transparent 100%);
+  margin: 0 auto 2.75rem;
+  box-shadow:
+    0 0 18px 4px color-mix(in srgb, var(--brand-accent) 48%, transparent),
+    0 0 6px 1px color-mix(in srgb, var(--brand-accent) 75%, transparent);
+}
+.proof__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.1rem + 1.1vw, 2rem);
+  line-height: 1.38;
+  color: var(--brand-ink);
+  max-width: 30ch;
+  margin: 0 auto 1.25rem;
+  text-wrap: balance;
+}
+.proof__source {
+  font-size: 0.85rem;
+  color: var(--brand-muted);
+  max-inline-size: 50ch;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   DETTAGLI DELLA SERA (FAQ)
+   ============================================================ */
+.faq {
+  padding-block: clamp(5rem, 9vw, 10rem) clamp(4.5rem, 8vw, 9rem);
+  background: var(--brand-surface);
+}
+.faq .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+.faq__head h2 { margin-bottom: 0.75rem; }
+.faq__head > p { color: var(--brand-muted); max-inline-size: 34ch; }
+.faq__list { display: grid; gap: 0.6rem; }
+.faq details {
+  border: 1px solid var(--brand-line);
+  border-radius: var(--radius);
+  background: var(--brand-surface-alt);
+  overflow: clip;
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.25rem 1.4rem;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  color: var(--brand-ink);
+  list-style: none;
+  transition: color var(--dur-micro) var(--ease-micro);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before {
+  content: "";
+  flex: none;
+  width: 2px;
+  height: 1.4em;
+  background: linear-gradient(to bottom, transparent, var(--brand-accent), transparent);
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--brand-accent) 42%, transparent);
+}
+.faq summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--brand-accent);
+  font-size: 1.3rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  transition: transform var(--dur-micro) var(--ease-micro);
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details[open] summary { color: var(--brand-accent); }
+.faq details p {
+  padding: 0 1.4rem 1.4rem 2.35rem;
+  margin: 0;
+  color: var(--brand-muted);
+  max-inline-size: 52ch;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   PRENOTA (contact)
+   ============================================================ */
+.contact {
+  padding-block: clamp(5rem, 9vw, 10rem);
+  background: var(--brand-surface-alt);
+  border-top: 1px solid var(--brand-line);
+  position: relative;
+  overflow: clip;
+}
+/* Left-edge slit motif as decorative section anchor */
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    transparent,
+    color-mix(in srgb, var(--brand-accent) 32%, transparent) 30%,
+    color-mix(in srgb, var(--brand-accent) 32%, transparent) 70%,
+    transparent);
+  pointer-events: none;
+}
+.contact .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+.contact__lead p { color: var(--brand-muted); max-inline-size: 36ch; }
+.contact__actions { display: grid; gap: 1rem; max-width: 26rem; margin-top: 2rem; }
+.contact__phone-line {
+  font-size: 0.95rem;
+  color: var(--brand-muted);
+  font-variant-numeric: tabular-nums;
+}
+.contact__phone-line a { color: var(--brand-ink); font-weight: 500; }
+.contact__wa {
+  font-size: 0.85rem;
+  color: var(--brand-muted);
+  border: 1px dashed color-mix(in srgb, var(--brand-line) 150%, transparent);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  line-height: 1.65;
+}
+.contact__wa strong { color: var(--brand-ink); font-weight: 500; }
+.contact__details { display: grid; gap: 1.75rem; }
+.contact__block h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.contact__block p,
+.contact__block address {
+  font-style: normal;
+  color: var(--brand-muted);
+  margin: 0;
+  line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+.contact__block a {
+  color: var(--brand-ink);
+  transition: color var(--dur-micro) var(--ease-micro);
+}
+.contact__block a:hover { color: var(--brand-accent); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+  background: var(--brand-surface);
+  border-top: 1px solid var(--brand-line);
+  text-align: center;
+  position: relative;
+}
+/* Horizontal slit motif centred on the top border */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--brand-accent), transparent);
+  box-shadow: 0 0 14px 3px color-mix(in srgb, var(--brand-accent) 42%, transparent);
+}
+.site-footer .wordmark { font-size: 1.5rem; }
+.site-footer p { color: var(--brand-muted); font-size: 0.82rem; margin: 1.1rem 0 0; }
+.disclaimer {
+  color: color-mix(in srgb, var(--brand-muted) 68%, transparent);
+  font-size: 0.72rem;
+  max-width: 48rem;
+  margin-inline: auto;
+  margin-top: 0.85rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   REVEAL SYSTEM — one motion language, varied by content role.
+   All hidden states gated on html.js so content is fully visible
+   with JS off. Everything settles on --ease-signature.
+   ============================================================ */
+
+/* Generic block (subcopy, cards, panels) — a gentle rise */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* Hero "lights-up" — the load reveal rises out of black with an
+   exposure (brightness) lift, distinct from the plain scroll rise. */
+html.js .hero .reveal {
+  filter: brightness(0.35);
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature),
+    filter calc(var(--dur-reveal) + 300ms) var(--ease-signature);
+}
+html.js .hero .reveal.is-in { filter: none; }
+
+/* House heading reveal = line-mask. Each line rides up out of an
+   overflow-clip band ("text rises into being"). JS wraps the lines. */
+html.js .line-mask {
+  overflow: hidden;
+  display: block;
+  /* room for descenders so overflow:hidden never clips g / p / à */
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+html.js .line-mask > .line-inner {
+  display: block;
+  transform: translateY(112%);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+html.js .is-in .line-inner,
+html.js .line-mask.is-in > .line-inner { transform: none; }
+
+/* Media warm reveal — a photo enters darker + desaturated + slightly
+   scaled, then lifts to full warm exposure (a brightness curve). */
+html.js .media-reveal img,
+html.js .media-reveal video {
+  transform: scale(1.05);
+  filter: brightness(0.45) saturate(0.6);
+  transition:
+    transform calc(var(--dur-reveal) + 200ms) var(--ease-signature),
+    filter calc(var(--dur-reveal) + 400ms) var(--ease-signature);
+}
+html.js .media-reveal.is-in img,
+html.js .media-reveal.is-in video { transform: none; filter: none; }
+
+/* Row cascade — list items / cards climb in one after another */
+html.js [data-stagger] > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+html.js [data-stagger].is-in > * { opacity: 1; transform: none; }
+
+/* Menu line stagger — each row's amber slit marker DRAWS IN from the
+   left (scaleX), a per-row horizontal draw distinct from the vertical
+   section reveal. */
+.menu__item { position: relative; }
+.menu__item::before {
+  content: "";
+  position: absolute;
+  left: -1.4rem;
+  top: 1.35rem;
+  width: 0.85rem;
+  height: 2px;
+  background: linear-gradient(to right, var(--brand-accent), transparent);
+  box-shadow: 0 0 7px 1px color-mix(in srgb, var(--brand-accent) 55%, transparent);
+  transform-origin: left center;
+}
+html.js [data-stagger] > .menu__item {
+  transform: none;               /* rows move via the marker + text, not a Y-lift */
+  opacity: 1;
+}
+html.js .menu__item .menu__name,
+html.js .menu__item .menu__price,
+html.js .menu__item .menu__desc {
+  opacity: 0;
+  transform: translateX(10px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-signature),
+    transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+html.js .menu__item::before {
+  transform: scaleX(0);
+  transition: transform var(--dur-reveal) var(--ease-signature);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+html.js [data-stagger].is-in .menu__item::before { transform: scaleX(1); }
+html.js [data-stagger].is-in .menu__item .menu__name,
+html.js [data-stagger].is-in .menu__item .menu__price,
+html.js [data-stagger].is-in .menu__item .menu__desc {
+  opacity: 1; transform: none;
+}
+
+/* ============================================================
+   HERO SCROLL CINEMA — the signature payoff.
+   Base: seamless autoplay loop (always on). Layer 2: a native
+   scroll-driven slow push-in + content crossfade as it scrolls
+   past. Everything degrades to the static living hero.
+   ============================================================ */
+.hero__media { will-change: transform; }
+@supports (animation-timeline: scroll()) {
+  html.js .hero__media {
+    animation: hero-push both linear;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
+  html.js .hero__inner {
+    animation: hero-recede both linear;
+    animation-timeline: scroll(root);
+    animation-range: 0 85vh;
+  }
+}
+@keyframes hero-push {
+  from { transform: scale(1); }
+  to   { transform: scale(1.14); }
+}
+@keyframes hero-recede {
+  0%, 45% { opacity: 1; transform: translateY(0); }
+  100%    { opacity: 0; transform: translateY(-26px); }
+}
+/* Seam-mask: brief opacity dip applied by JS right at the loop wrap */
+html.js .hero__media video {
+  transition: opacity 320ms var(--ease-signature);
+}
+html.js .hero__media video.seam { opacity: 0.55; }
+
+/* Ambient drift — sub-perceptual warmth breathing on the proof glow */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .proof::before { animation: warm-drift 16s var(--ease-signature) infinite alternate; }
+}
+@keyframes warm-drift {
+  from { opacity: 0.7; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1.06); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* ROOM — desktop: image bleeds to left viewport edge, breaking the column */
+@media (min-width: 760px) {
+  .room { padding-block: 0; }
+  .room > .container {
+    grid-template-columns: min(48vw, 610px) 1fr;
+    gap: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .room__figure {
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 580px;
+    height: 100%;
+  }
+  .room__figure img {
+    aspect-ratio: unset;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .room__body {
+    padding: clamp(4rem, 7vw, 6rem) clamp(2.5rem, 5vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 38rem;
+  }
+
+  /* Board */
+  .board__grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
+  .board__gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  /* Alternating portrait / landscape for visual rhythm */
+  .board__gallery figure:nth-child(odd) img  { aspect-ratio: 4 / 5; }
+  .board__gallery figure:nth-child(even) img { aspect-ratio: 3 / 2; }
+
+  /* Table */
+  .table .container { grid-template-columns: 1.25fr 0.75fr; }
+  .table__figures img {
+    aspect-ratio: 3 / 4;
+    object-position: center 30%;
+  }
+
+  /* FAQ */
+  .faq .container { grid-template-columns: 0.75fr 1.25fr; }
+
+  /* Contact */
+  .contact .container { grid-template-columns: 1fr 1fr; }
+  .contact__details { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 980px) {
+  .hero__inner { max-width: 52rem; }
+}
+
+/* Mobile nav */
+@media (max-width: 820px) {
+  .nav-toggle { display: inline-flex; }
+  .nav-menu {
+    position: fixed;
+    inset: var(--nav-h) 0 auto 0;
+    background: color-mix(in srgb, var(--brand-surface) 97%, transparent);
+    border-bottom: 1px solid var(--brand-line);
+    backdrop-filter: blur(14px);
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem 4vw;
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--dur-micro) var(--ease-micro),
+      transform var(--dur-micro) var(--ease-micro),
+      visibility var(--dur-micro);
+  }
+  .nav-menu.is-open { opacity: 1; transform: none; visibility: visible; }
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+  .nav-links li { border-bottom: 1px solid var(--brand-line); }
+  .nav-links a { display: block; padding: 0.85rem 0; font-size: 1rem; }
+  .nav-cta { text-align: center; margin-top: 0.75rem; padding: 0.9rem 1rem; }
+}
+
+@media (max-width: 560px) {
+  .hero { min-height: 92svh; align-items: flex-end; }
+  .hero__media video, .hero__media img { object-position: 55% 38%; }
+  .hero__meta { display: none; }
+  .hero .wordmark--hero { font-size: clamp(3.4rem, 2rem + 16vw, 6rem); }
+  .board__head { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  /* Everything shows immediately at its final, fully-visible state */
+  html.js .reveal,
+  html.js .hero .reveal,
+  html.js [data-stagger] > *,
+  html.js .media-reveal img,
+  html.js .media-reveal video {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  html.js .line-mask > .line-inner { transform: none !important; }
+  html.js .menu__item::before { transform: scaleX(1) !important; }
+  html.js .menu__item .menu__name,
+  html.js .menu__item .menu__price,
+  html.js .menu__item .menu__desc { opacity: 1 !important; transform: none !important; }
+  html.js .menu__rail { transform: scaleY(1) !important; animation: none !important; }
+  html.js .hero__media { transform: none !important; animation: none !important; }
+  html.js .hero__inner { opacity: 1 !important; transform: none !important; animation: none !important; }
+  html.js .hero__media video.seam { opacity: 1 !important; }
+  .hero__pool { animation: none; opacity: 0.88; }
+  .rail__dot, .rail__dot.is-pulsed { animation: none; }
+  .proof::before { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Grain texture — inline SVG feTurbulence, fixed overlay, never an image file -->
+<div class="grain" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <filter id="g">
+      <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#g)"/>
+  </svg>
+</div>
+
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<!-- ===================== NAV ===================== -->
+<nav class="site-nav" aria-label="Navigazione principale">
+  <div class="container">
+    <a href="#hero" aria-label="nu — pure asian cuisine, torna in cima">
+      <span class="wordmark wordmark--nav">nu<span class="ember" aria-hidden="true">•</span></span>
+    </a>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#room" class="is-active">La sala</a></li>
+        <li><a href="#board">Il banco</a></li>
+        <li><a href="#menu">Menù</a></li>
+        <li><a href="#place">Dove siamo</a></li>
+        <li><a href="#proof">Recensioni</a></li>
+        <li><a href="#faq">Dettagli</a></li>
+      </ul>
+      <a class="nav-cta" data-cta href="tel:+390226413212">Chiama · 02 2641 3212</a>
+    </div>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menù di navigazione">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <line x1="3" y1="8" x2="23" y2="8"/><line x1="3" y1="13" x2="23" y2="13"/><line x1="3" y1="18" x2="23" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ===================== THE DOORWAY (hero) ===================== -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero__media" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/hero-doorway-board.jpg">
+        <source src="assets/hero-cinemagraph.mp4" type="video/mp4" />
+        <img src="assets/hero-doorway-board.jpg" alt="Un piatto di sushi illuminato da una sola luce ambra, che emerge da una sala di mattoni in penombra" />
+      </video>
+    </div>
+    <div class="hero__pool" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <h1 id="hero-title" class="reveal" style="--reveal-delay: 90ms;">
+        <span class="wordmark wordmark--hero">nu<span class="ember" aria-hidden="true">•</span></span>
+      </h1>
+      <p class="hero__tagline reveal" style="--reveal-delay: 180ms;">pure asian cuisine</p>
+      <p class="hero__lead reveal" style="--reveal-delay: 270ms;">
+        La sala serale di Milano est.<br />
+        Cucina giapponese pura — <span class="accent">sushi e specialità</span> —<br />
+        servita solo dalle 19:30.
+      </p>
+      <div class="hero__actions reveal" style="--reveal-delay: 360ms;">
+        <a class="btn btn--primary" data-cta href="tel:+390226413212">Chiama per prenotare</a>
+        <a class="btn btn--ghost" href="#menu">Guarda il banco</a>
+        <span class="hero__phone">Prenotazioni · <strong>02 2641 3212</strong></span>
+      </div>
+    </div>
+
+    <p class="hero__meta" aria-hidden="true">Via Feltre 70 · Milano est<br />solo cena · dalle 19:30</p>
+  </section>
+
+  <!-- ===================== THE ROOM ===================== -->
+  <section class="room" id="room" aria-labelledby="room-title">
+    <div class="container">
+      <figure class="room__figure media-reveal">
+        <img src="assets/interior-brick-room.jpg" alt="Una sala intima con pareti di mattoni a vista, illuminata da lampade ambra calde la sera" />
+      </figure>
+      <div class="room__body reveal" style="--reveal-delay: 90ms;">
+        <p class="eyebrow">La sala</p>
+        <h2 id="room-title">Una stanza sola,<br />tenuta in penombra.</h2>
+        <p>Mattoni a vista. Un pendente caldo su ogni tavolo. Il resto resta nell&#8217;ombra.</p>
+        <p>Non siamo un banco aperto tutto il giorno. <strong>Apriamo la sera, alle 19:30</strong>, e la cena comincia nel momento in cui entri dalla strada nella nostra pozza di luce.</p>
+        <ul class="pill-row" data-stagger>
+          <li>Solo cena</li>
+          <li>Dalle 19:30</li>
+          <li>Cucina giapponese</li>
+          <li>Su prenotazione</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE COUNTER ===================== -->
+  <section class="counter" id="counter" aria-labelledby="counter-title">
+    <div class="counter__bg media-reveal" aria-hidden="true">
+      <img src="assets/counter-chef-hands.jpg" alt="" />
+    </div>
+    <div class="container">
+      <div class="counter__body reveal">
+        <p class="eyebrow">Il banco</p>
+        <h2 id="counter-title">Al banco si lavora<br />un pezzo alla volta.</h2>
+        <p>Il sushi si compone a mano, sotto la luce. Riso, pesce, misura.</p>
+        <p>Facciamo cucina giapponese e basta — sushi e specialità giapponesi. Nessuna deriva, nessuna scorciatoia: ogni sera un servizio seduto, al tavolo, piatto per piatto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE BOARD (menu) ===================== -->
+  <section class="board" id="board" aria-labelledby="board-title">
+    <div class="container">
+      <div class="board__head reveal">
+        <div>
+          <p class="eyebrow">Il menù della sera</p>
+          <h2 id="board-title">Sul banco, stasera.</h2>
+        </div>
+        <p>Una selezione di sushi e specialità giapponesi. Il menù della sera può cambiare con il pescato.</p>
+      </div>
+
+      <div class="board__grid" id="menu">
+        <div class="menu">
+          <span class="menu__rail" aria-hidden="true"></span>
+
+          <div class="menu__group">
+            <h3><span class="slit" aria-hidden="true"></span> Sushi <span class="section-label">nigiri &amp; maki</span></h3>
+            <ul class="menu__list" data-stagger>
+              <li class="menu__item">
+                <span class="menu__name">Nigiri misti</span>
+                <span class="menu__price">18€</span>
+                <p class="menu__desc">Otto pezzi, selezione del banco.</p>
+              </li>
+              <li class="menu__item">
+                <span class="menu__name">Sashimi di stagione</span>
+                <span class="menu__price">22€</span>
+                <p class="menu__desc">Tagli del giorno su ghiaccio, senza riso.</p>
+              </li>
+              <li class="menu__item">
+                <span class="menu__name">Uramaki nu</span>
+                <span class="menu__price">16€</span>
+                <p class="menu__desc">Il nostro roll firma, otto pezzi.</p>
+              </li>
+              <li class="menu__item">
+                <span class="menu__name">Temaki singolo</span>
+                <span class="menu__price">7€</span>
+                <p class="menu__desc">Cono di alga, da mangiare subito.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu__group">
+            <h3><span class="slit" aria-hidden="true"></span> Specialità <span class="section-label">giapponesi</span></h3>
+            <ul class="menu__list" data-stagger>
+              <li class="menu__item">
+                <span class="menu__name">Pesce alla griglia, glassa miso</span>
+                <span class="menu__price">24€</span>
+                <p class="menu__desc">Cotto al momento, servito caldo.</p>
+              </li>
+              <li class="menu__item">
+                <span class="menu__name">Gyoza della casa</span>
+                <span class="menu__price">9€</span>
+                <p class="menu__desc">Sei pezzi, scottati in padella.</p>
+              </li>
+              <li class="menu__item">
+                <span class="menu__name">Zuppa di miso</span>
+                <span class="menu__price">5€</span>
+                <p class="menu__desc">Da cui partire, ogni sera.</p>
+              </li>
+              <li class="menu__item">
+                <span class="menu__name">Sakè della casa</span>
+                <span class="menu__price">8€</span>
+                <p class="menu__desc">Servito al calice, freddo o tiepido.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="board__gallery" data-stagger>
+          <figure class="media-reveal">
+            <img src="assets/sushi-board-signature.jpg" alt="Un piatto di sushi e sashimi assortiti su ardesia scura, sotto una luce calda" />
+            <figcaption>Il tagliere della sera</figcaption>
+          </figure>
+          <figure class="media-reveal">
+            <img src="assets/nigiri-macro.jpg" alt="Primo piano di un nigiri di tonno che cattura la luce ambra" />
+            <figcaption>Nigiri, un pezzo alla volta</figcaption>
+          </figure>
+          <figure class="media-reveal">
+            <img src="assets/specialita-warm-dish.jpg" alt="Una specialità giapponese calda, fumante, su ceramica scura sotto la luce calda" />
+            <figcaption>Le specialità calde</figcaption>
+          </figure>
+          <figure class="media-reveal">
+            <img src="assets/sake-pour-detail.jpg" alt="Una mano versa il sakè in una tazzina sotto una calda luce ambra" />
+            <figcaption>Sakè, versato al tavolo</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== A TABLE IN PENOMBRA + rail ===================== -->
+  <section class="table" id="table" aria-labelledby="table-title">
+    <div class="container">
+      <div class="table__lead reveal">
+        <p class="eyebrow">Una tavola in penombra</p>
+        <h2 id="table-title">Una sera per due,<br />senza fretta.</h2>
+        <p>Un tavolo, una candela bassa, i mattoni alle spalle. Intorno, il buio caldo della sala.</p>
+        <p><strong>Qui si viene per restare.</strong> Si ordina piano, si beve un calice, si lascia che la cena duri quanto deve.</p>
+        <div class="table__figures" style="margin-top: 1.75rem;">
+          <figure class="media-reveal">
+            <img src="assets/table-for-two-penombra.jpg" alt="Un tavolo apparecchiato per due in penombra, contro una parete di mattoni a vista" />
+          </figure>
+        </div>
+      </div>
+
+      <aside class="rail" aria-labelledby="rail-title">
+        <p class="rail__status"><span class="rail__dot" aria-hidden="true"></span> Apre alle 19:30</p>
+        <h3 id="rail-title">Prenota un tavolo</h3>
+        <p class="rail__hours">Solo cena · <span>dalle 19:30</span><br />Prenotazione consigliata</p>
+        <a class="btn btn--primary" data-cta href="tel:+390226413212">Chiama per prenotare</a>
+        <p class="rail__phone">oppure componi <a href="tel:+390226413212">02 2641 3212</a></p>
+        <p class="rail__note">Sala piccola, pochi tavoli. Per un tavolo la sera, un colpo di telefono basta — vi teniamo il posto.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== FELTRE / MILANO EST ===================== -->
+  <section class="place" id="place" aria-labelledby="place-title">
+    <div class="place__bg media-reveal" aria-hidden="true">
+      <img src="assets/facade-feltre-night.jpg" alt="" />
+    </div>
+    <div class="container">
+      <div class="place__card reveal">
+        <p class="eyebrow">Feltre · Milano est</p>
+        <h2 id="place-title">Nel quartiere Feltre.</h2>
+        <address>
+          Via Feltre 70<br />
+          Milano est
+        </address>
+        <p>Una facciata calma, la luce ambra che esce dalla vetrina sul marciapiede. Si arriva a piedi dal quartiere, o in pochi minuti da Milano est.</p>
+        <p style="margin-top:1.5rem;">
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=NU+Via+Feltre+70+Milano" target="_blank" rel="noopener noreferrer">Apri in Google Maps</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LA SALA PARLA (social proof) ===================== -->
+  <section class="proof" id="proof" aria-labelledby="proof-title">
+    <div class="container reveal">
+      <p class="eyebrow" style="justify-content:center;">La sala parla</p>
+      <h2 id="proof-title" class="proof__subtitle">Il giudizio di chi è già venuto a cena</h2>
+      <p class="proof__rating"><span class="count" data-to="4.3" data-decimals="1">4,3</span><span> / 5</span></p>
+      <div class="stars" role="img" aria-label="Valutazione media: 4,3 stelle su 5">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3L22 9.2l-5 4.7 1.2 6.8L12 17.5 5.8 20.7 7 13.9 2 9.2l7.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3L22 9.2l-5 4.7 1.2 6.8L12 17.5 5.8 20.7 7 13.9 2 9.2l7.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3L22 9.2l-5 4.7 1.2 6.8L12 17.5 5.8 20.7 7 13.9 2 9.2l7.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3L22 9.2l-5 4.7 1.2 6.8L12 17.5 5.8 20.7 7 13.9 2 9.2l7.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="partial-star" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="30%" stop-color="var(--brand-accent)"/>
+              <stop offset="30%" stop-color="var(--brand-line)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#partial-star)" d="M12 2l2.9 6.3L22 9.2l-5 4.7 1.2 6.8L12 17.5 5.8 20.7 7 13.9 2 9.2l7.1-.9z"/>
+        </svg>
+      </div>
+      <p class="proof__count">4,3 su <span class="count" data-to="1869" data-decimals="0">1.869</span> recensioni · Google</p>
+      <div class="proof__divider" aria-hidden="true"></div>
+      <p class="proof__quote">&#8220;Una sala piccola, calda, tenuta in penombra — e il sushi all&#8217;altezza.&#8221;</p>
+      <p class="proof__source">Il senso di quasi milleottocento recensioni, costante negli anni. Nessun nome inventato: solo il voto reale che la sala si è guadagnata, sera dopo sera.</p>
+    </div>
+  </section>
+
+  <!-- ===================== DETTAGLI DELLA SERA (FAQ) ===================== -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="faq__head reveal">
+        <p class="eyebrow">Dettagli della sera</p>
+        <h2 id="faq-title">Le domande<br />che ci fanno.</h2>
+        <p>Un posto solo-cena porta qualche domanda. Ecco le risposte, dette semplici.</p>
+      </div>
+      <div class="faq__list reveal" style="--reveal-delay:90ms;">
+        <details>
+          <summary>Siete aperti a pranzo?</summary>
+          <p>No. Facciamo solo cena. Apriamo la sera, alle 19:30.</p>
+        </details>
+        <details>
+          <summary>Serve prenotare?</summary>
+          <p>La sala è piccola, con pochi tavoli. Consigliamo di prenotare con una telefonata: vi teniamo il posto.</p>
+        </details>
+        <details>
+          <summary>A che ora si può arrivare?</summary>
+          <p>Dalle 19:30 in poi. La cucina è tutta della sera, servita al tavolo.</p>
+        </details>
+        <details>
+          <summary>Cosa cucinate?</summary>
+          <p>Cucina giapponese: sushi — nigiri, sashimi, maki — e specialità giapponesi calde. Niente di più, niente fuori tema.</p>
+        </details>
+        <details>
+          <summary>Come vi contatto?</summary>
+          <p>Con una telefonata al <a href="tel:+390226413212">02 2641 3212</a>. Vi rispondiamo dalla sala.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRENOTA (contact) ===================== -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__lead reveal">
+        <p class="eyebrow">Prenota</p>
+        <h2 id="contact-title">Un tavolo,<br />per stasera.</h2>
+        <p>Una telefonata e vi teniamo il posto. La cena comincia alle 19:30.</p>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary" data-cta href="tel:+390226413212">Chiama per prenotare</a>
+          <p class="contact__phone-line">Al telefono: <a href="tel:+390226413212">02 2641 3212</a></p>
+          <p class="contact__wa"><strong>Preferisci WhatsApp?</strong><br />Stiamo attivando il numero dedicato per la prenotazione: appena è pronto, lo trovate qui. Intanto, una telefonata basta.</p>
+        </div>
+      </div>
+
+      <div class="contact__details reveal" style="--reveal-delay:90ms;">
+        <div class="contact__block">
+          <h3>Dove</h3>
+          <address>
+            Via Feltre 70<br />
+            Milano est<br />
+            <a href="https://www.google.com/maps/search/?api=1&query=NU+Via+Feltre+70+Milano" target="_blank" rel="noopener noreferrer">Apri in Google Maps</a>
+          </address>
+        </div>
+        <div class="contact__block">
+          <h3>Quando</h3>
+          <p>Solo cena<br />Dalle 19:30<br />Su prenotazione</p>
+        </div>
+        <div class="contact__block">
+          <h3>Telefono</h3>
+          <p><a href="tel:+390226413212">02 2641 3212</a></p>
+        </div>
+        <div class="contact__block">
+          <h3>Cucina</h3>
+          <p>Sushi<br />Specialità giapponesi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <span class="wordmark">nu<span class="ember" aria-hidden="true">•</span></span>
+    <p>pure asian cuisine · Via Feltre 70, Milano est · 02 2641 3212</p>
+    <p class="disclaimer">Piatti, prezzi e orari mostrati sono indicativi e a scopo dimostrativo: il menù e gli orari della sera vengono confermati al momento della prenotazione. Valutazione 4,3/5 su 1.869 recensioni Google, reale.</p>
+  </div>
+</footer>
+
+<script>
+  var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Mobile nav toggle ---------- */
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var menu = document.getElementById('nav-menu');
+    if (!toggle || !menu) return;
+
+    function setOpen(open) {
+      menu.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menù di navigazione' : 'Apri il menù di navigazione');
+    }
+    toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('is-open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
+    });
+  })();
+
+  /* ---------- Heading line-mask: split each line into a rising band ----------
+     Keeps the text as normal selectable nodes; only wraps for the reveal. */
+  (function () {
+    if (REDUCE) return;
+    var heads = document.querySelectorAll('main section h2:not(.proof__subtitle)');
+    heads.forEach(function (h) {
+      var parts = h.innerHTML.split(/<br\s*\/?>/i);
+      h.innerHTML = parts.map(function (part, i) {
+        return '<span class="line-mask" style="--i:' + i + '"><span class="line-inner">' + part.trim() + '</span></span>';
+      }).join('');
+      h.classList.add('line-reveal');
+    });
+  })();
+
+  /* ---------- Stagger indices for cascading groups ---------- */
+  (function () {
+    document.querySelectorAll('[data-stagger]').forEach(function (group) {
+      Array.prototype.forEach.call(group.children, function (child, i) {
+        child.style.setProperty('--i', i);
+      });
+    });
+  })();
+
+  /* ---------- Single rAF-batched IntersectionObserver for all reveals ---------- */
+  (function () {
+    var targets = document.querySelectorAll(
+      '.reveal, .media-reveal, [data-stagger], .line-reveal, .rail__dot, .count'
+    );
+
+    if (REDUCE || !('IntersectionObserver' in window)) {
+      targets.forEach(function (el) {
+        el.classList.add('is-in');
+        if (el.classList.contains('count')) finishCount(el);
+      });
+      return;
+    }
+
+    var queue = [];
+    var scheduled = false;
+    function flush() {
+      scheduled = false;
+      queue.forEach(function (el) {
+        el.classList.add('is-in');
+        if (el.classList.contains('rail__dot')) el.classList.add('is-pulsed');
+        if (el.classList.contains('count')) animateCount(el);
+      });
+      queue = [];
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        queue.push(entry.target);
+        io.unobserve(entry.target);
+        if (!scheduled) { scheduled = true; requestAnimationFrame(flush); }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+
+    targets.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* ---------- Count-up on real numbers (rating + review count) ---------- */
+  function itFormat(n, dec) {
+    var s = n.toFixed(dec);
+    var p = s.split('.');
+    p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return p.length > 1 ? p[0] + ',' + p[1] : p[0];
+  }
+  function finishCount(el) {
+    var to = parseFloat(el.getAttribute('data-to'));
+    var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    el.textContent = itFormat(to, dec);
+  }
+  function animateCount(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    var to = parseFloat(el.getAttribute('data-to'));
+    var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var dur = 1200, start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var t = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3); /* ease-out, no bounce */
+      el.textContent = itFormat(to * eased, dec);
+      if (t < 1) requestAnimationFrame(step);
+      else el.textContent = itFormat(to, dec);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- Hero scroll cinema: seamless-loop seam mask ----------
+     Base video always autoplay-loops. Dip opacity just before the clip
+     wraps and restore after, so the restart never reads as a hard cut. */
+  (function () {
+    var v = document.querySelector('.hero__media video');
+    if (!v) return;
+    if (REDUCE) { try { v.removeAttribute('autoplay'); v.pause(); } catch (e) {} return; }
+    v.addEventListener('timeupdate', function () {
+      var d = v.duration;
+      if (!d || isNaN(d)) return;
+      if (d - v.currentTime < 0.4) v.classList.add('seam');
+      else if (v.currentTime < 0.4) v.classList.remove('seam');
+    });
+  })();
+
+  /* ---------- Active nav on scroll ---------- */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var map = {};
+    links.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      if (document.getElementById(id)) map[id] = a;
+    });
+    var sections = Object.keys(map).map(function (id) { return document.getElementById(id); });
+    if (!sections.length) return;
+
+    var navIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          links.forEach(function (a) { a.classList.remove('is-active'); });
+          var active = map[entry.target.id];
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { navIo.observe(s); });
+  })();
+</script>
+</body>
+</html>

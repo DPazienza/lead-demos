@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+<title>Denzel — burger kasher casareccio a Milano, Porta Genova</title>
+<meta name="description" content="Denzel: burger kasher casareccio a Milano, zona Porta Genova, dal 2011. Cucina certificata kasher, patatine fatte in casa, la sfida da 530g e menù in quattro lingue. Take away e delivery.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined once, referenced everywhere
+   ============================================================ */
+:root{
+  --brand-ink:#241611;
+  --brand-surface:#FBF4E9;
+  --brand-surface-alt:#F5EAD8;
+  --brand-accent:#C22A22;
+  --brand-accent-ink:#FBF4E9;
+  --brand-muted:#7A5C48;
+  --brand-line:#E2CFB4;
+
+  --font-display:'Archivo','Arial Black','Helvetica Neue',sans-serif;
+  --font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-reveal:620ms;
+  --dur-micro:180ms;
+  --stagger:80ms;
+
+  --space-section:clamp(3.5rem,2rem + 6vw,8rem);
+  --container:min(1180px,92vw);
+  --radius:10px;
+
+  --rail-w:clamp(15rem,20vw,17.5rem);
+
+  /* type scale */
+  --fs-hero:clamp(2.8rem,1.6rem + 6vw,6rem);
+  --fs-h2:clamp(1.8rem,1.3rem + 2.4vw,3.2rem);
+  --fs-body:clamp(1rem,0.96rem + 0.2vw,1.15rem);
+
+  /* shadow scale — derived from brand-ink, no new hues */
+  --shadow-sm:0 2px 8px color-mix(in srgb,var(--brand-ink) 8%,transparent),
+              0 1px 3px color-mix(in srgb,var(--brand-ink) 5%,transparent);
+  --shadow-md:0 6px 22px color-mix(in srgb,var(--brand-ink) 11%,transparent),
+              0 2px 6px color-mix(in srgb,var(--brand-ink) 6%,transparent);
+  --shadow-lg:0 18px 52px color-mix(in srgb,var(--brand-ink) 16%,transparent),
+              0 4px 12px color-mix(in srgb,var(--brand-ink) 7%,transparent);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  color:var(--brand-ink);
+  background:var(--brand-surface);
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:anywhere;
+  /* OpenType craft */
+  text-rendering:optimizeLegibility;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+  text-wrap:pretty;
+}
+
+/* branded selection */
+::selection{background:var(--brand-accent);color:var(--brand-surface);}
+
+img,video{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:900;
+  letter-spacing:-0.02em;
+  line-height:1.02;
+  margin:0;
+  text-wrap:balance;
+}
+p{margin:0 0 1rem;}
+p:last-child{margin-bottom:0;}
+ul{margin:0;padding:0;list-style:none;}
+
+/* tabular numbers for data */
+.price,.counter,.proof-num,.hours-list,.rail-contact a,.hero-phone strong{
+  font-variant-numeric:tabular-nums;
+}
+
+.skip-link{
+  position:absolute;left:-999px;top:0;z-index:100;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:.7rem 1.1rem;border-radius:var(--radius);
+}
+.skip-link:focus{left:.6rem;top:.6rem;}
+
+:focus-visible{
+  outline:3px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* ============================================================
+   MOTIF — the corner notch (4px kosher-red bracket)
+   ============================================================ */
+.notch{position:relative;}
+.notch::before{
+  content:"";position:absolute;top:0;left:0;
+  width:16px;height:16px;pointer-events:none;
+  border-top:4px solid var(--brand-accent);
+  border-left:4px solid var(--brand-accent);
+  border-top-left-radius:var(--radius);
+  transform-origin:top left;
+}
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+.eyebrow{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.72rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brand-muted);
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding-left:.9rem;position:relative;margin:0 0 1.25rem;
+}
+.eyebrow::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:4px;height:1.1em;background:var(--brand-accent);border-radius:2px;
+}
+
+/* ============================================================
+   WORDMARK
+   ============================================================ */
+.wordmark{
+  font-family:var(--font-display);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:-0.02em;
+  color:var(--brand-accent);
+  line-height:.9;
+  display:inline-block;
+  position:relative;
+}
+.wordmark .u{position:relative;}
+.wordmark .u::after{
+  content:"";position:absolute;left:0;right:0;bottom:-0.13em;
+  height:0.12em;
+  background:var(--brand-muted);border-radius:2px;
+}
+.wordmark-tag{
+  display:block;font-family:var(--font-body);font-weight:500;
+  text-transform:none;letter-spacing:0;color:var(--brand-muted);
+  font-size:.72rem;margin-top:.55rem;line-height:1.3;
+}
+
+/* ============================================================
+   LAYOUT — Counter Ticket Rail
+   ============================================================ */
+.shell{display:block;}
+
+/* --- top bar (mobile) --- */
+.topbar{
+  position:sticky;top:0;z-index:40;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.85rem 1.15rem;
+  background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--brand-line);
+}
+.topbar .wordmark{font-size:1.5rem;}
+.topbar .wordmark-tag{display:none;}
+.hamburger{
+  display:inline-flex;flex-direction:column;gap:5px;
+  background:var(--brand-ink);border:none;cursor:pointer;
+  padding:.7rem;border-radius:var(--radius);min-width:44px;min-height:44px;
+  align-items:center;justify-content:center;
+  transition:background var(--dur-micro) var(--ease-micro);
+}
+.hamburger:hover{background:color-mix(in srgb,var(--brand-ink) 85%,var(--brand-accent));}
+.hamburger span{
+  width:20px;height:2px;background:var(--brand-surface);border-radius:2px;
+  transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro) var(--ease-micro);
+}
+
+/* --- rail --- */
+.rail{
+  background:var(--brand-surface-alt);
+  border-bottom:1px solid var(--brand-line);
+}
+.rail-inner{padding:1.35rem 1.15rem 1.75rem;}
+.rail .wordmark{font-size:2.4rem;}
+
+.rail-block{margin-top:1.5rem;}
+.rail-label{
+  font-size:.67rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--brand-muted);font-weight:600;margin-bottom:.7rem;
+}
+
+/* language pills */
+.langbar{
+  display:inline-flex;background:var(--brand-surface);
+  border:1px solid var(--brand-line);border-radius:999px;padding:4px;gap:2px;
+  position:relative;
+  box-shadow:var(--shadow-sm);
+}
+.lang-pill{
+  border:none;background:transparent;cursor:pointer;
+  font-family:var(--font-body);font-weight:600;font-size:.82rem;
+  color:var(--brand-muted);
+  padding:.5rem .85rem;border-radius:999px;min-height:38px;
+  transition:color var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  position:relative;z-index:1;
+}
+.lang-pill:active{transform:translateY(1px);}
+.lang-pill[aria-pressed="true"]{color:var(--brand-accent-ink);}
+/* label cross-fade */
+.lang-label{transition:opacity var(--dur-micro) var(--ease-signature);}
+.lang-label.fading{opacity:0;}
+.lang-indicator{
+  position:absolute;top:4px;bottom:4px;left:4px;width:0;
+  background:var(--brand-accent);border-radius:999px;z-index:0;
+  transition:transform var(--dur-reveal) var(--ease-signature),
+             width var(--dur-reveal) var(--ease-signature);
+}
+
+/* contact lines */
+.rail-contact li{margin-bottom:.55rem;font-size:.95rem;}
+.rail-contact .lab{
+  display:block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brand-muted);margin-bottom:.05rem;
+}
+.rail-contact a{font-weight:600;transition:color var(--dur-micro) var(--ease-micro);}
+.rail-contact a:hover{color:var(--brand-accent);}
+
+.rail-hours{
+  margin-top:1.4rem;padding-top:1.25rem;border-top:1px solid var(--brand-line);
+  font-size:.9rem;color:var(--brand-muted);
+}
+.rail-hours strong{
+  color:var(--brand-ink);font-family:var(--font-display);
+  font-size:1.45rem;display:block;letter-spacing:-0.02em;
+}
+
+/* Ordina CTA */
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--font-body);font-weight:600;font-size:1rem;
+  padding:.9rem 1.4rem;border-radius:var(--radius);
+  min-height:48px;cursor:pointer;border:1.5px solid transparent;
+  transition:transform var(--dur-micro) var(--ease-micro),
+             box-shadow var(--dur-micro) var(--ease-signature),
+             background var(--dur-micro) var(--ease-signature),
+             border-color var(--dur-micro) var(--ease-signature);
+}
+.cta--primary{
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  border-color:var(--brand-accent);
+  box-shadow:0 4px 0 color-mix(in srgb,var(--brand-accent) 55%,#000),var(--shadow-sm);
+  width:100%;
+}
+.cta--primary:hover{
+  transform:translateY(2px);
+  box-shadow:0 2px 0 color-mix(in srgb,var(--brand-accent) 55%,#000);
+}
+.cta--primary:active{transform:translateY(4px);box-shadow:none;}
+.cta--ghost{
+  background:transparent;
+  border-color:var(--brand-ink);
+  color:var(--brand-ink);
+}
+.cta--ghost:hover{
+  background:var(--brand-ink);
+  color:var(--brand-surface);
+}
+.cta-note{font-size:.82rem;color:var(--brand-muted);margin-top:.6rem;text-align:center;}
+.cta-note a{font-weight:600;}
+
+/* rail nav (in-page links) */
+.rail-nav{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.5rem;}
+.rail-nav a{
+  font-size:.82rem;font-weight:500;color:var(--brand-muted);
+  padding:.35rem .65rem;border-radius:var(--radius);
+  border:1px solid var(--brand-line);
+  transition:color var(--dur-micro) var(--ease-micro),
+             border-color var(--dur-micro) var(--ease-micro),
+             background var(--dur-micro) var(--ease-micro);
+}
+.rail-nav a:hover{
+  color:var(--brand-ink);
+  border-color:var(--brand-ink);
+  background:color-mix(in srgb,var(--brand-ink) 4%,transparent);
+}
+
+/* --- main ticket stack --- */
+.stack{padding:0 0 4rem;}
+.ticket{padding-left:1.15rem;padding-right:1.15rem;}
+.wrap{width:var(--container);max-width:100%;margin-inline:auto;}
+
+/* ============================================================
+   HERO — cinemagraph + red band + 530g badge
+   ============================================================ */
+.hero{position:relative;overflow:clip;background:var(--brand-ink);}
+.hero-media{position:relative;width:100%;aspect-ratio:4/5;overflow:clip;}
+@media(min-width:720px){.hero-media{aspect-ratio:16/10;}}
+.hero-media video,.hero-media img.hero-still{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 38%;
+  transition:opacity 240ms var(--ease-signature);
+}
+/* stronger atmospheric scrim — warm vignette */
+.hero-media::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(36,22,17,.25) 0%,rgba(36,22,17,0) 22%,rgba(36,22,17,0) 48%,rgba(36,22,17,.72) 100%),
+    linear-gradient(to right,rgba(36,22,17,.18) 0%,transparent 45%);
+}
+
+/* the kosher-red diagonal band */
+.hero-band{
+  position:absolute;left:-8%;right:-8%;bottom:11%;z-index:3;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  transform:rotate(-3.4deg);
+  padding:.9rem 9%;
+  box-shadow:0 12px 36px rgba(36,22,17,.45);
+}
+.hero-band .band-txt{
+  font-family:var(--font-display);font-weight:900;text-transform:uppercase;
+  letter-spacing:-0.02em;line-height:1;
+  font-size:clamp(1.15rem,.6rem + 3.4vw,2.6rem);
+}
+.hero-band .band-sub{
+  display:block;font-family:var(--font-body);font-weight:600;
+  text-transform:uppercase;letter-spacing:0.14em;
+  font-size:clamp(.6rem,.4rem + .7vw,.85rem);
+  margin-top:.38rem;opacity:.92;
+}
+
+/* the enamel 530g badge */
+.badge530{
+  position:absolute;top:5%;right:4%;z-index:4;
+  width:clamp(5.5rem,18vw,9rem);aspect-ratio:1;
+  display:grid;place-items:center;text-align:center;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  border-radius:50%;
+  border:3px solid var(--brand-accent-ink);
+  box-shadow:0 0 0 5px var(--brand-accent),
+             0 0 0 7px color-mix(in srgb,var(--brand-accent-ink) 35%,transparent),
+             0 14px 30px rgba(36,22,17,.45);
+  transform:rotate(8deg);
+}
+.badge530 .g{
+  font-family:var(--font-display);font-weight:900;
+  font-size:clamp(1.6rem,6vw,2.9rem);line-height:.85;letter-spacing:-0.03em;
+}
+.badge530 .lab{
+  font-family:var(--font-body);font-weight:600;
+  font-size:clamp(.5rem,1.6vw,.72rem);letter-spacing:0.14em;
+  text-transform:uppercase;margin-top:.15rem;
+}
+
+/* hero caption below media — warm radial atmosphere */
+.hero-cap{
+  padding:2rem 1.15rem 2.8rem;
+  color:var(--brand-surface);
+  background:radial-gradient(
+    ellipse 80% 130% at 5% 55%,
+    color-mix(in srgb,var(--brand-accent) 13%,var(--brand-ink)) 0%,
+    var(--brand-ink) 62%
+  );
+}
+.hero-cap .wrap{width:var(--container);}
+.hero-cap h1{
+  font-size:var(--fs-hero);color:var(--brand-surface);
+  margin-bottom:1.1rem;max-width:16ch;
+}
+.hero-cap h1 em{
+  font-style:normal;color:var(--brand-accent-ink);
+  background:var(--brand-accent);padding:0 .22em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.hero-cap p{
+  color:color-mix(in srgb,var(--brand-surface) 80%,transparent);
+  max-width:54ch;line-height:1.65;
+}
+.hero-cap .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.8rem;}
+.hero-cap .cta--primary{width:auto;}
+.hero-cap .cta--ghost{
+  border-color:color-mix(in srgb,var(--brand-surface) 55%,transparent);
+  color:var(--brand-surface);
+}
+.hero-cap .cta--ghost:hover{
+  background:var(--brand-surface);color:var(--brand-ink);
+  border-color:var(--brand-surface);
+}
+.hero-phone{
+  display:block;margin-top:.95rem;font-size:.9rem;
+  color:color-mix(in srgb,var(--brand-surface) 65%,transparent);
+}
+.hero-phone strong{color:var(--brand-surface);font-weight:600;}
+
+/* ============================================================
+   SECTION SHARED + UNEVEN RHYTHM
+   ============================================================ */
+.sec{padding-top:var(--space-section);}
+.sec h2{font-size:var(--fs-h2);max-width:20ch;}
+.lede{
+  font-size:clamp(1.1rem,1rem + .5vw,1.35rem);
+  color:var(--brand-muted);
+  max-width:56ch;
+  margin-top:1rem;
+  line-height:1.7;
+}
+
+/* divider — 1px hairline with 4px visible accent notch */
+.divider{
+  height:0;border:none;border-top:1px solid var(--brand-line);
+  width:var(--container);max-width:100%;
+  margin:var(--space-section) auto 0;
+  position:relative;
+}
+.divider::before{
+  content:"";position:absolute;left:0;top:-3px;
+  width:52px;height:5px;
+  background:var(--brand-accent);border-radius:3px;
+  transform-origin:left center;
+}
+/* divider notch draws across as it enters view (motif echo) */
+html.js .divider::before{transform:scaleX(0);transition:transform var(--dur-reveal) var(--ease-signature);}
+html.js .divider.in::before{transform:scaleX(1);}
+
+.tk-no{font-family:var(--font-display);font-weight:900;color:var(--brand-line);font-size:.9rem;}
+
+/* Per-section spacing — genuinely uneven pacing */
+#cosa-siamo{padding-top:clamp(4.5rem,2.5rem + 9vw,11rem);}
+#burger     {padding-top:clamp(2.8rem,1.5rem + 3.5vw,5.5rem);}
+#patatine   {padding-top:clamp(4rem,2rem + 7vw,10rem);}
+#sfida      {padding-top:clamp(2.5rem,1.2rem + 3vw,4.5rem);}
+#kasher     {padding-top:clamp(4.5rem,2.5rem + 6vw,9.5rem);}
+#bancone    {padding-top:clamp(3.5rem,2rem + 5vw,8rem);}
+#delivery   {padding-top:clamp(2.8rem,1.5rem + 3.5vw,5.5rem);}
+#contatti   {padding-top:clamp(4.5rem,2.5rem + 7vw,10.5rem);}
+
+/* ============================================================
+   COSA SIAMO — manifesto + grill image
+   ============================================================ */
+.manifesto{display:grid;gap:2.2rem;}
+.manifesto .claims{display:grid;gap:1.1rem;}
+
+.claim{
+  background:var(--brand-surface-alt);
+  border:1px solid var(--brand-line);
+  border-radius:var(--radius);
+  padding:1.5rem 1.5rem 1.5rem 1.7rem;
+  box-shadow:var(--shadow-sm);
+  transition:box-shadow var(--dur-micro) var(--ease-signature),
+             border-color var(--dur-micro) var(--ease-signature),
+             transform var(--dur-micro) var(--ease-micro);
+}
+.claim:hover{
+  box-shadow:var(--shadow-md);
+  border-color:var(--brand-muted);
+  transform:translateY(-1px);
+}
+.claim h3{font-size:1.2rem;margin-bottom:.4rem;}
+.claim p{color:var(--brand-muted);margin:0;font-size:.97rem;line-height:1.6;}
+
+/* grill-meat strip — cinematic wide */
+.griglia{margin:2.5rem 0 0;}
+.griglia .media{
+  border-radius:var(--radius);
+  overflow:clip;
+  box-shadow:var(--shadow-lg);
+  border:none;
+}
+.griglia img{
+  width:100%;aspect-ratio:21/8;
+  object-fit:cover;object-position:center 62%;
+}
+.griglia figcaption{
+  margin-top:.8rem;
+  color:var(--brand-muted);font-size:.88rem;font-style:italic;
+  padding-left:.2rem;
+}
+
+/* neighborhood-washington strip */
+.street{
+  margin:0;border-radius:var(--radius);overflow:clip;
+  box-shadow:var(--shadow-md);
+  position:relative;
+}
+.street img{
+  width:100%;aspect-ratio:21/8;object-fit:cover;
+  object-position:center 45%;
+}
+.street::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to right,rgba(36,22,17,.3) 0%,transparent 55%);
+}
+.street figcaption{
+  padding:.75rem 1rem;
+  color:var(--brand-muted);font-size:.88rem;
+  background:var(--brand-surface-alt);
+  border-top:1px solid var(--brand-line);
+}
+
+/* ============================================================
+   I BURGER — menu with multilingual toggle
+   ============================================================ */
+.menu-head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;
+  justify-content:space-between;gap:1rem;
+}
+.menu-lang-hint{font-size:.85rem;color:var(--brand-muted);max-width:28ch;line-height:1.5;}
+.menu-lang-hint b{color:var(--brand-accent);font-weight:600;}
+
+.menu-list{margin-top:2.2rem;display:grid;gap:1.1rem;}
+
+.mcard{
+  position:relative;
+  background:var(--brand-surface);
+  border:1px solid var(--brand-line);
+  border-radius:var(--radius);
+  padding:1.5rem 1.6rem;
+  display:grid;grid-template-columns:1fr auto;gap:.4rem 1.2rem;align-items:start;
+  box-shadow:var(--shadow-sm);
+  transition:transform var(--dur-micro) var(--ease-micro),
+             box-shadow var(--dur-micro) var(--ease-signature),
+             border-color var(--dur-micro) var(--ease-signature);
+}
+.mcard:hover{
+  transform:translateY(2px);
+  box-shadow:var(--shadow-md);
+  border-color:var(--brand-muted);
+}
+.mcard h3{font-size:1.2rem;grid-column:1;}
+.mcard .desc{grid-column:1;color:var(--brand-muted);font-size:.95rem;margin:0;line-height:1.58;}
+.price{
+  grid-column:2;grid-row:1;
+  font-family:var(--font-display);font-weight:900;font-size:1.4rem;
+  color:var(--brand-muted);letter-spacing:-0.02em;white-space:nowrap;
+}
+.lang-label[hidden]{display:none;}
+
+/* ============================================================
+   LE PATATINE
+   ============================================================ */
+.split{display:grid;gap:1.8rem;}
+.split .media{
+  border-radius:var(--radius);overflow:clip;
+  box-shadow:var(--shadow-md);
+  border:none;
+}
+.split .media img{
+  width:100%;aspect-ratio:4/3;
+  object-fit:cover;object-position:center 28%;
+}
+.fries-list{margin-top:1.5rem;display:grid;gap:.85rem;}
+.fries-list li{
+  position:relative;padding-left:1.65rem;color:var(--brand-ink);
+  line-height:1.5;
+}
+.fries-list li::before{
+  content:"";position:absolute;left:0;top:.48em;width:12px;height:12px;
+  border-top:4px solid var(--brand-accent);border-left:4px solid var(--brand-accent);
+  transform-origin:top left;
+}
+.fries-list b{font-weight:600;}
+.fries-list span{color:var(--brand-muted);}
+
+/* ============================================================
+   LA SFIDA 530g — wow, second appearance
+   ============================================================ */
+.sfida{
+  position:relative;overflow:clip;
+  background:var(--brand-ink);color:var(--brand-surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);
+}
+.sfida-grid{display:grid;gap:0;}
+.sfida-media{position:relative;overflow:clip;}
+.sfida-media img{
+  width:100%;aspect-ratio:3/4;
+  object-fit:cover;object-position:center 28%;
+}
+.sfida-media::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 40%,rgba(36,22,17,.65) 100%);
+}
+.sfida-band{
+  position:absolute;left:-10%;right:-10%;bottom:14%;z-index:2;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  transform:rotate(-4deg);padding:.65rem 12%;
+  font-family:var(--font-display);font-weight:900;text-transform:uppercase;
+  letter-spacing:-0.02em;font-size:clamp(1rem,4vw,1.8rem);line-height:1;
+  box-shadow:0 10px 28px rgba(0,0,0,.45);
+}
+.sfida-body{
+  padding:2.2rem 1.7rem 2.8rem;
+  position:relative;overflow:hidden;
+}
+.sfida-body::before{
+  content:"";position:absolute;
+  top:-20%;right:-10%;
+  width:65%;aspect-ratio:1;
+  background:radial-gradient(
+    circle,
+    color-mix(in srgb,var(--brand-accent) 20%,transparent) 0%,
+    transparent 68%
+  );
+  pointer-events:none;
+}
+.sfida-body h2{color:var(--brand-surface);position:relative;}
+.sfida-body p{
+  color:color-mix(in srgb,var(--brand-surface) 82%,transparent);
+  position:relative;
+}
+.counter{
+  font-family:var(--font-display);font-weight:900;letter-spacing:-0.03em;
+  font-size:clamp(3.5rem,10vw,6rem);line-height:.9;
+  color:var(--brand-accent-ink);
+  display:flex;align-items:baseline;gap:.15em;
+  margin:.5rem 0 .3rem;
+  position:relative;
+}
+.counter .unit{
+  font-size:.28em;
+  color:color-mix(in srgb,var(--brand-surface) 65%,transparent);
+  letter-spacing:0.08em;
+}
+.badge530.inline{
+  position:static;transform:none;margin-top:1.5rem;
+  width:clamp(6rem,22vw,7.5rem);
+  box-shadow:0 0 0 4px var(--brand-accent),
+             0 0 0 6px color-mix(in srgb,var(--brand-accent-ink) 30%,transparent),
+             var(--shadow-md);
+}
+.maglietta{
+  display:inline-flex;align-items:center;gap:.65rem;margin-top:1.5rem;
+  background:color-mix(in srgb,var(--brand-surface) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--brand-surface) 22%,transparent);
+  border-radius:999px;padding:.65rem 1.15rem;font-size:.9rem;font-weight:600;
+  position:relative;
+}
+.maglietta .ico{width:22px;height:22px;flex:none;}
+
+/* ============================================================
+   KASHER & QUATTRO LINGUE
+   ============================================================ */
+.kasher{display:grid;gap:1.8rem;align-items:center;}
+.kasher .media{
+  border-radius:var(--radius);overflow:clip;
+  box-shadow:var(--shadow-md);border:none;
+}
+.kasher .media img{
+  width:100%;aspect-ratio:4/3;
+  object-fit:cover;object-position:center center;
+}
+.kasher-points{display:grid;gap:1.1rem;margin-top:1.5rem;}
+.kpoint{
+  padding-left:1.25rem;
+  border-left:4px solid var(--brand-accent);
+}
+.kpoint h3{font-size:1.1rem;margin-bottom:.28rem;}
+.kpoint p{margin:0;color:var(--brand-muted);font-size:.95rem;line-height:1.58;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.3rem;}
+.lang-chips li{
+  border:1px solid var(--brand-line);border-radius:999px;
+  padding:.42rem .95rem;font-weight:600;font-size:.85rem;color:var(--brand-muted);
+  background:var(--brand-surface);
+}
+
+/* ============================================================
+   IL BANCONE + social proof
+   ============================================================ */
+.bancone{display:grid;gap:1.8rem;}
+.bancone .media{
+  border-radius:var(--radius);overflow:clip;
+  box-shadow:var(--shadow-lg);
+  border:none;
+}
+.bancone .media img{
+  width:100%;aspect-ratio:16/9;
+  object-fit:cover;object-position:center 38%;
+}
+
+/* social proof — editorial left accent bar */
+.proof{
+  margin-top:2.2rem;
+  background:var(--brand-surface-alt);
+  border:1px solid var(--brand-line);
+  border-left:5px solid var(--brand-accent);
+  border-radius:var(--radius);
+  padding:1.9rem 1.7rem;
+  display:grid;gap:1.5rem;
+  box-shadow:var(--shadow-sm);
+}
+.proof-score{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;}
+.proof-num{
+  font-family:var(--font-display);font-weight:900;
+  font-size:clamp(3rem,9vw,4.8rem);
+  line-height:.82;letter-spacing:-0.04em;color:var(--brand-ink);
+}
+.proof-num small{
+  display:block;font-family:var(--font-body);font-weight:600;
+  font-size:.88rem;color:var(--brand-muted);letter-spacing:0;
+  margin-top:.3rem;
+}
+.stars{display:flex;gap:.25rem;}
+.stars svg{width:28px;height:28px;}
+/* stars settle in, one after another, when proof enters view */
+html.js .stars svg{opacity:0;transform:scale(.4) rotate(-18deg);
+  transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-micro);}
+html.js .proof.in .stars svg{opacity:1;transform:none;}
+html.js .proof.in .stars svg:nth-child(1){transition-delay:.05s;}
+html.js .proof.in .stars svg:nth-child(2){transition-delay:.13s;}
+html.js .proof.in .stars svg:nth-child(3){transition-delay:.21s;}
+html.js .proof.in .stars svg:nth-child(4){transition-delay:.29s;}
+html.js .proof.in .stars svg:nth-child(5){transition-delay:.37s;}
+.proof-meta{color:var(--brand-muted);font-size:.96rem;line-height:1.65;}
+.proof-meta strong{color:var(--brand-ink);}
+.proof-quote{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.1rem,.95rem + .7vw,1.4rem);
+  line-height:1.32;letter-spacing:-0.01em;max-width:44ch;
+  padding-top:1.1rem;
+  position:relative;
+}
+.proof-quote::before{
+  content:"";position:absolute;top:0;left:0;
+  width:44px;height:3px;
+  background:var(--brand-line);border-radius:2px;
+}
+
+/* ============================================================
+   TAKE AWAY & DELIVERY
+   ============================================================ */
+.takeaway{display:grid;gap:1.8rem;align-items:center;}
+.takeaway .media{
+  border-radius:var(--radius);overflow:clip;
+  box-shadow:var(--shadow-md);border:none;
+}
+.takeaway .media img{
+  width:100%;aspect-ratio:1;
+  object-fit:cover;object-position:center 42%;
+}
+.ta-steps{display:grid;gap:1.1rem;margin-top:1.3rem;counter-reset:ta;}
+.ta-steps li{position:relative;padding-left:2.7rem;counter-increment:ta;}
+.ta-steps li::before{
+  content:counter(ta);position:absolute;left:0;top:-.05rem;
+  width:2rem;height:2rem;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:900;font-size:.95rem;
+  color:var(--brand-accent-ink);background:var(--brand-accent);
+  border-radius:8px;
+  box-shadow:0 3px 0 color-mix(in srgb,var(--brand-accent) 55%,#000);
+}
+.ta-steps h3{font-size:1.05rem;margin-bottom:.18rem;}
+.ta-steps p{margin:0;color:var(--brand-muted);font-size:.94rem;line-height:1.58;}
+
+/* ============================================================
+   DOVE SIAMO & CONTATTI
+   ============================================================ */
+.contatti{display:grid;gap:1.6rem;}
+.info-card{
+  background:var(--brand-surface-alt);
+  border:1px solid var(--brand-line);
+  border-radius:var(--radius);padding:1.7rem;
+  box-shadow:var(--shadow-sm);
+}
+.info-card h3{font-size:1.05rem;margin-bottom:.55rem;}
+.info-card p{margin:0 0 .35rem;}
+.info-card .muted{color:var(--brand-muted);font-size:.92rem;}
+.info-card a{font-weight:600;transition:color var(--dur-micro) var(--ease-micro);}
+.info-card a:hover{color:var(--brand-accent);}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.3rem;}
+.contact-actions .cta{width:auto;}
+.contact-actions .cta--primary{width:auto;}
+.hours-list{display:grid;gap:.4rem;margin-top:.5rem;}
+.hours-list li{
+  display:flex;justify-content:space-between;gap:1rem;
+  font-size:.94rem;
+  border-bottom:1px dashed var(--brand-line);padding-bottom:.4rem;
+}
+.hours-list .muted{color:var(--brand-muted);}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{
+  margin-top:var(--space-section);
+  padding:2.8rem 1.15rem 3.5rem;
+  border-top:1px solid var(--brand-line);
+  background:var(--brand-surface-alt);
+}
+.foot .wrap{display:grid;gap:1.5rem;}
+.foot .wordmark{font-size:2.1rem;}
+.foot p{color:var(--brand-muted);font-size:.9rem;margin:0;line-height:1.65;}
+.disclaimer{font-size:.77rem;color:var(--brand-muted);max-width:64ch;opacity:.9;}
+
+/* ============================================================
+   MOTION LAYER — progressive enhancement (only when html.js)
+   ============================================================ */
+
+/* scroll progress bar — works at all widths via scroll(root) */
+.scroll-prog{
+  position:fixed;top:0;left:0;height:3px;width:100%;
+  background:var(--brand-accent);
+  transform:scaleX(0);transform-origin:0 50%;
+  z-index:10000;pointer-events:none;
+}
+
+/* generic reveal container — subtle glue; children carry the motion */
+html.js .reveal{
+  opacity:0;transform:translateY(14px);
+  transition:opacity var(--dur-reveal) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .reveal.in{opacity:1;transform:none;}
+
+/* staggered rows/cards — cascade */
+html.js .stagger>*{
+  opacity:0;transform:translateY(16px);
+  transition:opacity var(--dur-reveal) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .stagger.in>*{opacity:1;transform:none;}
+html.js .stagger.in>*{transition-delay:calc(var(--i,0)*var(--stagger));}
+
+/* headings — line-mask: text rises into being */
+html.js .hmask .lm{display:block;overflow:hidden;padding:.06em .04em;margin:-.06em -.04em;}
+html.js .hmask .lm-i{
+  display:block;transform:translateY(112%);
+  transition:transform var(--dur-reveal) var(--ease-signature);
+  will-change:transform;
+}
+html.js .hmask.in .lm-i{transform:none;}
+
+/* media — scale-in settle */
+html.js .mrev{
+  opacity:0;transform:scale(1.045);
+  transition:opacity var(--dur-reveal) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .mrev.in{opacity:1;transform:none;}
+
+/* --- HERO one-time signature entrance --- */
+/* band wipes in from the left (real clip-path directional wipe) */
+html.js .hero-band{
+  opacity:0;clip-path:inset(0 100% 0 0);
+  transform:rotate(-3.4deg) translateX(-5%);
+  transition:opacity var(--dur-micro) var(--ease-signature),
+             clip-path var(--dur-reveal) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-signature);
+  transition-delay:.18s;
+}
+html.js .hero.lit .hero-band{
+  opacity:1;clip-path:inset(0 0 0 0);
+  transform:rotate(-3.4deg) translateX(0);
+}
+/* badge stamps DOWN — starts oversized, settles to 1 with micro overshoot */
+html.js .badge530{
+  opacity:0;transform:rotate(8deg) scale(1.55);
+  transition:opacity var(--dur-micro) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-micro);
+  transition-delay:.46s;
+}
+html.js .hero.lit .badge530{opacity:1;transform:rotate(8deg) scale(1);}
+
+/* hero heading (mask) + subcopy/CTA/phone staggered on lit */
+html.js .hero-cap h1.hmask .lm-i{transition-delay:.06s;}
+html.js .hero-cap p,
+html.js .hero-cap .hero-actions,
+html.js .hero-cap .hero-phone{
+  opacity:0;transform:translateY(14px);
+  transition:opacity var(--dur-reveal) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-signature);
+}
+html.js .hero.lit .hero-cap p{opacity:1;transform:none;transition-delay:.18s;}
+html.js .hero.lit .hero-cap .hero-actions{opacity:1;transform:none;transition-delay:.26s;}
+html.js .hero.lit .hero-cap .hero-phone{opacity:1;transform:none;transition-delay:.34s;}
+
+/* maglietta pops after the 530g counter finishes ticking */
+html.js .maglietta{
+  opacity:0;transform:scale(.86);
+  transition:opacity var(--dur-reveal) var(--ease-signature),
+             transform var(--dur-reveal) var(--ease-micro);
+}
+html.js .maglietta.pop{opacity:1;transform:none;}
+
+/* ---- pointer micro-interactions (hover-capable, fine pointers only) ---- */
+@media (hover:hover) and (pointer:fine){
+  /* card hover press: the corner notch draws in (motif echo) */
+  html.js .mcard::before,
+  html.js .claim::before{transition:transform var(--dur-micro) var(--ease-micro);}
+  html.js .mcard:hover::before{transform:scale(1.45);}
+  html.js .claim:hover::before{transform:scale(1.35);}
+
+  /* image bulge inside clipped media frames */
+  html.js .split .media img,
+  html.js .kasher .media img,
+  html.js .takeaway .media img,
+  html.js .bancone .media img,
+  html.js .street img{
+    transition:transform var(--dur-reveal) var(--ease-signature);
+  }
+  html.js .split .media:hover img,
+  html.js .kasher .media:hover img,
+  html.js .takeaway .media:hover img,
+  html.js .bancone .media:hover img,
+  html.js .street:hover img{transform:scale(1.06);}
+
+  /* magnetic primary CTA follows the pointer (JS-driven, capped) */
+  html.js .cta.magnetic{transition:transform var(--dur-micro) var(--ease-micro),
+    box-shadow var(--dur-micro) var(--ease-signature),background var(--dur-micro) var(--ease-signature);}
+}
+
+/* ---- native CSS scroll-driven layer (safe, gated) ---- */
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){
+    .scroll-prog{
+      animation:sp-grow linear both;
+      animation-timeline:scroll(root);
+    }
+    @keyframes sp-grow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  }
+}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    /* hero scroll-cinema: slow GPU push-in as the hero scrolls past */
+    .hero-media video,.hero-media img.hero-still{
+      animation:hero-push linear both;
+      animation-timeline:view();
+      animation-range:cover 0% cover 100%;
+    }
+    @keyframes hero-push{
+      from{transform:scale(1.02);}
+      to{transform:scale(1.12);}
+    }
+    /* griglia parallax: image shifts slower than its caption */
+    .griglia .media{overflow:clip;}
+    .griglia .media img{
+      animation:griglia-par linear both;
+      animation-timeline:view();
+      animation-range:cover 0% cover 100%;
+      will-change:transform;
+    }
+    @keyframes griglia-par{
+      from{transform:translateY(-7%) scale(1.16);}
+      to{transform:translateY(7%) scale(1.16);}
+    }
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — rail becomes sticky spine on desktop
+   ============================================================ */
+@media(min-width:960px){
+  .topbar{display:none;}
+  .shell{
+    display:grid;
+    grid-template-columns:var(--rail-w) minmax(0,1fr);
+    align-items:start;
+  }
+  .rail{
+    position:sticky;top:0;align-self:start;
+    height:100vh;overflow-y:auto;
+    border-bottom:none;border-right:1px solid var(--brand-line);
+  }
+  .rail-inner{padding:1.85rem 1.5rem 2.2rem;}
+  .stack{padding-bottom:0;}
+  .ticket{
+    padding-left:clamp(1.5rem,4vw,3.5rem);
+    padding-right:clamp(1.5rem,4vw,3.5rem);
+  }
+  .wrap{width:100%;max-width:1000px;margin-inline:0;}
+
+  .hero-media{aspect-ratio:16/9;}
+  .hero-cap{padding:2.6rem clamp(1.5rem,4vw,3.5rem) 3.4rem;}
+
+  .manifesto{grid-template-columns:1fr 1fr;align-items:start;}
+  .manifesto .claims{grid-template-columns:1fr;}
+
+  .griglia{
+    margin-left:calc(-1 * clamp(1.5rem,4vw,3.5rem));
+    margin-right:calc(-1 * clamp(1.5rem,4vw,3.5rem));
+  }
+  .griglia .media{border-radius:0;}
+  .griglia figcaption{padding-left:clamp(1.5rem,4vw,3.5rem);}
+
+  .split{grid-template-columns:1.05fr .95fr;align-items:center;}
+  .split.reverse .media{order:2;}
+  .split .media img{aspect-ratio:3/2;}
+
+  .sfida-grid{grid-template-columns:.9fr 1.1fr;align-items:stretch;}
+  .sfida-media img{height:100%;aspect-ratio:auto;object-position:center 22%;}
+
+  .kasher{grid-template-columns:.95fr 1.05fr;}
+
+  .bancone .media{
+    margin-left:calc(-1 * clamp(1.5rem,4vw,3.5rem));
+    margin-right:calc(-1 * clamp(1.5rem,4vw,3.5rem));
+    border-radius:0;
+  }
+  .bancone .media img{aspect-ratio:21/9;object-position:center 35%;}
+
+  .takeaway{grid-template-columns:1fr 1fr;}
+  .contatti{grid-template-columns:1.1fr .9fr;align-items:start;}
+  .menu-list{grid-template-columns:1fr 1fr;}
+  .proof{grid-template-columns:auto 1fr;align-items:center;}
+
+  .street img{aspect-ratio:21/8;}
+}
+
+/* mobile menu drawer */
+@media(max-width:959px){
+  .rail{
+    position:fixed;inset:0 0 0 auto;z-index:50;
+    width:min(20rem,88vw);max-width:100%;
+    transform:translateX(101%);
+    transition:transform var(--dur-reveal) var(--ease-signature);
+    border-right:none;border-left:1px solid var(--brand-line);
+    box-shadow:-18px 0 48px rgba(36,22,17,.2);
+    overflow-y:auto;
+  }
+  .rail.open{transform:translateX(0);}
+  .rail-close{
+    position:absolute;top:1rem;right:1rem;background:none;border:none;
+    font-size:1.6rem;line-height:1;color:var(--brand-ink);cursor:pointer;
+    min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;
+  }
+  .scrim{
+    position:fixed;inset:0;z-index:45;background:rgba(36,22,17,.52);
+    opacity:0;visibility:hidden;transition:opacity var(--dur-micro) ease;
+  }
+  .scrim.open{opacity:1;visibility:visible;}
+  /* hamburger -> X when open */
+  .topbar .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .topbar .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .topbar .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(min-width:960px){.rail-close{display:none;}}
+
+/* ============================================================
+   REDUCED MOTION — everything visible, no motion
+   ============================================================ */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    animation-delay:0ms!important;
+    transition-duration:.001ms!important;
+    transition-delay:0ms!important;
+    scroll-behavior:auto!important;
+  }
+  html.js .reveal,
+  html.js .stagger>*,
+  html.js .mrev,
+  html.js .hero-cap p,
+  html.js .hero-cap .hero-actions,
+  html.js .hero-cap .hero-phone,
+  html.js .stars svg{opacity:1!important;transform:none!important;}
+  html.js .hmask .lm-i{transform:none!important;}
+  html.js .hmask .lm{overflow:visible!important;}
+  html.js .maglietta{opacity:1!important;transform:none!important;}
+  html.js .hero-band{opacity:1!important;clip-path:none!important;transform:rotate(-3.4deg)!important;}
+  html.js .badge530{opacity:1!important;transform:rotate(8deg)!important;}
+  html.js .divider::before{transform:scaleX(1)!important;}
+  .scroll-prog{display:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- grain texture — inline SVG feTurbulence, fixed overlay -->
+<svg aria-hidden="true" focusable="false"
+  style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.048;mix-blend-mode:soft-light;"
+  xmlns="http://www.w3.org/2000/svg">
+  <filter id="grain-f" x="0%" y="0%" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.68 0.72" numOctaves="4" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain-f)"/>
+</svg>
+
+<!-- scroll progress bar (accent, all viewports) -->
+<div class="scroll-prog" aria-hidden="true"></div>
+
+<a class="skip-link" href="#burger">Salta al menù</a>
+
+<!-- ========================= MOBILE TOP BAR ========================= -->
+<header class="topbar">
+  <a href="#top" class="wordmark" aria-label="Denzel — home">DEN<span class="u">Z</span>EL</a>
+  <button class="hamburger" id="navToggle" aria-label="Apri il menù di navigazione" aria-expanded="false" aria-controls="rail">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="scrim" id="scrim" hidden></div>
+
+<div class="shell" id="top">
+
+  <!-- ========================= ORDER RAIL ========================= -->
+  <aside class="rail" id="rail" aria-label="Ordine e contatti">
+    <button class="rail-close" id="railClose" aria-label="Chiudi il menù">&times;</button>
+    <div class="rail-inner">
+      <a href="#top" class="wordmark" aria-label="Denzel">DEN<span class="u">Z</span>EL
+        <span class="wordmark-tag">burger kasher casareccio</span>
+      </a>
+
+      <div class="rail-block">
+        <div class="rail-label">Menù in 4 lingue</div>
+        <div class="langbar" role="group" aria-label="Lingua del menù">
+          <span class="lang-indicator" aria-hidden="true"></span>
+          <button class="lang-pill" data-lang="it" aria-pressed="true">IT</button>
+          <button class="lang-pill" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-pill" data-lang="he" aria-pressed="false">HE</button>
+          <button class="lang-pill" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+      </div>
+
+      <div class="rail-block">
+        <div class="rail-label">Chiamaci</div>
+        <ul class="rail-contact">
+          <li>
+            <span class="lab">Telefono</span>
+            <a href="tel:+393398246521">339 824 6521</a>
+          </li>
+          <li>
+            <span class="lab">Dove</span>
+            Via Giorgio Washington, Porta Genova · Milano
+          </li>
+        </ul>
+      </div>
+
+      <div class="rail-block">
+        <a class="cta cta--primary" data-cta href="tel:+393398246521">Chiama e ordina</a>
+        <p class="cta-note">Rispondiamo al <a href="tel:+393398246521">339 824 6521</a></p>
+      </div>
+
+      <div class="rail-hours">
+        <div class="rail-label">Apertura</div>
+        <strong>12:00</strong>
+        Griglia accesa dal 2011.
+      </div>
+
+      <nav class="rail-nav" aria-label="Sezioni">
+        <a href="#cosa-siamo">Cosa siamo</a>
+        <a href="#burger">I burger</a>
+        <a href="#patatine">Patatine</a>
+        <a href="#sfida">Sfida 530g</a>
+        <a href="#kasher">Kasher</a>
+        <a href="#bancone">Il bancone</a>
+        <a href="#delivery">Take away</a>
+        <a href="#contatti">Dove siamo</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ========================= TICKET STACK ========================= -->
+  <main class="stack">
+
+    <!-- 1 · HERO -->
+    <section class="hero" id="hero" aria-label="Denzel, burger kasher casareccio dal 2011">
+      <div class="hero-media">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/hero-burger.jpg" aria-hidden="true">
+          <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+        </video>
+        <img class="hero-still" src="assets/hero-burger.jpg" alt="Homemade kosher burger just assembled at the Denzel counter" style="display:none">
+        <div class="hero-band" aria-hidden="true">
+          <span class="band-txt">Denzel — burger kasher casareccio</span>
+          <span class="band-sub">dal 2011 · Milano, Porta Genova</span>
+        </div>
+        <div class="badge530" role="img" aria-label="La sfida da 530 grammi">
+          <div>
+            <span class="g">530g</span>
+            <span class="lab">La sfida</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-cap">
+        <div class="wrap">
+          <h1>Il burger <em>kasher</em> lo facciamo in casa.</h1>
+          <p>Carne sulla griglia, pane fresco, patatine fatte da noi. Cucina certificata kasher, stile casareccio, dal 2011 a due passi da Porta Genova.</p>
+          <div class="hero-actions">
+            <a class="cta cta--primary" data-cta href="tel:+393398246521">Chiama e ordina</a>
+            <a class="cta cta--ghost" href="#burger">Guarda il menù</a>
+          </div>
+          <span class="hero-phone">Al telefono: <strong>339 824 6521</strong> · apriamo alle 12:00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · COSA SIAMO -->
+    <section class="sec ticket" id="cosa-siamo" aria-labelledby="cosa-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 02 · Cosa siamo</span>
+        <div class="manifesto reveal">
+          <div>
+            <h2 id="cosa-h">Kasher, casareccio, senza troppe storie.</h2>
+            <p class="lede">Non siamo una catena. Non facciamo compromessi. Facciamo burger veri, in una cucina kasher, come si fa in casa.</p>
+          </div>
+          <div class="claims stagger">
+            <div class="claim notch" style="--i:0">
+              <h3>Certificati kasher</h3>
+              <p>Cucina kasher, davvero. Chi tiene kasher a Milano qui mangia tranquillo.</p>
+            </div>
+            <div class="claim notch" style="--i:1">
+              <h3>Fatto in casa</h3>
+              <p>Burger nostri, patatine tagliate da noi. Casareccio vuol dire questo.</p>
+            </div>
+            <div class="claim notch" style="--i:2">
+              <h3>Informali, dal 2011</h3>
+              <p>Un bancone in zona Washington, la griglia accesa, la gente che entra affamata.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="griglia reveal">
+          <div class="media">
+            <img src="assets/grill-meat.jpg" alt="Kosher beef patties searing on the griddle" loading="lazy">
+          </div>
+          <figcaption>La piastra è calda tutto il giorno. La carne la sentiamo cantare da qui.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 3 · I BURGER -->
+    <section class="sec ticket" id="burger" aria-labelledby="burger-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 03 · I burger</span>
+        <div class="menu-head reveal">
+          <div>
+            <h2 id="burger-h">I nostri burger.</h2>
+            <p class="lede">Il motivo per cui si viene qui. Carne sulla piastra calda, pane fresco, farciture generose.</p>
+          </div>
+          <p class="menu-lang-hint">Leggi il menù in <b>IT · EN · HE · FR</b> — usa le linguette qui accanto.</p>
+        </div>
+
+        <ul class="menu-list stagger">
+          <li class="mcard notch" style="--i:0">
+            <h3>Denzel Classic</h3>
+            <span class="price">9,50€</span>
+            <p class="desc">
+              <span class="lang-label" data-lang="it">Burger di manzo alla griglia, insalata, pomodoro, salsa della casa.</span>
+              <span class="lang-label" data-lang="en" hidden>Grilled beef burger, lettuce, tomato, house sauce.</span>
+              <span class="lang-label" data-lang="he" hidden dir="rtl">המבורגר בקר על הגריל, חסה, עגבנייה, רוטב הבית.</span>
+              <span class="lang-label" data-lang="fr" hidden>Burger de bœuf grillé, salade, tomate, sauce maison.</span>
+            </p>
+          </li>
+          <li class="mcard notch" style="--i:1">
+            <h3>Doppio Casareccio</h3>
+            <span class="price">12,50€</span>
+            <p class="desc">
+              <span class="lang-label" data-lang="it">Doppia carne, cipolla caramellata, salsa piccante fatta da noi.</span>
+              <span class="lang-label" data-lang="en" hidden>Double patty, caramelised onion, our homemade hot sauce.</span>
+              <span class="lang-label" data-lang="he" hidden dir="rtl">בשר כפול, בצל מקורמל, רוטב חריף תוצרת בית.</span>
+              <span class="lang-label" data-lang="fr" hidden>Double viande, oignon caramélisé, sauce piquante maison.</span>
+            </p>
+          </li>
+          <li class="mcard notch" style="--i:2">
+            <h3>Burger del Bancone</h3>
+            <span class="price">10,50€</span>
+            <p class="desc">
+              <span class="lang-label" data-lang="it">Carne, pastrami kasher, senape, sottaceti croccanti.</span>
+              <span class="lang-label" data-lang="en" hidden>Beef, kosher pastrami, mustard, crunchy pickles.</span>
+              <span class="lang-label" data-lang="he" hidden dir="rtl">בשר, פסטרמה כשרה, חרדל, מלפפון חמוץ פריך.</span>
+              <span class="lang-label" data-lang="fr" hidden>Bœuf, pastrami casher, moutarde, cornichons croquants.</span>
+            </p>
+          </li>
+          <li class="mcard notch" style="--i:3">
+            <h3>Chicken Denzel</h3>
+            <span class="price">9,00€</span>
+            <p class="desc">
+              <span class="lang-label" data-lang="it">Pollo croccante, insalata, salsa allo yogurt, pane morbido.</span>
+              <span class="lang-label" data-lang="en" hidden>Crispy chicken, lettuce, yogurt sauce, soft bun.</span>
+              <span class="lang-label" data-lang="he" hidden dir="rtl">עוף פריך, חסה, רוטב יוגורט, לחמנייה רכה.</span>
+              <span class="lang-label" data-lang="fr" hidden>Poulet croustillant, salade, sauce au yaourt, pain moelleux.</span>
+            </p>
+          </li>
+        </ul>
+        <p class="cta-note" style="text-align:left;margin-top:1.2rem;">Menù dimostrativo, da confermare con il locale · chiama al <a href="tel:+393398246521">339 824 6521</a> per ordinare.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 4 · LE PATATINE -->
+    <section class="sec ticket" id="patatine" aria-labelledby="pat-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 04 · Le patatine</span>
+        <div class="split reveal">
+          <div class="media">
+            <img src="assets/fries-cones.jpg" alt="Steaming cones of golden fries at Denzel" loading="lazy">
+          </div>
+          <div>
+            <h2 id="pat-h">Vari tipi di patatine.</h2>
+            <p class="lede">Non sono un contorno qualsiasi. Le tagliamo, le friggiamo, le serviamo nel cono, ancora calde.</p>
+            <ul class="fries-list">
+              <li><b>Classiche</b> — <span>croccanti fuori, tenere dentro, sale grosso.</span></li>
+              <li><b>Doppia frittura</b> — <span>più croccanti, per chi le vuole così.</span></li>
+              <li><b>Con la buccia</b> — <span>rustiche, tagliate spesse.</span></li>
+              <li><b>Cono grande da dividere</b> — <span>o da non dividere. Decidi tu.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 5 · LA SFIDA 530g -->
+    <section class="sec ticket" id="sfida" aria-labelledby="sfida-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 05 · La sfida</span>
+        <div class="sfida reveal">
+          <div class="sfida-grid">
+            <div class="sfida-media">
+              <img src="assets/challenge-530g.jpg" alt="The towering 530g challenge burger at Denzel" loading="lazy">
+              <div class="sfida-band" aria-hidden="true">La sfida 530g</div>
+            </div>
+            <div class="sfida-body">
+              <h2 id="sfida-h">Riesci a finirlo?</h2>
+              <div class="counter" aria-hidden="true"><span data-count-to="530">0</span><span class="unit">g</span></div>
+              <p class="visually-real" style="font-weight:600;">530 grammi di burger casareccio.</p>
+              <p>Lo monti, lo affronti, lo finisci. Chi ce la fa si porta a casa la maglietta. Semplice: o vinci tu, o vince il burger.</p>
+              <span class="maglietta">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M8 3 4 6l2 3 2-1v10h8V8l2 1 2-3-4-3-3 2-3-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                La finisci? La maglietta è tua.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 6 · KASHER & QUATTRO LINGUE -->
+    <section class="sec ticket" id="kasher" aria-labelledby="kasher-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 06 · Kasher &amp; 4 lingue</span>
+        <div class="kasher reveal">
+          <div class="media">
+            <img src="assets/menu-multilang.jpg" alt="Burger and fries beside a simple menu at Denzel" loading="lazy">
+          </div>
+          <div>
+            <h2 id="kasher-h">Kasher e capito da tutti.</h2>
+            <p class="lede">Cucina certificata kasher e un menù in quattro lingue: chi arriva da fuori ordina senza pensarci.</p>
+            <div class="kasher-points">
+              <div class="kpoint">
+                <h3>Cucina kasher certificata</h3>
+                <p>Osservi la kashrut? Qui mangi un burger vero, senza compromessi.</p>
+              </div>
+              <div class="kpoint">
+                <h3>Menù in IT · EN · HE · FR</h3>
+                <p>Milanesi, studenti, turisti, famiglie osservanti: ognuno legge nella sua lingua.</p>
+              </div>
+            </div>
+            <ul class="lang-chips" aria-label="Lingue del menù">
+              <li>Italiano</li><li>English</li><li>עברית</li><li>Français</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 7 · IL BANCONE + social proof -->
+    <section class="sec ticket" id="bancone" aria-labelledby="banc-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 07 · Il bancone</span>
+        <div class="bancone reveal">
+          <div>
+            <h2 id="banc-h">Il bancone di Porta Genova.</h2>
+            <p class="lede">Griglia accesa, gente che entra, ordini che partono. Zona Washington, informale, viva. È questo il posto.</p>
+          </div>
+          <div class="media">
+            <img src="assets/counter-scene.jpg" alt="The busy informal counter at Denzel" loading="lazy">
+          </div>
+        </div>
+
+        <div class="proof reveal" aria-label="Valutazione dei clienti">
+          <div class="proof-score">
+            <div class="proof-num">4,4<small>su 5</small></div>
+            <div class="stars" role="img" aria-label="4,4 stelle su 5">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.6L12 18.3 6.1 20.4l1.2-6.6L2.5 9.1l6.6-.9L12 2z" fill="var(--brand-accent)"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.6L12 18.3 6.1 20.4l1.2-6.6L2.5 9.1l6.6-.9L12 2z" fill="var(--brand-accent)"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.6L12 18.3 6.1 20.4l1.2-6.6L2.5 9.1l6.6-.9L12 2z" fill="var(--brand-accent)"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.6L12 18.3 6.1 20.4l1.2-6.6L2.5 9.1l6.6-.9L12 2z" fill="var(--brand-accent)"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <defs><linearGradient id="half"><stop offset="40%" stop-color="var(--brand-accent)"/><stop offset="40%" stop-color="var(--brand-line)"/></linearGradient></defs>
+                <path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.6L12 18.3 6.1 20.4l1.2-6.6L2.5 9.1l6.6-.9L12 2z" fill="url(#half)"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <p class="proof-meta"><strong>1.306 recensioni.</strong> Una media di <strong>4,4 su 5</strong> tenuta negli anni, dal 2011 a oggi.</p>
+            <p class="proof-quote">Chi torna lo dice per il burger casareccio, le patatine e l'accoglienza del bancone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 8 · TAKE AWAY & DELIVERY -->
+    <section class="sec ticket" id="delivery" aria-labelledby="del-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 08 · Take away &amp; delivery</span>
+        <div class="takeaway reveal">
+          <div class="media">
+            <img src="assets/takeaway-bag.jpg" alt="Take-away burger and bag ready at Denzel" loading="lazy">
+          </div>
+          <div>
+            <h2 id="del-h">Da portare via. O te lo portiamo noi.</h2>
+            <p class="lede">Stessa griglia, stesso burger, incartato bene e pronto in poco.</p>
+            <ul class="ta-steps">
+              <li>
+                <h3>Chiami</h3>
+                <p>Ci dici cosa vuoi al <a href="tel:+393398246521">339 824 6521</a>.</p>
+              </li>
+              <li>
+                <h3>Prepariamo</h3>
+                <p>Carne sulla piastra al momento, patatine appena fritte.</p>
+              </li>
+              <li>
+                <h3>Ritiri o consegni</h3>
+                <p>Passi al bancone in zona Washington o lo ricevi a casa.</p>
+              </li>
+            </ul>
+            <div class="contact-actions">
+              <a class="cta cta--primary" data-cta href="tel:+393398246521">Chiama per ordinare</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 9 · DOVE SIAMO & CONTATTI -->
+    <section class="sec ticket" id="contatti" aria-labelledby="cont-h">
+      <div class="wrap">
+        <span class="eyebrow">Ticket 09 · Dove siamo</span>
+        <h2 id="cont-h" class="reveal">Ci trovi qui.</h2>
+        <figure class="street reveal">
+          <img src="assets/neighborhood-washington.jpg" alt="Street near Via Washington in Milano's Porta Genova district" loading="lazy">
+          <figcaption>Zona Washington, Porta Genova — il quartiere dove siamo di casa.</figcaption>
+        </figure>
+        <div class="contatti reveal" style="margin-top:1.5rem;">
+          <div class="info-card notch">
+            <h3>Indirizzo</h3>
+            <p>Via Giorgio Washington</p>
+            <p class="muted">Zona Porta Genova / Washington · Milano</p>
+            <div class="contact-actions">
+              <a class="cta cta--ghost" href="https://www.google.com/maps/search/?api=1&query=Denzel+burger+Via+Giorgio+Washington+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+            </div>
+            <h3 style="margin-top:1.7rem;">Telefono</h3>
+            <p><a href="tel:+393398246521">339 824 6521</a></p>
+            <p class="muted">Chiamaci per ordinare, per il take away o per la sfida 530g.</p>
+            <div class="contact-actions">
+              <a class="cta cta--primary" data-cta href="tel:+393398246521">Chiama e ordina</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3>Orari</h3>
+            <p class="muted" style="margin-bottom:.65rem;">Apriamo alle 12:00.</p>
+            <ul class="hours-list">
+              <li><span>Lun — Ven</span><span class="muted">12:00 — 22:30</span></li>
+              <li><span>Sabato</span><span class="muted">chiuso · Shabbat</span></li>
+              <li><span>Domenica</span><span class="muted">12:00 — 22:30</span></li>
+            </ul>
+            <p class="cta-note" style="text-align:left;margin-top:1rem;">Orari indicativi, da confermare con il locale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="foot">
+  <div class="wrap">
+    <a href="#top" class="wordmark" aria-label="Denzel">DEN<span class="u">Z</span>EL
+      <span class="wordmark-tag">burger kasher casareccio · Milano dal 2011</span>
+    </a>
+    <p>Via Giorgio Washington, Porta Genova · Milano · Tel <a href="tel:+393398246521" style="font-weight:600;">339 824 6521</a> · Apertura 12:00</p>
+    <p class="disclaimer">Pagina dimostrativa preparata per Denzel. Valutazione 4,4/5 su 1.306 recensioni: dato reale. Voci di menù, prezzi e orari sono indicativi e vanno confermati dal locale.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var root=document.documentElement;
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var desktopMQ=window.matchMedia('(min-width:960px)');
+
+  /* ============================================================
+     MOBILE DRAWER
+     ============================================================ */
+  var rail=document.getElementById('rail');
+  var toggle=document.getElementById('navToggle');
+  var close=document.getElementById('railClose');
+  var scrim=document.getElementById('scrim');
+
+  function openNav(){
+    rail.classList.add('open');scrim.hidden=false;
+    requestAnimationFrame(function(){scrim.classList.add('open');});
+    toggle.setAttribute('aria-expanded','true');
+  }
+  function closeNav(){
+    rail.classList.remove('open');scrim.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    setTimeout(function(){scrim.hidden=true;},220);
+  }
+  toggle.addEventListener('click',openNav);
+  close.addEventListener('click',closeNav);
+  scrim.addEventListener('click',closeNav);
+  rail.addEventListener('click',function(e){
+    if(e.target.closest('a')&&window.matchMedia('(max-width:959px)').matches){closeNav();}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav();});
+
+  /* ============================================================
+     LANGUAGE TOGGLE — sliding pill + horizontal cross-fade
+     ============================================================ */
+  var pills=Array.prototype.slice.call(document.querySelectorAll('.lang-pill'));
+  var indicator=document.querySelector('.lang-indicator');
+  var labels=Array.prototype.slice.call(document.querySelectorAll('.lang-label'));
+  function moveIndicator(active){
+    if(!indicator||!active)return;
+    indicator.style.width=active.offsetWidth+'px';
+    indicator.style.transform='translateX('+(active.offsetLeft-4)+'px)';
+  }
+  function applyLang(lang){
+    labels.forEach(function(el){el.hidden=(el.getAttribute('data-lang')!==lang);});
+  }
+  function setLang(lang){
+    if(reduce){applyLang(lang);}
+    else{
+      // cross-fade: dim visible labels, swap, fade back
+      var visible=labels.filter(function(el){return !el.hidden;});
+      visible.forEach(function(el){el.classList.add('fading');});
+      setTimeout(function(){
+        applyLang(lang);
+        var now=labels.filter(function(el){return !el.hidden;});
+        now.forEach(function(el){el.classList.add('fading');});
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){
+            now.forEach(function(el){el.classList.remove('fading');});
+          });
+        });
+      },160);
+    }
+    pills.forEach(function(p){
+      var on=p.getAttribute('data-lang')===lang;
+      p.setAttribute('aria-pressed',on?'true':'false');
+      if(on)moveIndicator(p);
+    });
+  }
+  pills.forEach(function(p){p.addEventListener('click',function(){setLang(p.getAttribute('data-lang'));});});
+  moveIndicator(document.querySelector('.lang-pill[aria-pressed="true"]'));
+  window.addEventListener('load',function(){moveIndicator(document.querySelector('.lang-pill[aria-pressed="true"]'));});
+  window.addEventListener('resize',function(){moveIndicator(document.querySelector('.lang-pill[aria-pressed="true"]'));});
+
+  /* ============================================================
+     LINE-MASK HEADINGS (visual split, one selectable node)
+     ============================================================ */
+  function maskHeading(h){
+    if(h.dataset.masked)return;
+    h.dataset.masked='1';
+    var inner=document.createElement('span');
+    inner.className='lm-i';
+    while(h.firstChild){inner.appendChild(h.firstChild);}
+    var mask=document.createElement('span');
+    mask.className='lm';
+    mask.appendChild(inner);
+    h.appendChild(mask);
+    h.classList.add('hmask');
+  }
+  var heroH1=document.querySelector('.hero-cap h1');
+  if(!reduce){
+    Array.prototype.slice.call(document.querySelectorAll('.sec h2, #contatti h2'))
+      .forEach(maskHeading);
+    if(heroH1)maskHeading(heroH1);
+  }
+
+  /* ============================================================
+     TAG MEDIA WRAPPERS FOR SCALE-IN REVEAL
+     ============================================================ */
+  if(!reduce){
+    Array.prototype.slice.call(document.querySelectorAll(
+      '.split .media, .kasher .media, .takeaway .media, .bancone .media, .griglia .media, .street, .sfida-media'
+    )).forEach(function(el){el.classList.add('mrev');});
+  }
+
+  /* ============================================================
+     REVEAL SYSTEM — single IntersectionObserver, unobserve after
+     ============================================================ */
+  var revealTargets=[];
+  function collect(sel){
+    Array.prototype.slice.call(document.querySelectorAll(sel)).forEach(function(el){
+      if(revealTargets.indexOf(el)===-1)revealTargets.push(el);
+    });
+  }
+  collect('.reveal');
+  collect('.stagger');
+  collect('.mrev');
+  collect('.divider');
+  collect('.proof');
+  // masked section headings (not the hero h1, which fires on load)
+  Array.prototype.slice.call(document.querySelectorAll('.sec h2.hmask, #contatti h2.hmask'))
+    .forEach(function(el){if(revealTargets.indexOf(el)===-1)revealTargets.push(el);});
+
+  if(reduce||!('IntersectionObserver'in window)){
+    revealTargets.forEach(function(el){el.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:0.14,rootMargin:'0px 0px -8% 0px'});
+    revealTargets.forEach(function(el){io.observe(el);});
+  }
+
+  /* ============================================================
+     HERO ENTRANCE (one-time signature)
+     ============================================================ */
+  var hero=document.getElementById('hero');
+  function litHero(){
+    hero.classList.add('lit');
+    if(heroH1)heroH1.classList.add('in');
+  }
+  if(reduce){litHero();}
+  else{requestAnimationFrame(function(){setTimeout(litHero,120);});}
+
+  /* ============================================================
+     HERO VIDEO — scroll cinema (progressive layers)
+     ============================================================ */
+  var video=hero.querySelector('video');
+  var still=hero.querySelector('.hero-still');
+
+  if(video){
+    // fallback still if the clip can't play
+    video.addEventListener('error',function(){
+      video.style.display='none';if(still)still.style.display='block';
+    });
+
+    if(reduce){
+      // no motion: freeze on the first frame / poster
+      video.removeAttribute('autoplay');
+      try{video.pause();}catch(e){}
+    }else{
+      var scrub=fine&&desktopMQ.matches;
+
+      if(scrub){
+        // LAYER 3 (desktop only): scrub currentTime from scroll progress
+        video.removeAttribute('loop');
+        var scrubReady=false;
+        function armScrub(){
+          if(scrubReady)return;scrubReady=true;
+          try{video.pause();}catch(e){}
+          var running=false,visible=false,ticking=false;
+          function clamp(v,a,b){return v<a?a:(v>b?b:v);}
+          function update(){
+            ticking=false;
+            if(!visible||!video.duration)return;
+            var r=hero.getBoundingClientRect();
+            var span=r.height-window.innerHeight;
+            var prog=span>0?clamp(-r.top/span,0,1):clamp(-r.top/r.height,0,1);
+            var t=prog*(video.duration-0.05);
+            if(t>=0&&isFinite(t))video.currentTime=t;
+          }
+          function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+          var vio=new IntersectionObserver(function(es){
+            es.forEach(function(e){
+              visible=e.isIntersecting;
+              if(visible){window.addEventListener('scroll',onScroll,{passive:true});update();}
+              else{window.removeEventListener('scroll',onScroll);}
+            });
+          },{threshold:0});
+          vio.observe(hero);
+        }
+        if(video.readyState>=1)armScrub();
+        else video.addEventListener('loadedmetadata',armScrub);
+      }else{
+        // LAYER 1 (mobile/touch): autoplay-loop, mask the loop seam
+        // by dipping opacity briefly around the restart boundary.
+        video.addEventListener('timeupdate',function(){
+          var d=video.duration;if(!d||!isFinite(d))return;
+          var t=video.currentTime,fade=0;
+          if(d-t<0.4)fade=(0.4-(d-t))/0.4;
+          else if(t<0.4)fade=(0.4-t)/0.4;
+          video.style.opacity=String(1-fade*0.4);
+        });
+      }
+    }
+  }
+
+  /* ============================================================
+     530g COUNTER + maglietta pop
+     ============================================================ */
+  var counterEl=document.querySelector('[data-count-to]');
+  var maglietta=document.querySelector('.maglietta');
+  var counted=false;
+  function popMaglietta(){if(maglietta)maglietta.classList.add('pop');}
+  function runCounter(){
+    if(counted||!counterEl)return;counted=true;
+    if(reduce){counterEl.textContent='530';popMaglietta();return;}
+    var to=parseInt(counterEl.getAttribute('data-count-to'),10),start=null,dur=1100;
+    function step(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var eased=1-Math.pow(1-p,3);
+      counterEl.textContent=Math.round(eased*to);
+      if(p<1)requestAnimationFrame(step);
+      else popMaglietta();
+    }
+    requestAnimationFrame(step);
+  }
+  var sfida=document.getElementById('sfida');
+  if(reduce||!('IntersectionObserver'in window)){
+    runCounter();
+  }else if(sfida){
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){runCounter();cio.unobserve(en.target);}});
+    },{threshold:0.4});
+    cio.observe(sfida);
+  }
+
+  /* ============================================================
+     MAGNETIC PRIMARY CTA (desktop, fine pointer only)
+     ============================================================ */
+  if(fine&&desktopMQ.matches&&!reduce){
+    var mag=document.querySelector('.hero-cap .cta--primary');
+    if(mag){
+      mag.classList.add('magnetic');
+      var CAP=10;
+      mag.addEventListener('mousemove',function(e){
+        var r=mag.getBoundingClientRect();
+        var dx=(e.clientX-(r.left+r.width/2))/(r.width/2);
+        var dy=(e.clientY-(r.top+r.height/2))/(r.height/2);
+        mag.style.transform='translate('+(dx*CAP).toFixed(1)+'px,'+(dy*CAP).toFixed(1)+'px)';
+      });
+      mag.addEventListener('mouseleave',function(){mag.style.transform='';});
+    }
+  }
+})();
+</script>
+</body>
+</html>

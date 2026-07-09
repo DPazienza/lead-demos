@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al Toscanaccio — Trattoria toscana a Milano | Prenota al 02 341895</title>
+<meta name="description" content="Al Toscanaccio: trattoria toscana schietta e conviviale a Milano. Cena dalle 19, cucina di tradizione — dai crostini alla bistecca alla fiorentina. 4,4 su Google, 687 recensioni. Prenota: 02 341895.">
+<link rel="canonical" href="https://www.altoscanaccio.it/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Al Toscanaccio — Trattoria toscana a Milano">
+<meta property="og:description" content="Toscana schietta, a Milano. Tavolate conviviali, cucina di tradizione, cena dalle 19. 4,4 su Google (687 recensioni). Prenota al 02 341895.">
+<meta property="og:image" content="assets/hero-tavola.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Al Toscanaccio — Trattoria toscana a Milano">
+<meta name="twitter:description" content="Toscana schietta, a Milano. Cena dalle 19, cucina di tradizione. 4,4 su Google.">
+<meta name="twitter:image" content="assets/hero-tavola.jpg">
+<meta name="theme-color" content="#B84A26">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness / Restaurant schema — only real, provided data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Al Toscanaccio",
+  "servesCuisine": "Toscana",
+  "description": "Trattoria toscana schietta e conviviale a Milano. Cucina di tradizione, cena dalle 19.",
+  "image": "assets/hero-tavola.jpg",
+  "url": "https://www.altoscanaccio.it/",
+  "telephone": "+3902341895",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Privata Chieti 1",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.4",
+    "reviewCount": "687",
+    "bestRating": "5"
+  }
+}
+</script>
+
+<!-- progressive-enhancement flag: set before first paint so reveal start-states
+     only apply when JS is running. JS off => everything stays visible. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined ONCE, referenced everywhere
+   ============================================================ */
+:root{
+  --brand-ink:#241A13;
+  --brand-surface:#F7F0E2;
+  --brand-surface-alt:#F0E6D2;
+  --brand-accent:#B84A26;        /* terracotta — CTA, active nav, prices, crocetta only */
+  --brand-accent-ink:#FBF4E7;    /* text on accent */
+  --brand-muted:#6B5A46;
+  --brand-line:#E1D5BE;
+  --brand-accent-2:#6E1F2A;      /* rosso vino — only -accio + masthead underline */
+
+  --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-reveal:780ms;
+  --dur-micro:220ms;
+  --stagger:90ms;
+
+  --space-section:clamp(4.5rem, 3rem + 7vw, 9rem);
+  --container:min(1180px, 92vw);
+  --radius:6px;
+
+  /* la crocetta as a soft checked-tablecloth border pattern */
+  --check: repeating-conic-gradient(
+      color-mix(in srgb, var(--brand-accent) 62%, transparent) 0% 25%,
+      color-mix(in srgb, var(--brand-surface) 88%, var(--brand-accent) 6%) 0% 50%)
+      0 0 / 22px 22px;
+}
+
+/* ============================================================
+   RESET / BASELINE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--brand-ink);
+  background:var(--brand-surface);
+  line-height:1.6;
+  font-size:clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+  position:relative;
+}
+/* fine film grain — inline SVG feTurbulence, never a generated texture image */
+body::before{
+  content:"";position:fixed;inset:0;z-index:150;pointer-events:none;
+  opacity:.045;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+img,video{max-width:100%;display:block;height:auto;}
+a{color:inherit;}
+h1,h2,h3{
+  font-family:var(--font-display);font-weight:600;letter-spacing:-0.03em;line-height:1.04;margin:0;
+  font-kerning:normal;font-optical-sizing:auto;text-wrap:balance;
+}
+p{margin:0;text-wrap:pretty;}
+button{font:inherit;color:inherit;cursor:pointer;}
+:where(a,button,input,summary){
+  outline:none;
+}
+:where(a,button,input,summary):focus-visible{
+  outline:3px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.container{width:var(--container);margin-inline:auto;}
+.eyebrow{
+  font-family:var(--font-body);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:0.72rem;
+  color:var(--brand-muted);
+  display:inline-flex;
+  align-items:center;
+  gap:0.55em;
+  margin:0 0 1.1rem;
+}
+/* crocetta glyph before eyebrows + as list marker */
+.crocetta{
+  --s:10px;
+  width:var(--s);height:var(--s);
+  flex:0 0 auto;
+  background:
+    linear-gradient(var(--brand-accent),var(--brand-accent)) center/2px 100% no-repeat,
+    linear-gradient(var(--brand-accent),var(--brand-accent)) center/100% 2px no-repeat;
+  display:inline-block;
+}
+.lede{
+  font-size:clamp(1.12rem, 1rem + 0.6vw, 1.5rem);
+  line-height:1.5;
+  color:var(--brand-ink);
+  max-width:52ch;
+}
+.muted{color:var(--brand-muted);}
+.price{color:var(--brand-accent);font-weight:600;font-variant-numeric:tabular-nums;}
+
+.h2{font-size:clamp(1.9rem, 1.4rem + 2vw, 3.4rem);}
+.section{padding-block:var(--space-section);}
+
+/* skip link */
+.skip{
+  position:absolute;left:-999px;top:0;z-index:200;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:0.7rem 1.1rem;border-radius:var(--radius);
+}
+.skip:focus{left:1rem;top:1rem;}
+
+/* ============================================================
+   WORDMARK
+   ============================================================ */
+.wordmark{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:-0.03em;
+  line-height:0.9;
+}
+.wordmark .wm-a{color:var(--brand-accent);}
+.wordmark .wm-b{color:var(--brand-accent-2);}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb, var(--brand-surface) 90%, transparent);
+  backdrop-filter:saturate(1.1) blur(8px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  width:var(--container);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;min-height:66px;
+}
+.nav__brand{
+  font-size:1.5rem;text-decoration:none;line-height:1;
+  padding-block:0.4rem;
+}
+.nav__links{
+  display:flex;align-items:center;gap:clamp(1rem,2vw,1.9rem);
+  list-style:none;margin:0;padding:0;
+}
+.nav__links a{
+  text-decoration:none;font-weight:500;font-size:0.95rem;color:var(--brand-ink);
+  padding:0.35rem 0.1rem;position:relative;
+}
+.nav__links a:hover{color:var(--brand-accent);}
+.nav__links a.is-active{color:var(--brand-accent);}
+.nav__cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  text-decoration:none;font-weight:600;font-size:0.92rem;
+  padding:0.6rem 1.05rem;border-radius:var(--radius);
+  white-space:nowrap;font-variant-numeric:tabular-nums;
+  transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) ease;
+}
+.nav__cta:hover{transform:translateY(-1px);background:color-mix(in srgb,var(--brand-accent) 88%, black);}
+.nav__toggle{
+  display:none;
+  background:transparent;border:1px solid var(--brand-line);border-radius:var(--radius);
+  width:44px;height:44px;align-items:center;justify-content:center;padding:0;
+}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{
+  content:"";display:block;width:20px;height:2px;background:var(--brand-ink);position:relative;
+  transition:transform var(--dur-micro) ease, opacity var(--dur-micro) ease;
+}
+.nav__toggle span::before{position:absolute;top:-6px;left:0;}
+.nav__toggle span::after{position:absolute;top:6px;left:0;}
+.nav[data-open="true"] .nav__toggle span{background:transparent;}
+.nav[data-open="true"] .nav__toggle span::before{transform:translateY(6px) rotate(45deg);}
+.nav[data-open="true"] .nav__toggle span::after{transform:translateY(-6px) rotate(-45deg);}
+/* desktop: links + CTA inline */
+.nav__menu{display:flex;align-items:center;gap:clamp(1rem,2vw,1.9rem);}
+
+@media (max-width:860px){
+  .nav__toggle{display:inline-flex;}
+  .nav__menu{
+    position:absolute;left:0;right:0;top:100%;
+    background:var(--brand-surface);
+    border-bottom:1px solid var(--brand-line);
+    display:grid;gap:0.2rem;
+    padding:0.8rem var(--container-pad,4vw) 1.3rem;
+    transform:translateY(-8px);opacity:0;pointer-events:none;
+    transition:opacity var(--dur-micro) ease, transform var(--dur-micro) ease;
+    box-shadow:0 18px 40px -28px rgba(36,26,19,.5);
+  }
+  .nav[data-open="true"] .nav__menu{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .nav__links{flex-direction:column;align-items:stretch;gap:0;}
+  .nav__links a{padding:0.85rem 0.4rem;border-bottom:1px solid var(--brand-line);}
+  .nav__menu .nav__cta{margin-top:0.9rem;justify-content:center;}
+}
+
+/* ============================================================
+   MASTHEAD (WOW MOMENT)
+   ============================================================ */
+.masthead{
+  position:relative;
+  padding:clamp(1rem,3vw,2rem);
+  isolation:isolate;
+}
+.masthead__frame{
+  position:absolute;inset:clamp(10px,2.1vw,26px);
+  z-index:5;pointer-events:none;border-radius:10px;
+  background:var(--check);
+  padding:clamp(8px,1.3vw,13px);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  opacity:.9;
+}
+.masthead__inner{
+  position:relative;z-index:4;
+  width:min(1240px,100%);margin-inline:auto;
+  padding:clamp(1.4rem,3vw,2.6rem);
+  min-height:calc(100svh - 66px - clamp(2rem,6vw,4rem));
+  display:flex;flex-direction:column;justify-content:center;
+}
+.masthead__eyebrow{color:var(--brand-accent);}
+.masthead__title{
+  font-size:clamp(3.4rem, 1.4rem + 12vw, 12rem);
+  line-height:0.82;
+  letter-spacing:-0.045em;
+  margin:0;
+  position:relative;z-index:6;
+}
+.masthead__title .wm-underline{
+  display:block;height:5px;width:min(340px,60%);
+  background:var(--brand-accent-2);
+  margin-top:0.32em;border-radius:2px;
+}
+.masthead__figure{
+  position:relative;
+  margin-top:clamp(-2.2rem,-4.5vw,-1rem);
+  border-radius:8px;overflow:hidden;
+  aspect-ratio:16/9;
+  background:var(--brand-surface-alt);
+  box-shadow:0 40px 90px -50px rgba(36,26,19,.7);
+}
+.masthead__figure video,
+.masthead__figure img{
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;
+}
+.masthead__tagline{
+  font-family:var(--font-display);font-weight:400;font-style:italic;
+  font-size:clamp(1.15rem,0.9rem + 1vw,1.7rem);
+  color:var(--brand-ink);margin-top:1.4rem;
+}
+.masthead__actions{
+  margin-top:1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  text-decoration:none;font-weight:600;font-size:1.02rem;
+  padding:0.95rem 1.5rem;border-radius:var(--radius);border:none;
+  transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) ease;
+}
+.btn-primary:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--brand-accent) 88%, black);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  text-decoration:none;font-weight:600;font-size:1rem;
+  padding:0.9rem 1.35rem;border-radius:var(--radius);
+  border:1px solid var(--brand-ink);color:var(--brand-ink);background:transparent;
+}
+.btn-ghost:hover{background:var(--brand-ink);color:var(--brand-surface);}
+.call-inline{display:flex;flex-direction:column;gap:0.1rem;font-size:0.92rem;}
+.call-inline .num{font-family:var(--font-display);font-size:1.35rem;color:var(--brand-ink);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;}
+.call-inline a{color:inherit;text-decoration:none;}
+
+/* proof pill next to CTA */
+.proof-pill{
+  display:inline-flex;align-items:center;gap:0.7rem;
+  background:var(--brand-surface-alt);border:1px solid var(--brand-line);
+  border-radius:100px;padding:0.5rem 0.95rem 0.5rem 0.6rem;
+  font-size:0.9rem;
+}
+.proof-pill .score{
+  font-family:var(--font-display);font-weight:600;font-size:1.15rem;
+  background:var(--brand-ink);color:var(--brand-surface);
+  border-radius:100px;padding:0.15rem 0.6rem;letter-spacing:-0.02em;
+  font-variant-numeric:tabular-nums;
+}
+.stars{color:var(--brand-accent);letter-spacing:1px;font-size:0.85rem;}
+
+/* ceramic 4,4 stamp — the wow's second beat */
+.stamp{
+  position:absolute;z-index:7;
+  width:clamp(96px,15vw,168px);height:clamp(96px,15vw,168px);
+  right:clamp(-0.4rem,-1vw,0.6rem);top:clamp(-2.4rem,-5vw,-1.2rem);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 34% 30%, color-mix(in srgb,var(--brand-surface) 96%, white) 0%, var(--brand-surface-alt) 62%, color-mix(in srgb,var(--brand-surface-alt) 80%, var(--brand-ink) 8%) 100%);
+  border:3px solid var(--brand-accent);
+  box-shadow:0 18px 40px -20px rgba(36,26,19,.75), inset 0 0 0 6px var(--brand-surface);
+  display:grid;place-content:center;text-align:center;line-height:1;
+  transform:rotate(-8deg);
+}
+.stamp b{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(1.9rem,4.5vw,3rem);color:var(--brand-accent);
+  letter-spacing:-0.03em;display:block;font-variant-numeric:tabular-nums;
+}
+.stamp small{
+  display:block;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--brand-muted);margin-top:0.2rem;
+}
+
+@media (max-width:720px){
+  .masthead__inner{
+    min-height:auto;padding:1.2rem 0.9rem 1.4rem;
+    justify-content:flex-start;
+  }
+  /* Mobile hero: headline + tagline + CTA + proof ABOVE the photo, so the
+     value proposition and primary action sit in the first viewport.
+     The wow identity (colossal terracotta wordmark, checker frame, 4,4 proof)
+     stays above the fold; the tavolata photo + ceramic stamp follow. */
+  .masthead__eyebrow{order:1;}
+  .masthead__title{order:2;font-size:clamp(2.6rem,15vw,5rem);line-height:0.86;overflow-wrap:anywhere;}
+  .masthead__tagline{order:3;margin-top:1rem;}
+  .masthead__actions{order:4;margin-top:1.2rem;}
+  .masthead__figure{order:5;aspect-ratio:4/5;max-height:52svh;margin-top:1.4rem;}
+  .stamp{right:0.4rem;top:auto;bottom:0.6rem;transform:rotate(-6deg);}
+  .btn-primary{width:100%;justify-content:center;}
+}
+
+/* ============================================================
+   RACCONTO DEL NOME — editorial split
+   ============================================================ */
+.nome{background:var(--brand-surface);padding-block:clamp(3.6rem, 2.6rem + 5vw, 6.5rem);}
+.nome__grid{
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center;
+}
+.nome__fig{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 30px 70px -46px rgba(36,26,19,.6);}
+.nome__fig img{width:100%;height:100%;object-fit:cover;}
+.nome__body p+p{margin-top:1.1rem;}
+.pull{
+  font-family:var(--font-display);font-style:italic;font-weight:400;
+  font-size:clamp(1.3rem,1rem + 1.4vw,2rem);line-height:1.28;
+  border-left:4px solid var(--brand-accent);padding-left:1.1rem;margin:1.6rem 0;
+}
+@media (max-width:820px){
+  .nome__grid{grid-template-columns:1fr;}
+  .nome__fig{aspect-ratio:4/3;order:-1;}
+}
+
+/* ============================================================
+   LE PORTATE — horizontal course band
+   ============================================================ */
+.portate{background:var(--brand-surface-alt);position:relative;}
+/* seam divider — la crocetta as a checked-tablecloth band between sections */
+.portate::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--check);opacity:.9;}
+.portate__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:2rem;}
+.portate__scroller{
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:1rem;margin-bottom:0.4rem;
+  scrollbar-width:thin;
+}
+.course{
+  scroll-snap-align:start;
+  background:var(--brand-surface);border:1px solid var(--brand-line);border-radius:8px;
+  overflow:hidden;display:flex;flex-direction:column;position:relative;
+}
+/* la crocetta — corner mark, the one sanctioned card-corner use of the motif */
+.course::after{
+  content:"";position:absolute;top:8px;right:8px;z-index:2;width:26px;height:26px;pointer-events:none;
+  border-radius:50%;
+  background:
+    linear-gradient(var(--brand-accent),var(--brand-accent)) center/2px 62% no-repeat,
+    linear-gradient(var(--brand-accent),var(--brand-accent)) center/62% 2px no-repeat,
+    color-mix(in srgb, var(--brand-surface) 88%, transparent);
+  box-shadow:0 2px 8px -2px rgba(36,26,19,.35);
+}
+.course__fig{aspect-ratio:4/3;overflow:hidden;background:var(--brand-surface-alt);}
+.course__fig img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-reveal) var(--ease-signature);}
+.course:hover .course__fig img{transform:scale(1.04);}
+.course__body{padding:1.2rem 1.25rem 1.4rem;display:flex;flex-direction:column;gap:0.7rem;flex:1;}
+.course__kicker{font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brand-accent);font-weight:600;}
+.course h3{font-size:1.5rem;}
+.dishes{list-style:none;margin:0.2rem 0 0;padding:0;display:grid;gap:0.55rem;}
+.dishes li{display:grid;grid-template-columns:auto 1fr auto;gap:0.6rem;align-items:baseline;font-size:0.96rem;}
+.dishes li .crocetta{--s:8px;align-self:center;}
+.dishes .d-name{font-weight:500;}
+.dishes .d-note{grid-column:2/4;font-size:0.82rem;color:var(--brand-muted);margin-top:-0.15rem;}
+.portate__note{font-size:0.82rem;color:var(--brand-muted);margin-top:1.4rem;}
+
+/* ============================================================
+   SPREAD (sala / cucina) — layered editorial with companion
+   ============================================================ */
+.spread{position:relative;overflow:hidden;}
+.spread .container{position:relative;}
+.spread__grid{display:grid;gap:clamp(1.4rem,3vw,2.6rem);align-items:center;}
+.spread--sala{background:var(--brand-surface);padding-block:clamp(5rem, 3.4rem + 7vw, 9.5rem);}
+.spread--cucina{background:var(--brand-surface-alt);padding-block:clamp(3.4rem, 2.6rem + 4vw, 5.6rem);}
+.spread__grid{grid-template-columns:1.1fr 0.9fr;}
+.spread--cucina .spread__grid{grid-template-columns:0.9fr 1.1fr;}
+.spread--cucina .spread__copy{order:-1;}
+.spread__media{position:relative;padding-bottom:clamp(2rem,5vw,3.4rem);}
+.spread__main{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:5/4;box-shadow:0 34px 74px -46px rgba(36,26,19,.62);}
+.spread__main img{width:100%;height:100%;object-fit:cover;}
+.spread__detail{
+  position:absolute;width:46%;max-width:230px;aspect-ratio:1/1;
+  right:-1.4rem;bottom:0;border-radius:8px;overflow:hidden;
+  border:6px solid var(--brand-surface);
+  box-shadow:0 26px 50px -28px rgba(36,26,19,.7);
+}
+.spread--cucina .spread__detail{right:auto;left:-1.4rem;}
+.spread__detail img{width:100%;height:100%;object-fit:cover;}
+.spread__copy p+p{margin-top:1rem;}
+.mini-list{list-style:none;margin:1.3rem 0 0;padding:0;display:grid;gap:0.7rem;}
+.mini-list li{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.98rem;}
+.mini-list .crocetta{margin-top:0.5rem;}
+@media (max-width:820px){
+  .spread__grid,.spread--cucina .spread__grid{grid-template-columns:1fr;}
+  .spread--cucina .spread__copy{order:0;}
+  .spread__detail{width:40%;right:0;}
+  .spread--cucina .spread__detail{left:0;right:auto;}
+}
+@media (max-width:480px){
+  .spread__detail{position:static;width:60%;margin:-2.2rem 0 0 auto;border-width:5px;}
+  .spread--cucina .spread__detail{margin:-2.2rem auto 0 0;}
+  .spread__media{padding-bottom:0;}
+}
+
+/* ============================================================
+   RADICI TOSCANE — full-bleed band with photo
+   ============================================================ */
+.radici{position:relative;background:var(--brand-surface);overflow:hidden;padding-block:clamp(5.5rem, 3.4rem + 9vw, 10.5rem);}
+.radici__grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center;}
+.radici__fig{border-radius:8px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 70px -46px rgba(36,26,19,.6);}
+.radici__fig img{width:100%;height:100%;object-fit:cover;}
+.radici__copy .col2{columns:2;column-gap:1.6rem;margin-top:1rem;}
+.radici__copy .col2 li{break-inside:avoid;margin-bottom:0.75rem;}
+.prov-list{list-style:none;padding:0;margin:1.2rem 0 0;}
+.prov-list li{display:flex;gap:0.65rem;align-items:baseline;}
+.prov-list b{font-family:var(--font-display);font-weight:600;}
+@media (max-width:820px){
+  .radici__grid{grid-template-columns:1fr;}
+  .radici__copy .col2{columns:1;}
+  .radici__fig{order:-1;}
+}
+
+/* ============================================================
+   REPUTAZIONE — 4,4 ceramic wall (wow reprise)
+   ============================================================ */
+.rep{background:var(--brand-surface-alt);padding-block:clamp(4.6rem, 3rem + 6vw, 8rem);}
+.rep__grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(1.8rem,4vw,3.6rem);align-items:center;}
+.rep__plate{
+  position:relative;aspect-ratio:1/1;width:min(360px,100%);margin-inline:auto;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 36% 30%, color-mix(in srgb,var(--brand-surface) 97%, white) 0%, var(--brand-surface) 55%, var(--brand-surface-alt) 100%);
+  border:2px solid var(--brand-line);
+  box-shadow:0 40px 80px -46px rgba(36,26,19,.6), inset 0 0 0 14px var(--brand-surface);
+  display:grid;place-content:center;text-align:center;
+}
+.rep__plate::before{
+  content:"";position:absolute;inset:22px;border-radius:50%;
+  border:2px dashed color-mix(in srgb,var(--brand-accent) 40%, transparent);
+}
+.rep__score{font-family:var(--font-display);font-weight:600;font-size:clamp(4rem,14vw,6.4rem);color:var(--brand-accent);line-height:0.9;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;}
+.rep__stars{color:var(--brand-accent);font-size:1.3rem;letter-spacing:3px;margin-top:0.3rem;}
+.rep__count{font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand-muted);margin-top:0.5rem;}
+.rep__copy p+p{margin-top:1rem;}
+.rep__quote{
+  font-family:var(--font-display);font-style:italic;font-size:clamp(1.2rem,1rem+1vw,1.7rem);
+  line-height:1.35;margin:1.4rem 0;padding-left:1.1rem;border-left:4px solid var(--brand-accent);
+}
+.rep__meta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.4rem;}
+.rep__meta div{display:flex;flex-direction:column;}
+.rep__meta b{font-family:var(--font-display);font-size:1.5rem;color:var(--brand-ink);font-variant-numeric:tabular-nums;}
+.rep__meta span{font-size:0.82rem;color:var(--brand-muted);}
+@media (max-width:820px){ .rep__grid{grid-template-columns:1fr;} }
+
+/* ============================================================
+   PRENOTA — booking with sticky rail
+   ============================================================ */
+.prenota{background:var(--brand-surface);position:relative;padding-block:clamp(3.8rem, 2.8rem + 5vw, 6.8rem);}
+.prenota::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--check);opacity:.9;}
+.prenota__grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:clamp(1.6rem,4vw,3rem);align-items:start;}
+.prenota__copy p+p{margin-top:1rem;}
+.steps{list-style:none;counter-reset:s;margin:1.6rem 0 0;padding:0;display:grid;gap:1.1rem;}
+.steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.steps li::before{
+  content:counter(s);font-family:var(--font-display);font-weight:600;
+  width:38px;height:38px;border-radius:50%;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  display:grid;place-content:center;font-size:1.05rem;
+}
+.steps b{font-family:var(--font-display);font-weight:600;display:block;}
+.book-card{
+  position:sticky;top:88px;
+  background:var(--brand-surface-alt);border:1px solid var(--brand-line);border-radius:10px;
+  padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:1rem;
+}
+.book-card h3{font-size:1.5rem;}
+.book-card .num-big{font-family:var(--font-display);font-weight:600;font-size:1.9rem;color:var(--brand-ink);letter-spacing:-0.02em;text-decoration:none;font-variant-numeric:tabular-nums;}
+.book-card .hours{font-size:0.92rem;color:var(--brand-ink);border-top:1px solid var(--brand-line);padding-top:1rem;font-variant-numeric:tabular-nums;}
+.book-card .hours .row{display:flex;justify-content:space-between;gap:1rem;padding:0.25rem 0;}
+.book-card .proof-pill{align-self:flex-start;}
+.reassure{font-size:0.85rem;color:var(--brand-muted);}
+@media (max-width:820px){
+  .prenota__grid{grid-template-columns:1fr;}
+  .book-card{position:static;}
+}
+
+/* ============================================================
+   DOVE SIAMO — address + maps + facciata
+   ============================================================ */
+.dove{background:var(--brand-surface-alt);padding-block:clamp(4.2rem, 3rem + 5vw, 7.4rem);}
+.dove__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.8rem);align-items:stretch;}
+.dove__fig{border-radius:10px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 70px -46px rgba(36,26,19,.6);}
+.dove__fig img{width:100%;height:100%;object-fit:cover;}
+.dove__panel{display:flex;flex-direction:column;justify-content:center;gap:1.1rem;}
+.addr{font-style:normal;font-size:1.1rem;line-height:1.5;}
+.addr .city{color:var(--brand-muted);}
+.dir-list{list-style:none;padding:0;margin:0;display:grid;gap:0.6rem;font-size:0.95rem;}
+.dir-list li{display:flex;gap:0.65rem;align-items:flex-start;}
+.dir-list .crocetta{margin-top:0.5rem;}
+@media (max-width:760px){ .dove__grid{grid-template-columns:1fr;} }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--brand-ink);color:var(--brand-surface);padding-block:clamp(3rem,5vw,4.5rem) 2rem;}
+.site-footer a{color:var(--brand-surface);}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;}
+.footer__brand .wordmark{font-size:2.2rem;}
+.footer__brand .wm-a{color:var(--brand-accent-ink);}
+.footer__brand .wm-b{color:color-mix(in srgb,var(--brand-accent-2) 55%, var(--brand-surface));}
+.footer__brand p{color:color-mix(in srgb,var(--brand-surface) 78%, transparent);max-width:34ch;margin-top:0.9rem;}
+.footer col,.footer__col h4{margin:0 0 0.9rem;font-family:var(--font-display);font-weight:600;font-size:1.05rem;}
+.footer__col ul{list-style:none;padding:0;margin:0;display:grid;gap:0.5rem;font-size:0.95rem;}
+.footer__col a{text-decoration:none;color:color-mix(in srgb,var(--brand-surface) 85%, transparent);}
+.footer__col a:hover{color:var(--brand-accent-ink);}
+.footer__bottom{
+  border-top:1px solid color-mix(in srgb,var(--brand-surface) 22%, transparent);
+  margin-top:2.4rem;padding-top:1.4rem;
+  display:flex;flex-wrap:wrap;gap:0.6rem 1.4rem;justify-content:space-between;
+  font-size:0.8rem;color:color-mix(in srgb,var(--brand-surface) 66%, transparent);
+}
+@media (max-width:720px){ .footer__grid{grid-template-columns:1fr;gap:1.6rem;} }
+
+/* ============================================================
+   STICKY MOBILE ACTION BAR
+   ============================================================ */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:120;
+  display:none;align-items:center;gap:0.75rem;
+  background:var(--brand-surface);border-top:1px solid var(--brand-line);
+  padding:0.6rem 0.8rem calc(0.6rem + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -14px 34px -26px rgba(36,26,19,.6);
+}
+.mobile-bar .proof{display:flex;flex-direction:column;line-height:1.1;font-size:0.72rem;color:var(--brand-muted);}
+.mobile-bar .proof b{font-family:var(--font-display);font-size:1.05rem;color:var(--brand-ink);}
+.mobile-bar a{
+  margin-left:auto;flex:1;max-width:60%;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  text-decoration:none;font-weight:600;text-align:center;
+  padding:0.85rem 1rem;border-radius:var(--radius);
+}
+@media (max-width:820px){
+  .mobile-bar{display:flex;}
+  body{padding-bottom:76px;}
+}
+
+/* ============================================================
+   MOTION LAYER — pass 3
+   One language: --ease-signature for reveals, --ease-micro for spring,
+   --dur-reveal / --stagger tokens. All start-states gated behind html.js
+   (JS off => fully visible) AND prefers-reduced-motion:no-preference.
+   ============================================================ */
+
+/* ---- Shared reveal system (role-varied), driven by one IO ---- */
+@media (prefers-reduced-motion:no-preference){
+  /* base: copy blocks rise + fade */
+  html.js .reveal{
+    opacity:0;transform:translateY(26px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),
+               transform var(--dur-reveal) var(--ease-signature),
+               clip-path var(--dur-reveal) var(--ease-signature);
+  }
+  html.js .reveal.is-in{opacity:1;transform:none;}
+
+  /* media: scale-in (zoom settle) instead of rise */
+  html.js .reveal.rv-media{transform:scale(1.06);opacity:0;}
+  html.js .reveal.rv-media.is-in{transform:none;opacity:1;}
+
+  /* heading: clip-path line-mask — "text rises into being", one selectable node */
+  html.js .rv-head{
+    clip-path:inset(-8% -6% 108% -6%);transform:translateY(0.35em);opacity:1;
+    transition:clip-path var(--dur-reveal) var(--ease-signature),
+               transform var(--dur-reveal) var(--ease-signature);
+  }
+  html.js .rv-head.is-in{clip-path:inset(-8% -6% -12% -6%);transform:none;}
+
+  /* rows: cascade children along the block once it enters */
+  html.js .reveal :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *{
+    opacity:0;transform:translateY(16px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),
+               transform var(--dur-reveal) var(--ease-signature);
+  }
+  html.js .reveal.is-in :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *{opacity:1;transform:none;}
+  html.js .reveal.is-in :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *:nth-child(1){transition-delay:calc(var(--stagger)*1);}
+  html.js .reveal.is-in :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *:nth-child(2){transition-delay:calc(var(--stagger)*2);}
+  html.js .reveal.is-in :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *:nth-child(3){transition-delay:calc(var(--stagger)*3);}
+  html.js .reveal.is-in :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *:nth-child(4){transition-delay:calc(var(--stagger)*4);}
+}
+
+/* ---- SIGNATURE: masthead photo clip-path unfurl from behind the logotype ---- */
+@media (prefers-reduced-motion:no-preference){
+  html.js .masthead__figure{clip-path:inset(0 0 100% 0);animation:heroUnfurl var(--dur-reveal) var(--ease-signature) 160ms forwards;}
+}
+@keyframes heroUnfurl{to{clip-path:inset(0 0 0 0);}}
+
+/* scroll push-in on the hero media as the first viewport scrolls (native, cheap) */
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion:no-preference) and (min-width:721px){
+    html.js .masthead__figure video,
+    html.js .masthead__figure img.hero-still{
+      animation:heroPush linear both;
+      animation-timeline:scroll(root);
+      animation-range:0 90vh;
+    }
+  }
+}
+@keyframes heroPush{from{transform:scale(1.001);}to{transform:scale(1.12);}}
+
+/* canvas frame-scrub overlay — sits above the video, revealed only once frames load */
+.hero-canvas{
+  position:absolute;inset:0;width:100%;height:100%;z-index:1;
+  opacity:0;transition:opacity 500ms var(--ease-signature);pointer-events:none;
+  object-fit:cover;
+}
+.hero-canvas.is-ready{opacity:1;}
+.masthead__figure .stamp{z-index:7;} /* keep stamp above the canvas */
+
+/* ---- Per-letter wordmark cascade (load) ---- */
+.wm-letter{display:inline-block;white-space:pre;}
+@media (prefers-reduced-motion:no-preference){
+  html.js .masthead__title .wm-letter{
+    opacity:0;transform:translateY(0.5em) rotate(-6deg);
+    animation:letterSettle 640ms var(--ease-signature) forwards;
+    animation-delay:calc(120ms + var(--i,0)*26ms);
+  }
+}
+@keyframes letterSettle{to{opacity:1;transform:none;}}
+
+/* ---- 4,4 ceramic stamp spring settle (physical, overshoot via --ease-micro) ---- */
+@media (prefers-reduced-motion:no-preference){
+  html.js .masthead__figure .stamp{
+    opacity:0;transform:rotate(-8deg) scale(0.6);
+    animation:stampSettle 620ms var(--ease-micro) forwards;
+    animation-delay:calc(160ms + var(--dur-reveal));
+  }
+}
+@keyframes stampSettle{
+  0%{opacity:0;transform:rotate(-8deg) scale(0.6);}
+  60%{opacity:1;}
+  to{opacity:1;transform:rotate(-8deg) scale(1);}
+}
+
+/* ---- Depth parallax on the sala / cucina spreads (Z, differing rates) ---- */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference) and (min-width:821px){
+    html.js .spread__main img{animation:parBack linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+    html.js .spread__detail{animation:parFore linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+  }
+}
+@keyframes parBack{from{transform:translateY(-3.5%) scale(1.08);}to{transform:translateY(3.5%) scale(1.08);}}
+@keyframes parFore{from{transform:translateY(9%);}to{transform:translateY(-9%);}}
+
+/* ---- Portate: vertical-scroll-driven horizontal band (pinned track) ---- */
+/* Fallback / mobile / no-support: a normal horizontal snap-scroll row (fixed-width
+   cards so the row reliably overflows its scroller and scrolls). */
+.portate__track{display:flex;gap:clamp(1rem,2vw,1.6rem);width:max-content;}
+.portate__track > .course{flex:0 0 min(340px,80vw);}
+/* Enhanced desktop: a pinned band panned by the section's own view-timeline. */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference) and (min-width:901px) and (pointer:fine){
+    .portate__band{height:260vh;view-timeline-name:--band;view-timeline-axis:block;}
+    .portate__scroller{
+      position:sticky;top:66px;height:calc(100vh - 66px);
+      overflow:hidden;padding-bottom:0;margin-bottom:0;
+      display:flex;align-items:center;scroll-snap-type:none;
+    }
+    .portate__track{
+      align-items:center;
+      animation:bandPan linear both;
+      animation-timeline:--band;
+      animation-range:contain 0% contain 100%;
+    }
+    .portate__track > .course{flex:0 0 34vw;}
+  }
+}
+/* pan distance: reveal the off-screen cards. track is wider than the viewport,
+   clipped by the pinner's overflow:hidden, so it never trips the overflow gate. */
+@keyframes bandPan{from{transform:translateX(0);}to{transform:translateX(calc(-100% + 86vw));}}
+
+/* ---- Crocetta draw-once on menu-item hover (SVG stroke-dashoffset) ---- */
+.draw-cross{width:11px;height:11px;overflow:visible;display:block;}
+.draw-cross path{
+  stroke:var(--brand-accent);stroke-width:2;stroke-linecap:round;fill:none;
+  stroke-dasharray:var(--len,14);stroke-dashoffset:var(--len,14);
+}
+@media (prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
+  html.js .dishes .crocetta{background:none;} /* hide CSS marker, SVG takes over */
+  .draw-cross path{transition:stroke-dashoffset var(--dur-reveal) var(--ease-signature);}
+  .dishes li:hover .draw-cross path,
+  .dishes li:focus-within .draw-cross path{stroke-dashoffset:0;}
+}
+/* reduced-motion or no-hover: draw shown complete, no animation */
+.draw-cross.static path{stroke-dashoffset:0;}
+
+/* ---- Nav underline draw (micro) ---- */
+@media (hover:hover) and (pointer:fine){
+  .nav__links a{overflow:hidden;}
+  .nav__links a::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);
+  }
+  .nav__links a:hover::after,.nav__links a:focus-visible::after,.nav__links a.is-active::after{transform:scaleX(1);}
+  .course:hover .course__fig img{transform:scale(1.06);}
+}
+
+/* ---- Scroll progress bar (top hairline, native scroll timeline) ---- */
+.scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:130;
+  background:var(--brand-accent);transform:scaleX(0);transform-origin:left;pointer-events:none;
+}
+@supports (animation-timeline: scroll()){
+  .scroll-progress{animation:progressGrow linear both;animation-timeline:scroll(root);}
+}
+@keyframes progressGrow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
+/* ---- Chapter rail (desktop only; mobile keeps the sticky CTA bar) ---- */
+.chapters{
+  position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:110;
+  display:none;flex-direction:column;align-items:center;gap:14px;
+}
+.chapters::before{content:"";position:absolute;top:-6px;bottom:-6px;left:50%;transform:translateX(-50%);width:2px;background:var(--brand-line);z-index:-1;}
+.chapters a{
+  width:12px;height:12px;border-radius:50%;box-sizing:content-box;padding:6px;
+  background:color-mix(in srgb,var(--brand-muted) 45%, transparent);background-clip:content-box;
+  transition:background var(--dur-micro) var(--ease-signature),transform var(--dur-micro) var(--ease-signature);
+  display:block;
+}
+.chapters a:hover{transform:scale(1.25);}
+.chapters a.is-active{background-color:var(--brand-accent);transform:scale(1.3);}
+@media (min-width:1080px){ .chapters{display:flex;} }
+
+/* ---- Dynamic section tint (ambient, sub-perceptual) ---- */
+.tint{position:fixed;inset:0;z-index:0;pointer-events:none;background:transparent;transition:background 900ms var(--ease-signature);}
+
+/* ---- Ambient film shimmer on the grain (whisper drift) ---- */
+@media (prefers-reduced-motion:no-preference){
+  body::before{animation:grainDrift 16s ease-in-out infinite alternate;}
+}
+@keyframes grainDrift{from{background-position:0 0;}to{background-position:34px 22px;}}
+
+/* ---- Reduced motion: everything static & visible ---- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+  html.js .reveal,
+  html.js .reveal.rv-media,
+  html.js .rv-head,
+  html.js .reveal :is(.mini-list,.prov-list,.steps,.dir-list,.rep__meta) > *,
+  html.js .masthead__title .wm-letter,
+  html.js .masthead__figure .stamp{opacity:1 !important;transform:none !important;clip-path:none !important;}
+  html.js .masthead__figure{clip-path:none !important;}
+  .draw-cross path{stroke-dashoffset:0 !important;}
+  .scroll-progress,.tint,.chapters{display:none !important;}
+  .hero-canvas{display:none !important;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Salta al contenuto</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="tint" id="tint" aria-hidden="true"></div>
+<nav class="chapters" id="chapters" aria-label="Sezioni della pagina">
+  <a href="#top" aria-label="Insegna"></a>
+  <a href="#nome" aria-label="Il nome"></a>
+  <a href="#portate" aria-label="Le portate"></a>
+  <a href="#sala" aria-label="La sala"></a>
+  <a href="#cucina" aria-label="La cucina"></a>
+  <a href="#radici" aria-label="Le radici"></a>
+  <a href="#reputazione" aria-label="Ci danno 4,4"></a>
+  <a href="#prenota" aria-label="Prenota"></a>
+  <a href="#dove" aria-label="Dove siamo"></a>
+</nav>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <nav class="nav" id="nav" aria-label="Principale">
+    <a class="nav__brand wordmark" href="#top" aria-label="Al Toscanaccio — home"><span class="wm-a">Toscan</span><span class="wm-b">accio</span></a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Apri il menu">
+      <span></span>
+    </button>
+    <div class="nav__menu" id="navMenu">
+      <ul class="nav__links">
+        <li><a href="#nome">Il nome</a></li>
+        <li><a href="#portate">Le portate</a></li>
+        <li><a href="#sala">La sala</a></li>
+        <li><a href="#radici">Le radici</a></li>
+        <li><a href="#reputazione">Ci danno 4,4</a></li>
+        <li><a href="#dove">Dove siamo</a></li>
+      </ul>
+      <a class="nav__cta" data-cta href="tel:+3902341895">Chiama · 02 341895</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============ MASTHEAD / WOW ============ -->
+<section class="masthead" aria-labelledby="mh-title">
+  <div class="masthead__frame" aria-hidden="true"></div>
+  <div class="masthead__inner">
+    <p class="eyebrow masthead__eyebrow"><span class="crocetta" aria-hidden="true"></span>Trattoria toscana · Milano</p>
+    <h1 class="masthead__title wordmark" id="mh-title" aria-label="Toscanaccio">
+      <span class="wm-a" aria-hidden="true"><span class="wm-letter" style="--i:0">T</span><span class="wm-letter" style="--i:1">o</span><span class="wm-letter" style="--i:2">s</span><span class="wm-letter" style="--i:3">c</span><span class="wm-letter" style="--i:4">a</span><span class="wm-letter" style="--i:5">n</span></span><span class="wm-b" aria-hidden="true"><span class="wm-letter" style="--i:6">a</span><span class="wm-letter" style="--i:7">c</span><span class="wm-letter" style="--i:8">c</span><span class="wm-letter" style="--i:9">i</span><span class="wm-letter" style="--i:10">o</span></span>
+      <span class="wm-underline" aria-hidden="true"></span>
+    </h1>
+
+    <figure class="masthead__figure">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-tavola.jpg" aria-hidden="true">
+        <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+      </video>
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <img class="hero-still" src="assets/hero-tavola.jpg" alt="Lunga tavolata di legno apparecchiata con tovaglie a quadri, calici di Chianti e candele in una trattoria toscana" style="display:none">
+      <div class="stamp" role="img" aria-label="4,4 su 5 su Google, 687 recensioni">
+        <span><b>4,4</b><small>687 recensioni</small></span>
+      </div>
+    </figure>
+
+    <p class="masthead__tagline">Toscana schietta, a Milano. Si mangia toscano davvero — dal Chianti alla bistecca.</p>
+
+    <div class="masthead__actions">
+      <a class="btn-primary" data-cta href="tel:+3902341895">Chiama per prenotare</a>
+      <span class="call-inline">
+        <span class="muted">Apriamo alle 19 — chiamaci</span>
+        <a class="num" href="tel:+3902341895">02 341895</a>
+      </span>
+      <span class="proof-pill">
+        <span class="score">4,4</span>
+        <span><span class="stars" aria-hidden="true">★★★★★</span><br>687 recensioni su Google</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IL RACCONTO DEL NOME ============ -->
+<section class="section nome" id="nome" aria-labelledby="nome-title">
+  <div class="container nome__grid">
+    <div class="nome__body reveal">
+      <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>Un pezzo di Toscana a Milano</p>
+      <h2 class="h2 rv-head" id="nome-title">Il nome dice già tutto.</h2>
+      <p class="pull">“Toscanaccio” non è un vezzo: è la Toscana schietta, senza fronzoli, che ti accoglie a tavola.</p>
+      <p>Non siamo un ristorante “a tema”. Siamo una tavola di famiglia, dove la cucina è quella di sempre e il carattere è quello ruvido e caloroso della Toscana vera.</p>
+      <p>Qui si viene per stare insieme: coppie, tavolate di amici, colleghi che vogliono un posto vero. Niente locale patinato del centro — sostanza, tradizione e un bicchiere di Chianti versato con calma.</p>
+      <p>È la cura che oggi manca sulla scheda di Google: te la raccontiamo qui, così sai chi trovi prima ancora di sederti.</p>
+    </div>
+    <figure class="nome__fig reveal rv-media">
+      <img src="assets/hero-detail-hands.jpg" alt="Mani che versano Chianti in un calice sopra la tovaglia a quadri" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ LE PORTATE ============ -->
+<section class="section portate" id="portate" aria-labelledby="portate-title" data-tint="#6E1F2A">
+  <div class="container">
+    <div class="portate__head reveal">
+      <div>
+        <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>Le portate</p>
+        <h2 class="h2 rv-head" id="portate-title">Dagli antipasti al dolce,<br>una tavolata toscana.</h2>
+      </div>
+      <p class="lede muted">Trascina di lato per sfogliare il menù. Piatti di tradizione, come si fanno a casa.</p>
+    </div>
+
+    <div class="portate__band">
+    <div class="portate__scroller">
+    <div class="portate__track" role="list" aria-label="Le portate della trattoria">
+      <article class="course" role="listitem">
+        <div class="course__fig"><img src="assets/portata-antipasti.jpg" alt="Tagliere di antipasti toscani con salame, pecorino e crostini" loading="lazy"></div>
+        <div class="course__body">
+          <span class="course__kicker">Antipasti</span>
+          <h3>Per cominciare</h3>
+          <ul class="dishes">
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Tagliere di finocchiona e pecorino</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Crostini toscani di fegatini</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Fettunta con olio nuovo</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="course" role="listitem">
+        <div class="course__fig"><img src="assets/portata-primo.jpg" alt="Piatto di pici al ragù di cinghiale con pecorino grattugiato" loading="lazy"></div>
+        <div class="course__body">
+          <span class="course__kicker">Primi</span>
+          <h3>I primi toscani</h3>
+          <ul class="dishes">
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Pici al ragù di cinghiale</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Ribollita di verdure e pane</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Pappa al pomodoro</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="course" role="listitem">
+        <div class="course__fig"><img src="assets/portata-secondo.jpg" alt="Bistecca alla fiorentina su tagliere di legno con rosmarino e sale grosso" loading="lazy"></div>
+        <div class="course__body">
+          <span class="course__kicker">Secondi</span>
+          <h3>Dalla brace</h3>
+          <ul class="dishes">
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Bistecca alla fiorentina</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Peposo dell'Impruneta</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Arista di maiale al forno</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="course" role="listitem">
+        <div class="course__fig"><img src="assets/portata-dolce.jpg" alt="Cantucci toscani con un bicchiere di vin santo" loading="lazy"></div>
+        <div class="course__body">
+          <span class="course__kicker">Dolci</span>
+          <h3>Per chiudere</h3>
+          <ul class="dishes">
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Cantucci e Vin Santo</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Castagnaccio con ricotta</span></li>
+            <li><span class="crocetta" aria-hidden="true"></span><span class="d-name">Schiacciata all'uva</span></li>
+          </ul>
+        </div>
+      </article>
+    </div></div></div>
+    <p class="portate__note">Il menù cambia con la stagione e con quello che troviamo di buono. Il listino aggiornato, con i prezzi del giorno, è al tavolo — chiamaci per i piatti di oggi.</p>
+  </div>
+</section>
+
+<!-- ============ LA SALA ============ -->
+<section class="section spread spread--sala" id="sala" aria-labelledby="sala-title">
+  <div class="container spread__grid">
+    <div class="spread__media reveal">
+      <div class="spread__main">
+        <img src="assets/sala-room.jpg" alt="Sala accogliente della trattoria con tovaglie a quadri, sedie di legno e lampade calde" loading="lazy">
+      </div>
+      <div class="spread__detail">
+        <img src="assets/sala-detail.jpg" alt="Dettaglio di tavolo con fiasco di Chianti, candela e brocca di terracotta" loading="lazy">
+      </div>
+    </div>
+    <div class="spread__copy reveal">
+      <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>La sala</p>
+      <h2 class="h2 rv-head" id="sala-title">Una tavola già apparecchiata per stare bene.</h2>
+      <p>Tovaglie a quadri, luce calda di lampada, il fiasco di Chianti sul tavolo. La sala è pensata per le tavolate: si parla forte, si ride, si resta.</p>
+      <p>È l'atmosfera che riporta la gente — quella che nelle recensioni chiamano “casa”. Prenotare qui vuol dire tenere il posto per una serata vera, non per una foto.</p>
+      <ul class="mini-list">
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Tavolate</b> — spazio per gruppi di amici e colleghi.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Serale</b> — apriamo alle 19, per la cena con calma.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Conviviale</b> — si condivide, dal tagliere alla fiorentina.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA CUCINA ============ -->
+<section class="section spread spread--cucina" id="cucina" aria-labelledby="cucina-title" data-tint="#B84A26">
+  <div class="container spread__grid">
+    <div class="spread__media reveal">
+      <div class="spread__main">
+        <img src="assets/cucina-chef.jpg" alt="Cuoco della trattoria mentre impiatta un piatto toscano al passe" loading="lazy">
+      </div>
+      <div class="spread__detail">
+        <img src="assets/cucina-detail.jpg" alt="Ciotola fumante di ribollita toscana con filo d'olio" loading="lazy">
+      </div>
+    </div>
+    <div class="spread__copy reveal">
+      <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>La cucina</p>
+      <h2 class="h2 rv-head" id="cucina-title">Il fare, non la posa.</h2>
+      <p>La bistecca sul fuoco, il ragù che sobbolle piano, la ribollita rifatta il giorno dopo com'è giusto. Qui la sostanza viene prima della decorazione.</p>
+      <p>Cuciniamo come si è sempre fatto: pochi ingredienti, quelli giusti, e il tempo che serve. Niente scorciatoie, niente moda passeggera.</p>
+      <ul class="mini-list">
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Tradizione</b> — ricette toscane, senza reinterpretazioni.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Cotture lente</b> — peposo e ragù che aspettano il loro tempo.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Stagione</b> — la spesa detta il menù, non il contrario.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DALLE RADICI TOSCANE ============ -->
+<section class="section radici" id="radici" aria-labelledby="radici-title">
+  <div class="container radici__grid">
+    <figure class="radici__fig reveal rv-media">
+      <img src="assets/provenance-toscana.jpg" alt="Natura morta di dispensa toscana con olio, pane, rosmarino e pecorino" loading="lazy">
+    </figure>
+    <div class="radici__copy reveal">
+      <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>Dalle radici toscane</p>
+      <h2 class="h2 rv-head" id="radici-title">La schiettezza è negli ingredienti.</h2>
+      <p>Quello che il nome promette, la dispensa lo mantiene. Portiamo a Milano i sapori della Toscana partendo da materie prime semplici e vere.</p>
+      <ul class="prov-list">
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Olio extravergine</b> — verde e pizzicante, sul pane e a crudo.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Pane sciocco</b> — senza sale, come vuole la tradizione toscana.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Chianti</b> — il rosso di casa, versato senza cerimonie.</span></li>
+        <li><span class="crocetta" aria-hidden="true"></span><span><b>Pecorino e salumi</b> — taglieri di sostanza, non di scena.</span></li>
+      </ul>
+      <p style="margin-top:1.3rem">È questo che ci distingue dai finti locali “a tema”: qui la Toscana non è un arredo, è quello che c'è nel piatto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPUTAZIONE — 4,4 (wow reprise) ============ -->
+<section class="section rep" id="reputazione" aria-labelledby="rep-title" data-tint="#6E1F2A">
+  <div class="container rep__grid">
+    <div class="rep__plate reveal" role="img" aria-label="Valutazione media 4,4 su 5 su Google da 687 recensioni">
+      <div>
+        <div class="rep__score">4,4</div>
+        <div class="rep__stars" aria-hidden="true">★★★★★</div>
+        <div class="rep__count">687 recensioni · Google</div>
+      </div>
+    </div>
+    <div class="rep__copy reveal">
+      <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>Ci danno 4,4</p>
+      <h2 class="h2 rv-head" id="rep-title">Una reputazione solida,<br>costruita a tavola.</h2>
+      <p class="rep__quote">Un 4,4 su 687 recensioni non è un colpo di fortuna: è la costanza di chi torna.</p>
+      <p>Sono i clienti a dirlo, in centinaia di recensioni su Google, negli anni. Non un picco isolato, ma un giudizio che tiene — perché la cucina e l'accoglienza restano le stesse.</p>
+      <div class="rep__meta">
+        <div><b>4,4/5</b><span>Valutazione media</span></div>
+        <div><b data-count="687">687</b><span>Recensioni Google</span></div>
+        <div><b>Costante</b><span>Nel tempo, non un picco</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRENOTA ============ -->
+<section class="section prenota" id="prenota" aria-labelledby="prenota-title">
+  <div class="container prenota__grid">
+    <div class="prenota__copy reveal">
+      <p class="eyebrow"><span class="crocetta" aria-hidden="true"></span>Prenota</p>
+      <h2 class="h2 rv-head" id="prenota-title">Tieni il tuo posto a tavola.</h2>
+      <p>La sera si riempie in fretta, soprattutto per le tavolate. Una telefonata basta: ti diciamo subito se c'è posto e per quante persone.</p>
+      <ol class="steps">
+        <li><span></span><span><b>Chiamaci</b>Al 02 341895, apriamo alle 19.</span></li>
+        <li><span></span><span><b>Dicci quando e in quanti</b>Coppia o tavolata, ci organizziamo.</span></li>
+        <li><span></span><span><b>Ti aspettiamo</b>Trovi la tavola pronta e il Chianti fresco.</span></li>
+      </ol>
+    </div>
+
+    <aside class="book-card reveal" aria-label="Prenotazione telefonica">
+      <h3>Prenotazione</h3>
+      <span class="muted">Chiama e prenota direttamente con noi:</span>
+      <a class="num-big" data-cta href="tel:+3902341895">02 341895</a>
+      <a class="btn-primary" data-cta href="tel:+3902341895" style="justify-content:center">Chiama ora</a>
+      <span class="proof-pill">
+        <span class="score">4,4</span>
+        <span>687 recensioni su Google</span>
+      </span>
+      <div class="hours">
+        <div class="row"><span>Cena</span><b>dalle 19:00</b></div>
+        <div class="row"><span class="muted">Pranzo</span><span class="muted">su richiesta</span></div>
+      </div>
+      <p class="reassure">Orari indicativi per la sera: confermali con noi al telefono quando prenoti.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ DOVE SIAMO ============ -->
+<section class="section dove" id="dove" aria-labelledby="dove-title" data-tint="#241A13">
+  <div class="container">
+    <p class="eyebrow reveal"><span class="crocetta" aria-hidden="true"></span>Dove siamo</p>
+    <h2 class="h2 rv-head" id="dove-title" style="margin-bottom:1.8rem">A Milano, per la cena.</h2>
+    <div class="dove__grid">
+      <figure class="dove__fig reveal rv-media">
+        <img src="assets/facciata-sera.jpg" alt="Facciata serale della trattoria con vetrine illuminate su una via tranquilla di Milano" loading="lazy">
+      </figure>
+      <div class="dove__panel reveal">
+        <address class="addr">
+          <strong>Al Toscanaccio</strong><br>
+          Via Privata Chieti 1<br>
+          <span class="city">Milano</span>
+        </address>
+        <ul class="dir-list">
+          <li><span class="crocetta" aria-hidden="true"></span><span>Zona tranquilla, comoda per la sera.</span></li>
+          <li><span class="crocetta" aria-hidden="true"></span><span>Apriamo alle 19 — arriva con calma.</span></li>
+          <li><span class="crocetta" aria-hidden="true"></span><span>Per gruppi, meglio una telefonata prima.</span></li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:0.4rem">
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Al%20Toscanaccio%20Via%20Privata%20Chieti%201%20Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          <a class="btn-primary" data-cta href="tel:+3902341895">Chiama · 02 341895</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER / CONTATTI ============ -->
+<footer class="site-footer" id="contatti" aria-labelledby="footer-title">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <span class="wordmark" aria-hidden="true"><span class="wm-a">Toscan</span><span class="wm-b">accio</span></span>
+      <h2 id="footer-title" style="position:absolute;left:-999px">Contatti</h2>
+      <p>Toscana schietta, a Milano. Una tavola di famiglia dove si mangia toscano davvero.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Contatti</h4>
+      <ul>
+        <li><a data-cta href="tel:+3902341895">Telefono · 02 341895</a></li>
+        <li>Via Privata Chieti 1, Milano</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Al%20Toscanaccio%20Via%20Privata%20Chieti%201%20Milano" target="_blank" rel="noopener">Apri in Google Maps</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Orari &amp; tavola</h4>
+      <ul>
+        <li>Cena — dalle 19:00</li>
+        <li>4,4/5 su Google · 687 recensioni</li>
+        <li><a href="#prenota">Prenota un tavolo</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© Al Toscanaccio · Trattoria toscana, Milano</span>
+    <span>Orari indicativi: confermali al telefono. Menù stagionale.</span>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE ACTION BAR ============ -->
+<div class="mobile-bar" aria-hidden="false">
+  <span class="proof"><b>4,4</b>687 recensioni</span>
+  <a data-cta href="tel:+3902341895">Chiama · 02 341895</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine   = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var hasIO  = 'IntersectionObserver' in window;
+
+  /* ---------- Mobile nav toggle (accessible, Esc closes) ---------- */
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('navMenu');
+  function closeNav(){ nav.setAttribute('data-open','false'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Apri il menu'); }
+  function openNav(){ nav.setAttribute('data-open','true'); toggle.setAttribute('aria-expanded','true'); toggle.setAttribute('aria-label','Chiudi il menu'); }
+  if(toggle){
+    toggle.addEventListener('click', function(){ nav.getAttribute('data-open')==='true' ? closeNav() : openNav(); });
+    menu.addEventListener('click', function(e){ if(e.target.closest('a')) closeNav(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && nav.getAttribute('data-open')==='true'){ closeNav(); toggle.focus(); } });
+  }
+
+  /* ---------- Role-varied reveals, one rAF-batched IntersectionObserver ---------- */
+  var reveals = document.querySelectorAll('.reveal, .rv-head');
+  if(reduce || !hasIO){
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  } else {
+    var queued = [];
+    var flush = null;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ queued.push(en.target); io.unobserve(en.target); }
+      });
+      if(queued.length && !flush){
+        flush = requestAnimationFrame(function(){
+          queued.forEach(function(el){ el.classList.add('is-in'); });
+          queued = []; flush = null;
+        });
+      }
+    }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- Draw-once crocetta on dish hover (SVG stroke-dashoffset) ---------- */
+  if(fine && !reduce){
+    document.querySelectorAll('.dishes .crocetta').forEach(function(mark){
+      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('viewBox','0 0 11 11'); svg.setAttribute('class','draw-cross'); svg.setAttribute('aria-hidden','true');
+      var p = document.createElementNS('http://www.w3.org/2000/svg','path');
+      p.setAttribute('d','M5.5 1 V10 M1 5.5 H10');
+      p.setAttribute('style','--len:18');
+      svg.appendChild(p); mark.appendChild(svg);
+    });
+  }
+
+  /* ---------- Count-up on the real review count ---------- */
+  function countUp(el){
+    var target = parseInt(el.getAttribute('data-count'),10);
+    if(reduce || !target){ el.textContent = target || el.textContent; return; }
+    var start = null, dur = 1100;
+    function step(ts){
+      if(start===null) start = ts;
+      var t = Math.min((ts-start)/dur, 1);
+      var eased = 1-Math.pow(1-t,3);
+      el.textContent = Math.round(eased*target).toLocaleString('it-IT');
+      if(t<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if(hasIO && !reduce){
+    var cio = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target); } }); }, {threshold:0.6});
+    counters.forEach(function(c){ cio.observe(c); });
+  } else { counters.forEach(countUp); }
+
+  /* ---------- Chapter rail active dot + ambient section tint ---------- */
+  var chapters = document.getElementById('chapters');
+  var dots = chapters ? chapters.querySelectorAll('a') : [];
+  var tint = document.getElementById('tint');
+  var tracked = document.querySelectorAll('main > span[id], main section[id]');
+  if(hasIO && tracked.length){
+    var ratios = {};
+    var sio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ ratios[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+      // current section = highest visible ratio
+      var bestId=null, best=0;
+      Object.keys(ratios).forEach(function(id){ if(ratios[id]>best){ best=ratios[id]; bestId=id; } });
+      if(bestId){
+        dots.forEach(function(d){ d.classList.toggle('is-active', d.getAttribute('href')==='#'+bestId); });
+        if(tint && !reduce){
+          var sec = document.getElementById(bestId);
+          var hex = sec && sec.getAttribute('data-tint');
+          tint.style.background = hex ? ('color-mix(in srgb, '+hex+' 5%, transparent)') : 'transparent';
+        }
+      }
+    }, {threshold:[0,0.25,0.5,0.75,1]});
+    tracked.forEach(function(s){ sio.observe(s); });
+  }
+
+  /* ---------- Magnetic primary CTA (desktop only, capped travel) ---------- */
+  if(fine && !reduce){
+    var cta = document.querySelector('.masthead__actions .btn-primary');
+    if(cta){
+      var CAP = 9;
+      cta.addEventListener('mousemove', function(e){
+        var r = cta.getBoundingClientRect();
+        var x = ((e.clientX-r.left)/r.width-0.5)*2*CAP;
+        var y = ((e.clientY-r.top)/r.height-0.5)*2*CAP;
+        cta.style.transform = 'translate('+x.toFixed(1)+'px,'+(y-2).toFixed(1)+'px)';
+      });
+      cta.addEventListener('mouseleave', function(){ cta.style.transform = ''; });
+    }
+  }
+
+  /* ---------- Hero scroll-cinema: canvas frame-scrub over the video base ----------
+     Progressive enhancement: the <video> already autoplay-loops as a clean hero.
+     Canvas frames scrub smoothly on every device (incl. iOS). If anything fails
+     to load, the canvas never reveals and the video stays. Off under reduced-motion. */
+  (function heroCinema(){
+    var masthead = document.querySelector('.masthead');
+    var canvas = document.getElementById('heroCanvas');
+    if(!masthead || !canvas || reduce) return;
+    var ctx; try{ ctx = canvas.getContext('2d'); }catch(e){ return; }
+    if(!ctx) return;
+
+    var FRAMES = 48;
+    var dir = window.matchMedia('(max-width:760px)').matches ? 'mobile' : 'desktop';
+    var imgs = new Array(FRAMES);      // Image objects
+    var ok = new Array(FRAMES);        // loaded flags
+    var loadedCount = 0;
+    function pad(n){ return ('000'+n).slice(-4); }
+    function load(i){
+      var im = new Image();
+      im.decoding = 'async';
+      im.onload = function(){ ok[i]=true; loadedCount++; };
+      im.onerror = function(){ ok[i]=false; };
+      im.src = 'assets/hero-frames/'+dir+'/frame-'+pad(i+1)+'.webp';
+      imgs[i] = im;
+    }
+    // critical frame first, then the rest lazily
+    load(0);
+    var li = 1;
+    (function chain(){ if(li<FRAMES){ load(li++); setTimeout(chain, 12); } })();
+
+    function nearest(idx){
+      idx = Math.max(0, Math.min(FRAMES-1, idx));
+      if(ok[idx]) return imgs[idx];
+      for(var d=1; d<FRAMES; d++){
+        if(idx-d>=0 && ok[idx-d]) return imgs[idx-d];
+        if(idx+d<FRAMES && ok[idx+d]) return imgs[idx+d];
+      }
+      return null;
+    }
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    function size(){
+      var r = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.round(r.width*dpr));
+      canvas.height = Math.max(1, Math.round(r.height*dpr));
+    }
+    function drawCover(img){
+      var cw=canvas.width, ch=canvas.height, iw=img.naturalWidth, ih=img.naturalHeight;
+      if(!iw||!ih) return;
+      var scale=Math.max(cw/iw, ch/ih), w=iw*scale, h=ih*scale;
+      ctx.clearRect(0,0,cw,ch);
+      ctx.drawImage(img,(cw-w)/2,(ch-h)*0.4,w,h);
+    }
+    var cur = 1, ready=false, running=false, raf=null;
+    function progress(){
+      var r = masthead.getBoundingClientRect();
+      var denom = r.height || 1;
+      var p = -r.top/denom; if(p<0) p=0; if(p>1) p=1;
+      return p;
+    }
+    function tick(){
+      var target = 1 + progress()*(FRAMES-1);
+      cur += (target-cur)*0.12;
+      var img = nearest(Math.round(cur));
+      if(img && img.complete){
+        drawCover(img);
+        if(!ready){ ready=true; canvas.classList.add('is-ready'); }
+      }
+      if(running) raf = requestAnimationFrame(tick);
+    }
+    function start(){ if(!running){ running=true; size(); tick(); } }
+    function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=null; }
+
+    if(hasIO){
+      var vio = new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? start() : stop(); }); }, {threshold:0.01});
+      vio.observe(masthead);
+    } else { start(); }
+    var rt;
+    /* only re-size; the running rAF loop repaints on its own next frame */
+    window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(size, 150); });
+  })();
+})();
+</script>
+</body>
+</html>

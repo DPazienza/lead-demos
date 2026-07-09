@@ -1,0 +1,1196 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volta Street — Ristorante a Brera, Milano | Cucina della tradizione</title>
+<meta name="description" content="Volta Street: cucina della tradizione italiana in una sala milanese di 55 coperti sotto le volte originali, a due passi da Brera e Corso Como. 4,6 su 436 recensioni. Prenota chiamando +39 02 39669373.">
+<link rel="canonical" href="https://www.voltastreet.it/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Volta Street — Cucina della tradizione, Milano">
+<meta property="og:description" content="Una sala raccolta sotto le volte originali, a due passi da Brera. 55 coperti, 4,6 su 436 recensioni. Prenota il tuo tavolo.">
+<meta property="og:image" content="https://www.voltastreet.it/assets/hero-sala-arch.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Volta Street — Cucina della tradizione, Milano">
+<meta name="twitter:description" content="Una sala raccolta sotto le volte originali, a due passi da Brera. 55 coperti, 4,6 su 436 recensioni.">
+<meta name="twitter:image" content="https://www.voltastreet.it/assets/hero-sala-arch.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Volta Street",
+  "servesCuisine": "Italian",
+  "url": "https://www.voltastreet.it/",
+  "image": "https://www.voltastreet.it/assets/hero-sala-arch.jpg",
+  "telephone": "+390239669373",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Alessandro Volta 3",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "436"
+  }
+}
+</script>
+
+<style>
+  /* ============ BRAND TOKENS — defined ONCE ============ */
+  :root{
+    --brand-ink:#241C16;
+    --brand-surface:#F7F1E8;
+    --brand-surface-alt:#EFE7DB;
+    --brand-accent:#9E3B2A;
+    --brand-accent-ink:#F7F1E8;
+    --brand-muted:#6E5F50;
+    --brand-line:#DED3C4;
+
+    --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+    --font-body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+
+    --ease-signature:cubic-bezier(0.16,1,0.3,1);
+    --ease-micro:cubic-bezier(0.33,0,0.2,1);
+    --dur-reveal:900ms;
+    --dur-micro:200ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem,8vw,9rem);
+    --container:min(1180px,92vw);
+    --radius:6px;
+
+    --fs-hero:clamp(2.6rem,1.55rem + 4.7vw,5.6rem);
+    --fs-h2:clamp(1.7rem,1.2rem + 2.15vw,2.9rem);
+    --fs-body:clamp(1rem,0.95rem + 0.24vw,1.15rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{
+    position:relative;
+    margin:0;
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    line-height:1.65;
+    color:var(--brand-ink);
+    background:var(--brand-surface);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    text-wrap:pretty;
+  }
+  /* fine grain — inline SVG turbulence, never a generated texture image */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:0.045;
+    mix-blend-mode:soft-light;
+    pointer-events:none;
+    z-index:2147483647;
+  }
+  img,video{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{
+    font-family:var(--font-display);font-weight:500;letter-spacing:-0.03em;line-height:1.05;margin:0;
+    font-optical-sizing:auto;text-wrap:balance;
+  }
+  p{margin:0}
+  ul{margin:0;padding:0;list-style:none}
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink)}
+
+  :focus-visible{
+    outline:3px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .container{width:var(--container);margin-inline:auto}
+  .eyebrow{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brand-muted);
+    display:inline-flex;
+    align-items:center;
+    gap:0.55rem;
+    margin:0 0 1.1rem;
+  }
+  /* keystone mark on the apex of every eyebrow (motif: chiave di volta sopra l'apice degli eyebrow) */
+  .eyebrow::before{
+    content:"";
+    width:16px;height:9px;
+    border:2px solid var(--brand-accent);
+    border-bottom:none;
+    border-radius:16px 16px 0 0;
+    display:inline-block;
+    flex:none;
+  }
+  .lead{font-size:clamp(1.12rem,1rem + 0.5vw,1.4rem);color:var(--brand-ink)}
+  .muted{color:var(--brand-muted)}
+
+  /* ============ MOTIF: la volta (arch) ============ */
+  /* arch-topped photo/card frame */
+  .arch-frame{
+    position:relative;
+    border-radius:9999px 9999px var(--radius) var(--radius);
+    overflow:hidden;
+    background:var(--brand-surface-alt);
+  }
+  .arch-frame img,.arch-frame video{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  /* thin arch stroke drawn over the top of a framed photo */
+  .arch-frame::after{
+    content:"";
+    position:absolute;inset:0;
+    border:2px solid color-mix(in srgb,var(--brand-line) 80%,transparent);
+    border-radius:inherit;
+    pointer-events:none;
+  }
+  /* list markers as a tiny arch */
+  .arch-list li{
+    position:relative;
+    padding-left:1.7rem;
+    margin-bottom:0.7rem;
+  }
+  .arch-list li::before{
+    content:"";
+    position:absolute;left:0;top:0.55em;
+    width:12px;height:7px;
+    border:2px solid var(--brand-accent);
+    border-bottom:none;
+    border-radius:12px 12px 0 0;
+  }
+  /* section divider: a lowered arch along the spine */
+  .arch-divider{
+    width:min(160px,40vw);
+    height:34px;
+    margin:0 auto;
+    border:2px solid var(--brand-line);
+    border-bottom:none;
+    border-radius:180px 180px 0 0;
+  }
+
+  /* ============ HEADER / NAV ============ */
+  .site-header{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb,var(--brand-surface) 92%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav-inner{
+    width:var(--container);margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;min-height:68px;
+  }
+  /* wordmark */
+  .wordmark{
+    font-family:var(--font-display);
+    line-height:1;
+    display:inline-flex;align-items:baseline;gap:0.34em;
+    position:relative;
+    text-decoration:none;color:var(--brand-ink);
+    white-space:nowrap;
+  }
+  .wordmark .wm-volta{font-weight:500;font-optical-sizing:auto;letter-spacing:-0.01em}
+  .wordmark .wm-street{font-weight:400;letter-spacing:0.02em}
+  /* keystone arch sitting above the space between the two words */
+  .wordmark .wm-keystone{
+    position:absolute;left:50%;top:-0.42em;
+    transform:translateX(-50%);
+    width:20px;height:11px;
+    border:2px solid var(--brand-accent);
+    border-bottom:none;
+    border-radius:20px 20px 0 0;
+  }
+  .wordmark .wm-keystone::after{
+    content:"";position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);
+    width:3px;height:6px;background:var(--brand-accent);
+  }
+  .header .wordmark{font-size:1.32rem}
+
+  .nav-links{
+    display:flex;align-items:center;gap:1.6rem;
+  }
+  .nav-links a{
+    text-decoration:none;color:var(--brand-ink);
+    font-size:0.92rem;font-weight:500;
+    padding:0.4rem 0;position:relative;
+  }
+  .nav-links a[aria-current="true"]{color:var(--brand-accent)}
+  .nav-links a:hover{color:var(--brand-accent)}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    font-family:var(--font-body);font-weight:600;font-size:0.95rem;
+    padding:0.72rem 1.3rem;border-radius:999px;
+    text-decoration:none;cursor:pointer;border:2px solid transparent;
+    transition:transform var(--dur-micro) var(--ease-micro),
+               background var(--dur-micro) var(--ease-micro);
+  }
+  .btn-accent{background:var(--brand-accent);color:var(--brand-accent-ink)}
+  .btn-accent:hover{transform:translateY(-1px)}
+  .btn-accent:active{transform:translateY(1px) scale(0.99)}
+  .btn-ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line)}
+  .btn-ghost:hover{border-color:var(--brand-accent);color:var(--brand-accent)}
+  .btn-sm{padding:0.55rem 1rem;font-size:0.88rem}
+
+  .nav-cta{display:inline-flex}
+  .nav-toggle{
+    display:none;
+    background:transparent;border:1px solid var(--brand-line);border-radius:8px;
+    width:44px;height:44px;cursor:pointer;
+    align-items:center;justify-content:center;
+    color:var(--brand-ink);
+  }
+  .nav-toggle svg{width:22px;height:22px}
+
+  /* ============ HERO / PORTALE ============ */
+  .hero{
+    position:relative;
+    padding:clamp(2rem,4vw,3.5rem) 0 var(--space-section);
+    background:var(--brand-surface);
+  }
+  .hero-grid{
+    width:var(--container);margin-inline:auto;
+    display:grid;grid-template-columns:1.05fr 0.95fr;
+    gap:clamp(1.5rem,4vw,3.5rem);align-items:center;
+  }
+  .hero-copy{max-width:34rem}
+  .hero h1{
+    font-size:var(--fs-hero);
+    margin:0.4rem 0 0;
+    font-weight:500;
+  }
+  .hero h1 .wm-line{display:block}
+  .hero h1 .wm-street{font-weight:400;letter-spacing:0.01em}
+  .hero .h1-keystone{
+    display:block;width:30px;height:16px;margin-bottom:0.5rem;
+    border:2.5px solid var(--brand-accent);border-bottom:none;
+    border-radius:30px 30px 0 0;position:relative;
+  }
+  .hero .h1-keystone::after{
+    content:"";position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);
+    width:4px;height:8px;background:var(--brand-accent);
+  }
+  .hero-promise{margin:1.4rem 0 1.8rem;font-size:clamp(1.12rem,1rem + 0.6vw,1.45rem);color:var(--brand-ink);max-width:34rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:0.8rem;align-items:center}
+  .hero-proof{
+    display:flex;align-items:center;gap:0.6rem;
+    margin-top:1.5rem;font-size:0.95rem;color:var(--brand-muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .stars{display:inline-flex;gap:2px;color:var(--brand-accent);line-height:1}
+  .stars svg{width:16px;height:16px;fill:currentColor}
+  .stars .half{opacity:0.5}
+  .hero-proof strong{color:var(--brand-ink);font-weight:600}
+
+  /* the ARCH PORTAL — the wow: a full-height arch cut into the page through which the sala is seen */
+  .portal{
+    position:relative;
+    display:flex;justify-content:center;
+    padding-top:1rem;
+  }
+  .portal-arch{
+    position:relative;
+    width:min(420px,80vw);
+    aspect-ratio:3/4.2;
+    border-radius:9999px 9999px 10px 10px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(36,28,22,0.45);
+    background:var(--brand-surface-alt);
+  }
+  .portal-arch video,.portal-arch img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  /* keystone 'V' at the apex of the portal arch */
+  .portal-keystone{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    width:52px;height:40px;
+    background:var(--brand-surface);
+    border:2px solid var(--brand-accent);
+    border-bottom:none;
+    border-radius:52px 52px 6px 6px;
+    display:flex;align-items:flex-end;justify-content:center;
+    padding-bottom:5px;z-index:3;
+    font-family:var(--font-display);font-weight:600;color:var(--brand-accent);
+    font-size:1.35rem;line-height:1;
+  }
+  .portal-arch::after{
+    content:"";position:absolute;inset:0;
+    border:2px solid color-mix(in srgb,var(--brand-surface) 70%,transparent);
+    border-radius:inherit;pointer-events:none;
+  }
+  /* offset companion detail (hero-detail-keystone) — layered editorial, not a side-by-side grid */
+  .portal-detail{
+    position:absolute;right:-6%;bottom:-3%;
+    width:38%;max-width:170px;
+    aspect-ratio:3/4;
+    border-radius:999px 999px 6px 6px;
+    overflow:hidden;
+    border:5px solid var(--brand-surface);
+    box-shadow:0 18px 34px -20px rgba(36,28,22,0.5);
+    z-index:2;
+  }
+  .portal-detail img{width:100%;height:100%;object-fit:cover}
+
+  /* ============ GENERIC SECTION ============ */
+  section{position:relative}
+  .band{padding-block:var(--space-section)}
+  .band.alt{background:var(--brand-surface-alt)}
+  .band.surface{background:var(--brand-surface)}
+  /* uneven pacing: a denser statement, then a slower breath toward the emotional close */
+  #cucina.band{padding-block:clamp(3.4rem,5.5vw,5.6rem)}
+  #occasioni.band{padding-block:clamp(4rem,7vw,7.5rem)}
+  #reputazione.band{padding-block:clamp(6rem,11vw,12rem)}
+  .section-head{max-width:40rem;margin-bottom:clamp(2rem,4vw,3.2rem)}
+  .section-head h2{font-size:var(--fs-h2);margin-bottom:0.8rem}
+
+  /* campata: alternating photo / text spread with an arch that oversteps the column */
+  .campata{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:clamp(1.6rem,4vw,4rem);align-items:center;
+  }
+  .campata.flip .campata-media{order:2}
+  .campata-copy h2{font-size:var(--fs-h2);margin-bottom:1rem}
+  .campata-copy p{max-width:42ch}
+  .campata-copy p + p{margin-top:1rem}
+
+  /* layered media set: main + offset companion (sala-wide + sala-detail) */
+  .media-set{position:relative;padding-bottom:2.5rem;padding-right:2rem}
+  .media-set .m-main{
+    border-radius:9999px 9999px 10px 10px;
+    overflow:hidden;aspect-ratio:4/3.4;position:relative;
+    box-shadow:0 24px 48px -28px rgba(36,28,22,0.4);
+  }
+  .media-set .m-main img{width:100%;height:100%;object-fit:cover}
+  .media-set .m-main::after{
+    content:"";position:absolute;inset:0;border:2px solid color-mix(in srgb,var(--brand-line) 70%,transparent);
+    border-radius:inherit;pointer-events:none;
+  }
+  .media-set .m-detail{
+    position:absolute;right:0;bottom:0;
+    width:44%;max-width:210px;aspect-ratio:1/1;
+    border-radius:999px 999px 6px 6px;overflow:hidden;
+    border:6px solid var(--brand-surface);
+    box-shadow:0 18px 34px -20px rgba(36,28,22,0.45);
+  }
+  .band.alt .media-set .m-detail{border-color:var(--brand-surface-alt)}
+  .media-set .m-detail img{width:100%;height:100%;object-fit:cover}
+
+  .stat-row{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3rem);margin-top:1.8rem}
+  .stat b{
+    display:block;font-family:var(--font-display);font-weight:600;
+    font-size:2.4rem;color:var(--brand-accent);line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat span{font-size:0.85rem;color:var(--brand-muted);letter-spacing:0.02em}
+
+  /* ============ CUCINA (philosophy) ============ */
+  .cucina-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.5rem)}
+  .cucina-lead{font-size:clamp(1.3rem,1.1rem + 1vw,1.9rem);font-family:var(--font-display);font-weight:400;line-height:1.25;max-width:22ch;text-wrap:balance}
+  .cucina-grid .muted{max-width:46ch}
+  .materie{margin-top:1.2rem}
+  .materie h3{font-size:1.05rem;font-weight:600;font-family:var(--font-body);margin-bottom:0.7rem}
+
+  /* ============ PIATTI ============ */
+  .dishes{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:clamp(1rem,2.5vw,1.8rem);
+  }
+  .dish{
+    background:var(--brand-surface);
+    border:1px solid var(--brand-line);
+    border-radius:9999px 9999px var(--radius) var(--radius);
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:transform var(--dur-micro) var(--ease-micro);
+  }
+  .band.alt .dish{background:var(--brand-surface)}
+  .dish:hover{transform:translateY(-4px)}
+  .dish-media{aspect-ratio:1/1;position:relative;overflow:hidden;border-radius:inherit;border-bottom-left-radius:0;border-bottom-right-radius:0}
+  .dish-media img{width:100%;height:100%;object-fit:cover;transition:transform 500ms var(--ease-signature)}
+  .dish:hover .dish-media img{transform:scale(1.05)}
+  .dish-body{padding:1.1rem 1.2rem 1.4rem}
+  .dish-body h3{font-size:1.16rem;font-weight:600;margin-bottom:0.4rem}
+  .dish-body p{font-size:0.92rem;color:var(--brand-muted)}
+
+  .menu-note{
+    margin-top:clamp(1.8rem,4vw,2.8rem);
+    display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;
+    padding:1.4rem 1.6rem;border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);
+  }
+  .band.alt .menu-note{background:var(--brand-surface)}
+  .menu-cats{display:flex;flex-wrap:wrap;gap:0.4rem 1.4rem;font-size:0.95rem}
+  .menu-cats span{color:var(--brand-muted)}
+  .menu-cats b{color:var(--brand-ink);font-weight:600}
+
+  /* ============ OCCASIONI ============ */
+  .occasioni{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.4rem)}
+  .occ-card{
+    border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;
+    background:var(--brand-surface);display:flex;flex-direction:column;
+  }
+  .band.alt .occ-card{background:var(--brand-surface)}
+  .occ-media{aspect-ratio:16/10;overflow:hidden}
+  .occ-media img{width:100%;height:100%;object-fit:cover}
+  .occ-body{padding:1.5rem 1.6rem 1.7rem}
+  .occ-body h3{font-size:1.35rem;margin-bottom:0.6rem}
+  .occ-body p{color:var(--brand-muted);font-size:0.98rem}
+
+  /* ============ BRERA ============ */
+  .brera{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+  .brera-media{border-radius:9999px 9999px 10px 10px;overflow:hidden;aspect-ratio:5/4;position:relative}
+  .brera-media img{width:100%;height:100%;object-fit:cover}
+  .brera-media::after{content:"";position:absolute;inset:0;border:2px solid color-mix(in srgb,var(--brand-line) 70%,transparent);border-radius:inherit;pointer-events:none}
+  .addr{font-style:normal;margin:1.2rem 0 1.4rem;font-size:1.05rem}
+  .addr .accent{color:var(--brand-accent);font-weight:600}
+  .transit{display:flex;align-items:center;gap:0.6rem;color:var(--brand-muted);font-size:0.95rem;margin-bottom:1.4rem}
+  .mm-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:24px;height:24px;border-radius:5px;background:var(--brand-accent);
+    color:var(--brand-accent-ink);font-weight:700;font-size:0.8rem;flex:none;
+  }
+
+  /* ============ SOCIAL PROOF / DAL 2011 ============ */
+  .proof-wrap{text-align:center;max-width:44rem;margin-inline:auto}
+  .proof-score{
+    font-family:var(--font-display);font-weight:600;color:var(--brand-accent);
+    font-size:clamp(4rem,3rem + 8vw,7.5rem);line-height:0.9;
+    font-variant-numeric:tabular-nums;
+  }
+  .proof-stars{justify-content:center;margin:0.6rem 0 0.4rem;font-size:0}
+  .proof-stars svg{width:26px;height:26px}
+  .proof-count{font-size:1.1rem;color:var(--brand-ink)}
+  .proof-count b{font-weight:600}
+  .proof-sub{margin-top:1.2rem;color:var(--brand-muted);max-width:46ch;margin-inline:auto}
+  .proof-meta{margin-top:1.6rem;font-size:0.85rem;color:var(--brand-muted);letter-spacing:0.02em}
+
+  /* ============ PRENOTA / CONTACT ============ */
+  .prenota{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:start}
+  .info-list{margin-top:0.5rem}
+  .info-list div{padding:1rem 0;border-bottom:1px solid var(--brand-line);display:flex;gap:1rem;align-items:baseline}
+  .info-list div:first-child{border-top:1px solid var(--brand-line)}
+  .info-list dt{width:8rem;flex:none;color:var(--brand-muted);font-size:0.85rem;letter-spacing:0.04em;text-transform:uppercase}
+  .info-list dd{margin:0;font-size:1.05rem;font-variant-numeric:tabular-nums}
+  .info-list dd a{color:var(--brand-accent);text-decoration:none;font-weight:600}
+  .booking-card{
+    background:var(--brand-surface);border:1px solid var(--brand-line);
+    border-radius:var(--radius);padding:1.8rem 1.7rem;
+    border-top:3px solid var(--brand-accent);
+  }
+  .band.alt .booking-card{background:var(--brand-surface)}
+  .booking-card h3{font-size:1.4rem;margin-bottom:0.4rem}
+  .booking-card .big-num{
+    display:block;font-family:var(--font-display);font-weight:600;font-size:1.7rem;
+    color:var(--brand-ink);margin:1.1rem 0 0.4rem;letter-spacing:-0.01em;
+    font-variant-numeric:tabular-nums;
+  }
+  .booking-card .btn{width:100%;justify-content:center;margin-top:1rem}
+  .booking-card .mini-proof{display:flex;align-items:center;gap:0.5rem;margin-top:1rem;font-size:0.88rem;color:var(--brand-muted)}
+
+  /* ============ FOOTER ============ */
+  .site-footer{background:var(--brand-ink);color:var(--brand-surface);padding-block:clamp(3rem,6vw,4.5rem)}
+  .site-footer a{color:var(--brand-surface);text-decoration:none}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+  .site-footer .wordmark{color:var(--brand-surface);font-size:1.5rem}
+  .site-footer .wm-keystone{border-color:var(--brand-accent)}
+  .footer-col h4{font-family:var(--font-body);font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb,var(--brand-surface) 60%,transparent);margin:0 0 0.9rem}
+  .footer-col a,.footer-col p{display:block;font-size:0.95rem;margin-bottom:0.5rem;color:color-mix(in srgb,var(--brand-surface) 88%,transparent);font-variant-numeric:tabular-nums}
+  .footer-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid color-mix(in srgb,var(--brand-surface) 20%,transparent);font-size:0.8rem;color:color-mix(in srgb,var(--brand-surface) 55%,transparent);display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;justify-content:space-between}
+
+  /* ============ STICKY MOBILE ACTION BAR ============ */
+  .action-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:none;
+    background:color-mix(in srgb,var(--brand-surface) 96%,transparent);
+    backdrop-filter:blur(10px);
+    border-top:1px solid var(--brand-line);
+    padding:0.6rem 0.9rem calc(0.6rem + env(safe-area-inset-bottom));
+    align-items:center;gap:0.75rem;
+  }
+  .action-bar .ab-proof{flex:1;min-width:0;font-size:0.8rem;line-height:1.2;color:var(--brand-muted)}
+  .action-bar .ab-proof b{color:var(--brand-ink);font-weight:600}
+  .action-bar .btn{flex:none}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:900px){
+    .nav-links,.nav-cta{display:none}
+    .nav-toggle{display:inline-flex}
+    .site-header.open .nav-links{
+      display:flex;flex-direction:column;align-items:flex-start;gap:0.2rem;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:0.8rem var(--container);width:100%;
+    }
+    .site-header.open .nav-links a{padding:0.7rem 0;width:100%;border-bottom:1px solid var(--brand-line)}
+    .site-header.open .nav-links a:last-child{border-bottom:none}
+
+    .hero-grid{grid-template-columns:1fr;gap:2rem}
+    .hero-copy{max-width:none;order:1}
+    .portal{order:2}
+    .campata,.cucina-grid,.occasioni,.brera,.prenota{grid-template-columns:1fr}
+    .campata.flip .campata-media{order:0}
+    .dishes{grid-template-columns:repeat(2,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .action-bar{display:flex}
+    body{padding-bottom:4.5rem}
+  }
+  @media (max-width:560px){
+    .dishes{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .info-list div{flex-direction:column;gap:0.2rem}
+    .info-list dt{width:auto}
+    .portal-arch{width:min(340px,88vw)}
+    .menu-note{flex-direction:column;align-items:flex-start}
+  }
+
+  /* keep hero subject framed on small phones */
+  @media (max-width:560px){
+    .portal-arch{aspect-ratio:3/3.6}
+  }
+
+  /* ============ MOTION LAYER (pass 3) ============ */
+  /* canvas that scrubs the hero frame-sequence over the video base */
+  .portal-canvas{
+    position:absolute;inset:0;width:100%;height:100%;
+    opacity:0;transition:opacity 500ms var(--ease-signature);
+    z-index:1;pointer-events:none;
+  }
+  .portal-canvas.ready{opacity:1}
+
+  /* base: the keystone press cue needs a positioned, non-clipping host */
+  .cta-key{position:relative;overflow:visible}
+  /* base: the dish arch stroke overlays the photo but is INVISIBLE until the hover draw
+     (fill/stroke none here so reduced-motion / no-hover never see a raw black path) */
+  .dish-arch-stroke{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+  .dish-arch-stroke path{fill:none;stroke:none}
+
+  /* every hidden-then-revealed state lives ONLY where JS is on AND motion is welcome,
+     so no-JS / reduced-motion visitors always see fully rendered content */
+  @media (prefers-reduced-motion:no-preference){
+
+    /* ---- house reveal system: varied by content role, one shared observer ---- */
+    html.js [data-reveal]{opacity:0}
+    html.js [data-reveal="mask"]{clip-path:inset(0 0 106% 0);transform:translateY(14px)}
+    html.js [data-reveal="up"]{transform:translateY(22px)}
+    html.js [data-reveal="media"]{transform:scale(0.955)}
+    html.js [data-reveal].in{
+      opacity:1;transform:none;
+      transition:opacity var(--dur-reveal) var(--ease-signature),
+                 transform var(--dur-reveal) var(--ease-signature);
+    }
+    html.js [data-reveal="mask"].in{
+      clip-path:inset(0 0 0 0);
+      transition:opacity var(--dur-reveal) var(--ease-signature),
+                 transform var(--dur-reveal) var(--ease-signature),
+                 clip-path var(--dur-reveal) var(--ease-signature);
+    }
+    /* grouped children cascade in sequence */
+    html.js [data-reveal-group]>*{opacity:0;transform:translateY(20px)}
+    html.js [data-reveal-group].in>*{
+      opacity:1;transform:none;
+      transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+      transition-delay:calc(var(--stagger) * var(--i,0));
+    }
+    /* I Piatti: the cards travel in from the left along the horizontal spine, not a vertical rise */
+    html.js .dishes[data-reveal-group]>*{transform:translateX(-34px)}
+    html.js .dishes[data-reveal-group].in>*{transform:none}
+
+    /* ---- hero load choreography: the vault opens, then the mark settles ---- */
+    html.js .portal-arch{animation:arch-unveil var(--dur-reveal) var(--ease-signature) 120ms both}
+    @keyframes arch-unveil{from{clip-path:inset(0 47% 0 47%)}to{clip-path:inset(0 0 0 0)}}
+    html.js .portal-keystone{animation:key-drop 520ms var(--ease-signature) 780ms both}
+    @keyframes key-drop{
+      from{opacity:0;transform:translateX(-50%) translateY(-9px) scale(.82)}
+      to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
+    }
+    html.js .portal-detail{animation:soft-in 700ms var(--ease-signature) 720ms both}
+
+    html.js .hero .wm-line{opacity:0;animation:word-settle 640ms var(--ease-signature) both}
+    html.js .hero .wm-line:nth-of-type(1){animation-delay:380ms}
+    html.js .hero .wm-line:nth-of-type(2){animation-delay:470ms}
+    @keyframes word-settle{from{opacity:0;transform:translateY(0.5em)}to{opacity:1;transform:translateY(0)}}
+    html.js .hero .h1-keystone{animation:soft-in 460ms var(--ease-signature) 300ms both}
+    html.js .hero-promise{animation:rise-in 600ms var(--ease-signature) 560ms both}
+    html.js .hero-actions{animation:rise-in 600ms var(--ease-signature) 660ms both}
+    html.js .hero-proof{animation:rise-in 600ms var(--ease-signature) 760ms both}
+    @keyframes rise-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes soft-in{from{opacity:0}to{opacity:1}}
+
+    /* ---- scroll cinema: a slow push-in on the hero as it passes (native scroll-timeline) ---- */
+    @supports (animation-timeline:view()){
+      html.js .portal-arch>video,html.js .portal-canvas{
+        animation:push-in linear both;
+        animation-timeline:view();
+        animation-range:entry 10% exit 90%;
+      }
+      @keyframes push-in{from{transform:scale(1.002)}to{transform:scale(1.10)}}
+    }
+
+    /* ---- dish hover: the arch stroke draws once, the photo eases in ---- */
+    @media (hover:hover) and (pointer:fine){
+      .dish-arch-stroke path{
+        fill:none;stroke:var(--brand-accent);stroke-width:2.5;
+        stroke-dasharray:var(--len,360);stroke-dashoffset:var(--len,360);
+        transition:stroke-dashoffset 640ms var(--ease-signature);
+      }
+      .dish:hover .dish-arch-stroke path,
+      .dish:focus-within .dish-arch-stroke path{stroke-dashoffset:0}
+    }
+
+    /* ---- press spring: the keystone snaps over the booking button ---- */
+    .cta-key::before{
+      content:"";position:absolute;left:50%;top:-9px;
+      width:22px;height:12px;
+      border:2px solid var(--brand-accent);border-bottom:none;border-radius:22px 22px 0 0;
+      background:var(--brand-surface);
+      transform:translateX(-50%) translateY(5px) scale(.7);opacity:0;
+      transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro) var(--ease-micro);
+      pointer-events:none;
+    }
+    .cta-key:hover::before,.cta-key:focus-visible::before{transform:translateX(-50%) translateY(0) scale(1);opacity:1}
+    .cta-key:active::before{transform:translateX(-50%) translateY(-3px) scale(1.08);opacity:1}
+
+    /* ---- vault-spine scroll progress (desktop) + top bar (mobile) equivalent ---- */
+    html.js .scroll-spine{display:block}
+    html.js .scroll-topbar{display:block}
+  }
+
+  /* the spine is a real, keyboard-focusable chapter rail; hidden until enhanced */
+  .scroll-spine{
+    position:fixed;left:16px;top:0;bottom:0;width:16px;z-index:55;display:none;
+  }
+  .scroll-spine .spine-track{
+    position:absolute;left:7px;top:14vh;bottom:14vh;width:2px;background:var(--brand-line);
+  }
+  .scroll-spine .spine-fill{
+    position:absolute;left:6px;top:14vh;height:72vh;width:4px;border-radius:3px;
+    background:var(--brand-accent);transform:scaleY(var(--p,0));transform-origin:top center;
+  }
+  .scroll-spine .spine-dot{
+    position:absolute;left:2px;width:12px;height:12px;display:block;
+    transform:translateY(-50%);
+  }
+  .scroll-spine .spine-dot::before{
+    content:"";position:absolute;inset:2px;
+    border:2px solid var(--brand-line);background:var(--brand-surface);
+    border-radius:999px 999px 2px 2px;
+    transition:background var(--dur-micro) var(--ease-micro),border-color var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  }
+  .scroll-spine .spine-dot[aria-current="true"]::before{
+    background:var(--brand-accent);border-color:var(--brand-accent);transform:scale(1.15);
+  }
+  .scroll-topbar{
+    position:fixed;left:0;top:0;height:3px;width:100%;z-index:65;display:none;
+    background:var(--brand-accent);transform:scaleX(var(--p,0));transform-origin:left center;
+  }
+  @media (min-width:901px){.scroll-topbar{display:none !important}}
+  @media (max-width:900px){html.js .scroll-spine{display:none !important}}
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{
+      animation-duration:0.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.001ms !important;
+      scroll-behavior:auto !important;
+    }
+    .dish:hover,.dish:hover .dish-media img,.btn-accent:hover{transform:none}
+    .scroll-spine,.scroll-topbar{display:none !important}
+  }
+</style>
+
+<script>document.documentElement.classList.add('js');</script>
+
+<header class="site-header header" id="siteHeader">
+  <div class="nav-inner">
+    <a class="wordmark" href="#top" aria-label="Volta Street, home">
+      <span class="wm-keystone" aria-hidden="true"></span>
+      <span class="wm-volta">Volta</span><span class="wm-street">Street</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
+      <a href="#sala">La Sala</a>
+      <a href="#cucina">La Cucina</a>
+      <a href="#piatti">I Piatti</a>
+      <a href="#occasioni">Le Occasioni</a>
+      <a href="#brera">Brera</a>
+      <a href="#prenota">Prenota</a>
+    </nav>
+    <a class="btn btn-accent btn-sm nav-cta" data-cta href="tel:+390239669373">Chiama per prenotare</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- vault-spine: scroll progress + chapter markers (desktop), enhanced in only -->
+<nav class="scroll-spine" aria-label="Capitoli della pagina" hidden>
+  <span class="spine-track" aria-hidden="true"></span>
+  <span class="spine-fill" aria-hidden="true"></span>
+  <a class="spine-dot" href="#top" style="top:14vh" aria-label="Portale"></a>
+  <a class="spine-dot" href="#sala" style="top:calc(14vh + (72vh/7)*1)" aria-label="La Sala"></a>
+  <a class="spine-dot" href="#cucina" style="top:calc(14vh + (72vh/7)*2)" aria-label="La Cucina"></a>
+  <a class="spine-dot" href="#piatti" style="top:calc(14vh + (72vh/7)*3)" aria-label="I Piatti"></a>
+  <a class="spine-dot" href="#occasioni" style="top:calc(14vh + (72vh/7)*4)" aria-label="Le Occasioni"></a>
+  <a class="spine-dot" href="#brera" style="top:calc(14vh + (72vh/7)*5)" aria-label="Brera"></a>
+  <a class="spine-dot" href="#reputazione" style="top:calc(14vh + (72vh/7)*6)" aria-label="Recensioni"></a>
+  <a class="spine-dot" href="#prenota" style="top:86vh" aria-label="Prenota"></a>
+</nav>
+<!-- mobile equivalent cue: the same scroll progress as a top bar -->
+<div class="scroll-topbar" aria-hidden="true"></div>
+
+<main id="top">
+
+  <!-- ========== 1 · PORTALE (hero, arch wow) ========== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Ristorante · Brera, Milano</p>
+        <span class="h1-keystone" aria-hidden="true"></span>
+        <h1 id="hero-title">
+          <span class="wm-line wm-volta">Volta</span>
+          <span class="wm-line wm-street">Street</span>
+        </h1>
+        <p class="hero-promise">Cucina della tradizione italiana, sotto le volte originali della sala. Cinquantacinque coperti a due passi da Brera e Corso Como.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent cta-key" data-cta href="tel:+390239669373">Chiama per prenotare</a>
+          <a class="btn btn-ghost" href="#piatti">Scopri i piatti</a>
+        </div>
+        <p class="hero-proof">
+          <span class="stars" role="img" aria-label="Valutazione media 4,6 su 5">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+            <svg class="half" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          </span>
+          <span><strong>4,6</strong> su <strong>436</strong> recensioni</span>
+        </p>
+      </div>
+
+      <div class="portal">
+        <div class="portal-arch">
+          <span class="portal-keystone" aria-hidden="true">V</span>
+          <video autoplay muted loop playsinline preload="auto" poster="assets/hero-sala-arch.jpg"
+                 aria-label="La sala principale ristrutturata di Volta Street con archi e volte originali, tavoli apparecchiati sotto la luce calda delle finestre.">
+            <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+            <img src="assets/hero-sala-arch.jpg" alt="La sala principale ristrutturata di Volta Street con archi e volte originali, tavoli apparecchiati sotto la luce calda delle finestre.">
+          </video>
+          <canvas class="portal-canvas" aria-hidden="true"></canvas>
+          <span class="portal-detail" aria-hidden="true">
+            <img src="assets/hero-detail-keystone.jpg" alt="">
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 · LA SALA ========== -->
+  <section class="band alt" id="sala" aria-labelledby="sala-title">
+    <div class="container">
+      <div class="campata">
+        <div class="campata-media">
+          <div class="media-set" data-parallax>
+            <div class="m-main" data-parallax-layer="0.06">
+              <img src="assets/sala-wide.jpg" alt="L'intera sala da 55 coperti apparecchiata, con soffitto voltato e lampade di design sopra il pavimento in legno.">
+            </div>
+            <div class="m-detail" data-parallax-layer="-0.10">
+              <img src="assets/sala-detail.jpg" alt="Un tavolo apparecchiato con tovagliolo di lino piegato e posate, arco in pietra sfocato sullo sfondo.">
+            </div>
+          </div>
+        </div>
+        <div class="campata-copy">
+          <p class="eyebrow" data-reveal="up">La Sala</p>
+          <h2 id="sala-title" data-reveal="mask">Una sala raccolta, sotto le volte del 2011</h2>
+          <p data-reveal="up">Abbiamo ristrutturato questo spazio rispettandone le forme architettoniche originali: le volte e gli archi che danno il nome al ristorante.</p>
+          <p data-reveal="up">Cinquantacinque coperti soltanto. Arredi di design che incontrano la pietra e il legno. Una sala pensata per farvi sentire a vostro agio, mai anonima.</p>
+          <div class="stat-row" data-reveal-group>
+            <div class="stat"><b data-count="55">55</b><span>coperti</span></div>
+            <div class="stat"><b>2011</b><span>anno della sala</span></div>
+            <div class="stat"><b>1</b><span>passo da Brera</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3 · LA CUCINA DELLA TRADIZIONE ========== -->
+  <section class="band surface" id="cucina" aria-labelledby="cucina-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal="up">La Cucina della Tradizione</p>
+        <h2 id="cucina-title" data-reveal="mask">Cuciniamo la tradizione italiana, senza scorciatoie</h2>
+      </div>
+      <div class="cucina-grid">
+        <div>
+          <p class="cucina-lead" data-reveal="mask">La nostra idea è semplice: piatti che conoscete, fatti bene, con materie prime che scegliamo una a una.</p>
+        </div>
+        <div>
+          <p class="muted" data-reveal="up">Non inseguiamo le mode. Lavoriamo la carne, la pasta fresca e le verdure di stagione come si fa a casa, con la cura di una sala di design.</p>
+          <div class="materie">
+            <h3 data-reveal="up">Alcune delle materie prime</h3>
+            <ul class="arch-list" data-reveal-group>
+              <li>Bresaola della Valtellina</li>
+              <li>Prosciutto di Parma</li>
+              <li>Grana a scaglie e pasta fresca fatta in casa</li>
+              <li>Verdure e rucola di stagione</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:var(--space-section)"><span class="arch-divider" aria-hidden="true"></span></div>
+  </section>
+
+  <!-- ========== 4 · I PIATTI (menu, arch frames) ========== -->
+  <section class="band alt" id="piatti" aria-labelledby="piatti-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal="up">I Piatti</p>
+        <h2 id="piatti-title" data-reveal="mask">Le portate firma, servite sotto la volta</h2>
+        <p class="muted" data-reveal="up">Una selezione dalla nostra carta. Il menu completo cambia con la stagione e ve lo raccontiamo in sala.</p>
+      </div>
+      <div class="dishes" data-reveal-group>
+        <article class="dish">
+          <div class="dish-media"><img src="assets/dish-antipasto-volta.jpg" alt="Antipasto Volta: bresaola della Valtellina con rucola, scaglie di grana e pomodorini."><svg class="dish-arch-stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path style="--len:298" d="M2 100 L2 40 A48 48 0 0 1 98 40 L98 100"/></svg></div>
+          <div class="dish-body">
+            <h3>Antipasto Volta</h3>
+            <p>Bresaola della Valtellina, rucola, scaglie di grana e pomodorini, filo d'olio.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media"><img src="assets/dish-gnocchi-volta.jpg" alt="Gnocchi freschi alla Volta in salsa di pomodoro e basilico con formaggio grattugiato."><svg class="dish-arch-stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path style="--len:298" d="M2 100 L2 40 A48 48 0 0 1 98 40 L98 100"/></svg></div>
+          <div class="dish-body">
+            <h3>Gnocchi freschi alla Volta</h3>
+            <p>Gnocchi di patate fatti in casa, salsa di pomodoro e basilico, formaggio grattugiato.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media"><img src="assets/dish-cotoletta.jpg" alt="Cotoletta alla milanese dorata con spicchio di limone e rucola su piatto chiaro."><svg class="dish-arch-stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path style="--len:298" d="M2 100 L2 40 A48 48 0 0 1 98 40 L98 100"/></svg></div>
+          <div class="dish-body">
+            <h3>Cotoletta alla milanese</h3>
+            <p>Costoletta di vitello impanata e dorata, spicchio di limone e rucola.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media"><img src="assets/dish-carpaccio.jpg" alt="Carpaccio di manzo con rucola e scaglie di grana, filo d'olio, su piatto bianco."><svg class="dish-arch-stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path style="--len:298" d="M2 100 L2 40 A48 48 0 0 1 98 40 L98 100"/></svg></div>
+          <div class="dish-body">
+            <h3>Carpaccio rucola e grana</h3>
+            <p>Manzo tagliato sottile, rucola pepata, scaglie di grana e un filo d'olio.</p>
+          </div>
+        </article>
+      </div>
+      <div class="menu-note" data-reveal="up">
+        <div class="menu-cats">
+          <span><b>In carta:</b></span>
+          <span><b>Antipasti</b></span>
+          <span><b>Primi</b> di pasta fresca</span>
+          <span><b>Secondi</b> della tradizione</span>
+          <span><b>Dolci</b> della casa</span>
+        </div>
+        <a class="btn btn-accent btn-sm cta-key" data-cta href="tel:+390239669373">Chiama per la carta e prenotare</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5 · LE OCCASIONI ========== -->
+  <section class="band surface" id="occasioni" aria-labelledby="occ-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal="up">Le Occasioni</p>
+        <h2 id="occ-title" data-reveal="mask">Due modi di vivere la sala</h2>
+        <p class="muted" data-reveal="up">La stessa cura, per una cena di lavoro o per una serata solo vostra.</p>
+      </div>
+      <div class="occasioni" data-reveal-group>
+        <article class="occ-card">
+          <div class="occ-media"><img src="assets/occasioni-corporate.jpg" alt="Tavolata lunga allestita per una cena aziendale sotto il soffitto ad arco, luce calda serale."></div>
+          <div class="occ-body">
+            <h3>Cena aziendale</h3>
+            <p>Un tavolo lungo sotto le volte, il servizio calibrato sui vostri tempi. Riservate la sala per il team o per i clienti e lasciate a noi il resto.</p>
+          </div>
+        </article>
+        <article class="occ-card">
+          <div class="occ-media"><img src="assets/occasioni-intimate.jpg" alt="Tavolo raccolto per due con vino versato, candela e arco in pietra sfocato sullo sfondo."></div>
+          <div class="occ-body">
+            <h3>Occasione riservata</h3>
+            <p>Un angolo raccolto per due, o per una ricorrenza da ricordare. Ditecelo quando prenotate e prepariamo il tavolo giusto.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6 · NEL CUORE DI BRERA ========== -->
+  <section class="band alt" id="brera" aria-labelledby="brera-title">
+    <div class="container">
+      <div class="brera">
+        <div class="brera-media" data-reveal="media">
+          <img src="assets/quartiere-brera.jpg" alt="Strada acciottolata del quartiere Brera a Milano nella luce calda della sera.">
+        </div>
+        <div data-reveal-group>
+          <p class="eyebrow">Nel Cuore di Brera</p>
+          <h2 id="brera-title">A due passi da Brera e Corso Como</h2>
+          <p class="muted">Ci trovate tra Brera, Corso Garibaldi e Corso Como, nel cuore della Milano che cammina la sera.</p>
+          <address class="addr">
+            <span class="accent">Via Alessandro Volta 3</span><br>
+            Milano
+          </address>
+          <p class="transit"><span class="mm-badge" aria-hidden="true">M2</span> Fermata Moscova, linea verde MM2 — pochi minuti a piedi.</p>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Volta+Street+Via+Alessandro+Volta+3+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7 · DAL 2011 (social proof) ========== -->
+  <section class="band surface" id="reputazione" aria-labelledby="rep-title">
+    <div class="container">
+      <div class="proof-wrap">
+        <p class="eyebrow" data-reveal="up" style="justify-content:center">Dal 2011</p>
+        <h2 id="rep-title" class="sr-head" data-reveal="mask" style="font-size:var(--fs-h2);margin-bottom:1rem">Una reputazione costruita un tavolo alla volta</h2>
+        <div class="proof-score" data-reveal="up" data-count="4.6" data-decimals="1">4,6</div>
+        <span class="stars proof-stars" data-reveal="up" role="img" aria-label="Valutazione media 4,6 su 5">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg class="half" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+        </span>
+        <p class="proof-count" data-reveal="up"><b data-count="436">436</b> recensioni, e una media che resta alta negli anni.</p>
+        <p class="proof-sub" data-reveal="up">Chi torna lo fa per la stessa ragione: piatti della tradizione fatti come si deve, in una sala di carattere. È la conferma più onesta del nostro lavoro — nessuna recensione inventata, solo il giudizio di chi si è seduto ai nostri tavoli.</p>
+        <p class="proof-meta" data-reveal="up">Valutazione aggregata dalle recensioni pubbliche · Milano, Brera</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8 · PRENOTA ========== -->
+  <section class="band alt" id="prenota" aria-labelledby="pren-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal="up">Prenota</p>
+        <h2 id="pren-title" data-reveal="mask">Il tavolo si prenota con una chiamata</h2>
+      </div>
+      <div class="prenota">
+        <div>
+          <dl class="info-list" data-reveal-group>
+            <div><dt>Telefono</dt><dd><a href="tel:+390239669373">+39 02 39669373</a></dd></div>
+            <div><dt>Indirizzo</dt><dd>Via Alessandro Volta 3, Milano</dd></div>
+            <div><dt>Metrò</dt><dd>MM2 Moscova, a pochi minuti a piedi</dd></div>
+            <div><dt>Orari</dt><dd>Pranzo fino alle 15:00 · Cena dalle 18:30 · Lunedì chiuso</dd></div>
+          </dl>
+          <p class="proof-meta" style="margin-top:1rem">Orari indicativi: vi confermiamo pranzo, cena e disponibilità al telefono.</p>
+        </div>
+        <aside class="booking-card" data-reveal="up">
+          <h3>Prenotare è semplice</h3>
+          <p class="muted">Chiamateci e troviamo insieme il tavolo giusto — per due, per una cena aziendale o per un'occasione riservata.</p>
+          <span class="big-num">+39 02 39669373</span>
+          <a class="btn btn-accent cta-key" data-cta href="tel:+390239669373">Chiama per prenotare</a>
+          <p class="mini-proof">
+            <span class="stars" role="img" aria-label="4,6 su 5">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+            </span>
+            <span><b>4,6</b> su 436 recensioni · nel cuore di Brera</span>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="wordmark" aria-hidden="true">
+          <span class="wm-keystone"></span>
+          <span class="wm-volta">Volta</span><span class="wm-street">Street</span>
+        </span>
+        <p style="margin-top:0.9rem">Cucina della tradizione, Milano.<br>Una sala di 55 coperti sotto le volte originali, nel cuore di Brera.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ristorante</h4>
+        <a href="#sala">La Sala</a>
+        <a href="#piatti">I Piatti</a>
+        <a href="#occasioni">Le Occasioni</a>
+        <a href="#reputazione">Recensioni</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="tel:+390239669373">+39 02 39669373</a>
+        <p>Via Alessandro Volta 3<br>Milano</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Volta+Street+Via+Alessandro+Volta+3+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Volta Street · Milano</span>
+      <span>Cucina della tradizione, Milano</span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE ACTION BAR -->
+<div class="action-bar" aria-label="Azioni rapide">
+  <p class="ab-proof"><b>4,6</b> · 436 recensioni<br>Brera, Milano</p>
+  <a class="btn btn-accent btn-sm" data-cta href="tel:+390239669373">Chiama per prenotare</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var raf = window.requestAnimationFrame || function(cb){ return setTimeout(cb,16); };
+
+  /* ---------- mobile navigation (always on, no motion dependency) ---------- */
+  (function(){
+    var header=document.getElementById('siteHeader');
+    var toggle=document.getElementById('navToggle');
+    var nav=document.getElementById('navLinks');
+    if(!(toggle&&header&&nav)) return;
+    function close(){ header.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Apri il menu'); }
+    toggle.addEventListener('click',function(){
+      var open=header.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+    });
+    nav.addEventListener('click',function(e){ if(e.target.tagName==='A'&&header.classList.contains('open')) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&header.classList.contains('open')){ close(); toggle.focus(); } });
+  })();
+
+  /* Everything below is a motion enhancement: skip entirely under reduced motion. */
+  if(RM) return;
+
+  var hasIO = 'IntersectionObserver' in window;
+
+  /* ---------- house reveal system (varied by role) ---------- */
+  (function(){
+    var groups = document.querySelectorAll('[data-reveal-group]');
+    for(var g=0; g<groups.length; g++){
+      var kids = groups[g].children, i;
+      for(i=0;i<kids.length;i++){ kids[i].style.setProperty('--i', i); }
+    }
+    var els = document.querySelectorAll('[data-reveal],[data-reveal-group]');
+    if(!hasIO){ for(var k=0;k<els.length;k++) els[k].classList.add('in'); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin:'0px 0px -10% 0px', threshold:0.12 });
+    for(var j=0;j<els.length;j++) io.observe(els[j]);
+  })();
+
+  /* ---------- count-up on genuinely real numbers ---------- */
+  (function(){
+    var counters = document.querySelectorAll('[data-count]');
+    if(!counters.length) return;
+    function run(el){
+      var target=parseFloat(el.getAttribute('data-count'));
+      var dec=parseInt(el.getAttribute('data-decimals')||'0',10);
+      if(isNaN(target)) return;
+      var dur=1100, t0=null;
+      function fmt(v){ var s=v.toFixed(dec); return dec>0 ? s.replace('.',',') : s; }
+      el.textContent=fmt(0);
+      function step(ts){ if(t0===null)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+        el.textContent=fmt(target*e); if(p<1) raf(step); else el.textContent=fmt(target); }
+      raf(step);
+    }
+    if(!hasIO){ return; } /* leave the real numbers in place */
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ run(e.target); cio.unobserve(e.target); } });
+    }, { threshold:0.6 });
+    for(var i=0;i<counters.length;i++) cio.observe(counters[i]);
+  })();
+
+  /* ---------- scroll progress: vault-spine (desktop) + top bar (mobile) + parallax ---------- */
+  (function(){
+    var docEl=document.documentElement;
+    var spine=document.querySelector('.scroll-spine');
+    if(spine) spine.removeAttribute('hidden');
+    var fill=spine ? spine.querySelector('.spine-fill') : null;
+    var topbar=document.querySelector('.scroll-topbar');
+    var dots=spine ? [].slice.call(spine.querySelectorAll('.spine-dot')) : [];
+    var secs=dots.map(function(d){ return document.getElementById(d.getAttribute('href').slice(1)); });
+    var parEls=[].slice.call(document.querySelectorAll('[data-parallax-layer]'));
+    var ticking=false, lastActive=-1;
+
+    function update(){
+      ticking=false;
+      var vh=window.innerHeight;
+      var st=window.pageYOffset||docEl.scrollTop||0;
+      var max=docEl.scrollHeight-vh;
+      var p=max>0 ? Math.min(Math.max(st/max,0),1) : 0;
+      if(fill) fill.style.setProperty('--p', p.toFixed(4));
+      if(topbar) topbar.style.setProperty('--p', p.toFixed(4));
+
+      var active=0;
+      for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].getBoundingClientRect().top <= vh*0.4) active=i; }
+      if(active!==lastActive){ for(var d=0;d<dots.length;d++){ dots[d].setAttribute('aria-current', d===active?'true':'false'); } lastActive=active; }
+
+      for(var q=0;q<parEls.length;q++){
+        var el=parEls[q], rate=parseFloat(el.getAttribute('data-parallax-layer'))||0;
+        var r=el.getBoundingClientRect(); var centre=r.top + r.height/2;
+        var shift=(centre - vh/2) * rate;
+        el.style.transform='translate3d(0,'+shift.toFixed(1)+'px,0)';
+      }
+    }
+    function onScroll(){ if(!ticking){ ticking=true; raf(update); } }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+
+  /* ---------- hero scroll cinema: canvas frame-scrub over the video base ---------- */
+  (function(){
+    var portal=document.querySelector('.portal-arch');
+    var canvas=document.querySelector('.portal-canvas');
+    if(!(portal&&canvas&&hasIO)) return;
+    var ctx; try{ ctx=canvas.getContext('2d'); }catch(err){ return; }
+    if(!ctx) return;
+
+    var TOTAL=48;
+    var dpr=Math.min(window.devicePixelRatio||1, 2);
+    var mobile=window.matchMedia('(max-width:760px)').matches;
+    var dir='assets/hero-frames/'+(mobile?'mobile':'desktop')+'/';
+    var frames=new Array(TOTAL), anyLoaded=false;
+
+    function pad(n){ n=''+(n); while(n.length<4) n='0'+n; return n; }
+    function resize(){ var r=canvas.getBoundingClientRect(); canvas.width=Math.max(1,Math.round(r.width*dpr)); canvas.height=Math.max(1,Math.round(r.height*dpr)); }
+    function load(i){ var im=new Image(); im.decoding='async';
+      im.onload=function(){ frames[i]=im; if(!anyLoaded){ anyLoaded=true; resize(); render(); canvas.classList.add('ready'); } };
+      im.onerror=function(){};
+      im.src=dir+'frame-'+pad(i+1)+'.webp';
+    }
+    /* critical frames first (start, end, middle), then progressive fill */
+    var order=[0, TOTAL-1, 24];
+    for(var f=0; f<TOTAL; f++){ if(order.indexOf(f)===-1) order.push(f); }
+    order.forEach(function(i,k){ setTimeout(function(){ load(i); }, k*10); });
+
+    function nearest(idx){ if(frames[idx]) return frames[idx];
+      for(var d=1; d<TOTAL; d++){ if(frames[idx-d]) return frames[idx-d]; if(frames[idx+d]) return frames[idx+d]; } return null; }
+    function cover(img){ var cw=canvas.width,ch=canvas.height,iw=img.naturalWidth,ih=img.naturalHeight;
+      var s=Math.max(cw/iw, ch/ih), w=iw*s, h=ih*s; ctx.clearRect(0,0,cw,ch); ctx.drawImage(img,(cw-w)/2,(ch-h)/2,w,h); }
+
+    var cur=0, target=0, running=false, inView=false;
+    function progress(){ var r=portal.getBoundingClientRect(), vh=window.innerHeight;
+      var startY=vh*0.85, endY=-r.height*0.6; var t=(startY - r.top)/(startY - endY); return Math.min(Math.max(t,0),1); }
+    function render(){ var img=nearest(Math.round(cur*(TOTAL-1))); if(img) cover(img); }
+    function loop(){ target=progress(); cur += (target-cur)*0.12; if(Math.abs(target-cur)<0.0015) cur=target;
+      render(); if(inView){ raf(loop); } else { running=false; } }
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ inView=e.isIntersecting;
+      if(inView && !running){ running=true; raf(loop); } }); }, { threshold:0 });
+    io.observe(portal);
+    window.addEventListener('resize', function(){ if(anyLoaded){ resize(); render(); } });
+  })();
+})();
+</script>

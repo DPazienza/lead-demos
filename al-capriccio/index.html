@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Al Capriccio · Ristorante di pesce a Milano, zona Washington</title>
+<meta name="description" content="Al Capriccio: ristorante di pesce a conduzione familiare in zona Washington, Milano. Licia e Oreste servono il pescato del giorno a tavola. 4,4/5 su 289 recensioni. Prenota al 02 4771 0757.">
+<link rel="canonical" href="https://www.alcapricciomilano.it/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Al Capriccio · Ristorante di pesce a Milano">
+<meta property="og:description" content="Pescato del giorno, in famiglia, a tavola. Licia e Oreste in zona Washington, Milano. 4,4/5 su 289 recensioni.">
+<meta property="og:image" content="https://www.alcapricciomilano.it/assets/hero-plate.jpg">
+<meta property="og:url" content="https://www.alcapricciomilano.it/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness / Restaurant structured data — real data only -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Al Capriccio",
+  "servesCuisine": "Pesce",
+  "url": "https://www.alcapricciomilano.it/",
+  "image": "https://www.alcapricciomilano.it/assets/hero-plate.jpg",
+  "telephone": "+390247710757",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Giorgio Washington 106",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.4",
+    "reviewCount": "289"
+  }
+}
+</script>
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined ONCE, referenced everywhere
+   ============================================================ */
+:root{
+  --brand-ink:#152733;
+  --brand-surface:#F7F3EB;
+  --brand-surface-alt:#EEE8D9;
+  --brand-accent:#145A73;
+  --brand-accent-ink:#FBF7EF;
+  --brand-muted:#566A72;
+  --brand-line:#DED7C6;
+  --brand-accent-2:#BE7A46;
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+
+  --ease-signature:cubic-bezier(0.22,1,0.36,1);
+  --ease-micro:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-reveal:720ms;
+  --dur-micro:220ms;
+  --stagger:90ms;
+
+  --space-section:clamp(4.5rem,3rem + 7vw,8.5rem);
+  --container:min(1180px,92vw);
+  --radius:4px;
+
+  --fs-hero:clamp(2.6rem,1.55rem + 4.6vw,5.3rem);
+  --fs-h2:clamp(1.7rem,1.2rem + 2.2vw,2.9rem);
+  --fs-body:clamp(1.02rem,0.96rem + 0.3vw,1.18rem);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  text-wrap:pretty;
+  position:relative;
+}
+/* fixed film-grain texture — inline SVG feTurbulence, never a generated image */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  opacity:0.045;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,video{max-width:100%;display:block;}
+a{color:inherit;}
+h1,h2,h3{
+  font-family:var(--font-display);letter-spacing:-0.02em;line-height:1.05;font-weight:600;margin:0;
+  font-optical-sizing:auto;text-rendering:optimizeLegibility;text-wrap:balance;
+}
+p{margin:0 0 1rem;max-width:66ch;overflow-wrap:anywhere;text-wrap:pretty;}
+:focus-visible{outline:3px solid var(--brand-accent);outline-offset:3px;border-radius:2px;}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+.container{width:var(--container);margin-inline:auto;}
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:0.78rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--brand-accent);
+  display:inline-flex;
+  align-items:center;
+  gap:0.55rem;
+  margin:0 0 1rem;
+}
+.muted{color:var(--brand-muted);}
+
+/* fishbone motif ---------------------------------------------------- */
+.lisca{flex:0 0 auto;width:11px;height:14px;color:var(--brand-accent);}
+.lisca--wood{color:var(--brand-accent-2);}
+.lisca--ink{color:var(--brand-accent-ink);}
+
+/* buttons ----------------------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  font-family:var(--font-body);font-weight:600;font-size:1rem;
+  padding:0.85rem 1.4rem;border-radius:var(--radius);
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) linear;
+  min-height:44px;
+}
+.btn--accent{background:var(--brand-accent);color:var(--brand-accent-ink);}
+.btn--accent:hover{transform:translateY(-2px);}
+.btn--ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line);}
+.btn--ghost:hover{border-color:var(--brand-accent);transform:translateY(-2px);}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--brand-surface) 92%,transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  width:var(--container);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;min-height:66px;
+}
+.nav__links{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;align-items:center;}
+.nav__links a{
+  text-decoration:none;font-size:0.94rem;font-weight:500;color:var(--brand-ink);
+  padding:0.35rem 0;position:relative;
+}
+.nav__links a:hover{color:var(--brand-accent);}
+.nav__toggle{
+  display:none;background:none;border:1px solid var(--brand-line);border-radius:var(--radius);
+  width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center;color:var(--brand-ink);
+}
+.nav__toggle svg{width:22px;height:22px;}
+.nav .btn{padding:0.6rem 1.05rem;}
+
+/* wordmark ---------------------------------------------------------- */
+.wordmark{font-family:var(--font-display);letter-spacing:-0.02em;line-height:0.95;display:inline-block;}
+.wordmark__al{font-style:italic;font-weight:400;}
+.wordmark__cap{font-weight:600;position:relative;}
+.wordmark__cap::after{
+  content:"";position:absolute;left:0;right:0;bottom:-0.16em;height:5px;
+  background:var(--brand-accent-2);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='5' viewBox='0 0 60 5'%3E%3Cpath d='M0 2.5H60' stroke='black' stroke-width='1.4'/%3E%3Cpath d='M8 2.5l4-2M8 2.5l4 2M22 2.5l4-2M22 2.5l4 2M36 2.5l4-2M36 2.5l4 2' stroke='black' stroke-width='1'/%3E%3C/svg%3E") left center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='5' viewBox='0 0 60 5'%3E%3Cpath d='M0 2.5H60' stroke='black' stroke-width='1.4'/%3E%3Cpath d='M8 2.5l4-2M8 2.5l4 2M22 2.5l4-2M22 2.5l4 2M36 2.5l4-2M36 2.5l4 2' stroke='black' stroke-width='1'/%3E%3C/svg%3E") left center/contain no-repeat;
+}
+.nav .wordmark{font-size:1.5rem;}
+.nav .wordmark__cap::after{height:4px;bottom:-0.1em;}
+
+/* ============================================================
+   HERO — the wow_moment: wave-split panel
+   ============================================================ */
+.hero{position:relative;overflow:hidden;background:var(--brand-surface);}
+.hero__grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.02fr 1fr;
+  min-height:min(88vh,720px);
+}
+/* blue sea panel */
+.hero__panel{
+  position:relative;z-index:2;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:clamp(2rem,4vw,4.5rem);
+  display:flex;flex-direction:column;justify-content:center;gap:1.4rem;
+  /* organic wave edge lapping onto the photo (reads statically) */
+  clip-path:polygon(0 0,100% 0,100% 8%,96% 18%,99% 30%,95% 42%,99% 55%,94% 68%,98% 80%,95% 92%,100% 100%,0 100%);
+  margin-right:-4%;
+}
+.hero__eyebrow{color:var(--brand-accent-ink);opacity:0.85;}
+.hero__eyebrow .lisca{color:var(--brand-accent-2);}
+.hero h1{
+  font-size:var(--fs-hero);color:var(--brand-accent-ink);margin:0;
+}
+.hero h1 .wordmark__cap::after{background:var(--brand-accent-2);}
+.hero__tagline{
+  font-family:var(--font-display);font-style:italic;font-weight:500;
+  font-size:clamp(1.1rem,0.9rem + 1vw,1.6rem);opacity:0.9;margin-top:0.3rem;
+}
+.hero__lead{max-width:34ch;color:var(--brand-accent-ink);opacity:0.92;margin:0.4rem 0 0.6rem;}
+.hero__actions{display:flex;flex-wrap:wrap;gap:0.8rem;align-items:center;margin-top:0.6rem;}
+.hero .btn--ghost{color:var(--brand-accent-ink);border-color:color-mix(in srgb,var(--brand-accent-ink) 45%,transparent);}
+.hero .btn--accent{background:var(--brand-accent-ink);color:var(--brand-accent);}
+/* social proof chip sitting next to the CTA */
+.hero__proof{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.9rem;color:var(--brand-accent-ink);opacity:0.92;
+}
+.hero__proof strong{font-weight:600;}
+.stars{color:var(--brand-accent-2);letter-spacing:0.1em;font-size:0.95rem;}
+
+/* right photo / cinemagraph */
+.hero__media{position:relative;z-index:1;overflow:hidden;}
+.hero__media video,.hero__media img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+}
+/* anchored 'Prenota' chip bottom-left over the photo seam */
+.hero__chip{
+  position:absolute;left:clamp(1rem,3vw,2.4rem);bottom:clamp(1rem,3vw,2.4rem);z-index:3;
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:0.7rem 1.1rem;border-radius:var(--radius);
+  font-weight:600;font-size:0.95rem;text-decoration:none;
+  box-shadow:0 10px 30px -12px rgba(21,39,51,0.55);
+  transition:transform var(--dur-micro) var(--ease-micro);
+}
+.hero__chip:hover{transform:translateY(-2px);}
+
+/* ============================================================
+   LAYOUT — main content + persistent booking rail
+   ============================================================ */
+.layout{
+  width:var(--container);margin-inline:auto;
+  display:grid;grid-template-columns:1fr 320px;
+  gap:clamp(2rem,4vw,4rem);
+  align-items:start;
+  padding-block:var(--space-section);
+}
+.main-col{min-width:0;}
+
+/* section rhythm — applied UNEVENLY */
+.section{margin-bottom:var(--space-section);}
+.section:last-child{margin-bottom:0;}
+.section__head{max-width:60ch;margin-bottom:1.8rem;}
+.section h2{font-size:var(--fs-h2);margin-bottom:0.6rem;}
+
+/* divider with motif */
+.divider{
+  display:flex;align-items:center;gap:1rem;color:var(--brand-line);
+  margin:clamp(2.5rem,5vw,4rem) 0;
+}
+.divider::before,.divider::after{content:"";height:1px;background:var(--brand-line);flex:1;}
+.divider .lisca{color:var(--brand-accent-2);}
+
+/* ---- L'accoglienza : owners editorial pair ---- */
+.accoglienza__body{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(1.5rem,3vw,3rem);align-items:center;}
+.accoglienza__text p{max-width:46ch;}
+.owner-figure{position:relative;padding-bottom:2.5rem;padding-right:2.5rem;}
+.owner-figure img{border-radius:var(--radius);width:100%;}
+.owner-figure__main{aspect-ratio:4/5;object-fit:cover;object-position:50% 28%;}
+.owner-figure__detail{
+  position:absolute;right:0;bottom:0;width:52%;max-width:220px;
+  aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);
+  border:6px solid var(--brand-surface);
+  box-shadow:0 18px 40px -20px rgba(21,39,51,0.45);
+}
+figcaption{font-size:0.85rem;color:var(--brand-muted);margin-top:0.7rem;}
+
+/* ---- Il pesce del giorno : freshness set ---- */
+.pesce{background:var(--brand-surface-alt);border-radius:var(--radius);padding:clamp(1.6rem,3vw,3rem);}
+.pesce__body{display:grid;grid-template-columns:0.95fr 1.05fr;gap:clamp(1.5rem,3vw,3rem);align-items:center;}
+.catch-figure{position:relative;padding-top:2.5rem;padding-left:2.5rem;}
+.catch-figure__main{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);}
+.catch-figure__detail{
+  position:absolute;left:0;top:0;width:46%;max-width:190px;
+  aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);
+  border:6px solid var(--brand-surface-alt);
+  box-shadow:0 18px 40px -20px rgba(21,39,51,0.45);
+}
+.pesce__list{list-style:none;margin:1.2rem 0 0;padding:0;}
+.pesce__list li{display:flex;gap:0.7rem;align-items:flex-start;margin-bottom:0.7rem;}
+.pesce__list .lisca{margin-top:0.25rem;color:var(--brand-accent-2);}
+
+/* ---- La carta : dish gallery (breaks the grid) ---- */
+.carta__cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.6rem);
+}
+.dish{
+  background:var(--brand-surface);border:1px solid var(--brand-line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;position:relative;
+  box-shadow:0 14px 30px -22px rgba(21,39,51,0.35);
+  transition:transform var(--dur-reveal) var(--ease-signature),box-shadow var(--dur-reveal) var(--ease-signature);
+}
+.dish:hover{transform:translateY(-4px);box-shadow:0 20px 36px -20px rgba(21,39,51,0.4);}
+.dish__img{aspect-ratio:3/4;width:100%;object-fit:cover;}
+.dish__body{padding:1.1rem 1.15rem 1.35rem;position:relative;}
+.dish__corner{position:absolute;top:0.9rem;right:0.9rem;color:var(--brand-accent-2);}
+.dish h3{font-size:1.24rem;margin-bottom:0.35rem;padding-right:1.4rem;}
+.dish p{font-size:0.95rem;color:var(--brand-muted);margin:0;}
+.carta__note{margin-top:1.4rem;font-size:0.95rem;color:var(--brand-muted);}
+.dish--signature{
+  background:var(--brand-surface-alt);border:1px solid var(--brand-line);border-left:4px solid var(--brand-accent-2);
+  border-radius:var(--radius);padding:clamp(1.3rem,2.5vw,1.8rem);
+  display:flex;flex-direction:row;align-items:center;gap:1rem;
+}
+.dish--signature .eyebrow{margin-bottom:0.5rem;}
+
+/* ---- La sala : layered parallax composition (static form) ---- */
+.sala{position:relative;border-radius:var(--radius);overflow:hidden;}
+.sala__bg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;}
+.sala__overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(0deg,color-mix(in srgb,var(--brand-ink) 88%,transparent) 0%,color-mix(in srgb,var(--brand-ink) 55%,transparent) 32%,transparent 60%),
+    linear-gradient(90deg,color-mix(in srgb,var(--brand-ink) 62%,transparent) 0%,color-mix(in srgb,var(--brand-ink) 20%,transparent) 48%,transparent 78%);
+}
+.sala__text{
+  position:absolute;left:0;bottom:0;z-index:3;
+  padding:clamp(1.5rem,4vw,3rem);max-width:min(46ch,90%);color:var(--brand-accent-ink);
+}
+.sala__text h2{color:var(--brand-accent-ink);}
+.sala__text p{color:var(--brand-accent-ink);opacity:0.92;}
+.sala__detail{
+  position:absolute;right:clamp(1rem,3vw,2.4rem);top:clamp(1rem,3vw,2.4rem);z-index:3;
+  width:clamp(120px,22%,220px);aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);
+  border:6px solid var(--brand-surface);box-shadow:0 18px 40px -20px rgba(0,0,0,0.6);
+}
+
+/* ---- Perche si torna : social proof ---- */
+.proof{
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  border-radius:var(--radius);padding:clamp(2rem,5vw,3.5rem);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;
+}
+.proof__score{text-align:center;line-height:1;}
+.proof__num{font-family:var(--font-display);font-weight:600;font-size:clamp(3.4rem,2rem + 7vw,5.5rem);display:block;}
+.proof__stars{color:var(--brand-accent-2);font-size:1.4rem;letter-spacing:0.15em;margin:0.4rem 0 0.3rem;}
+.proof__count{font-size:0.9rem;opacity:0.85;}
+.proof__text h2{color:var(--brand-accent-ink);}
+.proof__text p{color:var(--brand-accent-ink);opacity:0.94;}
+.proof__source{font-size:0.85rem;opacity:0.8;margin:0;}
+
+/* ---- Prenota un tavolo ---- */
+.prenota{
+  background:var(--brand-surface-alt);border-radius:var(--radius);
+  padding:clamp(1.8rem,4vw,3rem);
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(1.5rem,3vw,3rem);align-items:center;
+}
+.prenota__phone{
+  font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,1.2rem + 2vw,2.4rem);
+  color:var(--brand-accent);text-decoration:none;display:inline-block;margin:0.4rem 0 0.2rem;
+  font-variant-numeric:tabular-nums;
+}
+.prenota__actions{display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:1rem;}
+.prenota__hours{list-style:none;margin:0;padding:0;font-size:0.95rem;font-variant-numeric:tabular-nums;}
+.prenota__hours li{display:flex;justify-content:space-between;gap:1rem;padding:0.5rem 0;border-bottom:1px solid var(--brand-line);}
+.prenota__hours li:last-child{border-bottom:none;}
+.prenota__hours .day{color:var(--brand-muted);}
+
+/* ---- Come raggiungerci ---- */
+.dove{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,3rem);align-items:center;}
+.address-card{background:var(--brand-surface);border:1px solid var(--brand-line);border-radius:var(--radius);padding:clamp(1.4rem,3vw,2.2rem);}
+.address-card address{font-style:normal;font-size:1.15rem;line-height:1.7;margin-bottom:1.2rem;}
+.dove__img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);}
+
+/* ============================================================
+   BOOKING RAIL (sticky)
+   ============================================================ */
+.rail{
+  position:sticky;top:82px;
+  background:var(--brand-ink);color:var(--brand-accent-ink);
+  border-radius:var(--radius);padding:1.6rem 1.5rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.rail__eyebrow{color:var(--brand-accent-2);}
+.rail h2{font-size:1.35rem;color:var(--brand-accent-ink);}
+.rail__phone{
+  font-family:var(--font-display);font-weight:600;font-size:1.5rem;
+  color:var(--brand-accent-ink);text-decoration:none;font-variant-numeric:tabular-nums;
+}
+.rail .btn--accent{background:var(--brand-accent);color:var(--brand-accent-ink);width:100%;justify-content:center;}
+.rail__meta{font-size:0.88rem;opacity:0.85;line-height:1.5;margin:0;}
+.rail__proof{
+  display:flex;align-items:center;gap:0.55rem;font-size:0.85rem;
+  border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 22%,transparent);padding-top:0.9rem;
+}
+.rail__proof .stars{color:var(--brand-accent-2);}
+/* tide line — reading-depth marker (filled by motion pass) */
+.rail__tide{position:relative;height:4px;background:color-mix(in srgb,var(--brand-accent-ink) 20%,transparent);border-radius:2px;overflow:hidden;}
+.rail__tide span{position:absolute;inset:0 60% 0 0;background:var(--brand-accent-2);}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--brand-ink);color:var(--brand-accent-ink);padding:var(--space-section) 0 6rem;}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;}
+.site-footer h2{font-size:1.6rem;color:var(--brand-accent-ink);margin-bottom:0.4rem;}
+.site-footer h3{font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-accent-2);font-family:var(--font-body);font-weight:600;margin-bottom:0.8rem;}
+.site-footer a{color:var(--brand-accent-ink);text-decoration:none;}
+.site-footer a:hover{text-decoration:underline;}
+.footer__list{list-style:none;margin:0;padding:0;line-height:2;}
+.footer__note{font-size:0.8rem;opacity:0.6;margin-top:2.5rem;border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 18%,transparent);padding-top:1.4rem;}
+
+/* ============================================================
+   MOBILE STICKY ACTION BAR
+   ============================================================ */
+.action-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  background:var(--brand-ink);color:var(--brand-accent-ink);
+  padding:0.6rem 0.9rem;gap:0.7rem;align-items:center;
+  border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 18%,transparent);
+}
+.action-bar__proof{font-size:0.75rem;line-height:1.2;flex:1;}
+.action-bar__proof .stars{font-size:0.8rem;}
+.action-bar .btn--accent{background:var(--brand-accent);color:var(--brand-accent-ink);flex:0 0 auto;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
+  .nav__toggle{display:inline-flex;}
+  .nav__links{
+    display:none;position:absolute;top:66px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:0.5rem var(--container-pad,4vw);
+  }
+  .nav__links.is-open{display:flex;}
+  .nav__links li{border-bottom:1px solid var(--brand-line);}
+  .nav__links li:last-child{border-bottom:none;padding:0.8rem 0;}
+  .nav__links a{padding:0.9rem 0;display:block;}
+  .nav>.btn{display:none;}
+
+  .layout{grid-template-columns:1fr;}
+  .rail{position:relative;top:auto;}
+
+  .accoglienza__body,.pesce__body,.prenota,.dove{grid-template-columns:1fr;}
+  .carta__cards{grid-template-columns:1fr 1fr;}
+  .proof{grid-template-columns:1fr;text-align:center;}
+  .proof__score{justify-self:center;}
+  .footer__grid{grid-template-columns:1fr 1fr;}
+}
+
+@media (max-width:700px){
+  /* HERO reflows: text+CTA panel FIRST, photo below, wave becomes horizontal seam */
+  .hero__grid{grid-template-columns:1fr;min-height:auto;}
+  .hero__panel{
+    margin-right:0;margin-bottom:-6%;
+    clip-path:polygon(0 0,100% 0,100% 92%,88% 96%,72% 92%,55% 97%,38% 92%,20% 97%,6% 93%,0 96%);
+    padding-bottom:clamp(3rem,9vw,4.5rem);
+  }
+  .hero__media{aspect-ratio:16/11;max-height:52vh;}
+  .hero__chip{bottom:auto;top:clamp(0.8rem,3vw,1.4rem);}
+}
+
+@media (max-width:560px){
+  .action-bar{display:flex;}
+  body{padding-bottom:70px;}
+  .carta__cards{grid-template-columns:1fr;}
+  .footer__grid{grid-template-columns:1fr;}
+  .owner-figure{padding-right:1.5rem;padding-bottom:1.8rem;}
+  .catch-figure{padding-left:1.5rem;padding-top:1.8rem;}
+  .sala__detail{width:34%;}
+}
+
+/* ============================================================
+   MOTION LAYER (pass 3) — "la risacca"
+   All hidden start-states live under no-preference, so reduced-motion
+   and JS-off never leave anything invisible.
+   ============================================================ */
+@media (prefers-reduced-motion:no-preference){
+
+  /* --- shared reveal system (only armed once <html class="js">) --- */
+  .js [data-reveal="rise"]{opacity:0;transform:translateY(26px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  .js [data-reveal="media"]{opacity:0;transform:scale(1.05);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  .js [data-reveal="rows"]>*{opacity:0;transform:translateY(22px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  /* La carta: entrance travels along the row's own X axis */
+  .js [data-reveal="xrow"]>*{opacity:0;
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  .js [data-reveal="xrow"]>*:nth-child(odd){transform:translateX(-38px);}
+  .js [data-reveal="xrow"]>*:nth-child(even){transform:translateX(38px);}
+
+  /* --- Hero unveil: the wave border wipes the plate in, left-to-right --- */
+  .js .hero__media{clip-path:inset(0 0 0 100%);
+    animation:heroWipe var(--dur-reveal) var(--ease-signature) 140ms forwards;}
+  @keyframes heroWipe{to{clip-path:inset(0 0 0 0);}}
+  /* Hero panel copy settles in on the risacca curve */
+  .hero__panel>*{opacity:0;transform:translateY(20px);
+    animation:heroSettle 640ms var(--ease-signature) forwards;}
+  .hero__panel>*:nth-child(1){animation-delay:180ms;}
+  .hero__panel>*:nth-child(2){animation-delay:260ms;}
+  .hero__panel>*:nth-child(3){animation-delay:340ms;}
+  .hero__panel>*:nth-child(4){animation-delay:420ms;}
+  .hero__panel>*:nth-child(5){animation-delay:500ms;}
+  .hero__panel>*:nth-child(6){animation-delay:580ms;}
+  @keyframes heroSettle{to{opacity:1;transform:none;}}
+
+  /* --- layer 2 (everywhere, cheap): native scroll push-in on the hero clip.
+         Disabled in canvas-cinema mode; static + visible where unsupported. --- */
+  @supports (animation-timeline: view()){
+    html:not(.cinema) .hero__media video{
+      animation:heroZoom linear both;animation-timeline:view();animation-range:entry 0% exit 130%;}
+    @keyframes heroZoom{from{transform:scale(1.12);}to{transform:scale(1);}}
+  }
+
+  /* --- ambient "alive" drift on the section-divider motif (sub-perceptual) --- */
+  .divider .lisca{animation:liscaSway 9s ease-in-out infinite;}
+  @keyframes liscaSway{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-2px) rotate(2deg);}}
+}
+
+/* --- revealed end-states (always safe / visible) --- */
+.is-in[data-reveal="rise"],
+.is-in[data-reveal="media"]{opacity:1;transform:none;}
+.is-in[data-reveal="rows"]>*,
+.is-in[data-reveal="xrow"]>*{opacity:1;transform:none;}
+.is-in[data-reveal="rows"]>*:nth-child(1),.is-in[data-reveal="xrow"]>*:nth-child(1){transition-delay:0ms;}
+.is-in[data-reveal="rows"]>*:nth-child(2),.is-in[data-reveal="xrow"]>*:nth-child(2){transition-delay:calc(var(--stagger)*1);}
+.is-in[data-reveal="rows"]>*:nth-child(3),.is-in[data-reveal="xrow"]>*:nth-child(3){transition-delay:calc(var(--stagger)*2);}
+.is-in[data-reveal="rows"]>*:nth-child(4),.is-in[data-reveal="xrow"]>*:nth-child(4){transition-delay:calc(var(--stagger)*3);}
+.is-in[data-reveal="rows"]>*:nth-child(5),.is-in[data-reveal="xrow"]>*:nth-child(5){transition-delay:calc(var(--stagger)*4);}
+.is-in[data-reveal="rows"]>*:nth-child(6),.is-in[data-reveal="xrow"]>*:nth-child(6){transition-delay:calc(var(--stagger)*5);}
+
+/* --- La sala: layered parallax (JS-driven transforms on the Z axis) --- */
+.sala__bg,.sala__detail,.sala__fore{will-change:transform;}
+.sala__fore{
+  position:absolute;right:clamp(1.2rem,4vw,3rem);bottom:clamp(1.1rem,3vw,2.2rem);z-index:2;
+  width:64px;height:26px;color:var(--brand-accent-ink);opacity:0.8;pointer-events:none;
+}
+.sala__fore svg{width:100%;height:100%;}
+
+/* --- La carta: whole row drifts on the X axis with scroll (rides the wave) --- */
+.carta__cards{will-change:transform;}
+
+/* --- pointer micro-interactions (transitions only; safe) --- */
+@media (hover:hover) and (pointer:fine){
+  .nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);}
+  .nav__links a:hover::after,.nav__links a:focus-visible::after{transform:scaleX(1);}
+  .dish__img{transition:transform var(--dur-reveal) var(--ease-signature);}
+  .dish:hover .dish__img{transform:scale(1.06);}
+}
+/* press = short elastic overshoot via --ease-micro; draw-once on the lisca marker */
+.btn,.hero__chip{transition:transform var(--dur-micro) var(--ease-micro),
+  background var(--dur-micro) linear,border-color var(--dur-micro) linear,box-shadow var(--dur-micro) var(--ease-signature);}
+.btn:active,.hero__chip:active{transform:scale(0.95);}
+@media (prefers-reduced-motion:no-preference){
+  @media (hover:hover) and (pointer:fine){
+    .btn .lisca,.hero__chip .lisca{clip-path:inset(0 100% 0 0);
+      transition:clip-path var(--dur-micro) var(--ease-signature);}
+    .btn:hover .lisca,.btn:focus-visible .lisca,
+    .hero__chip:hover .lisca,.hero__chip:focus-visible .lisca{clip-path:inset(0 0 0 0);}
+  }
+}
+
+/* --- Rail: persistent vertical "tide line" filling with reading depth --- */
+.rail{position:sticky;}
+.rail__depth{position:absolute;left:0.55rem;top:1.6rem;bottom:1.6rem;width:4px;border-radius:2px;
+  background:color-mix(in srgb,var(--brand-accent-ink) 16%,transparent);overflow:hidden;}
+.rail__depth i{position:absolute;inset:0;transform-origin:top;transform:scaleY(var(--tide,0));
+  background:var(--brand-accent-2);}
+.rail{padding-left:1.9rem;}
+
+/* --- Hero canvas scroll-cinema (desktop, progressive enhancement) --- */
+.hero-pin{position:relative;}
+.hero__canvas{position:absolute;inset:0;width:100%;height:100%;display:block;
+  opacity:0;pointer-events:none;transition:opacity 420ms var(--ease-signature);}
+.cinema .hero__canvas.ready{opacity:1;}
+.cinema .hero-pin{height:280vh;}
+.cinema .hero{position:sticky;top:0;height:100vh;min-height:0;overflow:hidden;}
+/* soften the video loop seam / add depth over the plate */
+.hero__media::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(120% 120% at 70% 30%,transparent 55%,color-mix(in srgb,var(--brand-ink) 22%,transparent) 100%);}
+.hero__chip{z-index:4;}
+
+/* --- Chapter markers (desktop side rail) --- */
+.chapters{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:55;
+  display:none;flex-direction:column;gap:15px;align-items:center;}
+@media (min-width:1040px){.chapters{display:flex;}}
+.chapters::before{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;width:2px;
+  transform:translateX(-50%);background:var(--brand-line);}
+.chapters__prog{position:absolute;left:50%;top:-6px;width:2px;height:calc(100% + 12px);
+  transform:translateX(-50%) scaleY(var(--chap,0));transform-origin:top;background:var(--brand-accent);}
+.chapters a{position:relative;width:11px;height:11px;border-radius:50%;
+  border:1.5px solid var(--brand-muted);background:var(--brand-surface);
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) linear,border-color var(--dur-micro) linear;}
+.chapters a:hover{transform:scale(1.25);}
+.chapters a.active{background:var(--brand-accent);border-color:var(--brand-accent);transform:scale(1.2);}
+
+/* --- global scroll progress bar (native, cheap; hidden where unsupported) --- */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:80;
+  transform-origin:left;transform:scaleX(0);background:var(--brand-accent);display:none;}
+@supports (animation-timeline: scroll()){
+  .scroll-progress{display:block;animation:spx linear both;animation-timeline:scroll(root);}
+  @keyframes spx{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  .scroll-progress,.chapters{display:none !important;}
+  .hero__canvas{display:none !important;}
+  *,*::before,*::after{
+    animation-duration:0.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.001ms !important;scroll-behavior:auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- reusable fishbone symbol -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <symbol id="lisca" viewBox="0 0 11 14">
+    <path d="M5.5 0.5V13.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+    <path d="M5.5 3.2 1.6 1.6M5.5 3.2 9.4 1.6M5.5 7 1.6 5.4M5.5 7 9.4 5.4M5.5 10.8 1.6 9.2M5.5 10.8 9.4 9.2" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Navigazione principale">
+    <a href="#top" class="wordmark" aria-label="Al Capriccio — home">
+      <span class="wordmark__al">Al </span><span class="wordmark__cap">Capriccio</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#accoglienza">L’accoglienza</a></li>
+      <li><a href="#pesce">Il pesce del giorno</a></li>
+      <li><a href="#carta">La carta</a></li>
+      <li><a href="#sala">La sala</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
+      <li><a href="#dove">Dove siamo</a></li>
+    </ul>
+    <a class="btn btn--accent" data-cta href="tel:+390247710757">Chiama per prenotare</a>
+  </nav>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav class="chapters" aria-label="Sezioni della pagina">
+  <span class="chapters__prog" aria-hidden="true"></span>
+  <a href="#accoglienza" aria-label="L’accoglienza"></a>
+  <a href="#pesce" aria-label="Il pesce del giorno"></a>
+  <a href="#carta" aria-label="La carta"></a>
+  <a href="#sala" aria-label="La sala"></a>
+  <a href="#recensioni" aria-label="Recensioni"></a>
+  <a href="#prenota" aria-label="Prenota"></a>
+  <a href="#dove" aria-label="Dove siamo"></a>
+</nav>
+
+<main id="top">
+
+  <!-- ================= APERTURA / HERO ================= -->
+  <div class="hero-pin">
+  <section class="hero" aria-label="Al Capriccio, ristorante di pesce a Milano">
+    <div class="hero__grid">
+      <div class="hero__panel">
+        <p class="eyebrow hero__eyebrow"><svg class="lisca"><use href="#lisca"/></svg> Ristorante di pesce · Milano, zona Washington</p>
+        <h1>
+          <span class="wordmark">
+            <span class="wordmark__al">Al </span><span class="wordmark__cap">Capriccio</span>
+          </span>
+        </h1>
+        <p class="hero__tagline">di Licia e Oreste</p>
+        <p class="hero__lead">Il pescato del giorno, servito a tavola.<br>Due di noi in sala e in cucina, ogni sera.</p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" data-cta href="tel:+390247710757">Chiama per prenotare</a>
+          <a class="btn btn--ghost" href="#carta">Guarda la carta</a>
+        </div>
+        <p class="hero__proof">
+          <span class="stars" aria-hidden="true">★★★★<span style="opacity:.5">★</span></span>
+          <span><strong>4,4</strong> su 289 recensioni · qui si torna</span>
+        </p>
+      </div>
+
+      <div class="hero__media">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/hero-plate.jpg" aria-label="Piatto di spaghetti allo scoglio appena servito al tavolo di Al Capriccio">
+          <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+          <img src="assets/hero-plate.jpg" alt="Piatto di spaghetti allo scoglio appena servito al tavolo di Al Capriccio">
+        </video>
+        <canvas class="hero__canvas" aria-hidden="true"></canvas>
+        <a class="hero__chip" data-cta href="tel:+390247710757">
+          <svg class="lisca lisca--ink"><use href="#lisca"/></svg> Chiama · tavolo delle 19:15
+        </a>
+      </div>
+    </div>
+  </section>
+  </div>
+  <!-- /hero-pin -->
+
+  <div class="layout">
+    <div class="main-col">
+
+      <!-- ================= L'ACCOGLIENZA ================= -->
+      <section class="section" id="accoglienza">
+        <div class="accoglienza__body">
+          <div class="accoglienza__text" data-reveal="rows">
+            <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> L’accoglienza</p>
+            <h2>Ci siamo noi due, Licia e Oreste</h2>
+            <p>Non siamo una catena e non siamo una pescheria alla moda.</p>
+            <p>Siamo una famiglia. Licia vi accoglie in sala, Oreste sceglie il pesce e sta ai fornelli.</p>
+            <p>Cuciniamo come a casa nostra: pesce fresco, poche cose fatte bene, il tempo di una cena senza fretta.</p>
+            <p>Quando arrivate, vi troviamo il tavolo giusto. È così da sempre.</p>
+          </div>
+          <figure class="owner-figure" data-reveal="media">
+            <img class="owner-figure__main" src="assets/owners-at-work.jpg" alt="Licia e Oreste, i titolari di Al Capriccio, in sala">
+            <img class="owner-figure__detail" src="assets/plating-hands.jpg" alt="Le mani che impiattano il pesce in cucina">
+            <figcaption>Licia in sala, Oreste al pass: la stessa cucina, ogni sera.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"><svg class="lisca lisca--wood"><use href="#lisca"/></svg></div>
+
+      <!-- ================= IL PESCE DEL GIORNO ================= -->
+      <section class="section" id="pesce">
+        <div class="pesce">
+          <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> Il pesce del giorno</p>
+          <div class="pesce__body">
+            <figure class="catch-figure" data-reveal="media">
+              <img class="catch-figure__main" src="assets/fresh-catch-ice.jpg" alt="Il pescato del giorno esposto su ghiaccio">
+              <img class="catch-figure__detail" src="assets/hero-catch-detail.jpg" alt="Dettaglio ravvicinato del pesce fresco su ghiaccio">
+            </figure>
+            <div data-reveal="rows">
+              <h2>Si sceglie ogni mattina, si cucina la sera</h2>
+              <p>Il pesce lo prende Oreste, guardandolo negli occhi. Quello che non è fresco, non entra.</p>
+              <p>Per questo la carta cambia con il mercato: vi diciamo noi cosa c’è di buono oggi.</p>
+              <ul class="pesce__list">
+                <li><svg class="lisca"><use href="#lisca"/></svg> Orate e branzini, freschi di giornata</li>
+                <li><svg class="lisca"><use href="#lisca"/></svg> Vongole, cozze e gamberi per gli scogli</li>
+                <li><svg class="lisca"><use href="#lisca"/></svg> Il crudo, quando il pesce lo permette</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"><svg class="lisca lisca--wood"><use href="#lisca"/></svg></div>
+
+      <!-- ================= LA CARTA ================= -->
+      <section class="section" id="carta">
+        <div class="section__head" data-reveal="rows">
+          <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> La carta</p>
+          <h2>Quattro piatti che facciamo da sempre</h2>
+          <p class="muted">Il pesce si paga a seconda del pescato del giorno: chiedeteci il prezzo, ve lo diciamo prima di ordinare.</p>
+        </div>
+        <div class="carta__cards" data-reveal="xrow" data-xdrift>
+          <article class="dish">
+            <img class="dish__img" src="assets/dish-spaghetti-vongole.jpg" alt="Spaghetti alle vongole, un piatto della carta">
+            <div class="dish__body">
+              <svg class="lisca dish__corner"><use href="#lisca"/></svg>
+              <h3>Spaghetti alle vongole</h3>
+              <p>Aglio, prezzemolo e un filo di peperoncino. Vongole aperte al momento.</p>
+            </div>
+          </article>
+          <article class="dish">
+            <img class="dish__img" src="assets/dish-grigliata-mista.jpg" alt="Grigliata mista di pesce, un piatto della carta">
+            <div class="dish__body">
+              <svg class="lisca dish__corner"><use href="#lisca"/></svg>
+              <h3>Grigliata mista</h3>
+              <p>Gamberi, calamari e il pesce del giorno alla brace, con limone e olio buono.</p>
+            </div>
+          </article>
+          <article class="dish">
+            <img class="dish__img" src="assets/dish-fritto-misto.jpg" alt="Fritto misto di pesce, un piatto della carta">
+            <div class="dish__body">
+              <svg class="lisca dish__corner"><use href="#lisca"/></svg>
+              <h3>Fritto misto</h3>
+              <p>Calamari, gamberi e pesciolini, panatura leggera e croccante. Da mangiare caldo.</p>
+            </div>
+          </article>
+        </div>
+        <div class="dish dish--signature" data-reveal="rise" style="margin-top:clamp(1rem,2vw,1.6rem);">
+          <div>
+            <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> Il piatto di casa</p>
+            <h3>Spaghetti allo scoglio</h3>
+            <p style="margin:0;">Cozze, vongole e gamberi in un sugo che sa di mare. È quello che vi accoglie in apertura.</p>
+          </div>
+        </div>
+        <p class="carta__note">Cambiamo la carta con il mercato. Per allergie o per un piatto per i più piccoli, ditecelo: troviamo il modo.</p>
+      </section>
+
+      <div class="divider" role="presentation"><svg class="lisca lisca--wood"><use href="#lisca"/></svg></div>
+
+      <!-- ================= LA SALA ================= -->
+      <section class="section" id="sala">
+        <figure class="sala" data-parallax>
+          <img class="sala__bg" src="assets/sala-room.jpg" alt="La sala serale di Al Capriccio" data-depth="bg">
+          <div class="sala__overlay"></div>
+          <img class="sala__detail" src="assets/table-detail.jpg" alt="Dettaglio del tavolo apparecchiato" data-depth="mid">
+          <span class="sala__fore" data-depth="fore" aria-hidden="true"><svg viewBox="0 0 64 26"><path d="M2 13H62" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M16 13l6-4M16 13l6 4M32 13l6-4M32 13l6 4M48 13l6-4M48 13l6 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
+          <figcaption class="sala__text" data-reveal="rows">
+            <p class="eyebrow" style="color:var(--brand-accent-2)"><svg class="lisca lisca--wood"><use href="#lisca"/></svg> La sala</p>
+            <h2>Una sala piccola, luce calda, poche voci</h2>
+            <p>Pochi tavoli, carta bianca e lampade morbide. Si cena con calma, come si deve.</p>
+            <p>È il posto per una sera in due o per una tavolata in famiglia.</p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <div class="divider" role="presentation"><svg class="lisca lisca--wood"><use href="#lisca"/></svg></div>
+
+      <!-- ================= PERCHE SI TORNA ================= -->
+      <section class="section" id="recensioni">
+        <div class="proof">
+          <div class="proof__score" data-reveal="rise">
+            <span class="proof__num">4,4</span>
+            <div class="proof__stars" aria-hidden="true">★★★★<span style="opacity:.45">★</span></div>
+            <div class="proof__count"><span class="count" data-count="289">289</span> recensioni</div>
+          </div>
+          <div class="proof__text" data-reveal="rows">
+            <p class="eyebrow" style="color:var(--brand-accent-2)"><svg class="lisca lisca--wood"><use href="#lisca"/></svg> Perché si torna</p>
+            <h2>Un voto che tiene, sera dopo sera</h2>
+            <p>4,4 su 5 da 289 persone che sono passate a cena. Non un colpo di fortuna: una media che resta alta negli anni.</p>
+            <p>Chi ci scrive parla del pesce fresco e dell’accoglienza in famiglia. È esattamente quello che proviamo a fare ogni sera.</p>
+            <p class="proof__source">Valutazione media dei clienti su Google.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"><svg class="lisca lisca--wood"><use href="#lisca"/></svg></div>
+
+      <!-- ================= PRENOTA UN TAVOLO ================= -->
+      <section class="section" id="prenota">
+        <div class="prenota">
+          <div data-reveal="rows">
+            <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> Prenota un tavolo</p>
+            <h2>Il tavolo delle 19:15 è quello più richiesto</h2>
+            <p>Prenotate con una telefonata: rispondiamo noi e vi troviamo il posto giusto.</p>
+            <a class="prenota__phone" data-cta href="tel:+390247710757">02 4771 0757</a>
+            <p class="muted" style="margin:0;">Chiamate anche solo per chiedere cosa c’è di fresco stasera.</p>
+            <div class="prenota__actions">
+              <a class="btn btn--accent" data-cta href="tel:+390247710757">
+                <svg class="lisca lisca--ink"><use href="#lisca"/></svg> Chiama per prenotare
+              </a>
+              <a class="btn btn--ghost" href="#dove">Come raggiungerci</a>
+            </div>
+          </div>
+          <div data-reveal="rows">
+            <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> A cena</p>
+            <ul class="prenota__hours">
+              <li><span class="day">Martedì – Domenica</span> <span>19:15 – 23:00</span></li>
+              <li><span class="day">Lunedì</span> <span>Riposo</span></li>
+            </ul>
+            <p class="muted" style="font-size:0.82rem;margin-top:0.8rem;">Orari indicativi: confermateli con noi al telefono quando prenotate.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"><svg class="lisca lisca--wood"><use href="#lisca"/></svg></div>
+
+      <!-- ================= COME RAGGIUNGERCI ================= -->
+      <section class="section" id="dove">
+        <div class="section__head" data-reveal="rows">
+          <p class="eyebrow"><svg class="lisca"><use href="#lisca"/></svg> Come raggiungerci</p>
+          <h2>In zona Washington, nel cuore di Milano</h2>
+        </div>
+        <div class="dove" data-reveal="rows">
+          <div class="address-card">
+            <address>
+              <strong>Al Capriccio</strong><br>
+              Via Giorgio Washington 106<br>
+              20146 Milano
+            </address>
+            <a class="btn btn--accent" href="https://www.google.com/maps/search/?api=1&query=Al+Capriccio+Via+Giorgio+Washington+106+Milano" target="_blank" rel="noopener">
+              <svg class="lisca lisca--ink"><use href="#lisca"/></svg> Apri in Google Maps
+            </a>
+            <p class="muted" style="margin:1.2rem 0 0;font-size:0.92rem;">A due passi da De Angeli. Comodi il tram e la metro rossa.</p>
+          </div>
+          <div class="address-card" style="background:var(--brand-accent);color:var(--brand-accent-ink);border-color:var(--brand-accent);">
+            <p class="eyebrow" style="color:var(--brand-accent-2)"><svg class="lisca lisca--wood"><use href="#lisca"/></svg> Prima di venire</p>
+            <p style="color:var(--brand-accent-ink);">Chiamateci per prenotare: il pescato del giorno finisce, e i tavoli anche.</p>
+            <a class="rail__phone" data-cta href="tel:+390247710757" style="font-size:1.4rem;">02 4771 0757</a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /main-col -->
+
+    <!-- ================= BOOKING RAIL (sticky) ================= -->
+    <aside class="rail" aria-label="Prenota un tavolo">
+      <span class="rail__depth" aria-hidden="true"><i></i></span>
+      <p class="eyebrow rail__eyebrow"><svg class="lisca lisca--wood"><use href="#lisca"/></svg> Prenota</p>
+      <h2>Un tavolo da Licia e Oreste</h2>
+      <p class="rail__meta">A cena dalle 19:15.<br>Il tavolo delle 19:15 è il più richiesto: chiamateci per tempo.</p>
+      <a class="rail__phone" data-cta href="tel:+390247710757">02 4771 0757</a>
+      <a class="btn btn--accent" data-cta href="tel:+390247710757">
+        <svg class="lisca lisca--ink"><use href="#lisca"/></svg> Chiama per prenotare
+      </a>
+      <p class="rail__meta">Via Giorgio Washington 106, Milano · zona Washington–De Angeli</p>
+      <div class="rail__tide" aria-hidden="true"><span></span></div>
+      <div class="rail__proof">
+        <span class="stars" aria-hidden="true">★★★★<span style="opacity:.5">★</span></span>
+        <span><strong>4,4</strong> · 289 recensioni</span>
+      </div>
+    </aside>
+
+  </div><!-- /layout -->
+
+</main>
+
+<!-- ================= FOOTER / CONTATTI E ORARI ================= -->
+<footer class="site-footer" id="contatti">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="wordmark" style="font-size:1.8rem;color:var(--brand-accent-ink);">
+          <span class="wordmark__al">Al </span><span class="wordmark__cap">Capriccio</span>
+        </span>
+        <p style="margin-top:0.6rem;opacity:0.85;max-width:34ch;">di Licia e Oreste — pesce fresco, in famiglia, a tavola. In zona Washington, Milano.</p>
+      </div>
+      <div>
+        <h3>Contatti</h3>
+        <ul class="footer__list">
+          <li><a data-cta href="tel:+390247710757">02 4771 0757</a></li>
+          <li>Via Giorgio Washington 106</li>
+          <li>20146 Milano</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Al+Capriccio+Via+Giorgio+Washington+106+Milano" target="_blank" rel="noopener">Apri in Google Maps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <ul class="footer__list">
+          <li>Mar – Dom · 19:15 – 23:00</li>
+          <li>Lunedì · riposo</li>
+        </ul>
+        <p style="font-size:0.78rem;opacity:0.6;margin-top:0.6rem;">Orari indicativi da confermare al telefono.</p>
+      </div>
+    </div>
+    <p class="footer__note">© Al Capriccio, Milano. Ristorante di pesce a conduzione familiare. Valutazione 4,4/5 su 289 recensioni Google.</p>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY ACTION BAR -->
+<div class="action-bar">
+  <div class="action-bar__proof">
+    <span class="stars" aria-hidden="true">★★★★<span style="opacity:.5">★</span></span><br>
+    <strong>4,4</strong> · 289 recensioni
+  </div>
+  <a class="btn btn--accent" data-cta href="tel:+390247710757">Chiama per prenotare</a>
+</div>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(!toggle||!links)return;
+  function close(){links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Apri il menu');}
+  function open(){links.classList.add('is-open');toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','Chiudi il menu');}
+  toggle.addEventListener('click',function(){links.classList.contains('is-open')?close():open();});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+
+<script>
+/* ============================================================
+   MOTION LAYER — "la risacca" (progressive enhancement)
+   Everything below is additive: content is fully visible with JS off.
+   ============================================================ */
+(function(){
+  var root=document.documentElement;
+  var mqReduce=window.matchMedia?matchMedia('(prefers-reduced-motion:reduce)'):{matches:false};
+  var clamp=function(v,a,b){return v<a?a:v>b?b:v;};
+
+  /* ---- 1. Shared reveal system: one IntersectionObserver, unobserve on fire ---- */
+  var reveals=document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:0.14});
+    reveals.forEach(function(el){io.observe(el);});
+  } else {
+    reveals.forEach(function(el){el.classList.add('is-in');});
+  }
+
+  if(mqReduce.matches) return;   /* reduced-motion: reveals settle instantly, no scroll/scrub/count */
+
+  /* ---- 2. Count-up on the real review count (289) ---- */
+  var counters=document.querySelectorAll('[data-count]');
+  if(counters.length && 'IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        cio.unobserve(e.target);
+        var el=e.target,target=parseInt(el.getAttribute('data-count'),10)||0,t0=null,dur=1100;
+        function step(ts){
+          if(t0===null)t0=ts;
+          var p=clamp((ts-t0)/dur,0,1),eased=1-Math.pow(1-p,3);
+          el.textContent=Math.round(eased*target);
+          if(p<1)requestAnimationFrame(step);else el.textContent=target;
+        }
+        requestAnimationFrame(step);
+      });
+    },{threshold:0.6});
+    counters.forEach(function(el){cio.observe(el);});
+  }
+
+  /* ---- 3. Hero canvas scroll-cinema (desktop only, frame scrubbing) ---- */
+  var canvas=document.querySelector('.hero__canvas');
+  var pin=document.querySelector('.hero-pin');
+  var wantCinema=window.matchMedia('(min-width:1024px) and (pointer:fine)').matches;
+  var cinema=null;
+  if(canvas && pin && wantCinema && canvas.getContext){
+    var ctx=canvas.getContext('2d');
+    var COUNT=48, frames=new Array(COUNT), ready=false, next=0, curF=0, tgtF=0, rafF=null;
+    var dir=window.innerWidth<=1024?'mobile':'desktop';
+    function pad(n){n=''+n;while(n.length<4)n='0'+n;return n;}
+    function sizeCanvas(){
+      var r=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+      canvas.width=Math.max(1,Math.round(r.width*dpr));
+      canvas.height=Math.max(1,Math.round(r.height*dpr));
+    }
+    function nearest(i){
+      i=clamp(Math.round(i),0,COUNT-1);
+      if(frames[i])return frames[i];
+      for(var d=1;d<COUNT;d++){
+        if(frames[i-d])return frames[i-d];
+        if(frames[i+d])return frames[i+d];
+      }
+      return null;
+    }
+    function draw(i){
+      var img=nearest(i); if(!img)return;
+      var cw=canvas.width,ch=canvas.height,iw=img.naturalWidth,ih=img.naturalHeight;
+      if(!iw||!ih)return;
+      var scale=Math.max(cw/iw,ch/ih),w=iw*scale,h=ih*scale;
+      ctx.drawImage(img,(cw-w)/2,(ch-h)/2,w,h);
+    }
+    function tick(){
+      curF+=(tgtF-curF)*0.12;
+      draw(curF);
+      if(Math.abs(tgtF-curF)>0.06){rafF=requestAnimationFrame(tick);}
+      else{curF=tgtF;draw(curF);rafF=null;}
+    }
+    function loadNext(){
+      if(next>=COUNT)return;
+      var i=next++,img=new Image();
+      img.onload=function(){frames[i]=img; if(i===0)start(); loadNext();};
+      img.onerror=function(){loadNext();};
+      img.src='assets/hero-frames/'+dir+'/frame-'+pad(i+1)+'.webp';
+    }
+    function start(){
+      if(ready)return; ready=true;
+      sizeCanvas(); draw(0);
+      canvas.classList.add('ready');
+      root.classList.add('cinema');
+      cinema=function(){
+        var r=pin.getBoundingClientRect(),range=pin.offsetHeight-window.innerHeight;
+        if(range<=0)return;
+        var p=clamp(-r.top/range,0,1);
+        tgtF=p*(COUNT-1);
+        if(rafF===null)rafF=requestAnimationFrame(tick);
+      };
+      window.addEventListener('resize',function(){sizeCanvas();draw(curF);},{passive:true});
+      cinema();
+    }
+    loadNext();
+  }
+
+  /* ---- 4. One rAF-batched scroll handler: parallax, carta X-drift, tide, chapters ---- */
+  var salaWrap=document.querySelector('[data-parallax]');
+  var salaBg=document.querySelector('.sala__bg[data-depth]');
+  var salaMid=document.querySelector('.sala__detail[data-depth]');
+  var salaFore=document.querySelector('.sala__fore[data-depth]');
+  var carta=document.querySelector('[data-xdrift]');
+  var rail=document.querySelector('.rail');
+  var chapWrap=document.querySelector('.chapters');
+  var chapProg=document.querySelector('.chapters__prog');
+  var chapLinks=chapWrap?[].slice.call(chapWrap.querySelectorAll('a')):[];
+  var ticking=false;
+
+  function frame(){
+    ticking=false;
+    var vh=window.innerHeight;
+
+    if(salaWrap && salaBg){
+      var s=salaWrap.getBoundingClientRect();
+      var sp=clamp((vh-s.top)/(vh+s.height),0,1),d=sp-0.5;
+      salaBg.style.transform='translate3d(0,'+(d*-18).toFixed(1)+'px,0) scale(1.08)';
+      if(salaMid)salaMid.style.transform='translate3d(0,'+(d*-40).toFixed(1)+'px,0)';
+      if(salaFore)salaFore.style.transform='translate3d(0,'+(d*30).toFixed(1)+'px,0)';
+    }
+
+    if(carta){
+      var c=carta.getBoundingClientRect();
+      var cp=clamp((vh-c.top)/(vh+c.height),0,1);
+      carta.style.transform='translate3d('+((cp-0.5)*30).toFixed(1)+'px,0,0)';
+    }
+
+    var se=root.scrollHeight-vh;
+    var docp=se>0?clamp(window.pageYOffset/se,0,1):0;
+    if(rail)rail.style.setProperty('--tide',docp.toFixed(4));
+    if(chapProg)chapProg.style.setProperty('--chap',docp.toFixed(4));
+
+    if(cinema)cinema();
+  }
+  function onScroll(){ if(!ticking){ticking=true;requestAnimationFrame(frame);} }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  frame();
+
+  /* ---- 5. Chapter dots active state ---- */
+  if(chapLinks.length && 'IntersectionObserver' in window){
+    var map={};
+    chapLinks.forEach(function(a){
+      var id=a.getAttribute('href').slice(1),sec=document.getElementById(id);
+      if(sec)map[id]=a;
+    });
+    var sio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          chapLinks.forEach(function(a){a.classList.remove('active');});
+          var a=map[e.target.id]; if(a)a.classList.add('active');
+        }
+      });
+    },{rootMargin:'-45% 0px -45% 0px'});
+    Object.keys(map).forEach(function(id){sio.observe(document.getElementById(id));});
+  }
+})();
+</script>
+
+</body>
+</html>

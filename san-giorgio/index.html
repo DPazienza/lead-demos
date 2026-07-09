@@ -1,0 +1,1231 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>San Giorgio al Palazzo · Chiesa dell'VIII secolo e affreschi di Luini — Milano</title>
+  <meta name="description" content="San Giorgio al Palazzo: chiesa dell'VIII secolo nel centro di Milano, con il ciclo di affreschi della Passione di Bernardino Luini. Orari, luogo e come visitare in silenzio e raccoglimento." />
+  <link rel="canonical" href="https://sangiorgioalpalazzo.it/" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="San Giorgio al Palazzo — Milano, dal 750" />
+  <meta property="og:description" content="Una chiesa dell'VIII secolo nel cuore di Milano. Dentro, gli affreschi della Passione di Luini e un silenzio raro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero-nave-light.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts: display face + body, with system fallbacks kept in the stack -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "San Giorgio al Palazzo",
+    "url": "https://sangiorgioalpalazzo.it/",
+    "image": "assets/hero-nave-light.jpg",
+    "description": "Chiesa dell'VIII secolo nel centro di Milano, con il ciclo di affreschi della Passione di Bernardino Luini.",
+    "telephone": "+39 02 8057148",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Piazza San Giorgio, 2",
+      "addressLocality": "Milano",
+      "postalCode": "20123",
+      "addressCountry": "IT"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "252"
+    }
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       BRAND TOKENS — defined ONCE, referenced everywhere
+       ============================================================ */
+    :root {
+      --brand-ink: #241610;
+      --brand-surface: #F4EBDB;
+      --brand-surface-alt: #ECDFC9;
+      --brand-accent: #A6371F;      /* brick red — CTA / active nav / hours emphasis / primary arch stroke */
+      --brand-accent-ink: #F7EFE1;  /* text on accent */
+      --brand-muted: #6B5844;
+      --brand-line: #D8C7AC;
+      --brand-accent-2: #B08A3E;    /* antique gold — wordmark underscore, gilt dividers, small highlights ONLY */
+
+      --font-display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+      --font-body: 'Spectral', 'Iowan Old Style', Georgia, serif;
+
+      --ease-signature: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-micro: cubic-bezier(0.33, 0.1, 0.25, 1);
+      --dur-reveal: 900ms;
+      --dur-micro: 240ms;
+      --stagger: 110ms;
+
+      --space-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+      --container: min(1160px, 92vw);
+      --radius: 2px;
+
+      --fs-hero: clamp(2.6rem, 1.55rem + 4.6vw, 5.4rem);
+      --fs-h2: clamp(1.6rem, 1.2rem + 1.7vw, 2.6rem);
+      --fs-body: clamp(1.05rem, 1rem + 0.28vw, 1.22rem);
+
+      /* shared image grade + its "in shadow" twin (same function list, so it interpolates) */
+      --img-grade: brightness(1.05) contrast(1.04) saturate(1.05) sepia(0.05);
+      --img-grade-dark: brightness(0.34) contrast(1.04) saturate(0.5) sepia(0.05);
+    }
+
+    /* ---- reset / base ---- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: clip; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      position: relative;
+      background: var(--brand-surface);
+      color: var(--brand-ink);
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      font-weight: 400;
+      line-height: 1.65;
+      font-kerning: normal;
+      font-variant-ligatures: common-ligatures contextual;
+      font-optical-sizing: auto;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+    /* fixed film-grain texture, shared across the whole shoot */
+    body::before {
+      content: "";
+      position: fixed; inset: 0; z-index: 1000;
+      pointer-events: none;
+      opacity: 0.045;
+      mix-blend-mode: soft-light;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    ::selection { background: var(--brand-accent); color: var(--brand-accent-ink); }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.08; margin: 0; text-wrap: balance; }
+    p { margin: 0; }
+    p, li { text-wrap: pretty; }
+
+    :focus-visible {
+      outline: 3px solid var(--brand-accent);
+      outline-offset: 3px;
+      border-radius: var(--radius);
+    }
+
+    .container { width: var(--container); margin-inline: auto; }
+    .eyebrow {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--brand-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      margin: 0 0 1.1rem;
+    }
+    /* motif: small round arch marker before eyebrows */
+    .eyebrow::before {
+      content: "";
+      width: 1.15rem; height: 0.58rem;
+      border: 1.5px solid var(--brand-accent);
+      border-bottom: none;
+      border-top-left-radius: 999px;
+      border-top-right-radius: 999px;
+      flex: none;
+    }
+
+    .lede { font-size: clamp(1.15rem, 1.02rem + 0.5vw, 1.5rem); color: var(--brand-ink); }
+    .muted { color: var(--brand-muted); }
+    .stack > * + * { margin-top: 1.05rem; }
+
+    /* ============================================================
+       MOTIF — l'arco (the round arch)
+       ============================================================ */
+    /* arch-framed media: semicircular round-arch top via top-corner radii */
+    .arch-frame {
+      position: relative;
+      overflow: hidden;
+      border-top-left-radius: 1000px;
+      border-top-right-radius: 1000px;
+      background: var(--brand-surface-alt);
+      border: 1px solid var(--brand-line);
+    }
+    /* shared grade across the shoot: lift shadows, keep highlights luminous, never a cool cast */
+    .arch-frame img, .arch-frame video {
+      width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%;
+      filter: var(--img-grade);
+    }
+    /* grounds the top of every frame so the arch edge always reads against the photo */
+    .arch-frame::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--brand-ink) 22%, transparent) 0%, transparent 22%, transparent 78%, color-mix(in srgb, var(--brand-ink) 16%, transparent) 100%);
+      pointer-events: none;
+    }
+
+    /* softer arch for cards (top corners only, not full semicircle) */
+    .card-arch { border-top-left-radius: 64px; border-top-right-radius: 64px; }
+
+    /* arch list markers */
+    .arch-list { list-style: none; padding: 0; margin: 0; }
+    .arch-list li { position: relative; padding-left: 1.9rem; margin-top: 0.85rem; }
+    .arch-list li::before {
+      content: "";
+      position: absolute; left: 0; top: 0.5em;
+      width: 0.85rem; height: 0.43rem;
+      border: 1.5px solid var(--brand-accent);
+      border-bottom: none;
+      border-top-left-radius: 999px;
+      border-top-right-radius: 999px;
+    }
+
+    /* gilt draw-once divider (static here; stroke drawn in the motion pass) */
+    .arch-divider { width: var(--container); margin: 0 auto; padding: clamp(2.5rem,5vw,4rem) 0 0; }
+    .arch-divider svg { width: 100%; height: 40px; display: block; }
+    .arch-divider path { stroke: var(--brand-accent-2); stroke-width: 3; fill: none; }
+
+    /* ============================================================
+       NAV
+       ============================================================ */
+    .topbar {
+      position: sticky; top: 0; z-index: 60;
+      background: color-mix(in srgb, var(--brand-surface) 90%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--brand-line);
+    }
+    .topbar__inner {
+      width: var(--container); margin-inline: auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; min-height: 66px;
+    }
+    .brandmark { font-family: var(--font-display); font-size: 1.18rem; letter-spacing: -0.02em; text-decoration: none; line-height: 1; white-space: nowrap; }
+    .brandmark .al { font-style: italic; color: var(--brand-muted); font-size: 0.82em; }
+
+    .nav { display: flex; align-items: center; gap: 1.6rem; }
+    .nav a {
+      text-decoration: none; font-size: 0.9rem; letter-spacing: 0.02em;
+      color: var(--brand-ink); padding: 0.3rem 0.1rem; position: relative;
+    }
+    .nav a[aria-current="page"] { color: var(--brand-accent); }
+    .nav a:hover { color: var(--brand-accent); }
+
+    .nav-toggle {
+      display: none;
+      background: none; border: 1px solid var(--brand-line); border-radius: var(--radius);
+      width: 44px; height: 44px; cursor: pointer; color: var(--brand-ink);
+      align-items: center; justify-content: center;
+    }
+    .nav-toggle svg { width: 22px; height: 22px; }
+
+    /* ============================================================
+       BUTTONS / CTA (arch bracket)
+       ============================================================ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-body); font-size: 1rem; font-weight: 500;
+      text-decoration: none; cursor: pointer; border: none;
+      padding: 0.95rem 1.5rem; border-radius: var(--radius);
+      transition: transform var(--dur-micro) var(--ease-micro), background-color var(--dur-micro) var(--ease-micro);
+    }
+    .btn--primary { background: var(--brand-accent); color: var(--brand-accent-ink); }
+    .btn--primary:hover { background: color-mix(in srgb, var(--brand-accent) 88%, #000); transform: translateY(-1px); }
+    .btn--ghost { background: transparent; color: var(--brand-ink); border: 1px solid var(--brand-ink); }
+    .btn--ghost:hover { background: var(--brand-ink); color: var(--brand-surface); }
+
+    /* CTA wrapped in an arch bracket */
+    .cta-bracket { position: relative; display: inline-block; padding: 0.55rem 0.7rem 0; }
+    .cta-bracket::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 0.7rem;
+      border: 2px solid var(--brand-accent);
+      border-bottom: none;
+      border-top-left-radius: 999px; border-top-right-radius: 999px;
+      transition: top var(--dur-micro) var(--ease-micro);
+    }
+
+    /* ============================================================
+       PROOF (rating)
+       ============================================================ */
+    .proof { display: inline-flex; align-items: center; gap: 0.7rem; }
+    .stars { position: relative; display: inline-block; font-size: 1.05rem; line-height: 1; letter-spacing: 0.08em; }
+    .stars__bg { color: var(--brand-line); }
+    .stars__fill { position: absolute; inset: 0; overflow: hidden; white-space: nowrap; color: var(--brand-accent-2); }
+    .proof__text { font-size: 0.92rem; color: var(--brand-muted); font-variant-numeric: tabular-nums; }
+    .proof__text strong { color: var(--brand-ink); font-weight: 500; }
+
+    /* ============================================================
+       HERO — Portale (the wow moment)
+       ============================================================ */
+    .hero { padding: clamp(2rem, 1rem + 4vw, 4.5rem) 0 var(--space-section); }
+    .hero__grid {
+      width: var(--container); margin-inline: auto;
+      display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+    /* aged-plaster surface carrying the wordmark */
+    .hero__plate {
+      background:
+        radial-gradient(120% 90% at 15% 10%, color-mix(in srgb, var(--brand-surface-alt) 70%, #fff) 0%, var(--brand-surface-alt) 55%, color-mix(in srgb, var(--brand-surface-alt) 80%, #000) 100%);
+      border: 1px solid var(--brand-line);
+      border-radius: var(--radius);
+      padding: clamp(1.6rem, 1rem + 3vw, 3rem);
+    }
+    .wordmark { margin: 0.4rem 0 0; }
+    .wordmark .l1 { display: block; font-size: var(--fs-hero); }
+    .wordmark .l2 {
+      display: block; font-style: italic; font-weight: 400;
+      color: var(--brand-muted);
+      font-size: calc(var(--fs-hero) * 0.5);
+      margin-top: 0.1em;
+    }
+    /* gold round-arch underscore under the "G" of Giorgio */
+    .giorgio { position: relative; }
+    .giorgio::after {
+      content: ""; position: absolute; left: 0.02em; bottom: -0.12em;
+      width: 0.62em; height: 0.2em;
+      border: 3px solid var(--brand-accent-2);
+      border-bottom: none;
+      border-top-left-radius: 999px; border-top-right-radius: 999px;
+    }
+    .hero__essence { margin-top: 1.6rem; max-width: 34ch; }
+    .hero__cta-row { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; }
+    .hero__phone { display: block; margin-top: 0.9rem; font-size: 0.95rem; color: var(--brand-muted); }
+    .hero__phone strong { color: var(--brand-accent); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+    /* the arched aperture: full round-arch framing the nave cinemagraph */
+    .aperture {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      max-height: 78vh;
+      margin-inline: auto;
+      width: 100%;
+    }
+    .aperture .arch-frame { position: absolute; inset: 0; border-color: color-mix(in srgb, var(--brand-accent-2) 55%, var(--brand-line)); box-shadow: 0 30px 70px -40px rgba(36,22,16,0.6); }
+    /* explicit, deterministic layering so the photo is ALWAYS the guaranteed-visible base —
+       never a negative z-index relying on a stacking context that may not exist */
+    .aperture .arch-frame > img  { position: absolute; inset: 0; z-index: 0; }
+    .aperture .arch-frame > video{ position: absolute; inset: 0; z-index: 1; }
+    .aperture .arch-frame > .hero-canvas { z-index: 2; }
+    /* gilded keystone accent at the crown of the arch */
+    .aperture::after {
+      content: ""; position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+      width: 34%; height: 3px; background: var(--brand-accent-2); border-radius: 999px;
+      z-index: 2;
+    }
+
+    /* ============================================================
+       GENERIC SECTION
+       ============================================================ */
+    section { scroll-margin-top: 80px; }
+    .section { padding-block: var(--space-section); }
+    .section--tight { padding-block: clamp(3rem, 2rem + 4vw, 6rem); }
+    .split {
+      width: var(--container); margin-inline: auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: center;
+    }
+    .split--wide-text { grid-template-columns: 1.1fr 0.9fr; }
+    .measure { max-width: 46ch; }
+
+    /* La soglia — offset image inside arch frame */
+    .soglia__img { aspect-ratio: 4/3; }
+    .soglia__img img { object-position: 50% 62%; }
+
+    /* Le origini — layered strata composition (two images offset/overlapped) */
+    .origini { position: relative; padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+    .strata { position: relative; min-height: clamp(320px, 42vw, 520px); }
+    .strata__main { position: relative; width: 74%; aspect-ratio: 4/3; z-index: 1; }
+    .strata__main img { object-position: 50% 55%; }
+    .strata__detail {
+      position: absolute; right: 0; bottom: -1.5rem; width: 46%; aspect-ratio: 3/4;
+      border: 4px solid var(--brand-surface); box-shadow: 0 24px 50px -34px rgba(36,22,16,0.55);
+      z-index: 2;
+    }
+    .strata__detail img { object-position: 50% 15%; }
+
+    /* La cappella — the pinned/scrub sequence, presented as a horizontal fresco band */
+    .cappella { background: var(--brand-ink); color: var(--brand-surface); padding-block: clamp(5.5rem, 4rem + 7vw, 10.5rem); }
+    .cappella .eyebrow { color: color-mix(in srgb, var(--brand-surface) 70%, transparent); }
+    .cappella .eyebrow::before { border-color: var(--brand-accent-2); }
+    .cappella .muted { color: color-mix(in srgb, var(--brand-surface) 65%, transparent); }
+    .cappella__head { width: var(--container); margin-inline: auto; margin-bottom: clamp(2rem,4vw,3.2rem); }
+    .cappella__head h2 { color: var(--brand-surface); max-width: 20ch; }
+    .cycle {
+      width: var(--container); margin-inline: auto;
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.1rem; align-items: end;
+    }
+    .cycle__panel { position: relative; }
+    .cycle__wall { aspect-ratio: 3/2; }
+    .cycle__wall img { object-position: 50% 38%; }
+    .cycle__scene { aspect-ratio: 3/4; }
+    .cycle__scene img { object-position: 50% 30%; }
+    .cycle__panel figcaption { margin-top: 0.7rem; font-size: 0.9rem; color: color-mix(in srgb, var(--brand-surface) 78%, transparent); }
+    .cycle__panel .n { font-family: var(--font-display); color: var(--brand-accent-2); margin-right: 0.4rem; }
+    .cappella .arch-frame { background: color-mix(in srgb, var(--brand-ink) 86%, #000); border-color: color-mix(in srgb, var(--brand-accent-2) 40%, transparent); }
+
+    /* Dettagli pittorici — editorial pair (macro gold + light beam) */
+    .dettagli { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+    .dettagli__set { position: relative; min-height: clamp(300px, 40vw, 480px); }
+    .dettagli__gold { width: 62%; aspect-ratio: 1/1; }
+    .dettagli__gold img { object-position: 50% 50%; }
+    .dettagli__beam {
+      position: absolute; right: 0; top: 2.5rem; width: 46%; aspect-ratio: 1/1;
+      border: 4px solid var(--brand-surface); box-shadow: 0 24px 50px -34px rgba(36,22,16,0.5);
+    }
+    .dettagli__beam img { object-position: 50% 65%; }
+
+    /* Il silenzio — atmosphere + honest social proof */
+    .silenzio { padding-block: clamp(5rem, 3.5rem + 6vw, 9.5rem); }
+    .silenzio .split { align-items: stretch; }
+    .silenzio__img { aspect-ratio: 3/4; height: 100%; }
+    .silenzio__img img { object-position: 60% 45%; }
+    .rating-card {
+      background: var(--brand-surface-alt);
+      border: 1px solid var(--brand-line);
+      border-radius: var(--radius);
+      padding: clamp(1.6rem, 1rem + 3vw, 2.8rem);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .rating-card__big { font-family: var(--font-display); font-size: clamp(3.2rem, 2rem + 6vw, 5rem); line-height: 1; font-variant-numeric: tabular-nums; }
+    .rating-card__big small { font-size: 0.32em; color: var(--brand-muted); }
+    .rating-card .stars { font-size: 1.5rem; margin: 0.8rem 0; }
+    .review-theme { font-style: italic; font-size: 1.15rem; border-left: 3px solid var(--brand-accent-2); padding-left: 1rem; margin-top: 1.6rem; color: var(--brand-ink); }
+
+    /* Visitare — practical core */
+    .visita { background: var(--brand-surface-alt); }
+    .visita__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem,4vw,3.5rem); }
+    .info-block { background: var(--brand-surface); border: 1px solid var(--brand-line); border-radius: var(--radius); padding: clamp(1.4rem,1rem+2vw,2.2rem); }
+    .info-block h3 { font-size: 1.25rem; margin-bottom: 0.9rem; }
+    .hours-line { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+    .hours-line strong { color: var(--brand-accent); font-weight: 500; }
+    .addr { font-style: normal; line-height: 1.7; }
+    .addr strong { color: var(--brand-accent); font-weight: 500; }
+    .maps-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; text-decoration: none; color: var(--brand-ink); border-bottom: 1px solid var(--brand-ink); padding-bottom: 2px; font-size: 0.95rem; }
+    .maps-link:hover { color: var(--brand-accent); border-color: var(--brand-accent); }
+
+    /* Contatto */
+    .contatto { text-align: center; }
+    .contatto__inner { width: min(720px, 92vw); margin-inline: auto; }
+    .contatto h2 { margin-bottom: 1.2rem; }
+    .contatto .btn--primary { margin-top: 1.6rem; font-size: 1.1rem; padding: 1.1rem 2rem; }
+    .contatto__phone { display: block; margin-top: 1.1rem; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+    .contatto__phone a { color: var(--brand-accent); text-decoration: none; font-weight: 500; }
+    .contatto__wa { display: block; margin-top: 0.5rem; font-size: 0.92rem; color: var(--brand-muted); }
+    .contatto .proof { margin-top: 1.4rem; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer { background: var(--brand-ink); color: color-mix(in srgb, var(--brand-surface) 80%, transparent); padding: clamp(3rem,5vw,4.5rem) 0 7rem; }
+    .footer__grid { width: var(--container); margin-inline: auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+    footer h3 { font-family: var(--font-display); font-weight: 400; color: var(--brand-surface); font-size: 1.05rem; margin: 0 0 0.8rem; letter-spacing: -0.02em; }
+    footer a { color: inherit; text-decoration: none; }
+    footer .addr, footer p { font-variant-numeric: tabular-nums; }
+    footer a:hover { color: var(--brand-accent-2); }
+    .footer__brand .l1 { font-family: var(--font-display); font-size: 1.6rem; color: var(--brand-surface); }
+    .footer__brand .l2 { font-family: var(--font-display); font-style: italic; color: color-mix(in srgb, var(--brand-surface) 70%, transparent); }
+    .footer__note { width: var(--container); margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid color-mix(in srgb, var(--brand-surface) 20%, transparent); font-size: 0.8rem; color: color-mix(in srgb, var(--brand-surface) 55%, transparent); }
+
+    /* ============================================================
+       STICKY MOBILE ACTION BAR
+       ============================================================ */
+    .actionbar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+      display: none;
+      background: var(--brand-ink);
+      border-top: 1px solid color-mix(in srgb, var(--brand-accent-2) 40%, transparent);
+      padding: 0.55rem 0.8rem calc(0.55rem + env(safe-area-inset-bottom));
+      align-items: center; justify-content: space-between; gap: 0.8rem;
+    }
+    .actionbar .proof__text { color: color-mix(in srgb, var(--brand-surface) 75%, transparent); }
+    .actionbar .proof__text strong { color: var(--brand-surface); }
+    .actionbar .btn--primary { padding: 0.8rem 1.3rem; }
+    .actionbar { font-variant-numeric: tabular-nums; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 900px) {
+      .nav {
+        position: fixed; inset: 66px 0 auto 0;
+        flex-direction: column; align-items: flex-start; gap: 0;
+        background: var(--brand-surface);
+        border-bottom: 1px solid var(--brand-line);
+        padding: 0.5rem var(--container);
+        padding-inline: max(4vw, 1rem);
+        transform: translateY(-140%);
+        transition: transform var(--dur-micro) var(--ease-micro);
+        box-shadow: 0 20px 40px -30px rgba(36,22,16,0.6);
+      }
+      .nav[data-open="true"] { transform: translateY(0); }
+      .nav a { width: 100%; padding: 0.9rem 0; border-bottom: 1px solid var(--brand-line); font-size: 1rem; }
+      .nav a:last-child { border-bottom: none; }
+      .nav-toggle { display: inline-flex; }
+
+      .hero__grid { grid-template-columns: 1fr; }
+      /* mobile hero: text + CTA FIRST, then the aperture below the fold */
+      .hero__plate { order: 1; }
+      .aperture { order: 2; aspect-ratio: 4/5; max-height: 62vh; }
+
+      .split, .split--wide-text, .cycle, .visita__grid, .footer__grid, .dettagli__set, .strata { grid-template-columns: 1fr; }
+      .split > .arch-frame, .split > figure { order: -1; }
+
+      /* Le origini: stack the two strata images, keep the offset identity */
+      .strata { min-height: 0; }
+      .strata__main { width: 88%; }
+      .strata__detail { position: relative; right: auto; bottom: auto; width: 60%; margin: -3rem 0 0 auto; }
+
+      /* La cappella: horizontal band reflows to a vertical stack (mobile form) */
+      .cycle { grid-template-columns: 1fr; gap: 1.4rem; }
+      .cycle__wall { aspect-ratio: 3/2; }
+      .cycle__scene { aspect-ratio: 4/3; }
+
+      /* Dettagli: stack the editorial pair, retain overlap feel */
+      .dettagli__set { min-height: 0; }
+      .dettagli__gold { width: 82%; }
+      .dettagli__beam { position: relative; right: auto; top: auto; width: 58%; margin: -3rem 0 0 auto; }
+
+      .actionbar { display: flex; }
+      footer { padding-bottom: 6rem; }
+    }
+
+    @media (max-width: 560px) {
+      .footer__grid { grid-template-columns: 1fr; }
+      .hero__cta-row { gap: 0.9rem; }
+      .btn { width: 100%; justify-content: center; }
+      .actionbar .btn { width: auto; }
+    }
+
+    /* ============================================================
+       MOTION — structure pass keeps content visible; only micro
+       transitions here. Full choreography lands in the motion pass.
+       ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      /* honor stillness: drop the looping hero video, keep the static poster */
+      .aperture video { display: none; }
+    }
+
+    /* ============================================================
+       MOTION LAYER (pass 3) — additive, progressive-enhancement only.
+       All hidden-start states are gated behind html.js + no-preference,
+       so with JS off or reduced-motion every section is fully visible.
+       ============================================================ */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+    }
+
+    /* hero scroll-cinema canvas (frame scrub), layered over the video base */
+    .hero-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0; z-index: 1;
+      filter: var(--img-grade); will-change: opacity;
+      transition: opacity 500ms var(--ease-signature);
+    }
+    body.hero-scrub-on .hero-canvas { opacity: 1; }
+    body.hero-scrub-on .aperture video { opacity: 0; }
+
+    /* dynamic section tint — sub-perceptual warm wash, brand hues only */
+    .section-tint {
+      position: fixed; inset: 0; z-index: 999; pointer-events: none;
+      opacity: 0; mix-blend-mode: multiply;
+      background-color: var(--brand-accent-2);
+      transition: opacity 1200ms var(--ease-signature), background-color 1200ms var(--ease-signature);
+    }
+
+    /* chapter markers — desktop rail, dots are real anchors (keyboard-focusable) */
+    .chapter-rail { position: fixed; right: 1.4rem; top: 50%; transform: translateY(-50%); z-index: 55; display: none; }
+    @media (min-width: 1080px) and (hover: hover) { .chapter-rail { display: block; } }
+    .chapter-rail ul { list-style: none; margin: 0; padding: 0; position: relative; }
+    .chapter-rail__track { position: absolute; top: 8px; bottom: 8px; left: 50%; width: 2px; transform: translateX(-50%); background: var(--brand-line); overflow: hidden; border-radius: 2px; }
+    .chapter-rail__fill { position: absolute; inset: 0; transform-origin: top; transform: scaleY(0); background: var(--brand-accent-2); }
+    @supports (animation-timeline: scroll()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .chapter-rail__fill { animation: railFill linear both; animation-timeline: scroll(root block); }
+        @keyframes railFill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+      }
+    }
+    .chapter-rail a { display: block; width: 14px; height: 14px; margin: 0.7rem 0; position: relative; z-index: 1; border-radius: 2px; }
+    .chapter-rail a::before {
+      content: ""; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px;
+      transform: translate(-50%, -50%); border-radius: 50%;
+      border: 1.5px solid var(--brand-muted); background: var(--brand-surface);
+      transition: border-color var(--dur-micro) var(--ease-micro), background-color var(--dur-micro) var(--ease-micro), transform var(--dur-micro) var(--ease-micro);
+    }
+    .chapter-rail a:hover::before { border-color: var(--brand-accent); }
+    .chapter-rail a[aria-current="true"]::before { border-color: var(--brand-accent); background: var(--brand-accent); transform: translate(-50%, -50%) scale(1.3); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      /* ---- HERO load: arched aperture unveils, edges pulling back into the frame ----
+         The 'from' state is intentionally a near-complete photo (not a hidden sliver):
+         a renderer that freezes on first paint (slow paint, a static screenshot, an
+         animation-incapable engine) must still show the nave, never a blank arch. */
+      html.js .aperture .arch-frame { animation: apertureUnveil 1000ms var(--ease-signature) both; }
+      @keyframes apertureUnveil { from { clip-path: inset(3% 7% 3% 7%); } to { clip-path: inset(0 0 0 0); } }
+
+      html.js .hero__plate > * { animation: heroRise 720ms var(--ease-signature) both; }
+      html.js .hero__plate > .eyebrow      { animation-delay: 120ms; }
+      html.js .hero__plate > .wordmark     { animation-delay: 220ms; }
+      html.js .hero__plate > .hero__essence{ animation-delay: 380ms; }
+      html.js .hero__plate > .hero__cta-row{ animation-delay: 520ms; }
+      html.js .hero__plate > .hero__phone  { animation-delay: 620ms; }
+      @keyframes heroRise { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: none; } }
+
+      /* ---- SHARED REVEAL SYSTEM (one IntersectionObserver), varied by content role ---- */
+      /* headings + eyebrows: clip-masked rise (line rising from a baseline) */
+      html.reveals .section :is(h2, h3, .eyebrow) {
+        opacity: 0; transform: translateY(0.5em);
+        clip-path: inset(-18% -8% 100% -8%);
+        transition: opacity var(--dur-reveal) var(--ease-signature),
+                    transform var(--dur-reveal) var(--ease-signature),
+                    clip-path var(--dur-reveal) var(--ease-signature);
+        transition-delay: var(--d, 0ms);
+      }
+      html.reveals .section :is(h2, h3, .eyebrow).is-in { opacity: 1; transform: none; clip-path: inset(-18% -8% -18% -8%); }
+
+      /* body copy: soft fade + short rise */
+      html.reveals .section :is(p, .lede, .review-theme, .maps-link, .rating-card__big),
+      html.reveals .cycle__panel figcaption {
+        opacity: 0; transform: translateY(0.7em);
+        transition: opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);
+        transition-delay: var(--d, 0ms);
+      }
+      html.reveals .section :is(p, .lede, .review-theme, .maps-link, .rating-card__big).is-in,
+      html.reveals .cycle__panel figcaption.is-in { opacity: 1; transform: none; }
+
+      /* media: chiaroscuro emergence — brightens from shadow, 1.045 scale settle (no positional slide) */
+      html.reveals .section .arch-frame img, html.reveals .section .arch-frame video {
+        opacity: 0.35; transform: scale(1.045); filter: var(--img-grade-dark);
+        transition: opacity 1100ms var(--ease-signature), transform 1300ms var(--ease-signature), filter 1300ms var(--ease-signature);
+      }
+      html.reveals .section .arch-frame.is-in img, html.reveals .section .arch-frame.is-in video {
+        opacity: 1; transform: none; filter: var(--img-grade);
+      }
+
+      /* history / visit lists: inscription cascade — each line surfaces from a clipped baseline */
+      html.reveals .arch-list li {
+        opacity: 0; transform: translateY(0.6em); clip-path: inset(-14% 0 100% 0);
+        transition: opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature), clip-path var(--dur-reveal) var(--ease-signature);
+        transition-delay: var(--d, 0ms);
+      }
+      html.reveals .arch-list li.is-in { opacity: 1; transform: none; clip-path: inset(-14% 0 -14% 0); }
+
+      /* gilt draw-once dividers: the gold stroke is laid a single time */
+      html.reveals .arch-divider path { stroke-dasharray: 1300; stroke-dashoffset: 1300; transition: stroke-dashoffset 1500ms var(--ease-signature); }
+      html.reveals .arch-divider.is-in path { stroke-dashoffset: 0; }
+    }
+
+    /* ---- layered strata parallax: origins planes drift at three different rates (real z-depth) ---- */
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        .origini .strata__main   { animation: strataA linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+        .origini .strata__detail { animation: strataB linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+        .origini .measure        { animation: strataC linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+        @keyframes strataA { from { transform: translateY(3.5%); } to { transform: translateY(-3.5%); } }
+        @keyframes strataB { from { transform: translateY(9%);   } to { transform: translateY(-9%);   } }
+        @keyframes strataC { from { transform: translateY(1.5%); } to { transform: translateY(-1.5%); } }
+      }
+    }
+
+    /* ---- pinned Passion-cycle scrub: horizontal camera pan, desktop + capable only ---- */
+    .cycle-pin, .cycle-stage { display: contents; }   /* fallback everywhere: the normal grid, fully visible */
+    @media (min-width: 1000px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: scroll()) {
+        .cycle-pin { display: block; height: 260vh; view-timeline-name: --cyc; view-timeline-axis: block; }
+        .cycle-stage { display: flex; align-items: center; position: sticky; top: 0; height: 100vh; overflow: hidden; }
+        .cycle {
+          display: flex; width: max-content; margin: 0; gap: 1.6rem; padding-inline: 5vw; align-items: end;
+          will-change: transform;
+          animation: cyclePan linear both; animation-timeline: --cyc; animation-range: cover 12% cover 88%;
+        }
+        .cycle__panel { flex: 0 0 auto; }
+        .cycle__wall { width: 58vw; }
+        .cycle__scene { width: 36vw; }
+        .cycle__panel { max-height: 82vh; }
+        @keyframes cyclePan { from { transform: translateX(0); } to { transform: translateX(calc(100vw - 100% - 5vw)); } }
+      }
+    }
+
+    /* ---- pointer micro-interactions (hover-capable only) ---- */
+    @media (hover: hover) and (pointer: fine) {
+      .cta-bracket::before { transition: transform var(--dur-micro) var(--ease-micro); transform-origin: top center; }
+      .cta-bracket:hover::before  { transform: scaleX(0.86) translateY(3px); }   /* the arch quietly closes its top */
+      .cta-bracket:active::before { transform: scaleX(0.72) translateY(5px); }   /* settles inward like a latch */
+      .cta-bracket:active .btn { transform: translateY(1px) scale(0.992); }
+      /* nav underline draws from the left */
+      .nav a::after {
+        content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1.5px;
+        background: var(--brand-accent); transform: scaleX(0); transform-origin: left;
+        transition: transform var(--dur-micro) var(--ease-micro);
+      }
+      .nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
+    }
+  </style>
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      // Only hide-then-reveal when the reveal engine can actually run, so content is
+      // never left permanently hidden on old browsers or under reduced-motion.
+      try {
+        if ('IntersectionObserver' in window &&
+            !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+          d.classList.add('reveals');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#portale" style="position:absolute;left:-999px;top:0;background:var(--brand-accent);color:var(--brand-accent-ink);padding:.6rem 1rem;z-index:100;border-radius:2px;" onfocus="this.style.left='8px'" onblur="this.style.left='-999px'">Salta al contenuto</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brandmark" href="#portale" aria-label="San Giorgio al Palazzo — inizio pagina">San Giorgio <span class="al">al Palazzo</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Apri il menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Navigazione principale">
+        <a href="#soglia">La soglia</a>
+        <a href="#origini">Le origini</a>
+        <a href="#cappella">La cappella</a>
+        <a href="#dettagli">Dettagli</a>
+        <a href="#silenzio">Il silenzio</a>
+        <a href="#visitare">Visitare</a>
+        <a href="#contatto" aria-current="page">Contatto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== PORTALE (hero / wow) ===================== -->
+    <section class="hero" id="portale" aria-labelledby="wordmark">
+      <div class="hero__grid">
+        <div class="hero__plate">
+          <p class="eyebrow">Milano · dal 750</p>
+          <h1 class="wordmark" id="wordmark">
+            <span class="l1">San <span class="giorgio">G</span>iorgio</span>
+            <span class="l2">al Palazzo</span>
+          </h1>
+          <p class="hero__essence lede">
+            Una chiesa dell'VIII secolo nel cuore di Milano.<br>
+            Dentro, gli affreschi della Passione di Luini e un silenzio raro.
+          </p>
+          <div class="hero__cta-row">
+            <span class="cta-bracket">
+              <a class="btn btn--primary" data-cta href="tel:+39028057148">Chiama per una visita</a>
+            </span>
+            <span class="proof">
+              <span class="stars" aria-hidden="true"><span class="stars__bg">★★★★★</span><span class="stars__fill" style="width:90%">★★★★★</span></span>
+              <span class="proof__text"><strong>4,5</strong> su 252 recensioni</span>
+            </span>
+          </div>
+          <span class="hero__phone">Telefono <strong>02 805 7148</strong> — vi rispondiamo volentieri.</span>
+        </div>
+
+        <!-- the arched aperture: standing in the piazza, looking through the portal into the nave -->
+        <figure class="aperture" aria-label="La navata affrescata vista attraverso il portale">
+          <div class="arch-frame">
+            <video autoplay muted loop playsinline preload="auto" poster="assets/hero-nave-light.jpg" aria-hidden="true">
+              <source src="assets/hero-cinemagraph.mp4" type="video/mp4" />
+            </video>
+            <canvas class="hero-canvas" aria-hidden="true"></canvas>
+            <img src="assets/hero-nave-light.jpg" alt="Navata affrescata della chiesa di San Giorgio al Palazzo illuminata dalla luce che entra dalle finestre alte, vista verso l'altare" />
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="arch-divider" aria-hidden="true"><svg viewBox="0 0 1160 40" preserveAspectRatio="none"><path d="M20 38 L20 20 A560 560 0 0 1 1140 20 L1140 38" vector-effect="non-scaling-stroke"/></svg></div>
+
+    <!-- ===================== LA SOGLIA ===================== -->
+    <section class="section soglia" id="soglia" aria-labelledby="soglia-h">
+      <div class="split split--wide-text">
+        <div class="measure">
+          <p class="eyebrow">La soglia</p>
+          <h2 id="soglia-h" style="font-size:var(--fs-h2)">Un luogo di raccoglimento, non un museo.</h2>
+          <div class="stack" style="margin-top:1.3rem">
+            <p>San Giorgio al Palazzo è una chiesa cattolica, viva e officiata.</p>
+            <p>Sorge in pieno centro, a pochi passi dal Duomo, dove il rumore della città si ferma sulla soglia.</p>
+            <p>Chi entra trova affreschi, penombra e un silenzio che a Milano è raro.</p>
+            <p class="muted">Vi accogliamo come luogo di preghiera e di studio, aperto a chi vuole guardare con rispetto.</p>
+          </div>
+        </div>
+        <figure class="arch-frame soglia__img">
+          <img src="assets/hero-facade-piazza.jpg" alt="La facciata di San Giorgio al Palazzo sulla sua piazza, nella luce calda del pomeriggio" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== LE ORIGINI, DAL 750 ===================== -->
+    <section class="section origini" id="origini" aria-labelledby="origini-h">
+      <div class="split">
+        <div class="strata">
+          <figure class="arch-frame strata__main">
+            <img src="assets/origins-stone.jpg" alt="Muratura stratificata e mattoni che mostrano le diverse epoche di costruzione della chiesa" />
+          </figure>
+          <figure class="arch-frame card-arch strata__detail">
+            <img src="assets/vault-ceiling.jpg" alt="La volta a arco tondo affrescata della chiesa, in ocra e oro" />
+          </figure>
+        </div>
+        <div class="measure">
+          <p class="eyebrow">Le origini</p>
+          <h2 id="origini-h" style="font-size:var(--fs-h2)">Dal 750, strato su strato.</h2>
+          <p style="margin-top:1.2rem">Poche chiese di Milano possono raccontare una storia così lunga. Questa la porta scritta nelle sue pietre.</p>
+          <ul class="arch-list" style="margin-top:1.4rem">
+            <li>Fondata intorno al <strong>750 d.C.</strong>, sopra le vestigia di un edificio di età romana.</li>
+            <li>Rialzata e rifatta lungo i secoli: fondazioni tardoantiche, murature medievali, interventi rinascimentali e barocchi.</li>
+            <li>Un solo edificio che tiene insieme molte epoche, leggibili l'una accanto all'altra.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LA CAPPELLA DELLA PASSIONE (centerpiece) ===================== -->
+    <section class="section cappella" id="cappella" aria-labelledby="cappella-h">
+      <div class="cappella__head">
+        <p class="eyebrow">La cappella della Passione</p>
+        <h2 id="cappella-h" style="font-size:var(--fs-h2)">Il ciclo di Luini.</h2>
+        <div class="stack measure" style="margin-top:1.2rem">
+          <p>Sulla destra della navata, nella cappella della Passione, Bernardino Luini affrescò alla fine del Quattrocento un intero ciclo dedicato alla Passione di Cristo.</p>
+          <p class="muted">Scene dipinte in ocra, rosso e oro, sopravvissute per secoli. Molti le scoprono per caso. Vale la pena arrivarci sapendo cosa si guarda.</p>
+        </div>
+      </div>
+      <div class="cycle-pin"><div class="cycle-stage">
+      <div class="cycle">
+        <figure class="cycle__panel">
+          <div class="arch-frame cycle__wall">
+            <img src="assets/passion-chapel-main.jpg" alt="La parete della cappella della Passione con il ciclo di affreschi rinascimentali in ocra e oro" />
+          </div>
+          <figcaption><span class="n">La parete</span>Il ciclo intero, come appare entrando nella cappella.</figcaption>
+        </figure>
+        <figure class="cycle__panel">
+          <div class="arch-frame card-arch cycle__scene">
+            <img src="assets/passion-panel-crucifixion.jpg" alt="Dettaglio di una scena della Crocifissione dal ciclo di affreschi della Passione" />
+          </div>
+          <figcaption><span class="n">I.</span>La Crocifissione.</figcaption>
+        </figure>
+        <figure class="cycle__panel">
+          <div class="arch-frame card-arch cycle__scene">
+            <img src="assets/passion-panel-deposition.jpg" alt="Dettaglio di una scena della Deposizione dal ciclo di affreschi della Passione" />
+          </div>
+          <figcaption><span class="n">II.</span>La Deposizione.</figcaption>
+        </figure>
+      </div>
+      </div></div>
+    </section>
+
+    <!-- ===================== DETTAGLI PITTORICI ===================== -->
+    <section class="section dettagli" id="dettagli" aria-labelledby="dettagli-h">
+      <div class="split">
+        <div class="measure">
+          <p class="eyebrow">Dettagli pittorici</p>
+          <h2 id="dettagli-h" style="font-size:var(--fs-h2)">Pigmento, craquelure, oro.</h2>
+          <div class="stack" style="margin-top:1.2rem">
+            <p>Da vicino, l'affresco racconta il suo tempo.</p>
+            <p>La foglia d'oro incrinata delle aureole.</p>
+            <p>Le crepe sottili che attraversano l'intonaco.</p>
+            <p class="muted">La luce che rade la parete e accende l'ocra, un centimetro alla volta.</p>
+          </div>
+        </div>
+        <div class="dettagli__set">
+          <figure class="arch-frame dettagli__gold">
+            <img src="assets/passion-detail-gold.jpg" alt="Macro della foglia d'oro incrinata e del pigmento su un affresco della Passione" />
+          </figure>
+          <figure class="arch-frame card-arch dettagli__beam">
+            <img src="assets/detail-lightbeam.jpg" alt="Un fascio di luce calda che cade sul pavimento in pietra della chiesa" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IL SILENZIO (atmosphere + honest social proof) ===================== -->
+    <section class="section silenzio" id="silenzio" aria-labelledby="silenzio-h">
+      <div class="split">
+        <figure class="arch-frame silenzio__img">
+          <img src="assets/silence-corner.jpg" alt="Un angolo raccolto con una panca di legno e candele votive accese" />
+        </figure>
+        <div class="rating-card">
+          <p class="eyebrow">Il silenzio</p>
+          <h2 id="silenzio-h" style="font-size:var(--fs-h2)">Ciò che resta, uscendo.</h2>
+          <p style="margin-top:1rem" class="muted">Chi ci visita racconta spesso la stessa cosa: una scoperta inattesa, un silenzio profondo, una bellezza che commuove.</p>
+          <div style="margin-top:1.8rem">
+            <span class="rating-card__big">4,5<small>&nbsp;/&nbsp;5</small></span>
+            <span class="stars" aria-hidden="true" style="display:block"><span class="stars__bg">★★★★★</span><span class="stars__fill" style="width:90%">★★★★★</span></span>
+            <p class="proof__text" style="margin-top:0.5rem">Una media di <strong>4,5</strong> su <strong><span data-count="252">252</span> recensioni</strong> su Google, costante negli anni.</p>
+          </div>
+          <p class="review-theme">«Un silenzio inaspettato, e affreschi che non ti aspetti di trovare in centro.» — un tema ricorrente tra le recensioni.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="arch-divider" aria-hidden="true"><svg viewBox="0 0 1160 40" preserveAspectRatio="none"><path d="M20 38 L20 20 A560 560 0 0 1 1140 20 L1140 38" vector-effect="non-scaling-stroke"/></svg></div>
+
+    <!-- ===================== VISITARE ===================== -->
+    <section class="section visita" id="visitare" aria-labelledby="visita-h">
+      <div class="container">
+        <p class="eyebrow">Visitare</p>
+        <h2 id="visita-h" style="font-size:var(--fs-h2);max-width:22ch">Orari, luogo, e come visitare in raccoglimento.</h2>
+        <p class="muted" style="margin-top:1rem;max-width:52ch">Prima di attraversare la città, un promemoria: la chiesa osserva la pausa di mezzogiorno. Conviene sempre una telefonata per confermare gli orari del giorno.</p>
+
+        <div class="visita__grid" style="margin-top:2.5rem">
+          <div class="info-block">
+            <h3>Orari</h3>
+            <p class="hours-line">Al mattino, fino alle <strong>12</strong>.</p>
+            <p class="hours-line">Nel pomeriggio, dalle <strong>16</strong>.</p>
+            <p class="muted" style="margin-top:1rem;font-size:0.95rem">Gli orari possono variare in occasione delle funzioni. Vi consigliamo di chiamare il <strong style="color:var(--brand-accent)">02 805 7148</strong> prima di venire.</p>
+          </div>
+          <div class="info-block">
+            <h3>Dove siamo</h3>
+            <address class="addr">
+              <strong>Piazza San Giorgio, 2</strong><br>
+              20123 Milano
+            </address>
+            <p class="muted" style="margin-top:0.8rem;font-size:0.95rem">In pieno centro, a pochi passi dal Duomo e dalla fermata Cordusio (M1).</p>
+            <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=San+Giorgio+al+Palazzo+Piazza+San+Giorgio+Milano" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Apri in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="info-block" style="margin-top:1.5rem">
+          <h3>Come visitare</h3>
+          <ul class="arch-list">
+            <li>Custodite il silenzio: è un luogo di preghiera oltre che d'arte.</li>
+            <li>Un abbigliamento rispettoso è gradito, come in ogni chiesa.</li>
+            <li>Durante le funzioni la visita è sospesa: attendete la fine della celebrazione.</li>
+            <li>Fotografie senza flash, per non affaticare gli affreschi.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATTO ===================== -->
+    <section class="section section--tight contatto" id="contatto" aria-labelledby="contatto-h">
+      <div class="contatto__inner">
+        <p class="eyebrow" style="justify-content:center;display:inline-flex">Contatto</p>
+        <h2 id="contatto-h" style="font-size:var(--fs-h2)">Prima di venire, chiamateci.</h2>
+        <div class="stack" style="margin-top:0.5rem">
+          <p>Per visite guidate, informazioni sugli orari o sulle funzioni, il modo più diretto è una telefonata.</p>
+          <p class="muted">Rispondiamo volentieri, e vi diciamo il momento migliore per trovare la chiesa aperta e in silenzio.</p>
+        </div>
+        <span class="cta-bracket">
+          <a class="btn btn--primary" data-cta href="tel:+39028057148">Chiama per prenotare una visita</a>
+        </span>
+        <span class="contatto__phone">Telefono <a href="tel:+39028057148">02 805 7148</a></span>
+        <span class="contatto__wa">Siamo raggiungibili anche via WhatsApp allo stesso numero.</span>
+        <span class="proof" style="justify-content:center;display:inline-flex">
+          <span class="stars" aria-hidden="true"><span class="stars__bg">★★★★★</span><span class="stars__fill" style="width:90%">★★★★★</span></span>
+          <span class="proof__text"><strong>4,5</strong> su 252 recensioni</span>
+        </span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="l1">San Giorgio</span>
+        <span class="l2">al Palazzo</span>
+        <p style="margin-top:1rem;max-width:34ch;font-size:0.95rem">Chiesa dell'VIII secolo nel centro di Milano. Milano, dal 750.</p>
+      </div>
+      <div>
+        <h3>Dove</h3>
+        <address class="addr" style="font-size:0.95rem">
+          Piazza San Giorgio, 2<br>
+          20123 Milano
+        </address>
+        <p style="margin-top:0.8rem"><a href="https://www.google.com/maps/search/?api=1&query=San+Giorgio+al+Palazzo+Piazza+San+Giorgio+Milano" target="_blank" rel="noopener">Apri in Google Maps</a></p>
+      </div>
+      <div>
+        <h3>Contatti</h3>
+        <p style="font-size:0.95rem"><a href="tel:+39028057148">02 805 7148</a></p>
+        <p style="font-size:0.95rem;margin-top:0.4rem">Al mattino fino alle 12<br>Nel pomeriggio dalle 16</p>
+      </div>
+    </div>
+    <p class="footer__note">Gli orari indicati sono da confermare telefonicamente; possono variare in occasione delle funzioni. Valutazione 4,5 su 252 recensioni Google.</p>
+  </footer>
+
+  <!-- dynamic section tint (sub-perceptual warm wash) -->
+  <div class="section-tint" aria-hidden="true"></div>
+
+  <!-- chapter markers (desktop rail; mobile keeps the sticky CTA bar) -->
+  <nav class="chapter-rail" aria-label="Indice delle sezioni">
+    <ul>
+      <span class="chapter-rail__track" aria-hidden="true"><span class="chapter-rail__fill"></span></span>
+      <li><a href="#portale" aria-current="true"><span class="sr-only">Portale</span></a></li>
+      <li><a href="#soglia"><span class="sr-only">La soglia</span></a></li>
+      <li><a href="#origini"><span class="sr-only">Le origini</span></a></li>
+      <li><a href="#cappella"><span class="sr-only">La cappella</span></a></li>
+      <li><a href="#dettagli"><span class="sr-only">Dettagli</span></a></li>
+      <li><a href="#silenzio"><span class="sr-only">Il silenzio</span></a></li>
+      <li><a href="#visitare"><span class="sr-only">Visitare</span></a></li>
+      <li><a href="#contatto"><span class="sr-only">Contatto</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== STICKY MOBILE ACTION BAR ===================== -->
+  <div class="actionbar" role="region" aria-label="Contatto rapido">
+    <span class="proof">
+      <span class="stars" aria-hidden="true"><span class="stars__bg">★★★★★</span><span class="stars__fill" style="width:90%">★★★★★</span></span>
+      <span class="proof__text"><strong>4,5</strong> · 252</span>
+    </span>
+    <a class="btn btn--primary" data-cta href="tel:+39028057148">Chiama · 02 805 7148</a>
+  </div>
+
+  <script>
+    // Mobile nav toggle — keyboard operable, Esc closes, no trap
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        nav.setAttribute('data-open', open ? 'true' : 'false');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+      }
+      setOpen(false);
+      toggle.addEventListener('click', function () {
+        setOpen(nav.getAttribute('data-open') !== 'true');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    })();
+
+    // Active-section highlight in the nav (progressive enhancement)
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+      var map = {};
+      links.forEach(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        if (id) map[id] = a;
+      });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && map[en.target.id]) {
+            links.forEach(function (l) { l.removeAttribute('aria-current'); });
+            map[en.target.id].setAttribute('aria-current', 'page');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      Object.keys(map).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+
+    /* ===================== MOTION LAYER (pass 3) ===================== */
+    (function () {
+      var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var hasIO = 'IntersectionObserver' in window;
+
+      /* ---- shared reveal system: ONE rAF-batched observer, unobserve after firing ---- */
+      if (document.documentElement.classList.contains('reveals')) {
+        try {
+          var sel = '.section :is(h2,h3,.eyebrow), .section :is(p,.lede,.review-theme,.maps-link,.rating-card__big), .cycle__panel figcaption, .section .arch-frame, .arch-list li, .arch-divider';
+          var targets = Array.prototype.slice.call(document.querySelectorAll(sel));
+          // stagger siblings that share a parent (each parent counts its own children)
+          targets.forEach(function (el) {
+            var p = el.parentElement; if (!p) return;
+            var n = p.__rn || 0; p.__rn = n + 1;
+            el.style.setProperty('--d', Math.min(n * 80, 420) + 'ms');
+          });
+          var pending = [], scheduled = false;
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) { pending.push(en.target); io.unobserve(en.target); }
+            });
+            if (!scheduled) {
+              scheduled = true;
+              requestAnimationFrame(function () {
+                scheduled = false;
+                pending.splice(0).forEach(function (el) { el.classList.add('is-in'); });
+              });
+            }
+          }, { rootMargin: '0px 0px -8% 0px', threshold: 0.16 });
+          targets.forEach(function (el) { io.observe(el); });
+        } catch (err) {
+          // if anything above fails, drop the gate so no section stays hidden
+          document.documentElement.classList.remove('reveals');
+        }
+      }
+
+      /* ---- count-up on the real review count (never invents a number) ---- */
+      if (hasIO) {
+        var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+        if (counters.length) {
+          var cio = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (!en.isIntersecting) return;
+              cio.unobserve(en.target);
+              var el = en.target, target = parseInt(el.getAttribute('data-count'), 10) || 0;
+              if (RM) { el.textContent = target; return; }
+              var start = null, dur = 1400;
+              requestAnimationFrame(function tick(ts) {
+                if (start === null) start = ts;
+                var p = Math.min((ts - start) / dur, 1);
+                el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+                if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+              });
+            });
+          }, { threshold: 0.6 });
+          counters.forEach(function (el) { cio.observe(el); });
+        }
+      }
+
+      /* ---- chapter rail active state + dynamic section tint ---- */
+      if (hasIO) {
+        var railLinks = Array.prototype.slice.call(document.querySelectorAll('.chapter-rail a'));
+        var tint = document.querySelector('.section-tint');
+        var tintMap = {
+          portale: '--brand-accent-2', soglia: '--brand-muted', origini: '--brand-accent-2',
+          cappella: '--brand-accent', dettagli: '--brand-accent-2', silenzio: '--brand-muted',
+          visitare: '--brand-accent', contatto: '--brand-accent'
+        };
+        var secs = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+        if (secs.length) {
+          var sio = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (!en.isIntersecting) return;
+              var id = en.target.id;
+              railLinks.forEach(function (a) {
+                a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false');
+              });
+              if (tint && !RM) {
+                tint.style.backgroundColor = 'var(' + (tintMap[id] || '--brand-accent-2') + ')';
+                tint.style.opacity = '0.05';
+              }
+            });
+          }, { rootMargin: '-45% 0px -50% 0px' });
+          secs.forEach(function (s) { sio.observe(s); });
+        }
+      }
+
+      /* ---- hero scroll-cinema: canvas frame scrubbing (works on every device, incl. iOS) ---- */
+      (function () {
+        if (RM || !hasIO) return;
+        var frame = document.querySelector('.aperture .arch-frame');
+        var canvas = document.querySelector('.hero-canvas');
+        var video = document.querySelector('.aperture video');
+        if (!frame || !canvas || !video) return;
+        var ctx = canvas.getContext && canvas.getContext('2d');
+        if (!ctx) return;
+
+        var TOTAL = 48;
+        var dir = window.innerWidth < 800 ? 'mobile' : 'desktop';
+        var base = 'assets/hero-frames/' + dir + '/frame-';
+        function pad(n) { n = '' + n; while (n.length < 4) n = '0' + n; return n; }
+
+        var imgs = new Array(TOTAL), loaded = 0, ready = false, visible = false, raf = null;
+        var current = 0, targetF = 0;
+
+        function nearest(i) {
+          i = Math.round(i);
+          for (var k = 0; k < TOTAL; k++) {
+            var a = i - k, b = i + k;
+            if (a >= 0 && imgs[a] && imgs[a].__ok) return imgs[a];
+            if (b < TOTAL && imgs[b] && imgs[b].__ok) return imgs[b];
+          }
+          return null;
+        }
+        function draw(i) {
+          var im = nearest(i); if (!im) return;
+          var cw = canvas.width, ch = canvas.height, iw = im.naturalWidth, ih = im.naturalHeight;
+          if (!iw || !ih) return;
+          var s = Math.max(cw / iw, ch / ih), dw = iw * s, dh = ih * s;
+          ctx.drawImage(im, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+        }
+        function resize() {
+          var r = frame.getBoundingClientRect();
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          canvas.width = Math.max(2, Math.round(r.width * dpr));
+          canvas.height = Math.max(2, Math.round(r.height * dpr));
+          draw(current);
+        }
+        function progress() {
+          var r = frame.getBoundingClientRect();
+          var vh = window.innerHeight || 1;
+          var p = (0 - r.top) / (r.height * 0.9 + vh * 0.1);
+          return Math.max(0, Math.min(1, p));
+        }
+        function loop() {
+          targetF = progress() * (TOTAL - 1);
+          current += (targetF - current) * 0.12;
+          if (Math.abs(targetF - current) < 0.01) current = targetF;
+          draw(current);
+          raf = visible ? requestAnimationFrame(loop) : null;
+        }
+        function activate() {
+          if (ready) return; ready = true;
+          document.body.classList.add('hero-scrub-on');
+          resize();
+          if (visible && !raf) loop();
+        }
+        function loadOne(idx) {
+          var im = new Image();
+          im.decoding = 'async';
+          im.onload = function () {
+            im.__ok = true; loaded++;
+            if (!ready && imgs[0] && imgs[0].__ok && loaded >= 6) activate();
+          };
+          im.onerror = function () { loaded++; };
+          im.src = base + pad(idx + 1) + '.webp';
+          imgs[idx] = im;
+        }
+        // critical-first ordering: frame 0, then a coarse spread, then the rest
+        var order = [0], seen = { 0: 1 };
+        for (var step2 = 0; step2 < 6; step2++)
+          for (var i2 = step2; i2 < TOTAL; i2 += 6)
+            if (!seen[i2]) { seen[i2] = 1; order.push(i2); }
+        var li = 0;
+        (function pump() {
+          if (li >= order.length) return;
+          loadOne(order[li++]);
+          (li % 4 === 0) ? setTimeout(pump, 0) : pump();
+        })();
+
+        var hio = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { visible = e.isIntersecting; if (visible && ready && !raf) loop(); });
+        }, { threshold: 0 });
+        hio.observe(frame);
+        window.addEventListener('resize', function () { if (ready) resize(); }, { passive: true });
+      })();
+
+      /* ---- seamless-loop mask: gently soften the hero video's loop cut ---- */
+      (function () {
+        if (RM) return;
+        var v = document.querySelector('.aperture video');
+        if (!v) return;
+        v.addEventListener('timeupdate', function () {
+          if (document.body.classList.contains('hero-scrub-on')) { v.style.opacity = ''; return; }
+          var d = v.duration; if (!d || isNaN(d)) return;
+          var t = v.currentTime, edge = 0.4, k;
+          if (t > d - edge) k = (d - t) / edge; else if (t < edge) k = t / edge; else k = 1;
+          // gentle cross-dissolve toward the matching still behind — masks the loop cut, no visible pulse
+          v.style.opacity = (0.86 + 0.14 * Math.max(0, Math.min(1, k))).toFixed(3);
+        });
+      })();
+    })();
+  </script>
+</body>

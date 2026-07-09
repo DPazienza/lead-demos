@@ -1,0 +1,16 @@
+{
+  "desktop": {
+    "dir": "desktop",
+    "quality": 66,
+    "width": 1600
+  },
+  "frames": 48,
+  "mobile": {
+    "dir": "mobile",
+    "quality": 62,
+    "width": 800
+  },
+  "pattern": "frame-%04d.webp",
+  "source": "hero-cinemagraph.mp4",
+  "total_kb": 6142
+}

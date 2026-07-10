@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Il Paquito · Trattoria di quartiere con giardino — Milano, Porta Romana</title>
+<meta name="description" content="Trattoria di quartiere tra Bonghi e Porta Romana a Milano. Si cena fuori, nel giardino di pietra, con la musica dal vivo. Cucina casalinga, prezzo onesto. Chiama per prenotare un tavolo.">
+<link rel="canonical" href="https://ilpaquito.example/">
+
+<meta property="og:title" content="Il Paquito · Trattoria di quartiere con giardino — Milano">
+<meta property="og:description" content="Si cena fuori, nel giardino di pietra, con la musica dal vivo. Cucina casalinga a prezzo onesto, nel quartiere di Porta Romana.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-garden-room-dusk.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Il Paquito",
+  "description": "Trattoria di quartiere con giardino tra Bonghi e Porta Romana a Milano: cucina casalinga, cena all'aperto e musica dal vivo.",
+  "image": "assets/hero-garden-room-dusk.jpg",
+  "servesCuisine": ["Italiana", "Casalinga"],
+  "priceRange": "€€",
+  "telephone": "+390289511092",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Ruggero Bonghi, 12",
+    "postalCode": "20141",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "openingHours": [
+    "Mo 12:30-15:00",
+    "Mo 19:30-23:00",
+    "Tu 12:00-15:00",
+    "We 12:30-15:00",
+    "We 19:30-23:00",
+    "Th 12:30-15:00",
+    "Th 19:30-23:00",
+    "Fr 12:30-15:00",
+    "Fr 19:30-23:00",
+    "Sa 12:30-15:00",
+    "Sa 19:30-23:00",
+    "Su 19:30-23:00"
+  ],
+  "acceptsReservations": "True",
+  "paymentAccepted": "Contanti, Carte di credito",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "3.6",
+    "reviewCount": "102"
+  }
+}
+</script>
+
+<style>
+/* ============================================================
+   IL PAQUITO — brand tokens defined ONCE, referenced everywhere
+   ============================================================ */
+:root{
+  /* palette (brief brand_identity) */
+  --brand-ink:#29251E;
+  --brand-surface:#F4EEE3;
+  --brand-surface-alt:#ECE4D6;
+  --brand-accent:#47632F;          /* verde giardino */
+  --brand-accent-ink:#F7F2E9;      /* text on accent */
+  --brand-muted:#665A46;
+  --brand-line:#D9CFBD;
+  --brand-accent-2:#B4552D;        /* terracotta — wordmark dot + status pill only */
+
+  /* type */
+  --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --fs-hero:clamp(2.6rem, 1.6rem + 4.4vw, 5.5rem);
+  --fs-h2:clamp(1.6rem, 1.2rem + 1.9vw, 2.6rem);
+  --fs-body:clamp(1rem, 0.96rem + 0.22vw, 1.15rem);
+
+  /* motion */
+  --ease-signature:cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-micro:cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-reveal:720ms;
+  --dur-micro:220ms;
+  --stagger:90ms;
+
+  /* spacing */
+  --space-section:clamp(4.5rem, 3rem + 6vw, 9rem);
+  --container:min(1180px, 92vw);
+  --radius:10px;
+  --nav-h:64px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+  text-rendering:optimizeLegibility;
+}
+img,video{max-width:100%;display:block;filter:saturate(1.05) contrast(1.03) brightness(1.01);}
+a{color:inherit;}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;line-height:1.08;margin:0;text-wrap:balance;}
+h2{font-size:var(--fs-h2);}
+p{margin:0 0 1rem;overflow-wrap:anywhere;text-wrap:pretty;}
+p:last-child{margin-bottom:0;}
+
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+:focus-visible{
+  outline:3px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* fine film-grain texture — inline SVG noise, static, never a generated image */
+.grain{
+  position:fixed;inset:0;z-index:5;pointer-events:none;
+  opacity:.045;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  background-size:180px 180px;
+}
+
+/* ---------- reusable bits ---------- */
+.container{width:var(--container);margin-inline:auto;}
+.rametto{width:1.15em;height:1.15em;color:var(--brand-accent);flex:none;}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.78rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--brand-muted);font-weight:600;
+  margin:0 0 1.1rem;
+}
+.eyebrow .rametto{width:1.2rem;height:1.2rem;}
+
+.section-rule{
+  border:0;height:0;
+  display:flex;align-items:center;justify-content:center;
+  margin:0;
+}
+.section-rule::before,.section-rule::after{
+  content:"";flex:1;height:1px;background:var(--brand-line);
+}
+.section-rule .rametto{margin-inline:1rem;color:var(--brand-accent);width:1.6rem;height:1.6rem;}
+
+.lede{font-size:clamp(1.05rem,1rem + .5vw,1.35rem);color:var(--brand-ink);max-width:52ch;text-wrap:pretty;}
+.muted{color:var(--brand-muted);}
+.price{color:var(--brand-accent);font-weight:600;font-variant-numeric:tabular-nums;}
+
+/* ---------- buttons / CTAs ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  font-family:var(--font-body);font-weight:600;font-size:1rem;
+  padding:.85rem 1.5rem;border-radius:var(--radius);
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  min-height:48px;transition:transform var(--dur-micro) var(--ease-micro),
+    background-color var(--dur-micro) var(--ease-signature);
+}
+.btn-primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line);}
+.btn-ghost:hover{border-color:var(--brand-accent);}
+.btn svg{width:1.15em;height:1.15em;flex:none;}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.site-nav{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb, var(--brand-surface) 92%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav-inner{
+  width:var(--container);margin-inline:auto;
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.nav-brand{font-family:var(--font-display);font-size:1.35rem;letter-spacing:-0.02em;text-decoration:none;color:var(--brand-ink);white-space:nowrap;}
+.nav-brand .i-dot{color:var(--brand-accent-2);}
+.nav-links{display:flex;align-items:center;gap:1.35rem;list-style:none;margin:0;padding:0;}
+.nav-links a{
+  text-decoration:none;color:var(--brand-muted);font-size:.95rem;font-weight:500;
+  padding:.35rem .15rem;border-bottom:2px solid transparent;transition:color var(--dur-micro);
+}
+.nav-links a:hover{color:var(--brand-ink);}
+.nav-links a.is-active{color:var(--brand-accent);border-bottom-color:var(--brand-accent);}
+.nav-cta{display:flex;align-items:center;gap:.75rem;}
+.nav-phone{font-weight:600;font-size:.95rem;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.nav-toggle{
+  display:none;background:none;border:1.5px solid var(--brand-line);border-radius:8px;
+  width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center;color:var(--brand-ink);
+}
+.nav-toggle svg{width:22px;height:22px;}
+
+/* ============================================================
+   HERO — full-bleed cinema (video base, still poster fallback)
+   ============================================================ */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--brand-ink);}
+.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:-2;}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top,
+    color-mix(in srgb, var(--brand-ink) 82%, transparent) 0%,
+    color-mix(in srgb, var(--brand-ink) 42%, transparent) 42%,
+    color-mix(in srgb, var(--brand-ink) 20%, transparent) 100%);
+}
+.hero-inner{
+  width:var(--container);margin-inline:auto;
+  min-height:min(88vh, 780px);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-block:clamp(2rem,4vw,4rem) clamp(2.5rem,5vw,4.5rem);
+  color:var(--brand-accent-ink);
+}
+.hero .eyebrow{color:color-mix(in srgb, var(--brand-accent-ink) 82%, transparent);}
+.hero .eyebrow .rametto{color:var(--brand-accent-ink);}
+
+/* wordmark = the single H1 */
+.wordmark{font-size:var(--fs-hero);margin:0;}
+.wordmark .wm-il{font-style:normal;font-weight:400;}
+.wordmark .wm-name{font-style:italic;font-weight:600;margin-left:.18em;}
+.wm-i{position:relative;}
+.wm-i::before{
+  content:"";position:absolute;left:50%;top:-0.06em;transform:translateX(-50%);
+  width:.16em;height:.16em;border-radius:50%;background:var(--brand-accent-2);
+}
+.hero-tagline{
+  font-family:var(--font-display);font-style:italic;font-weight:400;
+  font-size:clamp(1.2rem,1rem + 1vw,1.7rem);margin:.4rem 0 1.4rem;
+  color:color-mix(in srgb, var(--brand-accent-ink) 92%, transparent);
+}
+.hero-copy{max-width:46ch;}
+.hero-copy p{color:color-mix(in srgb, var(--brand-accent-ink) 90%, transparent);margin-bottom:.3rem;}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;margin-top:1.8rem;}
+.hero .btn-ghost{color:var(--brand-accent-ink);border-color:color-mix(in srgb,var(--brand-accent-ink) 55%, transparent);}
+.hero .btn-ghost:hover{border-color:var(--brand-accent-ink);}
+.hero-proof{display:flex;align-items:center;gap:.55rem;font-size:.95rem;font-weight:500;
+  color:color-mix(in srgb,var(--brand-accent-ink) 90%, transparent);}
+.hero-proof strong{font-weight:600;font-variant-numeric:tabular-nums;}
+.hero-proof .stars .base svg{color:color-mix(in srgb,var(--brand-accent-ink) 40%, transparent);}
+.hero-proof .stars .fill svg{color:var(--brand-accent-ink);}
+
+/* ============================================================
+   TOUR LAYOUT — content column + sticky planimetria rail (the WOW)
+   ============================================================ */
+.tour{position:relative;}
+.tour-grid{
+  width:var(--container);margin-inline:auto;
+  display:grid;grid-template-columns:1fr 230px;gap:clamp(2rem,4vw,4.5rem);
+  align-items:start;
+}
+.tour-main{min-width:0;}
+
+/* --- the planimetria rail (desktop) --- */
+.plan-rail{position:sticky;top:calc(var(--nav-h) + 1.5rem);align-self:start;}
+.plan-card{
+  border:1px solid var(--brand-line);border-radius:var(--radius);
+  background:var(--brand-surface-alt);padding:1.1rem 1.1rem 1.3rem;
+  box-shadow:0 1px 2px color-mix(in srgb, var(--brand-ink) 5%, transparent), 0 16px 30px -22px color-mix(in srgb, var(--brand-ink) 20%, transparent);
+}
+.plan-title{display:flex;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brand-muted);font-weight:600;margin-bottom:.2rem;}
+.plan-here{font-family:var(--font-display);font-style:italic;font-size:1.05rem;color:var(--brand-ink);margin-bottom:.6rem;min-height:1.4em;}
+.plan-here b{font-style:normal;font-weight:600;color:var(--brand-accent);}
+.plan-svg{width:100%;height:auto;display:block;}
+.plan-svg .house{fill:var(--brand-surface);stroke:var(--brand-ink);stroke-width:1.5;}
+.plan-svg .wall{stroke:var(--brand-line);stroke-width:1;}
+.plan-svg .route{stroke:var(--brand-line);stroke-width:1.5;stroke-dasharray:3 4;fill:none;stroke-linecap:round;}
+.plan-svg .seg{stroke:var(--brand-line);stroke-width:2.4;fill:none;stroke-linecap:round;
+  transition:stroke var(--dur-reveal) var(--ease-signature);}
+.plan-svg .seg.is-done{stroke:var(--brand-accent);}
+.plan-svg .stop-dot{fill:var(--brand-surface);stroke:var(--brand-line);stroke-width:1.5;
+  transition:fill var(--dur-reveal) var(--ease-signature),
+             stroke var(--dur-reveal) var(--ease-signature),
+             r var(--dur-micro) var(--ease-micro);}
+.plan-svg .stop.is-done .stop-dot{fill:color-mix(in srgb,var(--brand-accent) 45%, var(--brand-surface));stroke:var(--brand-accent);}
+.plan-svg .stop.is-current .stop-dot{fill:var(--brand-accent);stroke:var(--brand-accent);}
+.plan-svg .stop-num{font-family:var(--font-body);font-size:7px;font-weight:600;fill:var(--brand-muted);text-anchor:middle;dominant-baseline:central;}
+.plan-svg .stop.is-current .stop-num{fill:var(--brand-accent-ink);}
+.plan-svg .stop-label{font-family:var(--font-body);font-size:7.5px;fill:var(--brand-muted);}
+.plan-svg .stop.is-current .stop-label{fill:var(--brand-ink);font-weight:600;}
+
+/* --- the planimetria strip (mobile form of the WOW) --- */
+.plan-strip{display:none;}
+
+/* ---------- room sections ---------- */
+.room{scroll-margin-top:calc(var(--nav-h) + 1rem);padding-block:var(--space-section);}
+.room:first-child{padding-top:clamp(3rem,5vw,5rem);}
+/* uneven pacing: a dense tappa, then a vast quiet one, never one flat rhythm */
+#sala{padding-block:clamp(3rem,2vw,4.5rem);}
+#giardino{padding-block:clamp(5rem,5vw,10rem);}
+.room-head{max-width:60ch;margin-bottom:clamp(1.5rem,3vw,2.5rem);}
+.room-head .lede{margin-top:.6rem;}
+
+/* asymmetric image + text (Kinfolk borrow) */
+.split{display:grid;gap:clamp(1.5rem,3vw,3rem);align-items:center;}
+.split.reverse .split-text{order:2;}
+@media(min-width:820px){
+  .split{grid-template-columns:1.15fr .85fr;}
+  .split.text-first{grid-template-columns:.85fr 1.15fr;}
+}
+.split-text p{max-width:46ch;}
+figure{margin:0;}
+.figclip{overflow:clip;border-radius:var(--radius);}
+.figclip img{width:100%;height:100%;object-fit:cover;}
+figcaption{font-size:.85rem;color:var(--brand-muted);margin-top:.6rem;}
+
+/* editorial pair (main + overlapping companion) for image SETS */
+.pair{position:relative;}
+.pair-main{border-radius:var(--radius);overflow:clip;}
+.pair-main img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+.pair-detail{
+  position:relative;width:52%;margin-top:-16%;margin-left:auto;
+  border-radius:var(--radius);overflow:clip;border:4px solid var(--brand-surface);
+  box-shadow:0 12px 30px -18px color-mix(in srgb, var(--brand-ink) 55%, transparent);
+}
+.pair-detail.left{margin-left:0;margin-right:auto;}
+.pair-detail img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+
+/* ---------- L'insegna: the paradox story ---------- */
+.insegna-story{display:grid;gap:clamp(1.5rem,3vw,3rem);align-items:center;margin-top:clamp(2rem,4vw,3.5rem);}
+@media(min-width:820px){.insegna-story{grid-template-columns:1fr 1fr;}}
+.insegna-story .figclip{aspect-ratio:3/2;}
+#famiglia .figclip,#musica .figclip{aspect-ratio:4/3;}
+.story-lines p{font-family:var(--font-display);font-size:clamp(1.15rem,1rem + .8vw,1.55rem);
+  line-height:1.35;margin-bottom:.7rem;color:var(--brand-ink);}
+.story-lines p.small{font-family:var(--font-body);font-size:var(--fs-body);color:var(--brand-muted);line-height:1.6;}
+
+/* ---------- La tavola: dishes ---------- */
+.tavola-band{display:flex;flex-wrap:wrap;align-items:baseline;gap:.75rem 1.25rem;
+  margin-bottom:clamp(1.5rem,3vw,2.5rem);}
+.tavola-band .price-badge{font-family:var(--font-display);font-size:1.4rem;color:var(--brand-accent);font-weight:600;}
+.featured-dish{display:grid;gap:clamp(1.5rem,3vw,2.5rem);align-items:center;margin-bottom:clamp(2rem,4vw,3rem);}
+@media(min-width:820px){.featured-dish{grid-template-columns:1.1fr .9fr;}}
+.featured-dish .figclip img{aspect-ratio:1/1;}
+.dish-list{list-style:none;margin:.4rem 0 0;padding:0;}
+.dish-list li{display:flex;gap:.6rem;padding:.35rem 0;align-items:flex-start;}
+.dish-list .rametto{margin-top:.15em;}
+.dish-grid{display:grid;gap:1.25rem;grid-template-columns:1fr;}
+@media(min-width:560px){.dish-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:980px){.dish-grid{grid-template-columns:repeat(4,1fr);}}
+.dish-card{border:1px solid var(--brand-line);border-radius:var(--radius);overflow:clip;background:var(--brand-surface);
+  box-shadow:0 1px 2px color-mix(in srgb, var(--brand-ink) 5%, transparent), 0 14px 26px -20px color-mix(in srgb, var(--brand-ink) 22%, transparent);
+  transition:transform var(--dur-micro) var(--ease-micro),
+    box-shadow var(--dur-micro) var(--ease-signature),
+    opacity var(--dur-reveal) var(--ease-signature) calc(var(--i,0) * var(--stagger)),
+    filter var(--dur-reveal) var(--ease-signature) calc(var(--i,0) * var(--stagger));}
+.dish-card img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+.dish-card .body{padding:1rem 1.1rem 1.2rem;}
+.dish-card h3{font-size:1.2rem;margin-bottom:.3rem;}
+.dish-card p{font-size:.95rem;color:var(--brand-muted);margin:0;}
+
+/* ---------- alternating section backgrounds ---------- */
+.band-alt{background:var(--brand-surface-alt);}
+
+/* ============================================================
+   Below the tour: social proof, info, contact (full width)
+   ============================================================ */
+.wide{scroll-margin-top:calc(var(--nav-h) + 1rem);padding-block:var(--space-section);}
+#recensioni{padding-block:clamp(3.5rem,3vw,6rem);}
+#prenota{padding-block:clamp(5.5rem,5vw,10rem);}
+
+/* Cosa dicono */
+.proof-wrap{display:grid;gap:clamp(2rem,4vw,3.5rem);align-items:center;}
+@media(min-width:820px){.proof-wrap{grid-template-columns:.85fr 1.15fr;}}
+.proof-score{text-align:center;border:1px solid var(--brand-line);border-radius:var(--radius);
+  background:var(--brand-surface);padding:2rem 1.5rem;
+  box-shadow:0 1px 2px color-mix(in srgb, var(--brand-ink) 5%, transparent), 0 18px 34px -22px color-mix(in srgb, var(--brand-ink) 24%, transparent);}
+.proof-score .big{font-family:var(--font-display);font-size:clamp(3.5rem,3rem + 4vw,5.5rem);
+  line-height:1;font-weight:600;font-variant-numeric:tabular-nums;}
+.proof-score .out{color:var(--brand-muted);font-size:1rem;}
+.proof-score .count{margin-top:.6rem;font-weight:500;}
+.proof-score .src{margin-top:.2rem;font-size:.85rem;color:var(--brand-muted);}
+.stars{display:inline-flex;position:relative;line-height:1;}
+.stars .row{display:flex;gap:2px;}
+.stars svg{width:1.5rem;height:1.5rem;}
+.stars .base svg{color:var(--brand-line);}
+.stars .fill{position:absolute;inset:0;overflow:hidden;white-space:nowrap;}
+.stars .fill svg{color:var(--brand-ink);}
+.proof-themes{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.9rem;}
+.proof-themes li{display:flex;gap:.7rem;align-items:flex-start;}
+.proof-themes .rametto{margin-top:.2em;}
+.proof-note{margin-top:1.4rem;font-style:italic;color:var(--brand-muted);
+  border-left:2px solid var(--brand-line);padding-left:1rem;font-family:var(--font-display);
+  font-size:1.15rem;line-height:1.4;}
+
+/* Info pratiche */
+.info-grid{display:grid;gap:clamp(1.5rem,3vw,2.5rem);}
+@media(min-width:820px){.info-grid{grid-template-columns:1.1fr .9fr;}}
+.hours-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--brand-line);}
+.hours-list li{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;
+  border-bottom:1px solid var(--brand-line);font-size:.98rem;}
+.hours-list .day{font-weight:500;}
+.hours-list .hrs{color:var(--brand-muted);text-align:right;font-variant-numeric:tabular-nums;}
+.hours-list li.today{color:var(--brand-ink);}
+.hours-list li.today .day::after{content:" · oggi";color:var(--brand-accent);font-weight:600;font-size:.85em;}
+.status-pill{display:none;align-items:center;gap:.4rem;margin-bottom:1rem;
+  border:1.5px solid var(--brand-accent-2);color:var(--brand-accent-2);
+  background:color-mix(in srgb,var(--brand-accent-2) 8%, transparent);
+  border-radius:999px;padding:.3rem .8rem;font-size:.85rem;font-weight:600;width:fit-content;}
+.status-pill .dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--brand-accent-2);}
+.facts{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.7rem;}
+.facts li{display:flex;gap:.7rem;align-items:flex-start;}
+.facts .rametto{margin-top:.2em;}
+.addr-card{border:1px solid var(--brand-line);border-radius:var(--radius);
+  background:var(--brand-surface-alt);padding:1.4rem;
+  box-shadow:0 1px 2px color-mix(in srgb, var(--brand-ink) 5%, transparent), 0 16px 30px -22px color-mix(in srgb, var(--brand-ink) 20%, transparent);}
+.addr-card h3{font-size:1.15rem;margin-bottom:.5rem;}
+.addr-card address{font-style:normal;color:var(--brand-muted);margin-bottom:1rem;line-height:1.5;}
+
+/* Prenota e scrivici */
+.contact-grid{display:grid;gap:clamp(1.5rem,3vw,3rem);align-items:stretch;}
+@media(min-width:820px){.contact-grid{grid-template-columns:1fr 1fr;}}
+.contact-media{border-radius:var(--radius);overflow:clip;}
+.contact-media img{width:100%;height:100%;object-fit:cover;min-height:280px;}
+.contact-actions{display:flex;flex-direction:column;gap:1.2rem;}
+.contact-card{border:1px solid var(--brand-line);border-radius:var(--radius);padding:1.5rem;background:var(--brand-surface);
+  box-shadow:0 1px 2px color-mix(in srgb, var(--brand-ink) 5%, transparent), 0 16px 30px -22px color-mix(in srgb, var(--brand-ink) 20%, transparent);}
+.contact-card h3{font-size:1.25rem;margin-bottom:.4rem;}
+.contact-card .big-phone{font-family:var(--font-display);font-size:clamp(1.6rem,1.3rem+1.4vw,2.2rem);
+  color:var(--brand-accent);font-weight:600;text-decoration:none;display:inline-block;margin:.3rem 0 1rem;
+  font-variant-numeric:tabular-nums;letter-spacing:-0.01em;}
+.contact-card .big-phone:hover{text-decoration:underline;}
+.soon-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--brand-muted);border:1px solid var(--brand-line);
+  border-radius:999px;padding:.2rem .65rem;font-weight:600;margin-bottom:.6rem;}
+.contact-card.soft{background:var(--brand-surface-alt);}
+.contact-proof{display:flex;align-items:center;gap:.6rem;margin-top:1rem;font-size:.95rem;color:var(--brand-muted);}
+.contact-proof .stars svg{width:1.05rem;height:1.05rem;}
+
+/* Footer */
+.site-footer{background:var(--brand-ink);color:color-mix(in srgb,var(--brand-accent-ink) 88%, transparent);
+  padding-block:clamp(3rem,5vw,4.5rem);}
+.footer-inner{width:var(--container);margin-inline:auto;display:grid;gap:2rem;}
+@media(min-width:820px){.footer-inner{grid-template-columns:1.3fr 1fr 1fr;}}
+.footer-brand{font-family:var(--font-display);font-size:1.8rem;letter-spacing:-0.02em;}
+.footer-brand .i-dot{color:var(--brand-accent-2);}
+.footer-inner h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--brand-accent-ink) 60%, transparent);margin:0 0 .8rem;font-family:var(--font-body);font-weight:600;}
+.footer-inner a{color:color-mix(in srgb,var(--brand-accent-ink) 88%, transparent);text-decoration:none;}
+.footer-inner a:hover{text-decoration:underline;}
+.footer-inner ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:.95rem;}
+.footer-fine{width:var(--container);margin:2.5rem auto 0;padding-top:1.5rem;
+  border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 20%, transparent);
+  font-size:.8rem;color:color-mix(in srgb,var(--brand-accent-ink) 55%, transparent);}
+
+/* Sticky mobile action bar */
+.action-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  background:var(--brand-surface);border-top:1px solid var(--brand-line);
+  padding:.6rem clamp(.8rem,4vw,1.2rem);
+  gap:.8rem;align-items:center;
+  box-shadow:0 -8px 24px -18px color-mix(in srgb, var(--brand-ink) 60%, transparent);
+}
+.action-bar .ab-proof{font-size:.82rem;color:var(--brand-muted);line-height:1.2;flex:1;min-width:0;}
+.action-bar .ab-proof strong{color:var(--brand-ink);font-variant-numeric:tabular-nums;}
+.action-bar .btn{flex:none;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:900px){
+  .nav-links{
+    position:fixed;inset:var(--nav-h) 0 auto 0;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:.5rem clamp(1rem,4vw,1.5rem) 1rem;
+    transform:translateY(-120%);transition:transform var(--dur-reveal) var(--ease-signature);
+    box-shadow:0 12px 24px -18px color-mix(in srgb, var(--brand-ink) 50%, transparent);
+  }
+  .nav-links.open{transform:translateY(0);}
+  .nav-links li{width:100%;}
+  .nav-links a{display:block;width:100%;padding:.85rem 0;border-bottom:1px solid var(--brand-line);}
+  .nav-links a.is-active{border-bottom-color:var(--brand-line);}
+  .nav-toggle{display:inline-flex;}
+  .nav-phone{display:none;}
+}
+
+@media(max-width:820px){
+  /* WOW mobile form: rail becomes a horizontal route strip under the nav */
+  .tour-grid{grid-template-columns:1fr;gap:0;}
+  .plan-rail{display:none;}
+  .plan-strip{
+    display:block;position:sticky;top:var(--nav-h);z-index:50;
+    background:color-mix(in srgb,var(--brand-surface) 94%, transparent);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--brand-line);
+    margin-bottom:1rem;
+  }
+  .strip-inner{width:var(--container);margin-inline:auto;padding:.55rem 0 .6rem;}
+  .strip-here{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);
+    display:flex;align-items:center;gap:.4rem;margin-bottom:.45rem;font-weight:600;}
+  .strip-here b{color:var(--brand-accent);}
+  .strip-track{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.2rem;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .strip-track::-webkit-scrollbar{display:none;}
+  .strip-chip{flex:none;display:flex;align-items:center;gap:.35rem;
+    border:1px solid var(--brand-line);border-radius:999px;padding:.3rem .7rem;
+    font-size:.82rem;color:var(--brand-muted);background:var(--brand-surface);white-space:nowrap;
+    transition:all var(--dur-micro) var(--ease-signature);}
+  .strip-chip .num{display:inline-flex;align-items:center;justify-content:center;
+    width:1.15rem;height:1.15rem;border-radius:50%;font-size:.68rem;font-weight:600;
+    background:var(--brand-surface-alt);color:var(--brand-muted);}
+  .strip-chip.is-done{border-color:color-mix(in srgb,var(--brand-accent) 40%, var(--brand-line));}
+  .strip-chip.is-done .num{background:color-mix(in srgb,var(--brand-accent) 40%, var(--brand-surface));color:var(--brand-ink);}
+  .strip-chip.is-current{border-color:var(--brand-accent);color:var(--brand-accent);font-weight:600;}
+  .strip-chip.is-current .num{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  .action-bar{display:flex;}
+  body{padding-bottom:76px;}
+}
+
+@media(max-width:820px){
+  .pair-detail{width:56%;margin-top:-20%;}
+}
+@media(max-width:560px){
+  .hero-inner{min-height:78vh;}
+  .hero-media{object-position:center 55%;}
+}
+
+/* ============================================================
+   MOTION LAYER (pass 3) — one language: brand ease/dur/stagger only.
+   Every start-state is gated behind html.js + no-preference, so the
+   page is fully visible with JS off OR reduced-motion on. Only
+   transform / opacity / clip-path / filter are animated.
+   ============================================================ */
+
+/* hero scroll-cinema layering (always applied) */
+.hero-media{z-index:-3;}
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;
+  opacity:0;pointer-events:none;transition:opacity var(--dur-reveal) var(--ease-signature);
+  filter:saturate(1.05) contrast(1.03) brightness(1.01);}
+.hero-canvas.is-live{opacity:1;}
+
+/* structural helpers (always) */
+.menu-band{overflow-x:clip;}
+.dish-card .body{position:relative;}
+.plan-svg .route-progress{stroke:var(--brand-accent);stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.strip-progress{height:3px;margin-top:.5rem;border-radius:2px;background:var(--brand-line);overflow:hidden;}
+.strip-progress > i{display:block;height:100%;background:var(--brand-accent);transform-origin:left;transform:scaleX(0);}
+.card-sprig{position:absolute;top:.85rem;right:.95rem;width:22px;height:22px;color:var(--brand-accent);pointer-events:none;opacity:0;}
+.card-sprig path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+@media (prefers-reduced-motion:no-preference){
+
+  /* hero — staggered on-load entrance (CSS, finite) */
+  html.js .hero-inner > *{animation:heroRise var(--dur-reveal) var(--ease-signature) both;}
+  html.js .hero-inner > .eyebrow{animation-delay:60ms;}
+  html.js .hero-inner > .wordmark{animation-delay:150ms;}
+  html.js .hero-inner > .hero-tagline{animation-delay:270ms;}
+  html.js .hero-inner > .hero-copy{animation-delay:370ms;}
+  html.js .hero-inner > .hero-actions{animation-delay:470ms;}
+  html.js .hero-inner > .muted{animation-delay:560ms;}
+  @keyframes heroRise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+
+  /* hero — native CSS scroll push-in (cheap, wherever supported) */
+  @supports (animation-timeline: view()){
+    html.js .hero-media{animation:heroPush linear both;animation-timeline:view();animation-range:exit 0% exit 100%;}
+    @keyframes heroPush{from{transform:scale(1);}to{transform:scale(1.12);}}
+  }
+
+  /* headings — clip-mask rise (heading stays one selectable node) */
+  html.js .room-head h2, html.js .wide h2{clip-path:inset(0 0 108% 0);transform:translateY(6px);
+    transition:clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .room-head h2.is-in, html.js .wide h2.is-in{clip-path:inset(0 0 -8% 0);transform:none;}
+
+  /* media — door-wipe left->right (like an anta opening) + depth settle */
+  html.js .pair-main img, html.js .featured-dish > figure img,
+  html.js #insegna .figclip img, html.js #famiglia .figclip img, html.js #musica .figclip img,
+  html.js .contact-media img{clip-path:inset(0 100% 0 0);transform:scale(1.05);
+    transition:clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .pair-main img.is-in, html.js .featured-dish > figure img.is-in,
+  html.js #insegna .figclip img.is-in, html.js #famiglia .figclip img.is-in, html.js #musica .figclip img.is-in,
+  html.js .contact-media img.is-in{clip-path:inset(0 0 0 0);transform:none;}
+
+  /* companion detail settles from its own side, a beat later */
+  html.js .pair-detail{opacity:0;transform:translateY(20px) scale(.95);
+    transition:opacity var(--dur-reveal) var(--ease-signature) 140ms,transform var(--dur-reveal) var(--ease-signature) 140ms;}
+  html.js .pair-detail.is-in{opacity:1;transform:none;}
+
+  /* two-layer parallax — real depth in the garden (foreground faster than background) */
+  @supports (animation-timeline: view()){
+    html.js #giardino .pair-main{animation:paraBack linear both;animation-timeline:view();animation-range:entry 0% exit 100%;}
+    html.js #giardino .pair-detail img{animation:paraFront linear both;animation-timeline:view();animation-range:entry 0% exit 100%;}
+    @keyframes paraBack{from{transform:translateY(3.5%);}to{transform:translateY(-3.5%);}}
+    @keyframes paraFront{from{transform:translateY(11%);}to{transform:translateY(-11%);}}
+  }
+
+  /* text cascade — story lines & list rows settle one after another */
+  html.js .story-lines p, html.js .split-text p,
+  html.js .proof-themes li, html.js .facts li, html.js .hours-list li{
+    opacity:0;transform:translateY(20px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--i,0) * var(--stagger));}
+  html.js .story-lines p.is-in, html.js .split-text p.is-in,
+  html.js .proof-themes li.is-in, html.js .facts li.is-in, html.js .hours-list li.is-in{opacity:1;transform:none;}
+
+  /* ledes & panels materialise */
+  html.js .room-head .lede, html.js .wide .lede, html.js .proof-score,
+  html.js .contact-card, html.js .addr-card, html.js .proof-note{
+    opacity:0;transform:translateY(18px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .room-head .lede.is-in, html.js .wide .lede.is-in, html.js .proof-score.is-in,
+  html.js .contact-card.is-in, html.js .addr-card.is-in, html.js .proof-note.is-in{opacity:1;transform:none;}
+
+  /* menu band — dishes materialise, then travel laterally with the scroll (moment: banda del menu) */
+  html.js .dish-grid .dish-card{opacity:0;filter:blur(6px);}
+  html.js .dish-grid .dish-card.is-in{opacity:1;filter:none;}
+  @supports (animation-timeline: view()){
+    @media (min-width:900px) and (pointer:fine){
+      html.js .menu-band .dish-grid{animation:bandPan linear both;animation-timeline:view();animation-range:entry 8% exit 92%;}
+      @keyframes bandPan{from{transform:translateX(3.4%);}to{transform:translateX(-3.4%);}}
+    }
+  }
+
+  /* section dividers — the rametto motif draws in from the centre */
+  html.js .section-rule::before, html.js .section-rule::after{transform:scaleX(0);transform-origin:center;
+    transition:transform var(--dur-reveal) var(--ease-signature);}
+  html.js .section-rule.is-in::before, html.js .section-rule.is-in::after{transform:scaleX(1);}
+  html.js .section-rule .rametto{opacity:0;transform:scale(.55) rotate(-6deg);
+    transition:opacity var(--dur-micro) var(--ease-micro) 240ms,transform var(--dur-micro) var(--ease-micro) 240ms;}
+  html.js .section-rule.is-in .rametto{opacity:1;transform:none;}
+
+  /* ambient — sub-perceptual film-grain drift (texture only) */
+  html.js .grain{animation:grainDrift 17s var(--ease-signature) infinite alternate;}
+  @keyframes grainDrift{from{transform:translate3d(0,0,0);}to{transform:translate3d(-14px,10px,0);}}
+}
+
+/* pointer micro-interactions — hover-capable, fine pointer only */
+@media (hover:hover) and (pointer:fine){
+  .btn:active{transform:scale(.97);}
+  .dish-card img{transition:transform var(--dur-reveal) var(--ease-signature);}
+  .dish-card:hover{transform:translateY(-6px);
+    box-shadow:0 2px 4px color-mix(in srgb,var(--brand-ink) 8%,transparent),0 26px 44px -24px color-mix(in srgb,var(--brand-ink) 34%,transparent);}
+  .dish-card:hover img{transform:scale(1.06);}
+  .card-sprig{opacity:1;}
+  .card-sprig path{stroke-dasharray:var(--l,60);stroke-dashoffset:var(--l,60);
+    transition:stroke-dashoffset 640ms var(--ease-signature);}
+  .dish-card:hover .card-sprig path{stroke-dashoffset:0;}
+  .nav-links a:not(.btn){position:relative;}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:.15rem;right:.15rem;bottom:0;height:2px;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);}
+  .nav-links a:not(.btn):hover::after,.nav-links a:not(.btn):focus-visible::after{transform:scaleX(1);}
+  .footer-inner a{position:relative;}
+  .footer-inner a:hover{text-decoration:none;}
+  .footer-inner a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;
+    background:currentColor;transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);}
+  .footer-inner a:hover::after,.footer-inner a:focus-visible::after{transform:scaleX(1);}
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- SVG sprite: the single motif 'Il rametto' + star, defined once -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="rametto" viewBox="0 0 32 32">
+    <path d="M16 30 V9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M16 19 C10 19 6 15 6 8.5 C13 8.5 16.5 12.5 16 19 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M16 15 C22 15 26 11 26 4.5 C19 4.5 15.5 8.5 16 15 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.5l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.4 19.7l1.3-6.3L2.9 9.1l6.4-.7z"/>
+  </symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================ NAV ============================ -->
+<header class="site-nav">
+  <nav class="nav-inner" aria-label="Navigazione principale">
+    <a class="nav-brand" href="#top" aria-label="Il Paquito, torna in cima">Il&nbsp;Paqu<span class="i-dot">i</span>to</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#insegna">L'insegna</a></li>
+      <li><a href="#sala">La sala</a></li>
+      <li><a href="#giardino">Il giardino</a></li>
+      <li><a href="#tavola">La tavola</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
+      <li><a href="#info">Info</a></li>
+      <li><a class="btn btn-primary" data-cta href="tel:+390289511092">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.4.55 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.19 2.3.55 3.4a1 1 0 01-.25 1z" stroke-linejoin="round"/></svg>
+        Chiama
+      </a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ==================== HERO / L'INSEGNA ==================== -->
+  <section class="hero" aria-labelledby="wordmark">
+    <video class="hero-media" autoplay muted loop playsinline poster="assets/hero-garden-room-dusk.jpg"
+      aria-label="La sala di pietra de Il Paquito che si apre sul giardino illuminato al crepuscolo, con una paella in primo piano su un tavolo di legno">
+      <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+    </video>
+    <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Il giro della casa · Milano, Porta Romana</p>
+      <h1 class="wordmark" id="wordmark" aria-label="Il Paquito">
+        <span class="wm-il">Il</span><span class="wm-name">Paqu<span class="wm-i">ı</span>to</span>
+      </h1>
+      <p class="hero-tagline">Cena di quartiere, con giardino</p>
+      <div class="hero-copy">
+        <p>Una trattoria di quartiere tra Bonghi e Porta Romana.</p>
+        <p>Si cena fuori, nel giardino di pietra, con la musica dal vivo.</p>
+        <p>Cucina casalinga, a prezzo onesto.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-cta href="tel:+390289511092">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.4.55 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.19 2.3.55 3.4a1 1 0 01-.25 1z" stroke-linejoin="round"/></svg>
+          Chiama per prenotare
+        </a>
+        <a class="btn btn-ghost" href="#info">Orari e indirizzo</a>
+        <span class="hero-proof">
+          <span class="stars" aria-hidden="true">
+            <span class="row base"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+            <span class="row fill" style="width:72%"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+          </span>
+          <span><strong>3,6</strong> su 102 recensioni · Google</span>
+        </span>
+      </div>
+      <p class="muted" style="margin-top:.9rem;font-size:.95rem;color:color-mix(in srgb,var(--brand-accent-ink) 82%, transparent)">Tel. 02 8951 1092</p>
+    </div>
+  </section>
+
+  <!-- ==================== THE TOUR (rail + rooms) ==================== -->
+  <div class="tour">
+
+    <!-- mobile-only WOW form: horizontal route strip -->
+    <div class="plan-strip" aria-hidden="true">
+      <div class="strip-inner">
+        <p class="strip-here">Sei qui: <b id="stripHere">L'insegna</b></p>
+        <div class="strip-track" id="stripTrack">
+          <span class="strip-chip" data-stop="0"><span class="num">1</span>L'insegna</span>
+          <span class="strip-chip" data-stop="1"><span class="num">2</span>La sala</span>
+          <span class="strip-chip" data-stop="2"><span class="num">3</span>Il giardino</span>
+          <span class="strip-chip" data-stop="3"><span class="num">4</span>La tavola</span>
+          <span class="strip-chip" data-stop="4"><span class="num">5</span>La famiglia</span>
+          <span class="strip-chip" data-stop="5"><span class="num">6</span>Le sere con musica</span>
+        </div>
+        <div class="strip-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+
+    <div class="tour-grid">
+      <div class="tour-main">
+
+        <!-- 1 · L'INSEGNA -->
+        <section class="room" id="insegna" data-stop="0" aria-labelledby="insegna-h">
+          <div class="room-head">
+            <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Prima tappa · L'insegna</p>
+            <h2 id="insegna-h">L'insegna parla spagnolo. La cucina parla casalingo.</h2>
+            <p class="lede">Il nome e i piatti nascono spagnoli. Ma dietro c'è una gestione familiare e una cucina di casa. È il piccolo paradosso di questo posto, ed è la prima cosa che raccontiamo.</p>
+          </div>
+          <div class="insegna-story">
+            <figure class="figclip">
+              <img src="assets/facade-insegna.jpg" alt="La facciata di quartiere con la vecchia insegna in stile spagnolo sopra la porta di legno" loading="lazy" width="1200" height="800">
+            </figure>
+            <div class="story-lines">
+              <p>Fuori, una vecchia insegna spagnola sopra la porta di legno.</p>
+              <p>Dentro, una famiglia che cucina come a casa propria.</p>
+              <p>La paella c'è. Ma c'è anche la pasta, la pizza e il pollo con le verdure.</p>
+              <p class="small">Non prendetela come alta cucina. È una trattoria di quartiere, e vuole essere solo quello: un tavolo comodo, cibo casalingo, il conto giusto.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-rule" aria-hidden="true"><svg class="rametto"><use href="#rametto"/></svg></div>
+
+        <!-- 2 · LA SALA DI PIETRA -->
+        <section class="room" id="sala" data-stop="1" aria-labelledby="sala-h">
+          <div class="room-head">
+            <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Seconda tappa · La sala di pietra</p>
+            <h2 id="sala-h">Muretti di pietra, soffitto di legno.</h2>
+            <p class="lede">La sala è il vero prodotto: pietra grezza sulle pareti, travi di legno sopra la testa, poche lampade calde. Un posto rustico dove ci si siede senza cerimonie.</p>
+          </div>
+          <div class="pair">
+            <figure class="pair-main">
+              <img src="assets/stone-room-interior.jpg" alt="La sala interna con muretti di pietra, soffitto di legno e tavoli conviviali" loading="lazy" width="1400" height="1050">
+            </figure>
+            <figure class="pair-detail">
+              <img src="assets/stone-wall-lamp-detail.jpg" alt="Dettaglio del muretto di pietra e di una lampada calda a parete" loading="lazy" width="800" height="800">
+            </figure>
+          </div>
+        </section>
+
+        <div class="section-rule" aria-hidden="true"><svg class="rametto"><use href="#rametto"/></svg></div>
+
+        <!-- 3 · IL GIARDINO -->
+        <section class="room band-alt" id="giardino" data-stop="2" aria-labelledby="giardino-h" style="border-radius:var(--radius);padding-inline:clamp(1.2rem,3vw,2.5rem);">
+          <div class="room-head">
+            <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Terza tappa · Il giardino</p>
+            <h2 id="giardino-h">Fuori, con le lanterne accese.</h2>
+            <p class="lede">Il giardino è il motivo per cui si sceglie questo posto in una sera d'estate. Pochi tavoli tra i muretti di pietra, le lanterne appese, la candela sul tavolo. Si cena all'aperto, senza fretta.</p>
+          </div>
+          <div class="split reverse text-first">
+            <div class="split-text">
+              <p>È piccolo, e va bene così: si sta stretti tra amici, non persi in una sala grande.</p>
+              <p>Quando fa caldo, chiedete un tavolo in giardino quando prenotate. I posti fuori sono quelli che finiscono per primi.</p>
+            </div>
+            <figure class="pair">
+              <div class="pair-main">
+                <img src="assets/garden-tables-evening.jpg" alt="I tavoli del piccolo giardino apparecchiati al crepuscolo sotto le lanterne" loading="lazy" width="1400" height="1050">
+              </div>
+              <div class="pair-detail left">
+                <img src="assets/garden-lanterns-detail.jpg" alt="Dettaglio delle lanterne calde e delle luci nel verde del giardino" loading="lazy" width="800" height="800">
+              </div>
+            </figure>
+          </div>
+        </section>
+
+        <div class="section-rule" aria-hidden="true"><svg class="rametto"><use href="#rametto"/></svg></div>
+
+        <!-- 4 · LA TAVOLA -->
+        <section class="room" id="tavola" data-stop="3" aria-labelledby="tavola-h">
+          <div class="room-head">
+            <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Quarta tappa · La tavola</p>
+            <h2 id="tavola-h">Cucina casalinga, porzioni oneste.</h2>
+            <div class="tavola-band">
+              <span class="price-badge">€ – €€</span>
+              <span class="muted">circa €11–€20 a persona · carte accettate · asporto disponibile</span>
+            </div>
+            <p class="lede">Non c'è una carta lunga da studiare. Ci sono pochi piatti fatti in casa, quelli che la gente del quartiere ordina più spesso.</p>
+          </div>
+
+          <div class="featured-dish">
+            <figure class="figclip">
+              <img src="assets/paella-macro.jpg" alt="Primo piano di una paella casalinga appena servita nella padella su legno grezzo" loading="lazy" width="1000" height="1000">
+            </figure>
+            <div>
+              <h3 style="font-size:var(--fs-h2);margin-bottom:.6rem;">La paella, il piatto dell'insegna</h3>
+              <p>Riso, pesce e frutti di mare, cotti nella padella e portati in tavola caldi. È il piatto che ha dato il nome al posto, e resta quello che quasi tutti provano la prima volta.</p>
+              <ul class="dish-list">
+                <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Da dividere, meglio in due o più.</span></li>
+                <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Chiedetela quando prenotate: si prepara con calma.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="muted" style="font-family:var(--font-body);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.1rem;">Anche in tavola</h3>
+          <div class="menu-band">
+          <div class="dish-grid">
+            <article class="dish-card">
+              <img src="assets/dish-pesce.jpg" alt="Un piatto di pesce alla griglia servito in modo casalingo su ceramica rustica" loading="lazy" width="800" height="800">
+              <div class="body"><h3>Pesce</h3><p>Alla griglia, semplice, con limone e olio.</p></div>
+            </article>
+            <article class="dish-card">
+              <img src="assets/dish-pizza.jpg" alt="Una pizza casalinga appena sfornata su un tagliere di legno" loading="lazy" width="800" height="800">
+              <div class="body"><h3>Pizza</h3><p>Sottile e casalinga, dal forno alla tavola.</p></div>
+            </article>
+            <article class="dish-card">
+              <img src="assets/dish-pasta.jpg" alt="Un piatto di pasta casalinga con sugo di pomodoro su ceramica rustica" loading="lazy" width="800" height="800">
+              <div class="body"><h3>Pasta</h3><p>Sughi di casa, come li fareste voi.</p></div>
+            </article>
+            <article class="dish-card">
+              <img src="assets/dish-pollo-verdure.jpg" alt="Pollo con verdure servito in modo casalingo su ceramica rustica" loading="lazy" width="800" height="800">
+              <div class="body"><h3>Pollo con verdure</h3><p>Un secondo di casa, per chi ha fame vera.</p></div>
+            </article>
+          </div>
+          </div>
+          <p class="muted" style="margin-top:1.2rem;font-size:.9rem;">I piatti seguono il mercato e la stagione: chiedeteci cosa c'è oggi quando prenotate.</p>
+        </section>
+
+        <div class="section-rule" aria-hidden="true"><svg class="rametto"><use href="#rametto"/></svg></div>
+
+        <!-- 5 · LA FAMIGLIA -->
+        <section class="room" id="famiglia" data-stop="4" aria-labelledby="famiglia-h">
+          <div class="room-head">
+            <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Quinta tappa · La famiglia</p>
+            <h2 id="famiglia-h">Chi vi serve è chi cucina.</h2>
+          </div>
+          <div class="split">
+            <figure class="figclip">
+              <img src="assets/family-in-service.jpg" alt="La gestione familiare mentre serve un piatto al tavolo nella sala di pietra" loading="lazy" width="1400" height="1050">
+            </figure>
+            <div class="split-text">
+              <p>La cosa che i clienti lodano di più non è un piatto. È l'accoglienza.</p>
+              <p>È una gestione familiare: la stessa persona che vi porta il piatto è quella che l'ha cucinato. Cordiale, gentile, senza fretta di liberare il tavolo.</p>
+              <p>Ci si sente a casa di qualcuno, più che al ristorante. Ed è esattamente il punto.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-rule" aria-hidden="true"><svg class="rametto"><use href="#rametto"/></svg></div>
+
+        <!-- 6 · LE SERE CON MUSICA -->
+        <section class="room band-alt" id="musica" data-stop="5" aria-labelledby="musica-h" style="border-radius:var(--radius);padding-inline:clamp(1.2rem,3vw,2.5rem);">
+          <div class="room-head">
+            <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Sesta tappa · Le sere con musica</p>
+            <h2 id="musica-h">Certe sere, c'è la musica dal vivo.</h2>
+          </div>
+          <div class="split reverse text-first">
+            <div class="split-text">
+              <p>La musica dal vivo è una delle cose che i clienti ricordano di più.</p>
+              <p>Qualche corda in un angolo della sala, le candele accese, il giardino fuori. Niente palco, niente volume alto: solo un sottofondo che accompagna la cena.</p>
+              <p>Volete una serata con la musica? Chiamateci prima: vi diciamo quando suona.</p>
+            </div>
+            <figure class="figclip">
+              <img src="assets/live-music-evening.jpg" alt="Un musicista che suona la chitarra in un angolo della sala durante la sera" loading="lazy" width="1400" height="1050">
+            </figure>
+          </div>
+        </section>
+
+      </div><!-- /.tour-main -->
+
+      <!-- ============ THE WOW: sticky planimetria rail (desktop) ============ -->
+      <aside class="plan-rail" aria-label="Planimetria: il giro della casa">
+        <div class="plan-card">
+          <p class="plan-title"><svg class="rametto" aria-hidden="true" style="width:1rem;height:1rem;"><use href="#rametto"/></svg> Il giro della casa</p>
+          <p class="plan-here">Sei qui: <b id="planHere">L'insegna</b></p>
+          <svg class="plan-svg" viewBox="0 0 210 460" role="img" aria-label="Mappa disegnata della casa con le sei tappe della visita">
+            <!-- house shell + hairline rooms -->
+            <rect class="house" x="10" y="10" width="190" height="440" rx="7"/>
+            <line class="wall" x1="10" y1="120" x2="130" y2="120"/>
+            <line class="wall" x1="130" y1="10" x2="130" y2="250"/>
+            <line class="wall" x1="10" y1="250" x2="200" y2="250"/>
+            <line class="wall" x1="90" y1="250" x2="90" y2="450"/>
+            <!-- dotted planned route -->
+            <polyline class="route" points="45,410 60,325 150,290 120,200 55,150 150,65"/>
+            <!-- coloured segments (revealed by scroll progress) -->
+            <line class="seg" data-seg="0" x1="45" y1="410" x2="60" y2="325"/>
+            <line class="seg" data-seg="1" x1="60" y1="325" x2="150" y2="290"/>
+            <line class="seg" data-seg="2" x1="150" y1="290" x2="120" y2="200"/>
+            <line class="seg" data-seg="3" x1="120" y1="200" x2="55" y2="150"/>
+            <line class="seg" data-seg="4" x1="55" y1="150" x2="150" y2="65"/>
+            <!-- continuous scroll-linked fill (moment: planimetria a margine) -->
+            <polyline class="route-progress" points="45,410 60,325 150,290 120,200 55,150 150,65"/>
+            <!-- stops -->
+            <g class="stop" data-stop="0"><circle class="stop-dot" cx="45" cy="410" r="10"/><text class="stop-num" x="45" y="410">1</text><text class="stop-label" x="60" y="413">L'insegna</text></g>
+            <g class="stop" data-stop="1"><circle class="stop-dot" cx="60" cy="325" r="10"/><text class="stop-num" x="60" y="325">2</text><text class="stop-label" x="75" y="328">La sala</text></g>
+            <g class="stop" data-stop="2"><circle class="stop-dot" cx="150" cy="290" r="10"/><text class="stop-num" x="150" y="290">3</text><text class="stop-label" x="120" y="278">Il giardino</text></g>
+            <g class="stop" data-stop="3"><circle class="stop-dot" cx="120" cy="200" r="10"/><text class="stop-num" x="120" y="200">4</text><text class="stop-label" x="135" y="203">La tavola</text></g>
+            <g class="stop" data-stop="4"><circle class="stop-dot" cx="55" cy="150" r="10"/><text class="stop-num" x="55" y="150">5</text><text class="stop-label" x="70" y="153">La famiglia</text></g>
+            <g class="stop" data-stop="5"><circle class="stop-dot" cx="150" cy="65" r="10"/><text class="stop-num" x="150" y="65">6</text><text class="stop-label" x="118" y="53">La musica</text></g>
+          </svg>
+          <p class="muted" style="font-size:.8rem;margin-top:.9rem;">Scendi: la casa si riempie di verde tappa dopo tappa.</p>
+        </div>
+      </aside>
+
+    </div><!-- /.tour-grid -->
+  </div><!-- /.tour -->
+
+  <!-- ==================== 7 · COSA DICONO ==================== -->
+  <section class="wide" id="recensioni" aria-labelledby="rec-h">
+    <div class="container">
+      <div class="room-head" style="max-width:60ch;">
+        <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Cosa dicono</p>
+        <h2 id="rec-h">Onesti anche sui numeri.</h2>
+        <p class="lede">Non inventiamo recensioni. Questo è il voto vero, con il numero vero di chi ha scritto.</p>
+      </div>
+      <div class="proof-wrap">
+        <div class="proof-score">
+          <div class="big"><span class="num" data-count="3.6" data-dec="1">3,6</span><span class="out"> / 5</span></div>
+          <span class="stars" aria-hidden="true" style="margin-top:.6rem;">
+            <span class="row base"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+            <span class="row fill" style="width:72%"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+          </span>
+          <p class="count"><span class="num" data-count="102" data-dec="0">102</span> recensioni</p>
+          <p class="src">valutazione media su Google</p>
+        </div>
+        <div>
+          <p>Un voto onesto, tenuto su da tanti clienti nel tempo. Quello che torna più spesso, nelle parole di chi scrive, è sempre lo stesso:</p>
+          <ul class="proof-themes">
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span><strong>L'accoglienza.</strong> Gestione familiare cordiale, ci si sente a casa.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span><strong>Il personale gentile.</strong> Servizio tranquillo, senza fretta.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span><strong>La musica.</strong> Le sere accompagnate dal vivo, apprezzate spesso.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span><strong>Il prezzo giusto.</strong> Adeguato per una cena informale di quartiere.</span></li>
+          </ul>
+          <p class="proof-note">Un posto senza pretese, dove si torna per l'accoglienza più che per la vetrina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8 · INFO PRATICHE ==================== -->
+  <section class="wide band-alt" id="info" aria-labelledby="info-h">
+    <div class="container">
+      <div class="room-head" style="max-width:60ch;">
+        <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Info pratiche</p>
+        <h2 id="info-h">Quando siamo aperti, e dove trovarci.</h2>
+      </div>
+      <div class="info-grid">
+        <div>
+          <div class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText"></span></div>
+          <ul class="hours-list" id="hoursList">
+            <li data-day="1"><span class="day">Lunedì</span><span class="hrs">12:30–15:00 · 19:30–23:00</span></li>
+            <li data-day="2"><span class="day">Martedì</span><span class="hrs">12:00–15:00</span></li>
+            <li data-day="3"><span class="day">Mercoledì</span><span class="hrs">12:30–15:00 · 19:30–23:00</span></li>
+            <li data-day="4"><span class="day">Giovedì</span><span class="hrs">12:30–15:00 · 19:30–23:00</span></li>
+            <li data-day="5"><span class="day">Venerdì</span><span class="hrs">12:30–15:00 · 19:30–23:00</span></li>
+            <li data-day="6"><span class="day">Sabato</span><span class="hrs">12:30–15:00 · 19:30–23:00</span></li>
+            <li data-day="0"><span class="day">Domenica</span><span class="hrs">19:30–23:00</span></li>
+          </ul>
+          <ul class="facts">
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Prezzo: <span class="price">€ – €€</span>, circa €11–€20 a persona.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Accessibile in sedia a rotelle.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Carte di credito accettate.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Asporto disponibile · nessuna consegna a domicilio.</span></li>
+            <li><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg><span>Posti a sedere all'aperto, nel giardino.</span></li>
+          </ul>
+        </div>
+        <div class="addr-card">
+          <h3>Dove siamo</h3>
+          <address>
+            Via Ruggero Bonghi, 12<br>
+            20141 Milano (MI)<br>
+            zona Porta Romana
+          </address>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Il+Paquito+Milano" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Apri in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9 · PRENOTA E SCRIVICI ==================== -->
+  <section class="wide" id="prenota" aria-labelledby="prenota-h">
+    <div class="container">
+      <div class="room-head" style="max-width:60ch;">
+        <p class="eyebrow"><svg class="rametto" aria-hidden="true"><use href="#rametto"/></svg> Prenota e scrivici</p>
+        <h2 id="prenota-h">Un tavolo si tiene in due secondi.</h2>
+        <p class="lede">Una telefonata e vi teniamo il tavolo. Ditelo se lo volete in giardino o in una sera con la musica.</p>
+      </div>
+      <div class="contact-grid">
+        <figure class="contact-media">
+          <img src="assets/rustic-table-setting.jpg" alt="La tavola apparecchiata in modo rustico, con candela e calice, pronta per la cena" loading="lazy" width="800" height="1067">
+        </figure>
+        <div class="contact-actions">
+          <div class="contact-card">
+            <h3>Prenota un tavolo</h3>
+            <p class="muted" style="margin-bottom:.2rem;">Chiamaci negli orari di apertura.</p>
+            <a class="big-phone" href="tel:+390289511092">02 8951 1092</a>
+            <div>
+              <a class="btn btn-primary" data-cta href="tel:+390289511092">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.4.55 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.19 2.3.55 3.4a1 1 0 01-.25 1z" stroke-linejoin="round"/></svg>
+                Chiama per prenotare
+              </a>
+            </div>
+            <div class="contact-proof">
+              <span class="stars" aria-hidden="true">
+                <span class="row base"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+                <span class="row fill" style="width:72%"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+              </span>
+              <span><strong>3,6</strong> su 102 recensioni nel quartiere</span>
+            </div>
+          </div>
+          <div class="contact-card soft">
+            <span class="soon-tag">In arrivo</span>
+            <h3>Scrivici su WhatsApp</h3>
+            <p class="muted">Presto sarà possibile prenotare e chiederci un tavolo direttamente in chat, sullo stesso numero del ristorante. Per ora, una telefonata è il modo più veloce per raggiungerci.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Il Paqu<span class="i-dot">i</span>to</p>
+      <p style="margin-top:.5rem;max-width:34ch;">Trattoria di quartiere con giardino, tra Bonghi e Porta Romana. Cena casalinga, senza pretese.</p>
+    </div>
+    <div>
+      <h4>Contatti</h4>
+      <ul>
+        <li><a href="tel:+390289511092">02 8951 1092</a></li>
+        <li>Via Ruggero Bonghi, 12<br>20141 Milano (MI)</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Il+Paquito+Milano" target="_blank" rel="noopener">Apri in Google Maps</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Il giro</h4>
+      <ul>
+        <li><a href="#insegna">L'insegna</a></li>
+        <li><a href="#giardino">Il giardino</a></li>
+        <li><a href="#tavola">La tavola</a></li>
+        <li><a href="#info">Orari e info</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-fine">Sito dimostrativo per la presentazione. Orari, prezzi e indirizzo sono quelli reali del ristorante; il proprietario può confermarli o aggiornarli prima della pubblicazione.</p>
+</footer>
+
+<!-- Sticky mobile action bar -->
+<div class="action-bar" aria-label="Contatto rapido">
+  <span class="ab-proof"><strong>3,6</strong> · 102 recensioni<br>Trattoria con giardino</span>
+  <a class="btn btn-primary" data-cta href="tel:+390289511092">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.4.55 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.19 2.3.55 3.4a1 1 0 01-.25 1z" stroke-linejoin="round"/></svg>
+    Chiama
+  </a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- mobile nav toggle ---- */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if(toggle && links){
+    var setOpen = function(open){
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+    };
+    toggle.addEventListener('click', function(){ setOpen(!links.classList.contains('open')); });
+    links.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && links.classList.contains('open')){ setOpen(false); toggle.focus(); }
+    });
+  }
+
+  /* ---- the WOW: scroll-spy driving planimetria rail + strip + nav ---- */
+  var ROOMS = [
+    {id:'insegna', label:"L'insegna"},
+    {id:'sala',    label:"La sala di pietra"},
+    {id:'giardino',label:"Il giardino"},
+    {id:'tavola',  label:"La tavola"},
+    {id:'famiglia',label:"La famiglia"},
+    {id:'musica',  label:"Le sere con musica"}
+  ];
+  var stops   = Array.prototype.slice.call(document.querySelectorAll('.plan-svg .stop'));
+  var segs    = Array.prototype.slice.call(document.querySelectorAll('.plan-svg .seg'));
+  var chips   = Array.prototype.slice.call(document.querySelectorAll('.strip-chip'));
+  var navlink = {};
+  ['insegna','sala','giardino','tavola'].forEach(function(id){
+    var a = document.querySelector('.nav-links a[href="#'+id+'"]'); if(a) navlink[id]=a;
+  });
+  var planHere = document.getElementById('planHere');
+  var stripHere = document.getElementById('stripHere');
+  var stripTrack = document.getElementById('stripTrack');
+
+  function setActive(idx){
+    stops.forEach(function(g){
+      var i = +g.getAttribute('data-stop');
+      g.classList.toggle('is-current', i === idx);
+      g.classList.toggle('is-done', i < idx);
+    });
+    segs.forEach(function(s){ s.classList.toggle('is-done', (+s.getAttribute('data-seg')) < idx); });
+    chips.forEach(function(c){
+      var i = +c.getAttribute('data-stop');
+      c.classList.toggle('is-current', i === idx);
+      c.classList.toggle('is-done', i < idx);
+    });
+    var label = ROOMS[idx] ? ROOMS[idx].label : ROOMS[0].label;
+    if(planHere) planHere.textContent = label;
+    if(stripHere) stripHere.textContent = label;
+    // keep the active chip in view on mobile
+    if(stripTrack){
+      var cur = chips[idx];
+      if(cur) stripTrack.scrollTo({left: cur.offsetLeft - 16, behavior:'auto'});
+    }
+    // nav active state (only rooms that have a nav link)
+    Object.keys(navlink).forEach(function(id){ navlink[id].classList.remove('is-active'); });
+    var activeId = ROOMS[idx] ? ROOMS[idx].id : null;
+    var navId = activeId;
+    if(activeId === 'famiglia') navId = 'tavola';
+    if(activeId === 'musica')   navId = 'tavola';
+    if(navlink[navId]) navlink[navId].classList.add('is-active');
+  }
+
+  var sections = ROOMS.map(function(r){ return document.getElementById(r.id); }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var current = 0;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var idx = +en.target.getAttribute('data-stop');
+          if(!isNaN(idx)){ current = idx; setActive(idx); }
+        }
+      });
+    }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+    sections.forEach(function(s){ io.observe(s); });
+    setActive(0);
+  } else {
+    setActive(0);
+  }
+
+  /* ---- open / closed status pill (JS only, hidden without it) ---- */
+  // minutes-of-day windows per weekday (0=Dom ... 6=Sab)
+  var SCHED = {
+    1:[[750,900],[1170,1380]],
+    2:[[720,900]],
+    3:[[750,900],[1170,1380]],
+    4:[[750,900],[1170,1380]],
+    5:[[750,900],[1170,1380]],
+    6:[[750,900],[1170,1380]],
+    0:[[1170,1380]]
+  };
+  try{
+    var now = new Date();
+    var day = now.getDay();
+    var mins = now.getHours()*60 + now.getMinutes();
+    var open = (SCHED[day]||[]).some(function(w){ return mins >= w[0] && mins < w[1]; });
+    var pill = document.getElementById('statusPill');
+    var txt  = document.getElementById('statusText');
+    if(pill && txt){
+      txt.textContent = open ? 'Aperto ora' : 'Chiuso ora';
+      pill.style.display = 'inline-flex';
+    }
+    // mark today's row
+    var todayRow = document.querySelector('.hours-list li[data-day="'+day+'"]');
+    if(todayRow) todayRow.classList.add('today');
+  }catch(e){ /* pill stays hidden */ }
+
+  /* ============================================================
+     MOTION LAYER (pass 3) — progressive enhancement over visible content
+     ============================================================ */
+  var reduce = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : {matches:false};
+  var hasIO = 'IntersectionObserver' in window;
+  var mq = function(q){ return window.matchMedia ? window.matchMedia(q).matches : false; };
+
+  /* --- shared reveal system: one IO, unobserve after firing --- */
+  var revealSel = [
+    '.room-head h2','.wide h2',
+    '.pair-main img','.featured-dish > figure img',
+    '#insegna .figclip img','#famiglia .figclip img','#musica .figclip img','.contact-media img',
+    '.pair-detail',
+    '.story-lines p','.split-text p','.proof-themes li','.facts li','.hours-list li',
+    '.room-head .lede','.wide .lede','.proof-score','.contact-card','.addr-card','.proof-note',
+    '.dish-grid .dish-card','.section-rule'
+  ].join(',');
+  if(!reduce.matches){
+    var setIdx = function(sel, itemSel){
+      document.querySelectorAll(sel).forEach(function(g){
+        Array.prototype.slice.call(g.querySelectorAll(itemSel)).forEach(function(it,i){ it.style.setProperty('--i', i); });
+      });
+    };
+    setIdx('.story-lines','p');
+    setIdx('.split-text','p');
+    setIdx('.proof-themes','li');
+    setIdx('.facts','li');
+    setIdx('.hours-list','li');
+    document.querySelectorAll('.dish-grid .dish-card').forEach(function(c,i){ c.style.setProperty('--i', i); });
+
+    if(hasIO){
+      var rObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-in'); rObs.unobserve(en.target); } });
+      }, {rootMargin:'0px 0px -10% 0px', threshold:0.15});
+      document.querySelectorAll(revealSel).forEach(function(el){ rObs.observe(el); });
+    } else {
+      /* no IntersectionObserver: never leave content hidden — reveal all now */
+      document.querySelectorAll(revealSel).forEach(function(el){ el.classList.add('is-in'); });
+    }
+  }
+
+  /* --- count-up on the two REAL numbers (rating + review count) --- */
+  var fmtNum = function(v, dec){ return (dec>0 ? v.toFixed(dec) : String(Math.round(v))).replace('.', ','); };
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var to = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec')||'0', 10);
+    if(isNaN(to)) return;
+    if(reduce.matches || !hasIO){ el.textContent = fmtNum(to, dec); return; }
+    var done = false;
+    var cObs = new IntersectionObserver(function(ents){
+      ents.forEach(function(en){
+        if(en.isIntersecting && !done){
+          done = true; cObs.unobserve(el);
+          var start = null, dur = 1000;
+          var step = function(ts){
+            if(start === null) start = ts;
+            var p = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - p, 3);
+            el.textContent = fmtNum(to * e, dec);
+            if(p < 1) requestAnimationFrame(step); else el.textContent = fmtNum(to, dec);
+          };
+          requestAnimationFrame(step);
+        }
+      });
+    }, {threshold:0.6});
+    cObs.observe(el);
+  });
+
+  /* --- planimetria continuous scroll-linked fill + mobile strip progress --- */
+  var routeProg = document.querySelector('.plan-svg .route-progress');
+  var stripFill = document.querySelector('.strip-progress > i');
+  var tourEl = document.querySelector('.tour');
+  var routeLen = 0;
+  if(routeProg){
+    try{ routeLen = routeProg.getTotalLength(); }catch(e){ routeLen = 0; }
+    if(routeLen){ routeProg.style.strokeDasharray = routeLen; routeProg.style.strokeDashoffset = routeLen; }
+  }
+  var progressWork = function(){
+    if(!tourEl) return;
+    var r = tourEl.getBoundingClientRect(), vh = window.innerHeight || 1;
+    var p = (vh * 0.5 - r.top) / (r.height || 1);
+    p = Math.max(0, Math.min(1, p));
+    if(routeProg && routeLen) routeProg.style.strokeDashoffset = routeLen * (1 - p);
+    if(stripFill) stripFill.style.transform = 'scaleX(' + p.toFixed(3) + ')';
+  };
+  if(!reduce.matches){
+    var pTick = false;
+    window.addEventListener('scroll', function(){
+      if(!pTick){ pTick = true; requestAnimationFrame(function(){ progressWork(); pTick = false; }); }
+    }, {passive:true});
+    window.addEventListener('resize', progressWork, {passive:true});
+    progressWork();
+  }
+
+  /* --- dish-card draw-once rametto sprig (hover only, moment: carte dei piatti) --- */
+  if(mq('(hover:hover) and (pointer:fine)')){
+    var SPRIG = '<svg class="card-sprig" viewBox="0 0 24 24" aria-hidden="true">'
+      + '<path d="M12 22 V8"/>'
+      + '<path d="M12 15 C8 15 5.5 12.5 5.5 8 C10 8 12.3 10.5 12 15 Z"/>'
+      + '<path d="M12 12 C16 12 18.5 9.5 18.5 5 C14 5 11.7 7.5 12 12 Z"/></svg>';
+    document.querySelectorAll('.dish-card .body').forEach(function(b){
+      b.insertAdjacentHTML('afterbegin', SPRIG);
+      b.querySelectorAll('.card-sprig path').forEach(function(pth){
+        try{ pth.style.setProperty('--l', pth.getTotalLength()); }catch(e){}
+      });
+    });
+  }
+
+  /* --- hero scroll-cinema: canvas frame scrub (desktop + fine pointer + not reduced) --- */
+  (function heroCinema(){
+    var canvas = document.querySelector('.hero-canvas');
+    var hero = document.querySelector('.hero');
+    if(!canvas || !hero) return;
+    if(!mq('(min-width:1024px) and (pointer:fine)') || reduce.matches) return;
+    var ctx = canvas.getContext('2d'); if(!ctx) return;
+    var TOTAL = 48, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var frames = new Array(TOTAL), anyLoaded = false;
+    var pad = function(n){ n = String(n); while(n.length < 4) n = '0' + n; return n; };
+    var size = function(){ var r = hero.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.round(r.width * dpr));
+      canvas.height = Math.max(1, Math.round(r.height * dpr)); };
+    size();
+    var pick = function(idx){
+      idx = Math.max(0, Math.min(TOTAL - 1, Math.round(idx)));
+      var img = frames[idx];
+      if(img && img.complete && img.naturalWidth) return img;
+      for(var k = idx; k >= 0; k--){ if(frames[k] && frames[k].complete && frames[k].naturalWidth) return frames[k]; }
+      for(var j = idx + 1; j < TOTAL; j++){ if(frames[j] && frames[j].complete && frames[j].naturalWidth) return frames[j]; }
+      return null;
+    };
+    var draw = function(idx){
+      var img = pick(idx); if(!img) return;
+      var cw = canvas.width, ch = canvas.height, ir = img.naturalWidth / img.naturalHeight, cr = cw / ch, dw, dh;
+      if(ir > cr){ dh = ch; dw = ch * ir; } else { dw = cw; dh = cw / ir; }
+      ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+    };
+    var cur = 0, target = 0, raf = null;
+    var computeTarget = function(){ var r = hero.getBoundingClientRect();
+      var p = (-r.top) / (r.height || 1); target = Math.max(0, Math.min(1, p)) * (TOTAL - 1); };
+    var tick = function(){
+      cur += (target - cur) * 0.12; draw(cur);
+      if(Math.abs(target - cur) > 0.04){ raf = requestAnimationFrame(tick); }
+      else { cur = target; draw(cur); raf = null; }
+    };
+    var requestTick = function(){ if(raf === null) raf = requestAnimationFrame(tick); };
+    var loadFrame = function(i){
+      var img = new Image(); img.decoding = 'async';
+      img.onload = function(){ if(!anyLoaded){ anyLoaded = true; draw(0); canvas.classList.add('is-live'); requestTick(); } };
+      img.src = 'assets/hero-frames/desktop/frame-' + pad(i + 1) + '.webp';
+      frames[i] = img;
+    };
+    loadFrame(0);
+    var li = 1;
+    (function chain(){ if(li < TOTAL){ loadFrame(li++); requestAnimationFrame(chain); } })();
+    computeTarget();
+    window.addEventListener('scroll', function(){ computeTarget(); requestTick(); }, {passive:true});
+    window.addEventListener('resize', function(){ size(); draw(cur); }, {passive:true});
+  })();
+})();
+</script>
+</body>
+</html>

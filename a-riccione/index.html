@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>a Riccione · Cucina di mare a Milano | Ristorante e Bistrot</title>
+<meta name="description" content="a Riccione porta a Milano il pescato del giorno: due sedi di mare distinte, il Ristorante di Via Taramelli e il Bistrot di Via Procaccini. Prenotazione al telefono, sala curata, cucina italiana moderna di pesce.">
+<link rel="canonical" href="https://www.ristoranteariccione.net/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="a Riccione · Cucina di mare a Milano">
+<meta property="og:description" content="Pescato del giorno e sala curata su due sedi milanesi: Ristorante di Via Taramelli e Bistrot di Via Procaccini.">
+<meta property="og:image" content="assets/hero-tavolo-crudo.jpg">
+<meta property="og:url" content="https://www.ristoranteariccione.net/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="a Riccione · Cucina di mare a Milano">
+<meta name="twitter:description" content="Pescato del giorno e sala curata su due sedi milanesi.">
+<meta name="twitter:image" content="assets/hero-tavolo-crudo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "a Riccione",
+  "description": "Cucina di mare italiana moderna a Milano, su due sedi distinte: Ristorante di Via Taramelli e Bistrot di Via Procaccini.",
+  "servesCuisine": ["Seafood", "Italian"],
+  "telephone": "+39 02 683807",
+  "url": "https://www.ristoranteariccione.net/",
+  "image": "assets/hero-tavolo-crudo.jpg",
+  "areaServed": "Milano",
+  "department": [
+    {
+      "@type": "Restaurant",
+      "name": "a Riccione · Ristorante",
+      "servesCuisine": ["Seafood", "Italian"],
+      "telephone": "+39 02 683807",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Torquato Taramelli, 70",
+        "addressLocality": "Milano",
+        "addressCountry": "IT"
+      }
+    },
+    {
+      "@type": "Restaurant",
+      "name": "a Riccione · Bistrot",
+      "servesCuisine": ["Seafood", "Italian"],
+      "telephone": "+39 02 683807",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Giulio Cesare Procaccini, 28",
+        "addressLocality": "Milano",
+        "addressCountry": "IT"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined ONCE, referenced everywhere
+   ============================================================ */
+:root{
+  --brand-ink:#0E2230;
+  --brand-surface:#EDF2F3;
+  --brand-surface-alt:#E3EBEC;
+  --brand-accent:#12657F;
+  --brand-accent-ink:#F4F9FA;
+  --brand-muted:#46616D;
+  --brand-line:#D1DBDD;
+  --brand-accent-2:#C39A6B;
+
+  --font-display:"Bodoni Moda","Bodoni MT",Didot,"Times New Roman",serif;
+  --font-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.33,0,0.15,1);
+  --dur-reveal:800ms;
+  --dur-micro:200ms;
+  --stagger:90ms;
+
+  --space-section:clamp(4rem,2.5rem + 6vw,8rem);
+  --container:min(1200px,92vw);
+  --radius:3px;
+
+  --fs-hero:clamp(2.75rem,1.9rem + 4.2vw,5.5rem);
+  --fs-h2:clamp(1.75rem,1.35rem + 1.9vw,2.75rem);
+  --fs-body:clamp(1rem,0.96rem + 0.2vw,1.15rem);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  color:var(--brand-ink);
+  background:var(--brand-surface);
+  -webkit-font-smoothing:antialiased;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  text-rendering:optimizeLegibility;
+  text-wrap:pretty;
+  position:relative;
+}
+/* fine grain — inline feTurbulence, never a generated texture image */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  opacity:.045;mix-blend-mode:soft-light;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0 1"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
+}
+img,video{max-width:100%;display:block;}
+a{color:inherit;}
+h1,h2,h3{
+  font-family:var(--font-display);letter-spacing:-0.025em;line-height:1.05;margin:0;
+  font-optical-sizing:auto;text-wrap:balance;
+}
+p{margin:0;overflow-wrap:anywhere;}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+:focus-visible{
+  outline:3px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:var(--radius);
+}
+.container{width:var(--container);margin-inline:auto;position:relative;z-index:2;}
+.site-header,.masthead,.site-footer,.mobile-bar{position:relative;z-index:2;}
+
+/* ---- shared type helpers ---- */
+.eyebrow{
+  font-family:var(--font-body);
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:0.72rem;
+  font-weight:600;
+  color:var(--brand-muted);
+  display:inline-flex;
+  align-items:center;
+  gap:0.55rem;
+  margin:0 0 1.1rem;
+}
+.eyebrow .risacca{color:var(--brand-accent);flex:none;}
+.risacca{width:28px;height:8px;}
+.lead{font-size:1.18rem;color:var(--brand-muted);max-width:56ch;}
+
+/* section dividers — risacca in accent_secondary (legno) */
+.divider{display:flex;justify-content:center;padding:clamp(2rem,4vw,3.5rem) 0;}
+.divider .risacca{width:44px;height:12px;color:var(--brand-accent-2);}
+
+/* ============================================================
+   WORDMARK
+   ============================================================ */
+.wordmark{
+  font-family:var(--font-display);
+  font-weight:400;
+  line-height:0.95;
+  color:currentColor;
+}
+.wordmark .wm-a{font-style:italic;font-weight:400;}
+.wordmark .wm-name{font-style:normal;font-weight:500;letter-spacing:0.02em;}
+.wordmark .wm-e{position:relative;display:inline-block;}
+.wordmark .wm-e .wm-risacca{
+  position:absolute;left:0;right:-2px;bottom:-0.16em;width:100%;height:0.22em;
+  color:var(--brand-accent-2);
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  min-height:66px;
+}
+.nav .brand-mini{font-size:1.4rem;text-decoration:none;color:var(--brand-ink);white-space:nowrap;}
+.nav-links{
+  display:flex;align-items:center;gap:1.6rem;list-style:none;margin:0;padding:0;
+}
+.nav-links a{
+  text-decoration:none;font-size:0.9rem;font-weight:500;color:var(--brand-ink);
+  padding:0.35rem 0;position:relative;transition:color var(--dur-micro) var(--ease-micro);
+}
+.nav-links a:hover{color:var(--brand-accent);}
+.nav-links a.active{color:var(--brand-accent);}
+.nav-links a.active .risacca{
+  position:absolute;left:0;bottom:-6px;width:24px;height:7px;color:var(--brand-accent);
+}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  text-decoration:none;font-weight:600;font-size:0.9rem;
+  padding:0.6rem 1.1rem;border-radius:var(--radius);white-space:nowrap;
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+}
+.nav-cta:hover{background:color-mix(in srgb,var(--brand-accent) 88%,#000);}
+.nav-cta:active{transform:scale(0.97);}
+.nav-toggle{
+  display:none;
+  background:none;border:1px solid var(--brand-line);border-radius:var(--radius);
+  width:44px;height:44px;cursor:pointer;color:var(--brand-ink);
+  align-items:center;justify-content:center;
+}
+.nav-toggle svg{width:22px;height:22px;}
+
+/* ============================================================
+   MASTHEAD — WATERLINE / FASCIA DI MAREA  (the wow)
+   ============================================================ */
+.masthead{
+  position:relative;
+  overflow:clip;                 /* clips the bled waterline band */
+  background:var(--brand-ink);
+}
+.masthead-media{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  max-height:62vh;
+  overflow:hidden;
+  background:var(--brand-surface-alt);
+}
+.masthead-media video,
+.masthead-media img.hero-still{
+  width:100%;height:100%;object-fit:cover;object-position:center 42%;
+}
+/* companion macro still — offset, smaller, bleeding over the seam */
+.hero-companion{
+  position:absolute;z-index:3;right:6%;top:calc(62vh - 96px);
+  width:clamp(120px,15vw,210px);aspect-ratio:1/1;
+  border:5px solid var(--brand-surface);
+  border-radius:var(--radius);
+  box-shadow:0 18px 40px -18px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+  overflow:hidden;
+}
+.hero-companion img{width:100%;height:100%;object-fit:cover;object-position:center 60%;}
+
+/* THE WATERLINE BAND — navy band that rises and holds the masthead */
+.waterline{
+  position:relative;z-index:2;
+  background:var(--brand-ink);
+  color:var(--brand-accent-ink);
+  padding:clamp(2.2rem,4vw,3.6rem) 0 clamp(2.6rem,5vw,4rem);
+}
+.waterline::before{
+  /* thin tide crest along the top edge of the band — the motif tratto, in accent */
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--brand-accent) 30%,var(--brand-accent) 70%,transparent);
+  opacity:.85;
+}
+.waterline-inner{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(1.5rem,4vw,3rem);
+  align-items:end;
+}
+.waterline h1.wordmark{
+  font-size:var(--fs-hero);
+  color:var(--brand-accent-ink);
+}
+.waterline .tagline{
+  font-family:var(--font-display);font-style:italic;
+  font-size:clamp(1.1rem,0.9rem+0.8vw,1.5rem);
+  color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);
+  margin:0.7rem 0 0;
+}
+.masthead-addresses{
+  list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:0.7rem;
+}
+.masthead-addresses li{
+  display:grid;grid-template-columns:auto 1fr;gap:0.7rem;align-items:baseline;
+  font-size:0.95rem;color:color-mix(in srgb,var(--brand-accent-ink) 80%,transparent);
+}
+.masthead-addresses .tag{
+  font-family:var(--font-body);text-transform:uppercase;letter-spacing:0.16em;
+  font-size:0.68rem;font-weight:600;
+  color:color-mix(in srgb,var(--brand-accent-ink) 62%,transparent);white-space:nowrap;
+}
+.masthead-addresses strong{color:var(--brand-accent-ink);font-weight:600;}
+
+.masthead-cta{display:flex;flex-direction:column;gap:1rem;}
+.live-chip{
+  display:inline-flex;align-items:center;gap:0.55rem;align-self:flex-start;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:0.4rem 0.9rem;border-radius:100px;font-size:0.85rem;font-weight:600;
+  letter-spacing:0.02em;font-variant-numeric:tabular-nums;
+}
+.live-chip{position:relative;overflow:hidden;isolation:isolate;}
+.live-chip .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--brand-accent-ink);
+}
+/* MOMENT: "il chip orario si riempie di accent" on primary-CTA input — a left→right
+   fill sweep in a darker marine so the light chip text stays legible. */
+.live-chip::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:color-mix(in srgb,var(--brand-accent) 68%,var(--brand-ink));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform var(--dur-micro) var(--ease-micro);
+}
+.btn-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.55rem;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  text-decoration:none;font-weight:600;font-size:1.02rem;
+  padding:0.95rem 1.5rem;border-radius:var(--radius);border:none;cursor:pointer;
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+}
+.btn-primary:hover{background:color-mix(in srgb,var(--brand-accent) 88%,#000);}
+.btn-primary:active{transform:scale(0.97);}
+.btn-ghost{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+  border:1px solid color-mix(in srgb,var(--brand-accent-ink) 45%,transparent);
+  color:var(--brand-accent-ink);text-decoration:none;font-weight:500;
+  padding:0.9rem 1.4rem;border-radius:var(--radius);
+  transition:border-color var(--dur-micro) var(--ease-micro);
+}
+.btn-ghost:hover{border-color:var(--brand-accent-ink);}
+.cta-phone{
+  font-size:0.95rem;color:color-mix(in srgb,var(--brand-accent-ink) 78%,transparent);
+}
+.cta-phone a{color:var(--brand-accent-ink);text-decoration:none;font-weight:600;}
+.proof-inline{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.9rem;color:color-mix(in srgb,var(--brand-accent-ink) 80%,transparent);
+}
+.stars{display:inline-flex;gap:1px;color:var(--brand-accent);}
+.stars svg{width:15px;height:15px;}
+/* stars on dark grounds use the light ink so they stay legible */
+.waterline .stars,.mobile-bar .stars{color:var(--brand-accent-ink);}
+
+/* ============================================================
+   GENERIC SECTION
+   ============================================================ */
+section{position:relative;}
+.section-pad{padding-block:var(--space-section);}
+.section-head{max-width:60ch;}
+.section-head h2{font-size:var(--fs-h2);margin-top:0.2rem;}
+
+/* uneven section rhythm — pacing, not one repeated block */
+.pescato.section-pad{padding-block:calc(var(--space-section) * 0.72);}
+.due-sedi.section-pad{padding-block:calc(var(--space-section) * 1.15) calc(var(--space-section) * 0.9);}
+.sala.section-pad{padding-block:calc(var(--space-section) * 1.05) calc(var(--space-section) * 1.35);}
+.faq.section-pad{padding-block:calc(var(--space-section) * 0.85);}
+
+/* ---- Il Pescato del Giorno ---- */
+.pescato{background:var(--brand-surface-alt);overflow:clip;}
+.pescato-grid{
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(1.5rem,5vw,4rem);
+  align-items:center;
+}
+.pescato-copy .cascade{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:0.35rem;}
+.pescato-copy .cascade li{
+  font-family:var(--font-display);font-size:clamp(1.25rem,1rem+1.1vw,1.9rem);
+  line-height:1.25;color:var(--brand-ink);
+}
+.pescato-copy .cascade li span{color:var(--brand-accent);}
+.pescato-figure{position:relative;}
+.pescato-figure img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 45%;border-radius:var(--radius);
+}
+.pescato-note{margin-top:1.5rem;color:var(--brand-muted);max-width:48ch;}
+
+/* ---- I Piatti — mirrored editorial ---- */
+.piatti .plate{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);
+  align-items:center;
+  padding-block:clamp(2rem,5vw,4rem);
+}
+.piatti .plate + .plate{border-top:1px solid var(--brand-line);}
+.piatti .plate.mirror .plate-media{order:2;}
+.piatti .plate-media img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:var(--radius);
+  box-shadow:0 20px 44px -26px color-mix(in srgb,var(--brand-ink) 50%,transparent);
+}
+.piatti .plate-index{
+  font-family:var(--font-display);font-style:italic;color:var(--brand-muted);
+  font-size:1.1rem;margin-bottom:0.4rem;
+}
+.piatti h3{font-size:clamp(1.5rem,1.2rem+1.2vw,2.1rem);margin-bottom:0.6rem;}
+.piatti .plate-desc{color:var(--brand-muted);max-width:44ch;}
+.plate-detail{
+  margin-top:1.1rem;font-size:0.9rem;color:var(--brand-ink);
+  display:inline-flex;gap:0.5rem;align-items:center;
+}
+.plate-detail .risacca{width:24px;height:7px;color:var(--brand-accent);flex:none;}
+
+/* ---- Le Due Sedi — diptych bisected by a navy waterline ---- */
+.due-sedi{background:var(--brand-ink);color:var(--brand-accent-ink);overflow:clip;}
+.due-sedi .section-head h2{color:var(--brand-accent-ink);}
+.due-sedi .section-head .eyebrow{color:color-mix(in srgb,var(--brand-accent-ink) 70%,transparent);}
+.due-sedi .lead{color:color-mix(in srgb,var(--brand-accent-ink) 78%,transparent);}
+.diptych{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:clamp(2rem,4vw,3rem);
+  border-radius:var(--radius);overflow:hidden;position:relative;
+}
+/* the two navy sede-bands align at the media/band seam and READ as one
+   horizontal navy band bisecting the diptych — the waterline echo */
+.sede{position:relative;background:var(--brand-surface);color:var(--brand-ink);
+  display:flex;flex-direction:column;}
+.sede-media::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--brand-accent) 30%,var(--brand-accent) 70%,transparent);
+  opacity:.85;pointer-events:none;
+}
+.sede-media{position:relative;aspect-ratio:5/4;overflow:hidden;}
+.sede-media img{width:100%;height:100%;object-fit:cover;}
+.sede-band{
+  background:var(--brand-ink);color:var(--brand-accent-ink);
+  padding:1.5rem clamp(1.2rem,2.5vw,2rem) 1.8rem;flex:1;
+  display:flex;flex-direction:column;gap:0.6rem;
+}
+.sede-band .kind{
+  text-transform:uppercase;letter-spacing:0.16em;font-size:0.68rem;font-weight:600;
+  color:color-mix(in srgb,var(--brand-accent-ink) 62%,transparent);
+}
+.sede-band h3{font-size:1.5rem;color:var(--brand-accent-ink);}
+.sede-band .addr{color:color-mix(in srgb,var(--brand-accent-ink) 78%,transparent);font-size:0.95rem;}
+.sede-band p.char{color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);font-size:0.95rem;margin-top:0.2rem;}
+.sede-band .sede-cta{
+  margin-top:auto;display:inline-flex;align-items:center;gap:0.5rem;
+  color:var(--brand-accent-ink);text-decoration:none;font-weight:600;
+  border:1px solid color-mix(in srgb,var(--brand-accent-ink) 40%,transparent);
+  padding:0.7rem 1rem;border-radius:var(--radius);align-self:flex-start;
+  transition:border-color var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+}
+.sede-band .sede-cta:hover{border-color:var(--brand-accent-ink);background:color-mix(in srgb,var(--brand-accent) 25%,transparent);}
+
+/* ---- La Sala — layered interior + macro detail (parallax-ready) ---- */
+.sala{overflow:clip;}
+.sala-stage{position:relative;margin-top:clamp(1.5rem,4vw,3rem);}
+.sala-main img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius);
+}
+.sala-detail{
+  position:absolute;right:-1.5%;bottom:-3rem;z-index:3;
+  width:clamp(150px,26vw,320px);aspect-ratio:1/1;
+  border:6px solid var(--brand-surface);border-radius:var(--radius);
+  box-shadow:0 24px 50px -22px color-mix(in srgb,var(--brand-ink) 55%,transparent);overflow:hidden;
+}
+.sala-detail img{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
+.sala-caption{margin-top:4.5rem;max-width:50ch;color:var(--brand-muted);}
+
+/* ---- La Prenotazione — sticky contact rail ---- */
+.prenota{background:var(--brand-surface-alt);}
+.prenota-grid{
+  display:grid;grid-template-columns:1.2fr 0.8fr;gap:clamp(1.5rem,5vw,4rem);
+  align-items:start;
+}
+.prenota-copy p + p{margin-top:1rem;}
+.orari-list{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:0.5rem;max-width:34rem;}
+.orari-list li{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding:0.6rem 0;border-bottom:1px solid var(--brand-line);
+  font-variant-numeric:tabular-nums;
+}
+.orari-list .h{color:var(--brand-muted);}
+.orari-note{margin-top:0.9rem;font-size:0.8rem;color:var(--brand-muted);}
+.booking-card{
+  position:sticky;top:88px;
+  background:var(--brand-surface);border:1px solid var(--brand-line);
+  border-radius:var(--radius);padding:clamp(1.5rem,3vw,2rem);
+  display:flex;flex-direction:column;gap:1rem;
+}
+.booking-card .rating-big{display:flex;align-items:baseline;gap:0.5rem;}
+.booking-card .rating-big .num{
+  font-family:var(--font-display);font-size:2.6rem;color:var(--brand-accent);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.booking-card .rating-big .src{font-size:0.85rem;color:var(--brand-muted);}
+.booking-card .phone-num{
+  font-family:var(--font-display);font-size:1.6rem;color:var(--brand-ink);text-decoration:none;
+  font-variant-numeric:tabular-nums;
+}
+.booking-card .phone-num:hover{color:var(--brand-accent);}
+.booking-card .reassure{font-size:0.88rem;color:var(--brand-muted);border-top:1px solid var(--brand-line);padding-top:1rem;}
+.booking-card .btn-primary{width:100%;}
+
+/* ---- Come Arrivare ---- */
+.arrivare-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,2.5rem);margin-top:clamp(1.5rem,4vw,2.5rem);}
+.map-card{
+  background:var(--brand-surface);border:1px solid var(--brand-line);border-radius:var(--radius);
+  padding:clamp(1.4rem,3vw,2rem);display:flex;flex-direction:column;gap:0.7rem;
+  box-shadow:0 16px 32px -26px color-mix(in srgb,var(--brand-ink) 40%,transparent);
+  font-variant-numeric:tabular-nums;
+}
+.arrivare-grid .map-card:last-child{transform:translateY(clamp(0px,2vw,20px));}
+.map-card .kind{text-transform:uppercase;letter-spacing:0.16em;font-size:0.68rem;font-weight:600;color:var(--brand-accent);}
+.map-card h3{font-size:1.4rem;}
+.map-card address{font-style:normal;color:var(--brand-muted);line-height:1.5;}
+.map-card .zona{font-size:0.9rem;color:var(--brand-muted);}
+.map-link{
+  margin-top:auto;display:inline-flex;align-items:center;gap:0.5rem;
+  color:var(--brand-accent);text-decoration:none;font-weight:600;font-size:0.95rem;
+  align-self:flex-start;
+}
+.map-link:hover{text-decoration:underline;}
+
+/* ---- Domande / FAQ ---- */
+.faq{background:var(--brand-surface-alt);}
+.faq-list{margin-top:clamp(1.5rem,4vw,2.5rem);display:grid;gap:0;max-width:820px;}
+.faq-item{border-top:1px solid var(--brand-line);padding:clamp(1.2rem,3vw,1.7rem) 0;}
+.faq-item:last-child{border-bottom:1px solid var(--brand-line);}
+.faq-item h3{
+  display:flex;gap:0.7rem;align-items:baseline;font-family:var(--font-display);
+  font-size:clamp(1.1rem,1rem+0.5vw,1.35rem);margin-bottom:0.5rem;
+}
+.faq-item h3 .risacca{width:24px;height:7px;color:var(--brand-accent);flex:none;transform:translateY(-2px);}
+.faq-item p{color:var(--brand-muted);max-width:64ch;padding-left:calc(24px + 0.7rem);}
+
+/* ---- Footer ---- */
+.site-footer{background:var(--brand-ink);color:var(--brand-accent-ink);padding:clamp(3rem,6vw,5rem) 0 6.5rem;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;}
+.site-footer .wordmark{font-size:2.2rem;color:var(--brand-accent-ink);}
+.site-footer .f-tag{color:color-mix(in srgb,var(--brand-accent-ink) 72%,transparent);margin-top:0.6rem;}
+.site-footer h4{font-family:var(--font-body);text-transform:uppercase;letter-spacing:0.16em;font-size:0.7rem;color:color-mix(in srgb,var(--brand-accent-ink) 58%,transparent);margin:0 0 0.9rem;}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:0.5rem;}
+.site-footer a{color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);text-decoration:none;font-size:0.95rem;}
+.site-footer a:hover{color:var(--brand-accent-ink);}
+.footer-legal{
+  margin-top:clamp(2rem,4vw,3rem);border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 22%,transparent);
+  padding-top:1.4rem;font-size:0.78rem;color:color-mix(in srgb,var(--brand-accent-ink) 60%,transparent);
+  display:flex;flex-wrap:wrap;gap:0.4rem 1.2rem;justify-content:space-between;
+}
+
+/* ---- Sticky mobile action bar ---- */
+.mobile-bar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;
+  background:var(--brand-ink);border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 20%,transparent);
+  padding:0.6rem clamp(0.8rem,4vw,1rem);
+  gap:0.6rem;align-items:center;justify-content:space-between;
+}
+.mobile-bar .mb-proof{font-size:0.78rem;color:color-mix(in srgb,var(--brand-accent-ink) 78%,transparent);line-height:1.2;}
+.mobile-bar .mb-proof strong{color:var(--brand-accent-ink);}
+.mobile-bar .btn-primary{padding:0.8rem 1.15rem;font-size:0.95rem;white-space:nowrap;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
+  .nav-links{
+    position:fixed;inset:66px 0 auto 0;flex-direction:column;align-items:flex-start;
+    gap:0;background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:0.5rem clamp(1rem,4vw,2rem) 1.2rem;
+    transform:translateY(-12px);opacity:0;pointer-events:none;
+    transition:opacity var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  }
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .nav-links li{width:100%;}
+  .nav-links a{display:block;width:100%;padding:0.85rem 0;border-bottom:1px solid var(--brand-line);font-size:1rem;}
+  .nav-links a.active .risacca{position:static;display:inline-block;margin-left:0.5rem;}
+  .nav-toggle{display:inline-flex;}
+  .nav-cta.desktop-only{display:none;}
+
+  .waterline-inner{grid-template-columns:1fr;align-items:start;gap:1.4rem;}
+  .pescato-grid{grid-template-columns:1fr;}
+  .piatti .plate{grid-template-columns:1fr;gap:1.5rem;}
+  .piatti .plate.mirror .plate-media{order:0;}
+  .piatti .plate-media img{aspect-ratio:16/10;}
+  .diptych{grid-template-columns:1fr;}
+  .diptych::after{display:none;}
+  .prenota-grid{grid-template-columns:1fr;}
+  .booking-card{position:static;order:-1;}
+  .arrivare-grid{grid-template-columns:1fr;}
+  .arrivare-grid .map-card:last-child{transform:none;}
+  .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
+
+  .mobile-bar{display:flex;}
+  .site-footer{padding-bottom:5.5rem;}
+}
+
+@media (max-width:600px){
+  /* WATERLINE — mobile form: photo strip on top, navy band rising below,
+     h1 + live chip + Chiama CTA all in the first viewport. The companion
+     still straddles the photo/band seam so the signature reads as itself. */
+  .masthead-media{aspect-ratio:auto;height:34vh;max-height:none;}
+  .hero-companion{
+    right:5%;top:calc(34vh - 52px);bottom:auto;width:104px;
+  }
+  .waterline{padding-top:2rem;}
+  .masthead-addresses{margin-top:1.1rem;}
+  .waterline h1.wordmark{font-size:clamp(2.6rem,10vw,3.6rem);}
+  .masthead-cta{gap:0.85rem;}
+  .btn-primary{width:100%;}
+  .sala-detail{position:relative;right:auto;bottom:auto;width:60%;margin:-2.5rem 0 0 auto;border-width:5px;}
+  .sala-caption{margin-top:1.5rem;}
+  .footer-legal{flex-direction:column;gap:0.4rem;}
+}
+
+/* ============================================================
+   MOTION LAYER — "la marea": rise & settle on its own mark, one language.
+   Hidden-start states apply ONLY under html.js → JS off = everything visible.
+   Everything disabled under prefers-reduced-motion (block at the very end).
+   Reveal duration token as ms number for calc/JS: --rd:800ms.
+   ============================================================ */
+:root{--rd:800ms;}
+
+/* ---- LOAD: the marea. Waterline band rises + hero opens horizontally.
+   Pure CSS, fill:both, end state = fully visible (safe with JS on/off). ---- */
+@keyframes waterline-rise{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
+@keyframes marea-open{from{clip-path:inset(0 50% 0 50%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes soft-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes hero-push{from{transform:scale(1.001)}to{transform:scale(1.06)}}
+html.js .waterline{animation:waterline-rise var(--rd) var(--ease-signature) both;}
+html.js .masthead-media{animation:marea-open 1100ms var(--ease-signature) both;}
+html.js .hero-companion{animation:soft-in 900ms var(--ease-signature) 520ms both;}
+
+/* ---- SCROLL-linked hero push-in (native scroll-driven, GPU) ---- */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    html.js .masthead-media > video,
+    html.js .masthead-media > .hero-canvas{
+      animation:hero-push linear both;
+      animation-timeline:view();
+      animation-range:entry 0% exit 100%;
+    }
+  }
+}
+
+/* ---- HERO CANVAS (frame-scrub layer, drawn by JS; video loop is the base) ---- */
+.hero-canvas{
+  position:absolute;inset:0;width:100%;height:100%;
+  opacity:0;pointer-events:none;
+  transition:opacity 320ms var(--ease-micro);
+  will-change:opacity;
+}
+
+/* ---- SCROLL REVEAL SYSTEM — varied by content role, one ease/one language ---- */
+html.js [data-reveal]{--td:var(--rd);}
+/* rise */
+html.js [data-reveal="rise"]{opacity:0;transform:translateY(28px);transition:opacity var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="rise"].is-in{opacity:1;transform:none;}
+/* fade — opacity only, for elements that already carry a transform */
+html.js [data-reveal="fade"]{opacity:0;transition:opacity var(--td) var(--ease-signature);}
+html.js [data-reveal="fade"].is-in{opacity:1;}
+/* media — depth, scale-in */
+html.js [data-reveal="media"]{opacity:0;transform:scale(1.045);transition:opacity var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="media"].is-in{opacity:1;transform:none;}
+/* head group — eyebrow rises, h2 unmasks (clip), lead rises; staggered */
+html.js [data-reveal="head"] .eyebrow,
+html.js [data-reveal="head"] .lead{opacity:0;transform:translateY(20px);transition:opacity var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="head"] h2{clip-path:inset(-0.12em 0 108% 0);transform:translateY(0.14em);transition:clip-path var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="head"].is-in .eyebrow{opacity:1;transform:none;}
+html.js [data-reveal="head"].is-in h2{clip-path:inset(-0.12em 0 -0.12em 0);transform:none;transition-delay:calc(var(--stagger) * 1);}
+html.js [data-reveal="head"].is-in .lead{opacity:1;transform:none;transition-delay:calc(var(--stagger) * 2);}
+/* rows — children cascade up in sequence */
+html.js [data-reveal="rows"] > *{opacity:0;transform:translateY(24px);transition:opacity var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="rows"].is-in > *{opacity:1;transform:none;}
+html.js [data-reveal="rows"].is-in > *:nth-child(2){transition-delay:calc(var(--stagger) * 1);}
+html.js [data-reveal="rows"].is-in > *:nth-child(3){transition-delay:calc(var(--stagger) * 2);}
+html.js [data-reveal="rows"].is-in > *:nth-child(4){transition-delay:calc(var(--stagger) * 3);}
+html.js [data-reveal="rows"].is-in > *:nth-child(5){transition-delay:calc(var(--stagger) * 4);}
+html.js [data-reveal="rows"].is-in > *:nth-child(n+6){transition-delay:calc(var(--stagger) * 5);}
+/* left / right — the Due Sedi converge along X toward the centre */
+html.js [data-reveal="left"]{opacity:0;transform:translateX(-48px);transition:opacity var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="right"]{opacity:0;transform:translateX(48px);transition:opacity var(--td) var(--ease-signature),transform var(--td) var(--ease-signature);}
+html.js [data-reveal="left"].is-in,
+html.js [data-reveal="right"].is-in{opacity:1;transform:none;}
+
+/* ---- MOMENT: "la risacca che si disegna" — the eyebrow wave draws in L→R, once.
+   (A clip wipe on the light-DOM <svg>, not stroke-dashoffset, which cannot
+   transition across a <use> shadow boundary.) ---- */
+html.js .eyebrow .risacca{clip-path:inset(0 100% 0 0);transition:clip-path var(--rd) var(--ease-signature) 140ms;}
+html.js [data-reveal].is-in .eyebrow .risacca{clip-path:inset(0 0 0 0);}
+
+/* ---- MOMENT: "pressione sul CTA" — chip fills on direct input (hover/press) ---- */
+@media (hover:hover) and (pointer:fine){
+  .masthead-cta:has(.btn-primary:hover) .live-chip::after,
+  .masthead-cta:has(.btn-primary:focus-visible) .live-chip::after,
+  .masthead-cta:has(.btn-primary:active) .live-chip::after{transform:scaleX(1);}
+  /* draw-underline micro-interaction on text links */
+  .map-link,.cta-phone a,.site-footer a{position:relative;}
+  .map-link::after,.site-footer a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;
+    background:currentColor;transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-micro);
+  }
+  .map-link:hover::after,.map-link:focus-visible::after,
+  .site-footer a:hover::after,.site-footer a:focus-visible::after{transform:scaleX(1);}
+  /* media bulge on card hover */
+  .plate-media,.sede-media,.pescato-figure{overflow:hidden;}
+  .plate-media img,.sede-media img,.pescato-figure img{transition:transform 420ms var(--ease-signature);}
+  .plate:hover .plate-media img,.sede:hover .sede-media img,.pescato-figure:hover img{transform:scale(1.05);}
+}
+.btn-primary:active{transform:scale(0.96);}
+
+/* MOMENT: "profondità nella sala" — parallax layers clipped inside their frames */
+.sala-main{overflow:hidden;border-radius:var(--radius);}
+html.js .sala-main img,html.js .sala-detail img{will-change:transform;}
+
+/* magnetic CTA gets a smooth return */
+html.js .masthead-cta .btn-primary{transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);}
+
+/* ---- SCROLL PROGRESS BAR (top) — mobile-visible equivalent of the chapter rail ---- */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:80;pointer-events:none;background:transparent;}
+.scroll-progress span{display:block;height:100%;background:var(--brand-accent);transform:scaleX(0);transform-origin:left;}
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes progress-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .scroll-progress span{animation:progress-grow linear both;animation-timeline:scroll(root);}
+  }
+}
+
+/* ---- CHAPTER RAIL (desktop only) — real anchors, active dot + fill line ---- */
+.chapters{
+  position:fixed;left:max(18px,calc((100vw - var(--container))/2 - 34px));top:50%;
+  transform:translateY(-50%);z-index:55;display:none;flex-direction:column;gap:0.85rem;
+  padding:0.6rem 0.35rem;
+}
+.chapters::before{
+  content:"";position:absolute;left:50%;top:0.4rem;bottom:0.4rem;width:2px;
+  transform:translateX(-50%);background:var(--brand-line);border-radius:2px;
+}
+.chapters .cap-fill{position:absolute;left:50%;top:0.4rem;width:2px;transform:translateX(-50%) scaleY(0);transform-origin:top;background:var(--brand-accent);border-radius:2px;height:calc(100% - 0.8rem);}
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes cap-grow{from{transform:translateX(-50%) scaleY(0)}to{transform:translateX(-50%) scaleY(1)}}
+    .chapters .cap-fill{animation:cap-grow linear both;animation-timeline:scroll(root);}
+  }
+}
+.chapters a{position:relative;width:12px;height:12px;display:grid;place-items:center;}
+.chapters a::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand-line);transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);}
+.chapters a:hover::after,.chapters a:focus-visible::after{background:var(--brand-muted);transform:scale(1.2);}
+.chapters a.active::after{background:var(--brand-accent);transform:scale(1.35);}
+.chapters .cap-label{position:absolute;left:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:0.72rem;letter-spacing:0.02em;color:var(--brand-muted);background:color-mix(in srgb,var(--brand-surface) 92%,transparent);padding:0.1rem 0.45rem;border-radius:var(--radius);opacity:0;pointer-events:none;transition:opacity var(--dur-micro) var(--ease-micro);}
+.chapters a:hover .cap-label,.chapters a:focus-visible .cap-label{opacity:1;}
+@media (min-width:1180px){.chapters{display:flex;}}
+
+/* ============================================================
+   REDUCED MOTION — hard off: everything visible, no transforms, no timelines
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:0.001ms!important;animation-iteration-count:1!important;
+    animation-delay:0ms!important;
+    transition-duration:0.001ms!important;transition-delay:0ms!important;
+    scroll-behavior:auto!important;
+  }
+  html.js [data-reveal],
+  html.js [data-reveal] > *,
+  html.js [data-reveal] .eyebrow,
+  html.js [data-reveal] .lead{opacity:1!important;transform:none!important;}
+  html.js [data-reveal] h2,
+  html.js .masthead-media,
+  html.js .eyebrow .risacca{clip-path:none!important;}
+  html.js .waterline,html.js .hero-companion,html.js .masthead-media > video,html.js .masthead-media > .hero-canvas{transform:none!important;opacity:1!important;}
+  .hero-canvas{display:none!important;}
+  .scroll-progress span,.chapters .cap-fill{animation:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- scroll progress bar — scroll-driven; the mobile-visible equivalent of the chapter rail -->
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- chapter rail — real anchors, desktop only; mobile keeps the sticky action bar -->
+<nav class="chapters" aria-label="Sezioni della pagina">
+  <span class="cap-fill" aria-hidden="true"></span>
+  <a href="#home"><span class="cap-label">Home</span></a>
+  <a href="#pescato"><span class="cap-label">Il Pescato</span></a>
+  <a href="#piatti"><span class="cap-label">I Piatti</span></a>
+  <a href="#sedi"><span class="cap-label">Le Due Sedi</span></a>
+  <a href="#sala"><span class="cap-label">La Sala</span></a>
+  <a href="#prenota"><span class="cap-label">Prenotazione</span></a>
+  <a href="#arrivare"><span class="cap-label">Come Arrivare</span></a>
+  <a href="#domande"><span class="cap-label">Domande</span></a>
+</nav>
+
+<!-- risacca motif — single-crest wave, defined ONCE, reused via <use> -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="risacca" viewBox="0 0 28 8">
+    <path d="M1 6 Q 7.5 0.5 14 6 T 27 6" pathLength="1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M12 2l2.9 6.26L21.5 9l-4.75 4.64L17.9 22 12 18.27 6.1 22l1.15-8.36L2.5 9l6.6-.74L12 2z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Navigazione principale">
+    <a href="#top" class="brand-mini wordmark"><span class="wm-a">a</span> <span class="wm-name">Riccione</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#pescato">Il Pescato</a></li>
+      <li><a href="#piatti">I Piatti</a></li>
+      <li><a href="#sedi">Le Due Sedi</a></li>
+      <li><a href="#sala">La Sala</a></li>
+      <li><a href="#arrivare">Come Arrivare</a></li>
+      <li><a href="#prenota" class="active">Prenotazione<svg class="risacca"><use href="#risacca"/></svg></a></li>
+    </ul>
+    <a class="nav-cta desktop-only" data-cta href="tel:+3902683807">
+      Chiama · +39 02 683807
+    </a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ MASTHEAD — WATERLINE ============ -->
+  <section class="masthead" id="home" aria-label="a Riccione, cucina di mare a Milano">
+    <div class="masthead-media">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/hero-tavolo-crudo.jpg" aria-hidden="true">
+        <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+        <img class="hero-still" src="assets/hero-tavolo-crudo.jpg" alt="Tavolo di marmo apparecchiato con crudo di pesce fresco visto dall’alto">
+      </video>
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    </div>
+    <div class="hero-companion">
+      <img src="assets/hero-detail-branzino.jpg" alt="Dettaglio macro di un filetto di branzino fresco">
+    </div>
+
+    <div class="waterline">
+      <div class="waterline-inner container">
+        <div>
+          <h1 class="wordmark">
+            <span class="wm-a">a</span> <span class="wm-name">Riccion<span class="wm-e">e<svg class="wm-risacca" viewBox="0 0 28 8" aria-hidden="true"><use href="#risacca"/></svg></span></span>
+          </h1>
+          <p class="tagline">Cucina di mare a Milano</p>
+          <ul class="masthead-addresses">
+            <li><span class="tag">Ristorante</span> <span><strong>Via Taramelli, 70</strong> · zona Isola</span></li>
+            <li><span class="tag">Bistrot</span> <span><strong>Via Procaccini, 28</strong> · zona Chinatown</span></li>
+          </ul>
+        </div>
+        <div class="masthead-cta">
+          <span class="live-chip"><span class="dot"></span> Aperto · 12:30</span>
+          <a class="btn-primary" data-cta href="tel:+3902683807">Chiama per prenotare</a>
+          <p class="cta-phone">Prenotazione al telefono · <a href="tel:+3902683807">+39 02 683807</a></p>
+          <div class="proof-inline">
+            <span class="stars" aria-hidden="true">
+              <svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg>
+            </span>
+            <span>4,5 su Google · entrambe le sedi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL PESCATO DEL GIORNO ============ -->
+  <section class="pescato section-pad" id="pescato" aria-labelledby="pescato-h">
+    <div class="container pescato-grid">
+      <div class="pescato-copy" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> Il Pescato del Giorno</p>
+        <h2 id="pescato-h" class="section-head" style="font-size:var(--fs-h2)">La materia prima decide il menu.</h2>
+        <ul class="cascade" data-reveal="rows">
+          <li>Scegliamo il pescato ogni mattina.</li>
+          <li>Branzino, orata, <span>gambero rosso</span>.</li>
+          <li>Ostriche, vongole, cozze.</li>
+          <li>Quello che non è fresco, non entra in sala.</li>
+        </ul>
+        <p class="pescato-note">Il crudo cambia con il mercato. La carta segue il mare, non il calendario: se una specie non convince al banco, quel giorno non la serviamo.</p>
+      </div>
+      <figure class="pescato-figure" data-reveal="media">
+        <img src="assets/pescato-fresco.jpg" alt="Pescato fresco del giorno disposto sul ghiaccio">
+      </figure>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><svg class="risacca"><use href="#risacca"/></svg></div>
+
+  <!-- ============ I PIATTI — mirrored editorial ============ -->
+  <section class="piatti section-pad" id="piatti" aria-labelledby="piatti-h">
+    <div class="container">
+      <div class="section-head" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> I Piatti</p>
+        <h2 id="piatti-h">Cucina italiana moderna, a base di pesce.</h2>
+        <p class="lead">Pochi piatti firma, costruiti sul pescato. Al posto di un listino che il vecchio sito non mostrava, qui ci sono le prove.</p>
+      </div>
+
+      <article class="plate" data-reveal="rise">
+        <div class="plate-media"><img src="assets/piatto-crudo.jpg" alt="Piatto di crudo di mare impiattato con agrumi"></div>
+        <div class="plate-body">
+          <p class="plate-index">01 — Crudo</p>
+          <h3>Crudo di mare</h3>
+          <p class="plate-desc">Ricciola e gambero rosso, agrumi e olio. Il piatto che apre la cena: pesce crudo tagliato al momento, condito con misura.</p>
+          <span class="plate-detail"><svg class="risacca"><use href="#risacca"/></svg> Selezione dal banco del giorno</span>
+        </div>
+      </article>
+
+      <article class="plate mirror" data-reveal="rise">
+        <div class="plate-media"><img src="assets/piatto-primo.jpg" alt="Linguine alle vongole impiattate"></div>
+        <div class="plate-body">
+          <p class="plate-index">02 — Primo</p>
+          <h3>Linguine alle vongole</h3>
+          <p class="plate-desc">Vongole fresche, prezzemolo, un’emulsione lucida. Un classico di mare tenuto asciutto e preciso, come lo facciamo in cucina.</p>
+          <span class="plate-detail"><svg class="risacca"><use href="#risacca"/></svg> Pasta mantecata a crudo</span>
+        </div>
+      </article>
+
+      <article class="plate" data-reveal="rise">
+        <div class="plate-media"><img src="assets/piatto-secondo.jpg" alt="Orata intera alla griglia impiattata con limone"></div>
+        <div class="plate-body">
+          <p class="plate-index">03 — Secondo</p>
+          <h3>Orata alla griglia</h3>
+          <p class="plate-desc">Pesce intero, limone arrostito, erbe e olio. Cottura sulla pelle, servito in sala e sfilettato: la materia prima, quasi nuda.</p>
+          <span class="plate-detail"><svg class="risacca"><use href="#risacca"/></svg> Pesce intero del giorno</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ LE DUE SEDI — diptych bisected by navy waterline ============ -->
+  <section class="due-sedi section-pad" id="sedi" aria-labelledby="sedi-h">
+    <div class="container">
+      <div class="section-head" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> Le Due Sedi</p>
+        <h2 id="sedi-h">Un nome, due locali di mare.</h2>
+        <p class="lead">Stesso pescato, due caratteri. Il Ristorante di Via Taramelli per una cena curata; il Bistrot di Via Procaccini, più informale e marinaro. Scegliete la sala, noi teniamo il mare.</p>
+      </div>
+
+      <div class="diptych">
+        <div class="sede" data-reveal="left">
+          <div class="sede-media"><img src="assets/sede-ristorante-taramelli.jpg" alt="Interno del Ristorante A' Riccione di Via Taramelli"></div>
+          <div class="sede-band">
+            <span class="kind">Ristorante</span>
+            <h3>Via Taramelli</h3>
+            <p class="addr">Via Torquato Taramelli, 70 · Milano, zona Isola</p>
+            <p class="char">Cucina italiana moderna a base di pesce. Tavoli apparecchiati, argento, luce da finestra: la sede per una cena da prenotare.</p>
+            <a class="sede-cta" data-cta href="tel:+3902683807">Chiama per prenotare</a>
+          </div>
+        </div>
+        <div class="sede" data-reveal="right">
+          <div class="sede-media"><img src="assets/sede-bistrot-procaccini.jpg" alt="Interno del Bistrot A' Riccione di Via Procaccini"></div>
+          <div class="sede-band">
+            <span class="kind">Bistrot</span>
+            <h3>Via Procaccini</h3>
+            <p class="addr">Via Giulio Cesare Procaccini, 28 · Milano, zona Chinatown</p>
+            <p class="char">Il fratello informale: banco, tavoli piccoli, atmosfera da marina. Stessa materia prima, tono più diretto, ideale a pranzo.</p>
+            <a class="sede-cta" data-cta href="tel:+3902683807">Chiama per prenotare</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA SALA — layered interior + macro detail ============ -->
+  <section class="sala section-pad" id="sala" aria-labelledby="sala-h">
+    <div class="container">
+      <div class="section-head" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> La Sala</p>
+        <h2 id="sala-h">Marinara, ma raffinata.</h2>
+        <p class="lead">Blu profondo, legno chiaro, argento. La sala è pensata per una cena lenta: prima che assaggiate, la tavola dice già che tipo di posto siamo.</p>
+      </div>
+      <div class="sala-stage">
+        <figure class="sala-main" data-reveal="fade">
+          <img src="assets/sala-panoramica.jpg" alt="Panoramica della sala del ristorante apparecchiata">
+        </figure>
+        <figure class="sala-detail" data-reveal="fade">
+          <img src="assets/sala-detail-tavola.jpg" alt="Dettaglio di una tavola apparecchiata con argento e legno chiaro">
+        </figure>
+      </div>
+      <p class="sala-caption">Ogni coperto è preparato prima del servizio: tovagliato, posate lucide, un calice. I dettagli sono il motivo per cui una cena qui vale la prenotazione.</p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><svg class="risacca"><use href="#risacca"/></svg></div>
+
+  <!-- ============ LA PRENOTAZIONE — sticky rail ============ -->
+  <section class="prenota section-pad" id="prenota" aria-labelledby="prenota-h">
+    <div class="container prenota-grid">
+      <div class="prenota-copy" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> La Prenotazione</p>
+        <h2 id="prenota-h" class="section-head">Un tavolo si tiene con una telefonata.</h2>
+        <p>Non abbiamo una prenotazione online: preferiamo sentirvi. Chiamateci e vi troviamo il tavolo giusto, nella sede giusta, con il pescato del giorno già in mente.</p>
+        <p>Per gruppi, allergie o una cena particolare, ditecelo al telefono: organizziamo la sala su misura.</p>
+        <ul class="orari-list">
+          <li><span class="h">Pranzo</span><span>12:30 — 14:30</span></li>
+          <li><span class="h">Cena</span><span>19:30 — 23:00</span></li>
+          <li><span class="h">Chiusura</span><span>Lunedì</span></li>
+        </ul>
+        <p class="orari-note">Orari indicativi a titolo dimostrativo: confermate giorni e disponibilità delle due sedi al momento della prenotazione.</p>
+      </div>
+      <aside class="booking-card" data-reveal="rise" aria-label="Contatto e prenotazione">
+        <div class="rating-big">
+          <span class="num">4,5</span>
+          <span class="stars" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+          <span class="src">su Google, entrambe le sedi</span>
+        </div>
+        <a class="phone-num" data-cta href="tel:+3902683807">+39 02 683807</a>
+        <a class="btn-primary" href="tel:+3902683807">Chiama per prenotare</a>
+        <p class="reassure">Una sola linea per Ristorante e Bistrot. Diteci la sede, la data e in quanti siete: pensiamo noi al resto.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ COME ARRIVARE ============ -->
+  <section class="arrivare section-pad" id="arrivare" aria-labelledby="arrivare-h">
+    <div class="container">
+      <div class="section-head" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> Come Arrivare</p>
+        <h2 id="arrivare-h">Due indirizzi milanesi.</h2>
+        <p class="lead">Entrambe le sedi sono in città, servite dai mezzi. Aprite l’indirizzo in mappa e partite.</p>
+      </div>
+      <div class="arrivare-grid">
+        <div class="map-card" data-reveal="fade">
+          <span class="kind">Ristorante</span>
+          <h3>Via Taramelli</h3>
+          <address>Via Torquato Taramelli, 70<br>20124 Milano · zona Isola</address>
+          <p class="zona">A pochi passi dalla stazione Centrale e dall’Isola. Servito da MM e passante.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=A%27Riccione%20Ristorante%20Via%20Taramelli%2070%20Milano" target="_blank" rel="noopener">Apri in Google Maps →</a>
+        </div>
+        <div class="map-card" data-reveal="fade">
+          <span class="kind">Bistrot</span>
+          <h3>Via Procaccini</h3>
+          <address>Via Giulio Cesare Procaccini, 28<br>20154 Milano · zona Chinatown</address>
+          <p class="zona">Tra Chinatown e il Monumentale, in zona Procaccini. Comodo a piedi dalla città.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=A%27Riccione%20Bistrot%20Via%20Procaccini%2028%20Milano" target="_blank" rel="noopener">Apri in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOMANDE / FAQ ============ -->
+  <section class="faq section-pad" id="domande" aria-labelledby="faq-h">
+    <div class="container">
+      <div class="section-head" data-reveal="head">
+        <p class="eyebrow"><svg class="risacca"><use href="#risacca"/></svg> Domande</p>
+        <h2 id="faq-h">Prima di prenotare.</h2>
+      </div>
+      <div class="faq-list" data-reveal="rows">
+        <div class="faq-item">
+          <h3><svg class="risacca"><use href="#risacca"/></svg> Qual è la differenza tra le due sedi?</h3>
+          <p>Il Ristorante di Via Taramelli è cucina italiana moderna di pesce, per una cena curata. Il Bistrot di Via Procaccini è più informale e marinaro, con lo stesso pescato ma un tono da banco. Stesso nome, due sale diverse.</p>
+        </div>
+        <div class="faq-item">
+          <h3><svg class="risacca"><use href="#risacca"/></svg> Prendete prenotazioni per gruppi?</h3>
+          <p>Sì. Per tavoli numerosi o cene di lavoro chiamateci: organizziamo la sala e il menu in base al pescato del giorno.</p>
+        </div>
+        <div class="faq-item">
+          <h3><svg class="risacca"><use href="#risacca"/></svg> E per allergie o intolleranze?</h3>
+          <p>Segnalatecele quando prenotate. La cucina adatta i piatti e vi indica in sala cosa contiene ogni portata.</p>
+        </div>
+        <div class="faq-item">
+          <h3><svg class="risacca"><use href="#risacca"/></svg> Come funziona il parcheggio?</h3>
+          <p>Le due sedi sono in zona Isola e Procaccini, ben servite dai mezzi. In auto conviene il parcheggio su strada nelle vie limitrofe o le aree a pagamento vicine.</p>
+        </div>
+        <div class="faq-item">
+          <h3><svg class="risacca"><use href="#risacca"/></svg> Si può prenotare online?</h3>
+          <p>Per ora la prenotazione è al telefono: +39 02 683807, una sola linea per Ristorante e Bistrot. Ci piace sapere chi arriva.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="wordmark"><span class="wm-a">a</span> <span class="wm-name">Riccione</span></p>
+        <p class="f-tag">Cucina di mare a Milano. Il pescato del giorno su due sedi: il Ristorante di Via Taramelli e il Bistrot di Via Procaccini.</p>
+      </div>
+      <div>
+        <h4>Le sedi</h4>
+        <ul>
+          <li>Ristorante · Via Taramelli, 70</li>
+          <li>Bistrot · Via Procaccini, 28</li>
+          <li>Milano</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Prenotazioni</h4>
+        <ul>
+          <li><a href="tel:+3902683807">+39 02 683807</a></li>
+          <li><a href="#prenota">Orari e prenotazione</a></li>
+          <li><a href="#arrivare">Come arrivare</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© a Riccione · Milano</span>
+      <span>Anteprima dimostrativa. Orari e dettagli sono confermati in prenotazione.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile action bar -->
+<div class="mobile-bar" aria-label="Contatto rapido">
+  <span class="mb-proof"><strong>4,5</strong> su Google<br>Ristorante e Bistrot</span>
+  <a class="btn-primary" data-cta href="tel:+3902683807">Chiama · Prenota</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var mqReduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce=mqReduce.matches;
+
+  /* ---------- mobile nav (always on) ---------- */
+  var toggle=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(toggle&&links){
+    var setOpen=function(open){
+      links.classList.toggle('open',open);
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+    };
+    toggle.addEventListener('click',function(){setOpen(!links.classList.contains('open'));});
+    links.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&links.classList.contains('open')){setOpen(false);toggle.focus();}
+    });
+  }
+
+  /* ---------- scroll reveals — one IO, unobserve after firing ---------- */
+  var items=document.querySelectorAll('[data-reveal]');
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('is-in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}
+      });
+    },{threshold:0.14,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){io.observe(el);});
+  }
+
+  /* ---------- chapter rail: active dot via IO (no motion; runs always) ---------- */
+  var chapterLinks=Array.prototype.slice.call(document.querySelectorAll('.chapters a'));
+  if(chapterLinks.length&&'IntersectionObserver' in window){
+    var byId={};
+    chapterLinks.forEach(function(a){
+      var id=a.getAttribute('href').slice(1);var sec=document.getElementById(id);
+      if(sec)byId[id]=a;
+    });
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var a=byId[en.target.id];if(!a)return;
+        if(en.isIntersecting){
+          chapterLinks.forEach(function(l){l.classList.remove('active');l.removeAttribute('aria-current');});
+          a.classList.add('active');a.setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+    Object.keys(byId).forEach(function(id){cio.observe(document.getElementById(id));});
+  }
+
+  /* Everything below is pure enhancement — skip entirely under reduced-motion. */
+  if(reduce)return;
+
+  /* ---------- count-up on the REAL aggregate rating (4,5), once ---------- */
+  var numEl=document.querySelector('.booking-card .rating-big .num');
+  if(numEl&&'IntersectionObserver' in window){
+    var target=4.5,started=false;
+    var nio=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting&&!started){
+          started=true;nio.disconnect();
+          var t0=null,dur=900;
+          var tick=function(ts){
+            if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/dur);
+            var eased=1-Math.pow(1-k,3);
+            numEl.textContent=(target*eased).toFixed(1).replace('.',',');
+            if(k<1)requestAnimationFrame(tick);else numEl.textContent='4,5';
+          };
+          requestAnimationFrame(tick);
+        }
+      });
+    },{threshold:0.6});
+    nio.observe(numEl.closest('.booking-card'));
+  }
+
+  /* ---------- hero video seam-mask: gentle opacity dip across the loop join ---------- */
+  var video=document.querySelector('.masthead-media video');
+  if(video){
+    video.addEventListener('timeupdate',function(){
+      var d=video.duration;if(!d||isNaN(d))return;
+      var t=video.currentTime,edge=0.4,floor=0.8,o=1;
+      if(t>d-edge)o=floor+(1-floor)*((d-t)/edge);
+      else if(t<edge)o=floor+(1-floor)*(t/edge);
+      video.style.opacity=o.toFixed(3);
+    });
+  }
+
+  /* ---------- HERO scroll cinema: canvas frame-scrub (all devices incl. iOS) ---------- */
+  var canvas=document.querySelector('.hero-canvas');
+  var media=document.querySelector('.masthead-media');
+  var frames=[],FRAME_COUNT=48,framesReady=false,firstLoaded=false,ctx=null;
+  if(canvas&&media&&canvas.getContext){
+    ctx=canvas.getContext('2d');
+    var dir=(window.matchMedia('(max-width:768px)').matches)?'mobile':'desktop';
+    var pad=function(n){n=String(n);while(n.length<4)n='0'+n;return n;};
+    var src=function(i){return 'assets/hero-frames/'+dir+'/frame-'+pad(i+1)+'.webp';};
+    var loadFrame=function(i,onload){
+      if(frames[i])return;var im=new Image();im.decoding='async';
+      im.onload=function(){frames[i]=im;if(onload)onload();};
+      im.onerror=function(){/* keep video base if a frame fails */};
+      im.src=src(i);
+    };
+    // critical frames first (start / middle / end), then fill the rest lazily
+    [0,Math.floor(FRAME_COUNT/2),FRAME_COUNT-1].forEach(function(i){
+      loadFrame(i,function(){ if(!firstLoaded){firstLoaded=true;} });
+    });
+    var idle=window.requestIdleCallback||function(fn){return setTimeout(fn,60);};
+    idle(function fill(){
+      var loaded=0;
+      for(var i=0;i<FRAME_COUNT;i++){(function(i){loadFrame(i,function(){loaded++;if(loaded>=FRAME_COUNT-3)framesReady=true;});})(i);}
+    });
+    var nearest=function(i){
+      if(frames[i])return frames[i];
+      for(var d=1;d<FRAME_COUNT;d++){
+        if(frames[i-d])return frames[i-d];
+        if(frames[i+d])return frames[i+d];
+      }
+      return null;
+    };
+    var sizeCanvas=function(){
+      var r=media.getBoundingClientRect();var dpr=Math.min(2,window.devicePixelRatio||1);
+      canvas.width=Math.max(1,Math.round(r.width*dpr));
+      canvas.height=Math.max(1,Math.round(r.height*dpr));
+    };
+    var drawCover=function(img){
+      if(!img||!ctx)return;
+      var cw=canvas.width,ch=canvas.height,iw=img.naturalWidth,ih=img.naturalHeight;
+      if(!iw||!ih)return;
+      var s=Math.max(cw/iw,ch/ih),w=iw*s,h=ih*s,x=(cw-w)/2,y=(ch-h)*0.42;
+      ctx.clearRect(0,0,cw,ch);ctx.drawImage(img,x,y,w,h);
+    };
+    var cur=0,tgt=0,heroVisible=false;
+    var heroObs=new IntersectionObserver(function(es){
+      es.forEach(function(e){heroVisible=e.isIntersecting;});
+    },{threshold:0});
+    heroObs.observe(media);
+    window.addEventListener('resize',function(){sizeCanvas();drawCover(nearest(Math.round(cur)));},{passive:true});
+    sizeCanvas();
+
+    // expose for the shared rAF loop
+    window.__heroScrub=function(){
+      if(!heroVisible)return;
+      var r=media.getBoundingClientRect();
+      // progress: 0 when hero top at viewport top, 1 when hero has scrolled fully up
+      var p=Math.min(1,Math.max(0,(-r.top)/(r.height||1)));
+      tgt=p*(FRAME_COUNT-1);
+      cur+=(tgt-cur)*0.12;                 // LERP smoothing
+      var idx=Math.round(cur);
+      var img=nearest(idx);
+      if(img){drawCover(img);}
+      // reveal canvas over the video only once scrubbing begins; video loop stays the at-rest hero
+      canvas.style.opacity=(firstLoaded&&p>0.02)?'1':'0';
+    };
+  }
+
+  /* ---------- SALA depth: two-layer parallax at different rates ---------- */
+  var salaStage=document.querySelector('.sala-stage');
+  var salaBack=document.querySelector('.sala-main img');
+  var salaFront=document.querySelector('.sala-detail img');
+  var salaVisible=false;
+  if(salaStage&&salaBack&&salaFront){
+    var sObs=new IntersectionObserver(function(es){es.forEach(function(e){salaVisible=e.isIntersecting;});},{threshold:0});
+    sObs.observe(salaStage);
+  }
+  window.__salaParallax=function(){
+    if(!salaStage||!salaVisible)return;
+    var r=salaStage.getBoundingClientRect();var vh=window.innerHeight||1;
+    var c=(r.top+r.height/2-vh/2)/vh;      // -0.5..0.5 through viewport
+    /* base scale keeps each layer covering its clipped frame while it translates
+       (background drifts up slowly, foreground down further = depth) */
+    salaBack.style.transform='translate3d(0,'+(c*-12).toFixed(1)+'px,0) scale(1.08)';
+    salaFront.style.transform='translate3d(0,'+(c*18).toFixed(1)+'px,0) scale(1.16)';
+  };
+
+  /* ---------- one rAF loop, batched, for all scroll work ---------- */
+  var ticking=false;
+  var frame=function(){
+    if(window.__heroScrub)window.__heroScrub();
+    if(window.__salaParallax)window.__salaParallax();
+    ticking=false;
+  };
+  var onScroll=function(){ if(!ticking){ticking=true;requestAnimationFrame(frame);} };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  requestAnimationFrame(frame);
+
+  /* ---------- magnetic primary CTA (desktop pointers only, capped travel) ---------- */
+  var fine=window.matchMedia('(pointer:fine)').matches&&window.matchMedia('(min-width:900px)').matches;
+  var magnet=document.querySelector('.masthead-cta .btn-primary');
+  if(fine&&magnet){
+    var CAP=10;
+    magnet.addEventListener('pointermove',function(e){
+      var r=magnet.getBoundingClientRect();
+      var dx=(e.clientX-(r.left+r.width/2))/r.width, dy=(e.clientY-(r.top+r.height/2))/r.height;
+      magnet.style.transform='translate('+Math.max(-CAP,Math.min(CAP,dx*CAP*2)).toFixed(1)+'px,'+Math.max(-CAP,Math.min(CAP,dy*CAP*2)).toFixed(1)+'px)';
+    });
+    magnet.addEventListener('pointerleave',function(){magnet.style.transform='';});
+    magnet.addEventListener('blur',function(){magnet.style.transform='';});
+  }
+
+  /* if the user flips reduced-motion on mid-session, drop transforms so nothing is stuck */
+  mqReduce.addEventListener&&mqReduce.addEventListener('change',function(e){
+    if(e.matches){
+      if(video)video.style.opacity='';
+      if(canvas)canvas.style.opacity='';
+      if(salaBack)salaBack.style.transform='';
+      if(salaFront)salaFront.style.transform='';
+      if(magnet)magnet.style.transform='';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1090 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mint — bistrot & sala verde a Porta Venezia, Milano</title>
+<meta name="description" content="Mint, bistrot e sala verde a Porta Venezia, Milano. Una sala piena di piante vere, luce soffusa e cucina di bistrot. Chiama per prenotare un tavolo.">
+<link rel="canonical" href="https://mint-milano.example/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mint — bistrot & sala verde a Porta Venezia, Milano">
+<meta property="og:description" content="Una sala piena di piante vere, luce soffusa e cucina di bistrot a Porta Venezia. Chiama per prenotare un tavolo.">
+<meta property="og:image" content="assets/hero-conservatory.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Mint Cafe",
+  "description": "Bistrot e sala verde a Porta Venezia: una sala piena di piante vere, luce soffusa e cucina di bistrot.",
+  "telephone": "+390289059930",
+  "image": "assets/hero-conservatory.jpg",
+  "url": "https://mint-milano.example/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Vittorio Veneto 2",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "areaServed": "Porta Venezia, Milano"
+}
+</script>
+
+<style>
+  :root{
+    /* Brand palette — defined once, referenced everywhere */
+    --brand-ink:#1B241E;
+    --brand-surface:#EEF1E8;
+    --brand-surface-alt:#E6EADB;
+    --brand-accent:#2E5A46;
+    --brand-accent-ink:#F3F5EE;
+    --brand-muted:#55665B;
+    --brand-line:#D6DCC9;
+    --brand-accent-2:#C6873F;
+
+    --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+    --ease-signature:cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-micro:cubic-bezier(0.4, 0, 0.2, 1);
+    --dur-reveal:900ms;
+    --dur-micro:220ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem, 3rem + 6vw, 9rem);
+    --container:min(1180px, 92vw);
+    --radius:2px;
+
+    --fs-hero:clamp(2.9rem, 2rem + 4.4vw, 6rem);
+    --fs-h2:clamp(1.7rem, 1.25rem + 2vw, 3.1rem);
+    --fs-body:clamp(1rem, 0.96rem + 0.28vw, 1.15rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background-color:var(--brand-surface);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    text-rendering:optimizeLegibility;
+  }
+  main p{text-wrap:pretty;max-width:66ch;}
+  img,video{max-width:100%;display:block;height:auto;}
+  a{color:var(--brand-accent);text-decoration:none;}
+  a:hover{text-decoration:underline;text-underline-offset:3px;}
+  p{margin:0 0 1rem;overflow-wrap:anywhere;}
+  h1,h2,h3{
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;line-height:1.08;margin:0;
+    font-optical-sizing:auto;text-wrap:balance;text-rendering:optimizeLegibility;
+  }
+  h2{font-size:var(--fs-h2);}
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  :focus-visible{outline:2px solid var(--brand-accent);outline-offset:3px;border-radius:var(--radius);}
+
+  .tnum{font-variant-numeric:tabular-nums;}
+
+  .skip-link{position:absolute;left:-999px;top:0;background:var(--brand-accent);color:var(--brand-accent-ink);padding:.6rem 1rem;z-index:200;}
+  .skip-link:focus{left:.5rem;top:.5rem;}
+
+  .container{width:var(--container);margin-inline:auto;}
+  .eyebrow{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--brand-muted);
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    margin:0 0 1.1rem;
+  }
+  .eyebrow .tick{width:8px;height:8px;color:var(--brand-accent-2);flex:none;}
+
+  /* ---------- Sprig motif (single SVG symbol, recoloured via currentColor) ---------- */
+  .sprig{width:.62em;height:.9em;color:var(--brand-accent);flex:none;}
+  .sprig--honey{color:var(--brand-accent-2);}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:color-mix(in srgb, var(--brand-surface) 90%, transparent);
+    backdrop-filter:saturate(1.1) blur(8px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .site-header__inner{
+    width:var(--container);margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    min-height:64px;
+  }
+  .brandmark{display:flex;align-items:baseline;gap:.55rem;font-family:var(--font-display);}
+  .brandmark__name{position:relative;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;line-height:1;}
+  .brandmark .wordmark-t{position:relative;display:inline-block;}
+  .brandmark .wordmark-t .sprig{position:absolute;left:52%;bottom:.62em;width:.5em;height:.72em;}
+  .brandmark__tag{font-family:var(--font-body);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);}
+
+  .nav{display:flex;align-items:center;gap:1.6rem;}
+  .nav a{color:var(--brand-ink);font-size:.9rem;}
+  .nav a:hover{color:var(--brand-accent);text-decoration:none;}
+  .header-cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    padding:.6rem 1rem;border-radius:var(--radius);
+    font-weight:600;font-size:.88rem;
+  }
+  .header-cta:hover{text-decoration:none;background:color-mix(in srgb,var(--brand-accent) 88%, #000);}
+
+  .nav-toggle{display:none;background:none;border:1px solid var(--brand-line);border-radius:var(--radius);
+    width:44px;height:44px;color:var(--brand-ink);cursor:pointer;align-items:center;justify-content:center;}
+  .nav-toggle svg{width:20px;height:20px;}
+
+  /* ---------- Plate (matted folio photograph) — the recurring signature ---------- */
+  .plate{
+    position:relative;background:var(--brand-surface);padding:clamp(.7rem,2.4vw,1.6rem);border:1px solid var(--brand-line);
+    box-shadow:0 28px 54px -38px color-mix(in srgb, var(--brand-ink) 55%, transparent);
+  }
+  .plate__frame{position:relative;overflow:hidden;background:var(--brand-surface-alt);border-radius:var(--radius);}
+  .plate__frame img,.plate__frame video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  #sala .plate__frame img{object-position:center 62%;}
+  #tavola .plate-section__media .plate__frame img{object-position:center 55%;}
+  #aperitivo .plate-section__media .plate__frame img{object-position:center 32%;}
+  .specimen .plate__frame img{object-position:center 40%;}
+  .front-figure .plate__frame video{object-position:center 58%;}
+  .plate .corner{position:absolute;width:14px;height:14px;pointer-events:none;z-index:2;color:var(--brand-accent);}
+  .plate .corner::before,.plate .corner::after{content:"";position:absolute;background:currentColor;}
+  .plate .corner::before{width:14px;height:1px;top:0;left:0;}
+  .plate .corner::after{width:1px;height:14px;top:0;left:0;}
+  .plate .corner.tr{right:0;transform:scaleX(-1);}
+  .plate .corner.bl{bottom:0;transform:scaleY(-1);}
+  .plate .corner.br{right:0;bottom:0;transform:scale(-1,-1);}
+  .plate .corner.tl{top:clamp(.7rem,2.4vw,1.6rem);left:clamp(.7rem,2.4vw,1.6rem);}
+  .plate .corner.tr{top:clamp(.7rem,2.4vw,1.6rem);right:clamp(.7rem,2.4vw,1.6rem);}
+  .plate .corner.bl{bottom:clamp(.7rem,2.4vw,1.6rem);left:clamp(.7rem,2.4vw,1.6rem);}
+  .plate .corner.br{bottom:clamp(.7rem,2.4vw,1.6rem);right:clamp(.7rem,2.4vw,1.6rem);}
+
+  .plate-caption{
+    display:flex;align-items:center;gap:.5rem;
+    margin-top:.85rem;font-size:.78rem;color:var(--brand-muted);
+    font-style:italic;font-family:var(--font-display);
+  }
+  .plate-caption .sprig{width:.7em;height:1em;font-style:normal;}
+
+  /* companion detail image overlapping the main plate */
+  .companion{
+    position:absolute;z-index:3;width:38%;max-width:230px;
+    border:6px solid var(--brand-surface);border-radius:var(--radius);
+    box-shadow:0 20px 40px -20px color-mix(in srgb, var(--brand-ink) 60%, transparent);
+  }
+  .companion img{border-radius:1px;object-fit:cover;}
+
+  /* ---------- Frontespizio / hero ---------- */
+  .frontespizio{padding-block:clamp(1.4rem,3vw,2.6rem) clamp(3rem,6vw,5rem);}
+  .front-plate{
+    position:relative;background:var(--brand-surface);
+    border:1px solid var(--brand-line);
+    padding:clamp(1.1rem,3.2vw,2.4rem);
+    box-shadow:0 30px 70px -50px rgba(27,36,30,.55);
+  }
+  .front-grid{display:grid;gap:clamp(1.4rem,3vw,2.4rem);}
+  .specimen-rail{
+    border-top:1px solid var(--brand-line);
+    padding-top:1rem;
+    display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;
+    font-family:var(--font-body);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);
+  }
+  .specimen-rail b{color:var(--brand-ink);font-weight:600;}
+  .front-copy .eyebrow{margin-bottom:.9rem;}
+  .front-h1{margin:0;line-height:.94;}
+  .front-h1 .name{
+    display:block;font-size:var(--fs-hero);font-weight:600;letter-spacing:-0.02em;
+    position:relative;
+  }
+  .front-h1 .wordmark-t{position:relative;display:inline-block;}
+  .front-h1 .wordmark-t .sprig{position:absolute;left:50%;bottom:.58em;width:.34em;height:.5em;}
+  .front-h1 .tagline{
+    display:block;font-family:var(--font-body);font-weight:500;
+    font-size:clamp(.85rem,.6rem+.8vw,1.05rem);letter-spacing:.16em;text-transform:uppercase;
+    color:var(--brand-muted);margin-top:.7rem;
+  }
+  .lede{font-size:clamp(1.02rem,.95rem+.5vw,1.28rem);color:var(--brand-ink);max-width:34ch;margin-top:1.4rem;}
+  .lede span{display:block;}
+
+  .cta-block{margin-top:1.7rem;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.2rem;}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    font-weight:600;font-size:1rem;
+    padding:.85rem 1.4rem;border-radius:var(--radius);border:1px solid transparent;
+    transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-micro);
+  }
+  .btn-primary:hover{text-decoration:none;background:color-mix(in srgb,var(--brand-accent) 88%, #000);}
+  .btn-primary:active{transform:translateY(1px) scale(.99);}
+  .btn-primary .sprig{color:var(--brand-accent-ink);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:.5rem;
+    border:1px solid var(--brand-line);color:var(--brand-ink);
+    padding:.8rem 1.2rem;border-radius:var(--radius);font-weight:600;font-size:.92rem;
+  }
+  .btn-ghost:hover{text-decoration:none;border-color:var(--brand-accent);color:var(--brand-accent);}
+
+  .cta-meta{display:flex;flex-direction:column;gap:.15rem;font-size:.85rem;}
+  .cta-meta .phone{font-weight:600;color:var(--brand-ink);font-size:1rem;}
+  .cta-meta .proof{color:var(--brand-muted);display:inline-flex;align-items:center;gap:.4rem;}
+  .stars{display:inline-flex;gap:1px;color:var(--brand-accent-2);}
+  .stars svg{width:14px;height:14px;}
+  .stars .empty{color:var(--brand-line);}
+
+  .front-figure{position:relative;z-index:0;}
+  .front-figure::before{
+    content:"";position:absolute;inset:-7% -10%;z-index:-1;
+    background:radial-gradient(58% 58% at 50% 36%, color-mix(in srgb, var(--brand-surface-alt) 80%, var(--brand-ink) 20%), transparent 72%);
+    opacity:.6;
+  }
+
+  /* ---------- generic section ---------- */
+  main section{padding-block:var(--space-section);}
+  #cucina{padding-block:clamp(3.2rem, 2.2rem + 4vw, 6rem);}
+  #erbario{padding-top:clamp(3.2rem, 2.2rem + 4vw, 6rem);}
+  .voci{padding-block:clamp(5.5rem, 4rem + 7vw, 10.5rem);}
+  .section-head{max-width:60ch;}
+  .section-num{
+    font-family:var(--font-display);font-style:italic;color:var(--brand-accent);
+    font-size:.9rem;letter-spacing:.04em;margin-bottom:.4rem;display:block;
+  }
+  .divider{display:flex;align-items:center;justify-content:center;gap:.9rem;color:var(--brand-line);margin-block:clamp(2.2rem,5vw,3.6rem);}
+  .divider::before,.divider::after{content:"";height:1px;background:var(--brand-line);flex:1;max-width:180px;}
+  .divider .sprig{width:12px;height:18px;}
+
+  /* Plate sections: asymmetric photo/text, alternating side */
+  .plate-section{display:grid;gap:clamp(1.6rem,4vw,3.4rem);align-items:center;}
+  .plate-section__text{max-width:40ch;}
+  .plate-section__text .body-lines span{display:block;}
+  .plate-section__text .body-lines{color:var(--brand-ink);margin-top:1.1rem;}
+
+  /* ---------- L'erbario ---------- */
+  .erbario-grid{display:grid;gap:clamp(1rem,2.4vw,1.8rem);margin-top:2.2rem;}
+  .specimen{background:var(--brand-surface);border:1px solid var(--brand-line);padding:.85rem;}
+  .specimen .plate__frame{aspect-ratio:3/4;}
+  .specimen-tag{margin-top:.85rem;}
+  .specimen-tag h3{font-size:1.15rem;}
+  .specimen-tag .latin{font-style:italic;color:var(--brand-muted);font-size:.82rem;font-family:var(--font-display);}
+  .specimen-tag p{font-size:.85rem;color:var(--brand-muted);margin:.45rem 0 0;}
+  .specimen-tag .no{font-family:var(--font-body);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-accent);display:block;margin-bottom:.35rem;}
+
+  /* ---------- La tavola (booking + sticky rail) ---------- */
+  .tavola-grid{display:grid;gap:clamp(1.6rem,4vw,3rem);align-items:start;}
+  .booking-rail{
+    position:sticky;top:88px;
+    background:var(--brand-surface);border:1px solid var(--brand-line);
+    padding:clamp(1.2rem,2.6vw,1.8rem);border-radius:var(--radius);
+  }
+  .booking-rail h3{font-size:1.3rem;margin-bottom:.3rem;}
+  .booking-rail .rail-sub{color:var(--brand-muted);font-size:.9rem;margin-bottom:1.1rem;}
+  .rail-row{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid var(--brand-line);font-size:.9rem;}
+  .rail-row span:first-child{color:var(--brand-muted);}
+  .rail-row span:last-child{font-weight:600;text-align:right;}
+  .booking-rail .btn-primary{width:100%;justify-content:center;margin-top:1.1rem;}
+  .booking-rail .btn-ghost{width:100%;justify-content:center;margin-top:.6rem;}
+  .rail-note{font-size:.78rem;color:var(--brand-muted);margin:.9rem 0 0;}
+
+  /* ---------- Il quartiere ---------- */
+  .quartiere-grid{display:grid;gap:clamp(1.4rem,3vw,2.4rem);align-items:center;}
+  .address-card{background:var(--brand-surface-alt);border:1px solid var(--brand-line);padding:clamp(1.3rem,3vw,2rem);}
+  .address-card p{margin:.2rem 0;}
+  .address-card .big{font-family:var(--font-display);font-size:1.3rem;line-height:1.2;margin-bottom:.6rem;}
+
+  /* ---------- Le voci ---------- */
+  .voci{background:var(--brand-surface-alt);border-block:1px solid var(--brand-line);}
+  .voci-inner{display:grid;gap:clamp(1.6rem,4vw,3rem);align-items:center;}
+  .rating-score{font-family:var(--font-display);font-weight:600;font-size:clamp(4rem,3rem+7vw,7.5rem);line-height:.9;color:var(--brand-ink);}
+  .rating-badge .stars svg{width:24px;height:24px;}
+  .rating-badge .source{color:var(--brand-muted);font-size:.9rem;margin-top:.6rem;letter-spacing:.02em;}
+  .voci-copy p:last-child{margin-bottom:0;}
+
+  /* ---------- Colophon / footer ---------- */
+  .colophon{background:var(--brand-ink);color:var(--brand-surface);}
+  .colophon a{color:var(--brand-surface);}
+  .colophon .eyebrow{color:color-mix(in srgb,var(--brand-surface) 65%, transparent);}
+  .colophon .eyebrow .tick{color:var(--brand-accent-2);}
+  .colophon-grid{display:grid;gap:clamp(1.6rem,4vw,3rem);}
+  .colophon h2{color:var(--brand-surface);}
+  .colophon .col h3{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-body);color:color-mix(in srgb,var(--brand-surface) 70%, transparent);margin-bottom:.7rem;}
+  .colophon .col p{color:color-mix(in srgb,var(--brand-surface) 88%, transparent);margin:.15rem 0;}
+  .colophon .fine{font-size:.75rem;color:color-mix(in srgb,var(--brand-surface) 55%, transparent);margin-top:1.4rem;}
+  .colophon .btn-primary{background:var(--brand-accent);}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--brand-ink);color:var(--brand-surface);padding-top:0;}
+  .faq details{border-top:1px solid color-mix(in srgb,var(--brand-surface) 22%, transparent);padding:1.1rem 0;}
+  .faq details:last-child{border-bottom:1px solid color-mix(in srgb,var(--brand-surface) 22%, transparent);}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+    font-family:var(--font-display);font-size:1.15rem;color:var(--brand-surface);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .plus{color:var(--brand-accent-2);font-size:1.4rem;line-height:1;transition:transform var(--dur-micro) var(--ease-micro);}
+  .faq details[open] summary .plus{transform:rotate(45deg);}
+  .faq details p{color:color-mix(in srgb,var(--brand-surface) 85%, transparent);margin:.8rem 0 0;max-width:60ch;}
+
+  /* ---------- Mobile sticky action bar ---------- */
+  .mobile-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+    align-items:center;justify-content:space-between;gap:.8rem;
+    background:color-mix(in srgb,var(--brand-surface) 96%, transparent);
+    border-top:1px solid var(--brand-line);
+    padding:.6rem max(.9rem, env(safe-area-inset-left)) calc(.6rem + env(safe-area-inset-bottom));
+    backdrop-filter:blur(8px);
+  }
+  .mobile-bar .mb-proof{font-size:.78rem;line-height:1.2;color:var(--brand-muted);}
+  .mobile-bar .mb-proof b{color:var(--brand-ink);display:block;font-size:.95rem;}
+  .mobile-bar .btn-primary{padding:.7rem 1.1rem;font-size:.92rem;}
+
+  /* ============================ MOTION LAYER ============================ */
+  /* Additive under html.js only — without JS every section is fully visible.
+     One motion language: slow, weighted, eased on --ease-signature; never bouncy. */
+
+  /* --- Shared scroll-reveal system (one rAF-batched IntersectionObserver -> .in) --- */
+  html.js [data-reveal]{opacity:0;transform:translateY(22px);
+    transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:var(--rd,0ms);}
+  html.js [data-reveal].in{opacity:1;transform:none;}
+  /* role: media figures scale in (depth cue), not a vertical slide */
+  html.js figure[data-reveal]{transform:scale(1.045);}
+  html.js figure[data-reveal].in{transform:none;}
+
+  /* --- SIGNATURE: hero plate un-mats while a warm light breathes up behind the plants --- */
+  html.js .front-figure .plate__frame{clip-path:inset(9% 9% 9% 9%);opacity:.55;}
+  html.js .front-figure.in .plate__frame{clip-path:inset(0 0 0 0);opacity:1;
+    transition:clip-path 1300ms var(--ease-signature), opacity 1000ms var(--ease-signature);}
+  html.js .front-figure::before{opacity:0;transform:translateY(16px) scale(.95);}
+  html.js .front-figure.in::before{opacity:.62;transform:none;
+    transition:opacity 1300ms var(--ease-signature), transform 1500ms var(--ease-signature);}
+
+  /* --- Hero on-load choreography: name settles letter by letter, lede lines rise --- */
+  @keyframes riseIn{from{opacity:0;transform:translateY(1.05em);}to{opacity:1;transform:none;}}
+  html.js .front-copy > .eyebrow{animation:riseIn 620ms var(--ease-signature) both;animation-delay:60ms;}
+  html.js .front-h1 .char{display:inline-block;animation:riseIn 640ms var(--ease-signature) both;
+    animation-delay:calc(140ms + var(--ci,0) * 40ms);}
+  html.js .front-h1 .tagline{animation:riseIn 640ms var(--ease-signature) both;animation-delay:320ms;}
+  html.js .lede span{animation:riseIn 640ms var(--ease-signature) both;}
+  html.js .lede span:nth-child(1){animation-delay:360ms;}
+  html.js .lede span:nth-child(2){animation-delay:440ms;}
+  html.js .lede span:nth-child(3){animation-delay:520ms;}
+  html.js .lede span:nth-child(4){animation-delay:600ms;}
+  html.js .cta-block{animation:riseIn 660ms var(--ease-signature) both;animation-delay:660ms;}
+
+  /* --- Foliage parallax: the companion detail tracks at its own rate (JS sets --py) --- */
+  html.js .companion{transform:translate3d(0,var(--py,0px),0);}
+
+  /* --- Sprig divider draws itself upward as it enters (gesture, once) --- */
+  html.js .divider .sprig{transform:scaleY(0);transform-origin:bottom center;opacity:0;
+    transition:transform 760ms var(--ease-signature), opacity 420ms var(--ease-signature);}
+  html.js .divider.in .sprig{transform:scaleY(1);opacity:1;}
+  html.js .divider::before,html.js .divider::after{transform:scaleX(0);
+    transition:transform var(--dur-reveal) var(--ease-signature);}
+  html.js .divider::before{transform-origin:right center;}
+  html.js .divider::after{transform-origin:left center;}
+  html.js .divider.in::before,html.js .divider.in::after{transform:scaleX(1);}
+
+  /* --- Hero loop-seam mask + hover push, all transform/opacity only --- */
+  .front-figure video{transition:opacity 400ms var(--ease-micro);}
+  .hero-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;pointer-events:none;transition:opacity 340ms var(--ease-micro);}
+  html.js .hero-canvas.active{opacity:1;}
+
+  /* --- Chapter markers (desktop only; mobile keeps the sticky CTA bar) --- */
+  .chapters{position:fixed;right:max(14px,1.6vw);top:50%;transform:translateY(-50%);z-index:90;
+    display:none;flex-direction:column;gap:15px;}
+  .chapters a{width:10px;height:10px;border-radius:50%;border:1px solid var(--brand-muted);background:transparent;
+    transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-micro), border-color var(--dur-micro) var(--ease-micro);}
+  .chapters a:hover{border-color:var(--brand-accent);}
+  .chapters a.active{background:var(--brand-accent);border-color:var(--brand-accent);transform:scale(1.4);}
+  @media (min-width:1024px) and (pointer:fine){ .chapters{display:flex;} }
+
+  /* --- Native scroll-driven moments: gated, non-looping, fallback == final visible state --- */
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion: no-preference){
+      /* hero scroll cinema: a slow push-in as the plate scrolls through */
+      html.js .front-figure .plate{animation:heroPush linear both;animation-timeline:view();animation-range:cover 10% cover 96%;}
+      @keyframes heroPush{from{transform:scale(1);}to{transform:scale(1.05);}}
+      /* L'erbario: each specimen scrubs/advances on its own scroll progress */
+      html.js .specimen{animation:specimenScrub linear both;animation-timeline:view();animation-range:entry 6% cover 40%;}
+      @keyframes specimenScrub{from{opacity:0;transform:translateY(46px) scale(.965);}to{opacity:1;transform:none;}}
+      /* Il quartiere: the neighbourhood plate travels horizontally along its own axis */
+      html.js .quartiere-grid > figure{animation:bandTravel linear both;animation-timeline:view();animation-range:entry 0% cover 62%;}
+      @keyframes bandTravel{from{transform:translateX(-9%);}to{transform:translateX(0);}}
+    }
+  }
+
+  /* --- Pointer micro-interactions (fine pointers only) --- */
+  @media (hover:hover) and (pointer:fine){
+    .plate__frame img,.plate__frame video{transition:transform 640ms var(--ease-signature);}
+    figure:hover > .plate .plate__frame img,figure:hover > .plate .plate__frame video,
+    .specimen:hover .plate__frame img{transform:scale(1.05);}
+    .btn-primary,.btn-ghost,.header-cta{transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-micro), color var(--dur-micro) var(--ease-micro), border-color var(--dur-micro) var(--ease-micro), box-shadow var(--dur-micro) var(--ease-micro);}
+    .btn-primary:hover,.header-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -14px color-mix(in srgb,var(--brand-ink) 55%, transparent);}
+    .nav a{position:relative;}
+    .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left center;transition:transform var(--dur-micro) var(--ease-micro);}
+    .nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1);}
+  }
+
+  /* ======================= responsive ======================= */
+  @media (min-width:720px){
+    .erbario-grid{grid-template-columns:repeat(3,1fr);}
+    .front-grid{grid-template-columns:1fr;}
+  }
+  @media (min-width:900px){
+    .front-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;}
+    .front-copy{order:1;}
+    .front-figure{order:2;}
+    .specimen-rail{order:3;grid-column:1 / -1;}
+    .plate-section{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);}
+    .plate-section.flip .plate-section__text{order:2;}
+    .plate-section.flip .plate-section__media{order:1;}
+    .tavola-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);}
+    .quartiere-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+    .voci-inner{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);}
+    .colophon-grid{grid-template-columns:1.2fr .9fr .9fr;}
+  }
+  @media (max-width:899px){
+    .nav,.header-cta{display:none;}
+    .nav-toggle{display:inline-flex;}
+    .site-header.open .nav{
+      display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;
+      position:absolute;left:0;right:0;top:100%;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:1.2rem var(--container);padding-inline:max(4vw,1.2rem);
+    }
+    .site-header.open .nav a{font-size:1.05rem;}
+    .site-header.open .header-cta{display:inline-flex;margin-top:.4rem;}
+    .mobile-bar{display:flex;}
+    body{padding-bottom:72px;}
+  }
+  @media (max-width:430px){
+    .brandmark__tag{display:none;}
+  }
+  @media (max-width:520px){
+    .companion{width:44%;}
+    .cta-block{gap:.8rem;}
+    .cta-block .btn-primary{width:100%;justify-content:center;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+    html.js [data-reveal],html.js figure[data-reveal]{opacity:1;transform:none;}
+    html.js .front-figure .plate__frame{clip-path:none;opacity:1;}
+    html.js .front-figure::before{opacity:.6;transform:none;}
+    html.js .front-figure .plate,html.js .specimen,html.js .quartiere-grid > figure{transform:none;opacity:1;}
+    html.js .divider .sprig{transform:none;opacity:1;}
+    html.js .divider::before,html.js .divider::after{transform:none;}
+    html.js .companion{transform:none;}
+    html.js .hero-canvas{opacity:0;}
+    .front-figure video{opacity:1;}
+    .btn-primary:active{transform:none;}
+  }
+</style>
+
+<script>document.documentElement.className+=' js';</script>
+
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<!-- reusable SVG symbols: the sprig motif + a star -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="sprig" viewBox="0 0 12 18">
+    <path d="M6 18 V3.5" fill="none" stroke="currentColor" stroke-width="1"/>
+    <ellipse cx="8.6" cy="5" rx="3" ry="1.5" transform="rotate(-38 8.6 5)" fill="currentColor"/>
+    <ellipse cx="3.4" cy="8" rx="2.6" ry="1.3" transform="rotate(38 3.4 8)" fill="currentColor"/>
+  </symbol>
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.9 6.2 20.9l1.1-6.45L2.6 9.35l6.5-.95z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<nav class="chapters" aria-label="Indice delle sezioni">
+  <a href="#inizio" aria-label="Inizio"></a>
+  <a href="#sala" aria-label="La sala verde"></a>
+  <a href="#cucina" aria-label="Dalla cucina"></a>
+  <a href="#aperitivo" aria-label="L'ora dell'aperitivo"></a>
+  <a href="#erbario" aria-label="L'erbario"></a>
+  <a href="#tavola" aria-label="La tavola"></a>
+  <a href="#quartiere" aria-label="Il quartiere"></a>
+  <a href="#voci" aria-label="Le voci"></a>
+</nav>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a class="brandmark" href="#top" aria-label="Mint — bistrot e sala verde, torna in cima">
+      <span class="brandmark__name" aria-hidden="true">Min<span class="wordmark-t">t<svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg></span></span>
+      <span class="brandmark__tag">bistrot &amp; sala verde</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Apri il menù">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primaryNav" aria-label="Navigazione principale">
+      <a href="#sala">La sala</a>
+      <a href="#cucina">Cucina</a>
+      <a href="#aperitivo">Aperitivo</a>
+      <a href="#erbario">L'erbario</a>
+      <a href="#quartiere">Dove siamo</a>
+      <a class="header-cta" data-cta href="tel:+390289059930">
+        <svg class="sprig" aria-hidden="true" style="width:.7em;height:1em"><use href="#sprig"/></svg>
+        Chiama
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <a id="top"></a>
+
+  <!-- ============ FRONTESPIZIO (hero plate — the wow moment) ============ -->
+  <section class="frontespizio" id="inizio" aria-labelledby="front-title">
+    <div class="container">
+      <div class="front-plate">
+        <div class="front-grid">
+          <div class="front-copy">
+            <p class="eyebrow"><svg class="tick" aria-hidden="true"><use href="#sprig"/></svg> Porta Venezia · Milano</p>
+            <h1 class="front-h1" id="front-title">
+              <span class="name" aria-label="Mint"><span class="char" aria-hidden="true" style="--ci:0">M</span><span class="char" aria-hidden="true" style="--ci:1">i</span><span class="char" aria-hidden="true" style="--ci:2">n</span><span class="wordmark-t char" aria-hidden="true" style="--ci:3">t<svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg></span></span>
+              <span class="tagline">bistrot &amp; sala verde</span>
+            </h1>
+            <p class="lede">
+              <span>Una sala verde a Porta Venezia.</span>
+              <span>Piante vere intorno a ogni tavolo.</span>
+              <span>Luce soffusa, cucina di bistrot.</span>
+              <span>Un piccolo giardino in cui cenare.</span>
+            </p>
+            <div class="cta-block">
+              <a class="btn-primary" data-cta href="tel:+390289059930">
+                <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+                Chiama per prenotare
+              </a>
+              <span class="cta-meta">
+                <span class="phone tnum">+39 02 89059930</span>
+                <span class="proof tnum">
+                  <span class="stars" aria-hidden="true">
+                    <svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg class="empty"><use href="#star"/></svg>
+                  </span>
+                  4,0 su Google
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <figure class="front-figure" data-reveal>
+            <div class="plate">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <div class="plate__frame" style="aspect-ratio:16/10">
+                <video autoplay muted loop playsinline preload="auto" poster="assets/hero-conservatory.jpg" aria-hidden="true">
+                  <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+                  <img src="assets/hero-conservatory.jpg" alt="Sala del bistrot Mint piena di piante da interno con tavoli apparecchiati e luce calda">
+                </video>
+                <canvas class="hero-canvas" aria-hidden="true"></canvas>
+              </div>
+            </div>
+            <img class="companion" data-depth="38" src="assets/hero-frond-detail.jpg" alt="Dettaglio ravvicinato di una foglia di monstera nella sala del bistrot" style="right:-10px;bottom:-26px;">
+            <figcaption class="plate-caption"><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg> Specimen I — la sala verde, di sera</figcaption>
+          </figure>
+
+          <div class="specimen-rail" aria-label="Etichetta specimen">
+            <span><b>Specimen</b> · la sala verde</span>
+            <span><b>Indirizzo</b> · Viale Vittorio Veneto 2, Milano</span>
+            <span><b>Quartiere</b> · Porta Venezia</span>
+            <span><b>Orario</b> · chiude alle 22</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLATE I — LA SALA VERDE ============ -->
+  <section id="sala" aria-labelledby="sala-title">
+    <div class="container">
+      <div class="plate-section">
+        <div class="plate-section__text" data-reveal>
+          <span class="section-num">Plate I</span>
+          <h2 id="sala-title">La sala verde</h2>
+          <p class="body-lines">
+            <span>La stanza è il motivo per venire.</span>
+          </p>
+          <p>Non è un bistrot con qualche pianta sul davanzale. È una sala verde intorno a ogni tavolo: monstera, felci e foglie che scendono dagli scaffali, con la luce soffusa che filtra tra le piante. I tavoli stanno dentro il verde, non davanti a un muro.</p>
+          <p>Ci si siede, la città resta fuori. È il posto giusto per una cena tranquilla o per due parole senza fretta.</p>
+        </div>
+        <figure class="plate-section__media" data-reveal>
+          <div class="plate">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <div class="plate__frame" style="aspect-ratio:3/2">
+              <img src="assets/sala-corner.jpg" alt="Angolo raccolto del bistrot con tavolino apparecchiato tra le piante">
+            </div>
+          </div>
+          <img class="companion" src="assets/table-set-detail.jpg" alt="Dettaglio di un tavolo apparecchiato con cura e un rametto verde sul piatto" style="left:-14px;bottom:-28px;">
+          <figcaption class="plate-caption"><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg> Un angolo della sala, apparecchiato tra le piante</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider" data-reveal aria-hidden="true"><svg class="sprig"><use href="#sprig"/></svg></div></div>
+
+  <!-- ============ PLATE II — DALLA CUCINA ============ -->
+  <section id="cucina" aria-labelledby="cucina-title">
+    <div class="container">
+      <div class="plate-section flip">
+        <div class="plate-section__text" data-reveal>
+          <span class="section-num">Plate II</span>
+          <h2 id="cucina-title">Dalla cucina</h2>
+          <p>Cucina di bistrot, semplice e curata. Poche cose fatte bene, ingredienti di stagione e un filo di verde anche nel piatto. Impiattiamo con cura, senza eccessi.</p>
+          <p>Il menù cambia con quello che troviamo, quindi preferiamo raccontarvelo di persona: chiamateci e vi diciamo cosa c'è oggi in sala.</p>
+        </div>
+        <figure class="plate-section__media" data-reveal>
+          <div class="plate">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <div class="plate__frame" style="aspect-ratio:3/2">
+              <img src="assets/dish-bistrot.jpg" alt="Piatto del bistrot impiattato con cura su tavolo apparecchiato">
+            </div>
+          </div>
+          <img class="companion" src="assets/dish-macro.jpg" alt="Macro di un dettaglio di un piatto con erbe fresche" style="right:-14px;bottom:-28px;">
+          <figcaption class="plate-caption"><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg> Un piatto del bistrot, impiattato con cura</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider" data-reveal aria-hidden="true"><svg class="sprig"><use href="#sprig"/></svg></div></div>
+
+  <!-- ============ PLATE III — L'ORA DELL'APERITIVO ============ -->
+  <section id="aperitivo" aria-labelledby="aperitivo-title">
+    <div class="container">
+      <div class="plate-section">
+        <div class="plate-section__text" data-reveal>
+          <span class="section-num" style="color:var(--brand-accent-2)">Plate III</span>
+          <h2 id="aperitivo-title">L'ora dell'aperitivo</h2>
+          <p>Prima di cena la luce si abbassa e la sala diventa calda. Un aperitivo tra le piante è il modo più semplice per conoscerci, e la scusa migliore per fermarsi.</p>
+          <p>Un tavolo, un calice, la luce soffusa. Si beve fino alle 22 — passate presto e restate quanto volete.</p>
+          <p style="margin-top:1.4rem">
+            <a class="btn-ghost" data-cta href="tel:+390289059930">
+              <svg class="sprig sprig--honey" aria-hidden="true" style="width:.7em;height:1em"><use href="#sprig"/></svg>
+              Chiama per un aperitivo
+            </a>
+          </p>
+        </div>
+        <figure class="plate-section__media" data-reveal>
+          <div class="plate">
+            <span class="corner tl" style="color:var(--brand-accent-2)"></span><span class="corner tr" style="color:var(--brand-accent-2)"></span><span class="corner bl" style="color:var(--brand-accent-2)"></span><span class="corner br" style="color:var(--brand-accent-2)"></span>
+            <div class="plate__frame" style="aspect-ratio:4/5">
+              <img src="assets/aperitivo-glass.jpg" alt="Cocktail dell'aperitivo su bancone di marmo con luce serale calda">
+            </div>
+          </div>
+          <img class="companion" src="assets/counter-plants.jpg" alt="Bancone del bistrot in marmo con piante ricadenti e lampade calde" style="left:-16px;bottom:-30px;width:46%;max-width:250px;">
+          <figcaption class="plate-caption"><svg class="sprig sprig--honey" aria-hidden="true"><use href="#sprig"/></svg> Il bancone, all'ora dell'aperitivo</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ L'ERBARIO ============ -->
+  <section id="erbario" aria-labelledby="erbario-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow"><svg class="tick" aria-hidden="true"><use href="#sprig"/></svg> L'indice della sala</p>
+        <h2 id="erbario-title">L'erbario</h2>
+        <p style="margin-top:1rem;max-width:52ch">Le piante non sono arredo. Le scegliamo e le curiamo una a una. Ecco tre esemplari della sala, come in un vecchio erbario.</p>
+      </div>
+      <div class="erbario-grid">
+        <article class="specimen">
+          <div class="plate__frame">
+            <img src="assets/erbario-specimen-monstera.jpg" alt="Esemplare di monstera in vaso nella sala del bistrot">
+          </div>
+          <div class="specimen-tag">
+            <span class="no">N. I</span>
+            <h3>Monstera</h3>
+            <span class="latin">Monstera deliciosa</span>
+            <p>Le foglie larghe e traforate che fanno da soffitto verde sopra i tavoli in fondo alla sala.</p>
+          </div>
+        </article>
+        <article class="specimen">
+          <div class="plate__frame">
+            <img src="assets/erbario-specimen-fern.jpg" alt="Felce ricadente in vaso vicino alla finestra del bistrot">
+          </div>
+          <div class="specimen-tag">
+            <span class="no">N. II</span>
+            <h3>Felce</h3>
+            <span class="latin">Nephrolepis</span>
+            <p>Ricade dai vasi vicino alla finestra e ammorbidisce la luce che entra al tramonto.</p>
+          </div>
+        </article>
+        <article class="specimen">
+          <div class="plate__frame">
+            <img src="assets/erbario-specimen-olive.jpg" alt="Piccolo ulivo in vaso di terracotta accanto a un tavolo del bistrot">
+          </div>
+          <div class="specimen-tag">
+            <span class="no">N. III</span>
+            <h3>Ulivo</h3>
+            <span class="latin">Olea europaea</span>
+            <p>Un piccolo ulivo in terracotta accanto a un tavolo: un pezzo di Mediterraneo dentro Milano.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA TAVOLA (booking + sticky rail) ============ -->
+  <section id="tavola" aria-labelledby="tavola-title">
+    <div class="container">
+      <div class="tavola-grid">
+        <div>
+          <figure class="plate-section__media" data-reveal style="margin:0 0 1.8rem">
+            <div class="plate">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <div class="plate__frame" style="aspect-ratio:16/9">
+                <img src="assets/hands-arranging.jpg" alt="Mani che sistemano una piccola pianta su un tavolo del bistrot">
+              </div>
+            </div>
+            <figcaption class="plate-caption"><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg> Prepariamo il tavolo prima che arriviate</figcaption>
+          </figure>
+          <div data-reveal>
+            <span class="section-num">La tavola</span>
+            <h2 id="tavola-title">Prenota un tavolo</h2>
+            <p>Prenotare è semplice. Chiamateci e vi troviamo il tavolo giusto — per due o per una tavolata. Se volete l'angolo tra le piante, ditecelo prima: teniamo da parte quello.</p>
+            <p>Per l'aperitivo di solito basta passare, ma di sera la sala è piccola: una telefonata vi assicura il posto.</p>
+          </div>
+        </div>
+
+        <aside class="booking-rail" aria-labelledby="rail-title" data-reveal>
+          <h3 id="rail-title">Prenota ora</h3>
+          <p class="rail-sub">Sala verde · Porta Venezia</p>
+          <div class="rail-row"><span>Telefono</span><span class="tnum">+39 02 89059930</span></div>
+          <div class="rail-row"><span>Orario</span><span class="tnum">chiude alle 22</span></div>
+          <div class="rail-row"><span>Su Google</span><span class="tnum">4,0
+            <span class="stars" aria-hidden="true" style="vertical-align:middle">
+              <svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg class="empty"><use href="#star"/></svg>
+            </span>
+          </span></div>
+          <a class="btn-primary" data-cta href="tel:+390289059930">
+            <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+            Chiama per prenotare
+          </a>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Mint%20Cafe%20Viale%20Vittorio%20Veneto%202%20Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          <p class="rail-note">Rispondiamo durante gli orari di apertura. Se non prendiamo, richiamiamo noi.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL QUARTIERE ============ -->
+  <section id="quartiere" aria-labelledby="quartiere-title">
+    <div class="container">
+      <div class="quartiere-grid">
+        <figure class="plate-section__media" style="margin:0">
+          <div class="plate">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <div class="plate__frame" style="aspect-ratio:16/9">
+              <img src="assets/quartiere-portavenezia.jpg" alt="Strada del quartiere Porta Venezia a Milano">
+            </div>
+          </div>
+          <img class="companion" src="assets/facade-entrance.jpg" alt="Ingresso del bistrot con grandi vetrate e piante verdi illuminate" style="right:-14px;bottom:-28px;">
+          <figcaption class="plate-caption"><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg> L'ingresso, dalla strada di Porta Venezia</figcaption>
+        </figure>
+        <div data-reveal>
+          <span class="section-num">Il quartiere</span>
+          <h2 id="quartiere-title">Dove siamo</h2>
+          <div class="address-card">
+            <p class="big">Viale Vittorio Veneto 2<br>Milano · Porta Venezia</p>
+            <p>Siamo ai piedi di Porta Venezia, a pochi passi dai Giardini. Facile da raggiungere in metro o a piedi, facile da trovare: cercate le vetrate piene di verde.</p>
+            <p style="margin-top:1.1rem">
+              <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Mint%20Cafe%20Viale%20Vittorio%20Veneto%202%20Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LE VOCI (aggregate reception) ============ -->
+  <section class="voci" id="voci" aria-labelledby="voci-title">
+    <div class="container">
+      <div class="voci-inner">
+        <div class="rating-badge" data-reveal>
+          <div class="rating-score tnum">4,0</div>
+          <div class="stars" role="img" aria-label="Valutazione media 4 su 5">
+            <svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg class="empty"><use href="#star"/></svg>
+          </div>
+          <p class="source">Media su Google</p>
+        </div>
+        <div class="voci-copy" data-reveal>
+          <span class="section-num">Le voci</span>
+          <h2 id="voci-title">Come ci accolgono</h2>
+          <p>Una media costante di 4,0 su Google, tenuta negli anni. Non è un picco: è il segno di una sala che resta sé stessa ogni sera.</p>
+          <p>Chi viene torna soprattutto per due cose — il verde della sala e la calma. È la stessa cosa che raccontiamo noi, detta da chi ci ha già scelto.</p>
+          <p style="color:var(--brand-muted);font-size:.85rem">Riportiamo solo il voto reale di Google, senza citazioni inventate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLOPHON ============ -->
+  <footer class="colophon" id="contatti" aria-labelledby="colophon-title">
+    <div class="container" style="padding-block:var(--space-section)">
+      <p class="eyebrow"><svg class="tick" aria-hidden="true"><use href="#sprig"/></svg> Colophon</p>
+      <h2 id="colophon-title" style="margin-bottom:2rem">Mint, in breve</h2>
+      <div class="colophon-grid">
+        <div class="col" data-reveal>
+          <h3>Contatti</h3>
+          <p>Telefono</p>
+          <p class="tnum" style="font-family:var(--font-display);font-size:1.3rem;margin:.2rem 0 1rem">+39 02 89059930</p>
+          <a class="btn-primary" data-cta href="tel:+390289059930">
+            <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+            Chiama per prenotare
+          </a>
+        </div>
+        <div class="col" data-reveal>
+          <h3>Dove</h3>
+          <p>Viale Vittorio Veneto 2</p>
+          <p>20124 Milano · Porta Venezia</p>
+          <p style="margin-top:.6rem"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mint%20Cafe%20Viale%20Vittorio%20Veneto%202%20Milano" target="_blank" rel="noopener">Apri in Google Maps</a></p>
+        </div>
+        <div class="col" data-reveal>
+          <h3>Quando</h3>
+          <p>Aperti la sera</p>
+          <p>Chiude alle 22</p>
+          <p style="margin-top:.6rem">Aperitivo prima di cena</p>
+        </div>
+      </div>
+      <p class="fine">Gli orari completi giorno per giorno e la disponibilità dei tavoli sono da confermare al telefono. Mint · bistrot &amp; sala verde, Porta Venezia, Milano.</p>
+    </div>
+
+    <!-- ============ DOMANDE FREQUENTI ============ -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container" style="padding-bottom:var(--space-section)">
+        <h2 id="faq-title" style="margin-bottom:1.6rem">Domande frequenti</h2>
+        <details>
+          <summary>Ci sono davvero piante ovunque? <span class="plus" aria-hidden="true">+</span></summary>
+          <p>Sì. La sala è pensata come una stanza verde: piante vere intorno ai tavoli, non un vaso di decoro. È il motivo per cui la gente sceglie Mint.</p>
+        </details>
+        <details>
+          <summary>Va bene per l'aperitivo? <span class="plus" aria-hidden="true">+</span></summary>
+          <p>È il momento che preferiamo. La luce si abbassa, la sala diventa calda e si beve fino alle 22. Per l'aperitivo di solito basta passare.</p>
+        </details>
+        <details>
+          <summary>Prendete prenotazioni? <span class="plus" aria-hidden="true">+</span></summary>
+          <p>Sì, al telefono: +39 02 89059930. Di sera la sala è piccola, quindi una chiamata vi assicura il tavolo.</p>
+        </details>
+        <details>
+          <summary>Si può venire in gruppo? <span class="plus" aria-hidden="true">+</span></summary>
+          <p>Certo, per due o per una tavolata. Chiamateci prima così teniamo da parte l'angolo giusto tra le piante.</p>
+        </details>
+      </div>
+    </section>
+  </footer>
+</main>
+
+<!-- Mobile sticky action bar -->
+<div class="mobile-bar" aria-label="Contatta Mint">
+  <span class="mb-proof tnum"><b>4,0 su Google</b>chiude alle 22</span>
+  <a class="btn-primary" data-cta href="tel:+390289059930">
+    <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+    Chiama per prenotare
+  </a>
+</div>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    var isReduced = reduce && reduce.matches;
+    var hasIO = 'IntersectionObserver' in window;
+
+    /* ---------- Mobile navigation toggle ---------- */
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('primaryNav');
+    function closeNav(){
+      header.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Apri il menù');
+    }
+    toggle.addEventListener('click', function(){
+      var open = header.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menù' : 'Apri il menù');
+    });
+    nav.addEventListener('click', function(e){ if(e.target.tagName === 'A') closeNav(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && header.classList.contains('open')){ closeNav(); toggle.focus(); }
+    });
+
+    /* ---------- Stagger cascade for grouped reveals ---------- */
+    ['.colophon-grid'].forEach(function(sel){
+      var g = document.querySelector(sel); if(!g) return;
+      Array.prototype.forEach.call(g.children, function(c,i){
+        if(c.hasAttribute('data-reveal')) c.style.setProperty('--rd', (i*90)+'ms');
+      });
+    });
+
+    /* ---------- Shared reveal system (rAF-batched IntersectionObserver) ---------- */
+    var revealItems = document.querySelectorAll('[data-reveal]');
+    if(isReduced || !hasIO){
+      revealItems.forEach(function(el){ el.classList.add('in'); });
+    } else {
+      var queue = [], scheduled = false;
+      function flush(){ scheduled=false; var b=queue; queue=[]; b.forEach(function(el){ el.classList.add('in'); }); }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ queue.push(en.target); io.unobserve(en.target); }
+        });
+        if(queue.length && !scheduled){ scheduled=true; requestAnimationFrame(flush); }
+      }, {rootMargin:'0px 0px -10% 0px', threshold:0.12});
+      revealItems.forEach(function(el){ io.observe(el); });
+    }
+
+    /* ---------- Count-up on the real aggregate rating (once, into view) ---------- */
+    (function(){
+      var el = document.querySelector('.rating-score'); if(!el) return;
+      var target = 4.0;
+      if(isReduced || !hasIO){ return; }               // real "4,0" already in the DOM
+      var done = false;
+      var cio = new IntersectionObserver(function(es){
+        es.forEach(function(en){
+          if(en.isIntersecting && !done){
+            done = true; cio.disconnect();
+            var start = null, dur = 900;
+            function step(ts){
+              if(start===null) start = ts;
+              var p = Math.min(1, (ts-start)/dur);
+              var eased = 1 - Math.pow(1-p, 3);
+              el.textContent = (target*eased).toFixed(1).replace('.', ',');
+              if(p<1) requestAnimationFrame(step); else el.textContent = '4,0';
+            }
+            el.textContent = '0,0';
+            requestAnimationFrame(step);
+          }
+        });
+      }, {threshold:0.5});
+      cio.observe(el);
+    })();
+
+    /* ---------- Chapter markers: active dot follows the visible section ---------- */
+    (function(){
+      var dots = Array.prototype.slice.call(document.querySelectorAll('.chapters a'));
+      if(!dots.length || !hasIO) return;
+      var map = {};
+      dots.forEach(function(d){ var id = d.getAttribute('href').slice(1); if(id) map[id]=d; });
+      var targets = [];
+      dots.forEach(function(d){ var id=d.getAttribute('href').slice(1); var t=document.getElementById(id); if(t) targets.push(t); });
+      var sio = new IntersectionObserver(function(es){
+        es.forEach(function(en){
+          if(en.isIntersecting){
+            var id = en.target.id; if(!map[id]) return;
+            dots.forEach(function(d){ d.classList.remove('active'); d.removeAttribute('aria-current'); });
+            map[id].classList.add('active'); map[id].setAttribute('aria-current','true');
+          }
+        });
+      }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+      targets.forEach(function(t){ sio.observe(t); });
+    })();
+
+    if(isReduced){ return; }   /* everything below is enhancement only */
+
+    /* ---------- Foliage parallax (rAF-batched single scroll handler) ---------- */
+    var companions = Array.prototype.slice.call(document.querySelectorAll('.companion'));
+    var video = document.querySelector('.front-figure video');
+    var canvas = document.querySelector('.hero-canvas');
+    var frontespizio = document.querySelector('.frontespizio');
+    var ticking = false;
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+    function update(){
+      ticking = false;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for(var i=0;i<companions.length;i++){
+        var el = companions[i];
+        var r = el.getBoundingClientRect();
+        var center = r.top + r.height/2;
+        var prog = (center - vh/2) / vh;           // roughly -1..1 across the viewport
+        var f = parseFloat(el.getAttribute('data-depth') || '24');
+        el.style.setProperty('--py', (prog * -f).toFixed(1) + 'px');
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    update();
+
+    /* ---------- Desktop-only hero canvas frame-scrub (the scroll cinema) ---------- */
+    (function(){
+      if(!canvas || !video || !frontespizio) return;
+      if(!window.matchMedia('(min-width:1024px) and (pointer:fine)').matches) return;
+      var ctx; try{ ctx = canvas.getContext('2d'); }catch(e){ return; }
+      if(!ctx) return;
+      var FCOUNT = 48, DIR = 'assets/hero-frames/desktop/', frames = new Array(FCOUNT), loaded = 0;
+      var cur = 0, sized = false, heroIn = false, running = false, active = false;
+
+      function pad(n){ n = String(n); while(n.length<4) n='0'+n; return n; }
+      function loadFrame(n){
+        var img = new Image();
+        img.onload = function(){
+          frames[n] = img; loaded++;
+          if(!sized){ canvas.width = img.naturalWidth; canvas.height = img.naturalHeight; sized = true; }
+        };
+        img.onerror = function(){};
+        img.src = DIR + 'frame-' + pad(n+1) + '.webp';
+      }
+      // critical frames first (start / middle / end), then the rest
+      loadFrame(0); loadFrame(FCOUNT-1); loadFrame(Math.floor(FCOUNT/2));
+      var seq = 0;
+      (function chain(){
+        if(seq>=FCOUNT) return;
+        if(frames[seq]===undefined) loadFrame(seq);
+        seq++;
+        setTimeout(chain, 24);
+      })();
+
+      function nearest(idx){
+        for(var d=0; d<FCOUNT; d++){
+          if(frames[idx-d]) return frames[idx-d];
+          if(frames[idx+d]) return frames[idx+d];
+        }
+        return null;
+      }
+      function heroProgress(){
+        var r = frontespizio.getBoundingClientRect();
+        var span = r.height * 0.9;
+        if(span<=0) return 0;
+        var p = (-r.top) / span;
+        return p < 0 ? 0 : (p > 1 ? 1 : p);
+      }
+      function tick(){
+        if(!heroIn){ running = false; return; }
+        var target = heroProgress() * (FCOUNT-1);
+        cur += (target - cur) * 0.12;
+        var idx = Math.round(cur); if(idx<0) idx=0; if(idx>FCOUNT-1) idx=FCOUNT-1;
+        var f = frames[idx] || nearest(idx);
+        if(f && sized){ try{ ctx.drawImage(f, 0, 0, canvas.width, canvas.height); }catch(e){} }
+        var want = heroProgress() > 0.02 && loaded > 3 && sized;
+        if(want !== active){
+          active = want;
+          canvas.classList.toggle('active', active);
+          if(active){ video.pause(); } else { var pr = video.play(); if(pr && pr.catch) pr.catch(function(){}); }
+        }
+        requestAnimationFrame(tick);
+      }
+      if('IntersectionObserver' in window){
+        new IntersectionObserver(function(es){
+          heroIn = es[0].isIntersecting;
+          if(heroIn && !running){ running = true; requestAnimationFrame(tick); }
+        }, {threshold:0}).observe(frontespizio);
+      }
+    })();
+  })();
+</script>

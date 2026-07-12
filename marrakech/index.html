@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>marrakech — parrucchiere su Via Padova, Milano | taglio, colore, argan</title>
+  <meta name="description" content="Salone di parrucchiere marocchino su Via Padova a Milano. Taglio, colore, piega e il rito dell'argan per capelli ricci, lisci e spessi. Guarda i servizi, i prezzi indicativi e chiama per prenotare in trenta secondi." />
+  <link rel="canonical" href="https://marrakech-viapadova.it/" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="marrakech — parrucchiere su Via Padova, Milano" />
+  <meta property="og:description" content="Taglio, colore e il rito dell'argan, fatti da un team marocchino che i capelli ricci, lisci e spessi li conosce da sempre. Via Padova 37, Milano." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero-portrait.png" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- LocalBusiness structured data — populated only with verified facts -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Marrakech",
+    "description": "Parrucchiere marocchino su Via Padova a Milano: taglio, colore, piega, barba e il rito di rifinitura all'olio di argan per capelli ricci, lisci e spessi.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Padova 37",
+      "postalCode": "20127",
+      "addressLocality": "Milano",
+      "addressRegion": "MI",
+      "addressCountry": "IT"
+    },
+    "telephone": "+393204485897",
+    "areaServed": "Milano",
+    "image": "assets/hero-portrait.png",
+    "priceRange": "€€"
+  }
+  </script>
+
+  <style>
+    /* ============ BRAND TOKENS — defined once, referenced everywhere ============ */
+    :root{
+      --brand-ink:#2A1A14;
+      --brand-surface:#F6EDE6;
+      --brand-surface-alt:#EFE3D9;
+      --brand-accent:#B23A2E;      /* clay-red */
+      --brand-accent-ink:#F6EDE6;
+      --brand-muted:#705C50;
+      --brand-line:#E2D5C8;
+      --brand-accent-2:#2F6B57;    /* zellige-green */
+
+      --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+      --font-body:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+      --ease-signature:cubic-bezier(0.16,1,0.3,1);
+      --ease-micro:cubic-bezier(0.33,1,0.68,1);
+      --dur-reveal:780ms;
+      --dur-micro:200ms;
+      --stagger:70ms;
+
+      --space-section:clamp(4.5rem, 3rem + 6vw, 9rem);
+      --container:min(1180px, 92vw);
+      --radius:3px;
+
+      --fs-hero:clamp(2.6rem, 1.75rem + 4vw, 5.2rem);
+      --fs-h2:clamp(1.6rem, 1.2rem + 2vw, 2.7rem);
+      --fs-body:clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+    }
+
+    /* ============ RESET / BASE ============ */
+    *,*::before,*::after{box-sizing:border-box;}
+    html,body{overflow-x:clip;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--brand-surface);
+      color:var(--brand-ink);
+      font-family:var(--font-body);
+      font-size:var(--fs-body);
+      line-height:1.65;
+      font-weight:400;
+      overflow-wrap:anywhere;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      font-kerning:normal;
+      font-variant-ligatures:common-ligatures contextual;
+      position:relative;
+    }
+    img{max-width:100%;display:block;}
+    a{color:inherit;}
+    h1,h2,h3{
+      font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:0;
+      font-optical-sizing:auto;
+      text-wrap:balance;
+    }
+    p{margin:0;text-wrap:pretty;}
+    :focus-visible{outline:3px solid var(--brand-accent);outline-offset:3px;border-radius:2px;}
+    ::selection{background:var(--brand-accent);color:var(--brand-surface);}
+
+    /* fine paper grain — inline SVG feTurbulence, never a generated texture image */
+    body::after{
+      content:"";
+      position:fixed;inset:0;
+      z-index:9000;
+      pointer-events:none;
+      opacity:.045;
+      mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .container{width:var(--container);margin-inline:auto;}
+    .eyebrow{
+      font-family:var(--font-body);
+      font-weight:600;
+      font-size:.72rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--brand-muted);
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      margin:0 0 1.1rem;
+    }
+    /* eyebrow marker = small zellige-green arch glyph */
+    .eyebrow::before{
+      content:"";
+      width:12px;height:14px;
+      background:var(--brand-accent-2);
+      -webkit-clip-path:var(--arch-mask);
+      clip-path:var(--arch-mask);
+      flex:none;
+    }
+    :root{
+      --arch-mask:path('M3 14 L3 6 C3 2.3 6.8 0.8 10 0 C13.2 0.8 17 2.3 17 6 L17 14 Z');
+    }
+    .lead{font-size:clamp(1.08rem,1rem + .5vw,1.35rem);color:color-mix(in srgb, var(--brand-ink) 88%, var(--brand-surface));}
+    .muted{color:var(--brand-muted);}
+    .fine{font-size:.8rem;color:var(--brand-muted);}
+
+    /* ============ KEYHOLE ARCH FRAME (the motif / wow) ============ */
+    .arch{
+      position:relative;
+      isolation:isolate;
+    }
+    .arch__img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      -webkit-clip-path:url(#keyholeArch);
+      clip-path:url(#keyholeArch);
+      display:block;
+      /* unify photo grade across the shoot: a subtle warm nudge so every frame reads
+         as the same bright Moroccan-daylight session, never a per-image special-case */
+      filter:sepia(.12) saturate(1.04)
+             drop-shadow(0 20px 26px color-mix(in srgb, var(--brand-ink) 22%, transparent))
+             drop-shadow(0 4px 8px color-mix(in srgb, var(--brand-ink) 14%, transparent));
+    }
+    /* clay-red 2px stroke tracing the arch, drawn over the photo */
+    .arch__stroke{
+      position:absolute;
+      inset:0;
+      width:100%;height:100%;
+      pointer-events:none;
+      z-index:2;
+    }
+    .arch__stroke path{
+      fill:none;
+      stroke:var(--brand-accent);
+      stroke-width:2;
+      vector-effect:non-scaling-stroke;
+    }
+
+    /* ============ ZELLIGE TILE BAND (divider motif) ============ */
+    .tile-band{
+      height:16px;
+      width:100%;
+      background-color:var(--brand-surface);
+      background-image:
+        repeating-linear-gradient(45deg, var(--brand-accent-2) 0 8px, transparent 8px 16px),
+        repeating-linear-gradient(-45deg, var(--brand-accent-2) 0 8px, transparent 8px 16px);
+      background-size:16px 16px;
+      opacity:.85;
+    }
+    .divider{
+      width:var(--container);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+    }
+    .divider .tile-band{max-width:180px;}
+    .divider .rule{flex:1;height:1px;background:var(--brand-line);}
+
+    /* ============ HEADER / NAV ============ */
+    .site-header{
+      position:sticky;top:0;z-index:60;
+      background:color-mix(in srgb, var(--brand-surface) 90%, transparent);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--brand-line);
+    }
+    .nav{
+      width:var(--container);margin-inline:auto;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:1rem;
+      min-height:66px;
+    }
+    /* wordmark logotype */
+    .wordmark{
+      display:inline-flex;align-items:baseline;gap:.4rem;
+      font-family:var(--font-display);
+      font-weight:600;
+      font-size:1.5rem;
+      letter-spacing:0.01em;
+      text-transform:lowercase;
+      text-decoration:none;
+      color:var(--brand-ink);
+    }
+    .wordmark__glyph{
+      width:14px;height:17px;
+      background:var(--brand-accent);
+      -webkit-clip-path:var(--arch-mask);
+      clip-path:var(--arch-mask);
+      align-self:flex-end;
+      margin-bottom:2px;
+      flex:none;
+    }
+    .nav__links{
+      display:flex;align-items:center;gap:1.6rem;
+      list-style:none;margin:0;padding:0;
+    }
+    .nav__links a{
+      text-decoration:none;
+      font-size:.92rem;
+      font-weight:500;
+      color:var(--brand-ink);
+      padding:.35rem 0;
+      position:relative;
+    }
+    .nav__links a:hover{color:var(--brand-accent);}
+    .btn{
+      --btn-pad:.7rem 1.25rem;
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-family:var(--font-body);font-weight:600;font-size:.95rem;
+      padding:var(--btn-pad);
+      border-radius:var(--radius);
+      text-decoration:none;
+      cursor:pointer;
+      border:1px solid transparent;
+      transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-micro);
+    }
+    .btn--primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+    .btn--primary:hover{transform:translateY(-1px);background:color-mix(in srgb, var(--brand-accent) 88%, black);}
+    .btn--ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line);}
+    .btn--ghost:hover{border-color:var(--brand-accent);color:var(--brand-accent);}
+    .btn--lg{padding:.95rem 1.7rem;font-size:1.02rem;}
+    .btn__glyph{width:11px;height:13px;background:currentColor;-webkit-clip-path:var(--arch-mask);clip-path:var(--arch-mask);flex:none;}
+
+    .nav__toggle{
+      display:none;
+      background:transparent;border:1px solid var(--brand-line);border-radius:var(--radius);
+      width:44px;height:44px;cursor:pointer;
+      align-items:center;justify-content:center;
+    }
+    .nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{
+      content:"";display:block;width:20px;height:2px;background:var(--brand-ink);position:relative;transition:.2s var(--ease-micro);
+    }
+    .nav__toggle span::before{position:absolute;top:-6px;}
+    .nav__toggle span::after{position:absolute;top:6px;}
+    .nav[data-open="true"] .nav__toggle span{background:transparent;}
+    .nav[data-open="true"] .nav__toggle span::before{top:0;transform:rotate(45deg);}
+    .nav[data-open="true"] .nav__toggle span::after{top:0;transform:rotate(-45deg);}
+
+    /* ============ HERO — La Soglia (arched threshold) ============ */
+    .hero{
+      padding:clamp(2.5rem,2rem + 4vw,5rem) 0 clamp(3rem,2rem + 4vw,5.5rem);
+      overflow:clip;
+    }
+    .hero__grid{
+      width:var(--container);margin-inline:auto;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:clamp(2rem,1.5rem + 4vw,4rem);
+      align-items:center;
+    }
+    .hero__copy{max-width:36rem;}
+    .hero h1{
+      font-size:var(--fs-hero);
+      margin:0 0 1.3rem;
+      font-weight:600;
+    }
+    .hero h1 .accent{color:var(--brand-accent);}
+    .hero h1 .line{display:block;}
+    .hero__sub{font-size:clamp(1.1rem,1rem + .6vw,1.4rem);color:color-mix(in srgb,var(--brand-ink) 86%,var(--brand-surface));margin-bottom:1.9rem;}
+    .hero__cta-row{display:flex;flex-wrap:wrap;gap:.9rem 1rem;align-items:center;}
+    .hero__phone{font-weight:600;color:var(--brand-accent);text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums;}
+    /* honest, local trust line adjacent to CTA (no fabricated rating) */
+    .hero__trust{
+      margin-top:1.6rem;
+      display:flex;gap:.7rem;align-items:flex-start;
+      padding-top:1.4rem;border-top:1px solid var(--brand-line);
+      max-width:34rem;
+      color:var(--brand-muted);font-size:.95rem;
+    }
+    .hero__trust b{color:var(--brand-ink);font-weight:600;}
+
+    .hero__figure{
+      position:relative;
+      aspect-ratio:4/5;
+      max-width:520px;
+      width:100%;
+      margin-inline:auto;
+    }
+    /* single row of zellige tiles at the arch spring line */
+    .hero__springline{
+      position:absolute;
+      left:6%;right:6%;
+      top:42%;
+      height:14px;
+      z-index:3;
+      pointer-events:none;
+      background-color:transparent;
+      background-image:
+        repeating-linear-gradient(45deg, var(--brand-accent-2) 0 7px, transparent 7px 14px),
+        repeating-linear-gradient(-45deg, var(--brand-accent-2) 0 7px, transparent 7px 14px);
+      background-size:14px 14px;
+      opacity:.9;
+      mix-blend-mode:multiply;
+    }
+
+    /* ============ GENERIC SECTION ============ */
+    section{scroll-margin-top:80px;}
+    .section-pad{padding-block:var(--space-section);}
+    .section-pad--tight{padding-block:calc(var(--space-section) * .7);}
+
+    /* ---- Il Cortile (chi siamo) : asymmetric editorial ---- */
+    .cortile__grid{
+      display:grid;grid-template-columns:1fr;
+      gap:clamp(2rem,1.5rem + 4vw,4.5rem);
+      align-items:center;
+    }
+    .cortile__fig{position:relative;aspect-ratio:5/6;max-width:480px;width:100%;}
+    .prose{max-width:38rem;}
+    .prose p{max-inline-size:62ch;}
+    .prose p + p{margin-top:1rem;}
+    .prose h2{font-size:var(--fs-h2);margin-bottom:1.2rem;}
+
+    /* ---- Il Banco (servizi e prezzi) ---- */
+    .banco{background:var(--brand-surface-alt);}
+    .banco__head{max-width:38rem;margin-bottom:clamp(2rem,1.5rem+2vw,3rem);}
+    .banco__head h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+    .banco__layout{
+      display:grid;grid-template-columns:1fr;
+      gap:clamp(2rem,1.5rem + 3vw,3.5rem);
+      align-items:start;
+    }
+    .servizi{display:flex;flex-direction:column;gap:0;}
+    .servizio{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:.3rem 1.5rem;
+      align-items:baseline;
+      padding:1.15rem 0;
+      border-top:1px solid var(--brand-line);
+    }
+    .servizio:last-child{border-bottom:1px solid var(--brand-line);}
+    .servizio__name{
+      font-family:var(--font-display);
+      font-weight:600;font-size:1.2rem;
+      position:relative;
+      width:max-content;max-width:100%;
+    }
+    /* price-row hover arch underline (draw-on) */
+    .servizio__name::after{
+      content:"";
+      position:absolute;left:0;bottom:-4px;
+      width:100%;height:8px;
+      background:var(--brand-accent);
+      -webkit-clip-path:var(--arch-mask);clip-path:var(--arch-mask);
+      transform:scaleX(0);transform-origin:left;
+      transition:transform var(--dur-reveal) var(--ease-signature);
+      opacity:.85;
+    }
+    .servizio:hover .servizio__name::after,
+    .servizio:focus-within .servizio__name::after{transform:scaleX(1);}
+    .servizio__price{font-weight:700;color:var(--brand-accent);white-space:nowrap;font-size:1.05rem;font-variant-numeric:tabular-nums;}
+    .servizio__meta{grid-column:1 / -1;color:var(--brand-muted);font-size:.92rem;margin-top:.15rem;}
+    .banco__fig{position:relative;aspect-ratio:4/5;width:100%;max-width:420px;}
+
+    /* ---- Il Rito dell'Argan : composed image set + steps ---- */
+    .rito{background:var(--brand-surface);}
+    .rito__grid{
+      display:grid;grid-template-columns:1fr;
+      gap:clamp(2.5rem,2rem + 4vw,4.5rem);
+      align-items:center;
+    }
+    .argan-set{position:relative;width:100%;max-width:560px;margin-inline:auto;padding-bottom:2.5rem;padding-right:2rem;}
+    .argan-set__main{position:relative;aspect-ratio:3/2;width:100%;}
+    .argan-set__detail{
+      position:absolute;right:-.5rem;bottom:-.5rem;
+      width:42%;max-width:190px;aspect-ratio:1;
+      z-index:4;
+    }
+    /* scroll-linked ritual rail (static structural form: numbered zellige rail) */
+    .rito__steps{display:grid;grid-template-columns:auto 1fr;gap:0 1.4rem;position:relative;}
+    .rito__rail{
+      grid-row:1 / span 4;
+      width:12px;border-radius:6px;
+      position:relative;overflow:hidden;
+      background-color:var(--brand-surface-alt);
+    }
+    /* MOMENT: scroll-linked progress fill — the only scrubbed indicator on the page.
+       Full at rest / no-JS / reduced-motion; scaled by scroll offset when JS runs. */
+    .rito__rail__fill{
+      position:absolute;inset:0;
+      transform-origin:top;transform:scaleY(1);
+      background-image:
+        repeating-linear-gradient(45deg, color-mix(in srgb,var(--brand-accent-2) 60%,transparent) 0 6px, transparent 6px 12px),
+        repeating-linear-gradient(-45deg, color-mix(in srgb,var(--brand-accent-2) 60%,transparent) 0 6px, transparent 6px 12px);
+      background-size:12px 12px;
+    }
+    html.js .rito__rail__fill{transform:scaleY(0);}
+    .rito__step{padding:.4rem 0 1.5rem;}
+    .rito__step:last-child{padding-bottom:0;}
+    .rito__step h3{font-size:1.15rem;margin-bottom:.35rem;display:flex;gap:.6rem;align-items:baseline;}
+    .rito__step .num{font-family:var(--font-display);color:var(--brand-accent);font-size:1rem;}
+
+    /* ---- Le Mani (il parrucchiere) ---- */
+    .mani{background:var(--brand-surface-alt);}
+    .mani__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,1.5rem+3vw,4rem);align-items:center;}
+    .mani__fig{position:relative;aspect-ratio:4/5;width:100%;max-width:440px;}
+
+    /* ---- La Parete (galleria) : tiled arch wall ---- */
+    .parete__head{max-width:38rem;margin-bottom:clamp(2rem,1.5rem+2vw,3rem);}
+    .parete__head h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+    .parete__wall{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:clamp(1rem,.5rem + 2vw,2.4rem);
+      align-items:start;
+    }
+    .parete__frame{position:relative;width:100%;}
+    .parete__frame:nth-child(1){aspect-ratio:3/4;margin-top:clamp(1rem,3vw,3rem);}
+    .parete__frame:nth-child(2){aspect-ratio:3/4;}
+    .parete__frame:nth-child(3){aspect-ratio:3/4;margin-top:clamp(2rem,5vw,5rem);}
+    .parete__cap{margin-top:.7rem;font-size:.85rem;color:var(--brand-muted);}
+
+    /* ---- Perché Tornano : reasons ---- */
+    .perche{background:var(--brand-surface-alt);}
+    .perche__head{max-width:40rem;margin-bottom:clamp(2rem,1.5rem+2vw,3rem);}
+    .perche__head h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+    .reasons{display:grid;grid-template-columns:1fr;gap:1.6rem;}
+    .reason{
+      background:var(--brand-surface);
+      border:1px solid var(--brand-line);
+      border-radius:var(--radius);
+      padding:1.8rem 1.6rem;
+    }
+    /* the middle reason carries the differentiator (argan) — given visual weight, not an identical third card */
+    .reason--emphasis{
+      background:color-mix(in srgb, var(--brand-accent) 6%, var(--brand-surface));
+      border-color:transparent;
+      border-left:4px solid var(--brand-accent);
+      padding:2.3rem 1.8rem;
+    }
+    @media (min-width:900px){
+      .reason--emphasis{padding-block:2.6rem;transform:translateY(-.6rem);}
+    }
+    .reason h3{font-size:1.25rem;margin-bottom:.6rem;display:flex;gap:.6rem;align-items:baseline;}
+    .reason h3::before{content:"";width:12px;height:14px;background:var(--brand-accent-2);-webkit-clip-path:var(--arch-mask);clip-path:var(--arch-mask);flex:none;align-self:center;}
+
+    /* ---- L'Uscio (visita e prenota) ---- */
+    .uscio{background:var(--brand-ink);color:var(--brand-surface);}
+    .uscio .eyebrow{color:color-mix(in srgb,var(--brand-surface) 70%,var(--brand-ink));}
+    .uscio h2{font-size:var(--fs-h2);color:var(--brand-surface);margin-bottom:1.2rem;}
+    .uscio__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,1.5rem+3vw,3.5rem);align-items:center;}
+    .uscio__fig{position:relative;aspect-ratio:3/4;width:100%;max-width:400px;}
+    .uscio__card{}
+    .uscio__row{display:flex;gap:.8rem;align-items:flex-start;padding:1rem 0;border-top:1px solid color-mix(in srgb,var(--brand-surface) 22%,transparent);}
+    .uscio__row:first-of-type{border-top:none;}
+    .uscio__row .k{font-weight:600;min-width:5.5rem;color:color-mix(in srgb,var(--brand-surface) 78%,var(--brand-ink));font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;}
+    .uscio__row .v{color:var(--brand-surface);font-variant-numeric:tabular-nums;}
+    .uscio__row .v a{color:var(--brand-surface);}
+    .uscio__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem;}
+    .uscio .btn--ghost{color:var(--brand-surface);border-color:color-mix(in srgb,var(--brand-surface) 45%,transparent);}
+    .uscio .btn--ghost:hover{border-color:var(--brand-surface);color:var(--brand-surface);}
+    .uscio__phone{color:var(--brand-surface);font-weight:600;text-decoration:none;font-variant-numeric:tabular-nums;}
+
+    /* ---- Footer ---- */
+    .site-footer{background:var(--brand-ink);color:color-mix(in srgb,var(--brand-surface) 65%,var(--brand-ink));padding:2.5rem 0;border-top:1px solid color-mix(in srgb,var(--brand-surface) 15%,transparent);}
+    .site-footer .container{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;}
+    .site-footer .wordmark{color:var(--brand-surface);font-size:1.25rem;}
+    .site-footer a{color:inherit;}
+
+    /* ---- Sticky mobile action bar ---- */
+    .mobile-bar{
+      position:fixed;left:0;right:0;bottom:0;z-index:70;
+      display:none;
+      gap:.6rem;
+      padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));
+      background:color-mix(in srgb,var(--brand-surface) 96%, transparent);
+      backdrop-filter:blur(8px);
+      border-top:1px solid var(--brand-line);
+    }
+    .mobile-bar .btn{flex:1;justify-content:center;}
+    .mobile-bar__note{font-size:.72rem;color:var(--brand-muted);text-align:center;}
+
+    /* ================= MOTION LAYER (pass 3) =================
+       One motion language: brand tokens only (--ease-signature / --ease-micro /
+       --dur-reveal / --dur-micro / --stagger). Everything "opens like a doorway".
+       Progressive enhancement: every hidden-start state is gated behind html.js,
+       so with JS off the whole page is fully visible. */
+
+    /* --- shared reveal: text blocks & cards rise + fade --- */
+    html.js .reveal{opacity:0;transform:translateY(20px);
+      transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal.is-in{opacity:1;transform:none;}
+
+    /* --- media role: feature photos scale in (depth), never a flat fade --- */
+    html.js .reveal--media{opacity:0;transform:scale(1.045);
+      transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal--media.is-in{opacity:1;transform:none;}
+    /* gallery follows its own horizontal geometry — outer frames arrive from their side, staggered along X */
+    html.js .parete__frame.reveal--media{transform:scale(1.045) translateX(var(--dx,0));}
+    html.js .parete__frame:nth-child(1){--dx:-16px;}
+    html.js .parete__frame:nth-child(3){--dx:16px;}
+    html.js .parete__frame.reveal--media.is-in{transform:none;}
+    html.js .parete__frame:nth-child(2).is-in{transition-delay:var(--stagger);}
+    html.js .parete__frame:nth-child(3).is-in{transition-delay:calc(var(--stagger)*2);}
+
+    /* --- rows role: price rows cascade downward, one after the next --- */
+    html.js .reveal--rows{opacity:1;transform:none;}
+    html.js .reveal--rows .servizio{opacity:0;transform:translateY(16px);
+      transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal--rows.is-in .servizio{opacity:1;transform:none;}
+    html.js .reveal--rows.is-in .servizio:nth-child(2){transition-delay:calc(var(--stagger)*1);}
+    html.js .reveal--rows.is-in .servizio:nth-child(3){transition-delay:calc(var(--stagger)*2);}
+    html.js .reveal--rows.is-in .servizio:nth-child(4){transition-delay:calc(var(--stagger)*3);}
+    html.js .reveal--rows.is-in .servizio:nth-child(5){transition-delay:calc(var(--stagger)*4);}
+
+    /* --- hero copy entrance: eyebrow -> subcopy -> CTA -> trust --- */
+    html.js .hero__copy > .eyebrow,
+    html.js .hero__sub,
+    html.js .hero__cta-row,
+    html.js .hero__trust{opacity:0;transform:translateY(16px);
+      transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);}
+    html.js .hero.is-in .eyebrow{opacity:1;transform:none;transition-delay:60ms;}
+    html.js .hero.is-in .hero__sub{opacity:1;transform:none;transition-delay:300ms;}
+    html.js .hero.is-in .hero__cta-row{opacity:1;transform:none;transition-delay:380ms;}
+    html.js .hero.is-in .hero__trust{opacity:1;transform:none;transition-delay:460ms;}
+
+    /* --- MOMENT: headline per-word settle (glyph-level, masked baseline, 70ms stagger) --- */
+    .hero h1 .word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em;}
+    .hero h1 .word__in{display:inline-block;}
+    html.js .hero h1 .word__in{transform:translateY(120%);}
+    html.js .hero.is-in h1 .word__in{transform:translateY(0);
+      transition:transform var(--dur-reveal) var(--ease-signature);}
+
+    /* --- MOMENT (SIGNATURE): hero arch unveil — keyhole uncovered from a 20px central
+       slit outward to the full arch. clip-path stays the arch; a mask does the door-open.
+       The single payoff moment of the page. --- */
+    html.js .hero__figure .arch__img{
+      transform:scale(1.06);
+      -webkit-mask-image:linear-gradient(#000,#000);mask-image:linear-gradient(#000,#000);
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:20px 100%;mask-size:20px 100%;
+      animation:heroUnveil var(--dur-reveal) var(--ease-signature) 120ms both;
+      will-change:mask-size,opacity;
+    }
+    @keyframes heroUnveil{
+      from{-webkit-mask-size:20px 100%;mask-size:20px 100%;opacity:.35;}
+      to{-webkit-mask-size:250% 100%;mask-size:250% 100%;opacity:1;}
+    }
+
+    /* --- MOMENT: zellige divider cascade — discrete tiles settle one after the next
+       along the layout diagonal (equal x/y travel), not top-to-bottom --- */
+    .divider .tiles{display:flex;gap:6px;align-items:center;justify-content:center;flex:none;}
+    .divider .tile{width:11px;height:11px;background:var(--brand-accent-2);transform:rotate(45deg);opacity:.9;border-radius:1px;flex:none;}
+    html.js .divider .tile{opacity:0;transform:rotate(45deg) translate(-10px,10px) scale(.55);
+      transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);}
+    html.js .divider.is-in .tile{opacity:.9;transform:rotate(45deg) translate(0,0) scale(1);}
+    html.js .divider.is-in .tile:nth-child(2){transition-delay:calc(var(--stagger)*1);}
+    html.js .divider.is-in .tile:nth-child(3){transition-delay:calc(var(--stagger)*2);}
+    html.js .divider.is-in .tile:nth-child(4){transition-delay:calc(var(--stagger)*3);}
+    html.js .divider.is-in .tile:nth-child(5){transition-delay:calc(var(--stagger)*4);}
+    html.js .divider.is-in .tile:nth-child(6){transition-delay:calc(var(--stagger)*5);}
+    html.js .divider.is-in .tile:nth-child(7){transition-delay:calc(var(--stagger)*6);}
+
+    /* --- MOMENT: price-row arch underline draw + price eases in from +8px (hover only) --- */
+    @media (hover:hover) and (pointer:fine){
+      .servizio:hover .servizio__price,
+      .servizio:focus-within .servizio__price{animation:priceIn var(--dur-micro) var(--ease-micro) both;}
+    }
+    @keyframes priceIn{from{opacity:.35;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+    /* --- media micro: gentle bulge on hover (pointer only) --- */
+    @media (hover:hover) and (pointer:fine){
+      .reveal--media .arch__img{transition:transform var(--dur-reveal) var(--ease-signature);}
+      .reveal--media:hover .arch__img{transform:scale(1.04);}
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (min-width:900px){
+      .hero__grid{grid-template-columns:1.05fr .95fr;}
+      .cortile__grid{grid-template-columns:.95fr 1.05fr;}
+      .cortile__fig{justify-self:end;}
+      .banco__layout{grid-template-columns:1.35fr .65fr;}
+      .rito__grid{grid-template-columns:1fr 1fr;}
+      .mani__grid{grid-template-columns:.85fr 1.15fr;}
+      .mani__fig{justify-self:start;}
+      .reasons{grid-template-columns:repeat(3,1fr);}
+      .uscio__grid{grid-template-columns:.8fr 1.2fr;}
+      /* preserve pass-2's emphasis-card lift as the reveal end-state (reveal transform would otherwise cancel it) */
+      html.js .reason--emphasis.is-in{transform:translateY(-.6rem);}
+    }
+
+    @media (max-width:899px){
+      .nav__links{
+        position:absolute;top:100%;left:0;right:0;
+        flex-direction:column;align-items:stretch;gap:0;
+        background:var(--brand-surface);
+        border-bottom:1px solid var(--brand-line);
+        padding:.5rem var(--container-pad,4vw) 1rem;
+        box-shadow:0 20px 30px -22px rgba(0,0,0,.4);
+        display:none;
+      }
+      .nav[data-open="true"] .nav__links{display:flex;}
+      .nav__links li{width:100%;}
+      .nav__links a{display:block;padding:.85rem .25rem;border-bottom:1px solid var(--brand-line);}
+      .nav__links .nav__cta{margin-top:.7rem;}
+      .nav__links .nav__cta .btn{width:100%;justify-content:center;}
+      .nav__toggle{display:inline-flex;}
+      .nav__cta-desktop{display:none;}
+
+      .mobile-bar{display:flex;flex-direction:column;}
+      body{padding-bottom:5.5rem;}
+
+      /* keep the arch wow recognisable, don't squash the desktop layout */
+      .hero__figure{max-width:420px;aspect-ratio:4/5;}
+      .argan-set{padding-right:1rem;padding-bottom:3rem;}
+      .argan-set__detail{width:38%;right:0;bottom:-1rem;}
+      .parete__wall{grid-template-columns:1fr 1fr;}
+      .parete__frame:nth-child(n){margin-top:0;}
+    }
+
+    @media (max-width:560px){
+      .parete__wall{grid-template-columns:1fr;max-width:340px;margin-inline:auto;}
+      .servizio{grid-template-columns:1fr auto;}
+      .site-footer .container{flex-direction:column;align-items:flex-start;text-align:left;}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+      /* show everything immediately at full opacity, no transform, no mask */
+      html.js .reveal,
+      html.js .reveal--media,
+      html.js .reveal--rows .servizio,
+      html.js .hero__copy > *,
+      html.js .hero h1 .word__in,
+      html.js .parete__frame.reveal--media{opacity:1 !important;transform:none !important;}
+      html.js .divider .tile{opacity:.9 !important;transform:rotate(45deg) !important;}
+      html.js .hero__figure .arch__img{animation:none !important;transform:none !important;
+        -webkit-mask:none !important;mask:none !important;}
+      html.js .rito__rail__fill{transform:scaleY(1) !important;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable keyhole-arch clip-path (single source of truth for every frame) -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <clipPath id="keyholeArch" clipPathUnits="objectBoundingBox">
+        <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <nav class="nav" data-open="false" aria-label="Navigazione principale">
+      <a class="wordmark" href="#top" aria-label="marrakech, parrucchiere">
+        <span class="wordmark__glyph" aria-hidden="true"></span>marrakech
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu">
+        <span></span>
+      </button>
+
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="#cortile">Chi siamo</a></li>
+        <li><a href="#banco">Servizi e prezzi</a></li>
+        <li><a href="#rito">Rito dell'argan</a></li>
+        <li><a href="#parete">Galleria</a></li>
+        <li><a href="#uscio">Visita</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" data-cta href="tel:+393204485897"><span class="btn__glyph" aria-hidden="true"></span>Chiama</a></li>
+      </ul>
+
+      <a class="btn btn--primary nav__cta-desktop" data-cta href="tel:+393204485897"><span class="btn__glyph" aria-hidden="true"></span>Chiama</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- 1 · LA SOGLIA (hero / arched threshold) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">La Soglia · Via Padova, Milano</p>
+          <h1 id="hero-title">
+            <span class="line"><span class="word"><span class="word__in">Il</span></span> <span class="word"><span class="word__in">parrucchiere</span></span></span>
+            <span class="line"><span class="word"><span class="word__in">marocchino</span></span></span>
+            <span class="line accent"><span class="word"><span class="word__in">di</span></span> <span class="word"><span class="word__in">Via</span></span> <span class="word"><span class="word__in">Padova.</span></span></span>
+          </h1>
+          <p class="hero__sub">Taglio, colore e il rito dell'argan, fatti da chi con i capelli ricci, lisci e spessi è cresciuto. Guarda i servizi, i prezzi e come prenotare in trenta secondi.</p>
+
+          <div class="hero__cta-row">
+            <a class="btn btn--primary btn--lg" data-cta href="tel:+393204485897"><span class="btn__glyph" aria-hidden="true"></span>Chiama per prenotare</a>
+            <a class="hero__phone" href="tel:+393204485897">+39 320 4485897</a>
+          </div>
+
+          <p class="hero__trust">
+            <span class="wordmark__glyph" aria-hidden="true" style="margin-bottom:0;align-self:flex-start;margin-top:.2rem;"></span>
+            <span>Siamo su <b>Via Padova 37</b>, la via più nordafricana di Milano. Capelli ricci, ondulati o spessi: qui li conosciamo da sempre.</span>
+          </p>
+        </div>
+
+        <figure class="hero__figure arch">
+          <img class="arch__img" src="assets/hero-portrait.png"
+               alt="Immagine d'atmosfera: un ingresso ad arco in stile marocchino"
+               style="object-position:center 30%;" />
+          <span class="hero__springline" aria-hidden="true"></span>
+          <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><span class="tiles"><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i></span><span class="rule"></span></div>
+
+    <!-- 2 · IL CORTILE (chi siamo) -->
+    <section id="cortile" class="section-pad" aria-labelledby="cortile-title">
+      <div class="container cortile__grid">
+        <div class="prose reveal">
+          <p class="eyebrow">Il Cortile · Chi siamo</p>
+          <h2 id="cortile-title">Un salone marocchino, su una strada marocchina.</h2>
+          <p>Marrakech è nato su Via Padova, dove il quartiere parla arabo, italiano e mille altre lingue. Il team è marocchino: i capelli che tagliamo ogni giorno sono quelli con cui siamo cresciuti.</p>
+          <p>Non imitiamo un'estetica. La conosciamo. Ricci stretti, onde spesse, lisci pesanti: sappiamo come cadono, come si asciugano e come tengono la piega dopo una settimana.</p>
+          <p>Per questo non serve spiegarci i tuoi capelli. Ce li racconti una volta, e la volta dopo li ricordiamo.</p>
+        </div>
+        <figure class="cortile__fig arch reveal--media">
+          <img class="arch__img" src="assets/interior-wide.png"
+               alt="Interno luminoso del salone con specchi incorniciati da piastrelle zellige"
+               style="object-position:center;" />
+          <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 3 · IL BANCO (servizi e prezzi) -->
+    <section id="banco" class="section-pad banco" aria-labelledby="banco-title">
+      <div class="container">
+        <div class="banco__head reveal">
+          <p class="eyebrow">Il Banco · Servizi e prezzi</p>
+          <h2 id="banco-title">Cosa facciamo, quanto costa.</h2>
+          <p class="lead">Niente listino nascosto. Ecco da dove partono i prezzi, così decidi prima di entrare.</p>
+        </div>
+
+        <div class="banco__layout">
+          <div class="servizi reveal--rows" role="list">
+            <div class="servizio" role="listitem" tabindex="0">
+              <span class="servizio__name">Taglio</span>
+              <span class="servizio__price">da 18 €</span>
+              <span class="servizio__meta">Taglio uomo, donna e bambino · piega inclusa · 30–45 min</span>
+            </div>
+            <div class="servizio" role="listitem" tabindex="0">
+              <span class="servizio__name">Colore</span>
+              <span class="servizio__price">da 40 €</span>
+              <span class="servizio__meta">Colore, colpi di sole, ritocco radice · 60–90 min</span>
+            </div>
+            <div class="servizio" role="listitem" tabindex="0">
+              <span class="servizio__name">Piega &amp; styling</span>
+              <span class="servizio__price">da 20 €</span>
+              <span class="servizio__meta">Piega, messa in piega, definizione dei ricci · 30 min</span>
+            </div>
+            <div class="servizio" role="listitem" tabindex="0">
+              <span class="servizio__name">Barba</span>
+              <span class="servizio__price">da 12 €</span>
+              <span class="servizio__meta">Rifinitura barba e contorni al rasoio · 20 min</span>
+            </div>
+            <div class="servizio" role="listitem" tabindex="0">
+              <span class="servizio__name">Rito dell'argan</span>
+              <span class="servizio__price">da 15 €</span>
+              <span class="servizio__meta">Trattamento di rifinitura all'olio di argan, da aggiungere a taglio o colore</span>
+            </div>
+          </div>
+
+          <figure class="banco__fig arch reveal--media">
+            <img class="arch__img" src="assets/color-craft.png"
+                 alt="Tavolozza colore indicativa: le tonalità che proponiamo"
+                 style="object-position:center;" />
+            <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+            </svg>
+          </figure>
+        </div>
+        <p class="fine" style="margin-top:1.5rem;">Prezzi di partenza indicativi, da confermare in salone in base a lunghezza e servizio.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><span class="tiles"><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i></span><span class="rule"></span></div>
+
+    <!-- 4 · IL RITO DELL'ARGAN -->
+    <section id="rito" class="section-pad rito" aria-labelledby="rito-title">
+      <div class="container rito__grid">
+        <div class="argan-set reveal--media">
+          <figure class="argan-set__main arch">
+            <img class="arch__img" src="assets/argan-ritual.png"
+                 alt="Mani che applicano olio di argan sui capelli durante il rito dell'argan"
+                 style="object-position:center;" />
+            <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+            </svg>
+          </figure>
+          <figure class="argan-set__detail arch">
+            <img class="arch__img" src="assets/argan-detail.png"
+                 alt="Bottiglia di olio di argan e pettine di legno su un asciugamano chiaro"
+                 style="object-position:center;" />
+            <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+            </svg>
+          </figure>
+        </div>
+
+        <div class="prose reveal">
+          <p class="eyebrow">Il Rito dell'Argan</p>
+          <h2 id="rito-title">La rifinitura all'olio di argan.</h2>
+          <p>È la cosa che un salone qualsiasi non ti sa fare. L'olio di argan, quello vero del Marocco, dà ai capelli spessi e ricci la luce e la morbidezza che il phon da solo toglie.</p>
+
+          <div class="rito__steps" style="margin-top:1.6rem;">
+            <div class="rito__rail" aria-hidden="true"><span class="rito__rail__fill"></span></div>
+            <div class="rito__step">
+              <h3><span class="num">01</span> Lettura del capello</h3>
+              <p class="muted">Guardiamo texture e stato prima di toccare l'olio. Ricci, onde e lisci spessi assorbono in modo diverso.</p>
+            </div>
+            <div class="rito__step">
+              <h3><span class="num">02</span> Applicazione a caldo</h3>
+              <p class="muted">Poche gocce, lavorate lunghezza per lunghezza. Niente eccessi: l'argan si assorbe, non appesantisce.</p>
+            </div>
+            <div class="rito__step">
+              <h3><span class="num">03</span> Posa e massaggio</h3>
+              <p class="muted">Un minuto di massaggio perché l'olio entri davvero, non resti in superficie.</p>
+            </div>
+            <div class="rito__step">
+              <h3><span class="num">04</span> Rifinitura</h3>
+              <p class="muted">Asciughiamo e chiudiamo la piega. Il risultato tiene la settimana, non solo l'uscita dal salone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · LE MANI (il parrucchiere) -->
+    <section id="mani" class="section-pad mani" aria-labelledby="mani-title">
+      <div class="container mani__grid">
+        <figure class="mani__fig arch reveal--media">
+          <img class="arch__img" src="assets/stylist-portrait.png"
+               alt="Immagine d'atmosfera del team, a scopo illustrativo"
+               style="object-position:center 25%;" />
+          <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+          </svg>
+        </figure>
+        <div class="prose reveal">
+          <p class="eyebrow">Le Mani · Chi ti taglia i capelli</p>
+          <h2 id="mani-title">Le mani che tengono le forbici.</h2>
+          <p>Dietro la sedia c'è sempre qualcuno del nostro team, mai un turno che cambia ogni mese. Chi ti taglia oggi si ricorda come li vuoi la volta dopo.</p>
+          <p>Il mestiere lo abbiamo imparato in Marocco e lo pratichiamo a Milano da anni. Prima di iniziare chiediamo cosa vuoi davvero, e se una cosa non sta bene te lo diciamo.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><span class="rule"></span><span class="tiles"><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i><i class="tile"></i></span><span class="rule"></span></div>
+
+    <!-- 6 · LA PARETE (galleria) -->
+    <section id="parete" class="section-pad" aria-labelledby="parete-title">
+      <div class="container">
+        <div class="parete__head reveal">
+          <p class="eyebrow">La Parete · Galleria</p>
+          <h2 id="parete-title">Gli scorci del salone.</h2>
+          <p class="lead">Corridoi ad arco, piastrelle zellige, i dettagli del rito. Immagini d'atmosfera dello spazio in cui lavoriamo.</p>
+        </div>
+        <div class="parete__wall">
+          <figure class="parete__frame reveal--media">
+            <span class="arch" style="display:block;width:100%;aspect-ratio:3/4;position:relative;">
+              <img class="arch__img" src="assets/gallery-cut-1.png"
+                   alt="Il cortile interno, tra tende e colonne piastrellate" />
+              <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+              </svg>
+            </span>
+            <figcaption class="parete__cap">Il cortile interno</figcaption>
+          </figure>
+          <figure class="parete__frame reveal--media">
+            <span class="arch" style="display:block;width:100%;aspect-ratio:3/4;position:relative;">
+              <img class="arch__img" src="assets/gallery-cut-2.png"
+                   alt="Dettaglio della sala, tende e piastrelle zellige" />
+              <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+              </svg>
+            </span>
+            <figcaption class="parete__cap">La sala, in dettaglio</figcaption>
+          </figure>
+          <figure class="parete__frame reveal--media">
+            <span class="arch" style="display:block;width:100%;aspect-ratio:3/4;position:relative;">
+              <img class="arch__img" src="assets/gallery-detail-3.png"
+                   alt="Argan e ceramiche, i dettagli del rito" />
+              <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+              </svg>
+            </span>
+            <figcaption class="parete__cap">Argan e ceramiche</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · PERCHÉ TORNANO -->
+    <section id="perche" class="section-pad perche" aria-labelledby="perche-title">
+      <div class="container">
+        <div class="perche__head reveal">
+          <p class="eyebrow">Perché Tornano</p>
+          <h2 id="perche-title">Il quartiere torna, per tre motivi.</h2>
+          <p class="lead">Non promettiamo niente di grosso. Facciamo bene tre cose semplici, e la gente se ne accorge.</p>
+        </div>
+        <div class="reasons">
+          <div class="reason reveal">
+            <h3>Ci capiamo sui capelli</h3>
+            <p>Non devi spiegare che tipo di capello hai. Lo vediamo e sappiamo come trattarlo, ricci stretti o lisci spessi che siano.</p>
+          </div>
+          <div class="reason reason--emphasis reveal">
+            <h3>Il taglio tiene</h3>
+            <p>Esci in ordine e resti in ordine. La piega e il finish all'argan durano oltre la giornata, non solo la foto appena fatta.</p>
+          </div>
+          <div class="reason reveal">
+            <h3>Ti trovi bene appena entri</h3>
+            <p>Ci si parla, si prende tempo, si spiega cosa si fa. Nessuna fretta e nessun servizio che non hai chiesto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · L'USCIO (visita e prenota) -->
+    <section id="uscio" class="section-pad uscio" aria-labelledby="uscio-title">
+      <div class="container uscio__grid">
+        <figure class="uscio__fig arch reveal--media">
+          <img class="arch__img" src="assets/exterior-threshold.png"
+               alt="Ingresso ad arco del salone Marrakech su una strada di Via Padova"
+               style="object-position:center;" />
+          <svg class="arch__stroke" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0.06 1 L0.06 0.42 C0.06 0.16,0.34 0.06,0.5 0 C0.66 0.06,0.94 0.16,0.94 0.42 L0.94 1 Z" />
+          </svg>
+        </figure>
+
+        <div class="uscio__card reveal">
+          <p class="eyebrow">L'Uscio · Visita e prenota</p>
+          <h2 id="uscio-title">Passa da noi su Via Padova.</h2>
+
+          <div class="uscio__row">
+            <span class="k">Dove</span>
+            <span class="v">Via Padova 37<br />20127 Milano</span>
+          </div>
+          <div class="uscio__row">
+            <span class="k">Telefono</span>
+            <span class="v"><a href="tel:+393204485897">+39 320 4485897</a></span>
+          </div>
+          <div class="uscio__row">
+            <span class="k">Orari</span>
+            <span class="v">Mar–Sab 9:30–19:30 · Lunedì chiuso<br /><span class="fine" style="color:color-mix(in srgb,var(--brand-surface) 55%,var(--brand-ink));">Orari indicativi, confermali con una chiamata.</span></span>
+          </div>
+
+          <div class="uscio__actions">
+            <a class="btn btn--primary btn--lg" data-cta href="tel:+393204485897"><span class="btn__glyph" aria-hidden="true"></span>Chiama per prenotare</a>
+            <a class="btn btn--ghost btn--lg" href="https://www.google.com/maps/search/?api=1&amp;query=Marrakech+parrucchiere+Via+Padova+37+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          </div>
+          <p style="margin-top:1rem;"><a class="uscio__phone" href="tel:+393204485897">+39 320 4485897</a> — per ora si prenota per telefono.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a class="wordmark" href="#top"><span class="wordmark__glyph" aria-hidden="true"></span>marrakech</a>
+      <span class="fine" style="color:color-mix(in srgb,var(--brand-surface) 60%,var(--brand-ink));">taglio · colore · argan — Via Padova 37, Milano · <a href="tel:+393204485897">+39 320 4485897</a></span>
+    </div>
+    <div class="container" style="margin-top:.6rem;">
+      <span class="fine" style="color:color-mix(in srgb,var(--brand-surface) 58%,var(--brand-ink));">Le fotografie del salone sono immagini d'atmosfera, a scopo illustrativo.</span>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile action bar -->
+  <div class="mobile-bar" aria-label="Contatta il salone">
+    <a class="btn btn--primary" data-cta href="tel:+393204485897"><span class="btn__glyph" aria-hidden="true"></span>Chiama per prenotare</a>
+    <span class="mobile-bar__note">+39 320 4485897 · Via Padova 37, Milano</span>
+  </div>
+
+  <script>
+    (function () {
+      // Progressive enhancement: mark JS on so hidden-start motion states apply.
+      // With JS off, none of the .js-gated rules match and the page is fully visible.
+      var docEl = document.documentElement;
+      docEl.classList.add('js');
+
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---- mobile navigation ---- */
+      var nav = document.querySelector('.nav');
+      var toggle = nav.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+
+      function setOpen(open) {
+        nav.setAttribute('data-open', open ? 'true' : 'false');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(nav.getAttribute('data-open') !== 'true');
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+
+      var revealSel = '.reveal, .reveal--media, .reveal--rows, .divider';
+
+      // Reduced motion / no observer: reveal everything at once, no scroll work.
+      if (reduce || !('IntersectionObserver' in window)) {
+        document.querySelectorAll(revealSel).forEach(function (el) { el.classList.add('is-in'); });
+        var heroRM = document.querySelector('.hero');
+        if (heroRM) heroRM.classList.add('is-in');
+        return;
+      }
+
+      /* ---- per-word hero headline stagger (70ms), settling into a masked baseline ---- */
+      document.querySelectorAll('.hero h1 .word__in').forEach(function (w, i) {
+        w.style.transitionDelay = (140 + i * 70) + 'ms';
+      });
+
+      /* ---- ONE IntersectionObserver drives every role-varied reveal ---- */
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll(revealSel).forEach(function (el) { io.observe(el); });
+
+      /* ---- hero entrance + signature arch unveil fire on load ---- */
+      var hero = document.querySelector('.hero');
+      requestAnimationFrame(function () { if (hero) hero.classList.add('is-in'); });
+
+      /* ---- single rAF-batched scroll handler: hero parallax + ritual rail scrub ---- */
+      var heroImg = document.querySelector('.hero__figure .arch__img');
+      var heroFg = [
+        document.querySelector('.hero__springline'),
+        document.querySelector('.hero .arch__stroke')
+      ];
+      var rito = document.getElementById('rito');
+      var railFill = document.querySelector('.rito__rail__fill');
+      var ticking = false;
+
+      function update() {
+        ticking = false;
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+
+        // Arched hero parallax: the photo drifts slower than the foreground
+        // clay-red arch stroke + tile band, giving the doorway physical depth.
+        if (hero && heroImg) {
+          var r = hero.getBoundingClientRect();
+          if (r.bottom > 0 && r.top < vh) {
+            var scrolled = Math.max(0, -r.top);
+            var py = Math.min(scrolled * 0.04, 14);   // photo (deep, slow)
+            var fy = Math.min(scrolled * 0.09, 26);   // frame (near, faster) — small gap reads as depth, not detachment
+            heroImg.style.transform = 'translate3d(0,' + py.toFixed(1) + 'px,0) scale(1.06)';
+            heroFg.forEach(function (el) {
+              if (el) el.style.transform = 'translate3d(0,' + fy.toFixed(1) + 'px,0)';
+            });
+          }
+        }
+
+        // Ritual step progress rail: fill bound continuously to scroll offset
+        // through the argan section.
+        if (rito && railFill) {
+          var rr = rito.getBoundingClientRect();
+          var prog = (vh * 0.82 - rr.top) / (rr.height * 0.78);
+          prog = Math.max(0, Math.min(1, prog));
+          railFill.style.transform = 'scaleY(' + prog.toFixed(3) + ')';
+        }
+      }
+
+      function onScroll() {
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>

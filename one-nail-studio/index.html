@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Nail Studio — Unghie, ciglia ed epilazione in Zona 7, Milano</title>
+<meta name="description" content="Studio di bellezza in Via delle Forze Armate 43, Milano. Ricostruzione e semipermanente, laminazione ciglia, epilazione: oltre 30 trattamenti su misura, con orario continuato 09–21. Chiama il +39 351 781 4107.">
+<link rel="canonical" href="https://www.onenailstudio.it/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="One Nail Studio — Unghie, ciglia ed epilazione in Zona 7, Milano">
+<meta property="og:description" content="Non un listino da spuntare: costruiamo la seduta con te, tra oltre 30 trattamenti. Orario continuato 09–21, in Via delle Forze Armate 43, Milano.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-hands.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness schema — populated only with verified data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "One Nail Studio",
+  "description": "Studio di bellezza in Zona 7 a Milano, specializzato in unghie, ciglia ed epilazione: oltre 30 trattamenti su misura con orario continuato 09–21.",
+  "image": "assets/hero-hands.png",
+  "url": "https://www.onenailstudio.it/",
+  "telephone": "+393517814107",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via delle Forze Armate, 43",
+    "addressLocality": "Milano",
+    "postalCode": "20147",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "areaServed": "Milano, Zona 7",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=One+Nail+Studio%2C+Milano"
+}
+</script>
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined ONCE, referenced everywhere
+   ============================================================ */
+:root{
+  /* palette (only these hues, ever) */
+  --brand-ink:#2A2027;
+  --brand-surface:#FBF7F4;
+  --brand-surface-alt:#F3EBE6;
+  --brand-accent:#B0475C;
+  --brand-accent-ink:#FDF6F4;
+  --brand-muted:#6B5860;
+  --brand-line:#E6D8D2;
+
+  /* type */
+  --font-display:'Bodoni Moda','Didot','Bodoni MT',Georgia,serif;
+  --font-body:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --fs-hero:clamp(2.75rem,1.9rem + 4.2vw,6rem);
+  --fs-h2:clamp(1.7rem,1.3rem + 1.9vw,2.9rem);
+  --fs-body:clamp(1rem,0.95rem + 0.25vw,1.1875rem);
+
+  /* motion */
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.33,1,0.68,1);
+  --dur-reveal:720ms;
+  --dur-micro:200ms;
+  --stagger:70ms;
+
+  /* space */
+  --space-section:clamp(4.5rem,3rem + 7vw,9rem);
+  --container:min(1160px,92vw);
+  --radius:3px;
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{
+  font-family:var(--font-display);font-weight:400;letter-spacing:-0.02em;line-height:1.05;margin:0;
+  text-wrap:balance;font-optical-sizing:auto;
+}
+p{margin:0;max-inline-size:66ch;text-wrap:pretty;}
+button{font:inherit;cursor:pointer;}
+:where(p,li){overflow-wrap:anywhere;}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+/* fine paper grain — non-representational texture, never a scene */
+.grain{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  opacity:.045;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* tabular figures wherever a number is read as data (hours, phone, address) */
+a[href^="tel:"],.trust b,.addr-card dd,.prenota__num,.footer__meta,.accent-num,.step__n,.eyebrow .num{
+  font-variant-numeric:tabular-nums;
+}
+
+/* visible focus ring, brand colored */
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:var(--radius);
+}
+.skip-link{
+  position:absolute;left:-999px;top:0;z-index:200;
+  background:var(--brand-ink);color:var(--brand-surface);
+  padding:.7rem 1.1rem;border-radius:var(--radius);
+}
+.skip-link:focus{left:.75rem;top:.75rem;}
+
+/* ============================================================
+   MOTIF — la tacca (swatch)
+   ============================================================ */
+.tacca{
+  display:inline-block;
+  width:12px;height:18px;
+  border-radius:var(--radius);
+  background:var(--brand-accent);
+  flex:0 0 auto;
+  vertical-align:middle;
+}
+.tacca--line{
+  background:transparent;
+  border:1px solid var(--brand-accent);
+}
+
+/* eyebrow */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-body);
+  font-size:.75rem;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--brand-muted);
+  margin:0 0 1.4rem;
+}
+.eyebrow .num{color:var(--brand-accent);font-weight:600;}
+
+/* ============================================================
+   WORDMARK
+   ============================================================ */
+.wordmark{
+  font-family:var(--font-display);
+  letter-spacing:0.02em;
+  line-height:1;
+  display:inline-flex;
+  align-items:baseline;
+  gap:.06em;
+}
+.wordmark em{font-style:italic;}
+.wm-tack{
+  display:inline-block;
+  width:4px;height:0.9em;
+  margin-left:.28em;
+  border-radius:var(--radius);
+  background:var(--brand-accent);
+  align-self:center;
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container{width:var(--container);margin-inline:auto;}
+.section{padding-block:var(--space-section);}
+.section--tight{padding-block:clamp(3rem,2rem + 4vw,5.5rem);}
+.section--roomy{padding-block:clamp(6rem,4rem + 9vw,11rem);}
+.hairline{border:0;border-top:1px solid var(--brand-line);margin:0;}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb,var(--brand-surface) 90%,transparent);
+  backdrop-filter:saturate(120%) blur(8px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  width:var(--container);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;min-height:64px;
+}
+.nav__brand{font-size:1.35rem;color:var(--brand-ink);white-space:nowrap;}
+.nav__links{
+  display:flex;align-items:center;gap:clamp(.9rem,1.6vw,1.7rem);
+  list-style:none;margin:0;padding:0;
+}
+.nav__links a{
+  font-size:.9rem;font-weight:500;color:var(--brand-muted);
+  padding:.35rem 0;position:relative;transition:color var(--dur-micro) var(--ease-micro);
+}
+.nav__links a:hover{color:var(--brand-ink);}
+.nav__links a.is-active{color:var(--brand-accent);}
+.nav__links a.is-active::after{
+  content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;
+  background:var(--brand-accent);
+}
+.nav__cta{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:.6rem 1.1rem;border-radius:var(--radius);
+  font-weight:600;font-size:.9rem;white-space:nowrap;
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+}
+.nav__cta .tacca{background:var(--brand-accent-ink);width:9px;height:14px;}
+.nav__cta:hover{background:color-mix(in srgb,var(--brand-accent) 88%,var(--brand-ink));}
+.nav__cta:active{transform:translateY(1px);}
+
+.nav__toggle{
+  display:none;
+  width:44px;height:44px;border:1px solid var(--brand-line);
+  background:transparent;border-radius:var(--radius);
+  align-items:center;justify-content:center;
+}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{
+  content:"";display:block;width:20px;height:2px;background:var(--brand-ink);
+  position:relative;transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro);
+}
+.nav__toggle span::before{position:absolute;top:-6px;left:0;}
+.nav__toggle span::after{position:absolute;top:6px;left:0;}
+.nav[data-open="true"] .nav__toggle span{background:transparent;}
+.nav[data-open="true"] .nav__toggle span::before{transform:translateY(6px) rotate(45deg);}
+.nav[data-open="true"] .nav__toggle span::after{transform:translateY(-6px) rotate(-45deg);}
+
+/* ============================================================
+   SWATCH RAIL — the signature (index + campionario)
+   ============================================================ */
+.swatchrail{
+  position:fixed;left:max(1.1rem,calc((100vw - var(--container))/2 - 2.6rem));
+  top:50%;transform:translateY(-50%);
+  z-index:80;
+  display:none;               /* shown on wide screens */
+  flex-direction:column;gap:10px;
+  padding:14px 10px;
+  background:color-mix(in srgb,var(--brand-surface) 82%,transparent);
+  border:1px solid var(--brand-line);border-radius:var(--radius);
+}
+.swatchrail__label{
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-size:.62rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--brand-muted);margin:2px auto 4px;
+}
+.swatchrail__tick{
+  display:block;width:20px;height:26px;border-radius:var(--radius);
+  border:1px solid color-mix(in srgb,var(--brand-accent) 30%,var(--brand-line));
+  background:var(--tick);
+  transform-origin:bottom center;
+  transition:transform var(--dur-micro) var(--ease-micro),box-shadow var(--dur-micro);
+  position:relative;
+}
+.swatchrail__tick:hover{transform:scaleX(1.12);}
+.swatchrail__tick.is-active{
+  box-shadow:0 0 0 2px var(--brand-surface),0 0 0 3px var(--brand-accent);
+}
+.swatchrail__tick .sr-name{
+  position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);
+  white-space:nowrap;font-size:.75rem;font-weight:500;color:var(--brand-ink);
+  background:var(--brand-surface);border:1px solid var(--brand-line);
+  padding:.25rem .55rem;border-radius:var(--radius);
+  opacity:0;pointer-events:none;transition:opacity var(--dur-micro);
+}
+.swatchrail__tick:hover .sr-name,.swatchrail__tick:focus-visible .sr-name{opacity:1;}
+
+/* ============================================================
+   HERO / COPERTINA
+   ============================================================ */
+.hero{
+  padding-top:clamp(2.5rem,2rem + 4vw,4.5rem);
+  padding-bottom:var(--space-section);
+}
+.hero__grid{
+  display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);
+  align-items:center;
+}
+.hero__copy{max-width:34rem;}
+.hero__title{font-size:var(--fs-hero);margin-bottom:1.2rem;}
+.hero__lede{
+  font-family:var(--font-display);font-style:italic;
+  font-size:clamp(1.35rem,1rem + 1.6vw,2.1rem);line-height:1.2;
+  color:var(--brand-ink);margin-bottom:1rem;letter-spacing:-0.01em;
+}
+.hero__sub{color:var(--brand-muted);max-width:30rem;margin-bottom:1.8rem;}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;margin-bottom:1.4rem;}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.85rem 1.5rem;border-radius:var(--radius);
+  font-weight:600;font-size:.98rem;
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+}
+.btn--primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+.btn--primary .tacca{background:var(--brand-accent-ink);width:10px;height:15px;transition:transform var(--dur-micro) var(--ease-signature);}
+.btn--primary:hover{background:color-mix(in srgb,var(--brand-accent) 88%,var(--brand-ink));}
+.btn--primary:hover .tacca{transform:translateX(3px);}
+.btn--primary:active{transform:translateY(1px);}
+.btn--ghost{border:1px solid var(--brand-line);color:var(--brand-ink);background:transparent;}
+.btn--ghost:hover{border-color:var(--brand-accent);color:var(--brand-accent);}
+.hero__phone{font-size:.92rem;color:var(--brand-muted);}
+.hero__phone a{color:var(--brand-ink);font-weight:600;border-bottom:1px solid var(--brand-line);}
+
+/* honest trust signals near CTA (no fabricated rating) */
+.trust{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;
+  padding-top:1.2rem;border-top:1px solid var(--brand-line);
+  font-size:.85rem;color:var(--brand-muted);list-style:none;margin:0;
+}
+.trust li{display:flex;align-items:center;gap:.5rem;}
+.trust b{color:var(--brand-accent);font-weight:600;}
+
+/* hero imagery: main + overlapped companion (art-directed set) */
+.hero__media img{border-radius:var(--radius);}
+.hero__frame{position:relative;margin-right:6%;margin-bottom:3.2rem;}
+.hero__frame .m-main{width:100%;aspect-ratio:16/10;object-fit:cover;}
+.hero__frame .m-detail{
+  position:absolute;right:-6%;bottom:-2.2rem;
+  width:44%;max-width:230px;aspect-ratio:3/4;object-fit:cover;object-position:62% 40%;
+  border:6px solid var(--brand-surface);
+  box-shadow:0 18px 40px -22px rgba(42,32,39,.45);
+}
+.hero__cap{
+  margin-top:1rem;font-size:.72rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--brand-muted);display:flex;align-items:center;gap:.55rem;
+}
+
+/* mobile swatch strip (deliberate mobile form of the signature) */
+.swatchstrip{
+  display:flex;gap:8px;align-items:stretch;
+  margin:1.6rem 0 0;padding:0;list-style:none;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+}
+.swatchstrip li{flex:1 0 auto;}
+.swatchstrip a{
+  display:flex;flex-direction:column;justify-content:flex-end;
+  width:34px;height:52px;border-radius:var(--radius);
+  border:1px solid color-mix(in srgb,var(--brand-accent) 30%,var(--brand-line));
+  background:var(--tick);
+}
+.swatchstrip__caption{
+  font-size:.68rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--brand-muted);margin:.6rem 0 0;
+}
+
+/* ============================================================
+   METODO
+   ============================================================ */
+.metodo{background:var(--brand-surface-alt);}
+.metodo__head{max-width:38rem;margin-bottom:clamp(2.4rem,4vw,3.4rem);}
+.metodo__head h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+.metodo__head p{color:var(--brand-muted);}
+.steps{
+  display:grid;grid-template-columns:1fr;gap:2rem;
+  counter-reset:step;
+}
+.step{border-top:1px solid var(--brand-line);padding-top:1.3rem;}
+.step__n{
+  font-family:var(--font-display);font-size:2.4rem;color:var(--brand-accent);
+  line-height:1;display:block;margin-bottom:.7rem;
+}
+.step h3{font-size:1.25rem;margin-bottom:.6rem;}
+.step p{color:var(--brand-muted);font-size:.98rem;}
+
+/* ============================================================
+   UNGHIE — craft spread (image set) + listino
+   ============================================================ */
+.unghie__grid{
+  display:grid;grid-template-columns:1fr;gap:clamp(2.4rem,4vw,3.5rem);
+  align-items:start;
+}
+.craftspread{position:relative;margin-right:6%;margin-bottom:2.6rem;}
+.craftspread .cs-corner{
+  position:absolute;top:12px;left:12px;z-index:2;
+}
+.craftspread .cs-main{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:38% 62%;border-radius:var(--radius);}
+.craftspread .cs-detail{
+  position:absolute;right:-6%;bottom:-1.8rem;
+  width:46%;max-width:250px;aspect-ratio:1/1;object-fit:cover;object-position:40% 55%;border-radius:var(--radius);
+  border:6px solid var(--brand-surface);
+  box-shadow:0 18px 40px -22px rgba(42,32,39,.45);
+}
+.unghie__head .eyebrow{margin-bottom:1rem;}
+.unghie__head h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+.unghie__head p{color:var(--brand-muted);max-width:34rem;margin-bottom:1.8rem;}
+
+.listino{list-style:none;margin:0;padding:0;}
+.listino li{
+  display:grid;grid-template-columns:auto 1fr;gap:.9rem;
+  padding:1.05rem 0;border-top:1px solid var(--brand-line);
+}
+.listino li:last-child{border-bottom:1px solid var(--brand-line);}
+.listino .tacca{margin-top:.35rem;}
+.listino__name{font-weight:600;font-size:1.05rem;margin-bottom:.2rem;}
+.listino__desc{color:var(--brand-muted);font-size:.92rem;margin-bottom:.4rem;}
+.listino__meta{
+  font-size:.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--brand-muted);
+  font-weight:600;
+}
+.note{
+  font-size:.82rem;color:var(--brand-muted);margin-top:1.3rem;font-style:italic;
+}
+
+/* ============================================================
+   CIGLIA & VISO — Kinfolk asymmetric, image right
+   ============================================================ */
+.ciglia{background:var(--brand-surface-alt);}
+.ciglia__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3rem);align-items:center;}
+.ciglia__text h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+.ciglia__text p{color:var(--brand-muted);max-width:30rem;margin-bottom:1.6rem;}
+.ciglia__img img{
+  width:100%;aspect-ratio:3/2;object-fit:cover;object-position:60% 42%;border-radius:var(--radius);
+  box-shadow:0 26px 50px -30px rgba(42,32,39,.4);
+}
+.minilist{list-style:none;margin:0;padding:0;}
+.minilist li{
+  display:grid;grid-template-columns:auto 1fr;gap:.8rem;
+  padding:.95rem 0;border-top:1px solid var(--brand-line);
+}
+.minilist li:last-child{border-bottom:1px solid var(--brand-line);}
+.minilist .tacca{margin-top:.3rem;}
+.minilist b{font-weight:600;display:block;margin-bottom:.15rem;}
+.minilist span{color:var(--brand-muted);font-size:.9rem;}
+
+/* ============================================================
+   EPILAZIONE — full-bleed band, areas list
+   ============================================================ */
+.epil{position:relative;color:var(--brand-accent-ink);overflow:hidden;background:var(--brand-ink);}
+.epil__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.4rem);align-items:center;}
+.epil__img img{
+  width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius);
+  border:1px solid color-mix(in srgb,var(--brand-accent-ink) 18%,transparent);
+}
+.epil__text .eyebrow{color:color-mix(in srgb,var(--brand-accent-ink) 80%,transparent);}
+.epil__text h2{font-size:var(--fs-h2);margin-bottom:1rem;color:var(--brand-accent-ink);}
+.epil__text p{color:color-mix(in srgb,var(--brand-accent-ink) 85%,transparent);max-width:32rem;margin-bottom:1.6rem;}
+.areas{
+  display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin:0 0 1.6rem;padding:0;
+}
+.areas li{
+  display:flex;align-items:center;gap:.5rem;
+  border:1px solid color-mix(in srgb,var(--brand-accent-ink) 30%,transparent);
+  padding:.45rem .8rem;border-radius:var(--radius);font-size:.9rem;
+}
+.epil__extra{list-style:none;margin:0;padding:0;font-size:.95rem;}
+.epil__extra li{display:flex;gap:.6rem;align-items:baseline;padding:.35rem 0;color:color-mix(in srgb,var(--brand-accent-ink) 88%,transparent);}
+.epil__extra li::before{content:"—";color:var(--brand-accent-ink);}
+
+/* ============================================================
+   TEAM — editorial image left, text right
+   ============================================================ */
+.team__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.4rem);align-items:center;}
+.team__img{position:relative;}
+.team__img img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;object-position:42% 48%;border-radius:var(--radius);
+  box-shadow:0 26px 50px -30px rgba(42,32,39,.4);
+}
+.team__img .tacca{position:absolute;top:12px;left:12px;}
+.team__text h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+.team__text p{color:var(--brand-muted);max-width:32rem;margin-bottom:1rem;}
+.team__text p:last-child{margin-bottom:0;}
+
+/* ============================================================
+   DOVE SIAMO — address block + map button (no illustrated map)
+   ============================================================ */
+.dove{background:var(--brand-surface-alt);}
+.dove__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3rem);align-items:start;}
+.dove__text h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+.dove__text p{color:var(--brand-muted);max-width:30rem;}
+.addr-card{
+  border:1px solid var(--brand-line);border-radius:var(--radius);
+  padding:clamp(1.5rem,3vw,2.2rem);background:var(--brand-surface);
+}
+.addr-card dl{margin:0;display:grid;gap:1.2rem;}
+.addr-card dt{
+  font-size:.72rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--brand-muted);margin-bottom:.35rem;
+}
+.addr-card dd{margin:0;font-size:1.05rem;color:var(--brand-ink);}
+.addr-card dd a{border-bottom:1px solid var(--brand-line);}
+.addr-card .accent-num{color:var(--brand-accent);font-weight:600;}
+.addr-card .btn{margin-top:1.6rem;}
+
+/* ============================================================
+   PRENOTA
+   ============================================================ */
+.prenota{text-align:center;background:var(--brand-surface);}
+.prenota__inner{max-width:40rem;margin-inline:auto;}
+.prenota h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+.prenota p{color:var(--brand-muted);margin-bottom:1.8rem;}
+.prenota__actions{display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.prenota__num{font-family:var(--font-display);font-size:clamp(1.6rem,1.2rem+2vw,2.4rem);color:var(--brand-ink);}
+.prenota__num a{color:var(--brand-ink);}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--brand-ink);color:var(--brand-surface);padding-block:clamp(3rem,4vw,4.5rem);}
+.site-footer .container{display:grid;gap:1.6rem;grid-template-columns:1fr;}
+.site-footer .wordmark{font-size:1.5rem;color:var(--brand-surface);}
+.footer__meta{color:color-mix(in srgb,var(--brand-surface) 78%,transparent);font-size:.92rem;line-height:1.9;}
+.footer__meta a{color:var(--brand-surface);border-bottom:1px solid color-mix(in srgb,var(--brand-surface) 30%,transparent);}
+.footer__disclaimer{
+  font-size:.75rem;color:color-mix(in srgb,var(--brand-surface) 55%,transparent);
+  border-top:1px solid color-mix(in srgb,var(--brand-surface) 20%,transparent);
+  padding-top:1.4rem;max-width:46rem;
+}
+
+/* ============================================================
+   STICKY MOBILE ACTION BAR
+   ============================================================ */
+.actionbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  display:none;
+  align-items:center;justify-content:space-between;gap:.8rem;
+  padding:.7rem 1rem;
+  background:var(--brand-surface);border-top:1px solid var(--brand-line);
+  box-shadow:0 -8px 24px -18px rgba(42,32,39,.5);
+}
+.actionbar__info{font-size:.78rem;color:var(--brand-muted);line-height:1.3;}
+.actionbar__info b{color:var(--brand-ink);display:block;font-size:.9rem;}
+.actionbar .btn--primary{padding:.7rem 1.2rem;flex:0 0 auto;}
+
+/* ============================================================
+   REVEAL / MOTION (all reduced-motion guarded)
+   ============================================================ */
+/* Progressive enhancement: EVERY hidden start-state below applies only once JS
+   has added .js to <html>, AND only when motion is welcome. JS off -> no hidden
+   state -> content fully visible. Reduced-motion -> this block is inert.        */
+@media (prefers-reduced-motion: no-preference){
+
+  /* shared block reveal — text blocks with no heading of their own */
+  html.js .reveal{opacity:0;transform:translateY(18px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .reveal.is-in{opacity:1;transform:none;}
+
+  /* media role — scale-in from slightly enlarged (depth), never a flat fade */
+  html.js .reveal--media{opacity:0;transform:scale(1.045);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .reveal--media.is-in{opacity:1;transform:none;}
+
+  /* heading line-mask — the title rises into being inside an overflow clip */
+  html.js :is(.reveal,.rvg) h2{overflow:hidden;padding-bottom:.1em;}
+  html.js .mask-line{display:inline-block;transform:translateY(118%);}
+  html.js :is(.reveal,.rvg).is-in .mask-line{transform:none;
+    transition:transform var(--dur-reveal) var(--ease-signature);}
+
+  /* group paragraphs / actions settle up just after the heading */
+  html.js .rvg > p:not(.note),html.js .rvg > .prenota__actions{opacity:0;transform:translateY(14px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .rvg.is-in > p:not(.note),html.js .rvg.is-in > .prenota__actions{opacity:1;transform:none;transition-delay:140ms;}
+
+  /* moment 3 — listino rows cascade IN FROM THE LEFT as Unghie rises */
+  html.js .unghie__head .listino li{opacity:0;transform:translateX(-24px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .unghie__head.is-in .listino li{opacity:1;transform:none;}
+  html.js .unghie__head.is-in .listino li:nth-child(1){transition-delay:200ms}
+  html.js .unghie__head.is-in .listino li:nth-child(2){transition-delay:265ms}
+  html.js .unghie__head.is-in .listino li:nth-child(3){transition-delay:330ms}
+  html.js .unghie__head.is-in .listino li:nth-child(4){transition-delay:395ms}
+  html.js .unghie__head.is-in .listino li:nth-child(5){transition-delay:460ms}
+
+  /* ciglia treatments — same left cascade, its own rhythm */
+  html.js .ciglia__text .minilist li{opacity:0;transform:translateX(-20px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .ciglia__text.is-in .minilist li{opacity:1;transform:none;}
+  html.js .ciglia__text.is-in .minilist li:nth-child(1){transition-delay:200ms}
+  html.js .ciglia__text.is-in .minilist li:nth-child(2){transition-delay:265ms}
+  html.js .ciglia__text.is-in .minilist li:nth-child(3){transition-delay:330ms}
+
+  /* epilazione areas — soft Y grid cascade (distinct axis from the row lists) */
+  html.js .epil__text .areas li{opacity:0;transform:translateY(12px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .epil__text.is-in .areas li{opacity:1;transform:none;}
+  html.js .epil__text.is-in .areas li:nth-child(1){transition-delay:180ms}
+  html.js .epil__text.is-in .areas li:nth-child(2){transition-delay:230ms}
+  html.js .epil__text.is-in .areas li:nth-child(3){transition-delay:280ms}
+  html.js .epil__text.is-in .areas li:nth-child(4){transition-delay:330ms}
+  html.js .epil__text.is-in .areas li:nth-child(5){transition-delay:380ms}
+  html.js .epil__text.is-in .areas li:nth-child(6){transition-delay:430ms}
+
+  /* metodo steps — Y cascade */
+  html.js .steps .reveal.is-in:nth-child(2){transition-delay:80ms}
+  html.js .steps .reveal.is-in:nth-child(3){transition-delay:160ms}
+
+  /* hero entrance — eyebrow -> wordmark -> lede -> sub -> CTA (<=600ms, non-blocking) */
+  html.js .hero__copy > *{opacity:0;transform:translateY(16px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .hero.is-lit .hero__copy > *{opacity:1;transform:none;}
+  html.js .hero.is-lit .hero__copy > *:nth-child(1){transition-delay:40ms}
+  html.js .hero.is-lit .hero__copy > *:nth-child(2){transition-delay:100ms}
+  html.js .hero.is-lit .hero__copy > *:nth-child(3){transition-delay:160ms}
+  html.js .hero.is-lit .hero__copy > *:nth-child(4){transition-delay:220ms}
+  html.js .hero.is-lit .hero__copy > *:nth-child(5){transition-delay:280ms}
+  html.js .hero.is-lit .hero__copy > *:nth-child(6){transition-delay:330ms}
+  html.js .hero.is-lit .hero__copy > *:nth-child(n+7){transition-delay:380ms}
+
+  /* moment 2 — hero macro uncovered by a LEFT->RIGHT clip wipe (reading axis) */
+  html.js .hero__frame .m-main{clip-path:inset(0 100% 0 0);}
+  html.js .hero.is-lit .m-main{clip-path:inset(0 0 0 0);
+    transition:clip-path var(--dur-reveal) var(--ease-signature);transition-delay:140ms;}
+  html.js .hero__frame .m-detail{opacity:0;transform:translateY(18px) scale(.98);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .hero.is-lit .m-detail{opacity:1;transform:none;transition-delay:420ms;}
+
+  /* moment 1 (SIGNATURE) — swatch rail + strip paint in vertically, tacca by tacca */
+  html.js .swatchrail__tick,html.js .swatchstrip a{transform:scaleY(0);transform-origin:bottom;
+    animation:paintin var(--dur-reveal) var(--ease-signature) forwards;}
+  html.js .swatchrail__tick:nth-child(2){animation-delay:calc(var(--stagger)*1);}
+  html.js .swatchrail__tick:nth-child(3){animation-delay:calc(var(--stagger)*2);}
+  html.js .swatchrail__tick:nth-child(4){animation-delay:calc(var(--stagger)*3);}
+  html.js .swatchrail__tick:nth-child(5){animation-delay:calc(var(--stagger)*4);}
+  html.js .swatchrail__tick:nth-child(6){animation-delay:calc(var(--stagger)*5);}
+  html.js .swatchrail__tick:nth-child(7){animation-delay:calc(var(--stagger)*6);}
+  html.js .swatchrail__tick:nth-child(8){animation-delay:calc(var(--stagger)*7);}
+  html.js .swatchstrip li:nth-child(2) a{animation-delay:calc(var(--stagger)*1);}
+  html.js .swatchstrip li:nth-child(3) a{animation-delay:calc(var(--stagger)*2);}
+  html.js .swatchstrip li:nth-child(4) a{animation-delay:calc(var(--stagger)*3);}
+  html.js .swatchstrip li:nth-child(5) a{animation-delay:calc(var(--stagger)*4);}
+  html.js .swatchstrip li:nth-child(6) a{animation-delay:calc(var(--stagger)*5);}
+  html.js .swatchstrip li:nth-child(7) a{animation-delay:calc(var(--stagger)*6);}
+}
+@keyframes paintin{to{transform:scaleY(1);}}
+
+/* --- always defined; visible only when JS drives --p / on hover; inert under reduced-motion --- */
+/* moment 4 — active family's swatch fills with accent, scrubbed to scroll progress */
+.swatchstrip a{position:relative;}
+.swatchrail__tick::before,.swatchstrip a::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:var(--brand-accent);transform:scaleY(var(--p,0));transform-origin:bottom;
+  transition:transform 120ms linear;
+}
+/* moment 6 — hover-drawn swatch underline on treatment rows (fine pointer only) */
+@media (hover:hover) and (pointer:fine){
+  .listino__name,.minilist b{position:relative;display:inline-block;}
+  .listino__name::after,.minilist b::after{
+    content:"";position:absolute;left:0;bottom:-3px;height:4px;width:100%;
+    background:var(--brand-accent);border-radius:var(--radius);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);
+  }
+  .listino li:hover .listino__name::after,.minilist li:hover b::after{transform:scaleX(1);}
+}
+/* moment 6 — CTA press: the tacca slides and settles (firm, no bounce) */
+.btn--primary:active .tacca{transform:translateX(6px);}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none!important;transition:none!important;}
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (min-width:720px){
+  .steps{grid-template-columns:repeat(3,1fr);gap:2.4rem;}
+  .ciglia__grid{grid-template-columns:0.85fr 1.15fr;}
+  .epil__grid{grid-template-columns:1.1fr 0.9fr;}
+  .team__grid{grid-template-columns:1.05fr 0.95fr;}
+  .dove__grid{grid-template-columns:1fr 1fr;}
+  .site-footer .container{grid-template-columns:1fr 1fr;align-items:start;}
+  .footer__disclaimer{grid-column:1/-1;}
+}
+@media (min-width:900px){
+  .hero__grid{grid-template-columns:1.02fr 0.98fr;}
+  .unghie__grid{grid-template-columns:1fr 1fr;}
+}
+/* Below 1280px the signature lives as the in-hero strip;
+   at >=1280px there is enough side margin for the persistent
+   vertical rail without overlapping the container. No gap between. */
+@media (min-width:1280px){
+  .swatchstrip{display:none;}
+  .swatchrail{display:flex;}
+}
+
+/* mobile nav + action bar */
+@media (max-width:899px){
+  .nav__toggle{display:inline-flex;}
+  .nav__links,.nav__cta{
+    display:none;
+  }
+  .nav[data-open="true"] .nav__links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;
+    position:absolute;left:0;right:0;top:100%;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:1rem var(--container);padding-inline:max(4vw,1rem);
+    width:100%;
+  }
+  .nav[data-open="true"] .nav__links li{width:100%;}
+  .nav[data-open="true"] .nav__links a{display:block;padding:.7rem 0;width:100%;font-size:1rem;}
+  .actionbar{display:flex;}
+  body{padding-bottom:76px;}   /* room for sticky bar */
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<header class="site-header">
+  <nav class="nav" id="nav" data-open="false" aria-label="Navigazione principale">
+    <a class="nav__brand wordmark" href="#top">One&nbsp;<em>Nail</em>&nbsp;Studio<span class="wm-tack" aria-hidden="true"></span></a>
+    <ul class="nav__links" id="navlinks">
+      <li><a href="#metodo">Metodo</a></li>
+      <li><a href="#unghie">Unghie</a></li>
+      <li><a href="#ciglia">Ciglia &amp; viso</a></li>
+      <li><a href="#epilazione">Epilazione</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#dove">Dove siamo</a></li>
+    </ul>
+    <a class="nav__cta" data-cta href="tel:+393517814107"><span class="tacca" aria-hidden="true"></span>Chiama</a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navlinks" aria-label="Apri il menu">
+      <span aria-hidden="true"></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Swatch rail: the campionario index, load-bearing across sections -->
+<nav class="swatchrail" aria-label="Indice trattamenti">
+  <span class="swatchrail__label">Campionario</span>
+  <a class="swatchrail__tick" style="--tick:color-mix(in srgb,var(--brand-accent) 16%,var(--brand-surface))" href="#metodo"><span class="sr-name">Il metodo</span></a>
+  <a class="swatchrail__tick" style="--tick:color-mix(in srgb,var(--brand-accent) 30%,var(--brand-surface))" href="#unghie"><span class="sr-name">Unghie</span></a>
+  <a class="swatchrail__tick" style="--tick:color-mix(in srgb,var(--brand-accent) 46%,var(--brand-surface))" href="#ciglia"><span class="sr-name">Ciglia &amp; viso</span></a>
+  <a class="swatchrail__tick" style="--tick:color-mix(in srgb,var(--brand-accent) 62%,var(--brand-surface))" href="#epilazione"><span class="sr-name">Epilazione</span></a>
+  <a class="swatchrail__tick" style="--tick:color-mix(in srgb,var(--brand-accent) 78%,var(--brand-surface))" href="#team"><span class="sr-name">Il team</span></a>
+  <a class="swatchrail__tick" style="--tick:color-mix(in srgb,var(--brand-accent) 90%,var(--brand-surface))" href="#dove"><span class="sr-name">Dove siamo</span></a>
+  <a class="swatchrail__tick" style="--tick:var(--brand-accent)" href="#prenota"><span class="sr-name">Prenota</span></a>
+</nav>
+
+<main id="main">
+
+  <!-- ============ COPERTINA ============ -->
+  <section class="hero container" id="top" aria-labelledby="wm">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="tacca" aria-hidden="true"></span>Studio di bellezza · Zona 7, Milano</p>
+        <h1 class="wordmark hero__title" id="wm">One&nbsp;<em>Nail</em>&nbsp;Studio<span class="wm-tack" aria-hidden="true"></span></h1>
+        <p class="hero__lede">Unghie, ciglia ed epilazione curate, nel tuo quartiere.</p>
+        <p class="hero__sub">Non scegli da un menu. Costruiamo la seduta con te, tra oltre 30 trattamenti. Aperto senza pausa, dalle 09 alle 21.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" data-cta href="tel:+393517814107"><span class="tacca" aria-hidden="true"></span>Chiama per prenotare</a>
+          <a class="btn btn--ghost" href="#metodo">Scopri il metodo</a>
+        </div>
+        <p class="hero__phone">Al telefono ti rispondiamo noi: <a href="tel:+393517814107">+39 351 781 4107</a></p>
+        <ul class="trust">
+          <li><span class="tacca" aria-hidden="true"></span>Orario continuato <b>09–21</b></li>
+          <li><span class="tacca" aria-hidden="true"></span><b>30+</b> trattamenti su misura</li>
+          <li><span class="tacca" aria-hidden="true"></span><b>2 min</b> dalla fermata della 67</li>
+        </ul>
+
+        <!-- deliberate mobile form of the signature swatch rail -->
+        <ul class="swatchstrip" aria-label="Indice trattamenti">
+          <li><a style="--tick:color-mix(in srgb,var(--brand-accent) 16%,var(--brand-surface))" href="#metodo" aria-label="Vai a Il metodo"></a></li>
+          <li><a style="--tick:color-mix(in srgb,var(--brand-accent) 30%,var(--brand-surface))" href="#unghie" aria-label="Vai a Unghie"></a></li>
+          <li><a style="--tick:color-mix(in srgb,var(--brand-accent) 46%,var(--brand-surface))" href="#ciglia" aria-label="Vai a Ciglia e viso"></a></li>
+          <li><a style="--tick:color-mix(in srgb,var(--brand-accent) 62%,var(--brand-surface))" href="#epilazione" aria-label="Vai a Epilazione"></a></li>
+          <li><a style="--tick:color-mix(in srgb,var(--brand-accent) 78%,var(--brand-surface))" href="#team" aria-label="Vai a Il team"></a></li>
+          <li><a style="--tick:color-mix(in srgb,var(--brand-accent) 90%,var(--brand-surface))" href="#dove" aria-label="Vai a Dove siamo"></a></li>
+          <li><a style="--tick:var(--brand-accent)" href="#prenota" aria-label="Vai a Prenota"></a></li>
+        </ul>
+        <p class="swatchstrip__caption">Il campionario — sfoglia le famiglie di trattamento</p>
+      </div>
+
+      <div class="hero__media">
+        <div class="hero__frame">
+          <img class="m-main" src="assets/hero-hands.png" alt="Mani durante l'applicazione dello smalto gel su un'unghia curata alla postazione dello studio" width="1691" height="951" fetchpriority="high">
+          <img class="m-detail" src="assets/hero-swatch-detail.png" alt="Ventaglio di campioni-colore in gel su tonalità nude e rosa accanto a un pennello" width="1536" height="1024">
+        </div>
+        <p class="hero__cap"><span class="tacca" aria-hidden="true"></span>Dal rosa cipria al rosa profondo — il nostro campionario</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL METODO ============ -->
+  <section class="section metodo" id="metodo" aria-labelledby="metodo-h">
+    <div class="container">
+      <div class="metodo__head rvg">
+        <p class="eyebrow"><span class="num">01</span><span class="tacca" aria-hidden="true"></span>Il metodo</p>
+        <h2 id="metodo-h"><span class="mask-line">Come costruiamo la seduta, con te.</span></h2>
+        <p>Il nostro differenziatore non è un listino più lungo. È il modo in cui ci arriviamo: una consulenza, non una spunta di caselle. Tre passi, ogni volta.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__n">01</span>
+          <h3>Ascoltiamo</h3>
+          <p>Ci racconti cosa ti serve e cosa ti piace. Partiamo da lì, non da un menu.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__n">02</span>
+          <h3>Proponiamo</h3>
+          <p>Ti guidiamo tra oltre 30 trattamenti di unghie, ciglia ed epilazione. Ti diciamo cosa ha senso, con chiarezza.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__n">03</span>
+          <h3>Costruiamo su misura</h3>
+          <p>Mettiamo insieme la seduta giusta per te. Tecnica, tempi e cura, decisi insieme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ UNGHIE ============ -->
+  <section class="section section--roomy unghie" id="unghie" aria-labelledby="unghie-h">
+    <div class="container">
+      <div class="unghie__grid">
+        <div class="craftspread reveal--media">
+          <span class="tacca cs-corner" aria-hidden="true"></span>
+          <img class="cs-main" src="assets/listino-workstation.png" alt="Postazione unghie ordinata con smalti gel, pennelli e strumenti pronti" width="1536" height="1024">
+          <img class="cs-detail" src="assets/craft-gel-macro.png" alt="Macro di un'unghia in gel appena rifinita, dettaglio della superficie e della cuticola pulita" width="1536" height="1024">
+        </div>
+        <div class="unghie__head rvg">
+          <p class="eyebrow"><span class="num">02</span><span class="tacca" aria-hidden="true"></span>Unghie</p>
+          <h2 id="unghie-h"><span class="mask-line">La nostra specialità: le unghie.</span></h2>
+          <p>Ricostruzione e semipermanente sono il mestiere di tutti i giorni. Lavoro pulito, tenuta lunga, forma su misura. Ecco le voci principali della famiglia unghie.</p>
+          <ul class="listino">
+            <li>
+              <span class="tacca" aria-hidden="true"></span>
+              <div>
+                <div class="listino__name">Ricostruzione gel</div>
+                <div class="listino__desc">Costruzione della struttura in gel. Forma e lunghezza decise con te.</div>
+                <div class="listino__meta">Tecnica · gel &nbsp;/&nbsp; Mani</div>
+              </div>
+            </li>
+            <li>
+              <span class="tacca" aria-hidden="true"></span>
+              <div>
+                <div class="listino__name">Refill gel</div>
+                <div class="listino__desc">Il mantenimento della ricostruzione, a intervalli regolari.</div>
+                <div class="listino__meta">Tecnica · gel &nbsp;/&nbsp; Mani</div>
+              </div>
+            </li>
+            <li>
+              <span class="tacca" aria-hidden="true"></span>
+              <div>
+                <div class="listino__name">Manicure semipermanente</div>
+                <div class="listino__desc">Cura della mano e colore che dura. Mani in ordine, a lungo.</div>
+                <div class="listino__meta">Tecnica · semipermanente &nbsp;/&nbsp; Mani</div>
+              </div>
+            </li>
+            <li>
+              <span class="tacca" aria-hidden="true"></span>
+              <div>
+                <div class="listino__name">Pedicure semipermanente</div>
+                <div class="listino__desc">Piedi curati e colore resistente, per la stagione dei sandali e non solo.</div>
+                <div class="listino__meta">Tecnica · semipermanente &nbsp;/&nbsp; Piedi</div>
+              </div>
+            </li>
+            <li>
+              <span class="tacca" aria-hidden="true"></span>
+              <div>
+                <div class="listino__name">Copertura in gel</div>
+                <div class="listino__desc">Rinforzo dell'unghia naturale con una copertura protettiva.</div>
+                <div class="listino__meta">Tecnica · gel &nbsp;/&nbsp; Mani</div>
+              </div>
+            </li>
+          </ul>
+          <p class="note">Durata e prezzo li definiamo su misura, in base al servizio: te li confermiamo in studio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CIGLIA & VISO ============ -->
+  <section class="section section--tight ciglia" id="ciglia" aria-labelledby="ciglia-h">
+    <div class="container">
+      <div class="ciglia__grid">
+        <div class="ciglia__text rvg">
+          <p class="eyebrow"><span class="num">03</span><span class="tacca" aria-hidden="true"></span>Ciglia &amp; viso</p>
+          <h2 id="ciglia-h"><span class="mask-line">Uno sguardo curato, da vicino.</span></h2>
+          <p>Il lavoro ravvicinato è la parte che facciamo con più attenzione. Precisione, mano ferma, risultato naturale.</p>
+          <ul class="minilist">
+            <li><span class="tacca" aria-hidden="true"></span><div><b>Laminazione ciglia</b><span>Piega e definizione delle ciglia naturali, effetto pettinato verso l'alto.</span></div></li>
+            <li><span class="tacca" aria-hidden="true"></span><div><b>Extension ciglia</b><span>Applicazione ciglia a ciglia, per volume e lunghezza su misura.</span></div></li>
+            <li><span class="tacca" aria-hidden="true"></span><div><b>Pulizia viso</b><span>Detersione profonda e pelle più liscia, con prodotti adatti alla tua.</span></div></li>
+          </ul>
+        </div>
+        <div class="ciglia__img reveal--media">
+          <img src="assets/lash-lamination.png" alt="Laminazione ciglia in corso, le mani dell'operatrice pettinano le ciglia verso l'alto" width="1536" height="1024">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EPILAZIONE & BENESSERE ============ -->
+  <section class="section section--tight epil" id="epilazione" aria-labelledby="epil-h">
+    <div class="container">
+      <div class="epil__grid">
+        <div class="epil__img reveal--media">
+          <img src="assets/epilazione-detail.png" alt="Dettaglio pulito della postazione epilazione: vaschetta della cera, spatola e strisce pronte" width="1536" height="1024">
+        </div>
+        <div class="epil__text rvg">
+          <p class="eyebrow"><span class="num">04</span><span class="tacca" aria-hidden="true"></span>Epilazione &amp; benessere</p>
+          <h2 id="epil-h"><span class="mask-line">Un unico indirizzo, per tutto.</span></h2>
+          <p>Epilazione a cera per ogni area, più la cura dei piedi. Igiene prima di tutto, gesto rapido e pulito.</p>
+          <ul class="areas">
+            <li><span class="tacca" aria-hidden="true"></span>Gambe</li>
+            <li><span class="tacca" aria-hidden="true"></span>Braccia</li>
+            <li><span class="tacca" aria-hidden="true"></span>Viso</li>
+            <li><span class="tacca" aria-hidden="true"></span>Ascelle</li>
+            <li><span class="tacca" aria-hidden="true"></span>Inguine</li>
+            <li><span class="tacca" aria-hidden="true"></span>Schiena (uomo)</li>
+          </ul>
+          <ul class="epil__extra">
+            <li>Pedicure curativa, per piedi in ordine</li>
+            <li>Massaggio rilassante piedi, a fine seduta</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IL TEAM ============ -->
+  <section class="section team" id="team" aria-labelledby="team-h">
+    <div class="container">
+      <div class="team__grid">
+        <div class="team__img reveal--media">
+          <span class="tacca" aria-hidden="true"></span>
+          <img src="assets/studio-interior.png" alt="Interno luminoso e accogliente dello studio con postazioni manicure ordinate e grande finestra" width="1792" height="896">
+        </div>
+        <div class="team__text rvg">
+          <p class="eyebrow"><span class="num">05</span><span class="tacca" aria-hidden="true"></span>Il team</p>
+          <h2 id="team-h"><span class="mask-line">Le persone che ti guidano.</span></h2>
+          <p>Siamo uno studio di quartiere, in Zona 7. Conosciamo chi entra e chi torna.</p>
+          <p>Il nostro lavoro comincia prima dello smalto e della cera: ascoltare e consigliare. Nessuna fretta, nessun menu da spuntare. La scelta la costruiamo insieme, tra oltre 30 trattamenti.</p>
+          <p>È così che, in due minuti, capisci quale trattamento fa per te — e lo prenoti sapendo esattamente cosa aspettarti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOVE SIAMO ============ -->
+  <section class="section dove" id="dove" aria-labelledby="dove-h">
+    <div class="container">
+      <div class="dove__grid">
+        <div class="dove__text rvg">
+          <p class="eyebrow"><span class="num">06</span><span class="tacca" aria-hidden="true"></span>Dove siamo</p>
+          <h2 id="dove-h"><span class="mask-line">Ci trovi qui, in Zona 7.</span></h2>
+          <p>A due minuti a piedi dalla fermata della 67. Vieni dopo il lavoro o prima di rientrare: siamo aperti senza pausa, dalle 09 alle 21.</p>
+        </div>
+        <div class="addr-card reveal">
+          <dl>
+            <div>
+              <dt>Indirizzo</dt>
+              <dd>Via delle Forze Armate, 43<br>20147 Milano (MI)</dd>
+            </div>
+            <div>
+              <dt>Orario</dt>
+              <dd>Orario continuato, <span class="accent-num">09–21</span></dd>
+            </div>
+            <div>
+              <dt>Telefono</dt>
+              <dd><a href="tel:+393517814107">+39 351 781 4107</a></dd>
+            </div>
+          </dl>
+          <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=One+Nail+Studio%2C+Milano" target="_blank" rel="noopener"><span class="tacca" aria-hidden="true"></span>Apri in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRENOTA ============ -->
+  <section class="section prenota" id="prenota" aria-labelledby="prenota-h">
+    <div class="container prenota__inner rvg">
+      <p class="eyebrow" style="justify-content:center"><span class="num">07</span><span class="tacca" aria-hidden="true"></span>Prenota</p>
+      <h2 id="prenota-h"><span class="mask-line">Prenotiamo insieme la tua seduta.</span></h2>
+      <p>Chiamaci: sentiamo di cosa hai bisogno e troviamo lo spazio giusto, tra le 09 e le 21. La scelta iniziata nel metodo, la chiudiamo al telefono.</p>
+      <div class="prenota__actions">
+        <a class="btn btn--primary" data-cta href="tel:+393517814107"><span class="tacca" aria-hidden="true"></span>Chiama per prenotare</a>
+        <p class="prenota__num"><a href="tel:+393517814107">+39 351 781 4107</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <span class="wordmark">One&nbsp;<em>Nail</em>&nbsp;Studio<span class="wm-tack" aria-hidden="true"></span></span>
+      <p class="footer__meta" style="margin-top:1rem">Studio di bellezza, Zona 7 — Milano</p>
+    </div>
+    <div class="footer__meta">
+      Via delle Forze Armate, 43 — 20147 Milano (MI)<br>
+      Orario continuato 09–21<br>
+      <a href="tel:+393517814107">+39 351 781 4107</a><br>
+      <a href="https://www.google.com/maps/search/?api=1&query=One+Nail+Studio%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+    </div>
+    <p class="footer__disclaimer">Durata, prezzi e giorni di apertura vanno confermati in studio: le informazioni in pagina sono indicative e verranno riviste insieme allo studio. © One Nail Studio.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile action bar -->
+<div class="actionbar" aria-hidden="false">
+  <div class="actionbar__info"><b>Aperto 09–21</b>Zona 7, Milano</div>
+  <a class="btn btn--primary" data-cta href="tel:+393517814107"><span class="tacca" aria-hidden="true"></span>Chiama</a>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Mobile nav toggle ----
+  var nav=document.getElementById('nav');
+  var toggle=document.getElementById('navToggle');
+  var links=document.getElementById('navlinks');
+  function setOpen(open){
+    nav.setAttribute('data-open',open?'true':'false');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+  }
+  toggle.addEventListener('click',function(){
+    setOpen(nav.getAttribute('data-open')!=='true');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&nav.getAttribute('data-open')==='true'){setOpen(false);toggle.focus();}
+  });
+
+  // ---- Active-section highlight: swatch ring + nav underline ----
+  var map=['metodo','unghie','ciglia','epilazione','team','dove','prenota'];
+  var railTicks=document.querySelectorAll('.swatchrail__tick');
+  var stripTicks=document.querySelectorAll('.swatchstrip a');
+  var navA={};
+  document.querySelectorAll('.nav__links a').forEach(function(a){
+    navA[a.getAttribute('href').slice(1)]=a;
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var id=en.target.id;
+        map.forEach(function(mid,i){
+          var on=mid===id;
+          if(railTicks[i]) railTicks[i].classList.toggle('is-active',on);
+          if(navA[mid]) navA[mid].classList.toggle('is-active',on);
+        });
+      });
+    },{rootMargin:'-45% 0px -45% 0px'});
+    map.forEach(function(mid){var el=document.getElementById(mid);if(el)io.observe(el);});
+  }
+
+  // ---- Scroll reveals (role-varied) + hero entrance ----
+  var reveals=document.querySelectorAll('.reveal,.reveal--media,.rvg');
+  var hero=document.querySelector('.hero');
+  if(rm || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){el.classList.add('is-in');});
+    if(hero) hero.classList.add('is-lit');
+  }else{
+    var ro=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('is-in');ro.unobserve(en.target);}
+      });
+    },{rootMargin:'0px 0px -12% 0px'});
+    reveals.forEach(function(el){ro.observe(el);});
+    if(hero) requestAnimationFrame(function(){hero.classList.add('is-lit');});
+  }
+
+  // ---- Scroll-linked craft: moment 4 (swatch fill) + moment 5 (parallax) ----
+  //      one rAF-batched handler, transform/opacity only, disabled under reduced motion
+  if(!rm){
+    var secEls=map.map(function(mid){return document.getElementById(mid);});
+    var craft=document.querySelector('.craftspread');
+    var csMain=craft&&craft.querySelector('.cs-main');
+    var csDetail=craft&&craft.querySelector('.cs-detail');
+    var doParallax=window.matchMedia('(pointer:fine)').matches && window.innerWidth>=900;
+    var ticking=false;
+    function frame(){
+      ticking=false;
+      var vh=window.innerHeight||1, midY=window.pageYOffset+vh*0.5;
+      for(var i=0;i<secEls.length;i++){
+        var el=secEls[i]; if(!el) continue;
+        var r=el.getBoundingClientRect();
+        var top=r.top+window.pageYOffset, h=r.height||1;
+        var p=(midY-top)/h; p=p<0?0:(p>1?1:p);
+        var v=p.toFixed(3);
+        if(railTicks[i]) railTicks[i].style.setProperty('--p',v);
+        if(stripTicks[i]) stripTicks[i].style.setProperty('--p',v);
+      }
+      if(doParallax&&craft){
+        var cr=craft.getBoundingClientRect();
+        var off=(cr.top+cr.height/2-vh/2)/vh; off=off<-1?-1:(off>1?1:off);
+        if(csMain) csMain.style.transform='translateY('+(off*-14).toFixed(1)+'px)';
+        if(csDetail) csDetail.style.transform='translateY('+(off*22).toFixed(1)+'px)';
+      }
+    }
+    function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll,{passive:true});
+    frame();
+  }
+})();
+</script>
+</body>
+</html>

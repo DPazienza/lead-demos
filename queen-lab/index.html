@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queen lab · Parrucchiere e colore su misura a Milano (Turro–Palmanova)</title>
+<meta name="description" content="Balayage e colore su misura a Milano, in Via Palmanova. Leggiamo la tua base e azzecchiamo il colore, anche su capelli difficili. 4,9 su 174 recensioni. Chiama per prenotare.">
+<link rel="canonical" href="https://www.queenlab.it/">
+
+<meta property="og:title" content="Queen lab · Colore su misura a Milano">
+<meta property="og:description" content="Balayage e colore dipinti a mano, ciocca per ciocca, anche su basi difficili. Via Palmanova 54, Milano. 4,9 su 174 recensioni.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-balayage-sweep.jpg">
+<meta property="og:url" content="https://www.queenlab.it/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Queen lab",
+  "description": "Parrucchiere a Milano specializzato in colore e balayage su misura, anche su basi difficili. Accoglie adulti e bambini.",
+  "image": "assets/hero-balayage-sweep.jpg",
+  "url": "https://www.queenlab.it/",
+  "telephone": "+39 339 8178407",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Palmanova, 54",
+    "postalCode": "20132",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "174"
+  }
+}
+</script>
+
+<style>
+:root{
+  /* brand tokens — defined once */
+  --brand-ink:#241A14;
+  --brand-surface:#F5EFE6;
+  --brand-surface-alt:#EDE4D6;
+  --brand-accent:#A85A24;
+  --brand-accent-ink:#FBF6EF;
+  --brand-muted:#6A5647;
+  --brand-line:#E2D8C8;
+
+  --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.33,1,0.68,1);
+  --dur-reveal:900ms;
+  --dur-micro:220ms;
+  --stagger:90ms;
+
+  --space-section:clamp(4.5rem, 3rem + 8vw, 9rem);
+  --container:min(1180px, 92vw);
+  --radius:3px;
+
+  --fs-hero:clamp(2.6rem, 1.55rem + 4.7vw, 5.3rem);
+  --fs-h2:clamp(1.7rem, 1.3rem + 1.8vw, 2.9rem);
+  --fs-body:clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+
+  --rail-w:264px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+  text-rendering:optimizeLegibility;
+  position:relative;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+p{overflow-wrap:anywhere;max-width:66ch;text-wrap:pretty;}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:-0.025em;line-height:1.05;font-weight:600;margin:0;text-wrap:balance;}
+h2{font-size:var(--fs-h2);}
+
+:focus-visible{outline:3px solid var(--brand-accent);outline-offset:3px;border-radius:2px;}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+/* fine grain — inline SVG turbulence, never a drawn scene; unifies the whole page as one warm surface */
+body::after{
+  content:"";
+  position:fixed;inset:0;z-index:70;pointer-events:none;
+  opacity:.045;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- motif: il colpo di pennello ---------- */
+.motif{display:inline-block;color:var(--brand-accent);fill:currentColor;}
+.wm-brush,.marker,.hero-stroke,.hero-sweep-m,.l-mark{fill:currentColor;}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.74rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--brand-muted);
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin:0 0 1.1rem;
+}
+.eyebrow .motif{width:52px;height:11px;flex:none;}
+
+/* ---------- wordmark logotype ---------- */
+.wordmark{
+  font-family:var(--font-display);
+  font-weight:400;
+  letter-spacing:-0.03em;
+  text-decoration:none;
+  display:inline-block;
+  line-height:1;
+}
+.wordmark .wm-queen{font-style:normal;}
+.wordmark .wm-lab{
+  font-style:italic;
+  font-weight:500;
+  position:relative;
+  padding-bottom:.06em;
+}
+.wordmark .wm-lab .wm-brush{
+  position:absolute;
+  left:-4%;
+  right:-8%;
+  bottom:-0.14em;
+  width:112%;
+  height:.34em;
+  color:var(--brand-accent);
+}
+
+/* ---------- layout shell ---------- */
+.layout{
+  display:grid;
+  grid-template-columns:var(--rail-w) 1fr;
+  min-height:100vh;
+}
+
+/* ---------- rail / index ---------- */
+.rail{
+  border-right:1px solid var(--brand-line);
+  background:var(--brand-surface);
+}
+.rail-inner{
+  position:sticky;
+  top:0;
+  max-height:100vh;
+  overflow:auto;
+  padding:1.9rem 1.5rem 1.6rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.4rem;
+}
+.rail-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.rail .wordmark{font-size:1.5rem;color:var(--brand-ink);}
+.rail-tag{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brand-muted);margin:.5rem 0 0;
+}
+.nav-toggle{
+  display:none;
+  font-family:var(--font-body);font-weight:600;font-size:.72rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--brand-line);
+  color:var(--brand-ink);border-radius:var(--radius);
+  padding:.55rem .8rem;cursor:pointer;
+}
+
+.rail-nav{display:flex;flex-direction:column;gap:1.35rem;}
+.index-label{
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--brand-muted);margin:0 0 .2rem;
+}
+.index{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+.index li{position:relative;}
+.index a{
+  text-decoration:none;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:baseline;
+  gap:.55rem;
+  padding:.55rem 0 .55rem 1.4rem;
+  border-top:1px solid var(--brand-line);
+}
+.index li:last-child a{border-bottom:1px solid var(--brand-line);}
+.index .num{font-size:.72rem;color:var(--brand-muted);font-variant-numeric:tabular-nums;}
+.index .svc{font-family:var(--font-display);font-size:1.02rem;letter-spacing:-0.02em;}
+.index .prc{font-size:.8rem;color:var(--brand-accent);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.index li[aria-current="true"] .marker{
+  position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:20px;height:9px;color:var(--brand-accent);
+}
+.index li[aria-current="true"] .svc{color:var(--brand-accent);}
+
+.section-nav{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.2rem 1rem;}
+.section-nav a{
+  text-decoration:none;color:var(--brand-muted);
+  font-size:.82rem;padding:.2rem 0;
+  border-bottom:1px solid transparent;transition:color var(--dur-micro) var(--ease-micro);
+}
+.section-nav a:hover{color:var(--brand-ink);}
+
+.btn{
+  font-family:var(--font-body);font-weight:600;
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  text-decoration:none;cursor:pointer;border-radius:var(--radius);
+  padding:.85rem 1.25rem;font-size:.95rem;line-height:1;
+  transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-micro);
+}
+.btn-accent{background:var(--brand-accent);color:var(--brand-accent-ink);border:1px solid var(--brand-accent);}
+.btn-accent:hover{transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--brand-ink);border:1px solid var(--brand-ink);}
+.btn-ghost:hover{transform:translateY(-2px);}
+.btn-block{width:100%;}
+
+.rail-cta{display:flex;flex-direction:column;gap:.55rem;margin-top:.2rem;}
+.rail-phone{font-size:.85rem;color:var(--brand-muted);text-align:center;font-variant-numeric:tabular-nums;}
+.rail-phone a{color:var(--brand-ink);text-decoration:none;font-weight:600;}
+.rail-proof{
+  display:flex;align-items:center;gap:.5rem;justify-content:center;
+  font-size:.82rem;color:var(--brand-muted);margin:0;
+}
+.rail-proof strong{color:var(--brand-ink);font-weight:600;}
+
+/* ---------- stars ---------- */
+.stars{position:relative;display:inline-block;line-height:0;vertical-align:middle;}
+.stars .star-row{display:inline-flex;}
+.stars .star-row svg{width:15px;height:15px;}
+.stars .star-empty svg{color:var(--brand-line);fill:currentColor;}
+.stars .star-full{
+  position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap;
+}
+.stars .star-full svg{color:var(--brand-ink);fill:currentColor;}
+
+/* ---------- main + sections ---------- */
+main{min-width:0;}
+.section{
+  padding-block:var(--space-section);
+  padding-inline:clamp(1.25rem, 4vw, 4rem);
+}
+.section-alt{background:var(--brand-surface-alt);}
+.measure{max-width:62ch;}
+.lede{font-size:clamp(1.1rem,1rem + .6vw,1.4rem);color:var(--brand-ink);}
+.muted{color:var(--brand-muted);}
+
+/* uneven rhythm as pacing: people + kids sit tighter, listino breathes the most */
+#mani,#piccoli{padding-block:clamp(3.2rem, 2.3rem + 4.2vw, 5.8rem);}
+#listino{padding-block:clamp(5.5rem, 3.6rem + 10vw, 10.5rem);}
+
+/* shared warm photo grade — token-only overlay so the whole shoot reads as one, no new hue */
+.hero-photo,.method-figure,.gallery figure,.photo-wrap,.dove-photo,.hero-companion{position:relative;}
+.hero-photo img,.method-figure img,.gallery img,.photo-wrap img,.dove-photo img,.hero-companion img{
+  filter:saturate(1.04) contrast(1.03);
+}
+.hero-photo::after,.method-figure::after,.gallery figure::after,
+.photo-wrap::after,.dove-photo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:color-mix(in srgb, var(--brand-accent) 7%, transparent);
+  mix-blend-mode:multiply;
+}
+.photo-wrap{overflow:clip;}
+.photo-wrap img{width:100%;height:100%;display:block;}
+.people-photo{aspect-ratio:5/4;}
+.kids-photo{aspect-ratio:4/3;}
+.photo-wrap.people-photo,.photo-wrap.kids-photo{border-radius:var(--radius);}
+.photo-wrap.people-photo img,.photo-wrap.kids-photo img{object-fit:cover;border-radius:var(--radius);}
+
+/* ---------- HERO (wow: il colpo di pennello) ---------- */
+.hero{
+  position:relative;
+  overflow:clip;
+  min-height:88vh;
+  display:flex;
+  align-items:flex-end;
+  padding:clamp(1.5rem,4vw,4rem);
+  isolation:isolate;
+}
+.hero-photo{position:absolute;inset:0;z-index:-3;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 42%;}
+.hero-scrim{
+  position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(180deg,
+     color-mix(in srgb, var(--brand-ink) 12%, transparent) 0%,
+     color-mix(in srgb, var(--brand-ink) 4%, transparent) 40%,
+     color-mix(in srgb, var(--brand-ink) 62%, transparent) 100%);
+}
+/* oversized signature brushstroke */
+.hero-stroke{
+  position:absolute;z-index:-1;
+  left:-8%;right:-12%;top:34%;
+  width:120%;height:46%;
+  color:var(--brand-accent);
+  filter:drop-shadow(0 12px 30px color-mix(in srgb, var(--brand-ink) 35%, transparent));
+  pointer-events:none;
+}
+.hero-stroke path{
+  clip-path:inset(0 0 0 0);
+  animation:brush-draw var(--dur-reveal) var(--ease-signature) both;
+}
+@keyframes brush-draw{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0 0 0 0);}}
+.hero-sweep-m{display:none;}
+
+.hero-companion{
+  position:absolute;top:8%;right:clamp(1rem,4vw,3.5rem);z-index:1;
+  width:clamp(120px,18vw,230px);
+  border:5px solid var(--brand-surface);
+  border-radius:var(--radius);
+  box-shadow:0 16px 40px color-mix(in srgb, var(--brand-ink) 30%, transparent);
+  transform:rotate(2.5deg);
+}
+.hero-companion img{aspect-ratio:1/1;object-fit:cover;}
+
+.hero-inner{position:relative;z-index:2;max-width:760px;}
+.hero-eyebrow{color:var(--brand-accent-ink);}
+.hero-eyebrow .motif{color:var(--brand-accent);}
+.hero .wordmark{
+  font-size:var(--fs-hero);
+  color:var(--brand-accent-ink);
+  margin:0 0 .6rem;
+  text-shadow:0 4px 24px color-mix(in srgb, var(--brand-ink) 45%, transparent);
+}
+.hero .wordmark .wm-lab .wm-brush{color:var(--brand-surface);opacity:.9;}
+.hero-lede{
+  font-family:var(--font-display);font-weight:500;font-style:italic;
+  font-size:clamp(1.3rem,1rem + 1.6vw,2.1rem);
+  color:var(--brand-accent-ink);
+  line-height:1.15;margin:0 0 .8rem;max-width:20ch;
+}
+.hero-sub{color:var(--brand-accent-ink);max-width:44ch;margin:0 0 1.6rem;opacity:.94;}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;}
+.hero-actions .btn-accent{padding:1rem 1.6rem;font-size:1rem;}
+.hero-proof{display:flex;align-items:center;gap:.55rem;color:var(--brand-accent-ink);font-size:.9rem;}
+.hero-proof .stars .star-empty svg{color:color-mix(in srgb,var(--brand-accent-ink) 45%, transparent);}
+.hero-proof .stars .star-full svg{color:var(--brand-accent-ink);}
+.hero-phone{display:block;color:var(--brand-accent-ink);font-weight:600;font-size:1rem;margin-top:.9rem;font-variant-numeric:tabular-nums;}
+.hero-phone .lbl{font-weight:400;opacity:.85;font-size:.85rem;}
+
+/* ---------- metodo ---------- */
+.method-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(1.5rem,4vw,3.5rem);align-items:center;
+}
+.method-figure{position:relative;}
+.method-figure .main{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover;}
+.method-figure .detail{
+  position:absolute;right:-6%;bottom:-12%;
+  width:46%;aspect-ratio:1/1;object-fit:cover;
+  border:6px solid var(--brand-surface);border-radius:var(--radius);
+  box-shadow:0 16px 40px color-mix(in srgb, var(--brand-ink) 22%, transparent);
+}
+.steps{list-style:none;margin:1.6rem 0 0;padding:0;display:flex;flex-direction:column;gap:1.1rem;}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;}
+.steps .step-n{
+  font-family:var(--font-display);font-style:italic;color:var(--brand-accent);
+  font-size:1.3rem;font-weight:500;
+}
+.steps h3{font-size:1.12rem;margin:0 0 .15rem;}
+.steps p{margin:0;color:var(--brand-muted);font-size:.98rem;}
+
+/* ---------- lavoro / gallery ---------- */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(.9rem,2vw,1.6rem);
+  margin-top:2.2rem;
+}
+.gallery figure{margin:0;position:relative;}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius);}
+.g-main{grid-column:1 / 8;grid-row:1 / 3;}
+.g-main img{aspect-ratio:3/4;}
+.g-tall{grid-column:8 / 13;grid-row:1 / 2;}
+.g-tall img{aspect-ratio:4/5;}
+.g-wide{grid-column:8 / 13;grid-row:2 / 3;align-self:end;transform:translateX(-14%);}
+.g-wide img{aspect-ratio:4/3;}
+.gallery figcaption{
+  font-size:.8rem;color:var(--brand-muted);margin-top:.5rem;
+}
+
+/* ---------- le mani + proof ---------- */
+.people-grid{
+  display:grid;grid-template-columns:.95fr 1.05fr;
+  gap:clamp(1.5rem,4vw,3.5rem);align-items:center;
+}
+.people-grid .photo-wrap{width:100%;}
+.name-hl{
+  position:relative;font-style:italic;white-space:nowrap;
+  background:linear-gradient(120deg,
+     color-mix(in srgb,var(--brand-accent) 26%, transparent),
+     color-mix(in srgb,var(--brand-accent) 26%, transparent));
+  background-repeat:no-repeat;
+  background-size:100% .42em;background-position:0 82%;
+  padding:0 .05em;
+}
+.proof{
+  margin-top:2.4rem;
+  border-top:1px solid var(--brand-line);
+  padding-top:1.8rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem 2.6rem;
+}
+.proof-score{display:flex;align-items:baseline;gap:.5rem;}
+.proof-score .big{font-family:var(--font-display);font-size:3.4rem;line-height:.9;font-weight:600;font-variant-numeric:tabular-nums;}
+.proof-score .out{color:var(--brand-muted);font-size:1rem;}
+.proof-meta{max-width:40ch;}
+.proof-meta .stars{margin-bottom:.35rem;}
+.proof-meta p{margin:.2rem 0 0;color:var(--brand-muted);font-size:.92rem;}
+.proof-meta .src{font-weight:600;color:var(--brand-ink);}
+
+/* ---------- kids ---------- */
+.kids-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(1.5rem,4vw,3.5rem);align-items:center;
+}
+.kids-grid .photo-wrap{width:100%;}
+.kids-note{
+  margin-top:1.4rem;padding:1rem 1.2rem;border-left:3px solid var(--brand-accent);
+  background:color-mix(in srgb,var(--brand-accent) 6%, transparent);
+  color:var(--brand-ink);font-size:.98rem;
+}
+
+/* ---------- listino ---------- */
+.listino{list-style:none;margin:2rem 0 0;padding:0;}
+.listino li{
+  display:grid;grid-template-columns:auto 1fr auto;
+  align-items:baseline;gap:.7rem 1rem;
+  padding:1.05rem 0;border-top:1px solid var(--brand-line);
+}
+.listino li:last-child{border-bottom:1px solid var(--brand-line);}
+.listino .l-mark{width:26px;height:11px;color:var(--brand-accent);align-self:center;}
+.listino h3{font-size:1.2rem;font-weight:500;}
+.listino .l-desc{grid-column:2;color:var(--brand-muted);font-size:.9rem;margin-top:.2rem;}
+.listino .l-price{
+  font-family:var(--font-display);font-weight:600;font-size:1.15rem;
+  color:var(--brand-accent);white-space:nowrap;position:relative;
+  font-variant-numeric:tabular-nums;
+  transition:transform var(--dur-micro) var(--ease-micro);
+}
+.listino li:hover .l-price,.listino li:focus-within .l-price{transform:translateY(-2px);}
+.fineprint{margin-top:1.4rem;font-size:.82rem;color:var(--brand-muted);}
+
+/* ---------- dove siamo ---------- */
+.dove-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(1.5rem,4vw,3.5rem);align-items:stretch;
+}
+.dove-photo{position:relative;overflow:clip;border-radius:var(--radius);}
+.dove-photo img{width:100%;height:100%;min-height:280px;object-fit:cover;}
+.dove-info{display:flex;flex-direction:column;gap:1.2rem;}
+.addr{font-style:normal;}
+.addr .street{font-family:var(--font-display);font-size:1.4rem;font-weight:500;display:block;}
+.addr .city{color:var(--brand-muted);}
+.hours dt{font-weight:600;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-muted);}
+.hours dd{margin:.15rem 0 .8rem;font-variant-numeric:tabular-nums;}
+.dove-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.4rem;}
+.dove-phone{font-size:1rem;font-variant-numeric:tabular-nums;}
+.dove-phone a{color:var(--brand-ink);font-weight:600;text-decoration:none;}
+
+/* ---------- footer ---------- */
+.footer{
+  background:var(--brand-ink);color:var(--brand-surface);
+  padding:clamp(2.5rem,5vw,4rem) clamp(1.25rem,4vw,4rem) 6rem;
+}
+.footer .wordmark{font-size:2rem;color:var(--brand-surface);}
+.footer .wordmark .wm-lab .wm-brush{color:var(--brand-accent);}
+.footer-grid{display:flex;flex-wrap:wrap;gap:2rem 3rem;margin-top:1.4rem;}
+.footer a{color:var(--brand-surface);}
+.footer .f-col p{margin:.2rem 0;color:color-mix(in srgb,var(--brand-surface) 78%, transparent);font-size:.9rem;}
+.footer .f-col strong{color:var(--brand-surface);}
+.footer-fine{margin-top:2.2rem;font-size:.78rem;color:color-mix(in srgb,var(--brand-surface) 62%, transparent);}
+
+/* ---------- mobile action bar ---------- */
+.mobilebar{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--brand-surface);
+  border-top:1px solid var(--brand-line);
+  padding:.6rem .9rem;
+  gap:.9rem;align-items:center;justify-content:space-between;
+  box-shadow:0 -6px 20px color-mix(in srgb,var(--brand-ink) 14%, transparent);
+}
+.mobilebar .mb-proof{font-size:.78rem;color:var(--brand-muted);line-height:1.2;}
+.mobilebar .mb-proof strong{color:var(--brand-ink);}
+.mobilebar .btn-accent{flex:1;max-width:60%;}
+
+/* ---------- responsive ---------- */
+@media (max-width:940px){
+  .layout{grid-template-columns:1fr;}
+  .rail{position:sticky;top:0;z-index:40;border-right:0;border-bottom:1px solid var(--brand-line);}
+  .rail-inner{
+    position:static;max-height:none;overflow:visible;
+    padding:1rem clamp(1.25rem,4vw,2rem);
+    flex-direction:row;flex-wrap:wrap;align-items:center;gap:1rem;
+  }
+  .rail-head{width:100%;}
+  .nav-toggle{display:inline-block;}
+  .rail-nav{
+    display:none;width:100%;
+    padding-top:.6rem;border-top:1px solid var(--brand-line);
+  }
+  .rail-nav.open{display:flex;}
+  .method-grid,.people-grid,.kids-grid,.dove-grid{grid-template-columns:1fr;}
+  .method-figure{margin-bottom:2.4rem;}
+  .method-figure .detail{width:38%;right:-2%;bottom:-14%;}
+  .mobilebar{display:flex;}
+  body{padding-bottom:4.5rem;}
+}
+
+@media (max-width:640px){
+  .hero{min-height:auto;flex-direction:column;align-items:stretch;padding:0;background:var(--brand-surface);}
+  .hero-photo{position:relative;z-index:0;height:44vh;}
+  .hero-photo img{height:100%;object-position:58% 38%;}
+  .hero-scrim{background:linear-gradient(180deg,
+     color-mix(in srgb,var(--brand-ink) 8%, transparent),
+     color-mix(in srgb,var(--brand-ink) 55%, transparent));}
+  .hero-companion{display:none;}
+  /* desktop diagonal is a wide composition; on mobile the signature reflows to a bold
+     caramel sweep UNDER the ink wordmark — same motif, legible, still reads as itself */
+  .hero-inner{
+    order:-1;position:relative;z-index:2;
+    background:var(--brand-surface);color:var(--brand-ink);
+    padding:1.7rem clamp(1.25rem,5vw,2rem) 1.9rem;
+  }
+  .hero-stroke{display:none;}
+  .hero-sweep-m{
+    display:block;width:min(64%,320px);height:.95rem;
+    color:var(--brand-accent);margin:-.15rem 0 1.1rem;position:relative;z-index:1;
+  }
+  .hero-eyebrow{color:var(--brand-muted);}
+  .hero .wordmark{color:var(--brand-ink);text-shadow:none;position:relative;z-index:1;}
+  .hero .wordmark .wm-lab .wm-brush{color:var(--brand-accent);opacity:1;}
+  .hero-lede{color:var(--brand-ink);}
+  .hero-sub{color:var(--brand-muted);}
+  .hero-proof{color:var(--brand-ink);}
+  .hero-proof .stars .star-empty svg{color:var(--brand-line);}
+  .hero-proof .stars .star-full svg{color:var(--brand-ink);}
+  .hero-phone{color:var(--brand-ink);}
+
+  .gallery{grid-template-columns:1fr;}
+  .g-main,.g-tall,.g-wide{grid-column:auto;grid-row:auto;}
+  .g-wide{transform:none;}
+  .g-main img{aspect-ratio:4/5;}
+  .method-figure .detail{width:42%;bottom:-10%;right:0;}
+  .proof-score .big{font-size:2.8rem;}
+}
+
+/* ============ MOTION LAYER (pass 3 · “il colpo di pennello”) ============ */
+/* All hidden-start states are gated behind html.js, so with JS off every section
+   is fully visible. prefers-reduced-motion neutralises everything (block below). */
+
+/* — hero load entrance: rises once, staggered heading→sub→CTA — */
+@keyframes heroIn{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+html.js .hero-inner > *{ animation:heroIn 600ms var(--ease-signature) both; }
+html.js .hero-inner > .eyebrow{ animation-delay:.08s; }
+html.js .hero-inner > .wordmark{ animation-delay:.16s; }
+html.js .hero-inner > .hero-sweep-m{ animation-delay:.24s; }
+html.js .hero-inner > .hero-lede{ animation-delay:.30s; }
+html.js .hero-inner > .hero-sub{ animation-delay:.38s; }
+html.js .hero-inner > .hero-actions{ animation-delay:.46s; }
+html.js .hero-inner > .hero-phone{ animation-delay:.54s; }
+
+/* — shared reveal system: ONE observer, treatment varied by content role — */
+html.js .rv-rise{ opacity:0; transform:translateY(16px);
+  transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature); }
+html.js .rv-row{ opacity:0; transform:translateY(14px);
+  transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);
+  transition-delay:calc(var(--i,0) * var(--stagger)); }
+html.js .rv-media{ opacity:0; transform:scale(1.05);
+  transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature); }
+/* headings rise behind a mask — they never plain-fade (house default) */
+html.js .rv-head{ clip-path:inset(0 0 100% 0); transform:translateY(0.35em);
+  transition:clip-path var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature); }
+/* diagonal brush wipe — the sweep uncovers media along the balayage angle (metodo main + gallery) */
+html.js .rv-wipe{ clip-path:polygon(0 0, 0 0, -55% 100%, -55% 100%);
+  transition:clip-path var(--dur-reveal) var(--ease-signature); }
+
+html.js .rv-rise.in, html.js .rv-row.in, html.js .rv-media.in{ opacity:1; transform:none; }
+html.js .rv-head.in{ clip-path:inset(-0.22em -0.05em -0.22em -0.05em); transform:none; }
+html.js .rv-wipe.in{ clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+
+/* — people names caramel cascade: highlight sweeps L→R, Federico then Omar — */
+html.js .name-hl{ background-size:0% .42em; transition:background-size var(--dur-reveal) var(--ease-signature);
+  transition-delay:calc(var(--i,0) * 200ms); }
+html.js .people-grid.in .name-hl{ background-size:100% .42em; }
+
+/* — colour-index rail active marker: scroll-linked vertical travel between entries — */
+.section-nav{ position:relative; }
+@media (min-width:941px){ .section-nav{ flex-direction:column; gap:.42rem; padding-left:1.5rem; } }
+.nav-marker{ position:absolute; left:0; top:0; width:22px; height:10px; color:var(--brand-accent);
+  fill:currentColor; pointer-events:none; opacity:0;
+  transition:transform var(--dur-reveal) var(--ease-signature), opacity var(--dur-micro) var(--ease-micro); }
+.nav-marker svg{ display:block; }
+.section-nav a.active{ color:var(--brand-ink); font-weight:600; }
+@media (max-width:940px){ .nav-marker{ display:none; } }
+
+/* — scroll progress: cue for every viewport (native scroll-timeline, static fallback) — */
+.progress{ position:fixed; inset:0 0 auto 0; height:3px; background:var(--brand-accent);
+  transform:scaleX(0); transform-origin:left; z-index:60; pointer-events:none; }
+@supports (animation-timeline: scroll()){
+  .progress{ animation:progressGrow linear both; animation-timeline:scroll(root); }
+  @keyframes progressGrow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+}
+@supports not (animation-timeline: scroll()){ .progress{ display:none; } }
+
+/* — listino price-row hover: caramel brush underline draws L→R (price nudge already set) — */
+@media (hover:hover) and (pointer:fine){
+  .listino h3{ position:relative; }
+  .listino h3::after{ content:""; position:absolute; left:0; right:0; bottom:-5px; height:4px;
+    background:var(--brand-accent); border-radius:2px; transform:scaleX(0); transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-micro); }
+  .listino li:hover h3::after, .listino li:focus-within h3::after{ transform:scaleX(1); }
+  .section-nav a::after{ content:""; position:absolute; left:0; bottom:-2px; height:2px; width:100%;
+    background:var(--brand-accent); transform:scaleX(0); transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-micro); }
+  .section-nav a:hover::after, .section-nav a:focus-visible::after{ transform:scaleX(1); }
+}
+
+/* — gallery two-plane parallax (moment 4): rAF drives --py / --pyb, base transforms preserved — */
+@media (min-width:941px){
+  html.js .g-main{ transform:translateY(var(--py,0)); }
+  html.js .g-wide{ transform:translateX(-14%) translateY(var(--pyb,0)); }
+}
+
+/* — ambient: imperceptible grain drift keeps the warm surface faintly alive — */
+@keyframes grainDrift{ from{ transform:translate(0,0); } to{ transform:translate(-16px,10px); } }
+html.js body::after{ animation:grainDrift 20s var(--ease-micro) infinite alternate; }
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .hero-stroke path{clip-path:inset(0 0 0 0)!important;}
+  html.js .rv-rise,html.js .rv-row,html.js .rv-media,html.js .rv-head,html.js .rv-wipe{
+    opacity:1!important;transform:none!important;clip-path:none!important;}
+  html.js .name-hl{ background-size:100% .42em!important; }
+  html.js body::after{ animation:none!important; transform:none!important; }
+  .progress{ display:none!important; }
+  .nav-marker{ display:none!important; }
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<!-- reusable brushstroke motif (il colpo di pennello) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="brush" viewBox="0 0 120 22">
+    <path d="M3,11 C25,5 55,4 62,4 C90,4 108,7 118,10 C108,13 90,16 60,15 C34,14 22,15 3,11 Z"/>
+  </symbol>
+  <symbol id="brush-hero" viewBox="0 0 1200 500" preserveAspectRatio="none">
+    <path d="M40,432 C300,362 520,300 760,242 C948,196 1066,168 1168,150 C1128,206 986,244 786,300 C548,368 300,414 78,474 C50,466 44,448 40,432 Z"/>
+  </symbol>
+</svg>
+
+<div class="layout">
+
+  <!-- ============ PERSISTENT COLOUR-INDEX RAIL ============ -->
+  <header class="rail">
+    <div class="rail-inner">
+      <div class="rail-head">
+        <a class="wordmark" href="#top" aria-label="Queen lab, home">
+          <span class="wm-queen">queen</span> <span class="wm-lab">lab<svg class="wm-brush" aria-hidden="true"><use href="#brush"/></svg></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="railnav">Menu</button>
+      </div>
+
+      <nav id="railnav" class="rail-nav" aria-label="Servizi e sezioni">
+        <div>
+          <p class="index-label">Indice colore</p>
+          <ol class="index">
+            <li aria-current="true">
+              <svg class="marker" aria-hidden="true"><use href="#brush"/></svg>
+              <a href="#listino"><span class="num">01</span><span class="svc">Balayage su misura</span><span class="prc">da 90€</span></a>
+            </li>
+            <li><a href="#listino"><span class="num">02</span><span class="svc">Colore</span><span class="prc">da 55€</span></a></li>
+            <li><a href="#listino"><span class="num">03</span><span class="svc">Taglio &amp; piega</span><span class="prc">da 35€</span></a></li>
+            <li><a href="#listino"><span class="num">04</span><span class="svc">Taglio bambini</span><span class="prc">da 18€</span></a></li>
+          </ol>
+        </div>
+
+        <ul class="section-nav">
+          <li><a href="#metodo">Il metodo</a></li>
+          <li><a href="#lavoro">Il lavoro</a></li>
+          <li><a href="#mani">Le mani</a></li>
+          <li><a href="#piccoli">I più piccoli</a></li>
+          <li><a href="#listino">Listino</a></li>
+          <li><a href="#dove">Dove siamo</a></li>
+        </ul>
+
+        <div class="rail-cta">
+          <a class="btn btn-accent btn-block" data-cta href="tel:+393398178407">Chiama per prenotare</a>
+          <p class="rail-phone"><a href="tel:+393398178407">+39 339 8178407</a></p>
+          <p class="rail-proof">
+            <span class="stars" role="img" aria-label="4,9 su 5">
+              <span class="star-row star-empty" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+              </span>
+              <span class="star-row star-full" aria-hidden="true" style="width:98%">
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+              </span>
+            </span>
+            <span><strong>4,9</strong> · 174 recensioni</span>
+          </p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 1 · HERO ============ -->
+    <section class="hero" aria-label="Queen lab, colore su misura">
+      <div class="hero-photo">
+        <img src="assets/hero-balayage-sweep.jpg" alt="Colourist painting a caramel balayage section onto a client's hair in a bright Milan salon">
+      </div>
+      <div class="hero-scrim"></div>
+      <svg class="hero-stroke" aria-hidden="true"><use href="#brush-hero"/></svg>
+      <figure class="hero-companion">
+        <img src="assets/hero-brush-macro.jpg" alt="Macro close-up of a brush painting caramel colour onto a strand of hair">
+      </figure>
+
+      <div class="hero-inner">
+        <p class="eyebrow hero-eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Parrucchiere · Colore · Milano</p>
+        <h1 class="wordmark">
+          <span class="wm-queen">queen</span> <span class="wm-lab">lab<svg class="wm-brush" aria-hidden="true"><use href="#brush"/></svg></span>
+        </h1>
+        <svg class="hero-sweep-m" aria-hidden="true"><use href="#brush-hero"/></svg>
+        <p class="hero-lede">Il colore giusto, letto sulla tua base. Anche quando è complicata.</p>
+        <p class="hero-sub">Balayage e colore su misura, dipinti a mano ciocca per ciocca. Nel quartiere Palmanova, a Turro.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent" data-cta href="tel:+393398178407">Chiama per prenotare</a>
+          <span class="hero-proof">
+            <span class="stars" role="img" aria-label="4,9 su 5">
+              <span class="star-row star-empty" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+              </span>
+              <span class="star-row star-full" aria-hidden="true" style="width:98%">
+                <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+              </span>
+            </span>
+            <span><strong>4,9</strong> su 174 recensioni</span>
+          </span>
+        </div>
+        <span class="hero-phone"><span class="lbl">Telefono:</span> +39 339 8178407</span>
+      </div>
+    </section>
+
+    <!-- ============ 2 · IL METODO COLORE ============ -->
+    <section class="section" id="metodo" aria-labelledby="metodo-h">
+      <p class="eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Il metodo colore</p>
+      <div class="method-grid">
+        <figure class="method-figure">
+          <img class="main" src="assets/method-color-mixing.jpg" alt="Colourist mixing hair colour in a bowl at a bright salon station">
+          <img class="detail" src="assets/method-foils-detail.jpg" alt="Detail of highlight foils and painted strands during a balayage">
+        </figure>
+        <div>
+          <h2 id="metodo-h">Il colore non si indovina. Si legge.</h2>
+          <p class="lede measure">Prima di aprire un tubo guardiamo cosa c’è sotto: la base, la storia del colore, dove vuoi arrivare. È lì che si vince un balayage.</p>
+          <ol class="steps">
+            <li>
+              <span class="step-n">01</span>
+              <div>
+                <h3>Leggiamo la base</h3>
+                <p>Cosa hai già fatto, come reagiscono i tuoi capelli, quanto schiariscono davvero. Niente sorprese.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-n">02</span>
+              <div>
+                <h3>Prepariamo il colore su misura</h3>
+                <p>Miscelato nel bowl, tono su tono, pensato per la tua base e non per una tabella.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-n">03</span>
+              <div>
+                <h3>Dipingiamo ciocca per ciocca</h3>
+                <p>Il balayage lo pennelliamo a mano, seguendo come cadono i capelli. Naturale, tuo, anche su basi difficili.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3 · IL LAVORO ============ -->
+    <section class="section section-alt" id="lavoro" aria-labelledby="lavoro-h">
+      <p class="eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Il lavoro</p>
+      <h2 id="lavoro-h" class="measure">Colore e balayage, come escono dal salone.</h2>
+      <p class="lede measure muted">Lavori veri, luce naturale, nessun ritocco. Il caramello che si schiarisce dalla radice, il taglio pulito, la piega che tiene.</p>
+      <div class="gallery">
+        <figure class="g-main">
+          <img src="assets/gallery-balayage-result.jpg" alt="Finished sun-kissed caramel balayage seen from behind">
+          <figcaption>Balayage su misura — caramello che sale dalla radice.</figcaption>
+        </figure>
+        <figure class="g-tall">
+          <img src="assets/gallery-color-result.jpg" alt="Freshly coloured glossy brown hair with dimensional lowlights, seen from behind">
+          <figcaption>Colore con riflessi, lucido e pieno.</figcaption>
+        </figure>
+        <figure class="g-wide">
+          <img src="assets/gallery-cut-inprogress.png" alt="Stylist cutting a client's wet hair with scissors in a bright salon">
+          <figcaption>Taglio in corso — la mano ferma.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 4 · LE MANI ============ -->
+    <section class="section" id="mani" aria-labelledby="mani-h">
+      <p class="eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Le mani</p>
+      <div class="people-grid">
+        <span class="photo-wrap people-photo">
+          <img src="assets/team-hands-sectioning.png" alt="Hairdresser's hands parting and clipping a hair section before colour">
+        </span>
+        <div>
+          <h2 id="mani-h">Il salone è nelle mani di <span class="name-hl">Federico</span> e <span class="name-hl">Omar</span>.</h2>
+          <p class="lede measure">Chi ci sceglie li nomina per nome nelle recensioni. Capiscono cosa vuoi sul colore e sul taglio — e lo fanno alla prima ciocca.</p>
+          <p class="measure muted">Non promettiamo un colore che non regge. Guardiamo la tua base, ti diciamo cosa è possibile, e poi lo dipingiamo. Anche quando è complicata.</p>
+        </div>
+      </div>
+
+      <div class="proof">
+        <div class="proof-score">
+          <span class="big">4,9</span><span class="out">/ 5</span>
+        </div>
+        <div class="proof-meta">
+          <span class="stars" role="img" aria-label="4,9 su 5 stelle">
+            <span class="star-row star-empty" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+            </span>
+            <span class="star-row star-full" aria-hidden="true" style="width:98%">
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15.4 4.7 18.1l1-5.8L1.5 8.2l5.9-.9z"/></svg>
+            </span>
+          </span>
+          <p><strong class="src">174 recensioni su Google</strong> — costante, recensione dopo recensione.</p>
+          <p>La stessa cosa, ripetuta: hanno capito cosa volevo e il colore era giusto, anche su una base difficile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5 · ANCHE I PIÙ PICCOLI ============ -->
+    <section class="section section-alt" id="piccoli" aria-labelledby="piccoli-h">
+      <p class="eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Anche i più piccoli</p>
+      <div class="kids-grid">
+        <div>
+          <h2 id="piccoli-h">C’è pure il cavallo.</h2>
+          <p class="lede measure">I bambini si siedono sulla sedia a forma di cavallo e stanno fermi per il loro taglio. Un salone solo: il tuo colore e il taglio dei piccoli, nello stesso pomeriggio.</p>
+          <p class="measure muted">Qui è benvenuto chiunque, davvero. Ci teniamo che ti senta a casa dal momento in cui entri.</p>
+          <p class="kids-note">Taglio bambini con la sedia a cavallo. Ti aspettiamo.</p>
+        </div>
+        <span class="photo-wrap kids-photo">
+          <img src="assets/kids-horse-chair.png" alt="A child in a horse-shaped salon chair getting a trim while a stylist snips carefully">
+        </span>
+      </div>
+    </section>
+
+    <!-- ============ 6 · LISTINO & SERVIZI ============ -->
+    <section class="section" id="listino" aria-labelledby="listino-h">
+      <p class="eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Listino &amp; servizi</p>
+      <h2 id="listino-h" class="measure">I servizi, con prezzi indicativi.</h2>
+      <p class="lede measure muted">Così sai già cosa aspettarti prima di chiamare. Il preventivo preciso te lo diciamo in salone, dopo aver guardato lunghezza e base.</p>
+      <ul class="listino">
+        <li>
+          <svg class="l-mark" aria-hidden="true"><use href="#brush"/></svg>
+          <h3>Balayage su misura</h3>
+          <span class="l-price">da 90€</span>
+          <p class="l-desc">Dipinto a mano, ciocca per ciocca. Anche su basi difficili.</p>
+        </li>
+        <li>
+          <svg class="l-mark" aria-hidden="true"><use href="#brush"/></svg>
+          <h3>Colore / ritocco</h3>
+          <span class="l-price">da 55€</span>
+          <p class="l-desc">Tono su tono, preparato nel bowl per la tua base.</p>
+        </li>
+        <li>
+          <svg class="l-mark" aria-hidden="true"><use href="#brush"/></svg>
+          <h3>Taglio &amp; piega donna</h3>
+          <span class="l-price">da 35€</span>
+          <p class="l-desc">Lettura del viso, taglio e piega che tiene.</p>
+        </li>
+        <li>
+          <svg class="l-mark" aria-hidden="true"><use href="#brush"/></svg>
+          <h3>Taglio uomo</h3>
+          <span class="l-price">da 20€</span>
+          <p class="l-desc">Pulito e veloce, rifinito bene.</p>
+        </li>
+        <li>
+          <svg class="l-mark" aria-hidden="true"><use href="#brush"/></svg>
+          <h3>Taglio bambini</h3>
+          <span class="l-price">da 18€</span>
+          <p class="l-desc">Sedia a forma di cavallo inclusa.</p>
+        </li>
+        <li>
+          <svg class="l-mark" aria-hidden="true"><use href="#brush"/></svg>
+          <h3>Consulenza colore</h3>
+          <span class="l-price">gratuita</span>
+          <p class="l-desc">Prima di decidere, ne parliamo insieme.</p>
+        </li>
+      </ul>
+      <p class="fineprint">Prezzi indicativi, da confermare in salone: dipendono dalla lunghezza e dalla base.</p>
+    </section>
+
+    <!-- ============ 7 · DOVE SIAMO & PRENOTA ============ -->
+    <section class="section section-alt" id="dove" aria-labelledby="dove-h">
+      <p class="eyebrow"><svg class="motif" aria-hidden="true"><use href="#brush"/></svg> Dove siamo &amp; prenota</p>
+      <h2 id="dove-h">Via Palmanova 54, Milano.</h2>
+      <div class="dove-grid">
+        <figure class="dove-photo">
+          <img src="assets/space-interior.png" alt="Bright, clean interior of a modern Milan hair salon with styling stations along a pale wall">
+        </figure>
+        <div class="dove-info">
+          <address class="addr">
+            <span class="street">Via Palmanova, 54</span>
+            <span class="city">20132 Milano (MI) — zona Turro / Palmanova</span>
+          </address>
+          <dl class="hours">
+            <dt>Orari</dt>
+            <dd>Apriamo il martedì alle 9:00. Per gli altri giorni e per un appuntamento, chiamaci: fissiamo l’orario insieme.</dd>
+          </dl>
+          <p class="dove-phone">Telefono: <a href="tel:+393398178407">+39 339 8178407</a></p>
+          <div class="dove-actions">
+            <a class="btn btn-accent" data-cta href="tel:+393398178407">Chiama per prenotare</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Queen+lab%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <a class="wordmark" href="#top" aria-label="Queen lab">
+        <span class="wm-queen">queen</span> <span class="wm-lab">lab<svg class="wm-brush" aria-hidden="true"><use href="#brush"/></svg></span>
+      </a>
+      <div class="footer-grid">
+        <div class="f-col">
+          <p><strong>colore su misura</strong></p>
+          <p>Parrucchiere · Milano</p>
+        </div>
+        <div class="f-col">
+          <p><strong>Dove</strong></p>
+          <p>Via Palmanova, 54</p>
+          <p>20132 Milano (MI)</p>
+        </div>
+        <div class="f-col">
+          <p><strong>Contatti</strong></p>
+          <p><a href="tel:+393398178407">+39 339 8178407</a></p>
+          <p>Apre il martedì alle 9:00</p>
+        </div>
+        <div class="f-col">
+          <p><strong>Recensioni</strong></p>
+          <p>4,9 su 174 recensioni Google</p>
+        </div>
+      </div>
+      <p class="footer-fine">Prezzi e orari indicativi, da confermare in salone. Anteprima di sito realizzata per Queen lab.</p>
+    </footer>
+
+  </main>
+</div>
+
+<!-- mobile sticky action bar -->
+<div class="mobilebar" aria-hidden="false">
+  <span class="mb-proof"><strong>4,9</strong> · 174 recensioni<br>Via Palmanova 54</span>
+  <a class="btn btn-accent" data-cta href="tel:+393398178407">Chiama</a>
+</div>
+
+<script>
+(function(){
+  /* ---- nav toggle (works with or without motion) ---- */
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('railnav');
+  if(toggle && nav){
+    var closeNav = function(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+    var openNav  = function(){ nav.classList.add('open'); toggle.setAttribute('aria-expanded','true'); };
+    toggle.addEventListener('click', function(){ (nav.classList.contains('open') ? closeNav : openNav)(); });
+    nav.addEventListener('click', function(e){ if(e.target.closest('a')) closeNav(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nav.classList.contains('open')){ closeNav(); toggle.focus(); }
+    });
+  }
+
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(RM.matches) return; /* reduced motion: no enhancement — content is already fully visible */
+
+  var desktop = window.matchMedia('(min-width:941px) and (pointer:fine)');
+
+  /* ---- tag reveal roles (hidden states only exist once tagged, so JS-off = visible) ---- */
+  document.querySelectorAll('.section .eyebrow').forEach(function(el){ el.classList.add('rv-rise'); });
+  document.querySelectorAll('.section h2').forEach(function(el){
+    el.classList.add(el.closest('#mani') ? 'rv-rise' : 'rv-head'); /* mani h2 holds the names, keep it un-masked */
+  });
+  document.querySelectorAll('.lede').forEach(function(el){ el.classList.add('rv-rise'); });
+  var proof = document.querySelector('.proof'); if(proof) proof.classList.add('rv-rise');
+
+  var mfMain = document.querySelector('.method-figure .main'); if(mfMain) mfMain.classList.add('rv-wipe');
+  var mfDetail = document.querySelector('.method-figure .detail'); if(mfDetail) mfDetail.classList.add('rv-media');
+  document.querySelectorAll('.gallery figure').forEach(function(el,i){ el.classList.add('rv-wipe'); el.style.setProperty('--i', i); });
+  document.querySelectorAll('.people-grid .photo-wrap, .kids-grid .photo-wrap, .dove-photo').forEach(function(el){ el.classList.add('rv-media'); });
+  document.querySelectorAll('.steps li').forEach(function(el,i){ el.classList.add('rv-row'); el.style.setProperty('--i', i); });
+  document.querySelectorAll('.listino li').forEach(function(el,i){ el.classList.add('rv-row'); el.style.setProperty('--i', i); });
+  document.querySelectorAll('.name-hl').forEach(function(el,i){ el.style.setProperty('--i', i); });
+
+  /* ---- ONE IntersectionObserver, rAF-batched, unobserves after firing ---- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ var t = en.target; requestAnimationFrame(function(){ t.classList.add('in'); }); io.unobserve(t); }
+    });
+  }, { rootMargin:'0px 0px -10% 0px', threshold:0.15 });
+  document.querySelectorAll('[class*="rv-"]').forEach(function(el){ io.observe(el); });
+  var peopleGrid = document.querySelector('.people-grid'); if(peopleGrid) io.observe(peopleGrid); /* triggers name cascade */
+
+  /* ---- rail active marker + section-nav scroll-spy (moment 3) ---- */
+  var sectionNav = document.querySelector('.section-nav');
+  var navLinks = sectionNav ? Array.prototype.slice.call(sectionNav.querySelectorAll('a')) : [];
+  var marker = null;
+  if(sectionNav && navLinks.length){
+    marker = document.createElement('span');
+    marker.className = 'nav-marker'; marker.setAttribute('aria-hidden','true');
+    marker.innerHTML = '<svg viewBox="0 0 120 22" width="22" height="10"><use href="#brush"/></svg>';
+    sectionNav.appendChild(marker);
+  }
+  var spySections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function setActive(idx){
+    navLinks.forEach(function(a,i){ a.classList.toggle('active', i === idx); });
+    if(marker && navLinks[idx]){
+      var a = navLinks[idx];
+      marker.style.transform = 'translateY(' + (a.offsetTop + (a.offsetHeight - 10)/2) + 'px)';
+      marker.style.opacity = '1';
+    }
+  }
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ var i = spySections.indexOf(en.target); if(i >= 0) setActive(i); } });
+  }, { rootMargin:'-45% 0px -45% 0px', threshold:0 });
+  spySections.forEach(function(s){ if(s) spy.observe(s); });
+
+  /* ---- gallery two-plane parallax (desktop only, GPU transforms only) ---- */
+  var galleryEl = document.querySelector('.gallery');
+  var gMain = document.querySelector('.g-main'), gWide = document.querySelector('.g-wide');
+  var ticking = false;
+  function parallax(){
+    ticking = false;
+    if(!galleryEl || !desktop.matches) return;
+    var r = galleryEl.getBoundingClientRect(), vh = window.innerHeight;
+    var prog = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+    var c = (prog - 0.5) * 2; /* -1..1 */
+    if(gMain) gMain.style.setProperty('--py', (c * -22).toFixed(1) + 'px');
+    if(gWide) gWide.style.setProperty('--pyb', (c * 14).toFixed(1) + 'px');
+  }
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(parallax); } }
+  if(desktop.matches){
+    window.addEventListener('scroll', onScroll, { passive:true });
+    window.addEventListener('resize', onScroll);
+    parallax();
+  }
+
+  /* ---- count-up on the REAL aggregate rating (4,9) ---- */
+  var big = document.querySelector('.proof-score .big');
+  if(big){
+    var counted = false;
+    var cObs = new IntersectionObserver(function(ents){
+      ents.forEach(function(en){
+        if(en.isIntersecting && !counted){
+          counted = true; cObs.unobserve(en.target);
+          var start = null, dur = 900;
+          big.textContent = '0,0';
+          requestAnimationFrame(function step(ts){
+            if(!start) start = ts;
+            var p = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - p, 3);
+            big.textContent = (4.9 * e).toFixed(1).replace('.', ',');
+            if(p < 1) requestAnimationFrame(step); else big.textContent = '4,9';
+          });
+        }
+      });
+    }, { threshold:0.6 });
+    cObs.observe(big);
+  }
+
+  /* ---- magnetic primary CTA (one only, desktop, capped so it never overflows) ---- */
+  if(desktop.matches){
+    var cta = document.querySelector('.hero-actions [data-cta]');
+    if(cta){
+      cta.addEventListener('mousemove', function(e){
+        var r = cta.getBoundingClientRect();
+        var dx = Math.max(-10, Math.min(10, (e.clientX - (r.left + r.width/2)) * 0.3));
+        var dy = Math.max(-8,  Math.min(8,  (e.clientY - (r.top + r.height/2)) * 0.3));
+        cta.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+      });
+      cta.addEventListener('mouseleave', function(){ cta.style.transform = ''; });
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

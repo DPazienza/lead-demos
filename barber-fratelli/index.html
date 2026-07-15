@@ -1,0 +1,1159 @@
+<meta charset="utf-8">
+<title>Barber Fratelli — Barbiere a Sesto San Giovanni, Milano | Taglio e rasatura col rasoio</title>
+<meta name="description" content="Barber Fratelli: due fratelli, due poltrone, le stesse mani sul tuo taglio ogni volta. Taglio, rasatura col rasoio e panno caldo a Sesto San Giovanni, alle porte di Milano. Chiama per prenotare.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://www.google.com/maps/search/?api=1&query=Barber+Fratelli%2C+Milano">
+
+<meta property="og:title" content="Barber Fratelli — Due fratelli, una poltrona">
+<meta property="og:description" content="Taglio, rasatura col rasoio e panno caldo. Due fratelli dietro le due poltrone: le stesse mani ogni volta. Sesto San Giovanni, Milano.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-brothers.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+
+<!-- set .js before first paint so entrance/reveal hidden-states never flash visible-then-hidden -->
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Barber Fratelli",
+  "description": "Barbiere a conduzione familiare: due fratelli, taglio e rasatura col rasoio a mano libera con panno caldo.",
+  "image": "assets/hero-brothers.jpg",
+  "telephone": "+39 388 374 4562",
+  "url": "https://www.google.com/maps/search/?api=1&query=Barber+Fratelli%2C+Milano",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Barber+Fratelli%2C+Milano",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Cesare da Sesto, 32",
+    "postalCode": "20099",
+    "addressLocality": "Sesto San Giovanni",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  }
+}
+</script>
+
+<style>
+  /* ============================================================
+     BRAND TOKENS — defined ONCE, referenced everywhere.
+     Only opacity / color-mix() derivations of these are allowed.
+     ============================================================ */
+  :root{
+    --brand-ink:#F2E7D6;
+    --brand-surface:#1A1310;
+    --brand-surface-alt:#221913;
+    --brand-accent:#B8352C;         /* barber red — CTA fill, active nav, pole band, stamp, hover */
+    --brand-accent-ink:#FBF2E6;     /* text on accent */
+    --brand-muted:#BBA98F;
+    --brand-line:#3A2C22;
+    --brand-accent-2:#C7A24C;       /* brass — gilded wordmark, numerals, ticket numbers, hairlines */
+
+    --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+    --ease-signature:cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-micro:cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-reveal:720ms;
+    --dur-micro:220ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem, 3rem + 6vw, 9rem);
+    --container:min(1140px, 92vw);
+    --radius:2px;
+
+    --fs-hero:clamp(2.8rem, 2rem + 4vw, 6rem);
+    --fs-h2:clamp(1.7rem, 1.3rem + 1.6vw, 2.9rem);
+    --fs-body:clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    line-height:1.65;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    position:relative;
+  }
+  /* fine film-grain texture — ties the page to the photo grade; static, no motion */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:500;pointer-events:none;
+    opacity:.045;mix-blend-mode:soft-light;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  img,video{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;line-height:1.05;margin:0;font-optical-sizing:auto;text-wrap:balance;}
+  p{margin:0;overflow-wrap:anywhere;text-wrap:pretty;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  :focus-visible{
+    outline:3px solid var(--brand-accent-2);
+    outline-offset:3px;
+    border-radius:var(--radius);
+  }
+
+  /* shared warm photo grade — unifies the documentary shoot across sections */
+  .photo-grade{position:relative;}
+  .photo-grade::after{
+    content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:1;
+    background:linear-gradient(155deg,
+      color-mix(in srgb, var(--brand-accent-2) 20%, transparent) 0%,
+      transparent 45%,
+      color-mix(in srgb, var(--brand-surface) 55%, transparent) 100%);
+    mix-blend-mode:soft-light;
+  }
+  .container{width:var(--container);margin-inline:auto;}
+  .eyebrow{
+    font-family:var(--font-body);
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--brand-muted);
+    display:inline-flex;
+    align-items:center;
+    gap:.7rem;
+  }
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* ============================================================
+     LA FASCETTA — the pole band motif (single decorative motif).
+     Diagonal double-stripe: barber red over brass.
+     ============================================================ */
+  .fascetta{
+    display:inline-block;
+    width:34px;height:5px;flex:0 0 auto;
+    border-radius:1px;
+    background-image:repeating-linear-gradient(
+      -45deg,
+      var(--brand-accent) 0 6px,
+      var(--brand-accent-2) 6px 12px
+    );
+  }
+  .fascetta--tick{width:14px;}
+  /* vertical pole band (hero + dividers) with continuous slow turn */
+  .pole{
+    background-image:repeating-linear-gradient(
+      -45deg,
+      var(--brand-accent) 0 10px,
+      var(--brand-accent-2) 10px 20px,
+      color-mix(in srgb, var(--brand-surface) 82%, #000) 20px 30px
+    );
+    background-size:100% 42.42px;
+    animation:pole-turn 3.4s linear infinite;
+  }
+  @keyframes pole-turn{to{background-position:0 42.42px;}}
+
+  /* ============================================================
+     GILDED WORDMARK — reverse-gilt-on-glass (brass fill, dark
+     keyline, top glint). This is the wow moment; recurs in hero
+     + nav + footer + dividers.
+     ============================================================ */
+  .gilt{
+    background-image:linear-gradient(
+      178deg,
+      color-mix(in srgb, var(--brand-accent-2) 52%, #fff) 0%,
+      var(--brand-accent-2) 40%,
+      color-mix(in srgb, var(--brand-accent-2) 74%, #000) 100%
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 1px 0 color-mix(in srgb, var(--brand-surface) 88%, #000),
+                0 0 10px color-mix(in srgb, var(--brand-accent-2) 30%, transparent);
+  }
+  .wordmark{
+    display:flex;align-items:center;gap:clamp(.9rem,2vw,1.6rem);
+  }
+  .wordmark__pole{
+    width:8px;align-self:stretch;flex:0 0 auto;border-radius:2px;
+    box-shadow:0 0 0 1px color-mix(in srgb, var(--brand-surface) 70%, #000);
+  }
+  .wordmark__text{
+    display:flex;flex-direction:column;line-height:.92;
+    font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;
+  }
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb, var(--brand-surface) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav__inner{
+    width:var(--container);margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    min-height:64px;
+  }
+  .nav__brand{display:flex;align-items:center;gap:.6rem;}
+  .nav__brand .wordmark__pole{height:30px;width:6px;}
+  .nav__brand .wordmark__text{font-size:.92rem;letter-spacing:0.02em;}
+  .nav__links{display:flex;align-items:center;gap:1.6rem;}
+  .nav__links a{
+    font-size:.82rem;font-weight:500;color:var(--brand-muted);
+    text-transform:uppercase;letter-spacing:0.08em;
+    padding:.4rem 0;position:relative;transition:color var(--dur-micro) var(--ease-signature);
+  }
+  .nav__links a::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);
+  }
+  .nav__links a:hover,.nav__links a:focus-visible{color:var(--brand-ink);}
+  .nav__links a:hover::after,.nav__links a:focus-visible::after{transform:scaleX(1);}
+  .nav__cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    padding:.6rem 1.1rem;border-radius:var(--radius);
+    font-weight:600;font-size:.85rem;letter-spacing:0.02em;
+    transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-signature);
+  }
+  .nav__cta:hover,.nav__cta:focus-visible{transform:translateY(-1px);background:color-mix(in srgb, var(--brand-accent) 88%, #fff);}
+  .nav__toggle{
+    display:none;background:none;border:1px solid var(--brand-line);border-radius:var(--radius);
+    color:var(--brand-ink);width:44px;height:44px;cursor:pointer;padding:0;
+    align-items:center;justify-content:center;
+  }
+  .nav__toggle svg{width:22px;height:22px;}
+
+  /* ============================================================
+     HERO — Insegna: the gilded shop window
+     ============================================================ */
+  .hero{position:relative;overflow:hidden;background:var(--brand-surface);}
+  .hero__media{position:absolute;inset:0;z-index:0;}
+  .hero__media video,.hero__media img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 38%;
+  }
+  .hero__scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(180deg, color-mix(in srgb,var(--brand-surface) 42%, transparent) 0%, color-mix(in srgb,var(--brand-surface) 30%, transparent) 42%, color-mix(in srgb,var(--brand-surface) 92%, transparent) 100%),
+      linear-gradient(90deg, color-mix(in srgb,var(--brand-surface) 78%, transparent) 0%, transparent 60%);
+  }
+  .hero__pole{
+    position:absolute;top:0;bottom:0;right:clamp(1rem,5vw,4rem);width:16px;z-index:2;
+    border-radius:3px;
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--brand-surface) 60%,#000), 0 0 22px color-mix(in srgb,var(--brand-surface) 80%,#000);
+  }
+  .hero__inner{
+    position:relative;z-index:3;
+    width:var(--container);margin-inline:auto;
+    min-height:clamp(560px, 88svh, 860px);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding-block:clamp(5rem,10vh,7rem) clamp(3rem,7vh,5rem);
+    gap:1.4rem;
+  }
+  .hero__frame{
+    align-self:flex-start;max-width:min(640px,100%);
+    border:1px solid color-mix(in srgb,var(--brand-accent-2) 46%, var(--brand-line));
+    padding:clamp(1.4rem,3vw,2.4rem);
+    background:color-mix(in srgb, var(--brand-surface) 30%, transparent);
+    backdrop-filter:blur(2px);
+    border-radius:var(--radius);
+    box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--brand-surface) 60%,#000);
+  }
+  .hero__wordmark .wordmark__text{font-size:var(--fs-hero);}
+  .hero__wordmark{margin-block:.4rem .9rem;}
+  .hero__tagline{
+    font-family:var(--font-display);font-style:italic;font-weight:400;
+    font-size:clamp(1.1rem,.9rem+.7vw,1.5rem);color:var(--brand-ink);margin-bottom:.4rem;
+  }
+  .hero__lead{color:var(--brand-ink);max-width:44ch;margin-bottom:1.4rem;}
+  .hero__lead b{font-weight:600;color:var(--brand-accent-2);}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;
+    padding:.85rem 1.4rem;border-radius:var(--radius);font-weight:600;
+    letter-spacing:0.02em;font-size:.95rem;border:1px solid transparent;
+    transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) var(--ease-signature), border-color var(--dur-micro) var(--ease-signature);
+  }
+  .btn--primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+  .btn--primary:hover,.btn--primary:focus-visible{transform:translateY(-1px);background:color-mix(in srgb,var(--brand-accent) 88%,#fff);}
+  .btn--ghost{background:transparent;color:var(--brand-ink);border-color:color-mix(in srgb,var(--brand-accent-2) 55%, var(--brand-line));}
+  .btn--ghost:hover,.btn--ghost:focus-visible{border-color:var(--brand-accent-2);color:var(--brand-accent-2);}
+
+  .proof-inline{display:flex;align-items:center;gap:.55rem;color:var(--brand-muted);font-size:.9rem;margin-top:.4rem;}
+  .stars{display:inline-flex;gap:2px;}
+  .stars svg{width:15px;height:15px;}
+  .stars .s-full path{fill:var(--brand-accent-2);}
+  .stars .s-part rect{fill:var(--brand-accent-2);}
+  .stars .s-empty path{fill:color-mix(in srgb,var(--brand-accent-2) 30%, var(--brand-line));}
+  .proof-inline b{color:var(--brand-ink);font-weight:600;}
+
+  .hero__phone{color:var(--brand-muted);font-size:.86rem;margin-top:.2rem;}
+  .hero__phone a{color:var(--brand-ink);font-weight:600;border-bottom:1px solid color-mix(in srgb,var(--brand-accent-2) 50%,transparent);font-variant-numeric:tabular-nums;}
+  .coord__v,.book-card__phone,.score__num,.status{font-variant-numeric:tabular-nums;}
+
+  /* ============================================================
+     SECTION SCAFFOLD + divider with numeral + drawn rule
+     ============================================================ */
+  main>section{padding-block:var(--space-section);}
+  .sec-head{display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:2.4rem;}
+  .sec-num{
+    font-family:var(--font-display);font-weight:700;font-size:clamp(1.1rem,.8rem+.8vw,1.6rem);
+    color:var(--brand-accent-2);flex:0 0 auto;line-height:1;padding-top:.35rem;
+    margin-left:clamp(-1.5rem,-2vw,-.4rem);
+  }
+  .sec-head__body{flex:1 1 auto;}
+  .sec-rule{
+    height:1px;background:var(--brand-accent-2);opacity:.55;margin-top:1rem;
+    transform:scaleX(1);transform-origin:left;max-width:220px;
+  }
+  .lede{color:var(--brand-muted);max-width:56ch;margin-top:1rem;font-size:1.05rem;}
+  .stack-lines p{margin-bottom:.35rem;}
+
+  /* ---------- Due fratelli (Kinfolk offset) ---------- */
+  .fratelli{background:var(--brand-surface);padding-block:calc(var(--space-section) * .82) calc(var(--space-section) * 1.02);}
+  .offset-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);align-items:start;}
+  .fratelli__photo{position:relative;align-self:start;margin-top:clamp(0rem,3vw,3.5rem);}
+  .fratelli__photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);border:1px solid var(--brand-line);}
+  .fratelli__photo figcaption{margin-top:.7rem;color:var(--brand-muted);font-size:.82rem;}
+  .fratelli__text h2{font-size:var(--fs-h2);margin-bottom:1.1rem;}
+  .fratelli__text p{margin-bottom:.9rem;color:var(--brand-ink);}
+  .fratelli__text .muted{color:var(--brand-muted);}
+  .pull{
+    font-family:var(--font-display);font-size:clamp(1.3rem,1rem+1.2vw,1.9rem);
+    line-height:1.25;color:var(--brand-ink);border-left:3px solid var(--brand-accent);
+    padding-left:1.1rem;margin:1.6rem 0;
+  }
+  .pull b{color:var(--brand-accent-2);font-weight:600;}
+
+  /* ---------- Il servizio (Le Labo stamped tickets) ---------- */
+  .servizio{background:var(--brand-surface-alt);padding-block:calc(var(--space-section) * 1.12);}
+  .servizio__band{position:relative;margin:1.5rem 0 2.6rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);}
+  .servizio__band img{width:100%;height:clamp(160px,26vw,300px);object-fit:cover;object-position:50% 60%;}
+  .servizio__band .cap{
+    position:absolute;left:0;bottom:0;right:0;padding:1rem 1.2rem;z-index:2;
+    background:linear-gradient(0deg, color-mix(in srgb,var(--brand-surface) 92%,transparent), transparent);
+    color:var(--brand-muted);font-size:.82rem;
+  }
+  .tickets{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--brand-line);border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;}
+  .ticket{
+    position:relative;background:var(--brand-surface);padding:1.6rem 1.4rem 1.4rem;
+    display:flex;flex-direction:column;gap:.5rem;
+    transition:background var(--dur-micro) var(--ease-signature);
+  }
+  .ticket:hover{background:color-mix(in srgb,var(--brand-surface) 82%, var(--brand-surface-alt));}
+  .ticket__corner{position:absolute;top:0;left:0;}
+  .ticket__corner .fascetta{width:44px;height:5px;border-radius:0 0 2px 0;}
+  .ticket__head{display:flex;align-items:baseline;gap:.7rem;margin-top:.4rem;}
+  .ticket__num{font-family:var(--font-display);font-weight:700;color:var(--brand-accent-2);font-size:.95rem;letter-spacing:.02em;}
+  .ticket__name{
+    font-family:var(--font-body);text-transform:uppercase;letter-spacing:0.12em;
+    font-weight:600;font-size:.98rem;color:var(--brand-ink);
+  }
+  .ticket__spec{color:var(--brand-muted);font-size:.9rem;flex:1 1 auto;}
+  .ticket__price{
+    font-family:var(--font-body);font-weight:600;font-size:1.05rem;color:var(--brand-accent-2);
+    display:flex;align-items:center;gap:.4rem;letter-spacing:.01em;
+    font-variant-numeric:tabular-nums;
+  }
+  .ticket__price .add{color:var(--brand-muted);font-weight:500;font-size:.86rem;}
+  .servizio__note{margin-top:1rem;color:var(--brand-muted);font-size:.8rem;}
+  .servizio__cta{margin-top:2rem;}
+
+  /* ---------- La bottega (offset documentary gallery) ---------- */
+  .bottega{background:var(--brand-surface);padding-block:calc(var(--space-section) * 1.3);}
+  .gallery{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.8rem,2vw,1.6rem);align-items:end;}
+  .gallery__main{grid-column:1 / span 8;grid-row:1;position:relative;border-radius:var(--radius);overflow:hidden;}
+  .gallery__main img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius);border:1px solid var(--brand-line);}
+  .gallery__detail{position:relative;border-radius:var(--radius);border:1px solid var(--brand-line);overflow:hidden;box-shadow:0 14px 40px color-mix(in srgb,var(--brand-surface) 70%,#000);}
+  .gallery__detail img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .gallery__d1{grid-column:8 / span 5;grid-row:1;align-self:end;transform:translateY(28%);z-index:2;}
+  .gallery__d2{grid-column:2 / span 4;grid-row:2;transform:translateY(-14%);margin-top:1.4rem;}
+  .gallery__caption{grid-column:7 / span 6;grid-row:2;align-self:center;padding-left:clamp(.5rem,3vw,2rem);}
+  .gallery__caption p{color:var(--brand-ink);margin-bottom:.8rem;}
+  .gallery__caption .muted{color:var(--brand-muted);}
+
+  /* ---------- La prima volta (ritual + offset set) ---------- */
+  .prima{background:var(--brand-surface-alt);padding-block:calc(var(--space-section) * .92);}
+  .prima__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;}
+  .steps{counter-reset:step;display:flex;flex-direction:column;gap:1.4rem;}
+  .step{display:flex;gap:1.1rem;align-items:flex-start;}
+  .step__mark{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:.4rem;padding-top:.15rem;}
+  .step__num{font-family:var(--font-display);font-weight:700;color:var(--brand-accent-2);font-size:1.1rem;line-height:1;}
+  .step__line{width:1px;flex:1;background:color-mix(in srgb,var(--brand-accent-2) 45%,var(--brand-line));min-height:26px;}
+  .step h3{font-size:1.15rem;margin-bottom:.35rem;color:var(--brand-ink);}
+  .step p{color:var(--brand-muted);font-size:.96rem;}
+  .prima__media{position:relative;}
+  .prima__main-frame{display:block;position:relative;border-radius:var(--radius);overflow:hidden;}
+  .prima__media .main{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);border:1px solid var(--brand-line);}
+  .prima__detail{
+    position:absolute;left:-8%;bottom:-10%;width:46%;max-width:230px;
+    border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:0 16px 44px color-mix(in srgb,var(--brand-surface) 72%,#000);
+  }
+  .prima__detail img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+
+  /* ---------- Il registro (reputation as ledger) ---------- */
+  .registro{background:var(--brand-surface);padding-block:calc(var(--space-section) * .72);}
+  .registro__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;}
+  .score{
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    padding:2rem 1.6rem;text-align:center;background:var(--brand-surface-alt);
+  }
+  .score__num{font-family:var(--font-display);font-weight:700;font-size:clamp(3.4rem,2rem+6vw,5.4rem);line-height:.9;color:var(--brand-accent-2);}
+  .score .stars{justify-content:center;margin:.7rem 0 .5rem;}
+  .score .stars svg{width:22px;height:22px;}
+  .score__src{color:var(--brand-muted);font-size:.86rem;}
+  .score__src b{color:var(--brand-ink);font-weight:600;}
+  .ledger{border-top:1px solid var(--brand-line);}
+  .ledger li{
+    display:flex;gap:1rem;align-items:baseline;
+    padding:1rem 0;border-bottom:1px solid var(--brand-line);
+  }
+  .ledger .fascetta{margin-top:.2rem;align-self:center;}
+  .ledger__txt{color:var(--brand-ink);}
+  .ledger__txt span{display:block;color:var(--brand-muted);font-size:.9rem;margin-top:.15rem;}
+  .registro__note{margin-top:1.2rem;color:var(--brand-muted);font-size:.9rem;}
+
+  /* ---------- Prenota & trovaci ---------- */
+  .trovaci{background:var(--brand-surface-alt);padding-block:calc(var(--space-section) * 1.22);}
+  .trovaci__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start;}
+  .coord{display:flex;flex-direction:column;gap:1.6rem;}
+  .coord__item{border-top:1px solid var(--brand-line);padding-top:1.1rem;}
+  .coord__k{display:flex;align-items:center;gap:.6rem;text-transform:uppercase;letter-spacing:0.16em;font-size:.72rem;color:var(--brand-muted);font-weight:600;margin-bottom:.5rem;}
+  .coord__v{color:var(--brand-ink);font-size:1.05rem;}
+  .coord__v a{border-bottom:1px solid color-mix(in srgb,var(--brand-accent-2) 55%,transparent);}
+  .hours{width:100%;border-collapse:collapse;margin-top:.3rem;}
+  .hours td{padding:.35rem 0;border-bottom:1px solid var(--brand-line);font-size:.95rem;color:var(--brand-ink);font-variant-numeric:tabular-nums;}
+  .hours td:last-child{text-align:right;color:var(--brand-muted);}
+  .hours tr.today td{color:var(--brand-accent-2);font-weight:600;}
+  .status{
+    display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.6rem;
+    background:color-mix(in srgb,var(--brand-accent) 16%, var(--brand-surface));
+    border:1px solid color-mix(in srgb,var(--brand-accent) 45%, var(--brand-line));
+    color:var(--brand-ink);padding:.4rem .8rem;border-radius:var(--radius);font-size:.85rem;font-weight:500;
+  }
+  .status .dot{width:8px;height:8px;border-radius:50%;background:var(--brand-accent);}
+  .book-card{
+    position:sticky;top:84px;
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);padding:1.8rem 1.6rem;
+    display:flex;flex-direction:column;gap:1rem;
+  }
+  .book-card h3{font-size:1.3rem;}
+  .book-card p{color:var(--brand-muted);font-size:.95rem;}
+  .book-card .btn{justify-content:center;}
+  .book-card .proof-inline{margin-top:0;}
+  .map-btn{width:100%;justify-content:center;}
+  .book-card__phone{font-size:.9rem;color:var(--brand-muted);text-align:center;}
+  .book-card__phone a{color:var(--brand-ink);font-weight:600;}
+
+  /* ---------- Footer marquee ---------- */
+  .footer{border-top:1px solid var(--brand-line);background:var(--brand-surface);}
+  .marquee{overflow:hidden;border-bottom:1px solid var(--brand-line);padding-block:1.4rem;}
+  .marquee__track{display:flex;gap:2.5rem;width:max-content;animation:marquee 26s linear infinite;}
+  .marquee__track span{
+    font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    font-size:clamp(1.4rem,1rem+2vw,2.4rem);display:inline-flex;align-items:center;gap:2.5rem;
+  }
+  @keyframes marquee{to{transform:translateX(-50%);}}
+  .footer__inner{width:var(--container);margin-inline:auto;padding-block:2.6rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;}
+  .footer__inner h3{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--brand-muted);font-family:var(--font-body);font-weight:600;margin-bottom:.8rem;}
+  .footer__inner a{color:var(--brand-ink);font-size:.95rem;display:block;padding:.2rem 0;}
+  .footer__inner a:hover{color:var(--brand-accent-2);}
+  .footer__brand .wordmark__text{font-size:1.4rem;}
+  .footer__brand p{color:var(--brand-muted);font-size:.9rem;margin-top:1rem;max-width:34ch;}
+  .footer__legal{border-top:1px solid var(--brand-line);}
+  .footer__legal .container{padding-block:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;color:var(--brand-muted);font-size:.78rem;}
+
+  /* ---------- Sticky mobile action bar ---------- */
+  .action-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    grid-template-columns:auto 1fr;align-items:center;gap:.9rem;
+    padding:.7rem clamp(.8rem,4vw,1.2rem);
+    padding-bottom:calc(.7rem + env(safe-area-inset-bottom));
+    background:color-mix(in srgb,var(--brand-surface) 94%, transparent);
+    backdrop-filter:blur(10px);border-top:1px solid var(--brand-line);
+  }
+  .action-bar .proof-inline{margin:0;font-size:.78rem;line-height:1.2;}
+  .action-bar .proof-inline .stars svg{width:12px;height:12px;}
+  .action-bar .btn{padding:.7rem 1rem;white-space:nowrap;}
+
+  /* ============================================================
+     MOTION LAYER (pass 3) — progressive enhancement.
+     Every hidden-start state is gated behind .js; the reduced-motion
+     block at the end resets everything to visible with no transform.
+     ============================================================ */
+
+  /* --- House reveal system: ONE rAF-batched IO, varied by content role --- */
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);}
+  .js .reveal.is-in{opacity:1;transform:none;}
+  /* media → scale-in (depth), not a rise */
+  .js .reveal.rv-media{transform:scale(1.05);}
+  .js .reveal.rv-media.is-in{transform:scale(1);}
+  /* divider rule → scaleX draw-once from the numeral outward */
+  .js .reveal.rv-rule{opacity:1;transform:scaleX(0);transform-origin:left center;transition:transform var(--dur-reveal) var(--ease-signature);}
+  .js .reveal.rv-rule.is-in{transform:scaleX(1);}
+
+  /* --- Ticket stamp-in: spring settle (the one sanctioned overshoot), motif corner inks last --- */
+  .js .stamp{opacity:0;transform:translateY(18px) scale(1.045) rotate(-1.3deg);transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-micro);transition-delay:calc(var(--i,0) * var(--stagger));}
+  .js [data-stagger].is-in .stamp{opacity:1;transform:none;}
+  .js .stamp .ticket__corner{opacity:0;transition:opacity var(--dur-micro) var(--ease-signature);transition-delay:calc(var(--i,0) * var(--stagger) + var(--dur-reveal));}
+  .js [data-stagger].is-in .stamp .ticket__corner{opacity:1;}
+
+  /* --- Registro handwriting cascade: each line writes in left-to-right, in reading order --- */
+  .js .writein{opacity:0;transform:translateX(-22px);transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);transition-delay:calc(var(--i,0) * var(--stagger));}
+  .js [data-stagger].is-in .writein{opacity:1;transform:none;}
+
+  /* --- Steps cascade (prima volta) --- */
+  .js .cascade-item{opacity:0;transform:translateY(16px);transition:opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature);transition-delay:calc(var(--i,0) * var(--stagger));}
+  .js [data-stagger].is-in .cascade-item{opacity:1;transform:none;}
+
+  /* --- Hero entrance stagger (the wordmark leafs separately, below) --- */
+  @media (prefers-reduced-motion:no-preference){
+    .js .hero__frame .eyebrow,
+    .js .hero__tagline,
+    .js .hero__lead,
+    .js .hero__frame .cta-row,
+    .js .hero__frame .proof-inline,
+    .js .hero__phone{opacity:0;animation:hero-in 600ms var(--ease-signature) both;}
+    .js .hero__frame .eyebrow{animation-delay:80ms;}
+    .js .hero__tagline{animation-delay:300ms;}
+    .js .hero__lead{animation-delay:380ms;}
+    .js .hero__frame .cta-row{animation-delay:460ms;}
+    .js .hero__frame .proof-inline{animation-delay:540ms;}
+    .js .hero__phone{animation-delay:600ms;}
+    @keyframes hero-in{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+    /* Gilded wordmark leafing — left-to-right clip wipe + one travelling glint */
+    .js .hero__wordmark .wordmark__text{clip-path:inset(0 100% 0 0);animation:leaf 820ms var(--ease-signature) 160ms forwards;}
+    @keyframes leaf{to{clip-path:inset(0 0 0 0);}}
+    .js .hero__wordmark::after{
+      content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+      background:linear-gradient(105deg,transparent 42%,color-mix(in srgb,var(--brand-accent-2) 45%,#fff) 50%,transparent 58%);
+      mix-blend-mode:overlay;transform:translateX(-130%);opacity:0;
+      animation:glint 900ms var(--ease-signature) 940ms 1;
+    }
+    @keyframes glint{0%{transform:translateX(-130%);opacity:0;}25%{opacity:.85;}100%{transform:translateX(130%);opacity:0;}}
+  }
+  .hero__wordmark{position:relative;}
+
+  /* --- Hero scroll cinema: canvas frame-scrub over the video base --- */
+  .hero__canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity 600ms var(--ease-signature);}
+  .hero__canvas.is-ready{opacity:1;}
+
+  /* --- Native CSS scroll-driven push-in + two-layer parallax (the "brothers" depth) --- */
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion:no-preference){
+      .js .hero__media{animation:hero-push both linear;animation-timeline:view();animation-range:exit 0% exit 100%;will-change:transform;}
+      @keyframes hero-push{from{transform:scale(1);}to{transform:scale(1.10);}}
+      .js .hero__inner{animation:hero-lift both linear;animation-timeline:view();animation-range:exit 0% exit 100%;}
+      @keyframes hero-lift{from{transform:translateY(0);}to{transform:translateY(-7%);}}
+      .js .parallax-slow{animation:parallax-y both linear;animation-timeline:view();animation-range:cover;will-change:transform;}
+      @keyframes parallax-y{from{transform:translateY(3%) scale(1.06);}to{transform:translateY(-3%) scale(1.06);}}
+    }
+  }
+
+  /* --- Chapter markers (desktop side rail; mobile keeps the sticky action bar) --- */
+  .chapters{position:fixed;top:50%;right:clamp(.9rem,2vw,1.5rem);transform:translateY(-50%);z-index:55;display:none;flex-direction:column;align-items:center;gap:.95rem;padding-block:.4rem;}
+  .chapters__track{position:absolute;top:0;bottom:0;left:50%;width:1px;transform:translateX(-50%);background:var(--brand-line);}
+  .chapters__fill{position:absolute;top:0;left:50%;width:1px;height:100%;transform:translateX(-50%) scaleY(var(--chap,0));transform-origin:top;background:var(--brand-accent-2);opacity:.75;}
+  .chapters a{position:relative;width:11px;height:11px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 1px var(--brand-muted);transition:box-shadow var(--dur-micro) var(--ease-signature), transform var(--dur-micro) var(--ease-signature);}
+  .chapters a:hover{transform:scale(1.25);box-shadow:inset 0 0 0 1px var(--brand-accent-2);}
+  .chapters a[aria-current="true"]{background:var(--brand-accent);box-shadow:inset 0 0 0 1px var(--brand-accent);transform:scale(1.15);}
+  @media (min-width:1024px){.chapters{display:flex;}}
+
+  /* --- Pointer micro-interactions (hover-capable, fine pointer only) --- */
+  @media (hover:hover) and (pointer:fine){
+    .ticket{transition:background var(--dur-micro) var(--ease-signature), transform var(--dur-micro) var(--ease-signature), box-shadow var(--dur-micro) var(--ease-signature);}
+    .ticket:hover{transform:translateY(-3px);box-shadow:0 12px 30px color-mix(in srgb,var(--brand-surface) 68%,#000);z-index:1;}
+    .gallery__detail img,.gallery__main img{transition:transform 520ms var(--ease-signature);}
+    .gallery__detail:hover img,.gallery__main:hover img{transform:scale(1.05);}
+  }
+
+  /* --- Marquee: pausable on hover/focus + soft edge mask --- */
+  .marquee{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+  .marquee:hover .marquee__track,.marquee:focus-within .marquee__track{animation-play-state:paused;}
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:900px){
+    .nav__links,.nav__cta{display:none;}
+    .nav__toggle{display:inline-flex;}
+    .nav[data-open="true"] .nav__links{
+      display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;
+      position:absolute;left:0;right:0;top:100%;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:1rem var(--container-pad,5vw);
+    }
+    .nav[data-open="true"] .nav__inner{position:static;}
+    .nav[data-open="true"] .nav__links a{padding:.7rem 0;font-size:.95rem;width:100%;}
+    .nav[data-open="true"] .nav__cta{display:inline-flex;margin:.6rem 0 .2rem;}
+
+    .offset-grid{grid-template-columns:1fr;}
+    .fratelli__photo{order:-1;margin-top:0;max-width:460px;}
+    .tickets{grid-template-columns:1fr;}
+    .gallery{display:flex;flex-direction:column;}
+    .gallery__d1,.gallery__d2{transform:none;margin:0;}
+    .gallery__d1{align-self:flex-end;width:62%;margin-top:-14%;}
+    .gallery__d2{align-self:flex-start;width:52%;margin-top:-10%;}
+    .gallery__caption{padding-left:0;margin-top:1.2rem;}
+    .prima__grid{grid-template-columns:1fr;}
+    .prima__media{order:-1;max-width:460px;margin-bottom:2.4rem;}
+    .prima__detail{width:38%;}
+    .registro__grid{grid-template-columns:1fr;}
+    .trovaci__grid{grid-template-columns:1fr;}
+    .book-card{position:static;}
+    .footer__inner{grid-template-columns:1fr 1fr;}
+  }
+
+  @media (max-width:600px){
+    .action-bar{display:grid;}
+    body{padding-bottom:76px;}
+    .hero__inner{min-height:auto;padding-block:2rem 2.6rem;justify-content:flex-start;}
+    .hero{min-height:88svh;display:flex;}
+    .hero__media video,.hero__media img{object-position:50% 30%;}
+    .hero__frame{align-self:stretch;max-width:none;}
+    .hero__wordmark .wordmark__text{font-size:clamp(2.6rem,10vw,3.6rem);}
+    .cta-row{width:100%;}
+    .cta-row .btn{flex:1 1 auto;justify-content:center;}
+    .sec-num{margin-left:0;}
+    .sec-head{gap:.8rem;}
+    .footer__inner{grid-template-columns:1fr;}
+    .marquee__track{animation-duration:18s;}
+  }
+
+  @media (max-width:360px){
+    .hero__wordmark .wordmark__text{font-size:2.3rem;}
+    .cta-row .btn{width:100%;}
+  }
+
+  /* ============================================================
+     REDUCED MOTION — full support
+     ============================================================ */
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important;scroll-behavior:auto!important;}
+    .pole,.marquee__track{animation:none!important;}
+    .js .reveal,
+    .js .stamp,.js .writein,.js .cascade-item,
+    .js .hero__frame .eyebrow,.js .hero__tagline,.js .hero__lead,
+    .js .hero__frame .cta-row,.js .hero__frame .proof-inline,.js .hero__phone{opacity:1!important;transform:none!important;clip-path:none!important;}
+    .js .stamp .ticket__corner{opacity:1!important;}
+    .js .hero__wordmark .wordmark__text{clip-path:none!important;}
+    .js .hero__media,.js .hero__inner,.js .parallax-slow{animation:none!important;transform:none!important;}
+    .hero__canvas{display:none!important;}
+  }
+</style>
+
+<a class="sr-only" href="#servizio">Salta al servizio e ai prezzi</a>
+
+<nav class="nav" id="nav" aria-label="Navigazione principale">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Barber Fratelli — inizio pagina">
+      <span class="wordmark__pole pole" aria-hidden="true"></span>
+      <span class="wordmark__text gilt">Barber Fratelli</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="#fratelli">I fratelli</a>
+      <a href="#servizio">Servizio</a>
+      <a href="#bottega">La bottega</a>
+      <a href="#prima-volta">La prima volta</a>
+      <a href="#registro">Recensioni</a>
+      <a href="#trovaci">Dove siamo</a>
+      <a class="nav__cta" data-cta href="tel:+393883744562">Chiama</a>
+    </div>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<nav class="chapters" aria-label="Vai alla sezione">
+  <span class="chapters__track" aria-hidden="true"></span>
+  <span class="chapters__fill" aria-hidden="true"></span>
+  <a href="#top" aria-label="Insegna — inizio"></a>
+  <a href="#fratelli" aria-label="I due fratelli"></a>
+  <a href="#servizio" aria-label="Il servizio e i prezzi"></a>
+  <a href="#bottega" aria-label="La bottega"></a>
+  <a href="#prima-volta" aria-label="La prima volta"></a>
+  <a href="#registro" aria-label="Le recensioni"></a>
+  <a href="#trovaci" aria-label="Dove siamo"></a>
+</nav>
+
+<header class="hero">
+  <div class="hero__media">
+    <video autoplay muted loop playsinline preload="auto" poster="assets/hero-brothers.jpg" aria-hidden="true">
+      <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+      <img src="assets/hero-brothers.jpg" alt="I due fratelli barbieri in piedi tra le due poltrone del loro salone a Milano">
+    </video>
+    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__pole pole" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__frame">
+      <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> Barbiere · Sesto San Giovanni, Milano</p>
+      <h1 class="hero__wordmark">
+        <span class="wordmark">
+          <span class="wordmark__pole pole" aria-hidden="true"></span>
+          <span class="wordmark__text gilt">
+            <span>Barber</span>
+            <span>Fratelli</span>
+          </span>
+        </span>
+      </h1>
+      <p class="hero__tagline">Due fratelli, una poltrona</p>
+      <p class="hero__lead">Due fratelli, due poltrone. Le stesse mani sul tuo taglio, ogni volta. <b>Un barbiere di fiducia</b> — non una sedia anonima.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" data-cta href="tel:+393883744562">Chiama per prenotare</a>
+        <a class="btn btn--ghost" href="#servizio">Vedi il servizio</a>
+      </div>
+      <p class="proof-inline"><span class="stars" aria-hidden="true"></span><b>4,4</b> su Google</p>
+      <p class="hero__phone">Oppure segna il numero: <a href="tel:+393883744562">+39&nbsp;388&nbsp;374&nbsp;4562</a></p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 02 — Due fratelli -->
+  <section class="fratelli" id="fratelli" aria-labelledby="fratelli-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <div class="sec-head__body">
+          <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> Chi c’è dietro le poltrone</p>
+          <div class="sec-rule reveal rv-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="offset-grid">
+        <figure class="fratelli__photo photo-grade reveal rv-media">
+          <img src="assets/brothers-atwork.jpg" alt="Un fratello taglia con le forbici mentre l'altro lavora alla poltrona accanto">
+          <figcaption>I due fratelli al lavoro, una poltrona ciascuno.</figcaption>
+        </figure>
+        <div class="fratelli__text reveal">
+          <h2 id="fratelli-h">Due fratelli,<br>una bottega</h2>
+          <p>Siamo in due. Due fratelli, due poltrone.</p>
+          <p>Nessun barbiere di passaggio, nessun roster che cambia ogni mese. Chi impara la tua testa è quello che continua a tagliartela.</p>
+          <blockquote class="pull">Il taglio che ti piace non dipende da chi trovi quel giorno. <b>Ci siamo sempre gli stessi due.</b></blockquote>
+          <p class="muted">È la promessa che sta nel nome — la conduzione familiare che una catena, con la sua sedia diversa ogni volta, non può mantenere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — Il servizio -->
+  <section class="servizio" id="servizio" aria-labelledby="servizio-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span>
+        <div class="sec-head__body">
+          <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> Il servizio &amp; i prezzi</p>
+          <h2 id="servizio-h" style="font-size:var(--fs-h2);margin-top:.4rem;">Cosa facciamo, e quanto costa</h2>
+          <p class="lede">Taglio, rasatura col rasoio, barba, panno caldo. Il listino è qui, in chiaro: niente da chiedere, niente da indovinare.</p>
+          <div class="sec-rule reveal rv-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <figure class="servizio__band photo-grade reveal rv-media">
+        <img src="assets/service-cut.jpg" alt="Le mani del barbiere rifiniscono una sfumatura sulla nuca del cliente">
+        <figcaption class="cap">Sfumatura rifinita a mano — forbici e macchinetta.</figcaption>
+      </figure>
+
+      <ul class="tickets" data-stagger>
+        <li class="ticket stamp">
+          <span class="ticket__corner" aria-hidden="true"><span class="fascetta"></span></span>
+          <div class="ticket__head"><span class="ticket__num">01</span><span class="ticket__name">Taglio</span></div>
+          <p class="ticket__spec">Forbici e macchinetta. Sfumatura o classico, rifinito col rasoio.</p>
+          <p class="ticket__price">€&nbsp;22</p>
+        </li>
+        <li class="ticket stamp">
+          <span class="ticket__corner" aria-hidden="true"><span class="fascetta"></span></span>
+          <div class="ticket__head"><span class="ticket__num">02</span><span class="ticket__name">Rasatura col rasoio</span></div>
+          <p class="ticket__spec">Rasoio a mano libera e panno caldo. Il rituale completo.</p>
+          <p class="ticket__price">€&nbsp;25</p>
+        </li>
+        <li class="ticket stamp">
+          <span class="ticket__corner" aria-hidden="true"><span class="fascetta"></span></span>
+          <div class="ticket__head"><span class="ticket__num">03</span><span class="ticket__name">Barba</span></div>
+          <p class="ticket__spec">Regolata e rifinita, contorni netti col rasoio.</p>
+          <p class="ticket__price">€&nbsp;15</p>
+        </li>
+        <li class="ticket stamp">
+          <span class="ticket__corner" aria-hidden="true"><span class="fascetta"></span></span>
+          <div class="ticket__head"><span class="ticket__num">04</span><span class="ticket__name">Taglio + barba</span></div>
+          <p class="ticket__spec">Il completo: taglio e barba nella stessa poltrona.</p>
+          <p class="ticket__price">€&nbsp;32</p>
+        </li>
+        <li class="ticket stamp">
+          <span class="ticket__corner" aria-hidden="true"><span class="fascetta"></span></span>
+          <div class="ticket__head"><span class="ticket__num">05</span><span class="ticket__name">Panno caldo</span></div>
+          <p class="ticket__spec">Il panno caldo prima della lama. Da aggiungere a taglio o barba.</p>
+          <p class="ticket__price"><span class="add">+</span> €&nbsp;8</p>
+        </li>
+        <li class="ticket stamp">
+          <span class="ticket__corner" aria-hidden="true"><span class="fascetta"></span></span>
+          <div class="ticket__head"><span class="ticket__num">06</span><span class="ticket__name">Taglio bimbo</span></div>
+          <p class="ticket__spec">Per i più piccoli, con calma e senza fretta.</p>
+          <p class="ticket__price">€&nbsp;16</p>
+        </li>
+      </ul>
+      <p class="servizio__note">Prezzi indicativi — confermali in negozio o al telefono. Ci adattiamo al taglio.</p>
+      <div class="servizio__cta">
+        <a class="btn btn--primary" data-cta href="tel:+393883744562">Chiama per prenotare · +39&nbsp;388&nbsp;374&nbsp;4562</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — La bottega -->
+  <section class="bottega" id="bottega" aria-labelledby="bottega-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">04</span>
+        <div class="sec-head__body">
+          <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> Il posto</p>
+          <h2 id="bottega-h" style="font-size:var(--fs-h2);margin-top:.4rem;">La bottega</h2>
+          <div class="sec-rule reveal rv-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure class="gallery__main photo-grade reveal rv-media">
+          <img class="parallax-slow" src="assets/bottega-room.jpg" alt="L'interno del salone: due poltrone vintage davanti a specchi con cornici dorate">
+        </figure>
+        <figure class="gallery__detail gallery__d1 photo-grade reveal rv-media">
+          <img src="assets/detail-tools.jpg" alt="Forbici, pettine, tosatrice e pennello in ottone disposti su un tappetino in cuoio">
+        </figure>
+        <figure class="gallery__detail gallery__d2 photo-grade reveal rv-media">
+          <img src="assets/detail-chair.jpg" alt="Dettaglio della poltrona vintage: cuoio color bordeaux, cromature e poggiapiedi in ottone">
+        </figure>
+        <div class="gallery__caption reveal">
+          <p>Due poltrone, gli specchi, l’ottone, il legno scuro.</p>
+          <p class="muted">Un posto caldo dove ci si siede con calma. Gli attrezzi sono in ordine, la luce è quella giusta, e non c’è mai fretta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — La prima volta -->
+  <section class="prima" id="prima-volta" aria-labelledby="prima-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">05</span>
+        <div class="sec-head__body">
+          <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> Se non ci sei mai stato</p>
+          <h2 id="prima-h" style="font-size:var(--fs-h2);margin-top:.4rem;">La prima volta</h2>
+          <p class="lede">Cambiare barbiere mette un po’ d’imbarazzo. Ecco come va, così sai già cosa aspettarti.</p>
+          <div class="sec-rule reveal rv-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="prima__grid">
+        <ol class="steps" data-stagger>
+          <li class="step cascade-item">
+            <span class="step__mark" aria-hidden="true"><span class="step__num">01</span><span class="step__line"></span></span>
+            <div><h3>La poltrona</h3><p>Ti siedi, ci dici come lo porti di solito. Ti ascoltiamo prima di prendere in mano le forbici.</p></div>
+          </li>
+          <li class="step cascade-item">
+            <span class="step__mark" aria-hidden="true"><span class="step__num">02</span><span class="step__line"></span></span>
+            <div><h3>Il panno caldo</h3><p>Prima della lama, il panno caldo. Prepara la pelle e fa parte del mestiere, non è un extra da spa.</p></div>
+          </li>
+          <li class="step cascade-item">
+            <span class="step__mark" aria-hidden="true"><span class="step__num">03</span></span>
+            <div><h3>Il rasoio</h3><p>Rasatura col rasoio a mano libera, contorni netti. Poi la prossima volta ci ricordiamo com’era, e ripartiamo da lì.</p></div>
+          </li>
+        </ol>
+        <figure class="prima__media reveal rv-media">
+          <span class="prima__main-frame photo-grade">
+            <img class="main parallax-slow" src="assets/shave-hottowel.jpg" alt="Rasatura tradizionale col rasoio a mano libera, cliente disteso sulla poltrona">
+          </span>
+          <span class="prima__detail photo-grade">
+            <img src="assets/detail-razor.jpg" alt="Rasoio a mano libera e panno caldo su legno scuro accanto a ciotola e pennello in ottone">
+          </span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — Il registro -->
+  <section class="registro" id="registro" aria-labelledby="registro-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">06</span>
+        <div class="sec-head__body">
+          <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> La reputazione</p>
+          <h2 id="registro-h" style="font-size:var(--fs-h2);margin-top:.4rem;">Il registro</h2>
+          <div class="sec-rule reveal rv-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="registro__grid">
+        <div class="score reveal">
+          <div class="score__num" data-countup="4,4">4,4</div>
+          <span class="stars" aria-hidden="true"></span>
+          <p class="score__src">Media su <b>Google Maps</b></p>
+        </div>
+        <div>
+          <p class="lede reveal" style="margin-top:0;">Non ci inventiamo recensioni. Il punteggio è quello, pubblico, e resta lì costante negli anni — proprio perché siamo sempre gli stessi due.</p>
+          <ul class="ledger" data-stagger>
+            <li class="writein"><span class="fascetta fascetta--tick" aria-hidden="true"></span><span class="ledger__txt">Lo stesso taglio, ogni volta<span>La cosa che torna più spesso: la costanza chi ci prova la nota.</span></span></li>
+            <li class="writein"><span class="fascetta fascetta--tick" aria-hidden="true"></span><span class="ledger__txt">Barbieri che ti ricordano<span>Ci ricordiamo com’era l’ultima volta, e ripartiamo da lì.</span></span></li>
+            <li class="writein"><span class="fascetta fascetta--tick" aria-hidden="true"></span><span class="ledger__txt">Rasatura fatta come si deve<span>Il rasoio a mano libera e il panno caldo, senza fretta.</span></span></li>
+          </ul>
+          <p class="registro__note reveal">Riflessioni ricorrenti dai giudizi pubblici, riassunte — non citazioni attribuite a singole persone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 — Prenota & trovaci -->
+  <section class="trovaci" id="trovaci" aria-labelledby="trovaci-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">07</span>
+        <div class="sec-head__body">
+          <p class="eyebrow"><span class="fascetta" aria-hidden="true"></span> Prenota &amp; trovaci</p>
+          <h2 id="trovaci-h" style="font-size:var(--fs-h2);margin-top:.4rem;">Passa in bottega</h2>
+          <p class="lede">Non c’è un modulo online: si prenota al telefono, come si è sempre fatto. Chiamaci e ti diamo l’orario.</p>
+          <div class="sec-rule reveal rv-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="trovaci__grid">
+        <div class="coord reveal">
+          <div class="coord__item">
+            <p class="coord__k"><span class="fascetta fascetta--tick" aria-hidden="true"></span> Dove siamo</p>
+            <p class="coord__v">Via Cesare da Sesto, 32<br>20099 Sesto San Giovanni (MI)<br><span style="color:var(--brand-muted);font-size:.92rem;">Alle porte di Milano</span></p>
+            <p style="margin-top:.9rem;"><a class="btn btn--ghost map-btn" href="https://www.google.com/maps/search/?api=1&query=Barber+Fratelli%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a></p>
+          </div>
+          <div class="coord__item">
+            <p class="coord__k"><span class="fascetta fascetta--tick" aria-hidden="true"></span> Quando siamo aperti</p>
+            <p class="status"><span class="dot" aria-hidden="true"></span> Ora chiuso · apre giovedì alle 09:30</p>
+            <table class="hours">
+              <tr><td>Lunedì</td><td>Chiuso</td></tr>
+              <tr><td>Martedì</td><td>09:30 – 19:00</td></tr>
+              <tr><td>Mercoledì</td><td>09:30 – 19:00</td></tr>
+              <tr class="today"><td>Giovedì</td><td>09:30 – 19:00</td></tr>
+              <tr><td>Venerdì</td><td>09:30 – 19:00</td></tr>
+              <tr><td>Sabato</td><td>09:00 – 18:00</td></tr>
+              <tr><td>Domenica</td><td>Chiuso</td></tr>
+            </table>
+            <p style="color:var(--brand-muted);font-size:.8rem;margin-top:.6rem;">Orari indicativi — lo stato di oggi è aggiornato; per gli orari della settimana conferma al telefono.</p>
+          </div>
+          <div class="coord__item">
+            <p class="coord__k"><span class="fascetta fascetta--tick" aria-hidden="true"></span> Telefono</p>
+            <p class="coord__v"><a href="tel:+393883744562">+39&nbsp;388&nbsp;374&nbsp;4562</a></p>
+          </div>
+        </div>
+
+        <aside class="book-card reveal" aria-label="Prenota">
+          <h3>Prenota una poltrona</h3>
+          <p>Un colpo di telefono e ti troviamo il posto. Nessun modulo, nessuna attesa.</p>
+          <a class="btn btn--primary" data-cta href="tel:+393883744562">Chiama ora</a>
+          <p class="book-card__phone">+39&nbsp;388&nbsp;374&nbsp;4562</p>
+          <p class="proof-inline"><span class="stars" aria-hidden="true"></span><b>4,4</b> su Google</p>
+          <a class="btn btn--ghost map-btn" href="https://www.google.com/maps/search/?api=1&query=Barber+Fratelli%2C+Milano" target="_blank" rel="noopener">Vedi sulla mappa</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="gilt">Barber Fratelli <span class="fascetta"></span> Due fratelli, una poltrona <span class="fascetta"></span> Barber Fratelli <span class="fascetta"></span> Due fratelli, una poltrona <span class="fascetta"></span></span>
+      <span class="gilt">Barber Fratelli <span class="fascetta"></span> Due fratelli, una poltrona <span class="fascetta"></span> Barber Fratelli <span class="fascetta"></span> Due fratelli, una poltrona <span class="fascetta"></span></span>
+    </div>
+  </div>
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="wordmark">
+        <span class="wordmark__pole pole" aria-hidden="true" style="height:44px;"></span>
+        <span class="wordmark__text gilt"><span>Barber</span><span>Fratelli</span></span>
+      </span>
+      <p>Barbiere a conduzione familiare a Sesto San Giovanni, alle porte di Milano. Taglio, rasatura col rasoio, panno caldo.</p>
+    </div>
+    <div>
+      <h3>Il servizio</h3>
+      <a href="#servizio">Taglio</a>
+      <a href="#servizio">Rasatura col rasoio</a>
+      <a href="#servizio">Barba</a>
+      <a href="#prima-volta">La prima volta</a>
+    </div>
+    <div>
+      <h3>Contatti</h3>
+      <a href="tel:+393883744562">+39 388 374 4562</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Barber+Fratelli%2C+Milano" target="_blank" rel="noopener">Via Cesare da Sesto, 32 · Sesto San Giovanni</a>
+      <a href="#registro">4,4 su Google</a>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <div class="container">
+      <span>© 2026 Barber Fratelli · Sesto San Giovanni (MI)</span>
+      <span>Prezzi e orari della settimana sono indicativi, da confermare in negozio.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="action-bar" aria-label="Contatto rapido">
+  <a class="btn btn--primary" data-cta href="tel:+393883744562">Chiama</a>
+  <p class="proof-inline"><span class="stars" aria-hidden="true"></span><b>4,4</b> su Google · prenota subito</p>
+</div>
+
+<script>
+  (function(){
+    document.documentElement.classList.add('js');
+
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hasIO=('IntersectionObserver' in window);
+
+    /* --- house reveal system FIRST: guarantees content visibility before any later feature code runs --- */
+    var groups=document.querySelectorAll('[data-stagger]');
+    for(var g=0;g<groups.length;g++){
+      var kids=groups[g].querySelectorAll('.stamp,.writein,.cascade-item');
+      for(var k=0;k<kids.length;k++){ kids[k].style.setProperty('--i',k); }
+    }
+    var reveals=document.querySelectorAll('.reveal,[data-stagger]');
+    if(reduce || !hasIO){
+      for(var r=0;r<reveals.length;r++){ reveals[r].classList.add('is-in'); }
+    } else {
+      var queued=[], scheduled=false;
+      function flush(){ scheduled=false; for(var fi=0;fi<queued.length;fi++){ queued[fi].classList.add('is-in'); } queued=[]; }
+      var io=new IntersectionObserver(function(entries){
+        for(var e=0;e<entries.length;e++){
+          if(entries[e].isIntersecting){ queued.push(entries[e].target); io.unobserve(entries[e].target);
+            if(!scheduled){ scheduled=true; requestAnimationFrame(flush); } }
+        }
+      },{rootMargin:'0px 0px -12% 0px',threshold:0.12});
+      for(var q=0;q<reveals.length;q++){ io.observe(reveals[q]); }
+    }
+
+    /* --- star rating render (aggregate 4,4) --- */
+    var STAR_FULL='<svg viewBox="0 0 20 20" class="s-full" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.85-4.25 4.15 1 5.85L10 15l-5.25 2.7 1-5.85L1.5 7.65l5.9-.85z"/></svg>';
+    function starsMarkup(val,uid){
+      var out='';
+      for(var i=1;i<=5;i++){
+        var fill=Math.max(0,Math.min(1,val-(i-1)));
+        if(fill>=1){ out+=STAR_FULL; }
+        else if(fill<=0){ out+='<svg viewBox="0 0 20 20" class="s-empty" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.85-4.25 4.15 1 5.85L10 15l-5.25 2.7 1-5.85L1.5 7.65l5.9-.85z"/></svg>'; }
+        else {
+          var pct=Math.round(fill*100);
+          var id='cp'+uid+'_'+i;
+          out+='<svg viewBox="0 0 20 20" class="s-part" aria-hidden="true"><defs><clipPath id="'+id+'"><rect x="0" y="0" width="'+(pct/100*20).toFixed(2)+'" height="20"/></clipPath></defs>'
+             +'<path d="M10 1.5l2.6 5.3 5.9.85-4.25 4.15 1 5.85L10 15l-5.25 2.7 1-5.85L1.5 7.65l5.9-.85z" fill="#3A2C22"/>'
+             +'<path d="M10 1.5l2.6 5.3 5.9.85-4.25 4.15 1 5.85L10 15l-5.25 2.7 1-5.85L1.5 7.65l5.9-.85z" fill="#C7A24C" clip-path="url(#'+id+')"/></svg>';
+        }
+      }
+      return out;
+    }
+    var starEls=document.querySelectorAll('.stars');
+    for(var s=0;s<starEls.length;s++){
+      starEls[s].innerHTML=starsMarkup(4.4,s);
+    }
+
+    /* --- mobile nav toggle --- */
+    var nav=document.getElementById('nav');
+    var toggle=document.getElementById('navToggle');
+    var links=document.getElementById('navLinks');
+    function setOpen(open){
+      nav.setAttribute('data-open',open?'true':'false');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+    }
+    if(toggle){
+      toggle.addEventListener('click',function(){ setOpen(nav.getAttribute('data-open')!=='true'); });
+      links.addEventListener('click',function(e){ if(e.target.tagName==='A') setOpen(false); });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&nav.getAttribute('data-open')==='true'){ setOpen(false); toggle.focus(); } });
+    }
+
+    /* --- count-up on the real aggregate rating --- */
+    var counters=document.querySelectorAll('[data-countup]');
+    function runCount(el){
+      var raw=el.getAttribute('data-countup'); var target=parseFloat(raw.replace(',','.'));
+      if(isNaN(target)){ return; }
+      var dec=(raw.indexOf(',')>-1||raw.indexOf('.')>-1)?1:0;
+      var start=null, DUR=900;
+      function fmt(n){ return dec?n.toFixed(1).replace('.',','):String(Math.round(n)); }
+      function step(ts){ if(start===null)start=ts; var p=Math.min(1,(ts-start)/DUR); var eased=1-Math.pow(1-p,3);
+        el.textContent=fmt(target*eased); if(p<1){ requestAnimationFrame(step); } else { el.textContent=raw; } }
+      requestAnimationFrame(step);
+    }
+    if(!reduce && hasIO){
+      var cio=new IntersectionObserver(function(ents){ for(var i=0;i<ents.length;i++){ if(ents[i].isIntersecting){ runCount(ents[i].target); cio.unobserve(ents[i].target); } } },{threshold:0.6});
+      for(var c=0;c<counters.length;c++){ cio.observe(counters[c]); }
+    }
+
+    /* --- chapter rail: active dot + progress fill --- */
+    var rail=document.querySelector('.chapters');
+    if(rail && hasIO){
+      var dots=rail.querySelectorAll('a'), targets=[];
+      for(var d=0;d<dots.length;d++){ var t=document.querySelector(dots[d].getAttribute('href')==='#top'?'.hero':dots[d].getAttribute('href')); if(t){ targets.push({dot:dots[d],el:t}); } }
+      var chapIO=new IntersectionObserver(function(ents){
+        for(var i=0;i<ents.length;i++){ if(ents[i].isIntersecting){
+          for(var j=0;j<targets.length;j++){ targets[j].dot.setAttribute('aria-current', targets[j].el===ents[i].target?'true':'false'); }
+        } }
+      },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+      for(var m=0;m<targets.length;m++){ chapIO.observe(targets[m].el); }
+      var railTick=false;
+      function railUpdate(){ railTick=false; var h=document.documentElement.scrollHeight-window.innerHeight; var p=h>0?Math.min(1,Math.max(0,window.scrollY/h)):0; rail.style.setProperty('--chap',p.toFixed(3)); }
+      window.addEventListener('scroll',function(){ if(!railTick){ railTick=true; requestAnimationFrame(railUpdate); } },{passive:true});
+      railUpdate();
+    }
+
+    /* --- hero scroll cinema: canvas frame-scrub over the video base --- */
+    var canvas=document.querySelector('.hero__canvas');
+    var hero=document.querySelector('.hero');
+    if(canvas && hero && !reduce){
+      var ctx=canvas.getContext('2d');
+      var TOTAL=48;
+      var isSmall=window.matchMedia('(max-width:700px)').matches;
+      var dir='assets/hero-frames/'+(isSmall?'mobile':'desktop')+'/';
+      var frames=new Array(TOTAL), loaded=0, ready=false, failed=0;
+      function pad(n){ return ('0000'+n).slice(-4); }
+      var curFrame=0, target=0, running=false, rafId=null;
+      function nearest(idx){ for(var o=0;o<TOTAL;o++){ if(frames[idx-o])return frames[idx-o]; if(frames[idx+o])return frames[idx+o]; } return null; }
+      function draw(){
+        var im=frames[Math.round(curFrame)]||nearest(Math.round(curFrame)); if(!im)return;
+        var cw=canvas.width, ch=canvas.height; if(!cw||!ch)return;
+        var ir=im.width/im.height, cr=cw/ch, dw,dh; if(ir>cr){ dh=ch; dw=ch*ir; } else { dw=cw; dh=cw/ir; }
+        ctx.clearRect(0,0,cw,ch); ctx.drawImage(im,(cw-dw)/2,(ch-dh)*0.38,dw,dh);
+      }
+      function sizeCanvas(){ var dpr=Math.min(window.devicePixelRatio||1,2); var b=canvas.getBoundingClientRect();
+        canvas.width=Math.round(b.width*dpr); canvas.height=Math.round(b.height*dpr); if(ready)draw(); }
+      function loadFrame(i){ if(frames[i])return; var im=new Image(); im.decoding='async';
+        im.onload=function(){ frames[i]=im; loaded++; if(!ready&&loaded>=4){ ready=true; sizeCanvas(); draw(); canvas.classList.add('is-ready'); } };
+        im.onerror=function(){ failed++; }; im.src=dir+'frame-'+pad(i+1)+'.webp'; }
+      loadFrame(0); loadFrame(TOTAL-1); loadFrame(Math.floor(TOTAL/2));
+      var li=1; (function chain(){ if(li<TOTAL){ loadFrame(li); li++; setTimeout(chain,40); } })();
+      function loop(){ if(!running)return;
+        var rect=hero.getBoundingClientRect(); var prog=Math.min(1,Math.max(0,-rect.top/(rect.height||1)));
+        target=prog*(TOTAL-1); curFrame+=(target-curFrame)*0.12; if(Math.abs(target-curFrame)<0.01)curFrame=target;
+        if(ready)draw(); rafId=requestAnimationFrame(loop); }
+      if(hasIO){
+        var heroIO=new IntersectionObserver(function(ents){ var vis=ents[0].isIntersecting;
+          if(vis&&!running){ running=true; rafId=requestAnimationFrame(loop); } else if(!vis&&running){ running=false; if(rafId)cancelAnimationFrame(rafId); } },{threshold:0});
+        heroIO.observe(hero);
+      } else { running=true; rafId=requestAnimationFrame(loop); }
+      window.addEventListener('resize',sizeCanvas,{passive:true});
+    }
+
+    /* --- pause hero video under reduced motion --- */
+    if(reduce){
+      var v=document.querySelector('.hero__media video');
+      if(v){ v.removeAttribute('autoplay'); try{v.pause();}catch(e){} }
+    }
+  })();
+</script>

@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="it" id="top">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El mar — Forniture idrauliche a Milano | Rubinetteria, tubi e raccordi al banco</title>
+<meta name="description" content="El mar è il banco di forniture idrauliche in centro a Milano: rubinetteria, tubazioni, raccordi e valvole. Porti il pezzo, ti diamo quello giusto — in pronta consegna. Valutazione 4,9 su Google Maps.">
+<link rel="canonical" href="https://www.elmar-milano.it/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="El mar — Forniture idrauliche a Milano">
+<meta property="og:description" content="Il pezzo giusto, al banco. Rubinetteria, tubazioni, raccordi e valvole in centro a Milano, in pronta consegna. 4,9 su Google Maps.">
+<meta property="og:image" content="https://www.elmar-milano.it/assets/hero-storefront.jpg">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://www.elmar-milano.it/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El mar — Forniture idrauliche a Milano">
+<meta name="twitter:description" content="Il pezzo giusto, al banco. Rubinetteria, tubi, raccordi e valvole in centro a Milano.">
+<meta name="twitter:image" content="https://www.elmar-milano.it/assets/hero-storefront.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HardwareStore",
+  "name": "El mar",
+  "description": "Forniture idrauliche a Milano: rubinetteria, tubazioni, raccordi e valvole. Il pezzo giusto al banco, in pronta consegna.",
+  "telephone": "+393273438429",
+  "url": "https://www.elmar-milano.it/",
+  "image": "https://www.elmar-milano.it/assets/hero-storefront.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Sant'Andrea 3",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=El+mar%2C+Milano",
+  "areaServed": "Milano"
+}
+</script>
+
+<style>
+  /* ============================================================
+     BRAND TOKENS — defined once, referenced everywhere
+     ============================================================ */
+  :root{
+    --brand-ink:#1A1F24;
+    --brand-surface:#EDF0F1;
+    --brand-surface-alt:#E3E7E9;
+    --brand-accent:#AB5C34;
+    --brand-accent-ink:#FBF7F2;
+    --brand-muted:#565F66;
+    --brand-line:#D2D8DB;
+
+    --font-display:'Space Grotesk','Helvetica Neue',Arial,sans-serif;
+    --font-body:'IBM Plex Sans','Segoe UI',Roboto,system-ui,sans-serif;
+
+    --ease-signature:cubic-bezier(0.16,1,0.3,1);
+    --ease-micro:cubic-bezier(0.4,0,0.2,1);
+    --dur-reveal:720ms;
+    --dur-micro:200ms;
+    --stagger:80ms;
+
+    --space-section:clamp(4.5rem,3rem + 6vw,9rem);
+    --container:min(1180px,92vw);
+    --radius:3px;
+
+    --fs-hero:clamp(2.6rem,1.7rem + 4.2vw,5.4rem);
+    --fs-h2:clamp(1.6rem,1.2rem + 1.8vw,2.6rem);
+    --fs-body:clamp(1rem,0.96rem + 0.2vw,1.125rem);
+
+    --nav-h:64px;
+  }
+
+  /* ============================================================
+     RESET / BASE
+     ============================================================ */
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);}
+  body{
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    font-optical-sizing:auto;
+    text-wrap:pretty;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:0;text-wrap:balance;}
+  p{margin:0;max-width:66ch;}
+  a{color:var(--brand-accent);text-decoration-thickness:1px;text-underline-offset:3px;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  :focus-visible{
+    outline:2px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:2px;
+    box-shadow:0 0 0 5px color-mix(in srgb,var(--brand-accent) 22%,transparent);
+  }
+
+  .container{width:var(--container);margin-inline:auto;}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+  .skip{
+    position:absolute;left:8px;top:-48px;z-index:200;
+    background:var(--brand-ink);color:var(--brand-accent-ink);
+    padding:.6rem 1rem;border-radius:var(--radius);
+    transition:top var(--dur-micro) var(--ease-micro);
+  }
+  .skip:focus{top:8px;}
+
+  .eyebrow{
+    font-family:var(--font-body);
+    font-size:.72rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.18em;
+    color:var(--brand-muted);
+    display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.1rem;
+  }
+  /* ---- THE MOTIF: dimension tick (copper right-angle bracket) ---- */
+  .tick{
+    display:inline-block;width:12px;height:12px;flex:0 0 auto;
+    border-left:2px solid var(--brand-accent);
+    border-top:2px solid var(--brand-accent);
+  }
+  .lede{color:var(--brand-muted);max-width:56ch;font-size:1.05rem;}
+  .num{font-variant-numeric:tabular-nums;color:var(--brand-accent);}
+
+  /* datum rule — short copper hairline section divider with a tick */
+  .datum-rule{
+    display:flex;align-items:center;gap:.75rem;
+    margin:0 0 2.4rem;color:var(--brand-accent);
+  }
+  .datum-rule::before{content:"";width:12px;height:12px;border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);}
+  .datum-rule::after{content:"";height:1px;flex:1;background:var(--brand-accent);opacity:.55;}
+  .datum-rule span{
+    font-family:var(--font-body);font-size:.7rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.18em;white-space:nowrap;
+  }
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn{
+    --pad:1rem 1.5rem;
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    min-height:48px;padding:var(--pad);
+    font-family:var(--font-body);font-size:.95rem;font-weight:600;
+    letter-spacing:.01em;border-radius:var(--radius);
+    text-decoration:none;cursor:pointer;border:1px solid transparent;
+    transition:transform var(--dur-micro) var(--ease-micro),
+               background var(--dur-micro) var(--ease-micro),
+               color var(--dur-micro) var(--ease-micro),
+               border-color var(--dur-micro) var(--ease-micro);
+  }
+  .btn--primary{background:var(--brand-accent);color:var(--brand-accent-ink);position:relative;}
+  .btn--primary:hover{background:#94502d;}
+  .btn--primary:active{transform:translateY(1px) scale(.99);}
+  /* dimension-tick bracket that draws on hover (motion pass refines) */
+  .btn--primary::before,.btn--primary::after{
+    content:"";position:absolute;width:9px;height:9px;opacity:0;
+    transition:opacity var(--dur-micro) var(--ease-micro);
+    border-color:var(--brand-accent-ink);
+  }
+  .btn--primary::before{top:6px;left:6px;border-left:2px solid;border-top:2px solid;}
+  .btn--primary::after{bottom:6px;right:6px;border-right:2px solid;border-bottom:2px solid;}
+  .btn--primary:hover::before,.btn--primary:hover::after,
+  .btn--primary:focus-visible::before,.btn--primary:focus-visible::after{opacity:.85;}
+  .btn--ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line);}
+  .btn--ghost:hover{border-color:var(--brand-accent);color:var(--brand-accent);}
+
+  /* ============================================================
+     PHOTO SLOTS — CSS stand-ins at correct proportions.
+     No photo files exist yet; the art pass drops real documentary
+     shots into these slots (cool daylight / steel + brass grade).
+     ============================================================ */
+  .shot{
+    position:relative;width:100%;border-radius:var(--radius);
+    overflow:hidden;background:var(--brand-surface-alt);
+    border:1px solid var(--brand-line);
+    box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--brand-surface) 30%,transparent);
+    background-image:
+      /* window-light highlight, top-left, cool daylight — shared across the shoot */
+      radial-gradient(120% 90% at 14% 8%, color-mix(in srgb,var(--brand-surface) 92%,transparent) 0%, transparent 46%),
+      /* cool steel shadow mass, opposite corner */
+      linear-gradient(300deg, color-mix(in srgb,var(--brand-ink) 26%,transparent) 0%, transparent 48%),
+      /* legibility vignette along the bottom, where captions sit */
+      linear-gradient(to top, color-mix(in srgb,var(--brand-ink) 30%,transparent) 0%, transparent 30%),
+      linear-gradient(160deg, var(--brand-surface) 0%, var(--brand-surface-alt) 45%, color-mix(in srgb,var(--brand-line) 80%,var(--brand-surface-alt)) 100%);
+  }
+  /* --- per-family texture layer: the trait that actually distinguishes each
+     product family's plate (a shelf row ≠ a pipe bin ≠ a valve macro ≠ a
+     counter), so the gallery isn't one gradient card repeated with a caption
+     swap. Abstract geometric patterns only — never a drawn scene. --- */
+  .shot::before{content:"";position:absolute;inset:0;pointer-events:none;}
+  /* vitrine (hero storefront): window mullions + a glass-pane highlight */
+  .tex-vitrine::before{
+    background-image:
+      repeating-linear-gradient(90deg, color-mix(in srgb,var(--brand-ink) 15%,transparent) 0 2px, transparent 2px 18%),
+      repeating-linear-gradient(0deg, color-mix(in srgb,var(--brand-ink) 11%,transparent) 0 2px, transparent 2px 30%),
+      radial-gradient(55% 38% at 72% 22%, color-mix(in srgb,var(--brand-surface) 88%,transparent) 0%, transparent 72%);
+  }
+  /* rubinetteria: a row of polished fixtures — vertical bands + a glint per column */
+  .tex-rubinetteria::before{
+    background-image:
+      radial-gradient(10px 10px at 13% 20%, color-mix(in srgb,var(--brand-surface) 96%,transparent) 0%, transparent 70%),
+      radial-gradient(9px 9px at 37% 30%, color-mix(in srgb,var(--brand-surface) 94%,transparent) 0%, transparent 70%),
+      radial-gradient(10px 10px at 61% 18%, color-mix(in srgb,var(--brand-surface) 96%,transparent) 0%, transparent 70%),
+      radial-gradient(9px 9px at 85% 32%, color-mix(in srgb,var(--brand-surface) 94%,transparent) 0%, transparent 70%),
+      repeating-linear-gradient(90deg, color-mix(in srgb,var(--brand-ink) 10%,transparent) 0 3px, transparent 3px 24%),
+      linear-gradient(115deg, transparent 55%, color-mix(in srgb,var(--brand-accent) 15%,transparent) 80%, color-mix(in srgb,var(--brand-accent) 7%,transparent) 100%);
+  }
+  /* tubazioni: pipe ends sorted by diameter — a grid of concentric rings */
+  .tex-tubazioni::before{
+    background-image:
+      radial-gradient(circle at 20% 24%, transparent 0 32%, color-mix(in srgb,var(--brand-ink) 22%,transparent) 33% 37%, transparent 38%),
+      radial-gradient(circle at 58% 20%, transparent 0 27%, color-mix(in srgb,var(--brand-accent) 26%,transparent) 28% 32%, transparent 33%),
+      radial-gradient(circle at 84% 48%, transparent 0 21%, color-mix(in srgb,var(--brand-ink) 18%,transparent) 22% 25%, transparent 26%),
+      radial-gradient(circle at 32% 70%, transparent 0 29%, color-mix(in srgb,var(--brand-accent) 22%,transparent) 30% 34%, transparent 35%),
+      radial-gradient(circle at 74% 80%, transparent 0 23%, color-mix(in srgb,var(--brand-ink) 20%,transparent) 24% 27%, transparent 28%);
+  }
+  /* valvole: a macro close-up — two large brass knobs catching the light */
+  .tex-valvole::before{
+    background-image:
+      radial-gradient(38% 28% at 34% 30%, color-mix(in srgb,var(--brand-accent) 36%,transparent) 0%, transparent 72%),
+      radial-gradient(26% 20% at 68% 64%, color-mix(in srgb,var(--brand-accent) 24%,transparent) 0%, transparent 74%),
+      radial-gradient(10px 10px at 30% 21%, color-mix(in srgb,var(--brand-surface) 97%,transparent) 0%, transparent 68%),
+      radial-gradient(8px 8px at 66% 56%, color-mix(in srgb,var(--brand-surface) 93%,transparent) 0%, transparent 68%);
+  }
+  /* al banco: the counter surface — warm horizontal strata + an edge highlight */
+  .tex-banco::before{
+    background-image:
+      repeating-linear-gradient(0deg, color-mix(in srgb,var(--brand-accent) 9%,transparent) 0 3px, transparent 3px 27px),
+      linear-gradient(180deg, transparent 52%, color-mix(in srgb,var(--brand-accent) 13%,transparent) 61%, transparent 71%);
+  }
+  /* faint honest grain — shared, sits above the family texture */
+  .shot::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+    mix-blend-mode:soft-light;
+  }
+  .shot__cap{
+    position:absolute;left:10px;bottom:10px;z-index:2;
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:color-mix(in srgb,var(--brand-ink) 82%,transparent);
+    color:var(--brand-accent-ink);
+    font-size:.68rem;font-weight:500;letter-spacing:.02em;
+    padding:.35rem .6rem;border-radius:2px;max-width:calc(100% - 20px);
+  }
+  .shot__cap .tick{width:9px;height:9px;border-color:var(--brand-accent);}
+  .shot--wide{aspect-ratio:16/9;}
+  .shot--landscape{aspect-ratio:3/2;}
+  .shot--square{aspect-ratio:1/1;}
+  .shot--tall{aspect-ratio:3/4;}
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;min-height:var(--nav-h);position:relative;
+  }
+  /* wordmark logotype */
+  .wordmark{
+    display:inline-flex;align-items:center;gap:.34rem;position:relative;
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.03em;
+    text-decoration:none;color:var(--brand-ink);line-height:1;
+    padding-top:6px;
+  }
+  .wordmark .wm-tick{
+    position:absolute;top:-2px;left:-6px;width:9px;height:9px;
+    border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);
+  }
+  .wordmark .wm-word{font-size:1.35rem;}
+  .wordmark .wm-pipe{width:1px;height:1.05em;background:var(--brand-accent);display:inline-block;}
+  .nav__links{display:flex;align-items:center;gap:1.6rem;}
+  .nav__links a{
+    color:var(--brand-ink);text-decoration:none;font-size:.9rem;font-weight:500;
+    padding:.4rem 0;position:relative;
+  }
+  .nav__links a::after{
+    content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;
+    background:var(--brand-accent);transition:right var(--dur-micro) var(--ease-micro);
+  }
+  .nav__links a:hover::after,.nav__links a:focus-visible::after{right:0;}
+  .nav__cta{display:flex;align-items:center;gap:1rem;}
+  .nav__cta .rating-inline{font-size:.82rem;color:var(--brand-muted);white-space:nowrap;}
+  .nav__cta .rating-inline b{color:var(--brand-accent);font-variant-numeric:tabular-nums;}
+  .nav-toggle{
+    display:none;align-items:center;justify-content:center;
+    width:48px;height:48px;background:transparent;border:1px solid var(--brand-line);
+    border-radius:var(--radius);cursor:pointer;
+  }
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+    content:"";display:block;width:20px;height:2px;background:var(--brand-ink);position:relative;
+    transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro) var(--ease-micro);
+  }
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+  .nav-toggle[aria-expanded="true"] span{background:transparent;}
+  .nav-toggle[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);}
+
+  /* ============================================================
+     SECTION RHYTHM (uneven, per brief)
+     ============================================================ */
+  main section{padding-block:var(--space-section);}
+  .s-surface{background:var(--brand-surface);}
+  .s-alt{background:var(--brand-surface-alt);}
+  .s-tight{padding-block:clamp(3rem,2rem + 3vw,5rem);}
+  .s-generous{padding-block:clamp(5.5rem,3.5rem + 8vw,11rem);}
+  .section-head{max-width:64ch;margin-bottom:2.8rem;}
+  .section-head h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+
+  /* ============================================================
+     HERO — the specification plate (the wow)
+     ============================================================ */
+  .hero{background:var(--brand-surface);position:relative;overflow:hidden;}
+  /* hero__plate has THREE direct children (lead / figure / meta) so the photo
+     can be re-sequenced as an early visual anchor on mobile without moving
+     it inside a single text block — see the mobile grid-template-areas below. */
+  .hero__plate{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    grid-template-areas:"lead figure" "meta figure";
+    column-gap:clamp(1.5rem,4vw,3.5rem);row-gap:0;
+    padding:clamp(1.5rem,3vw,2.6rem);
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);
+    box-shadow:0 32px 64px -40px color-mix(in srgb,var(--brand-ink) 45%,transparent),
+               0 6px 18px -12px color-mix(in srgb,var(--brand-ink) 22%,transparent);
+  }
+  .hero__lead{grid-area:lead;align-self:end;}
+  .hero__meta{grid-area:meta;align-self:start;}
+  .hero__plate .hero__figure{grid-area:figure;align-self:center;}
+  /* copper engineering brackets on the plate corners */
+  .hero__plate .corner{position:absolute;width:26px;height:26px;z-index:3;}
+  .hero__plate .corner.tl{top:-1px;left:-1px;border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);}
+  .hero__plate .corner.tr{top:-1px;right:-1px;border-right:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);}
+  .hero__plate .corner.bl{bottom:-1px;left:-1px;border-left:2px solid var(--brand-accent);border-bottom:2px solid var(--brand-accent);}
+  .hero__plate .corner.br{bottom:-1px;right:-1px;border-right:2px solid var(--brand-accent);border-bottom:2px solid var(--brand-accent);}
+
+  /* the horizontal copper datum line drawn across the hero */
+  .hero__datum{
+    position:relative;height:1px;background:var(--brand-accent);
+    margin:1.6rem 0 1.4rem;transform-origin:left center;
+  }
+  .hero__datum::before{
+    content:"";position:absolute;left:0;top:-4px;width:1px;height:9px;background:var(--brand-accent);
+  }
+  .hero__datum .datum-label{
+    position:absolute;right:0;top:-1.55rem;
+    font-family:var(--font-body);font-size:.66rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--brand-accent);
+  }
+  .hero__wordmark{
+    font-size:var(--fs-hero);line-height:.92;position:relative;
+    display:inline-flex;align-items:flex-start;gap:.18em;
+  }
+  .hero__wordmark .wm-tick{
+    position:absolute;top:-.12em;left:-.28em;width:16px;height:16px;
+    border-left:3px solid var(--brand-accent);border-top:3px solid var(--brand-accent);
+  }
+  .hero__wordmark .wm-word{display:inline-block;}
+  .hero__wordmark .wm-pipe{
+    width:1px;align-self:stretch;background:var(--brand-accent);
+    margin-top:.14em;margin-bottom:.18em;
+  }
+  .hero__tagline{
+    font-family:var(--font-display);font-weight:500;font-size:1.1rem;letter-spacing:-0.01em;
+    color:var(--brand-accent);margin-top:1rem;
+  }
+  .hero__sub{margin-top:1rem;color:var(--brand-muted);max-width:46ch;}
+  .hero__actions{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center;margin-top:1.8rem;}
+  .hero__phone{font-size:.9rem;color:var(--brand-muted);}
+  .hero__phone b{color:var(--brand-ink);font-weight:600;font-variant-numeric:tabular-nums;}
+  .hero__proof{
+    display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;
+    font-size:.9rem;color:var(--brand-muted);
+  }
+
+  /* corner spec-block — tabular figures */
+  .spec-block{
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:color-mix(in srgb,var(--brand-surface-alt) 60%,var(--brand-surface));
+    box-shadow:0 18px 36px -28px color-mix(in srgb,var(--brand-ink) 40%,transparent);
+  }
+  .spec-block__head{
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:.7rem 1rem;border-bottom:1px solid var(--brand-line);
+    font-family:var(--font-body);font-size:.66rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--brand-muted);
+  }
+  .spec-block__head .ref{color:var(--brand-accent);}
+  .spec-list{margin:0;padding:.4rem 1rem .8rem;}
+  .spec-list div{
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+    padding:.55rem 0;border-bottom:1px solid color-mix(in srgb,var(--brand-line) 60%,transparent);
+  }
+  .spec-list div:last-child{border-bottom:0;}
+  .spec-list dt{
+    font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brand-muted);flex:0 0 auto;
+  }
+  .spec-list dd{
+    margin:0;text-align:right;font-weight:500;font-variant-numeric:tabular-nums;
+    color:var(--brand-ink);overflow-wrap:anywhere;
+  }
+  .spec-list dd .num{font-weight:600;}
+  .hero__figure{position:relative;}
+  .hero__figure .spec-badge{
+    position:absolute;top:12px;right:12px;z-index:3;
+    background:var(--brand-ink);color:var(--brand-accent-ink);
+    padding:.5rem .7rem;border-radius:2px;font-size:.7rem;letter-spacing:.06em;
+  }
+  .hero__figure .spec-badge b{color:var(--brand-accent);font-variant-numeric:tabular-nums;font-size:.95rem;}
+
+  /* ============================================================
+     INDICE — persistent family index governing the catalogue
+     ============================================================ */
+  .indice__grid{display:grid;grid-template-columns:260px 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start;}
+  .indice__aside{position:sticky;top:calc(var(--nav-h) + 20px);}
+  .family-index{border-top:1px solid var(--brand-line);}
+  .family-index li a{
+    display:flex;align-items:center;gap:.7rem;
+    padding:.9rem .2rem;border-bottom:1px solid var(--brand-line);
+    text-decoration:none;color:var(--brand-ink);font-family:var(--font-display);
+    font-weight:500;font-size:1.02rem;letter-spacing:-0.01em;
+    transition:padding-left var(--dur-micro) var(--ease-micro),color var(--dur-micro) var(--ease-micro);
+  }
+  .family-index li a .tick{transition:opacity var(--dur-micro) var(--ease-micro);}
+  .family-index li a:hover,.family-index li a:focus-visible{padding-left:.6rem;color:var(--brand-accent);}
+  .family-index li .idx{font-variant-numeric:tabular-nums;color:var(--brand-muted);font-size:.8rem;margin-left:auto;}
+  .indice__intro p+p{margin-top:1rem;}
+  .cosa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--brand-line);margin-top:2rem;border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;}
+  .cosa-cell{background:var(--brand-surface);padding:1.4rem;}
+  .s-alt .cosa-cell{background:var(--brand-surface-alt);}
+  .cosa-cell h3{font-size:1.05rem;margin-bottom:.5rem;}
+  .cosa-cell p{color:var(--brand-muted);font-size:.92rem;}
+  .cosa-cell .solve{display:block;margin-top:.8rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-accent);}
+
+  /* ============================================================
+     CATALOGUE PLATES — spec plates carrying the wow through
+     ============================================================ */
+  .plate{
+    position:relative;
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,4vw,3.2rem);
+    align-items:center;
+    padding:clamp(1.4rem,3vw,2.4rem);
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);
+    box-shadow:0 26px 52px -36px color-mix(in srgb,var(--brand-ink) 38%,transparent);
+  }
+  .s-alt .plate{background:var(--brand-surface-alt);}
+  .plate + .plate{margin-top:1.6rem;}
+  .plate .corner-tick{
+    position:absolute;top:-1px;left:-1px;width:22px;height:22px;
+    border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);
+  }
+  .plate--flip .plate__body{order:-1;}
+  .plate__ref{
+    font-family:var(--font-body);font-size:.66rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--brand-accent);
+    display:flex;gap:.8rem;align-items:center;margin-bottom:.9rem;
+  }
+  .plate__ref .no{font-variant-numeric:tabular-nums;font-size:1.1rem;color:var(--brand-ink);}
+  .plate__body h3{font-size:clamp(1.3rem,1rem + 1.2vw,1.9rem);margin-bottom:.7rem;}
+  .plate__body p{color:var(--brand-muted);}
+  .plate__items{margin-top:1.2rem;border-top:1px solid var(--brand-line);}
+  .plate__items li{
+    display:flex;align-items:baseline;gap:.7rem;
+    padding:.6rem 0;border-bottom:1px solid color-mix(in srgb,var(--brand-line) 65%,transparent);
+    font-size:.94rem;
+  }
+  .plate__items li .tick{width:8px;height:8px;position:relative;top:1px;}
+  .plate__items li .gauge{margin-left:auto;font-size:.76rem;letter-spacing:.06em;color:var(--brand-muted);font-variant-numeric:tabular-nums;white-space:nowrap;}
+
+  /* ============================================================
+     AL BANCO — the counter & its expertise
+     ============================================================ */
+  .banco{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center;}
+  .banco__figure{position:relative;}
+  /* deliberate asymmetry: on wide screens the counter photo bleeds to the
+     viewport edge, breaking the centered column (html,body carry the
+     overflow-x:clip safety net for this). */
+  @media (min-width:961px){
+    .banco__figure{
+      margin-right:calc((var(--container) - 100vw) / 2);
+    }
+    .banco__figure .shot{border-radius:var(--radius) 0 0 var(--radius);}
+    .banco__figure .shot__cap{
+      box-shadow:0 20px 40px -26px color-mix(in srgb,var(--brand-ink) 55%,transparent);
+    }
+  }
+  .banco__steps{margin-top:1.6rem;counter-reset:step;}
+  .banco__steps li{
+    position:relative;padding:1.1rem 0 1.1rem 3.2rem;
+    border-top:1px solid var(--brand-line);
+  }
+  .banco__steps li:last-child{border-bottom:1px solid var(--brand-line);}
+  .banco__steps li::before{
+    counter-increment:step;content:"0" counter(step);
+    position:absolute;left:0;top:1.05rem;
+    font-family:var(--font-display);font-weight:600;font-variant-numeric:tabular-nums;
+    color:var(--brand-accent);font-size:1.05rem;
+  }
+  .banco__steps h3{font-size:1.05rem;margin-bottom:.3rem;}
+  .banco__steps p{color:var(--brand-muted);font-size:.94rem;}
+
+  /* ============================================================
+     PERCHÉ — the 4,9 proof (aggregate only, no count/histogram)
+     ============================================================ */
+  .perche{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center;}
+  .rating-card{
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);padding:clamp(1.6rem,3vw,2.4rem);text-align:center;position:relative;
+    box-shadow:0 30px 56px -38px color-mix(in srgb,var(--brand-ink) 40%,transparent);
+  }
+  .s-alt .rating-card{background:var(--brand-surface-alt);}
+  .rating-card .corner-tick{position:absolute;top:-1px;left:-1px;width:22px;height:22px;border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);}
+  .rating-card .big{
+    font-family:var(--font-display);font-weight:700;letter-spacing:-0.04em;
+    font-size:clamp(3.6rem,2.5rem + 6vw,6.5rem);line-height:1;color:var(--brand-accent);
+    font-variant-numeric:tabular-nums;
+  }
+  .rating-card .scale{color:var(--brand-muted);font-size:.9rem;}
+  .stars{display:inline-flex;gap:.25rem;margin:.9rem 0 .3rem;--fill:98%;}
+  .stars svg{width:26px;height:26px;}
+  .stars .st-bg{fill:var(--brand-line);}
+  .stars .st-fg{fill:var(--brand-accent);}
+  .rating-card .src{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-muted);margin-top:.4rem;}
+  .perche__points li{
+    padding:1rem 0;border-bottom:1px solid var(--brand-line);display:flex;gap:.9rem;align-items:flex-start;
+  }
+  .perche__points li:first-child{border-top:1px solid var(--brand-line);}
+  .perche__points .tick{margin-top:.35rem;flex:0 0 auto;}
+  .perche__points b{font-family:var(--font-display);font-weight:500;}
+  .perche__points p{color:var(--brand-muted);font-size:.94rem;margin-top:.15rem;}
+  .perche__quote{
+    margin-top:1.6rem;padding-left:1.2rem;border-left:2px solid var(--brand-accent);
+    font-family:var(--font-display);font-weight:400;font-style:normal;color:var(--brand-ink);
+    font-size:1.05rem;letter-spacing:-0.01em;
+  }
+  .perche__quote span{display:block;margin-top:.5rem;font-family:var(--font-body);font-size:.78rem;color:var(--brand-muted);letter-spacing:.04em;}
+
+  /* ============================================================
+     FAQ — domande al banco
+     ============================================================ */
+  .faq{max-width:820px;}
+  .faq details{border-bottom:1px solid var(--brand-line);}
+  .faq details:first-of-type{border-top:1px solid var(--brand-line);}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:1.15rem 2.2rem 1.15rem 0;position:relative;
+    font-family:var(--font-display);font-weight:500;font-size:1.05rem;letter-spacing:-0.01em;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"";position:absolute;right:.3rem;top:1.55rem;width:11px;height:11px;
+    border-right:2px solid var(--brand-accent);border-bottom:2px solid var(--brand-accent);
+    transform:rotate(45deg);transition:transform var(--dur-micro) var(--ease-micro);
+  }
+  .faq details[open] summary::after{transform:rotate(225deg);}
+  .faq details p{padding:0 0 1.2rem;color:var(--brand-muted);max-width:70ch;}
+
+  /* ============================================================
+     DOVE SIAMO — address + real map link + illustrative hours
+     ============================================================ */
+  .dove{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:start;}
+  .addr-card,.hours-card{
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);padding:clamp(1.4rem,3vw,2.2rem);position:relative;
+    box-shadow:0 24px 48px -34px color-mix(in srgb,var(--brand-ink) 36%,transparent);
+  }
+  .s-alt .addr-card,.s-alt .hours-card{background:var(--brand-surface-alt);}
+  .addr-card .corner-tick,.hours-card .corner-tick{position:absolute;top:-1px;left:-1px;width:20px;height:20px;border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);}
+  .addr-card h3,.hours-card h3{font-size:1.1rem;margin-bottom:1rem;}
+  .addr-lines{font-style:normal;line-height:1.7;}
+  .addr-lines .street{font-family:var(--font-display);font-weight:500;font-size:1.15rem;}
+  .addr-card .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem;}
+  .hours-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;}
+  .hours-table th,.hours-table td{text-align:left;padding:.55rem 0;border-bottom:1px solid color-mix(in srgb,var(--brand-line) 70%,transparent);font-weight:400;font-size:.94rem;}
+  .hours-table th{color:var(--brand-muted);font-weight:500;}
+  .hours-table td{text-align:right;color:var(--brand-ink);}
+  .disclaimer{margin-top:1rem;font-size:.76rem;color:var(--brand-muted);}
+
+  /* ============================================================
+     CONTATTO — conversion close
+     ============================================================ */
+  .contatto__inner{
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    padding:clamp(1.8rem,4vw,3rem);background:var(--brand-surface);position:relative;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;
+    box-shadow:0 34px 64px -40px color-mix(in srgb,var(--brand-ink) 42%,transparent);
+  }
+  .s-alt .contatto__inner{background:var(--brand-surface-alt);}
+  .contatto__inner .corner{position:absolute;width:24px;height:24px;}
+  .contatto__inner .corner.tl{top:-1px;left:-1px;border-left:2px solid var(--brand-accent);border-top:2px solid var(--brand-accent);}
+  .contatto__inner .corner.br{bottom:-1px;right:-1px;border-right:2px solid var(--brand-accent);border-bottom:2px solid var(--brand-accent);}
+  .contatto h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+  .contatto__actions{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center;margin-top:1.4rem;}
+  .contatto__phone{font-size:.95rem;color:var(--brand-muted);}
+  .contatto__phone b{color:var(--brand-ink);font-variant-numeric:tabular-nums;}
+  .contatto__proof{
+    border-left:1px solid var(--brand-line);padding-left:clamp(1rem,3vw,2rem);
+  }
+  .contatto__proof .big{font-family:var(--font-display);font-weight:700;font-size:2.6rem;color:var(--brand-accent);line-height:1;font-variant-numeric:tabular-nums;}
+  .contatto__proof p{color:var(--brand-muted);font-size:.9rem;margin-top:.4rem;}
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer{background:var(--brand-ink);color:color-mix(in srgb,var(--brand-surface) 72%,var(--brand-ink));padding-block:clamp(3rem,2rem + 3vw,4.5rem);}
+  .site-footer .wordmark{color:var(--brand-accent-ink);}
+  .site-footer .wordmark .wm-word{font-size:1.5rem;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;}
+  .site-footer a{color:var(--brand-accent-ink);}
+  .site-footer h4{font-family:var(--font-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in srgb,var(--brand-line) 55%,var(--brand-ink));margin:0 0 1rem;font-weight:600;}
+  .site-footer li{padding:.25rem 0;font-size:.92rem;}
+  .site-footer li:first-child a{font-variant-numeric:tabular-nums;}
+  .site-footer .tagline{margin-top:1rem;color:color-mix(in srgb,var(--brand-surface) 55%,var(--brand-ink));max-width:34ch;font-size:.9rem;}
+  .footer-legal{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid color-mix(in srgb,var(--brand-line) 32%,var(--brand-ink));font-size:.78rem;color:color-mix(in srgb,var(--brand-surface) 50%,var(--brand-ink));display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;}
+
+  /* ============================================================
+     STICKY MOBILE ACTION BAR
+     ============================================================ */
+  .mobile-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+    align-items:center;gap:.7rem;padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom,0px));
+    background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+    backdrop-filter:blur(8px);border-top:1px solid var(--brand-line);
+  }
+  .mobile-bar .m-proof{display:flex;flex-direction:column;line-height:1.15;font-size:.72rem;color:var(--brand-muted);}
+  .mobile-bar .m-proof b{color:var(--brand-accent);font-size:.95rem;font-variant-numeric:tabular-nums;}
+  .mobile-bar .btn{flex:1;}
+
+  /* ============================================================
+     MOTION LAYER — one ease language (--ease-signature),
+     role-varied reveals, progressive enhancement.
+     Everything below is gated behind html.js, so with JS off
+     every element stays fully visible.
+     ============================================================ */
+
+  /* --- shared reveal: role varies by content geometry, not one fade --- */
+  .js [data-reveal]{
+    opacity:0;
+    transition:opacity var(--dur-reveal) var(--ease-signature),
+               transform var(--dur-reveal) var(--ease-signature),
+               clip-path var(--dur-reveal) var(--ease-signature);
+    transition-delay:var(--rv-delay,0ms);
+  }
+  .js [data-reveal="rise"]{transform:translateY(20px);}          /* default: text blocks rise */
+  .js [data-reveal="media"]{transform:scale(1.05);}             /* photos push in from depth */
+  .js [data-reveal="x-right"]{transform:translateX(28px);}      /* travels in along its own X axis */
+  .js [data-reveal="x-left"]{transform:translateX(-28px);}
+  .js [data-reveal="wipe"]{clip-path:inset(0 100% 0 0);}        /* masked left-to-right unveil */
+  .js [data-reveal].is-in{opacity:1;transform:none;clip-path:inset(0 0 0 0);}
+
+  /* --- the signature: hero datum draws, then wordmark + spec-block settle beneath it --- */
+  .js .hero__datum{transform:scaleX(0);transform-origin:left center;
+    transition:transform var(--dur-reveal) var(--ease-signature);transition-delay:var(--rv-delay,0ms);}
+  .js .hero__datum.is-in{transform:scaleX(1);}
+  .js .hero__wordmark,.js .hero__tagline,.js .hero__sub,
+  .js .hero__actions,.js .hero__phone,.js .hero__proof{
+    opacity:0;transform:translateY(16px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:var(--rv-delay,0ms);
+  }
+  .js .hero__wordmark.is-in,.js .hero__tagline.is-in,.js .hero__sub.is-in,
+  .js .hero__actions.is-in,.js .hero__phone.is-in,.js .hero__proof.is-in{opacity:1;transform:none;}
+
+  /* --- word cascade: eyebrows + headings resolve one word at a time --- */
+  .js .wsplit{display:inline-block;overflow:hidden;vertical-align:top;
+    padding-bottom:.14em;margin-bottom:-.14em;}
+  .js .wsplit > span{display:inline-block;transform:translateY(115%);
+    transition:transform var(--dur-reveal) var(--ease-signature);transition-delay:var(--rv-delay,0ms);}
+  .js .wsplit.is-in > span{transform:translateY(0);}
+
+  /* --- CTA gesture: dimension-tick brackets draw-in on hover, spring-settle on press --- */
+  .js .btn--primary::before,.js .btn--primary::after{
+    transform:scale(.35);transform-origin:top left;
+    transition:opacity var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-signature);
+  }
+  .js .btn--primary::after{transform-origin:bottom right;}
+  @media (hover:hover) and (pointer:fine){
+    .js .btn--primary:hover::before,.js .btn--primary:hover::after,
+    .js .btn--primary:focus-visible::before,.js .btn--primary:focus-visible::after{opacity:.9;transform:scale(1);}
+    .js .btn--primary:active{animation:cta-press 300ms var(--ease-signature);}
+    /* calm image push on card hover (uses the shared reveal transition) */
+    .js .plate:hover .plate__figure .shot,
+    .js .banco__figure:hover .shot,
+    .js .hero__figure:hover .shot{transform:scale(1.03);}
+  }
+  @keyframes cta-press{0%{transform:scale(1);}40%{transform:scale(.966);}100%{transform:scale(1);}}
+
+  /* --- ambient 'alive' drift on the hero grain — sub-perceptual, no text --- */
+  @media (prefers-reduced-motion:no-preference){
+    .js .hero__figure .shot::after{animation:grain-drift 17s var(--ease-micro) infinite alternate;}
+  }
+  @keyframes grain-drift{from{transform:translate3d(0,0,0);}to{transform:translate3d(-2%,-1.5%,0);}}
+
+  /* --- scroll-linked: catalogue index horizontal band (X travel) --- */
+  @supports (animation-timeline:view()){
+    @media (prefers-reduced-motion:no-preference){
+      .cosa-grid{animation:band-x linear both;animation-timeline:view();animation-range:entry 0% cover 42%;}
+      @keyframes band-x{from{transform:translateX(30px);}to{transform:translateX(0);}}
+      /* --- scroll-linked: spec-plate depth parallax (photo layer lags the caption) --- */
+      .plate__figure{animation:plate-par linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+      @keyframes plate-par{from{transform:translateY(-16px);}to{transform:translateY(16px);}}
+    }
+  }
+
+  /* --- scroll-scrubbed side measurement ruler + chapter anchors (desktop) --- */
+  .edge-ruler{
+    position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:90;
+    display:none;flex-direction:column;align-items:flex-end;gap:15px;padding:14px 2px;
+  }
+  .edge-ruler__track{
+    position:absolute;right:5px;top:8px;bottom:8px;width:2px;
+    background:color-mix(in srgb,var(--brand-line) 90%,transparent);border-radius:2px;overflow:hidden;
+  }
+  .edge-ruler__fill{
+    position:absolute;inset:0;background:var(--brand-accent);
+    transform:scaleY(0);transform-origin:top;
+  }
+  @supports (animation-timeline:scroll()){
+    @media (prefers-reduced-motion:no-preference){
+      .edge-ruler__fill{animation:ruler-fill linear both;animation-timeline:scroll(root);}
+      @keyframes ruler-fill{to{transform:scaleY(1);}}
+    }
+  }
+  .er-tick{
+    position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-end;
+    width:26px;height:12px;text-decoration:none;
+  }
+  .er-tick i{display:block;width:11px;height:2px;background:var(--brand-line);
+    transition:width var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);}
+  .er-tick:hover i,.er-tick:focus-visible i{width:22px;background:var(--brand-accent);}
+  .er-tick.is-active i{width:24px;background:var(--brand-accent);}
+  .er-tick::after{
+    content:attr(data-label);position:absolute;right:32px;top:50%;transform:translateY(-50%) translateX(6px);
+    font-family:var(--font-body);font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--brand-muted);white-space:nowrap;opacity:0;pointer-events:none;
+    transition:opacity var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  }
+  .er-tick:hover::after,.er-tick:focus-visible::after,.er-tick.is-active::after{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (min-width:1120px) and (pointer:fine){.edge-ruler{display:flex;}}
+
+  /* --- mobile/tablet equivalent: a thin top scroll-progress bar --- */
+  .scroll-prog{
+    position:fixed;top:0;left:0;right:0;height:3px;z-index:130;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left center;
+  }
+  @supports (animation-timeline:scroll()){
+    @media (prefers-reduced-motion:no-preference){
+      .scroll-prog{animation:prog-x linear both;animation-timeline:scroll(root);}
+      @keyframes prog-x{to{transform:scaleX(1);}}
+    }
+  }
+  @media (min-width:1120px) and (pointer:fine){.scroll-prog{display:none;}}
+
+  /* --- dynamic section tint: fixed, sub-perceptual accent wash, crossfades per chapter --- */
+  .ambient-tint{
+    position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0;
+    background:radial-gradient(120% 90% at 82% 12%, color-mix(in srgb,var(--brand-accent) 42%,transparent) 0%, transparent 60%);
+    transition:opacity 1.2s var(--ease-micro);mix-blend-mode:multiply;
+  }
+  .ambient-tint.on{opacity:.05;}
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:960px){
+    .indice__grid{grid-template-columns:1fr;}
+    .indice__aside{position:static;}
+    .perche{grid-template-columns:1fr;}
+    .dove{grid-template-columns:1fr;}
+    .contatto__inner{grid-template-columns:1fr;}
+    .contatto__proof{border-left:0;border-top:1px solid var(--brand-line);padding-left:0;padding-top:1.4rem;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:820px){
+    .nav__links,.nav__cta .rating-inline{display:none;}
+    .nav-toggle{display:inline-flex;}
+    .nav__links{
+      position:absolute;top:var(--nav-h);left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:.5rem 0;z-index:110;box-shadow:0 12px 24px -18px rgba(26,31,36,.5);
+    }
+    .nav.open .nav__links{display:flex;}
+    .nav__links a{padding:1rem 0;border-bottom:1px solid var(--brand-line);}
+    .nav__links a::after{display:none;}
+    /* no-JS fallback: show links */
+    html:not(.js) .nav__links{position:static;flex-direction:row;flex-wrap:wrap;gap:1rem;background:transparent;border:0;padding:0;}
+    html:not(.js) .nav-toggle{display:none;}
+    html:not(.js) .nav__links a{border-bottom:0;padding:.4rem 0;}
+
+    /* wow reflow on mobile: the spec-plate photo becomes the early visual
+       anchor — right after the wordmark/tagline, ahead of the long CTA/
+       phone/rating stack — instead of being pushed to the very end. */
+    .hero__plate{
+      grid-template-columns:1fr;
+      grid-template-areas:"lead" "figure" "meta";
+    }
+    .hero__lead,.hero__meta{align-self:auto;}
+    .hero__figure .shot{aspect-ratio:16/10;max-height:38vh;}
+    .plate{grid-template-columns:1fr;}
+    .plate--flip .plate__body{order:0;}
+    .banco{grid-template-columns:1fr;}
+    .cosa-grid{grid-template-columns:1fr;}
+    .mobile-bar{display:flex;}
+    body{padding-bottom:76px;}
+  }
+  @media (max-width:480px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero__actions .btn,.contatto__actions .btn{width:100%;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important;animation-iteration-count:1 !important;}
+    .js [data-reveal]{opacity:1 !important;transform:none !important;clip-path:none !important;}
+    .js .hero__datum{transform:scaleX(1) !important;}
+    .js .hero__wordmark,.js .hero__tagline,.js .hero__sub,
+    .js .hero__actions,.js .hero__phone,.js .hero__proof{opacity:1 !important;transform:none !important;}
+    .js .wsplit > span{transform:none !important;}
+    .js .cosa-grid,.js .plate__figure{transform:none !important;}
+    .js .edge-ruler__fill{transform:scaleY(1) !important;}
+    .js .scroll-prog{display:none !important;}
+    .js .ambient-tint{opacity:0 !important;}
+    .js .hero__figure .shot::after{animation:none !important;}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Salta al contenuto</a>
+
+<!-- MOTION CHROME (progressive enhancement; hidden/neutral without JS or under reduced-motion) -->
+<div class="scroll-prog" aria-hidden="true"></div>
+<div class="ambient-tint" aria-hidden="true"></div>
+<nav class="edge-ruler" aria-label="Indice sezioni">
+  <span class="edge-ruler__track" aria-hidden="true"><span class="edge-ruler__fill"></span></span>
+  <a class="er-tick" href="#top" data-label="00 · scheda"><i aria-hidden="true"></i><span class="visually-hidden">Scheda</span></a>
+  <a class="er-tick" href="#cosa-trovi" data-label="01 · cosa trovi"><i aria-hidden="true"></i><span class="visually-hidden">Cosa trovi</span></a>
+  <a class="er-tick" href="#catalogo" data-label="02 · catalogo"><i aria-hidden="true"></i><span class="visually-hidden">Catalogo</span></a>
+  <a class="er-tick" href="#al-banco" data-label="03 · al banco"><i aria-hidden="true"></i><span class="visually-hidden">Al banco</span></a>
+  <a class="er-tick" href="#perche" data-label="04 · perché"><i aria-hidden="true"></i><span class="visually-hidden">Perché noi</span></a>
+  <a class="er-tick" href="#domande" data-label="05 · domande"><i aria-hidden="true"></i><span class="visually-hidden">Domande</span></a>
+  <a class="er-tick" href="#dove" data-label="06 · dove siamo"><i aria-hidden="true"></i><span class="visually-hidden">Dove siamo</span></a>
+  <a class="er-tick" href="#contatto" data-label="07 · richiesta"><i aria-hidden="true"></i><span class="visually-hidden">Richiesta</span></a>
+</nav>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Principale" id="site-nav">
+      <a class="wordmark" href="#top" aria-label="El mar, forniture idrauliche — inizio pagina">
+        <span class="wm-tick" aria-hidden="true"></span>
+        <span class="wm-word">el</span><span class="wm-pipe" aria-hidden="true"></span><span class="wm-word">mar</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu">
+        <span aria-hidden="true"></span>
+      </button>
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="#cosa-trovi">Cosa trovi</a></li>
+        <li><a href="#catalogo">Catalogo</a></li>
+        <li><a href="#al-banco">Al banco</a></li>
+        <li><a href="#perche">Perché noi</a></li>
+        <li><a href="#domande">Domande</a></li>
+        <li><a href="#dove">Dove siamo</a></li>
+      </ul>
+      <div class="nav__cta">
+        <span class="rating-inline"><b>4,9</b> su Google</span>
+        <a class="btn btn--primary" data-cta href="tel:+393273438429">Chiama</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- (1) SPEC-PLATE HERO — the wow -->
+  <section class="hero s-generous" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__plate" data-reveal>
+        <span class="corner tl" aria-hidden="true"></span>
+        <span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span>
+        <span class="corner br" aria-hidden="true"></span>
+
+        <div class="hero__lead">
+          <p class="eyebrow"><span class="tick" aria-hidden="true"></span> Scheda tecnica — forniture idrauliche</p>
+          <h1 class="hero__wordmark" id="hero-title">
+            <span class="wm-tick" aria-hidden="true"></span>
+            <span class="wm-word">el</span><span class="wm-pipe" aria-hidden="true"></span><span class="wm-word">mar</span>
+          </h1>
+          <div class="hero__datum" aria-hidden="true"><span class="datum-label">datum · Milano</span></div>
+          <p class="hero__tagline">il pezzo giusto, al banco</p>
+        </div>
+
+        <figure class="hero__figure" data-reveal>
+          <div class="shot shot--wide tex-vitrine" role="img" aria-label="Vetrina del negozio di forniture idrauliche El mar in centro a Milano, con rubinetterie e raccordi esposti dietro il vetro.">
+            <span class="spec-badge">rif. <b>4,9</b>★</span>
+            <span class="shot__cap"><span class="tick" aria-hidden="true"></span> Vetrina · Via Sant'Andrea 3, Milano</span>
+          </div>
+          <div class="spec-block" style="margin-top:1rem" data-reveal>
+            <div class="spec-block__head"><span>Specifiche · el mar</span><span class="ref">rif. EM-01</span></div>
+            <dl class="spec-list">
+              <div><dt>Valutazione</dt><dd><span class="num">4,9</span> / Google Maps</dd></div>
+              <div><dt>Forniture</dt><dd>rubinetteria · tubi · raccordi</dd></div>
+              <div><dt>Dove</dt><dd>Via Sant'Andrea 3, Milano</dd></div>
+              <div><dt>Telefono</dt><dd><span class="num">+39 327 343 8429</span></dd></div>
+            </dl>
+          </div>
+        </figure>
+
+        <div class="hero__meta">
+          <p class="hero__sub">Il banco di forniture idrauliche in centro a Milano. Porti il pezzo, ti diamo il raccordo giusto — in pronta consegna, con un consiglio onesto.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" data-cta href="tel:+393273438429">Chiama il banco</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=El+mar%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps</a>
+          </div>
+          <p class="hero__phone">Telefono: <b>+39 327 343 8429</b></p>
+          <p class="hero__proof"><span class="tick" aria-hidden="true"></span> <b class="num">4,9</b>&nbsp;su Google Maps — scelto per il consiglio giusto, in centro a Milano</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (2) INDICE — cosa trovi -->
+  <section class="s-alt s-tight" id="cosa-trovi" aria-labelledby="indice-title">
+    <div class="container">
+      <div class="datum-rule"><span>Indice · cosa trovi in negozio</span></div>
+      <div class="indice__grid">
+        <aside class="indice__aside" aria-label="Famiglie di prodotto">
+          <ul class="family-index">
+            <li><a href="#fam-rubinetteria"><span class="tick" aria-hidden="true"></span> Rubinetteria <span class="idx">01</span></a></li>
+            <li><a href="#fam-tubazioni"><span class="tick" aria-hidden="true"></span> Tubazioni e raccordi <span class="idx">02</span></a></li>
+            <li><a href="#fam-valvole"><span class="tick" aria-hidden="true"></span> Valvole e componenti <span class="idx">03</span></a></li>
+            <li><a href="#al-banco"><span class="tick" aria-hidden="true"></span> Al banco — consiglio <span class="idx">04</span></a></li>
+          </ul>
+        </aside>
+        <div class="indice__intro">
+          <div class="section-head">
+            <h2 id="indice-title">Un banco, non un magazzino.</h2>
+          </div>
+          <div class="indice__intro-text">
+            <p class="lede">Qui trovi rubinetteria, tubazioni, raccordi e valvole a portata di mano, in centro a Milano. Cerchi una misura o hai in mano un pezzo rotto: al banco ti indichiamo quello giusto e ce l'hai in pronta consegna.</p>
+            <p style="margin-top:1rem;color:var(--brand-muted);">L'indice qui accanto dice in pochi secondi se il tuo pezzo è qui. Ogni famiglia ha la sua scheda più sotto.</p>
+          </div>
+          <div class="cosa-grid" data-reveal>
+            <div class="cosa-cell">
+              <h3>Rubinetteria</h3>
+              <p>Miscelatori bagno e cucina, gruppi doccia, rubinetti a parete, in finiture diverse.</p>
+              <span class="solve">risolve · sostituzioni e nuovi impianti</span>
+            </div>
+            <div class="cosa-cell">
+              <h3>Tubazioni e raccordi</h3>
+              <p>Tubo multistrato e rame, raccordi a pressare e a compressione, gomiti, tee, curve.</p>
+              <span class="solve">risolve · collegamenti e riparazioni</span>
+            </div>
+            <div class="cosa-cell">
+              <h3>Valvole e componenti</h3>
+              <p>Valvole a sfera in ottone, rubinetti d'arresto, riduttori, manometri, guarnizioni.</p>
+              <span class="solve">risolve · intercettazione e sicurezza</span>
+            </div>
+            <div class="cosa-cell">
+              <h3>Minuteria</h3>
+              <p>Nastro PTFE, canapa, dadi, boccole e la piccola ferramenta che serve per chiudere il lavoro.</p>
+              <span class="solve">risolve · l'ultimo pezzo che manca</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (3) CATALOGUE PLATES -->
+  <section class="s-surface" id="catalogo" aria-labelledby="catalogo-title">
+    <div class="container">
+      <div class="datum-rule"><span>Catalogo · schede prodotto</span></div>
+      <div class="section-head">
+        <h2 id="catalogo-title">Tre famiglie, gamma vera al banco.</h2>
+        <p class="lede">Ogni scheda è un pezzo del negozio reale: la gamma che trovi in pronta consegna, non tre righe uguali di catalogo.</p>
+      </div>
+
+      <!-- 01 Rubinetteria -->
+      <article class="plate" id="fam-rubinetteria" data-reveal>
+        <span class="corner-tick" aria-hidden="true"></span>
+        <figure class="plate__figure">
+          <div class="shot shot--square tex-rubinetteria" role="img" aria-label="Parete espositiva di rubinetteria per bagno e cucina in varie finiture, dal cromo al nero opaco all'acciaio spazzolato.">
+            <span class="shot__cap"><span class="tick" aria-hidden="true"></span> Rubinetteria · parete espositiva</span>
+          </div>
+        </figure>
+        <div class="plate__body">
+          <p class="plate__ref"><span class="no">01</span> Rubinetteria</p>
+          <h3>Miscelatori e gruppi, in finitura vera.</h3>
+          <p>Dalla sostituzione veloce all'impianto nuovo. Porta il modello o la misura dell'attacco: troviamo il miscelatore giusto.</p>
+          <ul class="plate__items">
+            <li><span class="tick" aria-hidden="true"></span> Miscelatori lavabo e cucina <span class="gauge">attacco 1/2"</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Gruppi doccia e vasca <span class="gauge">interasse 150 mm</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Rubinetti a parete e da incasso <span class="gauge">a richiesta</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Finiture cromo · nero opaco · acciaio <span class="gauge">più varianti</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 02 Tubazioni e raccordi -->
+      <article class="plate plate--flip" id="fam-tubazioni" data-reveal>
+        <span class="corner-tick" aria-hidden="true"></span>
+        <figure class="plate__figure">
+          <div class="shot shot--square tex-tubazioni" role="img" aria-label="Contenitori e rastrelliere con tubazioni in rame e multistrato e raccordi in ottone ordinati per diametro.">
+            <span class="shot__cap"><span class="tick" aria-hidden="true"></span> Tubi e raccordi · ordinati per diametro</span>
+          </div>
+        </figure>
+        <div class="plate__body">
+          <p class="plate__ref"><span class="no">02</span> Tubazioni e raccordi</p>
+          <h3>Il raccordo giusto, per il tubo che hai.</h3>
+          <p>Multistrato, rame, sistemi a pressare o a compressione. Se hai il pezzo rotto in mano, lo confrontiamo al banco e ti diamo il ricambio corretto.</p>
+          <ul class="plate__items">
+            <li><span class="tick" aria-hidden="true"></span> Tubo multistrato e rame <span class="gauge">Ø 16–32 mm</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Raccordi a pressare e a compressione <span class="gauge">più misure</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Gomiti, tee, manicotti, curve <span class="gauge">in ottone</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Nastro PTFE, canapa e sigillanti <span class="gauge">pronta consegna</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03 Valvole e componenti -->
+      <article class="plate" id="fam-valvole" data-reveal>
+        <span class="corner-tick" aria-hidden="true"></span>
+        <figure class="plate__figure">
+          <div class="shot shot--tall tex-valvole" role="img" aria-label="Macro di valvole a sfera in ottone, manometri e rubinetti d'arresto su un banco in acciaio.">
+            <span class="shot__cap"><span class="tick" aria-hidden="true"></span> Valvole · ottone e acciaio</span>
+          </div>
+        </figure>
+        <div class="plate__body">
+          <p class="plate__ref"><span class="no">03</span> Valvole e componenti</p>
+          <h3>Intercettazione, misura e sicurezza.</h3>
+          <p>La parte che chiude, regola e mette in sicurezza l'impianto. Dai un'occhiata alla filettatura: qui trovi il corrispondente.</p>
+          <ul class="plate__items">
+            <li><span class="tick" aria-hidden="true"></span> Valvole a sfera in ottone <span class="gauge">1/2" – 2"</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Rubinetti d'arresto e sottolavabo <span class="gauge">più tipi</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Riduttori di pressione e manometri <span class="gauge">a richiesta</span></li>
+            <li><span class="tick" aria-hidden="true"></span> Guarnizioni, o-ring e minuteria <span class="gauge">assortimento</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- (4) AL BANCO -->
+  <section class="s-alt" id="al-banco" aria-labelledby="banco-title">
+    <div class="container">
+      <div class="datum-rule"><span>Al banco · come funziona</span></div>
+      <div class="banco">
+        <figure class="banco__figure" data-reveal>
+          <div class="shot shot--landscape tex-banco" role="img" aria-label="Le mani di un addetto al banco che mostra un raccordo in ottone a un cliente, con minuteria e blocco ordini sul banco in legno.">
+            <span class="shot__cap"><span class="tick" aria-hidden="true"></span> Al banco · si trova il pezzo insieme</span>
+          </div>
+        </figure>
+        <div class="banco__body" data-reveal>
+          <div class="section-head">
+            <h2 id="banco-title">La differenza è chi c'è dietro il banco.</h2>
+            <p class="lede">Non un carrello e un'attesa. Una persona che guarda il pezzo, capisce il problema e ti indica il componente corretto — così esci con quello giusto, non con quello che assomiglia.</p>
+          </div>
+          <ol class="banco__steps">
+            <li>
+              <h3>Porti il pezzo o la misura</h3>
+              <p>Il raccordo rotto, la vecchia rubinetteria, o solo il diametro. Basta quello.</p>
+            </li>
+            <li>
+              <h3>Lo confrontiamo al banco</h3>
+              <p>Filettatura, attacco, finitura: verifichiamo il corrispondente sullo scaffale.</p>
+            </li>
+            <li>
+              <h3>Esci con il componente giusto</h3>
+              <p>In pronta consegna, con l'indicazione su come montarlo. Se serve, un'alternativa.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (5) PERCHÉ EL MAR -->
+  <section class="s-surface" id="perche" aria-labelledby="perche-title">
+    <div class="container">
+      <div class="datum-rule"><span>Perché El mar · la prova</span></div>
+      <div class="perche">
+        <div class="rating-card" data-reveal>
+          <span class="corner-tick" aria-hidden="true"></span>
+          <div class="big">4,9</div>
+          <p class="scale">su 5</p>
+          <div class="stars" role="img" aria-label="Valutazione aggregata 4,9 su 5 su Google Maps">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="st-fg" d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.3l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="st-fg" d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.3l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="st-fg" d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.3l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="st-fg" d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.3l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <defs><linearGradient id="g49"><stop offset="98%" stop-color="#AB5C34"/><stop offset="98%" stop-color="#D2D8DB"/></linearGradient></defs>
+              <path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.3l1.4-6.8L2.2 9l6.9-.7z" fill="url(#g49)"/>
+            </svg>
+          </div>
+          <p class="src">Google Maps</p>
+        </div>
+        <div class="perche__body" data-reveal>
+          <div class="section-head">
+            <h2 id="perche-title">Scelto per il pezzo giusto, non per lo sconto.</h2>
+          </div>
+          <ul class="perche__points">
+            <li>
+              <span class="tick" aria-hidden="true"></span>
+              <div><b>Consiglio onesto al banco</b><p>Ti diciamo qual è il componente corretto — e quando non serve cambiarlo.</p></div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true"></span>
+              <div><b>Gamma vera, in pronta consegna</b><p>Rubinetteria, tubi, raccordi e valvole a portata di mano, senza attese da catalogo.</p></div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true"></span>
+              <div><b>In centro a Milano</b><p>Un banco raggiungibile, per idraulici, imprese, amministratori e chi fa da sé.</p></div>
+            </li>
+          </ul>
+          <blockquote class="perche__quote">
+            Chi passa dal banco torna: trova il pezzo giusto e un consiglio di cui fidarsi.
+            <span>Sintesi della valutazione aggregata su Google Maps — non una recensione firmata.</span>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (6) FAQ -->
+  <section class="s-alt" id="domande" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="datum-rule"><span>Domande al banco</span></div>
+      <div class="section-head">
+        <h2 id="faq-title">Le domande che ci fanno più spesso.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Servite privati e professionisti?</summary>
+          <p>Sì. Al banco vengono idraulici, imprese edili e amministratori di condominio, ma anche chi fa da sé in casa. La stessa competenza per tutti: conta il pezzo, non la partita IVA.</p>
+        </details>
+        <details>
+          <summary>Il materiale è in pronta consegna?</summary>
+          <p>La gamma di rubinetteria, tubi, raccordi e valvole è a scaffale, pensata per uscire con il componente subito. Per una misura particolare, chiamaci prima: ti diciamo al momento se ce l'abbiamo.</p>
+        </details>
+        <details>
+          <summary>Posso passare con il pezzo rotto per trovare il raccordo giusto?</summary>
+          <p>È il modo migliore. Porta il raccordo, la vecchia rubinetteria o anche solo la misura dell'attacco: lo confrontiamo al banco e troviamo il corrispondente giusto.</p>
+        </details>
+        <details>
+          <summary>Non so quale sia la misura giusta. Mi aiutate?</summary>
+          <p>Sì, è il nostro lavoro. Descrivici il problema o mostraci il pezzo: dalla filettatura all'attacco, ti indichiamo il componente corretto e, se serve, un'alternativa.</p>
+        </details>
+        <details>
+          <summary>Siete in centro? Come vi raggiungo?</summary>
+          <p>Siamo in Via Sant'Andrea 3, in centro a Milano. Trovi il pulsante per aprire la posizione su Google Maps nella sezione “Dove siamo”.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- (7) DOVE SIAMO E ORARI -->
+  <section class="s-surface s-generous" id="dove" aria-labelledby="dove-title">
+    <div class="container">
+      <div class="datum-rule"><span>Dove siamo e orari</span></div>
+      <div class="section-head">
+        <h2 id="dove-title">In centro a Milano, al banco.</h2>
+        <p class="lede">Passa con il pezzo o la misura. Se preferisci, chiama prima: ti confermiamo la disponibilità e l'orario.</p>
+      </div>
+      <div class="dove">
+        <div class="addr-card" data-reveal>
+          <span class="corner-tick" aria-hidden="true"></span>
+          <h3>Il negozio</h3>
+          <address class="addr-lines">
+            <span class="street">El mar — forniture idrauliche</span><br>
+            Via Sant'Andrea 3<br>
+            20121 Milano (MI)
+          </address>
+          <div class="actions">
+            <a class="btn btn--primary" data-cta href="tel:+393273438429">Chiama il banco</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=El+mar%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps</a>
+          </div>
+          <p style="margin-top:1rem;font-size:.9rem;color:var(--brand-muted);">Telefono: <b style="color:var(--brand-ink);">+39 327 343 8429</b></p>
+        </div>
+        <div class="hours-card" data-reveal>
+          <span class="corner-tick" aria-hidden="true"></span>
+          <h3>Orari</h3>
+          <table class="hours-table">
+            <tbody>
+              <tr><th scope="row">Lunedì – Venerdì</th><td>08:00 – 12:30 · 15:00 – 19:00</td></tr>
+              <tr><th scope="row">Sabato</th><td>08:00 – 12:30</td></tr>
+              <tr><th scope="row">Domenica</th><td>chiuso</td></tr>
+            </tbody>
+          </table>
+          <p class="disclaimer">Orari indicativi: confermali al banco o per telefono prima di passare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (8) VIENI AL BANCO / RICHIESTA -->
+  <section class="s-alt" id="contatto" aria-labelledby="contatto-title">
+    <div class="container contatto">
+      <div class="contatto__inner" data-reveal>
+        <span class="corner tl" aria-hidden="true"></span>
+        <span class="corner br" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow"><span class="tick" aria-hidden="true"></span> Vieni al banco</p>
+          <h2 id="contatto-title">Hai il pezzo? Ti diamo quello giusto.</h2>
+          <p class="lede">Chiama il banco o passa in negozio con il raccordo, la rubinetteria o la misura. Ti indichiamo il componente corretto, in pronta consegna.</p>
+          <div class="contatto__actions">
+            <a class="btn btn--primary" data-cta href="tel:+393273438429">Chiama per il pezzo</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=El+mar%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps</a>
+          </div>
+          <p class="contatto__phone">Telefono: <b>+39 327 343 8429</b> — Via Sant'Andrea 3, Milano</p>
+        </div>
+        <div class="contatto__proof">
+          <div class="big">4,9</div>
+          <p>Valutazione aggregata su Google Maps.<br>Scelto in centro a Milano per il consiglio giusto al banco.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="wordmark" aria-hidden="true">
+          <span class="wm-tick"></span>
+          <span class="wm-word">el</span><span class="wm-pipe"></span><span class="wm-word">mar</span>
+        </span>
+        <p class="tagline">Il pezzo giusto, al banco. Forniture idrauliche in centro a Milano: rubinetteria, tubi, raccordi e valvole in pronta consegna.</p>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="tel:+393273438429">+39 327 343 8429</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=El+mar%2C+Milano" target="_blank" rel="noopener">Via Sant'Andrea 3, Milano</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=El+mar%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Negozio</h4>
+        <ul>
+          <li><a href="#cosa-trovi">Cosa trovi</a></li>
+          <li><a href="#catalogo">Catalogo</a></li>
+          <li><a href="#al-banco">Al banco</a></li>
+          <li><a href="#perche">Perché noi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© El mar — forniture idrauliche, Milano.</span>
+      <span>Orari indicativi da confermare. Valutazione 4,9 su Google Maps.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE ACTION BAR -->
+<div class="mobile-bar" aria-label="Azioni rapide">
+  <span class="m-proof"><b>4,9 ★</b> Google</span>
+  <a class="btn btn--primary" data-cta href="tel:+393273438429">Chiama il banco</a>
+</div>
+
+<script>
+  // progressive enhancement flag
+  document.documentElement.classList.add('js');
+
+  // --- mobile nav toggle ---
+  (function(){
+    var nav = document.getElementById('site-nav');
+    var toggle = nav.querySelector('.nav-toggle');
+    var menu = document.getElementById('nav-menu');
+    function close(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Apri il menu'); }
+    function open(){ nav.classList.add('open'); toggle.setAttribute('aria-expanded','true'); toggle.setAttribute('aria-label','Chiudi il menu'); }
+    toggle.addEventListener('click', function(){
+      nav.classList.contains('open') ? close() : open();
+    });
+    menu.addEventListener('click', function(e){ if(e.target.closest('a')) close(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nav.classList.contains('open')){ close(); toggle.focus(); }
+    });
+  })();
+
+  // --- MOTION LAYER: role-varied reveals, one ease language ---
+  (function(){
+    var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hasIO = 'IntersectionObserver' in window;
+
+    // Assign reveal roles by content geometry (kept out of the markup).
+    // photos push in from depth
+    document.querySelectorAll('.shot').forEach(function(s){ s.setAttribute('data-reveal','media'); });
+    // hero storefront gets the masked left-to-right wipe (the signature payoff)
+    var heroShot = document.querySelector('.hero__figure .shot');
+    if(heroShot) heroShot.setAttribute('data-reveal','wipe');
+    // catalogue index cells travel in along their own X axis
+    document.querySelectorAll('.cosa-cell').forEach(function(c){ c.setAttribute('data-reveal','x-right'); });
+    // the two halves of split sections slide in from their own side
+    document.querySelectorAll('.perche__body, .banco__body, .contatto__inner > div:not(.contatto__proof)')
+      .forEach(function(e){ e.setAttribute('data-reveal','x-right'); });
+    document.querySelectorAll('.rating-card, .contatto__proof').forEach(function(e){ e.setAttribute('data-reveal','x-left'); });
+    // list rows cascade (never inside the hero — that is driven by the load sequence)
+    document.querySelectorAll('.plate__items li, .perche__points li, .family-index li, .banco__steps li')
+      .forEach(function(li){ if(!li.closest('.hero')) li.setAttribute('data-reveal','rise'); });
+
+    // --- per-word cascade for section eyebrows + headings (preserves child nodes like the tick) ---
+    function splitWords(el){
+      if(el.dataset.split) return; el.dataset.split='1';
+      var frag = document.createDocumentFragment();
+      Array.prototype.slice.call(el.childNodes).forEach(function(node){
+        if(node.nodeType === 3){
+          var parts = node.textContent.split(/(\s+)/);
+          parts.forEach(function(p){
+            if(p === '') return;
+            if(/^\s+$/.test(p)){ frag.appendChild(document.createTextNode(p)); return; }
+            var w = document.createElement('span'); w.className='wsplit';
+            var inner = document.createElement('span'); inner.textContent = p;
+            w.appendChild(inner); frag.appendChild(w);
+          });
+        } else { frag.appendChild(node); }
+      });
+      el.innerHTML=''; el.appendChild(frag);
+    }
+    var headings = [];
+    if(!RM){
+      document.querySelectorAll('main h2, .eyebrow, .datum-rule span').forEach(function(h){
+        splitWords(h); h.classList.add('wsplit-group'); headings.push(h);
+      });
+    }
+    function cascadeWords(el){
+      var words = el.querySelectorAll('.wsplit');
+      words.forEach(function(w, i){ w.style.setProperty('--rv-delay', (i*Number(60))+'ms'); w.classList.add('is-in'); });
+    }
+
+    // --- group stagger for [data-reveal] rows sharing a parent ---
+    function staggerGroup(el){
+      var p = el.parentElement; if(!p || p.dataset.stg) return;
+      var sibs = Array.prototype.slice.call(p.children).filter(function(c){ return c.hasAttribute('data-reveal'); });
+      if(sibs.length < 2) return; p.dataset.stg='1';
+      sibs.forEach(function(c,i){ c.style.setProperty('--rv-delay', (i*Number(80))+'ms'); });
+    }
+
+    var revealEls = document.querySelectorAll('[data-reveal]');
+
+    if(RM || !hasIO){
+      revealEls.forEach(function(el){ el.classList.add('is-in'); });
+      document.querySelectorAll('.hero__datum, .hero__wordmark, .hero__tagline, .hero__sub, .hero__actions, .hero__phone, .hero__proof')
+        .forEach(function(el){ el.classList.add('is-in'); });
+      headings.forEach(cascadeWords);
+      setRating(4.9); // final value, no tween
+      return;
+    }
+
+    // --- HERO load sequence: datum draws, wordmark + spec settle beneath it ---
+    var heroPlate = document.querySelector('.hero__plate');
+    var heroFig = document.querySelector('.hero__figure');
+    if(heroPlate) heroPlate.classList.add('is-in');
+    if(heroFig) heroFig.classList.add('is-in');
+    var seq = [
+      ['.hero__datum', 100],
+      ['.hero__wordmark', 200],
+      ['.hero__figure .shot', 260],
+      ['.hero__tagline', 340],
+      ['.hero__sub', 400],
+      ['.hero .spec-block', 440],
+      ['.hero__actions', 480],
+      ['.hero__phone', 540],
+      ['.hero__proof', 580]
+    ];
+    seq.forEach(function(pair){
+      var el = document.querySelector(pair[0]);
+      if(el) setTimeout(function(){ el.classList.add('is-in'); }, pair[1]);
+    });
+    // hero eyebrow words cascade in on load
+    var heroEyebrow = document.querySelector('.hero .eyebrow');
+    if(heroEyebrow) setTimeout(function(){ cascadeWords(heroEyebrow); }, 160);
+
+    // --- scroll reveals via one IO, unobserve after firing ---
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var el = en.target;
+        if(el.classList.contains('wsplit-group')) cascadeWords(el);
+        else { staggerGroup(el); el.classList.add('is-in'); }
+        io.unobserve(el);
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.14});
+
+    revealEls.forEach(function(el){
+      if(el.closest('.hero')) return;          // hero handled by the load sequence
+      io.observe(el);
+    });
+    headings.forEach(function(h){ if(!h.closest('.hero')) io.observe(h); });
+
+    // --- count-up on the real rating (4,9) once, on scroll into view ---
+    var ratingEl = document.querySelector('.rating-card .big');
+    function setRating(v){ if(ratingEl) ratingEl.textContent = v.toFixed(1).replace('.', ','); }
+    if(ratingEl){
+      var target = 4.9, started = false;
+      var rio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting || started) return; started = true; rio.disconnect();
+          var t0 = null, dur = 900;
+          function step(ts){ if(t0===null) t0=ts; var k=Math.min(1,(ts-t0)/dur);
+            var eased = 1-Math.pow(1-k,3);
+            setRating(target*eased);
+            if(k<1) requestAnimationFrame(step); else setRating(target);
+          }
+          requestAnimationFrame(step);
+        });
+      }, {threshold:0.4});
+      rio.observe(ratingEl);
+    }
+
+    // --- edge ruler / chapter anchors: highlight the active section ---
+    var ticks = Array.prototype.slice.call(document.querySelectorAll('.er-tick'));
+    var idById = {};
+    ticks.forEach(function(t){ idById[t.getAttribute('href').slice(1)] = t; });
+    // '#top' anchors to the document top; its active-state watches the hero SECTION
+    // (not <html id="top">, which always intersects and would jam the state).
+    var chapters = [
+      {el: document.querySelector('.hero'), key:'top'},
+      {el: document.getElementById('cosa-trovi'), key:'cosa-trovi'},
+      {el: document.getElementById('catalogo'), key:'catalogo'},
+      {el: document.getElementById('al-banco'), key:'al-banco'},
+      {el: document.getElementById('perche'), key:'perche'},
+      {el: document.getElementById('domande'), key:'domande'},
+      {el: document.getElementById('dove'), key:'dove'},
+      {el: document.getElementById('contatto'), key:'contatto'}
+    ];
+    var elKey = new Map();
+    chapters.forEach(function(c){ if(c.el) elKey.set(c.el, c.key); });
+    var sio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var t = idById[elKey.get(en.target)];
+        if(!t) return;
+        ticks.forEach(function(x){ x.classList.remove('is-active'); });
+        t.classList.add('is-active');
+      });
+    }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+    chapters.forEach(function(c){ if(c.el) sio.observe(c.el); });
+
+    // --- dynamic section tint: crossfade the sub-perceptual wash on the hero + closing chapters ---
+    var tint = document.querySelector('.ambient-tint');
+    if(tint){
+      var tio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ tint.classList.toggle('on', en.isIntersecting); });
+      }, {rootMargin:'-40% 0px -40% 0px', threshold:0});
+      ['perche','contatto'].forEach(function(id){ var s=document.getElementById(id); if(s) tio.observe(s); });
+    }
+  })();
+</script>
+</body>
+</html>

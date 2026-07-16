@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Raviolando · Ravioli cinesi a mano, al vapore · Missori, Milano</title>
+<meta name="description" content="Ravioli cinesi piegati a mano e cotti al vapore nel cestino di bambù, pronti in pochi minuti e sotto i 20 euro. Otto posti a due passi da Missori, in Via dell'Unione a Milano. 4,8 su 590 recensioni.">
+<link rel="canonical" href="https://raviolando.it/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Raviolando · Ravioli cinesi a mano, al vapore · Missori, Milano">
+<meta property="og:description" content="Ravioli cinesi piegati a mano al vapore, pronti in pochi minuti e sotto i 20 euro. Otto posti a due passi da Missori. 4,8 su 590 recensioni.">
+<meta property="og:image" content="https://raviolando.it/assets/hero-basket.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- set .js before first paint so reveal start-states never flash visible-then-hidden (no FOUC) -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Local business structured data — only verified facts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Raviolando",
+  "servesCuisine": "Cinese",
+  "telephone": "+39 351 9408076",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via dell'Unione, 6",
+    "postalCode": "20122",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Raviolando%2C+Milano",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "12:00",
+    "closes": "21:30"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "590",
+    "bestRating": "5"
+  }
+}
+</script>
+
+<style>
+/* ============================================================
+   BRAND TOKENS — defined once, referenced everywhere
+   ============================================================ */
+:root{
+  --brand-ink:#2A1512;
+  --brand-surface:#FAF3E7;
+  --brand-surface-alt:#F3E8D4;
+  --brand-accent:#C0362C;
+  --brand-accent-ink:#FBF4E9;
+  --brand-muted:#6B5142;
+  --brand-line:#E6D7BF;
+  --brand-accent-2:#B0853B;
+
+  --font-display:'Fraunces','Georgia','Times New Roman',serif;
+  --font-body:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-reveal:720ms;
+  --dur-micro:200ms;
+  --stagger:90ms;
+
+  --space-section:clamp(4rem,2.5rem + 6vw,8rem);
+  --container:min(1180px,92vw);
+  --radius:3px;
+
+  /* the pleated seam ("la piega") — a row of scallops, 2px accent stroke.
+     Kept as an SVG data-URI whose stroke equals --brand-accent (#C0362C). */
+  --piega:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath d='M0 10 Q 12 -1 24 10' fill='none' stroke='%23C0362C' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{
+  margin:0;
+  overflow-x:clip;               /* global safety net for bled decoration */
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  font-size:clamp(1.02rem,0.98rem + 0.2vw,1.18rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  text-rendering:optimizeLegibility;
+  position:relative;
+}
+/* true feTurbulence grain — never a fake dot-pattern radial-gradient */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+  mix-blend-mode:soft-light;
+  opacity:.05;
+}
+img,svg{max-width:100%;height:auto;display:block;}
+a{color:inherit;}
+h1,h2,h3{
+  font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;line-height:1.08;margin:0;
+  font-optical-sizing:auto;text-wrap:balance;
+}
+p{margin:0;text-wrap:pretty;}
+ul{margin:0;padding:0;list-style:none;}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+/* Visible, brand-coloured focus ring on everything interactive */
+a:focus-visible,button:focus-visible{
+  outline:3px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:var(--radius);
+}
+.skip{
+  position:absolute;left:-999px;top:0;z-index:200;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:.7rem 1rem;border-radius:var(--radius);
+}
+.skip:focus{left:.75rem;top:.75rem;}
+
+/* ============================================================
+   REUSABLE PIECES
+   ============================================================ */
+.wrap{width:var(--container);margin-inline:auto;}
+
+.eyebrow{
+  font-size:.78rem;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--brand-muted);
+  display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1rem;
+}
+/* the eyebrow notch — the single gold accent the brief allows here */
+.eyebrow::before{
+  content:"";width:14px;height:8px;flex:none;
+  background:var(--piega);
+  filter:sepia(1) saturate(3) hue-rotate(5deg) brightness(.85); /* tint the scallop gold */
+}
+
+/* the pleated-seam divider between sections — now an inline SVG path so "la piega"
+   can DRAW itself once on scroll (stroke-dashoffset). Full at rest / JS-off. */
+.seam{height:12px;width:100%;overflow:hidden;line-height:0;}
+.seam svg{display:block;width:100%;height:12px;}
+.seam path{stroke:var(--brand-accent);}
+
+/* single notch list marker */
+.pleat-list li{
+  position:relative;padding-left:1.6rem;margin:.55rem 0;
+}
+.pleat-list li::before{
+  content:"";position:absolute;left:0;top:.55em;
+  width:16px;height:8px;
+  background:var(--piega);background-repeat:no-repeat;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--font-body);font-weight:600;font-size:1rem;
+  text-decoration:none;cursor:pointer;border:0;
+  padding:.85rem 1.4rem;border-radius:var(--radius);
+  transition:transform var(--dur-micro) var(--ease-micro),
+             box-shadow var(--dur-micro) var(--ease-signature);
+}
+.btn--accent{background:var(--brand-accent);color:var(--brand-accent-ink);}
+.btn--ghost{background:transparent;color:var(--brand-ink);border:1px solid var(--brand-line);}
+.btn:hover{transform:translateY(-2px);}
+.btn--accent:hover{box-shadow:0 8px 22px rgba(192,54,44,.25);}
+
+/* price tag — motif on its border, muted (illustrative) */
+.tag{
+  display:inline-block;font-weight:600;font-size:.92rem;color:var(--brand-muted);
+  padding:.3rem .8rem .5rem;border-radius:999px;
+  border:1px solid var(--brand-line);
+  font-variant-numeric:tabular-nums;
+  background:
+    var(--piega) center bottom 2px/16px 8px repeat-x,
+    var(--brand-surface);
+}
+
+/* rating cluster */
+.stars{color:var(--brand-ink);letter-spacing:.12em;font-size:1rem;}
+.stars .off{color:var(--brand-line);}
+
+/* ---- photo slots (CSS-gradient placeholders standing in for the shared shoot) ----
+   Each subject family gets its OWN composition (angle/shape/emphasis) so the gallery
+   reads as a curated shoot, not one blob copy-pasted — the shared wash below is
+   deliberately lighter than before so these base differences actually show through. */
+.photo{
+  position:relative;width:100%;border-radius:var(--radius);
+  background:
+    linear-gradient(155deg,var(--brand-surface-alt) 0%,var(--brand-line) 55%,var(--brand-muted) 130%);
+  box-shadow:0 1px 0 rgba(42,21,18,.06) inset;
+  overflow:hidden;
+}
+/* lighter shared window-light wash — cohesion, not camouflage for the base differences */
+.photo::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(58% 44% at 24% 12%, rgba(251,244,233,.55), transparent 60%),
+    radial-gradient(70% 60% at 82% 96%, rgba(107,81,66,.26), transparent 62%),
+    radial-gradient(120% 90% at 50% 100%, rgba(42,21,18,.14), transparent 65%),
+    linear-gradient(120deg, rgba(176,133,59,.12), rgba(192,54,44,.04));
+}
+
+/* CESTINO — recurs everywhere a steaming basket appears (hero, "banco fuma", the 3
+   ravioli-family cards): concentric rings evoke the round bamboo rim, warm mounded
+   highlights evoke the dumplings, light falls from above as if a lid were just lifted. */
+.photo--basket{
+  background:
+    radial-gradient(120% 85% at 50% 10%, rgba(251,244,233,.62), transparent 58%),
+    repeating-radial-gradient(circle at 50% 66%, transparent 0 11px, rgba(42,21,18,.055) 11px 12.5px, transparent 12.5px 36px),
+    radial-gradient(46% 34% at 34% 68%, rgba(251,244,233,.5), transparent 70%),
+    radial-gradient(40% 30% at 63% 74%, rgba(251,244,233,.4), transparent 70%),
+    radial-gradient(75% 55% at 50% 100%, rgba(176,133,59,.2), transparent 62%),
+    linear-gradient(160deg, var(--brand-surface-alt), var(--brand-line) 60%, var(--brand-muted) 130%);
+}
+.hero-media .photo{
+  background:
+    radial-gradient(130% 90% at 50% 6%, rgba(251,244,233,.7), transparent 55%),
+    repeating-radial-gradient(circle at 50% 64%, transparent 0 14px, rgba(42,21,18,.06) 14px 16px, transparent 16px 44px),
+    radial-gradient(50% 36% at 32% 66%, rgba(251,244,233,.55), transparent 70%),
+    radial-gradient(44% 32% at 62% 72%, rgba(251,244,233,.45), transparent 70%),
+    radial-gradient(38% 28% at 47% 80%, rgba(251,244,233,.4), transparent 70%),
+    radial-gradient(85% 60% at 50% 100%, rgba(176,133,59,.24), transparent 62%),
+    linear-gradient(160deg, var(--brand-surface-alt), var(--brand-line) 58%, var(--brand-muted) 128%);
+}
+
+/* IL LOCALE — open, airy room light; wider spread, calmer vignette than the food shots */
+.photo--interior{
+  background:
+    radial-gradient(90% 70% at 30% 0%, rgba(251,244,233,.62), transparent 62%),
+    radial-gradient(80% 70% at 85% 100%, rgba(107,81,66,.22), transparent 65%),
+    linear-gradient(132deg, var(--brand-surface-alt), var(--brand-line) 72%);
+}
+
+/* IL FRITTO — golden, crisp, tighter vignette (the crunch cue) */
+.photo--fried{
+  background:
+    radial-gradient(60% 50% at 25% 18%, rgba(251,244,233,.6), transparent 55%),
+    radial-gradient(85% 68% at 75% 100%, rgba(176,133,59,.3), transparent 60%),
+    radial-gradient(100% 85% at 50% 105%, rgba(42,21,18,.2), transparent 68%),
+    linear-gradient(145deg, var(--brand-surface-alt), var(--brand-accent-2) 10%, var(--brand-line) 62%, var(--brand-muted) 130%);
+}
+
+/* DA BERE — vertical light-through-glass, bright top fading down (a poured drink, not a plate) */
+.photo--drink{
+  background:
+    radial-gradient(55% 28% at 50% 6%, rgba(251,244,233,.85), transparent 60%),
+    linear-gradient(180deg, rgba(251,244,233,.55), var(--brand-surface-alt) 34%, var(--brand-line) 74%, var(--brand-muted) 130%);
+}
+
+/* FREDDO & NOODLE — fresh and light, minimal vignette */
+.photo--noodle{
+  background:
+    radial-gradient(90% 70% at 30% 8%, rgba(251,244,233,.68), transparent 62%),
+    linear-gradient(150deg, var(--brand-surface-alt), var(--brand-line) 82%);
+}
+
+/* COME NASCONO — a close macro spotlight, higher ink contrast (the hands-at-work cue) */
+.photo--process{
+  background:
+    radial-gradient(52% 52% at 50% 28%, rgba(251,244,233,.68), transparent 55%),
+    radial-gradient(90% 78% at 58% 102%, rgba(42,21,18,.28), transparent 60%),
+    linear-gradient(165deg, var(--brand-surface-alt), var(--brand-muted) 122%);
+}
+/* a second, finer grain layer scoped to photo slots for a filmic surface */
+.photo::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  mix-blend-mode:soft-light;opacity:.16;
+}
+.photo--wide{aspect-ratio:16/9;}
+.photo--landscape{aspect-ratio:4/3;}
+.photo--square{aspect-ratio:1/1;}
+.photo--tall{aspect-ratio:3/4;}
+/* small caption sitting on a slot, Apartamento-style */
+.cap{
+  position:absolute;left:.9rem;bottom:.8rem;z-index:2;
+  font-size:.8rem;color:var(--brand-ink);
+  background:rgba(250,243,231,.82);
+  padding:.28rem .6rem;border-radius:var(--radius);
+  max-width:80%;
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-head{
+  position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb,var(--brand-surface) 90%,transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  width:var(--container);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.7rem 0;
+}
+/* --- wordmark logotype --- */
+.wordmark{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;
+  line-height:1;color:var(--brand-ink);text-decoration:none;
+}
+.wordmark .chop-sm{
+  width:1.15em;height:1.15em;flex:none;
+  display:grid;place-items:center;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  border-radius:2px;font-size:.62em;
+  box-shadow:0 0 0 2px var(--brand-surface),0 0 0 3px var(--brand-accent-2);
+}
+/* the gold hand-drawn underline under the final "ando" */
+.wordmark .name{position:relative;}
+.wordmark .name .tail{
+  position:relative;
+  background:linear-gradient(var(--brand-accent-2),var(--brand-accent-2)) left bottom/100% 2px no-repeat;
+  padding-bottom:2px;
+}
+.nav .wordmark{font-size:1.35rem;}
+
+.nav-links{
+  display:flex;align-items:center;gap:1.4rem;
+  font-size:.95rem;font-weight:500;
+}
+.nav-links a{text-decoration:none;color:var(--brand-ink);padding:.25rem 0;position:relative;}
+.nav-links a[aria-current="true"]{color:var(--brand-accent);}
+.nav-links a:hover{color:var(--brand-accent);}
+.nav-cta{display:inline-flex;align-items:center;gap:1rem;}
+.nav-call{font-size:1rem;padding:.6rem 1.1rem;}
+
+.nav-toggle{
+  display:none;background:transparent;border:1px solid var(--brand-line);
+  border-radius:var(--radius);padding:.5rem .7rem;cursor:pointer;
+  color:var(--brand-ink);
+}
+.nav-toggle .bar{display:block;width:22px;height:2px;background:currentColor;margin:4px 0;}
+
+/* ============================================================
+   HERO — cestino & sigillo (the wow moment, part 1)
+   ============================================================ */
+.hero{position:relative;padding:clamp(1.5rem,1rem + 3vw,3rem) 0 var(--space-section);}
+.hero-grid{
+  width:var(--container);margin-inline:auto;
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(1.5rem,1rem + 3vw,3.5rem);align-items:center;
+}
+.hero-copy{position:relative;z-index:3;}
+.hero-copy h1{
+  font-size:clamp(2.6rem,1.7rem + 4vw,5rem);
+  margin:.3rem 0 .6rem;
+}
+.hero-copy h1 .chop-sm{font-size:.42em;width:1.15em;height:1.15em;}
+.hero-tagline{
+  font-family:var(--font-display);font-style:italic;font-weight:500;
+  color:var(--brand-muted);font-size:1.15rem;margin-bottom:1.3rem;
+}
+.hero-lede{font-size:1.15rem;max-width:34ch;margin-bottom:1.8rem;}
+.hero-lede strong{color:var(--brand-accent);font-weight:600;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem 1.1rem;align-items:center;}
+.hero-phone{font-size:.9rem;color:var(--brand-muted);width:100%;margin-top:-.2rem;font-variant-numeric:tabular-nums;}
+.hero-rating{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.95rem;color:var(--brand-ink);
+  font-variant-numeric:tabular-nums;
+}
+.hero-rating b{font-family:var(--font-display);font-size:1.15rem;}
+
+/* hero media + the big lacquer seal */
+.hero-media{position:relative;}
+.hero-media .photo{aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(42,21,18,.5);}
+/* IL VAPORE — two masked layers drifting up at DIFFERENT speeds (parallax depth).
+   This is the ONE ambient perpetual motion; the mask carves the gradient into volutes.
+   Killed under reduced-motion (see the reduced-motion block). */
+.steam{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;}
+.steam::before{
+  content:"";position:absolute;left:-10%;right:-10%;bottom:6%;height:76%;
+  background:radial-gradient(52% 60% at 50% 100%,rgba(251,244,233,.5),transparent 72%);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='260'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.011 0.019' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 -5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E") bottom/220px 260px repeat-x;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='260'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.011 0.019' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 -5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E") bottom/220px 260px repeat-x;
+  opacity:.5;
+  animation:steamRise 13s var(--ease-signature) infinite;   /* back layer — slow */
+}
+.steam span{                                                 /* front layer — fast wisps */
+  position:absolute;bottom:18%;width:70px;height:58%;
+  background:radial-gradient(closest-side,rgba(251,244,233,.5),transparent 72%);
+  filter:blur(10px);opacity:.55;
+  animation:steamRise 8.5s var(--ease-signature) infinite;
+}
+.steam span:nth-child(1){left:24%;animation-delay:-1s;}
+.steam span:nth-child(2){left:45%;height:72%;animation-delay:-4.2s;animation-duration:7s;opacity:.42;}
+.steam span:nth-child(3){left:63%;animation-delay:-6.4s;}
+@keyframes steamRise{
+  0%{transform:translateY(12%) scaleX(.92);opacity:0;}
+  22%{opacity:.5;}
+  100%{transform:translateY(-30%) scaleX(1.16);opacity:0;}
+}
+/* THE SEAL — red lacquer chop with gold ring + pleated ring, sits slightly askew */
+.chop{
+  position:absolute;top:-22px;right:-14px;z-index:4;
+  width:clamp(112px,10vw + 60px,168px);aspect-ratio:1;
+  transform:rotate(-7deg);
+}
+.chop .plate{
+  position:absolute;inset:0;
+  background:var(--brand-accent);
+  color:var(--brand-accent-ink);
+  border-radius:6px;
+  display:grid;place-items:center;
+  box-shadow:0 0 0 3px var(--brand-accent-2),
+             0 14px 30px -12px rgba(42,21,18,.6),
+             inset 0 0 26px rgba(42,21,18,.28);
+}
+.chop .plate span{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(2.4rem,4vw,3.6rem);line-height:1;
+  /* ink-bleed feel */
+  text-shadow:0 1px 0 rgba(42,21,18,.25);
+}
+.chop .plate small{
+  position:absolute;bottom:9px;font-size:.5rem;letter-spacing:.22em;
+  text-transform:uppercase;opacity:.85;
+}
+/* the pleated ring around the seal */
+.chop .ring{
+  position:absolute;inset:-9px;border-radius:10px;
+  background:var(--piega);background-repeat:round;
+  -webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);
+  opacity:.9;
+  padding:2px;
+  /* draw the scallops only along the frame */
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+}
+
+/* ============================================================
+   GENERIC SECTION SHELL
+   ============================================================ */
+.tier{position:relative;padding-block:var(--space-section);}
+.tier > .wrap > .eyebrow{margin-top:0;}
+/* uneven rhythm — dense blocks and vast quiet gaps, derived from the one spacing token */
+#locale{padding-top:calc(var(--space-section) * .68);}
+#come-nascono{padding-top:calc(var(--space-section) * .5);padding-bottom:calc(var(--space-section) * 1.2);}
+#cestini{padding-block:calc(var(--space-section) * 1.05);}
+.band{padding-block:calc(var(--space-section) * .8);}
+#freddo{padding-block:calc(var(--space-section) * .6);}
+#bere{padding-top:calc(var(--space-section) * .55);}
+.proof{padding-block:calc(var(--space-section) * 1.15);}
+#come-averli{padding-top:calc(var(--space-section) * .9);}
+.lvl{
+  font-family:var(--font-body);font-weight:600;font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--brand-accent);
+}
+.h2{font-size:clamp(1.6rem,1.2rem + 2vw,2.6rem);margin:.2rem 0 1rem;}
+.lead-p{max-width:56ch;color:var(--brand-muted);font-size:1.1rem;}
+
+/* 2 — il locale : Kinfolk asymmetric split */
+.locale-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,1rem+3vw,4rem);
+  align-items:center;
+}
+.locale-media{display:grid;gap:1rem;}
+.locale-media .stack{display:grid;grid-template-columns:1.4fr 1fr;gap:1rem;align-items:end;}
+/* the anchor bleed: the room photo pushes past the container's LEFT edge — nothing
+   shares that side of the row, so it can't collide with the copy column next to it.
+   Clipped by the global overflow-x:clip on html/body. */
+@media (min-width:901px){
+  .locale-media > .photo:first-child{
+    margin-left:calc(-1 * (100vw - var(--container)) / 2);
+    width:calc(100% + (100vw - var(--container)) / 2);
+    border-top-left-radius:0;border-bottom-left-radius:0;
+    box-shadow:0 24px 46px -30px rgba(42,21,18,.5);
+  }
+}
+.statline{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.6rem;font-variant-numeric:tabular-nums;}
+.stat b{font-family:var(--font-display);font-size:2rem;display:block;line-height:1;}
+.stat span{font-size:.9rem;color:var(--brand-muted);}
+
+/* 3 — come nascono : numbered chapters */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.step{border-top:2px solid transparent;background:var(--piega) top/22px 8px repeat-x;padding-top:1.1rem;}
+.step .n{font-family:var(--font-display);font-size:1.1rem;color:var(--brand-accent);font-weight:600;}
+.step h3{font-size:1.15rem;margin:.3rem 0 .4rem;}
+.step p{color:var(--brand-muted);font-size:.98rem;}
+.come-nascono-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,1rem+3vw,3.5rem);align-items:center;}
+
+/* 4 — i cestini : card grid */
+.baskets{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.2rem;}
+.card{
+  background:var(--brand-surface);
+  border:1px solid var(--brand-line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 18px 34px -26px rgba(42,21,18,.45);
+}
+/* deliberate asymmetry: the middle basket sits a touch higher, breaking the flat row */
+.baskets .card:nth-child(2){transform:translateY(-.9rem);}
+@media (max-width:900px){.baskets .card:nth-child(2){transform:none;}}
+.card .pleat-top{height:8px;background:var(--piega) center/22px 8px repeat-x;}
+.card-body{padding:1.1rem 1.2rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;flex:1;}
+.card-body h3{font-size:1.3rem;}
+.card-body p{color:var(--brand-muted);font-size:.98rem;flex:1;}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-top:.4rem;}
+.card-foot .kcal{font-size:.82rem;color:var(--brand-muted);}
+.disclaimer{margin-top:1.4rem;font-size:.82rem;color:var(--brand-muted);}
+
+/* 5 — il fritto : full-bleed band with photo + list (different skeleton) */
+.band{background:var(--brand-surface-alt);}
+.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,1rem+3vw,3.5rem);align-items:center;}
+.menu-row{
+  display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.9rem 0;border-bottom:1px solid var(--brand-line);
+}
+.menu-row:last-child{border-bottom:0;}
+.menu-row h3{font-size:1.15rem;}
+.menu-row p{font-size:.92rem;color:var(--brand-muted);margin-top:.15rem;}
+
+/* 6 — freddo & noodle : compact single-row list */
+.compact{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:1.8rem;}
+.compact .item{
+  display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;
+  border:1px solid var(--brand-line);border-radius:var(--radius);padding:.9rem;
+}
+.compact .item .photo{width:96px;}
+.compact .item h3{font-size:1.1rem;}
+.compact .item p{font-size:.9rem;color:var(--brand-muted);margin-top:.2rem;}
+
+/* 7 — da bere : light chips row */
+.drinks{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.8rem;}
+.drink{text-align:center;}
+.drink .photo{margin-bottom:.7rem;}
+.drink h3{font-size:1.1rem;}
+.drink p{font-size:.9rem;color:var(--brand-muted);}
+
+/* 8 — cosa dicono : social proof */
+.proof{background:var(--brand-surface-alt);}
+.proof-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,1rem+3vw,3.5rem);align-items:center;}
+.proof-score{
+  text-align:center;padding:2rem 1.5rem;
+  background:var(--brand-surface);border-radius:var(--radius);
+  border:1px solid var(--brand-line);
+}
+.proof-score .big{font-family:var(--font-display);font-size:clamp(3.4rem,8vw,5rem);line-height:1;font-variant-numeric:tabular-nums;}
+.proof-score .of{color:var(--brand-muted);}
+.proof-score .stars{font-size:1.3rem;display:block;margin:.4rem 0;}
+.proof-score .count{font-size:.95rem;color:var(--brand-muted);}
+.themes{display:grid;gap:1rem;}
+.theme{background:var(--piega) top/22px 8px repeat-x;padding-top:1rem;}
+.theme h3{font-size:1.1rem;margin-bottom:.2rem;}
+.theme p{color:var(--brand-muted);}
+
+/* 9 — come averli : contact */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,1rem+3vw,3.5rem);}
+.info-block{margin-bottom:1.4rem;}
+.info-block .k{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);margin-bottom:.3rem;}
+.info-block .v{font-size:1.08rem;font-variant-numeric:tabular-nums;}
+.platforms{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem;}
+.platforms span{
+  font-size:.85rem;padding:.35rem .8rem;border:1px solid var(--brand-line);
+  border-radius:999px;color:var(--brand-muted);
+}
+.contact-cta{
+  position:sticky;top:84px;align-self:start;
+  background:var(--brand-surface-alt);border:1px solid var(--brand-line);
+  border-radius:var(--radius);padding:1.6rem;
+}
+.contact-cta .pleat-top{height:8px;background:var(--piega) center/22px 8px repeat-x;margin:-1.6rem -1.6rem 1.2rem;}
+.contact-cta h3{font-size:1.3rem;margin-bottom:.5rem;}
+.contact-cta p{color:var(--brand-muted);font-size:.95rem;margin-bottom:1rem;}
+.contact-cta .btn{width:100%;justify-content:center;margin-bottom:.7rem;}
+.contact-cta .miniproof{display:flex;align-items:center;gap:.5rem;font-size:.9rem;justify-content:center;margin-top:.4rem;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-foot{
+  background:var(--brand-ink);color:var(--brand-surface);
+  padding:clamp(2.5rem,2rem+2vw,4rem) 0 6rem;
+}
+.site-foot .wrap{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:flex-start;}
+.site-foot .wordmark{color:var(--brand-surface);}
+.site-foot a{color:var(--brand-surface);}
+.foot-note{font-size:.82rem;color:color-mix(in srgb,var(--brand-surface) 65%,transparent);max-width:44ch;}
+
+/* ============================================================
+   STICKY MOBILE ACTION BAR
+   ============================================================ */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:120;
+  display:none;align-items:center;gap:.7rem;
+  padding:.6rem .9rem;
+  background:color-mix(in srgb,var(--brand-surface) 96%,transparent);
+  border-top:1px solid var(--brand-line);
+  backdrop-filter:blur(8px);
+}
+.mobile-bar .mb-proof{font-size:.8rem;line-height:1.2;color:var(--brand-muted);flex:1;}
+.mobile-bar .mb-proof b{color:var(--brand-ink);}
+.mobile-bar .btn{flex:none;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  /* copy (headline + CTA) stays first on a phone; the seal+steam land right below */
+  .locale-grid,.come-nascono-grid,.band-grid,.proof-grid,.contact-grid{grid-template-columns:1fr;}
+  .steps,.baskets,.drinks{grid-template-columns:1fr 1fr;}
+  .contact-cta{position:static;}
+}
+@media (max-width:820px){
+  .nav-links,.nav-cta{display:none;}
+  .nav-toggle{display:block;}
+  .site-head[data-open="true"] .nav-links{
+    display:flex;flex-direction:column;align-items:stretch;gap:.1rem;
+    position:absolute;left:0;right:0;top:100%;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:.8rem 4vw;
+  }
+  .site-head[data-open="true"] .nav-links a{padding:.7rem 0;font-size:1.1rem;}
+  .mobile-bar{display:flex;}
+  .site-foot{padding-bottom:6.5rem;}
+}
+@media (max-width:640px){
+  .steps,.baskets,.drinks,.compact{grid-template-columns:1fr;}
+  /* keep the wow legible on a phone: seal reflows large, still askew, top of the image */
+  .hero-media{margin-top:1.2rem;}
+  .hero-media .photo{aspect-ratio:3/4;}
+  .chop{width:clamp(96px,26vw,128px);top:-18px;right:6px;}
+  .hero-copy h1{font-size:clamp(2.4rem,10vw,3.2rem);}
+  .statline{gap:1.2rem;}
+}
+@media (max-width:400px){
+  .compact .item{grid-template-columns:1fr;}
+  .compact .item .photo{width:100%;}
+}
+
+/* ============================================================
+   MOTION LAYER (pass 3) — one language: "il vapore che sale".
+   ALL hidden start-states live under (prefers-reduced-motion:no-preference)
+   AND require html.js, so reduced-motion and JS-off never hide content.
+   Only transform / opacity / clip-path / stroke-dashoffset animate.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference){
+
+  /* — house reveal system, varied by content ROLE and layout AXIS — */
+
+  /* headings: line-mask (text rises into being), one selectable node */
+  html.js .rv-h{overflow:hidden;}
+  /* padding+negative-margin gives descenders room so overflow:hidden never clips them at rest */
+  html.js .rv-h .rv-inner{display:block;padding-bottom:.14em;margin-bottom:-.14em;
+    transform:translateY(115%);
+    transition:transform var(--dur-reveal) var(--ease-signature);will-change:transform;}
+  html.js .rv-h.in .rv-inner{transform:translateY(0);}
+
+  /* media: scale-in (depth), never a flat fade */
+  html.js .rv-media{opacity:0;transform:scale(1.05);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .rv-media.in{opacity:1;transform:none;}
+
+  /* menu-card photos: SOLLEVAMENTO DEL COPERCHIO — a bamboo lid sweeps upward,
+     uncovering the dish (content genuinely off-screen before it fires) */
+  html.js .rv-lid{clip-path:inset(100% 0 0 0);
+    transition:clip-path var(--dur-reveal) var(--ease-signature);}
+  html.js .rv-lid.in{clip-path:inset(0 0 0 0);}
+
+  /* cards: opacity-only (so it never fights the offset middle card's transform) */
+  html.js .rv-fade{opacity:0;transition:opacity var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--i,0) * var(--stagger));}
+  html.js .rv-fade.in{opacity:1;}
+
+  /* stacked lists: vertical cascade */
+  html.js .rv-row{opacity:0;transform:translateY(18px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--i,0) * var(--stagger));}
+  html.js .rv-row.in{opacity:1;transform:none;}
+
+  /* NOMI IN INGRESSO ORIZZONTALE — the menu rail cascades along its OWN X axis */
+  html.js .rv-x{opacity:0;transform:translateX(-42px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--i,0) * var(--stagger));}
+  html.js .rv-x.in{opacity:1;transform:none;}
+
+  /* CUCITURA CHE SI DISEGNA — la piega draws once (path only, no position move) */
+  html.js .seam path{stroke-dasharray:100;stroke-dashoffset:100;
+    transition:stroke-dashoffset var(--dur-reveal) var(--ease-signature);}
+  html.js .seam.in path{stroke-dashoffset:0;}
+
+  /* hero load: short staggered entrance (Emil restraint — no overshoot here) */
+  html.js .hero-copy > *{opacity:0;transform:translateY(14px);
+    transition:opacity .6s var(--ease-signature),transform .6s var(--ease-signature);}
+  html.js .hero.hero-in .hero-copy > *{opacity:1;transform:none;}
+  html.js .hero-copy .eyebrow{transition-delay:.05s;}
+  html.js .hero-copy h1{transition-delay:.13s;}
+  html.js .hero-copy .hero-tagline{transition-delay:.24s;}
+  html.js .hero-copy .hero-lede{transition-delay:.32s;}
+  html.js .hero-copy .hero-actions{transition-delay:.42s;}
+
+  /* SIGNATURE — IL TIMBRO DEL SIGILLO: stamps once with a spring overshoot + ink bleed */
+  html.js .chop{opacity:0;}
+  html.js .hero.hero-in .chop{animation:stamp .72s var(--ease-signature) .5s both;}
+
+  /* LIVELLO DELL'ACQUA — scroll-linked scrub via native scroll-timeline */
+  @supports (animation-timeline: scroll()){
+    .waterline{opacity:1;animation:fillY linear both;animation-timeline:scroll(root block);}
+  }
+}
+
+@keyframes stamp{
+  0%{opacity:0;transform:rotate(-7deg) scale(1.16);filter:blur(7px);}
+  55%{opacity:1;transform:rotate(-7deg) scale(.975);filter:blur(0);}
+  100%{opacity:1;transform:rotate(-7deg) scale(1);}
+}
+@keyframes fillY{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+@keyframes fillX{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
+/* the water-level indicator: desktop right rail / mobile top bar (equivalent cue) */
+.waterline{
+  position:fixed;z-index:130;pointer-events:none;opacity:0;   /* above the sticky header so the mobile top-bar cue is visible */
+  right:0;top:0;width:4px;height:100vh;
+  background:var(--brand-accent);
+  transform-origin:bottom;transform:scaleY(0);
+}
+@media (max-width:820px){
+  .waterline{right:auto;left:0;top:0;width:100%;height:4px;transform-origin:left;transform:scaleX(0);}
+}
+@supports (animation-timeline: scroll()){
+  @media (max-width:820px) and (prefers-reduced-motion: no-preference){
+    .waterline{animation-name:fillX;}
+  }
+}
+
+/* PRESSIONE — pointer micro-interactions (the only pointer-driven motion), spring settle */
+@media (hover:hover) and (pointer:fine){
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1);}
+
+  .btn:active{transform:scale(.97);}
+
+  /* price tag: spring lift + the piega notch shifts 2px on the pressure axis */
+  .tag{transition:transform var(--dur-micro) var(--ease-micro),background-position var(--dur-micro) var(--ease-micro);}
+  .tag:hover{transform:translateY(-1px);background-position:center bottom 4px;}
+
+  .card{transition:transform var(--dur-micro) var(--ease-signature),box-shadow var(--dur-micro) var(--ease-signature);}
+  .card:hover{transform:translateY(-4px);box-shadow:0 26px 46px -22px rgba(42,21,18,.5);}
+  .baskets .card:nth-child(2){transition:transform var(--dur-micro) var(--ease-signature),box-shadow var(--dur-micro) var(--ease-signature);}
+  .baskets .card:nth-child(2):hover{transform:translateY(calc(-.9rem - 4px));}
+}
+
+/* ============================================================
+   MOTION — reduced-motion: everything off, all content visible
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .steam{display:none;}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="waterline" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-head" id="top" data-open="false">
+  <nav class="nav" aria-label="Navigazione principale">
+    <a class="wordmark" href="#top" aria-label="Raviolando, torna in cima">
+      <span class="chop-sm" aria-hidden="true">饺</span>
+      <span class="name">Ravi<span>ol</span><span class="tail">ando</span></span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="sr-only" style="position:absolute;left:-999px">Menu</span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#locale">Il locale</a></li>
+      <li><a href="#come-nascono">La piega</a></li>
+      <li><a href="#cestini" aria-current="true">Menu</a></li>
+      <li><a href="#bere">Da bere</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
+      <li><a href="#come-averli">Come averli</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn btn--accent nav-call" data-cta href="tel:+393519408076">Chiama</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ 1 · HERO — cestino & sigillo ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">A mano · Al vapore · Missori</p>
+        <h1 id="hero-title" class="wordmark" style="font-size:clamp(2.6rem,1.7rem + 4vw,5rem)">
+          <span class="chop-sm" aria-hidden="true">饺</span>
+          <span class="name">Ravi<span>ol</span><span class="tail">ando</span></span>
+        </h1>
+        <p class="hero-tagline">Ravioli a mano, Missori</p>
+        <p class="hero-lede">
+          Ravioli cinesi piegati a mano davanti a te, fumanti dal cestino di bambù
+          in <strong>pochi minuti</strong>. Caldi, sazi, <strong>sotto i 20 euro</strong>.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--accent" data-cta href="tel:+393519408076">Chiama per ordinare</a>
+          <a class="btn btn--ghost" href="#cestini">Vedi i cestini</a>
+          <span class="hero-phone">+39 351 9408076 — lun–dom, 12:00–21:30</span>
+          <span class="hero-rating">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><b>4,8</b> su 590 recensioni</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="photo photo--tall" role="img"
+             aria-label="Cestino di bambù colmo di ravioli cinesi al vapore fumanti sul bancone di legno">
+          <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="chop" aria-hidden="true">
+          <div class="ring"></div>
+          <div class="plate"><span>饺</span><small>Raviolando</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 2 · Il locale a Missori ============ -->
+  <section class="tier" id="locale" aria-labelledby="locale-title">
+    <div class="wrap">
+      <div class="locale-grid">
+        <div class="locale-media">
+          <div class="photo photo--landscape photo--interior" role="img"
+               aria-label="Interno del piccolo locale di ravioli da otto posti a Missori, Milano">
+            <span class="cap">Otto posti, legno e bambù veri</span>
+          </div>
+          <div class="stack">
+            <div class="photo photo--landscape photo--basket" role="img"
+                 aria-label="Scorcio caldo sul banco del piccolo locale con i cestini di bambù che fumano"></div>
+            <div class="photo photo--tall photo--drink" role="img"
+                 aria-label="Angolo curato con cestino di bambù e bicchiere di milk tea su un tavolino di legno"></div>
+          </div>
+        </div>
+        <div>
+          <p class="lvl">Livello 1 · Il luogo</p>
+          <h2 id="locale-title" class="h2">Otto posti, a due passi da Missori</h2>
+          <p class="lead-p">
+            Siamo piccoli, e ci teniamo.<br>
+            Un banco corto, qualche tavolino curato, la fermata Missori dietro l'angolo.
+            Qui l'intimità non è un limite: è il motivo per cui ogni cestino esce come si deve.
+          </p>
+          <div class="statline">
+            <div class="stat"><b>8</b><span>posti a sedere</span></div>
+            <div class="stat"><b>2′</b><span>a piedi da Missori</span></div>
+            <div class="stat"><b>&lt;20€</b><span>per un pranzo sazio</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 3 · Come nascono — la piega a mano ============ -->
+  <section class="tier" id="come-nascono" aria-labelledby="nascono-title">
+    <div class="wrap">
+      <div class="come-nascono-grid">
+        <div class="photo photo--square photo--process" role="img"
+             aria-label="Mani che piegano a mano un raviolo cinese al banco tra la farina"></div>
+        <div>
+          <p class="lvl">Livello 2 · Come nascono</p>
+          <h2 id="nascono-title" class="h2">La piega si fa a mano, al banco</h2>
+          <p class="lead-p">
+            Niente ravioli da catena.<br>
+            Impastiamo, stendiamo e pieghiamo davanti a te — una tacca dopo l'altra,
+            come si chiude un raviolo fatto in casa. Poi nel cestino, al vapore, e via.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <span class="n">01</span>
+              <h3>Si stende</h3>
+              <p>Sfoglia sottile, tirata al momento sul legno infarinato.</p>
+            </div>
+            <div class="step">
+              <span class="n">02</span>
+              <h3>Si piega</h3>
+              <p>La cucitura a smerlo, chiusa a mano, tacca su tacca.</p>
+            </div>
+            <div class="step">
+              <span class="n">03</span>
+              <h3>Al vapore</h3>
+              <p>Nel cestino di bambù, fumanti al tavolo in pochi minuti.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 4 · I cestini — le famiglie di ravioli ============ -->
+  <section class="tier" id="cestini" aria-labelledby="cestini-title">
+    <div class="wrap">
+      <p class="lvl">Livello 3 · I cestini</p>
+      <h2 id="cestini-title" class="h2">Le famiglie di ravioli al vapore</h2>
+      <p class="lead-p">Il cuore del banco. Ogni cestino, piegato a mano e servito fumante.</p>
+
+      <div class="baskets">
+        <article class="card">
+          <div class="pleat-top" aria-hidden="true"></div>
+          <div class="photo photo--square photo--basket" role="img"
+               aria-label="Ravioli cinesi al maiale al vapore nel cestino con salsa di accompagnamento"></div>
+          <div class="card-body">
+            <h3>Ravioli al maiale</h3>
+            <p>Il classico del banco: ripieno succoso, pelle sottile, un filo di salsa di soia.</p>
+            <div class="card-foot">
+              <span class="tag">6,50 €</span>
+              <span class="kcal">cestino da 8</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="pleat-top" aria-hidden="true"></div>
+          <div class="photo photo--square photo--basket" role="img"
+               aria-label="Ravioli cinesi di manzo al vapore su un piatto di ceramica con olio piccante"></div>
+          <div class="card-body">
+            <h3>Ravioli di manzo</h3>
+            <p>Più deciso e saporito, con una punta di olio piccante per chi lo vuole.</p>
+            <div class="card-foot">
+              <span class="tag">7,00 €</span>
+              <span class="kcal">cestino da 8</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="pleat-top" aria-hidden="true"></div>
+          <div class="photo photo--square photo--basket" role="img"
+               aria-label="Ravioli cinesi vegetariani al vapore in un cestino di bambù con salsa di soia"></div>
+          <div class="card-body">
+            <h3>Ravioli vegetariani</h3>
+            <p>Cavolo ed erba cipollina, freschi e leggeri: la pelle lascia intravedere il verde.</p>
+            <div class="card-foot">
+              <span class="tag">6,50 €</span>
+              <span class="kcal">cestino da 8</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="disclaimer">I prezzi qui accanto sono indicativi, per darti un'idea: confermali con noi al telefono.</p>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 5 · Il fritto e gli extra ============ -->
+  <section class="tier band" id="fritto" aria-labelledby="fritto-title">
+    <div class="wrap">
+      <div class="band-grid">
+        <div>
+          <p class="lvl">Livello 4 · Il fritto</p>
+          <h2 id="fritto-title" class="h2">Croccante, per allungare il pasto</h2>
+          <div class="menu-list">
+            <div class="menu-row">
+              <div><h3>Involtini primavera</h3><p>Dorati e croccanti, appena fritti.</p></div>
+            </div>
+            <div class="menu-row">
+              <div><h3>Bao al pollo</h3><p>Morbidi e cotti al vapore, ripieni caldi.</p></div>
+            </div>
+            <div class="menu-row">
+              <div><h3>Gamberi</h3><p>Succosi e lucidi, con cipollotto fresco.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="photo photo--landscape photo--fried" role="img"
+             aria-label="Involtini primavera fritti dorati e un bao al pollo su un tagliere di legno"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 6 · Freddo & noodle ============ -->
+  <section class="tier" id="freddo" aria-labelledby="freddo-title">
+    <div class="wrap">
+      <p class="lvl">Livello 5 · Freddo &amp; noodle</p>
+      <h2 id="freddo-title" class="h2">Quando fuori scotta</h2>
+      <p class="lead-p">Due piatti freschi che tengono il carattere del banco, anche d'estate.</p>
+      <div class="compact">
+        <div class="item">
+          <div class="photo photo--square photo--noodle" role="img"
+               aria-label="Ciotola di noodle freddi con ravioli e verdure fresche"></div>
+          <div>
+            <h3>Freddo Noodle Ravioli</h3>
+            <p>Noodle freddi e ravioli insieme, con verdura fresca e salsa di sesamo.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo photo--square photo--noodle" role="img"
+               aria-label="Porzione di noodle con quattro ravioli cinesi"></div>
+          <div>
+            <h3>Noodle 4pz Ravioli</h3>
+            <p>Una porzione di noodle con quattro ravioli: leggero e completo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 7 · Da bere ============ -->
+  <section class="tier" id="bere" aria-labelledby="bere-title">
+    <div class="wrap">
+      <p class="lvl">Livello 6 · Da bere</p>
+      <h2 id="bere-title" class="h2">Per accompagnare</h2>
+      <div class="drinks">
+        <div class="drink">
+          <div class="photo photo--tall photo--drink" role="img"
+               aria-label="Bicchiere alto di milk tea cremoso sul bancone di legno"></div>
+          <h3>Milk tea</h3>
+          <p>Cremoso e dolce al punto giusto.</p>
+        </div>
+        <div class="drink">
+          <div class="photo photo--tall photo--drink" role="img"
+               aria-label="Bicchiere di tisana di frutta fredda con frutta fresca e ghiaccio"></div>
+          <h3>Tisana di frutta</h3>
+          <p>Fredda, con frutta vera e ghiaccio.</p>
+        </div>
+        <div class="drink">
+          <div class="photo photo--tall photo--drink" role="img"
+               aria-label="Bicchiere di tè freddo sul bancone di legno"></div>
+          <h3>Tè freddo</h3>
+          <p>Semplice e dissetante, per il pranzo veloce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 8 · Cosa dicono ============ -->
+  <section class="tier proof" id="recensioni" aria-labelledby="proof-title">
+    <div class="wrap">
+      <p class="lvl">Livello 7 · Cosa dicono</p>
+      <h2 id="proof-title" class="h2">4,8 su 590, e non per caso</h2>
+      <div class="proof-grid">
+        <div class="proof-score">
+          <div class="big">4,8<span class="of"> / 5</span></div>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <div class="count"><b>590 recensioni</b><br>su Google, costante nel tempo</div>
+        </div>
+        <div class="themes">
+          <div class="theme">
+            <h3>«Caldo e accogliente»</h3>
+            <p>Il tema che torna di più: un locale piccolo dove ci si sente a casa.</p>
+          </div>
+          <div class="theme">
+            <h3>«Personale gentilissimo»</h3>
+            <p>Chi entra lo scrive quasi sempre — accoglienza vera, non di facciata.</p>
+          </div>
+          <div class="theme">
+            <h3>«Ravioli molto buoni, e velocissimi»</h3>
+            <p>La combinazione rara: fatti a mano davvero buoni, ma pronti in pochi minuti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" role="presentation"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" fill="none" stroke-width="2" d="M0 12 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0 q12 -11 24 0"/></svg></div>
+
+  <!-- ============ 9 · Come averli ============ -->
+  <section class="tier" id="come-averli" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="lvl">Livello 8 · Come averli</p>
+      <h2 id="contact-title" class="h2">Vieni, ordina o fatteli portare</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="info-block">
+            <div class="k">Dove siamo</div>
+            <div class="v">Via dell'Unione, 6<br>20122 Milano MI — a due passi da Missori</div>
+          </div>
+          <div class="info-block">
+            <div class="k">Orari</div>
+            <div class="v">Lunedì – domenica, 12:00 – 21:30</div>
+          </div>
+          <div class="info-block">
+            <div class="k">Telefono</div>
+            <div class="v"><a href="tel:+393519408076">+39 351 9408076</a></div>
+          </div>
+          <div class="info-block">
+            <div class="k">Asporto e consegna</div>
+            <div class="v">Ritiri al banco, oppure te li portiamo:</div>
+            <div class="platforms">
+              <span>Deliveroo</span><span>Glovo</span><span>Just Eat</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <div class="k">Instagram</div>
+            <div class="v"><a href="https://www.instagram.com/raviolandojiao/" target="_blank" rel="noopener">@raviolandojiao</a></div>
+          </div>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Raviolando%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+        </div>
+
+        <aside class="contact-cta" aria-label="Contattaci">
+          <div class="pleat-top" aria-hidden="true"></div>
+          <h3>Otto posti, si riempiono in fretta</h3>
+          <p>Non c'è prenotazione online: la via più rapida è una telefonata. Ti diciamo subito se c'è posto o ti prepariamo l'asporto.</p>
+          <a class="btn btn--accent" data-cta href="tel:+393519408076">Chiama · +39 351 9408076</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Raviolando%2C+Milano" target="_blank" rel="noopener">Come arrivare</a>
+          <div class="miniproof">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><b>4,8</b> su 590 recensioni — nel quartiere Missori</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <span class="wordmark" style="font-size:1.5rem">
+        <span class="chop-sm" aria-hidden="true">饺</span>
+        <span class="name">Ravi<span>ol</span><span class="tail">ando</span></span>
+      </span>
+      <p class="foot-note" style="margin-top:.8rem">
+        Ravioli cinesi a mano, al vapore. Via dell'Unione, 6 — Milano, Missori.
+      </p>
+    </div>
+    <div>
+      <p style="margin-bottom:.4rem"><a href="tel:+393519408076">+39 351 9408076</a></p>
+      <p style="margin-bottom:.4rem"><a href="https://www.instagram.com/raviolandojiao/" target="_blank" rel="noopener">@raviolandojiao</a></p>
+      <p><a href="https://www.google.com/maps/search/?api=1&query=Raviolando%2C+Milano" target="_blank" rel="noopener">Apri la mappa</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= STICKY MOBILE ACTION BAR ================= -->
+<div class="mobile-bar" aria-label="Contatto rapido">
+  <div class="mb-proof"><b>4,8</b> ★ · 590 recensioni<br>Missori · 12:00–21:30</div>
+  <a class="btn btn--accent" data-cta href="tel:+393519408076">Chiama</a>
+</div>
+
+<script>
+(function(){
+  var head = document.getElementById('top');
+  var btn = document.getElementById('navToggle');
+  if(!btn||!head) return;
+  function set(open){
+    head.setAttribute('data-open', open ? 'true' : 'false');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(){
+    set(head.getAttribute('data-open') !== 'true');
+  });
+  // close after choosing a link, and on Esc
+  document.getElementById('navLinks').addEventListener('click', function(e){
+    if(e.target.closest('a')) set(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') set(false);
+  });
+})();
+</script>
+
+<!-- ================= MOTION LAYER (progressive enhancement) ================= -->
+<script>
+(function(){
+  var docEl = document.documentElement;
+  docEl.classList.add('js');                 // gate every hidden start-state on JS being present
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- tag elements for the reveal system, varied by content role/axis --- */
+  document.querySelectorAll('main h2.h2').forEach(function(h){
+    var s = document.createElement('span'); s.className = 'rv-inner';
+    while(h.firstChild){ s.appendChild(h.firstChild); }
+    h.appendChild(s); h.classList.add('rv-h');   // heading stays ONE node; span is visual only
+  });
+  document.querySelectorAll('.photo').forEach(function(p){
+    if(p.closest('.hero-media')) return;         // hero image is above the fold — no reveal
+    p.classList.add(p.closest('.card') ? 'rv-lid' : 'rv-media');
+  });
+  document.querySelectorAll('.baskets .card').forEach(function(c){ c.classList.add('rv-fade'); });
+  document.querySelectorAll('#fritto .menu-row').forEach(function(r){ r.classList.add('rv-row'); });
+  document.querySelectorAll('.steps .step, .themes .theme, .drinks .drink, .compact .item, .contact-grid .info-block, .statline .stat')
+    .forEach(function(r){ r.classList.add('rv-row'); });
+  /* NOMI DELLE FAMIGLIE DI RAVIOLI IN INGRESSO ORIZZONTALE — the brief's own moment,
+     wired to the ravioli-family names in #cestini (not #fritto), each on its own index */
+  document.querySelectorAll('.baskets .card').forEach(function(c, i){
+    var name = c.querySelector('.card-body h3');
+    if(name){ name.classList.add('rv-x'); name.style.setProperty('--i', i); }
+  });
+
+  /* --- per-group stagger index --- */
+  function stagger(containerSel){
+    document.querySelectorAll(containerSel).forEach(function(parent){
+      var i = 0;
+      [].forEach.call(parent.children, function(ch){
+        if(/\brv-(row|fade|x)\b/.test(ch.className)){ ch.style.setProperty('--i', i++); }
+      });
+    });
+  }
+  stagger('.baskets, .steps, .themes, .drinks, .compact, .statline, #fritto .menu-list');
+  (function(){ var i=0; document.querySelectorAll('.contact-grid .info-block').forEach(function(b){ b.style.setProperty('--i', i++); }); })();
+
+  if(RM) return;   // reduced-motion: no observers; start-states are absent, so all content shows
+
+  /* --- ONE IntersectionObserver drives every reveal, unobserves after firing --- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.rv-h,.rv-media,.rv-lid,.rv-fade,.rv-row,.rv-x,.seam')
+    .forEach(function(el){ io.observe(el); });
+
+  /* --- hero load entrance + the seal stamp (fires next frame, non-blocking) --- */
+  var hero = document.querySelector('.hero');
+  if(hero){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('hero-in'); }); }); }
+
+  /* --- count-up on the REAL aggregate rating/count, once, in view --- */
+  function tween(dur, onStep, onDone){
+    var t0 = null;
+    function frame(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      onStep(e);
+      if(p < 1){ requestAnimationFrame(frame); } else if(onDone){ onDone(); }
+    }
+    requestAnimationFrame(frame);
+  }
+  var proof = document.querySelector('#recensioni');
+  if(proof){
+    var big = proof.querySelector('.proof-score .big');
+    var ratingNode = big ? big.firstChild : null;           // the "4,8" text node
+    var countB = proof.querySelector('.proof-score .count b'); // "590 recensioni"
+    var countRest = countB ? countB.textContent.replace(/^[\d.,\s]+/, '').trim() : '';
+    var fired = false;
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && !fired){
+          fired = true; cio.disconnect();
+          if(ratingNode){ tween(900,  function(x){ ratingNode.nodeValue = (4.8 * x).toFixed(1).replace('.', ','); },
+                                       function(){ ratingNode.nodeValue = '4,8'; }); }
+          if(countB){ tween(1100, function(x){ countB.textContent = Math.round(590 * x) + ' ' + countRest; },
+                                  function(){ countB.textContent = '590 ' + countRest; }); }
+        }
+      });
+    }, { threshold: 0.4 });
+    cio.observe(proof.querySelector('.proof-score'));
+  }
+})();
+</script>
+
+</body>
+</html>

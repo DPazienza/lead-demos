@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Hanoi — Cucina vietnamita a Milano, Piazza Baiamonti</title>
+<meta name="description" content="Hanoi: cucina vietnamita del sud in Piazza Baiamonti a Milano. Pho fatto al momento, involtini arrotolati a mano, erbe fresche a tavola. Pranzo 12–15, cena dalle 18:30. Prenota chiamando.">
+<link rel="canonical" href="https://www.hanoi-milano.it/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hanoi — Cucina vietnamita a Milano">
+<meta property="og:description" content="Pho fatto al momento ed erbe fresche a tavola, in Piazza Baiamonti. Pranzo 12–15, cena dalle 18:30. Prenota chiamando: 02 8278 4417.">
+<meta property="og:image" content="https://www.hanoi-milano.it/hero-pho.jpg">
+<meta property="og:url" content="https://www.hanoi-milano.it/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hanoi — Cucina vietnamita a Milano">
+<meta name="twitter:description" content="Pho fatto al momento ed erbe fresche a tavola, in Piazza Baiamonti. Prenota chiamando.">
+<meta name="twitter:image" content="https://www.hanoi-milano.it/hero-pho.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Hanoi",
+  "servesCuisine": "Vietnamita",
+  "url": "https://www.hanoi-milano.it/",
+  "telephone": "+390282784417",
+  "priceRange": "€€",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Hanoi%2C+Milano",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Piazzale Antonio Baiamonti 5",
+    "postalCode": "20154",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  }
+}
+</script>
+
+<style>
+  /* ============================================================
+     BRAND TOKENS — defined ONCE, referenced everywhere
+     ============================================================ */
+  :root{
+    --brand-ink:#20261B;
+    --brand-surface:#F7F1E6;
+    --brand-surface-alt:#EFE7D6;
+    --brand-accent:#A8321C;
+    --brand-accent-ink:#F7F1E6;
+    --brand-muted:#625B44;
+    --brand-line:#DDD2BC;
+    --brand-accent-2:#A9853F;
+
+    --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+    --ease-signature:cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-micro:cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-reveal:720ms;
+    --dur-micro:220ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem, 3rem + 7vw, 9rem);
+    --container:min(1180px, 92vw);
+    --radius:10px;
+
+    --fs-hero:clamp(2.8rem, 1.9rem + 4.4vw, 5.9rem);
+    --fs-h2:clamp(1.7rem, 1.3rem + 1.9vw, 3rem);
+    --fs-body:clamp(1rem, 0.96rem + 0.28vw, 1.15rem);
+
+    --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* ============================================================
+     RESET / BASE
+     ============================================================ */
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    font-weight:400;
+    line-height:1.65;
+    font-optical-sizing:auto;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;
+    line-height:1.05;margin:0;font-optical-sizing:auto;text-wrap:balance;
+  }
+  p{margin:0;overflow-wrap:anywhere;max-width:66ch;text-wrap:pretty;}
+  a{color:inherit;}
+  a{overflow-wrap:anywhere;}
+  ul,ol{margin:0;padding:0;list-style:none;}
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  .container{width:var(--container);margin-inline:auto;}
+
+  :where(a,button,summary,[tabindex]):focus-visible{
+    outline:3px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .skip{
+    position:absolute;left:-999px;top:0;z-index:100;
+    background:var(--brand-ink);color:var(--brand-surface);
+    padding:.7rem 1.1rem;border-radius:0 0 var(--radius) 0;
+    font-weight:600;text-decoration:none;
+  }
+  .skip:focus{left:0;}
+
+  /* ============================================================
+     MOTIF — "il tratto di lacca" (single motif, defined once)
+     ============================================================ */
+  .lacca{display:inline-block;fill:var(--brand-accent);width:34px;height:9px;flex:0 0 auto;}
+  .lacca--sm{width:22px;height:6px;}
+
+  /* ============================================================
+     TYPE HELPERS
+     ============================================================ */
+  .eyebrow{
+    display:flex;align-items:center;gap:.6rem;
+    font-family:var(--font-body);font-weight:600;
+    text-transform:uppercase;letter-spacing:0.18em;
+    font-size:.74rem;color:var(--brand-muted);margin:0 0 1.1rem;
+  }
+  .lede{
+    font-size:clamp(1.1rem,1rem + .6vw,1.4rem);
+    line-height:1.5;color:color-mix(in srgb,var(--brand-ink) 88%,transparent);
+    max-width:42ch;
+  }
+  .price{color:var(--brand-accent);font-weight:600;font-variant-numeric:tabular-nums;}
+  .hero-hours .h b,.service .card .time,.rail .phone,.rep-score .num,.addr,.mobile-bar .mb-proof{font-variant-numeric:tabular-nums;}
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-family:var(--font-body);font-weight:600;font-size:1rem;
+    text-decoration:none;cursor:pointer;border:1px solid transparent;
+    padding:.85rem 1.5rem;border-radius:var(--radius);
+    transition:transform var(--dur-micro) var(--ease-micro),
+               background var(--dur-micro) var(--ease-signature),
+               border-color var(--dur-micro) var(--ease-signature);
+    min-height:44px;
+  }
+  .btn--primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+  .btn--primary:hover{transform:translateY(-2px);}
+  .btn--ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line);}
+  .btn--ghost:hover{border-color:var(--brand-ink);transform:translateY(-2px);}
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  .site-header{
+    position:sticky;top:0;z-index:40;
+    background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav{
+    width:var(--container);margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;min-height:66px;
+  }
+  .nav-brand{
+    font-family:var(--font-display);font-weight:600;font-size:1.35rem;
+    letter-spacing:-0.02em;text-decoration:none;color:var(--brand-ink);
+    display:inline-flex;align-items:baseline;gap:.4rem;
+  }
+  .nav-brand small{
+    font-family:var(--font-body);font-size:.62rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:0.16em;color:var(--brand-muted);
+  }
+  .nav-links{display:flex;align-items:center;gap:1.6rem;}
+  .nav-links a{
+    text-decoration:none;font-weight:500;font-size:.95rem;color:var(--brand-ink);
+    padding:.3rem 0;position:relative;
+  }
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--brand-accent);}
+  .nav-cta{margin-left:.4rem;}
+  .nav-toggle{
+    display:none;background:transparent;border:1px solid var(--brand-line);
+    border-radius:var(--radius);width:46px;height:44px;cursor:pointer;
+    align-items:center;justify-content:center;color:var(--brand-ink);
+  }
+  .nav-toggle svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;}
+
+  /* ============================================================
+     SECTION SCAFFOLD
+     ============================================================ */
+  .section{padding-block:var(--space-section);}
+  .section--tight{padding-block:calc(var(--space-section) * .62);}
+  .section--vast{padding-block:calc(var(--space-section) * 1.28);}
+  .divider{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    width:var(--container);margin-inline:auto;
+  }
+  .divider::before,.divider::after{
+    content:"";height:1px;flex:1;background:var(--brand-line);
+  }
+  .divider .tick{width:14px;height:2px;background:var(--brand-accent-2);border-radius:2px;}
+
+  /* ============================================================
+     WOW / HERO — Insegna
+     ============================================================ */
+  .hero{
+    position:relative;overflow:hidden;
+    min-height:clamp(560px,90vh,880px);
+    display:grid;
+  }
+  .hero-media{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(46% 60% at 78% 30%, color-mix(in srgb,var(--brand-accent) 30%,var(--brand-surface-alt)) 0%, transparent 62%),
+      repeating-linear-gradient(124deg, color-mix(in srgb,var(--brand-muted) 15%,transparent) 0 1px, transparent 1px 30px),
+      radial-gradient(70% 85% at 8% 100%, color-mix(in srgb,var(--brand-muted) 46%,var(--brand-ink) 6%) 0%, transparent 66%),
+      linear-gradient(158deg, var(--brand-surface) 0%, var(--brand-surface-alt) 46%, color-mix(in srgb,var(--brand-muted) 32%,var(--brand-surface-alt)) 100%);
+  }
+  .hero-media::after{
+    content:"";position:absolute;inset:0;background-image:var(--grain);
+    background-size:180px;opacity:.5;mix-blend-mode:multiply;pointer-events:none;
+  }
+  /* bowl of broth, abstracted: rim + pooled broth + ripple rings + light catch */
+  .hero-bowl{
+    position:absolute;z-index:1;right:6%;top:50%;transform:translateY(calc(-50% + var(--py,0px)));
+    width:min(46vw,430px);aspect-ratio:1;border-radius:50%;
+    background:
+      repeating-radial-gradient(circle at 50% 48%, color-mix(in srgb,var(--brand-accent-2) 32%,transparent) 0 1px, transparent 1px 21px),
+      radial-gradient(circle at 50% 48%, color-mix(in srgb,var(--brand-accent) 82%,var(--brand-ink) 8%) 0%, color-mix(in srgb,var(--brand-accent) 64%,var(--brand-ink) 16%) 60%, color-mix(in srgb,var(--brand-ink) 48%,var(--brand-accent) 24%) 100%);
+    box-shadow:
+      inset 0 0 0 11px color-mix(in srgb,var(--brand-surface) 90%,var(--brand-muted) 10%),
+      inset 0 12px 32px color-mix(in srgb,var(--brand-ink) 40%,transparent),
+      0 34px 70px -28px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+  }
+  .hero-bowl::before{
+    content:"";position:absolute;inset:14% 30% auto 20%;height:20%;
+    border-radius:50%;background:color-mix(in srgb,var(--brand-surface) 65%,transparent);
+    filter:blur(9px);opacity:.85;
+  }
+  .hero-caption{
+    position:absolute;z-index:1;right:6%;bottom:1.4rem;
+    font-size:.72rem;letter-spacing:.04em;color:var(--brand-ink);
+    background:color-mix(in srgb,var(--brand-surface) 82%,transparent);
+    padding:.25rem .6rem;border-radius:20px;
+  }
+  .hero-scrim{
+    position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(178deg,
+      color-mix(in srgb,var(--brand-surface) 72%,transparent) 0%,
+      transparent 26%, transparent 52%,
+      color-mix(in srgb,var(--brand-surface) 86%,transparent) 100%);
+  }
+  .hero-lead{
+    position:relative;z-index:3;align-self:end;
+    width:var(--container);margin-inline:auto;
+    padding-block:clamp(2rem,5vh,4rem);
+    max-width:none;
+  }
+  .hero-seal{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:var(--font-body);font-weight:600;font-size:.7rem;
+    text-transform:uppercase;letter-spacing:0.18em;color:var(--brand-accent);
+    border:1.5px solid color-mix(in srgb,var(--brand-accent) 55%,transparent);
+    border-radius:40px;padding:.35rem .8rem;margin-bottom:1rem;
+    background:color-mix(in srgb,var(--brand-surface) 60%,transparent);
+  }
+  .hero-seal .dot{width:9px;height:9px;border-radius:50%;background:var(--brand-accent);}
+
+  .wordmark{
+    position:relative;display:inline-block;
+    font-size:var(--fs-hero);letter-spacing:-0.02em;line-height:.9;
+    margin-left:-.06em;
+    text-shadow:0 2px 30px color-mix(in srgb,var(--brand-surface) 70%,transparent);
+  }
+  .wordmark .under{
+    position:absolute;left:8%;bottom:-.12em;width:104%;height:.26em;
+    fill:var(--brand-accent);overflow:visible;
+  }
+  .wordmark .hairline{
+    position:absolute;left:12%;bottom:-.2em;width:82%;height:1px;
+    background:var(--brand-accent-2);
+  }
+  .hero-tagline{
+    font-family:var(--font-display);font-style:italic;font-weight:400;
+    font-size:clamp(1.05rem,.9rem + .8vw,1.5rem);
+    color:var(--brand-ink);margin:1.1rem 0 .2rem;
+  }
+  .hero-hours{
+    display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;
+    font-weight:500;letter-spacing:.02em;margin:.8rem 0 1.6rem;
+  }
+  .hero-hours .h{
+    display:inline-flex;flex-direction:column;line-height:1.15;
+  }
+  .hero-hours .h b{font-family:var(--font-display);font-size:1.15rem;font-weight:600;letter-spacing:-0.01em;}
+  .hero-hours .h span{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--brand-muted);}
+  .hero-hours .sep{width:1px;height:30px;background:var(--brand-line);}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;}
+  .hero-proof{
+    display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--brand-muted);
+    margin-top:1rem;
+  }
+  .stars{display:inline-flex;gap:2px;color:var(--brand-accent);}
+  .stars svg{width:16px;height:16px;fill:currentColor;}
+  .stars .half{position:relative;}
+
+  /* ============================================================
+     CHI SIAMO
+     ============================================================ */
+  .about{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,4rem);
+    align-items:center;
+  }
+  .about-body h2{font-size:var(--fs-h2);margin-bottom:1.1rem;max-width:16ch;}
+  .about-body p+p{margin-top:1rem;}
+  .about-media{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .about-media .photo:first-child{grid-column:1 / -1;}
+
+  /* photo slot (CSS-built; bold abstract art — never a flat placeholder) */
+  .photo{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    container-type:inline-size;
+    background:
+      radial-gradient(58% 70% at 88% 6%, color-mix(in srgb,var(--brand-accent) 30%,transparent) 0%, transparent 58%),
+      repeating-linear-gradient(128deg, color-mix(in srgb,var(--brand-muted) 18%,transparent) 0 1px, transparent 1px 28px),
+      radial-gradient(85% 95% at 8% 100%, color-mix(in srgb,var(--brand-muted) 52%,var(--brand-ink) 8%) 0%, transparent 64%),
+      linear-gradient(152deg, var(--brand-surface-alt) 0%, color-mix(in srgb,var(--brand-muted) 34%,var(--brand-surface-alt)) 100%);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb,var(--brand-line) 90%,transparent),
+      0 22px 40px -26px color-mix(in srgb,var(--brand-ink) 55%,transparent),
+      0 6px 14px -10px color-mix(in srgb,var(--brand-ink) 35%,transparent);
+    display:flex;align-items:flex-end;
+  }
+  .photo::before{
+    content:attr(data-mark);position:absolute;z-index:0;inset:auto -.03em -.1em auto;
+    font-family:var(--font-display);font-weight:600;font-style:italic;
+    font-size:clamp(1.6rem,24cqi,6rem);line-height:.8;letter-spacing:-0.02em;
+    color:color-mix(in srgb,var(--brand-ink) 22%,transparent);
+    white-space:nowrap;pointer-events:none;
+  }
+  .photo::after{
+    content:"";position:absolute;inset:0;background-image:var(--grain);
+    background-size:150px;opacity:.4;mix-blend-mode:multiply;pointer-events:none;
+  }
+  .photo .cap{
+    position:relative;z-index:1;margin:.9rem;font-size:.72rem;letter-spacing:.03em;
+    color:var(--brand-ink);
+    background:color-mix(in srgb,var(--brand-surface) 86%,transparent);
+    padding:.24rem .6rem;border-radius:18px;
+  }
+  .photo:nth-of-type(2n){
+    background:
+      radial-gradient(58% 70% at 10% 4%, color-mix(in srgb,var(--brand-accent-2) 30%,transparent) 0%, transparent 56%),
+      repeating-linear-gradient(-124deg, color-mix(in srgb,var(--brand-muted) 18%,transparent) 0 1px, transparent 1px 28px),
+      radial-gradient(90% 95% at 92% 96%, color-mix(in srgb,var(--brand-accent) 24%,var(--brand-ink) 6%) 0%, transparent 62%),
+      linear-gradient(158deg, var(--brand-surface) 0%, color-mix(in srgb,var(--brand-muted) 36%,var(--brand-surface-alt)) 100%);
+  }
+  .ar-wide{aspect-ratio:16/9;}
+  .ar-land{aspect-ratio:4/3;}
+  .ar-square{aspect-ratio:1/1;}
+  .ar-tall{aspect-ratio:3/4;}
+
+  /* ============================================================
+     MENU — indexed spine + asymmetric spreads
+     ============================================================ */
+  .menu h2{font-size:var(--fs-h2);margin-bottom:.6rem;}
+  .menu .lede{margin-bottom:clamp(2rem,4vw,3rem);}
+  .menu-grid{display:grid;grid-template-columns:220px 1fr;gap:clamp(1.5rem,4vw,3.5rem);}
+  .menu-index{position:sticky;top:88px;align-self:start;}
+  .menu-index ol{position:relative;padding-left:1.4rem;}
+  .menu-index .spine{
+    position:absolute;left:3px;top:.3rem;bottom:.3rem;width:3px;
+    background:var(--brand-line);border-radius:3px;overflow:hidden;
+  }
+  .menu-index .spine::before{
+    content:"";position:absolute;inset:0 0 62% 0;background:var(--brand-accent);border-radius:2px;
+  }
+  .menu-index li{margin-bottom:1.05rem;}
+  .menu-index a{text-decoration:none;display:block;}
+  .menu-index a b{
+    display:block;font-family:var(--font-display);font-weight:600;font-size:1.05rem;
+    letter-spacing:-0.01em;
+  }
+  .menu-index a span{font-size:.78rem;color:var(--brand-muted);}
+  .menu-index a:hover b{color:var(--brand-accent);}
+
+  .family{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,3vw,2.6rem);
+    align-items:center;padding-block:clamp(1.8rem,4vw,3rem);
+    border-top:1px solid var(--brand-line);
+  }
+  .family:first-child{border-top:none;padding-top:0;}
+  .family:nth-child(even) .family-media{order:2;}
+  .family-media{position:relative;}
+  .family-media .detail{
+    position:absolute;right:-14px;bottom:-14px;width:38%;
+    border-radius:var(--radius);box-shadow:0 18px 40px -22px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+  }
+  .family-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem;}
+  .family h3{font-size:clamp(1.4rem,1.1rem + 1vw,2rem);}
+  .family .band{font-size:.82rem;color:var(--brand-muted);letter-spacing:.02em;}
+  .family .band .price{font-size:1rem;}
+  .family-desc{color:var(--brand-muted);margin-bottom:1.1rem;max-width:44ch;}
+  .dishes li{
+    display:flex;gap:.7rem;align-items:flex-start;
+    padding:.55rem 0;border-bottom:1px dashed color-mix(in srgb,var(--brand-line) 80%,transparent);
+  }
+  .dishes li:last-child{border-bottom:none;}
+  .dishes .lacca{margin-top:.5em;}
+  .dishes b{font-family:var(--font-display);font-weight:600;font-size:1.05rem;letter-spacing:-0.01em;}
+  .dishes span{display:block;font-size:.9rem;color:var(--brand-muted);line-height:1.45;}
+
+  /* ============================================================
+     LA TAVOLA CONDIVISA — wow echo (wordmark over photo) + steps
+     ============================================================ */
+  .tavola{background:var(--brand-surface-alt);}
+  .tavola-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;}
+  .tavola-figure{position:relative;overflow:hidden;border-radius:var(--radius);}
+  .tavola-figure .photo{border-radius:var(--radius);}
+  .tavola-figure .echo{
+    position:absolute;left:-.04em;bottom:.2em;z-index:2;pointer-events:none;
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;
+    font-size:clamp(3rem,10vw,6rem);line-height:.85;color:var(--brand-surface);
+    text-shadow:0 4px 26px color-mix(in srgb,var(--brand-ink) 55%,transparent);
+  }
+  .tavola-figure .echo::after{
+    content:"";display:block;width:64%;height:.14em;margin-top:.06em;
+    background:var(--brand-accent);border-radius:3px;
+  }
+  .tavola h2{font-size:var(--fs-h2);margin-bottom:1rem;max-width:16ch;}
+  .steps{counter-reset:step;margin-top:1.4rem;}
+  .steps li{
+    position:relative;padding:1rem 0 1rem 3rem;
+    border-top:1px solid var(--brand-line);
+  }
+  .steps li::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:1rem;
+    width:2rem;height:2rem;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-weight:600;font-size:1rem;
+    color:var(--brand-accent);border:1.5px solid color-mix(in srgb,var(--brand-accent) 45%,transparent);
+  }
+  .steps b{font-family:var(--font-display);font-weight:600;font-size:1.1rem;display:block;letter-spacing:-0.01em;}
+  .steps span{color:var(--brand-muted);}
+
+  /* ============================================================
+     REPUTAZIONE
+     ============================================================ */
+  .rep-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;}
+  .rep-score{
+    text-align:center;padding:clamp(1.4rem,3vw,2.4rem);
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);min-width:min(280px,80vw);
+  }
+  .rep-score .num{font-family:var(--font-display);font-weight:600;font-size:clamp(3.4rem,2.4rem+3vw,5rem);line-height:1;}
+  .rep-score .stars{justify-content:center;margin:.5rem 0 .3rem;}
+  .rep-score .src{font-size:.82rem;color:var(--brand-muted);text-transform:uppercase;letter-spacing:.14em;}
+  .rep-body h2{font-size:var(--fs-h2);margin-bottom:1rem;max-width:18ch;}
+  .rep-body p+p{margin-top:1rem;}
+  .rep-quote{
+    font-family:var(--font-body);font-style:normal;font-weight:500;font-size:1rem;line-height:1.6;
+    border-left:1px solid var(--brand-line);padding-left:1.1rem;color:var(--brand-muted);
+    margin-top:1.4rem;max-width:40ch;
+  }
+  .rep-quote small{display:block;font-family:var(--font-body);font-style:normal;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-muted);margin-top:.5rem;}
+
+  /* ============================================================
+     PRENOTA — split hours booking rail (sticky)
+     ============================================================ */
+  .prenota-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start;}
+  .prenota-lead h2{font-size:var(--fs-h2);margin-bottom:1rem;max-width:15ch;}
+  .service{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.6rem 0;}
+  .service .card{
+    border:1px solid var(--brand-line);border-radius:var(--radius);padding:1.1rem 1.2rem;
+    background:var(--brand-surface);
+  }
+  .service .card .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--brand-muted);}
+  .service .card .time{font-family:var(--font-display);font-weight:600;font-size:1.5rem;letter-spacing:-0.01em;margin-top:.2rem;}
+  .service .card .note{font-size:.85rem;color:var(--brand-muted);margin-top:.35rem;}
+
+  .rail{
+    position:sticky;top:88px;
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface);padding:clamp(1.4rem,3vw,2rem);
+  }
+  .rail .mini-mark{font-family:var(--font-display);font-weight:600;font-size:1.5rem;letter-spacing:-0.02em;position:relative;display:inline-block;}
+  .rail .mini-mark::after{content:"";position:absolute;left:6%;bottom:-4px;width:70%;height:3px;background:var(--brand-accent);border-radius:3px;}
+  .rail h3{font-size:1.25rem;margin:1rem 0 .3rem;}
+  .rail .phone{
+    display:block;font-family:var(--font-display);font-weight:600;font-size:1.6rem;
+    letter-spacing:-0.01em;color:var(--brand-ink);text-decoration:none;margin:.4rem 0 .2rem;
+  }
+  .rail .phone:hover{color:var(--brand-accent);}
+  .rail .btn{width:100%;justify-content:center;margin-top:.8rem;}
+  .rail .proof{
+    display:flex;align-items:center;gap:.5rem;margin-top:1rem;padding-top:1rem;
+    border-top:1px solid var(--brand-line);font-size:.88rem;color:var(--brand-muted);
+  }
+  .rail .reassure{font-size:.85rem;color:var(--brand-muted);margin-top:.9rem;}
+
+  /* ============================================================
+     DOVE SIAMO
+     ============================================================ */
+  .place-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;}
+  .place-body h2{font-size:var(--fs-h2);margin-bottom:1rem;}
+  .addr{
+    font-style:normal;font-size:1.15rem;line-height:1.55;margin:1.1rem 0;
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    background:var(--brand-surface-alt);padding:1.1rem 1.3rem;max-width:none;
+  }
+  .addr .accentline{color:var(--brand-accent);font-weight:600;}
+  .place-body .btn{margin-top:.4rem;}
+  .place-list{margin:1.4rem 0;}
+  .place-list li{display:flex;gap:.7rem;padding:.45rem 0;color:var(--brand-muted);}
+  .place-list .lacca{margin-top:.45em;}
+  .place-figure{position:relative;overflow:hidden;border-radius:var(--radius);}
+  .place-figure .pin{
+    position:absolute;left:52%;top:46%;z-index:2;transform:translate(-50%,-50%);
+    display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  }
+  .place-figure .pin .dot{
+    width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    background:var(--brand-accent);box-shadow:0 8px 18px -6px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+  }
+  .place-figure .pin .lab{
+    font-size:.72rem;font-weight:600;letter-spacing:.03em;color:var(--brand-ink);
+    background:color-mix(in srgb,var(--brand-surface) 82%,transparent);padding:.2rem .55rem;border-radius:16px;
+  }
+
+  /* ============================================================
+     FOOTER + STICKY MOBILE BAR
+     ============================================================ */
+  .site-footer{
+    background:var(--brand-ink);color:color-mix(in srgb,var(--brand-surface) 80%,transparent);
+    padding-block:clamp(2.5rem,5vw,4rem);
+  }
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;}
+  .site-footer .fmark{font-family:var(--font-display);font-weight:600;font-size:1.6rem;color:var(--brand-surface);letter-spacing:-0.02em;}
+  .site-footer h3{font-family:var(--font-body);font-size:.74rem;text-transform:uppercase;letter-spacing:.16em;color:color-mix(in srgb,var(--brand-surface) 55%,transparent);margin:0 0 .8rem;font-weight:600;}
+  .site-footer a{color:color-mix(in srgb,var(--brand-surface) 82%,transparent);text-decoration:none;}
+  .site-footer a:hover{color:var(--brand-surface);}
+  .site-footer ul li{padding:.2rem 0;}
+  .foot-note{margin-top:2rem;padding-top:1.4rem;border-top:1px solid color-mix(in srgb,var(--brand-surface) 20%,transparent);font-size:.78rem;color:color-mix(in srgb,var(--brand-surface) 60%,transparent);}
+
+  .mobile-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;
+    grid-template-columns:1fr auto;gap:.7rem;align-items:center;
+    padding:.7rem clamp(.8rem,4vw,1.2rem);
+    background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+    backdrop-filter:blur(10px);border-top:1px solid var(--brand-line);
+    padding-bottom:calc(.7rem + env(safe-area-inset-bottom));
+  }
+  .mobile-bar .mb-proof{font-size:.8rem;line-height:1.2;color:var(--brand-muted);}
+  .mobile-bar .mb-proof b{color:var(--brand-ink);font-family:var(--font-display);}
+  .mobile-bar .btn{white-space:nowrap;}
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:900px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:.5rem clamp(4vw,1rem,1rem);
+      max-height:0;overflow:hidden;transition:max-height var(--dur-reveal) var(--ease-signature);
+    }
+    .nav[data-open="true"] .nav-links{max-height:420px;}
+    .nav-links a{padding:.85rem .3rem;border-bottom:1px solid var(--brand-line);}
+    .nav-links a:last-child{border-bottom:none;}
+    .nav-cta{margin:.6rem .3rem;}
+    .nav-toggle{display:inline-flex;}
+
+    .about,.menu-grid,.family,.tavola-grid,.rep-grid,.prenota-grid,.place-grid{grid-template-columns:1fr;}
+    .family:nth-child(even) .family-media{order:0;}
+    .rep-grid{justify-items:center;}
+    .menu-index{position:static;top:auto;}
+    .menu-index ol{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1.4rem;}
+    .rail{position:static;}
+    .mobile-bar{display:grid;}
+    body{padding-bottom:74px;}
+    .about-media .photo:first-child{grid-column:auto;}
+  }
+
+  @media (max-width:560px){
+    .hero{min-height:auto;}
+    .hero-media{position:relative;height:44vh;min-height:260px;}
+    .hero-bowl{width:min(58vw,240px);right:4%;}
+    .hero-lead{
+      position:relative;z-index:3;background:var(--brand-surface);
+      margin-top:-2.2rem;border-radius:var(--radius) var(--radius) 0 0;
+    }
+    .hero-scrim{display:none;}
+    .wordmark{text-shadow:none;}
+    .about-media{grid-template-columns:1fr;}
+    .menu-index ol{grid-template-columns:1fr;}
+    .service{grid-template-columns:1fr;}
+    .family-media .detail{position:static;width:100%;margin-top:.8rem;}
+    .foot-grid{grid-template-columns:1fr;}
+    .hero-hours .sep{display:none;}
+  }
+
+  /* ============================================================
+     STEAM WISP (ambient) + CHAPTER RAIL — base styles
+     ============================================================ */
+  .steam{
+    position:absolute;z-index:1;pointer-events:none;
+    top:24%;right:calc(6% + min(23vw,215px) - 62px);
+    width:124px;height:200px;opacity:.55;
+    transform:translateY(var(--py2,0px));
+  }
+  .steam i{
+    position:absolute;top:0;left:50%;width:54px;height:100%;
+    transform:translateX(-50%);border-radius:50% 50% 45% 45%;
+    background:linear-gradient(to top,
+      transparent 0%,
+      color-mix(in srgb,var(--brand-surface) 82%,transparent) 52%,
+      transparent 100%);
+    filter:blur(10px);
+  }
+  .steam i:nth-child(2){left:60%;width:40px;opacity:.7;}
+
+  .chapters{
+    position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:35;
+    display:none;flex-direction:column;gap:15px;
+  }
+  .chapters a{width:24px;height:24px;display:grid;place-items:center;}
+  .chapters a span{
+    width:8px;height:8px;border-radius:50%;
+    background:color-mix(in srgb,var(--brand-muted) 50%,transparent);
+    transition:transform var(--dur-micro) var(--ease-micro),
+               background var(--dur-micro) var(--ease-signature);
+  }
+  .chapters a:hover span,.chapters a:focus-visible span{background:var(--brand-ink);}
+  .chapters a[aria-current="true"] span{background:var(--brand-accent);transform:scale(1.7);}
+  @media (min-width:1120px) and (pointer:fine){.chapters{display:flex;}}
+
+  /* ============================================================
+     MOTION LAYER — progressive enhancement (html.js), GPU-only
+     applied ONLY when motion is welcome; reduced-motion never
+     receives a hidden/animated start state.
+     ============================================================ */
+  @media (prefers-reduced-motion:no-preference){
+
+    /* --- shared reveal system: hidden states exist only once JS tags --- */
+    html.js .rv{
+      opacity:0;will-change:transform,opacity;
+      transition:opacity var(--dur-reveal) var(--ease-signature),
+                 transform var(--dur-reveal) var(--ease-signature),
+                 clip-path var(--dur-reveal) var(--ease-signature);
+    }
+    html.js .rv.is-in{opacity:1;transform:none;clip-path:inset(0 0 0 0);will-change:auto;}
+    html.js .rv-head{clip-path:inset(0 0 100% 0);transform:translateY(.35em);}
+    html.js .rv-up{transform:translateY(22px);}
+    html.js .rv-media{transform:scale(1.045);}
+    html.js .rv-x{transform:translateX(-46px);}
+    html.js .rv-row{transform:translateY(16px);}
+
+    /* --- section-eyebrow brushstroke: one-shot left-to-right draw --- */
+    html.js .rv-brush .lacca{clip-path:inset(0 100% 0 0);}
+    html.js .rv-brush.is-in .lacca{
+      clip-path:inset(0 0 0 0);
+      transition:clip-path var(--dur-reveal) var(--ease-signature) 140ms;
+    }
+
+    /* --- hero broth-fill wipe (clip sweeps left-to-right on load) --- */
+    html.js .hero-media{
+      clip-path:inset(0 100% 0 0);
+      animation:brothFill var(--dur-reveal) var(--ease-signature) 140ms forwards;
+    }
+    @keyframes brothFill{to{clip-path:inset(0 0 0 0);}}
+
+    /* --- wordmark + hours per-line cascade --- */
+    html.js .hero-seal,
+    html.js .wordmark,
+    html.js .hero-tagline,
+    html.js .hero-hours .h,
+    html.js .hero-actions,
+    html.js .hero-proof{opacity:0;animation:lineRise var(--dur-reveal) var(--ease-signature) both;}
+    @keyframes lineRise{from{opacity:0;transform:translateY(1.05em);}to{opacity:1;transform:none;}}
+    html.js .hero-seal{animation-delay:.30s;}
+    html.js .wordmark{animation-delay:.44s;}
+    html.js .hero-tagline{animation-delay:.60s;}
+    html.js .hero-hours .h:nth-child(1){animation-delay:.74s;}
+    html.js .hero-hours .h:nth-child(3){animation-delay:.86s;}
+    html.js .hero-actions{animation-delay:1.00s;}
+    html.js .hero-proof{animation-delay:1.14s;}
+
+    /* --- ambient steam drift (sub-perceptual, slow) --- */
+    html.js .steam i{animation:steamDrift 9s var(--ease-signature) infinite alternate;}
+    html.js .steam i:nth-child(2){animation-duration:11s;animation-delay:-3s;}
+    @keyframes steamDrift{
+      0%{opacity:.30;transform:translateX(-50%) translateY(8px) scaleY(.95);}
+      100%{opacity:.62;transform:translateX(-54%) translateY(-16px) scaleY(1.06);}
+    }
+
+    /* --- menu-index lacquer spine: scroll-scrubbed fill (JS sets --p) --- */
+    html.js .menu-index .spine::before{
+      inset:0;transform-origin:top;transform:scaleY(var(--p,0));
+    }
+
+    /* --- dish-card press-lift (spring settle) + pointer micro-interactions --- */
+    @media (hover:hover) and (pointer:fine){
+      html.js .family-media{
+        transition:transform var(--dur-micro) var(--ease-micro),
+                   filter var(--dur-micro) var(--ease-signature);
+      }
+      html.js .family:hover .family-media,
+      html.js .family:focus-within .family-media{transform:translateY(-8px) scale(1.008);}
+      html.js .family-media:active{transform:translateY(-3px) scale(1.004);}
+
+      html.js .nav-links a:not(.nav-cta)::after{
+        content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+        background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+        transition:transform var(--dur-micro) var(--ease-signature);
+      }
+      html.js .nav-links a:not(.nav-cta):hover::after,
+      html.js .nav-links a:not(.nav-cta):focus-visible::after{transform:scaleX(1);}
+    }
+  }
+
+  /* ============================================================
+     MOTION — collapses to instant under reduced-motion
+     ============================================================ */
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.001ms !important;animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;scroll-behavior:auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<nav class="chapters" aria-label="Vai alla sezione">
+  <a href="#insegna" aria-label="Insegna"><span></span></a>
+  <a href="#chi-siamo" aria-label="Chi siamo"><span></span></a>
+  <a href="#menu" aria-label="Menu"><span></span></a>
+  <a href="#tavola" aria-label="A tavola"><span></span></a>
+  <a href="#reputazione" aria-label="Reputazione"><span></span></a>
+  <a href="#prenota" aria-label="Prenota"><span></span></a>
+  <a href="#dove-siamo" aria-label="Dove siamo"><span></span></a>
+</nav>
+
+<!-- motif defined ONCE, reused via <use> -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute" focusable="false">
+  <symbol id="lacca" viewBox="0 0 120 12">
+    <path d="M3 6.6 C 22 3, 44 3.4, 66 4.6 C 88 5.7, 104 5.1, 117 6.3 C 104 8.6, 86 8.4, 64 7.7 C 42 7, 22 8.4, 3 6.6 Z"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <nav class="nav" id="nav" aria-label="Navigazione principale">
+    <a class="nav-brand" href="#insegna">Hanoi <small>Milano</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu di navigazione">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#menu">Menu</a>
+      <a href="#tavola">A tavola</a>
+      <a href="#reputazione">Reputazione</a>
+      <a href="#dove-siamo">Dove siamo</a>
+      <a class="btn btn--primary nav-cta" data-cta href="tel:+390282784417">Chiama per prenotare</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ INSEGNA / HERO — the wow_moment ============ -->
+  <section class="hero" id="insegna" aria-labelledby="wordmark">
+    <div class="hero-media" role="img" aria-label="Una ciotola di pho fumante su un tavolo di legno chiaro, con erbe fresche, lime e peperoncino accanto"></div>
+    <div class="hero-bowl" aria-hidden="true"></div>
+    <div class="steam" aria-hidden="true"><i></i><i></i></div>
+    <span class="hero-caption" aria-hidden="true">Pho bo · fatto al momento</span>
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="hero-lead">
+      <span class="hero-seal"><span class="dot"></span>Cucina vietnamita del sud</span>
+      <h1 class="wordmark" id="wordmark">Hanoi<svg class="under" viewBox="0 0 120 12" aria-hidden="true"><use href="#lacca"/></svg><span class="hairline" aria-hidden="true"></span></h1>
+      <p class="hero-tagline">Cucina vietnamita, Milano</p>
+
+      <div class="hero-hours" aria-label="Orari di servizio">
+        <span class="h"><b>12–15</b><span>Pranzo</span></span>
+        <span class="sep" aria-hidden="true"></span>
+        <span class="h"><b>18:30–23</b><span>Cena</span></span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn--primary" data-cta href="tel:+390282784417">Chiama per prenotare</a>
+        <a class="btn btn--ghost" href="#menu">Guarda il menu</a>
+      </div>
+
+      <p class="hero-proof">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </span>
+        <strong style="color:var(--brand-ink)">4,3</strong> su Google Maps — in zona Baiamonti
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CHI SIAMO ============ -->
+  <section class="section section--tight" id="chi-siamo" aria-labelledby="chi-h">
+    <div class="container about">
+      <div class="about-body">
+        <p class="eyebrow"><svg class="lacca" aria-hidden="true"><use href="#lacca"/></svg>La cucina in Baiamonti</p>
+        <h2 id="chi-h">Cuciniamo il sud del Vietnam, a Piazza Baiamonti.</h2>
+        <p>Il pho lo serviamo al momento, con le erbe fresche del giorno. Gli involtini li arrotoliamo a mano, uno a uno.</p>
+        <p>Niente fronzoli. La cucina di casa, fatta come si deve, in una sala dove si sta bene a tavola insieme.</p>
+        <p>Il pranzo va avanti fino alle 15. La sera riapriamo alle 18:30, con le stesse erbe fresche.</p>
+      </div>
+      <div class="about-media">
+        <div class="photo ar-wide" data-mark="Baiamonti" role="img" aria-label="La sala di Hanoi: tavoli di legno chiaro apparecchiati con bacchette, luce naturale dalla vetrina">
+          <span class="cap">La sala in Baiamonti</span>
+        </div>
+        <div class="photo ar-square" data-mark="Al passe" role="img" aria-label="Le mani del cuoco che compongono una ciotola di pho al passe, con vapore che sale">
+          <span class="cap">Al passe</span>
+        </div>
+        <div class="photo ar-square" data-mark="Erbe" role="img" aria-label="Primo piano di coriandolo e menta fresca con lime e peperoncino rosso a fette">
+          <span class="cap">Erbe fresche</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="presentation"><span class="tick"></span></div>
+
+  <!-- ============ IL MENU PER FAMIGLIE ============ -->
+  <section class="section menu" id="menu" aria-labelledby="menu-h">
+    <div class="container">
+      <p class="eyebrow"><svg class="lacca" aria-hidden="true"><use href="#lacca"/></svg>Il menu</p>
+      <h2 id="menu-h">Il menu, per famiglie di piatti.</h2>
+      <p class="lede">Non per orario, ma per quello che arriva a tavola: i brodi, gli involtini e lo street food, la griglia, le erbe e i contorni.</p>
+
+      <div class="menu-grid">
+        <nav class="menu-index" aria-label="Indice del menu">
+          <div class="spine" aria-hidden="true"></div>
+          <ol>
+            <li><a href="#fam-brodi"><b>Brodi e pho</b><span>Fatti al momento</span></a></li>
+            <li><a href="#fam-involtini"><b>Involtini &amp; street food</b><span>Arrotolati a mano</span></a></li>
+            <li><a href="#fam-griglia"><b>La griglia</b><span>Sul carbone</span></a></li>
+            <li><a href="#fam-erbe"><b>Erbe e contorni</b><span>A tavola, da dividere</span></a></li>
+          </ol>
+        </nav>
+
+        <div class="menu-spreads">
+
+          <article class="family" id="fam-brodi">
+            <div class="family-media">
+              <div class="photo ar-land" data-mark="Pho" role="img" aria-label="Una ciotola di pho con noodle di riso, manzo e coriandolo fresco">
+                <span class="cap">Pho bo</span>
+              </div>
+              <div class="photo ar-square detail" data-mark="Brodo" role="img" aria-label="Un mestolo versa brodo di pho fumante su noodle di riso"></div>
+            </div>
+            <div class="family-text">
+              <div class="family-head">
+                <h3>Brodi e pho</h3>
+                <span class="band">a partire da <span class="price">9€</span></span>
+              </div>
+              <p class="family-desc">Il brodo lo teniamo chiaro e lungo. Le erbe arrivano a parte, da aggiungere a piacere.</p>
+              <ul class="dishes">
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Pho bo</b><span>Brodo di manzo, noodle di riso, fettine di manzo, cipollotto</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Pho ga</b><span>Brodo di pollo, noodle, erbe fresche</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Bun bo Hue</b><span>Zuppa di manzo e citronella, più decisa e speziata</span></span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="family" id="fam-involtini">
+            <div class="family-media">
+              <div class="photo ar-land" data-mark="Goi cuon" role="img" aria-label="Involtini vietnamiti freschi goi cuon nella carta di riso trasparente, con gambero ed erbe, accanto a una salsa">
+                <span class="cap">Goi cuon</span>
+              </div>
+              <div class="photo ar-square detail" data-mark="Nem ran" role="img" aria-label="Involtini fritti croccanti nem ran su un piatto chiaro"></div>
+            </div>
+            <div class="family-text">
+              <div class="family-head">
+                <h3>Involtini &amp; street food</h3>
+                <span class="band">a partire da <span class="price">5€</span></span>
+              </div>
+              <p class="family-desc">Lo street food di casa: qualcosa da mangiare con le mani, arrotolato al momento.</p>
+              <ul class="dishes">
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Goi cuon</b><span>Involtini freschi di riso con gambero, menta e vermicelli</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Nem ran</b><span>Involtini fritti croccanti, ripieno di maiale e verdure</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Banh xeo</b><span>Crêpe di riso croccante con gambero e germogli</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Banh mi</b><span>Panino vietnamita, pane croccante ed erbe fresche</span></span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="family" id="fam-griglia">
+            <div class="family-media">
+              <div class="photo ar-land" data-mark="Bun cha" role="img" aria-label="Bun cha: maiale grigliato e caramellato su vermicelli di riso, con erbe fresche e brodo di intingolo">
+                <span class="cap">Bun cha</span>
+              </div>
+              <div class="photo ar-square detail" data-mark="Griglia" role="img" aria-label="Spiedini di pollo marinato alla griglia, con bordi caramellati"></div>
+            </div>
+            <div class="family-text">
+              <div class="family-head">
+                <h3>La griglia</h3>
+                <span class="band">a partire da <span class="price">10€</span></span>
+              </div>
+              <p class="family-desc">Sul carbone, coi bordi caramellati. Si mangia con i vermicelli e le erbe, un boccone alla volta.</p>
+              <ul class="dishes">
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Bun cha</b><span>Maiale grigliato su vermicelli, con brodo di intingolo</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Bun thit nuong</b><span>Vermicelli con maiale alla griglia ed erbe fresche</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Ga nuong</b><span>Pollo marinato alla griglia</span></span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="family" id="fam-erbe">
+            <div class="family-media">
+              <div class="photo ar-land" data-mark="Erbe" role="img" aria-label="Un piatto abbondante di erbe e verdure fresche vietnamite: menta, basilico thai, coriandolo, germogli, lime e peperoncino">
+                <span class="cap">Erbe fresche</span>
+              </div>
+              <div class="photo ar-square detail" data-mark="Riso" role="img" aria-label="Ciotola di riso al vapore su un tavolo di legno"></div>
+            </div>
+            <div class="family-text">
+              <div class="family-head">
+                <h3>Erbe e contorni</h3>
+                <span class="band">a partire da <span class="price">3€</span></span>
+              </div>
+              <p class="family-desc">Il piatto di erbe si mette in mezzo e si divide. È quello che tiene insieme tutto il resto.</p>
+              <ul class="dishes">
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Piatto di erbe fresche</b><span>Menta, basilico thai, coriandolo, lime e peperoncino</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Goi</b><span>Insalata vietnamita croccante, agrodolce</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Rau xao</b><span>Verdure di stagione saltate</span></span></li>
+                <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span><b>Com trang</b><span>Riso bianco al vapore</span></span></li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA TAVOLA CONDIVISA — wow echo ============ -->
+  <section class="section section--vast tavola" id="tavola" aria-labelledby="tavola-h">
+    <div class="container tavola-grid">
+      <div class="tavola-figure">
+        <div class="photo ar-tall" role="img" aria-label="Vista dall’alto di un tavolo apparecchiato per un pasto condiviso: bacchette, ciotole di ceramica, teiera ed erbe fresche"></div>
+        <span class="echo" aria-hidden="true">A&nbsp;tavola</span>
+      </div>
+      <div class="tavola-body">
+        <p class="eyebrow"><svg class="lacca" aria-hidden="true"><use href="#lacca"/></svg>La tavola condivisa</p>
+        <h2 id="tavola-h">Qui si mangia insieme, e si divide tutto.</h2>
+        <p class="lede">Le ciotole si mettono in mezzo. Le erbe fresche e il lime arrivano a parte: il piatto lo aggiustate voi, come piace a voi.</p>
+        <ol class="steps">
+          <li><b>Si ordina insieme</b><span>Qualche piatto per la tavola, non uno a testa. Si assaggia tutto.</span></li>
+          <li><b>Le erbe le mettete voi</b><span>Menta, coriandolo, germogli, lime e peperoncino arrivano a parte, da aggiungere a piacere.</span></li>
+          <li><b>Il pho si beve fino in fondo</b><span>Fatto al momento e servito caldo. Il brodo è la parte migliore.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="presentation"><span class="tick"></span></div>
+
+  <!-- ============ REPUTAZIONE ============ -->
+  <section class="section section--tight" id="reputazione" aria-labelledby="rep-h">
+    <div class="container rep-grid">
+      <div class="rep-score">
+        <div class="num">4,3</div>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <div class="src">Media su Google Maps</div>
+      </div>
+      <div class="rep-body">
+        <p class="eyebrow"><svg class="lacca" aria-hidden="true"><use href="#lacca"/></svg>Reputazione</p>
+        <h2 id="rep-h">Una media di 4,3 che tiene, recensione dopo recensione.</h2>
+        <p>Non un picco isolato: è il voto costante che ci lasciano su Google chi si siede a tavola da noi, nel tempo.</p>
+        <p>È la reputazione che ci piace di più — quella che si costruisce piatto dopo piatto, senza rincorrere le mode.</p>
+        <p class="rep-quote">Chi torna parla di porzioni oneste, brodo fatto bene ed erbe sempre fresche.
+          <small>Sintesi del sentimento delle recensioni pubbliche, non una citazione attribuita.</small>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRENOTA ============ -->
+  <section class="section tavola" id="prenota" aria-labelledby="pren-h">
+    <div class="container prenota-grid">
+      <div class="prenota-lead">
+        <p class="eyebrow"><svg class="lacca" aria-hidden="true"><use href="#lacca"/></svg>Prenota</p>
+        <h2 id="pren-h">Due servizi al giorno. Prenotate un tavolo.</h2>
+        <p class="lede">Il servizio è diviso: il pranzo fino alle 15, poi si riapre alle 18:30 per la cena. Chiamateci e teniamo il tavolo.</p>
+        <div class="service">
+          <div class="card">
+            <div class="lbl">Pranzo</div>
+            <div class="time">12:00–15:00</div>
+            <div class="note">Tutti i giorni, cucina fino alle 15.</div>
+          </div>
+          <div class="card">
+            <div class="lbl">Cena</div>
+            <div class="time">18:30–23:00</div>
+            <div class="note">Si riapre alle 18:30 con le erbe fresche del giorno.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rail" aria-label="Prenotazione">
+        <span class="mini-mark">Hanoi</span>
+        <h3>Prenota chiamando</h3>
+        <p style="color:var(--brand-muted);font-size:.92rem">Non abbiamo una prenotazione online: una telefonata basta, vi rispondiamo noi.</p>
+        <a class="phone" href="tel:+390282784417">02 8278 4417</a>
+        <a class="btn btn--primary" data-cta href="tel:+390282784417">Chiama per prenotare</a>
+        <div class="proof">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9 4.7 17.2l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          </span>
+          <span><strong style="color:var(--brand-ink)">4,3</strong> su Google Maps, in zona Baiamonti</span>
+        </div>
+        <p class="reassure">Anche solo un tavolo per due: chiamate e lo teniamo per l’orario che preferite.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ DOVE SIAMO ============ -->
+  <section class="section section--vast" id="dove-siamo" aria-labelledby="dove-h">
+    <div class="container place-grid">
+      <div class="place-body">
+        <p class="eyebrow"><svg class="lacca" aria-hidden="true"><use href="#lacca"/></svg>Dove siamo</p>
+        <h2 id="dove-h">In Piazza Baiamonti, a due passi da Corso Como.</h2>
+        <address class="addr">
+          <span class="accentline">Piazzale Antonio Baiamonti 5</span><br>
+          20154 Milano (MI)
+        </address>
+        <ul class="place-list">
+          <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span>Zona Baiamonti / Corso Como, comoda dagli uffici della zona.</span></li>
+          <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span>A pranzo veloce e a cena con calma: due servizi, un solo indirizzo.</span></li>
+          <li><svg class="lacca lacca--sm" aria-hidden="true"><use href="#lacca"/></svg><span>Per informazioni e prenotazioni: 02 8278 4417.</span></li>
+        </ul>
+        <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=Hanoi%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+      </div>
+      <div class="place-figure">
+        <div class="photo ar-land" data-mark="Baiamonti" role="img" aria-label="La zona di Piazza Baiamonti a Milano, dove si trova il ristorante Hanoi"></div>
+        <div class="pin" aria-hidden="true">
+          <span class="lab">Hanoi · P.za Baiamonti</span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="fmark">Hanoi</div>
+        <p style="margin-top:.6rem;max-width:34ch;">Cucina vietnamita del sud a Milano. Pho fatto al momento ed erbe fresche a tavola, in Piazza Baiamonti.</p>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <ul>
+          <li>Pranzo · 12:00–15:00</li>
+          <li>Cena · 18:30–23:00</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contatti</h3>
+        <ul>
+          <li><a href="tel:+390282784417">02 8278 4417</a></li>
+          <li>Piazzale Antonio Baiamonti 5</li>
+          <li>20154 Milano (MI)</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Hanoi%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-note">I prezzi e gli orari riportati sono indicativi e vanno confermati con il ristorante. Pagina dimostrativa realizzata per Hanoi.</p>
+  </div>
+</footer>
+
+<!-- sticky mobile action bar -->
+<div class="mobile-bar" aria-label="Contatto rapido">
+  <div class="mb-proof"><b>4,3</b> su Google Maps<br>Pranzo 12–15 · Cena 18:30</div>
+  <a class="btn btn--primary" data-cta href="tel:+390282784417">Chiama</a>
+</div>
+
+<script>
+  (function(){
+    var nav = document.getElementById('nav');
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    function setOpen(open){
+      nav.setAttribute('data-open', open ? 'true' : 'false');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function(){
+      setOpen(nav.getAttribute('data-open') !== 'true');
+    });
+    links.addEventListener('click', function(e){
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true'){
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  })();
+
+  /* ---------- MOTION LAYER (progressive enhancement) ---------- */
+  (function(){
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* chapter-rail active dot (no animation — safe under reduced-motion) */
+    var dots = {};
+    document.querySelectorAll('.chapters a').forEach(function(a){
+      dots[a.getAttribute('href').slice(1)] = a;
+    });
+    var sections = [].slice.call(document.querySelectorAll('main section[id]'));
+    if (sections.length && 'IntersectionObserver' in window){
+      var cio = new IntersectionObserver(function(ents){
+        ents.forEach(function(e){
+          if (e.isIntersecting){
+            for (var k in dots) dots[k].removeAttribute('aria-current');
+            if (dots[e.target.id]) dots[e.target.id].setAttribute('aria-current','true');
+          }
+        });
+      },{rootMargin:'-45% 0px -45% 0px'});
+      sections.forEach(function(s){ cio.observe(s); });
+    }
+
+    if (reduce || !('IntersectionObserver' in window)) return;
+
+    /* --- tag reveal targets (skip anything already in/near view: no flash) --- */
+    var vh = window.innerHeight;
+    function tag(el, mod, delay){
+      if (!el) return;
+      if (el.getBoundingClientRect().top < vh * 0.85) return; /* above fold: stays visible */
+      el.classList.add('rv', mod);
+      if (delay) el.style.transitionDelay = delay + 'ms';
+    }
+    function tagAll(sel, mod){ document.querySelectorAll(sel).forEach(function(el){ tag(el, mod); }); }
+    function tagRows(groupSel, childSel, mod){
+      var S = 90; /* --stagger */
+      document.querySelectorAll(groupSel).forEach(function(g){
+        [].slice.call(g.querySelectorAll(childSel)).forEach(function(el,i){ tag(el, mod, Math.min(i,6)*S); });
+      });
+    }
+
+    tagAll('.section h2', 'rv-head');
+    tagAll('.family h3', 'rv-head');
+    tagAll('.eyebrow', 'rv-brush');
+    tagAll('.lede', 'rv-up');
+    tagAll('.about-body p, .rep-body p, .family-desc', 'rv-up');
+    tagAll('.about-media .photo, .tavola-figure, .rep-score, .place-figure', 'rv-media');
+    tagAll('.family:not(#fam-erbe) .family-media', 'rv-media');
+    tagAll('#fam-erbe .family-media', 'rv-x');           /* herb band travels along its own axis */
+    tagRows('.dishes', 'li', 'rv-row');
+    tagRows('.menu-index ol', 'li', 'rv-row');
+    tagRows('.service', '.card', 'rv-row');
+    tagRows('.steps', 'li', 'rv-row');
+    tagRows('.place-list', 'li', 'rv-row');
+
+    var io = new IntersectionObserver(function(ents){
+      var vis = ents.filter(function(e){ return e.isIntersecting; });
+      if (!vis.length) return;
+      requestAnimationFrame(function(){
+        vis.forEach(function(e){ e.target.classList.add('is-in'); io.unobserve(e.target); });
+      });
+    },{rootMargin:'0px 0px -8% 0px', threshold:0.12});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+    /* --- single rAF-batched scroll handler: hero parallax + spine scrub --- */
+    var bowl = document.querySelector('.hero-bowl');
+    var steam = document.querySelector('.steam');
+    var hero = document.getElementById('insegna');
+    var menu = document.getElementById('menu');
+    var spine = document.querySelector('.menu-index .spine');
+    var ticking = false;
+    function clamp(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+    function update(){
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (hero && y < hero.offsetHeight){
+        if (bowl) bowl.style.setProperty('--py', (y * 0.12) + 'px');
+        if (steam) steam.style.setProperty('--py2', (y * 0.30) + 'px');
+      }
+      if (menu && spine){
+        var r = menu.getBoundingClientRect();
+        var p = clamp((vh * 0.5 - r.top) / r.height);
+        spine.style.setProperty('--p', p.toFixed(4));
+      }
+    }
+    function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', function(){ vh = window.innerHeight; onScroll(); }, {passive:true});
+    update();
+
+    /* --- count-up on the real aggregate rating (4,3) --- */
+    var num = document.querySelector('.rep-score .num');
+    if (num){
+      var ci = new IntersectionObserver(function(ents){
+        if (!ents[0].isIntersecting) return;
+        ci.disconnect();
+        var target = 4.3, start = null, dur = 900;
+        function step(t){
+          if (!start) start = t;
+          var k = Math.min((t - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - k, 3);
+          num.textContent = (target * eased).toFixed(1).replace('.', ',');
+          if (k < 1) requestAnimationFrame(step); else num.textContent = '4,3';
+        }
+        requestAnimationFrame(step);
+      },{threshold:0.6});
+      ci.observe(num);
+    }
+  })();
+</script>
+</body>
+</html>

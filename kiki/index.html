@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>KiKi — Banco omakase a Milano</title>
+<meta name="description" content="KiKi è un banco omakase a Milano. Pochi posti, un solo itamae, il pesce scelto ogni mattina al mercato e servito una portata alla volta. Prenota al banco per telefono." />
+
+<link rel="canonical" href="https://www.kiki-milano.it/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="KiKi — Banco omakase a Milano" />
+<meta property="og:description" content="Un banco, un itamae, il pesce del giorno. L'omakase si decide ogni mattina al mercato e si serve una portata alla volta, a Milano." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:image" content="https://www.kiki-milano.it/assets/hero-counter.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<!-- LocalBusiness / Restaurant schema — only verified data; address, hours, rating omitted (not provided) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "KiKi",
+  "description": "Banco omakase a Milano. Il pesce è scelto ogni mattina al mercato e servito al banco, una portata alla volta.",
+  "servesCuisine": ["Giapponese", "Omakase", "Sushi"],
+  "telephone": "+390267074212",
+  "url": "https://www.kiki-milano.it/",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=KiKi%2C+Milano",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "acceptsReservations": "True"
+}
+</script>
+
+<style>
+  /* ============================================================
+     BRAND TOKENS — defined once, referenced everywhere
+     ============================================================ */
+  :root {
+    --brand-ink: #1C1714;
+    --brand-surface: #F3EDE3;
+    --brand-surface-alt: #EBE2D4;
+    --brand-accent: #B02E1F;
+    --brand-accent-ink: #F7F2E9;
+    --brand-muted: #64564A;
+    --brand-line: #D8CDBB;
+
+    --font-display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
+
+    --ease-signature: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-micro: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-reveal: 900ms;
+    --dur-micro: 220ms;
+    --stagger: 90ms;
+
+    --space-section: clamp(4.5rem, 3rem + 6vw, 8rem);
+    --container: min(1120px, 92vw);
+    --radius: 2px;
+
+    --fs-hero: clamp(2.6rem, 1.6rem + 5vw, 5.4rem);
+    --fs-h2: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+    --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+
+    --header-h: 68px;
+  }
+
+  /* ============================================================
+     RESET / BASE
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { overflow-x: clip; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--brand-surface);
+    color: var(--brand-ink);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
+  h2 { font-size: var(--fs-h2); }
+  h3 { font-size: 1.15rem; letter-spacing: -0.01em; }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+
+  ::selection { background: var(--brand-accent); color: var(--brand-accent-ink); }
+
+  :focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius);
+  }
+
+  /* Fixed, faint paper-grain texture — SVG feTurbulence, never a generated image */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container { width: var(--container); margin-inline: auto; }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brand-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    margin: 0 0 1.1rem;
+  }
+  .muted { color: var(--brand-muted); }
+  .lede { font-size: clamp(1.1rem, 1rem + 0.7vw, 1.4rem); line-height: 1.5; }
+
+  /* ============================================================
+     MOTIF — Il sigillo (the hanko seal)
+     ============================================================ */
+  .seal {
+    --seal-size: 1.05em;
+    position: relative;
+    display: inline-block;
+    width: var(--seal-size);
+    height: var(--seal-size);
+    background: var(--brand-accent);
+    border-radius: var(--radius);
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--brand-accent-ink) 55%, transparent);
+    flex: 0 0 auto;
+    vertical-align: -0.12em;
+  }
+  .seal::after {
+    content: "";
+    position: absolute;
+    inset: 34% 34%;
+    background: var(--brand-accent-ink);
+    border-radius: 50% 45% 50% 45%;
+  }
+  .seal--lg { --seal-size: 26px; }
+
+  /* Section divider = seal used as a full-stop */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: var(--container);
+    margin: 0 auto;
+    color: var(--brand-line);
+  }
+  .divider::before, .divider::after { content: ""; height: 1px; background: var(--brand-line); flex: 1; }
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    background: color-mix(in srgb, var(--brand-surface) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--brand-line);
+  }
+  .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+  /* Horizontal wordmark (header) — seal tucked immediately to its right */
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    color: var(--brand-ink);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.34em;
+  }
+  .wordmark .seal { --seal-size: 0.6em; }
+
+  .nav { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
+  .nav a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--brand-ink);
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .nav a.is-active { border-bottom-color: var(--brand-accent); }
+
+  .nav-toggle { display: none; }
+
+  .btn {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.72em 1.15em;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform var(--dur-micro) var(--ease-micro), background-color var(--dur-micro) var(--ease-signature);
+  }
+  .btn--primary { background: var(--brand-accent); color: var(--brand-accent-ink); }
+  .btn--primary:hover { background: color-mix(in srgb, var(--brand-accent) 90%, black); }
+  .btn--primary .seal { --seal-size: 0.85em; box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--brand-accent-ink) 70%, transparent); background: color-mix(in srgb, var(--brand-accent-ink) 22%, var(--brand-accent)); }
+  .btn--primary:active .seal { transform: scale(0.86); }
+  .btn--ghost { background: transparent; color: var(--brand-ink); border-color: var(--brand-ink); }
+  .btn--ghost:hover { background: var(--brand-ink); color: var(--brand-surface); }
+  .header-cta { display: inline-flex; }
+
+  /* ============================================================
+     PHOTO SLOTS — CSS-built placeholders, correct proportions.
+     Warm neutral / wood tones only (imagery grade), never empty.
+     Art pass will replace with the generated shoot.
+     ============================================================ */
+  .ph {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--brand-surface-alt);
+    box-shadow: inset 0 0 0 1px var(--brand-line), 0 18px 34px -22px color-mix(in srgb, var(--brand-ink) 55%, transparent);
+    color: color-mix(in srgb, var(--brand-muted) 70%, transparent);
+  }
+  /* faint film grain + light fall common to the whole "shoot" */
+  .ph::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 80% at 22% 12%, color-mix(in srgb, var(--brand-accent-ink) 30%, transparent), transparent 62%),
+      radial-gradient(70% 55% at 82% 88%, color-mix(in srgb, var(--brand-ink) 18%, transparent), transparent 60%),
+      repeating-linear-gradient(115deg, color-mix(in srgb, var(--brand-ink) 5%, transparent) 0 2px, transparent 2px 5px);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  /* legibility scrim so the caption chip always reads over the gradient */
+  .ph__tag {
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    z-index: 2;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand-accent-ink);
+    padding: 0.3em 0.55em;
+    background: color-mix(in srgb, var(--brand-ink) 62%, transparent);
+    border-radius: var(--radius);
+  }
+  .ph--counter { background-image: linear-gradient(150deg, color-mix(in srgb, var(--brand-ink) 16%, var(--brand-surface-alt)), var(--brand-surface) 42%, color-mix(in srgb, var(--brand-muted) 38%, var(--brand-surface-alt))); }
+  .ph--nigiri  { background-image: radial-gradient(75% 65% at 38% 36%, color-mix(in srgb, var(--brand-accent-ink) 46%, var(--brand-surface)), color-mix(in srgb, var(--brand-muted) 30%, var(--brand-surface-alt)) 78%, color-mix(in srgb, var(--brand-ink) 16%, var(--brand-surface-alt))); }
+  .ph--itamae  { background-image: linear-gradient(122deg, color-mix(in srgb, var(--brand-ink) 32%, var(--brand-surface-alt)), var(--brand-surface-alt) 52%, color-mix(in srgb, var(--brand-muted) 24%, var(--brand-surface))); }
+  .ph--hands   { background-image: linear-gradient(200deg, color-mix(in srgb, var(--brand-muted) 34%, var(--brand-surface)), var(--brand-surface) 58%, color-mix(in srgb, var(--brand-ink) 16%, var(--brand-surface-alt))); }
+  .ph--sashimi { background-image: radial-gradient(88% 78% at 58% 32%, color-mix(in srgb, var(--brand-surface) 82%, var(--brand-accent-ink)), color-mix(in srgb, var(--brand-ink) 26%, var(--brand-surface-alt))); }
+  .ph--hot     { background-image: linear-gradient(158deg, color-mix(in srgb, var(--brand-ink) 26%, var(--brand-surface-alt)), var(--brand-surface-alt) 44%, color-mix(in srgb, var(--brand-muted) 32%, var(--brand-surface)) 72%); }
+  .ph--sala    { background-image: linear-gradient(135deg, color-mix(in srgb, var(--brand-ink) 34%, var(--brand-surface-alt)), var(--brand-surface-alt) 48%, color-mix(in srgb, var(--brand-muted) 28%, var(--brand-surface))); }
+
+  /* ============================================================
+     HERO — Insegna. The wow: tategaki KiKi on a vermilion band + hanko seal.
+     ============================================================ */
+  .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: min(88vh, 760px);
+    display: grid;
+  }
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+  }
+  .hero__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--brand-ink) 60%, transparent), transparent 62%),
+      linear-gradient(0deg, color-mix(in srgb, var(--brand-ink) 40%, transparent), transparent 45%);
+  }
+
+  /* The vermilion signage band with the vertical wordmark */
+  .hero__band {
+    position: absolute;
+    top: 0;
+    right: clamp(5vw, 8vw, 120px);
+    z-index: 2;
+    width: clamp(58px, 8vw, 92px);
+    min-height: min(78%, 560px);
+    background: var(--brand-accent);
+    box-shadow: 0 18px 40px color-mix(in srgb, var(--brand-ink) 45%, transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(1rem, 2vw, 1.6rem) 0 clamp(0.9rem, 1.6vw, 1.3rem);
+    gap: 1rem;
+  }
+  .hero__wordmark {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: var(--brand-accent-ink);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 1.4rem + 3.4vw, 4rem);
+    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  .hero__seal { --seal-size: clamp(24px, 3.4vw, 34px); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--brand-accent-ink) 65%, transparent); background: color-mix(in srgb, var(--brand-accent-ink) 14%, var(--brand-accent)); }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    align-self: end;
+    width: var(--container);
+    margin-inline: auto;
+    padding: clamp(2rem, 6vw, 5rem) 0 clamp(2.4rem, 6vw, 4.5rem);
+    max-width: 34ch;
+    color: var(--brand-accent-ink);
+  }
+  .hero__content .eyebrow { color: color-mix(in srgb, var(--brand-accent-ink) 82%, transparent); }
+  .hero__content .eyebrow .seal { box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--brand-accent-ink) 65%, transparent); }
+  .hero__tag {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.3rem, 1rem + 1.4vw, 2rem);
+    line-height: 1.25;
+    margin: 0 0 0.7rem;
+  }
+  .hero__promise { font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem); color: color-mix(in srgb, var(--brand-accent-ink) 90%, transparent); margin-bottom: 1.6rem; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; align-items: center; }
+  .hero__phone { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; }
+  .hero__actions .btn--ghost { color: var(--brand-accent-ink); border-color: color-mix(in srgb, var(--brand-accent-ink) 70%, transparent); }
+  .hero__actions .btn--ghost:hover { background: var(--brand-accent-ink); color: var(--brand-ink); }
+  .hero__reassure { margin-top: 1.15rem; font-size: 0.9rem; color: color-mix(in srgb, var(--brand-accent-ink) 78%, transparent); }
+
+  /* ============================================================
+     SHELL — reel of sections + persistent sticky booking rail
+     ============================================================ */
+  .shell {
+    width: var(--container);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 288px);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  .reel { min-width: 0; }
+  .reel > section { padding-block: var(--space-section); }
+  .reel > section + section { border-top: 1px solid var(--brand-line); }
+  /* uneven vertical rhythm — sections never breathe identically */
+  #banco   { padding-top: clamp(3rem, 2rem + 4vw, 5.5rem); }
+  #itamae  { padding-block: clamp(5rem, 3.4rem + 7vw, 9rem); }
+  #menu    { padding-bottom: clamp(3.4rem, 2.4rem + 4vw, 6rem); }
+  #sala    { padding-top: clamp(3rem, 2rem + 4vw, 5.5rem); }
+  #prenota { padding-bottom: clamp(3.4rem, 2.4rem + 4vw, 6rem); }
+
+  /* Booking rail */
+  .rail {
+    position: sticky;
+    top: calc(var(--header-h) + 20px);
+    margin-top: var(--space-section);
+    background: var(--brand-surface-alt);
+    border: 1px solid var(--brand-line);
+    border-top: 4px solid var(--brand-accent);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.4rem;
+  }
+  .rail h2 { font-size: 1.35rem; margin-bottom: 0.2rem; }
+  .rail__seats { font-size: 0.92rem; color: var(--brand-muted); margin-bottom: 1.1rem; }
+  .rail .btn { width: 100%; justify-content: center; }
+  .rail__phone { display: block; margin-top: 0.85rem; font-weight: 700; font-size: 1.1rem; text-decoration: none; text-align: center; font-variant-numeric: tabular-nums; }
+  .rail__hours { margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--brand-line); font-size: 0.86rem; color: var(--brand-muted); font-variant-numeric: tabular-nums; }
+  .rail__note { margin-top: 0.9rem; font-size: 0.82rem; color: var(--brand-muted); }
+
+  /* ============================================================
+     SECTION: Il banco — composed image pair, off-axis caption
+     ============================================================ */
+  .banco__grid { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: auto auto; gap: clamp(1rem, 2.5vw, 1.8rem); margin-top: 2rem; }
+  .banco__main { grid-row: 1 / 3; aspect-ratio: 4 / 5; }
+  /* asymmetric overlap: the macro shot rides up over the main counter shot, print-stack depth */
+  .banco__macro {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    margin-left: clamp(-3.5rem, -7vw, -1.5rem);
+    box-shadow: 0 22px 40px -18px color-mix(in srgb, var(--brand-ink) 60%, transparent), 0 0 0 6px var(--brand-surface);
+  }
+  .banco__caption { align-self: center; font-size: 0.95rem; color: var(--brand-muted); }
+  .prose > * + * { margin-top: 1.1rem; }
+  .prose { max-width: 58ch; }
+
+  /* ============================================================
+     SECTION: L'itamae — wide at-work shot + text off-axis
+     ============================================================ */
+  .itamae__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.4rem, 4vw, 3rem); align-items: center; }
+  .itamae__media { aspect-ratio: 3 / 2; }
+
+  /* ============================================================
+     SECTION: Il menu del giorno — triptych card grid
+     ============================================================ */
+  .courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.6rem); margin-top: 2rem; }
+  .course { display: flex; flex-direction: column; }
+  .course__media { aspect-ratio: 1 / 1; margin-bottom: 1rem; }
+  .course h3 { margin-bottom: 0.4rem; }
+  .course__body { color: var(--brand-muted); font-size: 0.95rem; flex: 1; }
+  .course__price {
+    margin-top: 0.9rem;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--brand-accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .course__price .sub { font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; color: var(--brand-muted); }
+  .menu__foot { margin-top: 1.6rem; font-size: 0.9rem; }
+
+  /* ============================================================
+     SECTION: La sala — full-bleed banded image + address block
+     ============================================================ */
+  .sala__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(1.4rem, 4vw, 3rem); align-items: stretch; margin-top: 2rem; }
+  .sala__media { aspect-ratio: 3 / 2; min-height: 260px; }
+  .sala__where { align-self: center; }
+  .sala__addr { font-size: 1.05rem; margin: 1rem 0 1.4rem; }
+  .sala__addr strong { font-family: var(--font-display); }
+
+  /* ============================================================
+     SECTION: Come funziona — FAQ list
+     ============================================================ */
+  .faq { margin-top: 1.8rem; border-top: 1px solid var(--brand-line); }
+  .faq details { border-bottom: 1px solid var(--brand-line); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.15rem 2.4rem 1.15rem 0;
+    position: relative;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+    letter-spacing: -0.01em;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    color: var(--brand-accent);
+    transition: transform var(--dur-micro) var(--ease-signature);
+  }
+  .faq details[open] summary::after { content: "\2013"; }
+  .faq__body { padding: 0 2.4rem 1.3rem 0; color: var(--brand-muted); }
+
+  /* ============================================================
+     SECTION: Prenota — conversion close
+     ============================================================ */
+  .prenota__inner {
+    background: var(--brand-surface-alt);
+    border: 1px solid var(--brand-line);
+    border-radius: var(--radius);
+    padding: clamp(1.6rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(1.6rem, 4vw, 3rem);
+    margin-top: 2rem;
+  }
+  .prenota__facts { display: grid; gap: 1.1rem; align-content: start; }
+  .fact { border-left: 1px solid var(--brand-line); padding-left: 1rem; }
+  .fact dt { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand-muted); margin-bottom: 0.2rem; }
+  .fact dd { margin: 0; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+  .fact dd a { font-weight: 700; text-decoration: none; }
+  .prenota__cta { display: grid; gap: 0.9rem; align-content: start; }
+  .prenota__cta .btn { width: 100%; justify-content: center; font-size: 1.05rem; padding: 0.95em 1.2rem; }
+  .prenota__phone { font-size: 1.5rem; font-family: var(--font-display); font-weight: 700; text-align: center; text-decoration: none; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer { border-top: 1px solid var(--brand-line); background: var(--brand-surface-alt); padding-block: clamp(2.5rem, 4vw, 4rem); }
+  .site-footer .container { display: grid; grid-template-columns: 1fr auto; gap: 1.6rem 2rem; align-items: start; }
+  .site-footer a { color: inherit; }
+  .footer__brand { display: flex; flex-direction: column; gap: 0.4rem; }
+  .footer__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-size: 0.95rem; }
+  .footer__note { grid-column: 1 / -1; margin-top: 0.6rem; font-size: 0.8rem; color: var(--brand-muted); max-width: 62ch; }
+
+  /* ============================================================
+     MOBILE STICKY ACTION BAR
+     ============================================================ */
+  .action-bar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 45;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding: 0.7rem clamp(0.8rem, 4vw, 1.2rem);
+    background: color-mix(in srgb, var(--brand-surface) 94%, transparent);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--brand-line);
+  }
+  .action-bar__text { font-size: 0.82rem; line-height: 1.25; }
+  .action-bar__text strong { display: block; font-family: var(--font-display); font-size: 0.98rem; }
+  .action-bar .btn--primary { flex: 0 0 auto; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 900px) {
+    .shell { grid-template-columns: 1fr; }
+    .rail { position: static; margin-top: 0; margin-bottom: var(--space-section); }
+    .courses { grid-template-columns: 1fr 1fr; }
+    .prenota__inner { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    :root { --header-h: 60px; }
+
+    /* Collapsing nav → hamburger */
+    .header-cta { display: none; }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: transparent;
+      border: 1px solid var(--brand-line);
+      border-radius: var(--radius);
+      padding: 0.5em 0.7em;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--brand-ink);
+      cursor: pointer;
+    }
+    .nav {
+      position: fixed;
+      inset: var(--header-h) 0 auto 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--brand-surface);
+      border-bottom: 1px solid var(--brand-line);
+      padding: 0.5rem clamp(4vw, 6vw, 2rem) 1.2rem;
+      transform: translateY(-8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--dur-micro) var(--ease-signature), transform var(--dur-micro) var(--ease-signature), visibility var(--dur-micro);
+      box-shadow: 0 20px 30px color-mix(in srgb, var(--brand-ink) 12%, transparent);
+    }
+    .nav.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
+    .nav a { padding: 0.85rem 0; border-bottom: 1px solid var(--brand-line); }
+    .nav a:last-child { border-bottom: none; }
+
+    /* Hero reflow — text + CTA FIRST/above fold, band kept as slim left signage */
+    .hero { min-height: auto; }
+    .hero__band {
+      right: auto;
+      left: 0;
+      width: clamp(46px, 15vw, 64px);
+      min-height: 100%;
+      top: 0;
+      box-shadow: none;
+    }
+    .hero__wordmark { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+    .hero__content {
+      max-width: none;
+      padding-left: clamp(58px, 18vw, 80px);
+      padding-top: clamp(2rem, 8vw, 3rem);
+      padding-bottom: clamp(2rem, 8vw, 3rem);
+      align-self: stretch;
+    }
+    .hero__scrim { background: linear-gradient(90deg, color-mix(in srgb, var(--brand-ink) 66%, transparent), color-mix(in srgb, var(--brand-ink) 30%, transparent)); }
+
+    .banco__grid { grid-template-columns: 1fr; }
+    .banco__main { grid-row: auto; aspect-ratio: 4 / 3; }
+    .banco__macro { margin-left: 0; margin-top: 0.9rem; box-shadow: inset 0 0 0 1px var(--brand-line); }
+    .itamae__grid, .sala__grid { grid-template-columns: 1fr; }
+
+    .action-bar { display: flex; }
+    body { padding-bottom: 74px; } /* clear the fixed action bar */
+
+    .site-footer .container { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 460px) {
+    .courses { grid-template-columns: 1fr; }
+    .hero__actions { flex-direction: column; align-items: stretch; }
+    .hero__actions .btn { justify-content: center; }
+    .hero__phone { text-align: center; }
+  }
+
+  /* ============================================================
+     MOTION LAYER — progressive enhancement (pass 3)
+     One language: --ease-signature for every reveal, --ease-micro
+     ONLY on the seal (the single spring). Hidden states live behind
+     `no-preference` so reduced-motion never sees a hidden frame, and
+     behind `html.js` so JS-off renders everything visible.
+     ============================================================ */
+
+  /* pointer micro-interactions — tasteful, gated to real cursors */
+  @media (hover: hover) and (pointer: fine) {
+    .btn { transition: transform var(--dur-micro) var(--ease-signature), background-color var(--dur-micro) var(--ease-signature); }
+    .btn--primary:hover { transform: translateY(-2px); }
+    .btn--ghost:hover { transform: translateY(-2px); }
+    /* the seal: the only spring on the page */
+    .btn--primary .seal { transition: transform var(--dur-micro) var(--ease-micro); }
+    .btn--primary:hover .seal { transform: scale(1.14); }
+    .btn--primary:active .seal { transform: scale(0.84); }
+    .course__media { transition: box-shadow var(--dur-micro) var(--ease-signature); }
+    .course:hover .course__media { box-shadow: inset 0 0 0 1px var(--brand-line), 0 26px 40px -20px color-mix(in srgb, var(--brand-ink) 60%, transparent); }
+    /* nav underline draws from the left */
+    .nav a { position: relative; }
+    .nav a::after {
+      content: "";
+      position: absolute; left: 0; right: 0; bottom: -2px;
+      height: 2px; background: var(--brand-line);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--dur-micro) var(--ease-signature);
+    }
+    .nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* generic fade-rise (secondary copy, rows) */
+    html.js .io { opacity: 0; transform: translateY(18px); transition: opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature); }
+    html.js .io.is-in { opacity: 1; transform: none; }
+
+    /* SIGNATURE — the noren lift: media unveils via an upward clip wipe */
+    html.js .io-media { opacity: 0; clip-path: inset(100% 0 0 0); transition: opacity 480ms var(--ease-signature), clip-path var(--dur-reveal) var(--ease-signature); }
+    html.js .io-media.is-in { opacity: 1; clip-path: inset(0 0 0 0); }
+
+    /* headings rise out of a mask, one block on a short stagger */
+    html.js .mask { overflow: hidden; }
+    html.js .mask > .line-inner { display: block; transform: translateY(110%); transition: transform var(--dur-reveal) var(--ease-signature); }
+    html.js .mask.is-in > .line-inner { transform: none; }
+
+    /* course cards travel in laterally, each from its own column */
+    html.js .courses > .course { opacity: 0; transform: translateX(var(--tx, -48px)); transition: opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature); }
+    html.js .courses > .course.is-in { opacity: 1; transform: none; }
+    .courses > .course:nth-child(1) { --tx: -56px; }
+    .courses > .course:nth-child(2) { --tx: -34px; transition-delay: var(--stagger); }
+    .courses > .course:nth-child(3) { --tx: -12px; transition-delay: calc(var(--stagger) * 2); }
+
+    /* HERO — noren lift on load + per-character wordmark draw + seal stamp */
+    html.js .hero__media { clip-path: inset(100% 0 0 0); transition: clip-path 1100ms var(--ease-signature); }
+    html.js .hero.is-in .hero__media { clip-path: inset(0 0 0 0); }
+
+    html.js .hero__content > * { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-reveal) var(--ease-signature), transform var(--dur-reveal) var(--ease-signature); }
+    html.js .hero.is-in .hero__content > * { opacity: 1; transform: none; }
+    html.js .hero.is-in .hero__content > *:nth-child(1) { transition-delay: 0.45s; }
+    html.js .hero.is-in .hero__content > *:nth-child(2) { transition-delay: 0.54s; }
+    html.js .hero.is-in .hero__content > *:nth-child(3) { transition-delay: 0.63s; }
+    html.js .hero.is-in .hero__content > *:nth-child(4) { transition-delay: 0.72s; }
+    html.js .hero.is-in .hero__content > *:nth-child(5) { transition-delay: 0.81s; }
+    html.js .hero.is-in .hero__content > *:nth-child(6) { transition-delay: 0.90s; }
+
+    /* tategaki KiKi draws in stroke-by-stroke (clip per glyph, not a translate) */
+    html.js .hero__wordmark .wm-ch { display: inline-block; opacity: 0; clip-path: inset(0 0 100% 0); transition: opacity 260ms var(--ease-signature), clip-path 520ms var(--ease-signature); }
+    html.js .hero.is-in .hero__wordmark .wm-ch { opacity: 1; clip-path: inset(0 0 0 0); transition-delay: calc(0.35s + var(--i) * 0.12s); }
+    /* the hanko seal stamps last — the seal's spring */
+    html.js .hero__seal { opacity: 0; transform: scale(0.35); transition: opacity 200ms var(--ease-signature), transform var(--dur-micro) var(--ease-micro); }
+    html.js .hero.is-in .hero__seal { opacity: 1; transform: scale(1); transition-delay: 0.95s; }
+  }
+
+  /* Scroll-linked course progress rail (accent — a whitelisted accent use) */
+  #menu { position: relative; }
+  .menu-rail {
+    position: absolute; left: -16px; top: var(--space-section); bottom: var(--space-section);
+    width: 4px; background: var(--brand-line); border-radius: var(--radius); overflow: hidden;
+  }
+  .menu-rail__fill { position: absolute; inset: 0; background: var(--brand-accent); transform: scaleY(0); transform-origin: top; }
+
+  /* Chapter rail — desktop wayfinding for the 7-section reel */
+  .chapters {
+    position: fixed; right: clamp(12px, 2vw, 26px); top: 50%; transform: translateY(-50%);
+    z-index: 38; display: flex; flex-direction: column; align-items: center; gap: 15px;
+  }
+  .chapters__line { position: absolute; top: 5px; bottom: 5px; width: 3px; background: var(--brand-line); border-radius: var(--radius); overflow: hidden; }
+  .chapters__fill { position: absolute; inset: 0; background: var(--brand-accent); transform: scaleY(0); transform-origin: top; }
+  .chapters a {
+    width: 9px; height: 9px; border-radius: var(--radius);
+    background: color-mix(in srgb, var(--brand-muted) 55%, transparent);
+    position: relative; z-index: 1;
+    transition: transform var(--dur-micro) var(--ease-signature), background-color var(--dur-micro) var(--ease-signature);
+  }
+  .chapters a:hover { transform: scale(1.35); }
+  .chapters a.is-active { background: var(--brand-accent); transform: scale(1.4); }
+  @media (max-width: 1023px) { .chapters { display: none; } }
+  @media (max-width: 720px) { .menu-rail { left: 0; } }
+
+  /* ============================================================
+     REDUCED MOTION — full support
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="#top" aria-label="KiKi — home">KiKi<span class="seal" aria-hidden="true"></span></a>
+
+    <nav class="nav" id="site-nav" aria-label="Navigazione principale">
+      <a href="#banco">Il banco</a>
+      <a href="#itamae">L'itamae</a>
+      <a href="#menu">Il menu</a>
+      <a href="#sala">La sala</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#prenota" class="is-active">Prenota</a>
+    </nav>
+
+    <a class="btn btn--primary header-cta" data-cta href="tel:+390267074212">
+      <span class="seal" aria-hidden="true"></span>Chiama per prenotare
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= 1 · INSEGNA (HERO) ================= -->
+  <section class="hero" id="insegna" aria-labelledby="hero-wordmark">
+    <div class="hero__media ph ph--counter" role="img" aria-label="Il banco omakase in legno di hinoki di KiKi, apparecchiato con un vassoio in lacca e pesce di stagione."></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <!-- The vermilion signage band with the vertical tategaki wordmark + seal -->
+    <div class="hero__band">
+      <h1 class="hero__wordmark" id="hero-wordmark">KiKi</h1>
+      <span class="seal hero__seal" aria-hidden="true"></span>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow"><span class="seal" aria-hidden="true"></span>Banco omakase, Milano</p>
+      <p class="hero__tag">Ogni mattina scegliamo il pesce al mercato.</p>
+      <p class="hero__promise">La sera lo serviamo al banco, una portata alla volta. Non c'è una carta fissa: c'è il pesce del giorno.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" data-cta href="tel:+390267074212">
+          <span class="seal" aria-hidden="true"></span>Chiama per prenotare
+        </a>
+        <a class="btn btn--ghost" href="#banco">Scopri il banco</a>
+      </div>
+      <p class="hero__phone" aria-hidden="false">+39 02 6707 4212</p>
+      <p class="hero__reassure">Prenotazione al telefono · pochi posti · da martedì a domenica, a cena.</p>
+    </div>
+  </section>
+
+  <!-- ================= SHELL: reel + booking rail ================= -->
+  <div class="shell">
+    <div class="reel">
+
+      <!-- 2 · IL BANCO -->
+      <section id="banco" aria-labelledby="banco-h">
+        <p class="eyebrow"><span class="seal" aria-hidden="true"></span>Il banco</p>
+        <h2 id="banco-h">Un banco, un itamae, il pesce del giorno.</h2>
+        <div class="prose" style="margin-top:1.2rem">
+          <p class="lede">Il banco è il cuore di KiKi. Pochi posti in legno di hinoki, un solo itamae, il pesce scelto quella mattina.</p>
+          <p>Non consegniamo una carta. Vi affidate a noi: questo vuol dire omakase. Le portate nascono davanti a voi, decise dal mercato del giorno e non da un menu stampato.</p>
+        </div>
+        <div class="banco__grid">
+          <div class="banco__main ph ph--counter" role="img" aria-label="Il banco in legno di hinoki, apparecchiato con un vassoio in lacca nera.">
+            <span class="ph__tag">Il banco · hinoki</span>
+          </div>
+          <div class="banco__macro ph ph--nigiri" role="img" aria-label="Primo piano macro di un nigiri di tonno otoro appena preparato.">
+            <span class="ph__tag">Otoro · macro</span>
+          </div>
+          <p class="banco__caption">Lo stesso pesce, due distanze: il banco dove ci si siede e il dettaglio di ciò che vi arriva nel piatto.</p>
+        </div>
+      </section>
+
+      <!-- 3 · L'ITAMAE -->
+      <section id="itamae" aria-labelledby="itamae-h">
+        <div class="itamae__grid">
+          <div class="itamae__media ph ph--itamae" role="img" aria-label="L'itamae di KiKi prepara un nigiri al banco con gesto preciso.">
+            <span class="ph__tag">L'itamae al lavoro</span>
+          </div>
+          <div>
+            <p class="eyebrow"><span class="seal" aria-hidden="true"></span>L'itamae</p>
+            <h2 id="itamae-h">Le mani dietro il banco.</h2>
+            <div class="prose" style="margin-top:1.2rem">
+              <p>Dietro il banco lavora una sola persona. Taglia, forma e serve ogni pezzo davanti a voi.</p>
+              <p>Nessun passaggio nascosto in cucina: quello che mangiate nasce a un palmo dalle vostre mani. È il modo più diretto per fidarsi di un piatto di pesce crudo, la prima volta.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 · IL MENU DEL GIORNO -->
+      <section id="menu" aria-labelledby="menu-h">
+        <div class="menu-rail" aria-hidden="true"><span class="menu-rail__fill"></span></div>
+        <p class="eyebrow"><span class="seal" aria-hidden="true"></span>Il menu del giorno</p>
+        <h2 id="menu-h">Tre momenti, decisi dal mercato.</h2>
+        <p class="prose" style="margin-top:1.1rem">Il percorso cambia ogni giorno con il pesce di stagione. La forma però resta questa: si comincia netti e delicati, si chiude con una nota calda.</p>
+
+        <div class="courses">
+          <article class="course">
+            <div class="course__media ph ph--nigiri" role="img" aria-label="Piatto di tre nigiri di stagione di KiKi."></div>
+            <h3><span class="seal" aria-hidden="true"></span> Nigiri del giorno</h3>
+            <p class="course__body">Riso caldo, pesce di stagione, un tocco di wasabi fresco. Serviti uno alla volta, nel loro ordine.</p>
+            <p class="course__price">18€ <span class="sub">portata indicativa</span></p>
+          </article>
+
+          <article class="course">
+            <div class="course__media ph ph--sashimi" role="img" aria-label="Piatto di sashimi misto di stagione servito da KiKi."></div>
+            <h3><span class="seal" aria-hidden="true"></span> Sashimi di stagione</h3>
+            <p class="course__body">Tagli netti del pesce migliore della giornata. Solo il coltello, il tempo giusto e un po' di daikon.</p>
+            <p class="course__price">22€ <span class="sub">portata indicativa</span></p>
+          </article>
+
+          <article class="course">
+            <div class="course__media ph ph--hot" role="img" aria-label="Il piatto caldo del giorno: pesce di stagione grigliato su binchotan."></div>
+            <h3><span class="seal" aria-hidden="true"></span> Il piatto caldo</h3>
+            <p class="course__body">Una portata cotta, spesso alla brace di binchotan. Chiude il percorso con una nota calda.</p>
+            <p class="course__price">20€ <span class="sub">portata indicativa</span></p>
+          </article>
+        </div>
+
+        <p class="menu__foot muted">Il percorso omakase completo si compone di sei-otto portate. Concordiamo insieme la lunghezza quando prenotate.</p>
+      </section>
+
+      <!-- 5 · LA SALA A MILANO -->
+      <section id="sala" aria-labelledby="sala-h">
+        <p class="eyebrow"><span class="seal" aria-hidden="true"></span>La sala a Milano</p>
+        <h2 id="sala-h">Una sala piccola, a Milano.</h2>
+        <div class="sala__grid">
+          <div class="sala__media ph ph--sala" role="img" aria-label="La piccola sala di KiKi con il banco e la noren all'ingresso, a Milano.">
+            <span class="ph__tag">La sala · noren</span>
+          </div>
+          <div class="sala__where">
+            <div class="prose">
+              <p>Legno chiaro, luci di carta e una noren all'ingresso. Ci si siede al banco, vicini, e la sera scorre lenta.</p>
+              <p>Siamo a Milano. Per l'indirizzo esatto e le indicazioni apri la mappa o chiamaci: ti guidiamo noi fino alla porta.</p>
+            </div>
+            <p class="sala__addr"><strong>Milano</strong></p>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=KiKi%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 · COME FUNZIONA -->
+      <section id="come-funziona" aria-labelledby="faq-h">
+        <p class="eyebrow"><span class="seal" aria-hidden="true"></span>Come funziona</p>
+        <h2 id="faq-h">Prima di sedervi al banco.</h2>
+        <div class="faq">
+          <details open>
+            <summary>Come si prenota?</summary>
+            <p class="faq__body">Solo per telefono, così fissiamo insieme la sera e il numero di coperti. Il banco ha pochi posti: conviene chiamare con qualche giorno di anticipo.</p>
+          </details>
+          <details>
+            <summary>Allergie e intolleranze?</summary>
+            <p class="faq__body">Ditecelo quando prenotate. Costruiamo il percorso sul pesce del giorno e possiamo adattarlo, entro quello che il mercato offre.</p>
+          </details>
+          <details>
+            <summary>Cosa aspettarsi da un omakase?</summary>
+            <p class="faq__body">Non si ordina. Si lascia scegliere all'itamae. Le portate arrivano una alla volta, dalla più delicata alla più intensa.</p>
+          </details>
+          <details>
+            <summary>Quanto dura una cena al banco?</summary>
+            <p class="faq__body">Intorno alle due ore. È un ritmo lento, pensato per una sera senza fretta — una cena importante, un anniversario, una serata con un ospite.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- 7 · PRENOTA -->
+      <section id="prenota" aria-labelledby="prenota-h">
+        <p class="eyebrow"><span class="seal" aria-hidden="true"></span>Prenota</p>
+        <h2 id="prenota-h">Prenota il banco.</h2>
+        <p class="prose" style="margin-top:1.1rem">Chiamateci: fissiamo la sera, il numero di posti e le vostre note. Al resto pensiamo noi.</p>
+
+        <div class="prenota__inner">
+          <dl class="prenota__facts">
+            <div class="fact">
+              <dt>Telefono</dt>
+              <dd><a href="tel:+390267074212">+39 02 6707 4212</a></dd>
+            </div>
+            <div class="fact">
+              <dt>Dove</dt>
+              <dd>Milano · <a href="https://www.google.com/maps/search/?api=1&query=KiKi%2C+Milano" target="_blank" rel="noopener">apri in Google Maps</a></dd>
+            </div>
+            <div class="fact">
+              <dt>Quando</dt>
+              <dd>Da martedì a domenica, a cena</dd>
+            </div>
+            <div class="fact">
+              <dt>Il banco</dt>
+              <dd>Pochi posti, ogni sera</dd>
+            </div>
+          </dl>
+
+          <div class="prenota__cta">
+            <a class="btn btn--primary" data-cta href="tel:+390267074212">
+              <span class="seal" aria-hidden="true"></span>Chiama per prenotare
+            </a>
+            <a class="prenota__phone" href="tel:+390267074212">+39 02 6707 4212</a>
+            <p class="muted" style="text-align:center; font-size:0.86rem; margin-top:0.2rem">Rispondiamo negli orari di apertura. Se non ci trovate, richiamiamo noi.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Persistent booking rail (sticky) -->
+    <aside class="rail" aria-label="Prenota il banco">
+      <h2>Il banco</h2>
+      <p class="rail__seats">Pochi posti, ogni sera.</p>
+      <a class="btn btn--primary" data-cta href="tel:+390267074212">
+        <span class="seal" aria-hidden="true"></span>Chiama per prenotare
+      </a>
+      <a class="rail__phone" href="tel:+390267074212">+39 02 6707 4212</a>
+      <p class="rail__hours">Da martedì a domenica, a cena.<br>Prenotazione al telefono.</p>
+      <p class="rail__note">Allergie o intolleranze? Ditecelo alla chiamata: adattiamo il percorso al pesce del giorno.</p>
+    </aside>
+  </div>
+
+</main>
+
+<!-- ================= CHAPTER RAIL (desktop wayfinding) ================= -->
+<nav class="chapters" aria-label="Sezioni della pagina">
+  <span class="chapters__line" aria-hidden="true"><span class="chapters__fill"></span></span>
+  <a href="#insegna" data-chapter="insegna" aria-label="Insegna"></a>
+  <a href="#banco" data-chapter="banco" aria-label="Il banco"></a>
+  <a href="#itamae" data-chapter="itamae" aria-label="L'itamae"></a>
+  <a href="#menu" data-chapter="menu" aria-label="Il menu del giorno"></a>
+  <a href="#sala" data-chapter="sala" aria-label="La sala a Milano"></a>
+  <a href="#come-funziona" data-chapter="come-funziona" aria-label="Come funziona"></a>
+  <a href="#prenota" data-chapter="prenota" aria-label="Prenota"></a>
+</nav>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__brand">
+      <span class="wordmark" style="font-size:1.3rem">KiKi<span class="seal" aria-hidden="true"></span></span>
+      <span class="muted">Banco omakase, Milano</span>
+      <a href="tel:+390267074212" style="text-decoration:none; font-weight:700">+39 02 6707 4212</a>
+    </div>
+    <nav class="footer__links" aria-label="Collegamenti">
+      <a href="#banco">Il banco</a>
+      <a href="#itamae">L'itamae</a>
+      <a href="#menu">Il menu</a>
+      <a href="#sala">La sala</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=KiKi%2C+Milano" target="_blank" rel="noopener">Mappa</a>
+    </nav>
+    <p class="footer__note">Orari e prezzi delle portate sono indicati a titolo di esempio e vengono confermati al momento della prenotazione. Il percorso cambia ogni giorno con il pesce di stagione.</p>
+  </div>
+</footer>
+
+<!-- ================= MOBILE STICKY ACTION BAR ================= -->
+<div class="action-bar">
+  <div class="action-bar__text">
+    <strong>Prenota il banco</strong>
+    <span class="muted">+39 02 6707 4212</span>
+  </div>
+  <a class="btn btn--primary" data-cta href="tel:+390267074212">
+    <span class="seal" aria-hidden="true"></span>Chiama
+  </a>
+</div>
+
+<script>
+  /* ---- Mobile navigation (works regardless of motion prefs) ---- */
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!toggle || !nav) return;
+
+    function closeNav() {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) closeNav(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) { closeNav(); toggle.focus(); }
+    });
+  })();
+
+  /* ---- Motion layer (progressive enhancement) ---- */
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js'); // opt in to hidden-then-reveal states
+
+    try {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Split the tategaki wordmark into per-glyph spans (keep one word for SR) */
+      var wm = document.getElementById('hero-wordmark');
+      if (wm) {
+        var text = wm.textContent.trim();
+        wm.setAttribute('aria-label', text);
+        wm.textContent = '';
+        for (var i = 0; i < text.length; i++) {
+          var s = document.createElement('span');
+          s.className = 'wm-ch';
+          s.setAttribute('aria-hidden', 'true');
+          s.style.setProperty('--i', i);
+          s.textContent = text[i];
+          wm.appendChild(s);
+        }
+      }
+
+      /* Tag elements for the shared reveal system, varied by content role */
+      document.querySelectorAll('.reel .ph:not(.course__media)').forEach(function (el) { el.classList.add('io-media'); });
+      document.querySelectorAll('.reel h2').forEach(function (h) {
+        var inner = document.createElement('span');
+        inner.className = 'line-inner';
+        while (h.firstChild) inner.appendChild(h.firstChild);
+        h.appendChild(inner);
+        h.classList.add('mask');
+      });
+      document.querySelectorAll('.reel .eyebrow, .reel .prose, .reel .banco__caption, .reel .menu__foot, .reel .sala__where, .reel .faq, .reel .prenota__inner')
+        .forEach(function (el) { el.classList.add('io'); });
+
+      /* Reveal on scroll — ONE rAF-batched IntersectionObserver, unobserve after firing */
+      var revealTargets = document.querySelectorAll('.io, .io-media, .mask, .courses > .course');
+      if ('IntersectionObserver' in window) {
+        var queued = [];
+        var scheduled = false;
+        function flush() {
+          scheduled = false;
+          queued.forEach(function (el) { el.classList.add('is-in'); });
+          queued = [];
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              queued.push(e.target);
+              io.unobserve(e.target);
+              if (!scheduled) { scheduled = true; requestAnimationFrame(flush); }
+            }
+          });
+        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+        revealTargets.forEach(function (el) { io.observe(el); });
+      } else {
+        revealTargets.forEach(function (el) { el.classList.add('is-in'); });
+      }
+
+      /* Hero entrance on load (noren lift + wordmark draw + content stagger) */
+      var hero = document.querySelector('.hero');
+      if (hero) requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('is-in'); }); });
+
+      /* Active chapter dot — separate observer (wayfinding, runs even under reduced motion) */
+      var dots = {};
+      document.querySelectorAll('.chapters a').forEach(function (a) { dots[a.getAttribute('data-chapter')] = a; });
+      var sections = document.querySelectorAll('main section[id]');
+      if ('IntersectionObserver' in window && Object.keys(dots).length) {
+        var active = null;
+        var cio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && dots[e.target.id]) {
+              if (active) active.classList.remove('is-active');
+              active = dots[e.target.id];
+              active.classList.add('is-active');
+            }
+          });
+        }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+        sections.forEach(function (s) { cio.observe(s); });
+      }
+
+      /* Scroll-linked effects — ONE rAF-batched handler: parallax + rails */
+      var parallaxOn = !reduce && window.matchMedia('(pointer: fine)').matches && window.innerWidth >= 1024;
+      var pMain = document.querySelector('.banco__main');
+      var pMacro = document.querySelector('.banco__macro');
+      var menuSec = document.getElementById('menu');
+      var menuFill = document.querySelector('.menu-rail__fill');
+      var chapFill = document.querySelector('.chapters__fill');
+
+      function clamp01(n) { return n < 0 ? 0 : n > 1 ? 1 : n; }
+      var ticking = false;
+      function frame() {
+        ticking = false;
+        var vh = window.innerHeight;
+
+        if (parallaxOn) {
+          if (pMain) { var rM = pMain.getBoundingClientRect(); pMain.style.transform = 'translate3d(0,' + (-((rM.top + rM.height / 2) - vh / 2) * 0.045).toFixed(1) + 'px,0)'; }
+          if (pMacro) { var rm2 = pMacro.getBoundingClientRect(); pMacro.style.transform = 'translate3d(0,' + (((rm2.top + rm2.height / 2) - vh / 2) * 0.06).toFixed(1) + 'px,0)'; }
+        }
+
+        if (menuFill && menuSec) {
+          var r = menuSec.getBoundingClientRect();
+          var prog = reduce ? 1 : clamp01((vh * 0.5 - r.top) / (r.height - vh * 0.35));
+          menuFill.style.transform = 'scaleY(' + prog + ')';
+        }
+        if (chapFill && !reduce) {
+          var max = document.documentElement.scrollHeight - vh;
+          chapFill.style.transform = 'scaleY(' + (max > 0 ? clamp01(window.scrollY / max) : 0) + ')';
+        }
+      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      frame(); // initial paint (also fills menu rail statically under reduced motion)
+    } catch (err) {
+      root.classList.remove('js'); // any failure → fall back to fully-visible static page
+    }
+  })();
+</script>
+
+</body>
+</html>

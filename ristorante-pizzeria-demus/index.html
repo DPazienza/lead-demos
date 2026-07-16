@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ristorante Pizzeria Demus · Taverna e forno a legna a Milano (Viale Martini)</title>
+<meta name="description" content="Demus è la taverna in legno di Viale Martini, a Milano. Un forno a legna acceso al centro della sala cuoce la pizza; la stessa cucina manda in tavola primi e secondi di casa. Ogni sera dalle 19. Per il tavolo, una telefonata.">
+<link rel="canonical" href="https://ristorantepizzeriademus.it/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ristorante Pizzeria Demus · Taverna e forno a legna a Milano">
+<meta property="og:description" content="La taverna in legno di Viale Martini: forno a legna acceso in sala, pizza cotta a legna e primi e secondi di casa. Ogni sera dalle 19.">
+<meta property="og:image" content="https://ristorantepizzeriademus.it/assets/hero-oven-room.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ristorante Pizzeria Demus · Taverna e forno a legna a Milano">
+<meta name="twitter:description" content="Forno a legna in sala, pizza cotta a legna e cucina di casa. In Viale Martini, Milano. Ogni sera dalle 19.">
+<meta name="twitter:image" content="https://ristorantepizzeriademus.it/assets/hero-oven-room.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness (Restaurant) — only real, provided data; ratings/hours omitted where not verifiable -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Ristorante Pizzeria Demus",
+  "image": "https://ristorantepizzeriademus.it/assets/hero-oven-room.jpg",
+  "url": "https://ristorantepizzeriademus.it/",
+  "telephone": "+39025394751",
+  "servesCuisine": ["Pizza", "Cucina italiana"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Enrico Martini 15",
+    "postalCode": "20139",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+Demus%2C+Milano",
+  "sameAs": ["https://www.facebook.com/pizzeriaristorantedemus/"]
+}
+</script>
+
+<style>
+  /* ============================================================
+     BRAND TOKENS — defined once, referenced everywhere
+     ============================================================ */
+  :root{
+    --brand-ink:#241813;
+    --brand-surface:#F7F1E7;
+    --brand-surface-alt:#EFE6D6;
+    --brand-accent:#C0461C;
+    --brand-accent-ink:#FBF6EE;
+    --brand-muted:#695344;
+    --brand-line:#DCCFBB;
+
+    --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+    --font-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --ease-signature:cubic-bezier(0.16,1,0.3,1);
+    --ease-micro:cubic-bezier(0.33,1,0.68,1);
+    --dur-reveal:720ms;
+    --dur-micro:200ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4rem,8vw,8rem);
+    --container:min(1180px,92vw);
+    --radius:3px;
+
+    --fs-hero:clamp(2.6rem,1.6rem + 4.6vw,5.4rem);
+    --fs-h2:clamp(1.7rem,1.2rem + 2.2vw,2.8rem);
+    --fs-body:clamp(1rem,0.96rem + 0.2vw,1.15rem);
+
+    --shadow-soft:0 1px 2px color-mix(in srgb,var(--brand-ink) 12%,transparent),
+                  0 20px 40px -22px color-mix(in srgb,var(--brand-ink) 46%,transparent);
+    --shadow-lift:0 1px 2px color-mix(in srgb,var(--brand-ink) 16%,transparent),
+                  0 30px 54px -20px color-mix(in srgb,var(--brand-ink) 55%,transparent);
+    --grain:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============================================================
+     RESET / BASE
+     ============================================================ */
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    position:relative;
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    line-height:1.62;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    font-optical-sizing:auto;
+    text-wrap:pretty;
+  }
+  /* whisper of film grain across the whole page — ties every section to one shoot */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+    background-image:var(--grain);
+    opacity:.035;mix-blend-mode:multiply;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.025em;line-height:1.05;margin:0;
+    font-optical-sizing:auto;text-wrap:balance;
+  }
+  p{margin:0;overflow-wrap:anywhere;max-width:66ch;}
+  a{color:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  .container{width:var(--container);margin-inline:auto;position:relative;z-index:2;}
+
+  /* Focus ring — brand accent, high contrast */
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+    outline:3px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .skip-link{
+    position:absolute;left:12px;top:-60px;z-index:200;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    padding:.7rem 1.1rem;border-radius:var(--radius);
+    font-weight:600;text-decoration:none;
+    transition:top var(--dur-micro) var(--ease-micro);
+  }
+  .skip-link:focus{top:12px;}
+
+  /* ---- Shared type helpers ---- */
+  .eyebrow{
+    font-family:var(--font-body);
+    font-size:.72rem;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--brand-accent);
+    display:inline-flex;align-items:center;gap:.6rem;
+    margin:0 0 1rem;
+  }
+  .eyebrow--muted{color:var(--brand-muted);}
+  .eyebrow--muted .brace{background:var(--brand-muted);}
+
+  h2{font-size:var(--fs-h2);}
+  .lede{font-size:clamp(1.1rem,1rem + .6vw,1.4rem);color:var(--brand-ink);max-width:38ch;}
+  .muted{color:var(--brand-muted);}
+  .accent-num{color:var(--brand-accent);font-weight:600;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;}
+  .num,.tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;}
+
+  /* ============================================================
+     MOTIF — "la brace" (6px accent square rotated 45°)
+     ============================================================ */
+  .brace{
+    display:inline-block;
+    width:6px;height:6px;
+    background:var(--brand-accent);
+    transform:rotate(45deg);
+    flex:0 0 auto;
+  }
+  .brace-underline{
+    display:block;height:4px;width:64px;
+    background:var(--brand-accent);
+    margin-top:.65rem;
+  }
+
+  /* ---- Buttons ---- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:var(--font-body);font-weight:600;font-size:1rem;
+    padding:.9rem 1.5rem;border-radius:var(--radius);
+    text-decoration:none;cursor:pointer;border:1px solid transparent;
+    line-height:1.1;
+    transition:transform var(--dur-micro) var(--ease-micro),
+               box-shadow var(--dur-micro) var(--ease-micro),
+               background var(--dur-micro) var(--ease-micro);
+  }
+  .btn--primary{
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    box-shadow:0 6px 20px -10px color-mix(in srgb,var(--brand-accent) 70%,transparent);
+  }
+  .btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px color-mix(in srgb,var(--brand-accent) 78%,transparent);}
+  .btn--primary:active{transform:translateY(0);}
+  .btn--ghost{
+    background:transparent;color:var(--brand-ink);
+    border-color:var(--brand-line);
+  }
+  .btn--ghost:hover{border-color:var(--brand-accent);transform:translateY(-2px);}
+  .btn--on-dark{background:var(--brand-accent);color:var(--brand-accent-ink);}
+  .btn--full{width:100%;}
+
+  /* Brace underline drawn once under a link on hover/press */
+  .link-brace{
+    position:relative;text-decoration:none;color:var(--brand-ink);font-weight:600;
+    padding-bottom:2px;
+  }
+  .link-brace::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;
+    background:var(--brand-accent);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-micro);
+  }
+  .link-brace:hover::after,.link-brace:focus-visible::after{transform:scaleX(1);}
+
+  /* ============================================================
+     PHOTO SLOTS — warm firelight/wood CSS placeholders.
+     (No real images exist for this lead; the art pass refines
+     these; proportions + roles are fixed here.)
+     ============================================================ */
+  .photo{
+    position:relative;
+    border-radius:0;                 /* 0 on image frames, per brief */
+    background-color:var(--brand-ink);
+    /* each variant declares its own background-blend-mode to match its own layer count */
+    overflow:hidden;
+    isolation:isolate;
+    box-shadow:var(--shadow-soft);
+  }
+  .photo::after{ /* vignette so it never reads as flat gradient */
+    content:"";position:absolute;inset:0;z-index:1;
+    background:
+      radial-gradient(130% 95% at 50% 122%, transparent 52%, color-mix(in srgb,var(--brand-ink) 80%,transparent) 100%),
+      radial-gradient(120% 90% at 50% -18%, transparent 60%, color-mix(in srgb,var(--brand-ink) 46%,transparent) 100%),
+      linear-gradient(90deg, color-mix(in srgb,var(--brand-ink) 30%,transparent) 0%, transparent 12%, transparent 88%, color-mix(in srgb,var(--brand-ink) 30%,transparent) 100%);
+    mix-blend-mode:multiply;pointer-events:none;
+  }
+  .photo::before{ /* fine photographic grain, shared across every slot so the gallery reads as one shoot */
+    content:"";position:absolute;inset:0;z-index:2;
+    background-image:var(--grain);
+    opacity:.05;mix-blend-mode:overlay;pointer-events:none;
+  }
+  .photo__tag{
+    position:absolute;left:14px;bottom:12px;z-index:3;
+    font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brand-accent-ink);
+    background:color-mix(in srgb,var(--brand-ink) 55%,transparent);
+    padding:.35rem .6rem;border-radius:var(--radius);
+    display:inline-flex;align-items:center;gap:.5rem;backdrop-filter:blur(2px);
+  }
+  .photo__tag .brace{background:var(--brand-accent);}
+
+  /* The signature "hearth" glow — the burning oven mouth */
+  .photo--hearth{
+    background-image:
+      radial-gradient(46% 40% at 50% 58%, color-mix(in srgb,var(--brand-accent-ink) 92%,transparent) 0%, transparent 34%),
+      radial-gradient(64% 56% at 50% 60%, var(--brand-accent) 0%, transparent 58%),
+      radial-gradient(90% 80% at 50% 66%, color-mix(in srgb,var(--brand-accent) 55%,var(--brand-ink)) 0%, transparent 72%),
+      radial-gradient(140% 130% at 50% 8%, color-mix(in srgb,var(--brand-muted) 30%,var(--brand-ink)) 0%, transparent 55%),
+      radial-gradient(120% 120% at 50% 50%, color-mix(in srgb,var(--brand-accent) 32%,var(--brand-ink)) 0%, var(--brand-ink) 78%);
+    background-blend-mode:screen,screen,normal,normal,normal,normal;
+  }
+  .photo--flame{ /* tall macro of pizza in the flame */
+    background-image:
+      radial-gradient(38% 30% at 58% 44%, color-mix(in srgb,var(--brand-accent-ink) 90%,transparent) 0%, transparent 30%),
+      radial-gradient(64% 50% at 56% 50%, var(--brand-accent) 0%, transparent 58%),
+      radial-gradient(90% 70% at 54% 58%, color-mix(in srgb,var(--brand-accent) 40%,var(--brand-ink)) 0%, transparent 68%),
+      linear-gradient(180deg, color-mix(in srgb,var(--brand-ink) 82%,black) 0%, var(--brand-ink) 60%, black 100%);
+    background-blend-mode:screen,screen,normal,normal,normal;
+  }
+  .photo--pizza{ /* well-lit food shot, warm window light */
+    background-image:
+      radial-gradient(58% 50% at 28% 18%, color-mix(in srgb,var(--brand-accent-ink) 75%,transparent) 0%, transparent 52%),
+      radial-gradient(70% 65% at 74% 86%, color-mix(in srgb,var(--brand-accent) 60%,transparent) 0%, transparent 58%),
+      radial-gradient(90% 80% at 50% 50%, color-mix(in srgb,var(--brand-surface-alt) 60%,transparent) 0%, transparent 62%),
+      linear-gradient(150deg, var(--brand-surface-alt) 0%, color-mix(in srgb,var(--brand-muted) 65%,var(--brand-ink)) 100%);
+    background-blend-mode:screen,screen,normal,normal,normal;
+  }
+  .photo--dish{ /* macro crust / plated detail */
+    background-image:
+      radial-gradient(64% 55% at 58% 16%, color-mix(in srgb,var(--brand-accent-ink) 70%,transparent) 0%, transparent 55%),
+      radial-gradient(72% 70% at 38% 96%, color-mix(in srgb,var(--brand-accent) 55%,transparent) 0%, transparent 58%),
+      radial-gradient(85% 75% at 50% 55%, color-mix(in srgb,var(--brand-surface) 45%,transparent) 0%, transparent 60%),
+      linear-gradient(200deg, var(--brand-surface) 0%, color-mix(in srgb,var(--brand-muted) 72%,var(--brand-ink)) 100%);
+    background-blend-mode:screen,screen,normal,normal,normal;
+  }
+  .photo--room{ /* the wood-panelled room, oven glowing in back */
+    background-image:
+      radial-gradient(32% 46% at 82% 38%, color-mix(in srgb,var(--brand-accent) 80%,transparent) 0%, transparent 44%),
+      radial-gradient(46% 60% at 82% 38%, color-mix(in srgb,var(--brand-accent-ink) 55%,transparent) 0%, transparent 30%),
+      radial-gradient(110% 95% at 18% 26%, color-mix(in srgb,var(--brand-muted) 58%,var(--brand-ink)) 0%, transparent 58%),
+      linear-gradient(165deg, color-mix(in srgb,var(--brand-muted) 42%,var(--brand-ink)) 0%, var(--brand-ink) 100%);
+    background-blend-mode:screen,screen,normal,normal,normal;
+  }
+  .photo--panel{ /* wood joinery detail, brass lamp */
+    background-image:
+      radial-gradient(38% 30% at 74% 24%, color-mix(in srgb,var(--brand-accent) 75%,transparent) 0%, transparent 42%),
+      radial-gradient(20% 26% at 74% 24%, color-mix(in srgb,var(--brand-accent-ink) 60%,transparent) 0%, transparent 60%),
+      repeating-linear-gradient(180deg,
+        color-mix(in srgb,var(--brand-muted) 44%,var(--brand-ink)) 0 10px,
+        color-mix(in srgb,var(--brand-ink) 92%,black) 10px 22px),
+      linear-gradient(160deg, color-mix(in srgb,var(--brand-muted) 32%,var(--brand-ink)) 0%, var(--brand-ink) 100%);
+    background-blend-mode:screen,screen,normal,normal,normal;
+  }
+  .photo--exterior{ /* lit doorway at dusk */
+    background-image:
+      radial-gradient(26% 48% at 50% 60%, color-mix(in srgb,var(--brand-accent-ink) 82%,transparent) 0%, transparent 40%),
+      radial-gradient(44% 66% at 50% 66%, var(--brand-accent) 0%, transparent 58%),
+      radial-gradient(90% 60% at 50% 100%, color-mix(in srgb,var(--brand-accent) 35%,var(--brand-ink)) 0%, transparent 60%),
+      linear-gradient(180deg, color-mix(in srgb,var(--brand-muted) 48%,var(--brand-ink)) 0%, var(--brand-ink) 100%);
+    background-blend-mode:screen,screen,normal,normal,normal;
+  }
+
+  .ar-wide{aspect-ratio:16/9;}
+  .ar-landscape{aspect-ratio:4/3;}
+  .ar-tall{aspect-ratio:3/4;}
+  .ar-square{aspect-ratio:1/1;}
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .site-nav{
+    position:sticky;top:0;z-index:100;
+    background:color-mix(in srgb,var(--brand-surface) 92%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;min-height:64px;
+  }
+  .nav-mark{
+    font-family:var(--font-display);font-weight:600;font-size:1.15rem;
+    letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:var(--brand-ink);
+    display:inline-flex;align-items:center;gap:.5rem;
+  }
+  .nav-mark .brace{width:5px;height:5px;}
+  .nav-links{display:flex;align-items:center;gap:1.6rem;}
+  .nav-links a{
+    text-decoration:none;font-weight:500;font-size:.95rem;color:var(--brand-ink);
+    position:relative;padding:.25rem 0;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-micro);
+  }
+  .nav-links a:hover::after,.nav-links a[aria-current="page"]::after{transform:scaleX(1);}
+  .nav-links a[aria-current="page"]{color:var(--brand-accent);}
+  .nav-cta{margin-left:.4rem;}
+  .nav-toggle{
+    display:none;
+    background:transparent;border:1px solid var(--brand-line);border-radius:var(--radius);
+    width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center;
+  }
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+    content:"";display:block;width:20px;height:2px;background:var(--brand-ink);
+    transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro) var(--ease-micro);
+  }
+  .nav-toggle span{position:relative;}
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+  .nav-toggle[aria-expanded="true"] span{background:transparent;}
+  .nav-toggle[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);}
+
+  /* ============================================================
+     HERO — the wow: dark taverna stage, glowing oven mouth
+     ============================================================ */
+  .hero{
+    position:relative;
+    background:var(--brand-ink);
+    color:var(--brand-accent-ink);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  /* recurring hearth glow: the oven mouth */
+  .hero__hearth{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(38% 42% at 62% 58%, color-mix(in srgb,var(--brand-accent-ink) 90%,transparent) 0%, transparent 40%),
+      radial-gradient(58% 60% at 62% 58%, var(--brand-accent) 0%, transparent 60%),
+      radial-gradient(130% 120% at 62% 55%, color-mix(in srgb,var(--brand-accent) 34%,var(--brand-ink)) 0%, var(--brand-ink) 70%);
+  }
+  .hero__planks{ /* reclaimed timber planks catching the glow */
+    position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
+    background:
+      repeating-linear-gradient(90deg,
+        color-mix(in srgb,var(--brand-ink) 60%,black) 0 3px,
+        transparent 3px 128px),
+      repeating-linear-gradient(0deg,
+        color-mix(in srgb,var(--brand-ink) 70%,black) 0 2px,
+        transparent 2px 46px);
+    mix-blend-mode:multiply;
+  }
+  .hero__inner{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;
+    min-height:clamp(560px,88svh,880px);
+    padding-block:clamp(3rem,7vw,6rem);
+  }
+  .hero__copy{max-width:34rem;}
+  .hero .eyebrow{color:var(--brand-accent-ink);}
+  .hero .eyebrow .brace{background:var(--brand-accent);}
+  /* Wordmark (the single H1) */
+  .wordmark{margin:0 0 .5rem;}
+  .wordmark__name{
+    display:block;
+    font-family:var(--font-display);font-weight:600;
+    font-size:var(--fs-hero);letter-spacing:0.14em;text-transform:uppercase;
+    line-height:.98;color:var(--brand-accent-ink);
+  }
+  .wordmark__brace{height:4px;width:min(220px,60%);background:var(--brand-accent);margin-top:.75rem;}
+  .wordmark__tag{
+    display:block;margin-top:1rem;
+    font-family:var(--font-body);font-weight:500;letter-spacing:.02em;
+    font-size:1.05rem;color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);
+    text-transform:none;
+  }
+  .hero__sub{
+    margin:1.6rem 0 .4rem;font-size:clamp(1.05rem,1rem + .5vw,1.3rem);
+    color:color-mix(in srgb,var(--brand-accent-ink) 90%,transparent);
+  }
+  .hero__sub b{color:var(--brand-accent-ink);font-weight:600;}
+  .hero__value{margin:0 0 1.8rem;color:color-mix(in srgb,var(--brand-accent-ink) 74%,transparent);}
+  .hero__actions{display:flex;flex-wrap:wrap;gap:.9rem 1rem;align-items:center;}
+  .hero__phone{
+    display:block;margin-top:1.1rem;font-size:.95rem;
+    color:color-mix(in srgb,var(--brand-accent-ink) 78%,transparent);
+  }
+  .hero__phone a{color:var(--brand-accent-ink);font-weight:600;text-decoration:none;}
+  .hero__phone a:hover{text-decoration:underline;}
+  /* social proof adjacent to CTA */
+  .proof{
+    display:inline-flex;align-items:center;gap:.6rem;
+    color:color-mix(in srgb,var(--brand-accent-ink) 88%,transparent);font-size:.9rem;
+  }
+  .proof .stars{color:var(--brand-accent);letter-spacing:.12em;font-size:1rem;}
+  .proof .stars .empty{color:color-mix(in srgb,var(--brand-accent-ink) 35%,transparent);}
+  .proof b{color:var(--brand-accent-ink);}
+  /* The hero "sign" corner: DEMUS as carved shop sign in darkest corner (mobile keeps identity via glow) */
+  .hero__sign{
+    align-self:end;justify-self:end;
+    text-align:right;padding:1.2rem 1.4rem;
+    border:1px solid color-mix(in srgb,var(--brand-accent-ink) 22%,transparent);
+    background:color-mix(in srgb,var(--brand-ink) 60%,transparent);
+    max-width:18rem;
+  }
+  .hero__sign .brace{background:var(--brand-accent);margin-bottom:.6rem;}
+  .hero__sign p{font-size:.9rem;color:color-mix(in srgb,var(--brand-accent-ink) 80%,transparent);}
+  .hero__sign .hours{color:var(--brand-accent-ink);font-weight:600;}
+
+  .scroll-cue{
+    position:absolute;left:50%;bottom:16px;z-index:3;transform:translateX(-50%);
+    font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+    color:color-mix(in srgb,var(--brand-accent-ink) 60%,transparent);
+    display:inline-flex;flex-direction:column;align-items:center;gap:.4rem;
+  }
+  .scroll-cue .brace{background:var(--brand-accent);}
+
+  /* ============================================================
+     LAYOUT: sections column + persistent sticky booking rail
+     ============================================================ */
+  .spread{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 300px;
+    gap:clamp(2rem,5vw,4.5rem);
+    align-items:start;
+    padding-block:clamp(2.5rem,5vw,4rem);
+  }
+  /* left brace-rail: static now; scroll-linked fill added by JS */
+  .story{
+    position:relative;
+    padding-left:clamp(1rem,3vw,2.2rem);
+  }
+  .story::before{
+    content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:2px;
+    background:color-mix(in srgb,var(--brand-line) 80%,var(--brand-surface));
+  }
+  .story__fill{
+    position:absolute;left:0;top:6px;width:3px;border-radius:2px;
+    height:calc(100% - 12px);transform-origin:top center;transform:scaleY(var(--p,0));
+    background:var(--brand-accent);
+    box-shadow:0 0 10px -1px color-mix(in srgb,var(--brand-accent) 55%,transparent);
+    transition:transform 90ms linear;
+  }
+
+  .section{padding-block:var(--space-section);}
+  .section + .section{border-top:1px solid var(--brand-line);}
+  /* uneven rhythm: some sections breathe more than others */
+  #il-forno{padding-block:clamp(3.5rem,7vw,7rem);}
+  #pizza{padding-block:clamp(3rem,5.5vw,5.5rem);}
+  #la-sala{padding-block:clamp(4.5rem,9vw,9rem);}
+  #quartiere{padding-block:clamp(5rem,10vw,10rem);}
+  #serate{padding-block:clamp(3rem,6vw,6rem);}
+
+  .section__head{max-width:46rem;margin-bottom:2.4rem;}
+  .section__head.center{margin-inline:auto;text-align:center;}
+
+  /* Divider with centered brace */
+  .divider{display:flex;align-items:center;gap:1rem;margin:2.6rem 0;}
+  .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--brand-line);}
+
+  /* ---- IL FORNO: Aesop measured column + hearth echo ---- */
+  .forno{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;}
+  @media(min-width:820px){.forno{grid-template-columns:0.95fr 1.05fr;}}
+  .forno__col{max-width:30rem;}
+  .forno__col p + p{margin-top:1.1rem;}
+  .forno__figs{display:grid;grid-template-columns:1.4fr 1fr;gap:1rem;}
+  .forno__figs .photo--flame{grid-row:span 2;align-self:stretch;}
+
+  /* ---- LA TAVOLA · pizza: St. John typographic menu ---- */
+  .menu-block{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,4vw,2.6rem);}
+  @media(min-width:860px){.menu-block{grid-template-columns:1.1fr .9fr;align-items:start;}}
+  .menu-list{border-top:1px solid var(--brand-line);}
+  .menu-list li{
+    display:flex;align-items:baseline;gap:1rem;
+    padding:1rem 0;border-bottom:1px solid var(--brand-line);
+  }
+  .menu-list .brace{position:relative;top:-.15em;}
+  .menu-list .dish{
+    font-family:var(--font-display);font-weight:500;font-size:clamp(1.3rem,1rem + 1.4vw,2rem);
+    letter-spacing:-0.02em;line-height:1.1;color:var(--brand-ink);flex:1;
+  }
+  .menu-note{margin-top:1rem;font-size:.82rem;color:var(--brand-muted);}
+  .menu-aside p + p{margin-top:1rem;}
+
+  /* ---- LA TAVOLA · cucina di casa: full-bleed band ---- */
+  .band{
+    position:relative;
+    background:var(--brand-surface-alt);
+    overflow:hidden;
+  }
+  .band__inner{
+    display:grid;grid-template-columns:1fr;gap:0;align-items:stretch;
+  }
+  @media(min-width:820px){.band__inner{grid-template-columns:1fr 1fr;}}
+  .band__text{padding:clamp(2rem,5vw,4rem);align-self:center;}
+  .band__text .cats{margin-top:1.6rem;display:grid;gap:1rem;}
+  .band__text .cats li{display:flex;gap:.9rem;align-items:flex-start;}
+  .band__text .cats .brace{margin-top:.55em;}
+  .band__text .cats h3{font-size:1.15rem;letter-spacing:-.01em;}
+  .band__text .cats p{font-size:.95rem;color:var(--brand-muted);margin-top:.15rem;}
+  .band__media{min-height:280px;position:relative;display:grid;}
+  .band__media .photo{border-radius:0;height:100%;}
+
+  /* ---- LA SALA: Kinfolk staggered, overlapping cards ---- */
+  .sala-grid{display:grid;grid-template-columns:1fr;gap:clamp(1.2rem,3vw,2rem);}
+  @media(min-width:760px){
+    .sala-grid{grid-template-columns:repeat(12,1fr);align-items:end;}
+    .sala-a{grid-column:1 / 8;}
+    .sala-b{grid-column:8 / 13;margin-bottom:clamp(1.5rem,4vw,3rem);}
+    .sala-c{grid-column:3 / 9;margin-top:clamp(-3rem,-4vw,-1.5rem);}
+    .sala-text{grid-column:9 / 13;align-self:center;}
+  }
+  .sala-card{position:relative;}
+  .sala-card .brace{position:absolute;left:12px;top:12px;z-index:3;box-shadow:0 0 0 1px color-mix(in srgb,var(--brand-ink) 40%,transparent);}
+  .sala-text p + p{margin-top:1rem;}
+
+  /* ---- IL QUARTIERE: Aesop column + exterior + proof ---- */
+  .quartiere{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;}
+  @media(min-width:820px){.quartiere{grid-template-columns:1fr 1fr;}}
+  .quartiere__col{max-width:30rem;}
+  .quartiere__col p + p{margin-top:1.1rem;}
+  .proof-block{
+    margin-top:1.8rem;padding:1.4rem 1.5rem;
+    background:var(--brand-surface-alt);border-radius:var(--radius);
+    display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;
+    box-shadow:var(--shadow-soft);
+  }
+  .proof-block .big{
+    font-family:var(--font-display);font-weight:600;font-size:2.6rem;line-height:1;
+    color:var(--brand-accent);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;
+  }
+  .proof-block .stars{color:var(--brand-accent);letter-spacing:.14em;font-size:1.1rem;}
+  .proof-block .stars .empty{color:var(--brand-line);}
+  .proof-block .src{font-size:.85rem;color:var(--brand-muted);}
+
+  /* ---- SERATE & PRENOTA ---- */
+  .serate{
+    display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,4vw,2.6rem);align-items:center;
+  }
+  @media(min-width:820px){.serate{grid-template-columns:1fr 1fr;}}
+  .hours-card{
+    background:var(--brand-ink);color:var(--brand-accent-ink);
+    padding:clamp(1.6rem,4vw,2.4rem);border-radius:var(--radius);
+    position:relative;overflow:hidden;
+    box-shadow:var(--shadow-lift);
+  }
+  .hours-card::before{
+    content:"";position:absolute;inset:0;z-index:0;opacity:.9;
+    background:radial-gradient(60% 70% at 88% 12%, color-mix(in srgb,var(--brand-accent) 60%,transparent) 0%, transparent 55%);
+  }
+  .hours-card > *{position:relative;z-index:1;}
+  .hours-card .eyebrow{color:var(--brand-accent-ink);}
+  .hours-card .eyebrow .brace{background:var(--brand-accent);}
+  .hours-line{
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+    padding:.9rem 0;border-bottom:1px solid color-mix(in srgb,var(--brand-accent-ink) 20%,transparent);
+  }
+  .hours-line:last-of-type{border-bottom:0;}
+  .hours-line .day{color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);}
+  .hours-line .time{font-weight:600;color:var(--brand-accent-ink);}
+  .hours-line .time.open{color:var(--brand-accent);}
+  .serate__cta p{margin-bottom:1.2rem;}
+  .serate__cta .phone-big{
+    display:block;font-family:var(--font-display);font-weight:600;
+    font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);letter-spacing:-.01em;
+    color:var(--brand-accent);text-decoration:none;margin:.4rem 0 1.4rem;
+    font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;
+  }
+  .serate__cta .phone-big:hover{text-decoration:underline;}
+
+  /* ---- TROVACI ---- */
+  .trovaci{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,4vw,2.6rem);}
+  @media(min-width:820px){.trovaci{grid-template-columns:1fr 1fr;align-items:start;}}
+  .addr-card{background:var(--brand-surface-alt);padding:clamp(1.6rem,4vw,2.2rem);border-radius:var(--radius);box-shadow:var(--shadow-soft);}
+  .addr-card address{font-style:normal;}
+  .addr-row{display:flex;gap:.8rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--brand-line);}
+  .addr-row:last-child{border-bottom:0;}
+  .addr-row .brace{margin-top:.5em;}
+  .addr-row .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);display:block;margin-bottom:.15rem;}
+  .addr-row .v{font-weight:500;}
+  .addr-row a{color:var(--brand-ink);}
+  .addr-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem;}
+  .map-visual{
+    position:relative;min-height:280px;border-radius:var(--radius);overflow:hidden;
+    display:flex;align-items:flex-end;
+  }
+  .map-visual .photo{position:absolute;inset:0;border-radius:0;}
+  .map-visual .map-label{
+    position:relative;z-index:2;margin:1.2rem;
+    background:color-mix(in srgb,var(--brand-ink) 62%,transparent);
+    color:var(--brand-accent-ink);padding:.9rem 1.1rem;border-radius:var(--radius);
+    backdrop-filter:blur(3px);max-width:22rem;
+  }
+  .map-label .brace{background:var(--brand-accent);margin-bottom:.4rem;}
+
+  /* ============================================================
+     STICKY BOOKING RAIL (desktop) — hugs its content
+     ============================================================ */
+  .rail{position:sticky;top:88px;}
+  .rail__card{
+    background:var(--brand-surface-alt);
+    border:1px solid var(--brand-line);border-radius:var(--radius);
+    padding:1.5rem;
+    box-shadow:var(--shadow-lift);
+  }
+  .rail__card .eyebrow{margin-bottom:.8rem;}
+  .rail__hours{font-family:var(--font-display);font-weight:600;font-size:1.35rem;color:var(--brand-ink);margin-bottom:.2rem;}
+  .rail__hours .open{color:var(--brand-accent);}
+  .rail__phone{
+    display:block;font-family:var(--font-display);font-weight:600;font-size:1.5rem;
+    letter-spacing:-.01em;color:var(--brand-accent);text-decoration:none;margin:.9rem 0 1rem;
+    font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;
+  }
+  .rail__phone:hover{text-decoration:underline;}
+  .rail__proof{
+    display:flex;align-items:center;gap:.6rem;margin-top:1rem;padding-top:1rem;
+    border-top:1px solid var(--brand-line);font-size:.85rem;color:var(--brand-muted);
+  }
+  .rail__proof .stars{color:var(--brand-accent);letter-spacing:.1em;}
+  .rail__proof .stars .empty{color:var(--brand-line);}
+  .rail__proof b{color:var(--brand-ink);}
+  .rail__note{margin-top:.9rem;font-size:.8rem;color:var(--brand-muted);}
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer{background:var(--brand-ink);color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);}
+  .footer-inner{
+    display:grid;grid-template-columns:1fr;gap:2rem;
+    padding-block:clamp(3rem,6vw,5rem);
+  }
+  @media(min-width:760px){.footer-inner{grid-template-columns:1.4fr 1fr 1fr;}}
+  .footer-mark .wm{
+    font-family:var(--font-display);font-weight:600;font-size:1.6rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--brand-accent-ink);
+  }
+  .footer-mark .brace{background:var(--brand-accent);margin-top:.5rem;width:52px;}
+  .footer-mark p{margin-top:1rem;font-size:.92rem;max-width:26rem;}
+  .footer-col h3{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-accent);font-family:var(--font-body);margin-bottom:.9rem;}
+  .footer-col a{color:color-mix(in srgb,var(--brand-accent-ink) 88%,transparent);text-decoration:none;}
+  .footer-col a:hover{color:var(--brand-accent-ink);text-decoration:underline;}
+  .footer-col li{padding:.3rem 0;}
+  .footer-legal{
+    border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 15%,transparent);
+    padding-block:1.4rem;font-size:.78rem;
+    color:color-mix(in srgb,var(--brand-accent-ink) 60%,transparent);
+    display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;
+  }
+
+  /* ============================================================
+     MOBILE STICKY ACTION BAR
+     ============================================================ */
+  .action-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:120;
+    display:none;
+    grid-template-columns:1fr auto;align-items:center;gap:.8rem;
+    padding:.7rem clamp(.8rem,4vw,1.2rem);
+    padding-bottom:calc(.7rem + env(safe-area-inset-bottom,0px));
+    background:color-mix(in srgb,var(--brand-surface) 96%,transparent);
+    border-top:1px solid var(--brand-line);
+    backdrop-filter:blur(8px);
+  }
+  .action-bar .ab-info{min-width:0;}
+  .action-bar .ab-info .l{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-muted);}
+  .action-bar .ab-info .n{font-weight:600;color:var(--brand-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .action-bar .ab-info .n .accent-num{color:var(--brand-accent);}
+
+  /* ============================================================
+     REVEAL (signature motion) — content rises + warms in.
+     Default = visible; hidden state only applied when JS runs,
+     so a blocked script never hides content.
+     ============================================================ */
+  .js .reveal{opacity:0;transform:translateY(14px);}
+  .js .reveal.is-in{
+    opacity:1;transform:none;
+    transition:opacity var(--dur-reveal) var(--ease-signature),
+               transform var(--dur-reveal) var(--ease-signature);
+  }
+  .js .reveal.is-in.stagger > *{animation:warm-in var(--dur-reveal) var(--ease-signature) both;}
+  .js .reveal.is-in.stagger > *:nth-child(2){animation-delay:calc(var(--stagger));}
+  .js .reveal.is-in.stagger > *:nth-child(3){animation-delay:calc(var(--stagger) * 2);}
+  .js .reveal.is-in.stagger > *:nth-child(4){animation-delay:calc(var(--stagger) * 3);}
+  .js .reveal.is-in.stagger > *:nth-child(5){animation-delay:calc(var(--stagger) * 4);}
+  .js .reveal.is-in.stagger > *:nth-child(6){animation-delay:calc(var(--stagger) * 5);}
+  @keyframes warm-in{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:none;}
+  }
+
+  /* ============================================================
+     MOTION LAYER (pass 3) — "la brace": everything warms and
+     settles into place, calm and slow. One motion language:
+     entrances use --ease-signature, micro uses --ease-micro.
+     Every effect degrades to fully-visible with no JS / reduced-motion.
+     ============================================================ */
+
+  /* [1] SIGNATURE — the hero unveils with a horizontal clip-path wipe
+         opening from the oven mouth outward; the copy settles up after. */
+  .js .hero__planks{animation:hero-wipe 900ms var(--ease-signature) both;}
+  .js .hero__hearth{
+    animation:hero-wipe 900ms var(--ease-signature) both,
+              ember 18s var(--ease-micro) 1.6s infinite alternate;
+  }
+  @keyframes hero-wipe{
+    from{clip-path:inset(0 50% 0 50%);opacity:0;}
+    to{clip-path:inset(0 0 0 0);opacity:1;}
+  }
+  /* ambient: the hearth breathes like a live ember — sub-perceptual */
+  @keyframes ember{from{opacity:1;}to{opacity:.9;}}
+
+  .js .hero__copy > *,
+  .js .hero__sign{opacity:0;transform:translateY(16px);animation:hero-rise var(--dur-reveal) var(--ease-signature) both;}
+  .js .hero__copy > *:nth-child(1){animation-delay:.14s;}
+  .js .hero__copy > *:nth-child(2){animation-delay:.23s;}
+  .js .hero__copy > *:nth-child(3){animation-delay:.32s;}
+  .js .hero__copy > *:nth-child(4){animation-delay:.41s;}
+  .js .hero__copy > *:nth-child(5){animation-delay:.50s;}
+  .js .hero__copy > *:nth-child(6){animation-delay:.59s;}
+  .js .hero__sign{animation-delay:.62s;}
+  @keyframes hero-rise{to{opacity:1;transform:none;}}
+
+  /* [role] MEDIA scales in from a hair over 1 — depth, not a flat fade.
+     No fill, so pointer hover can take over cleanly afterwards. */
+  .js .reveal.is-in .photo:not(.photo--parallax){animation:media-in var(--dur-reveal) var(--ease-signature);}
+  @keyframes media-in{from{transform:scale(1.06);}to{transform:scale(1);}}
+
+  /* [role] HEADINGS rise out of a mask — "text rises into being". */
+  .js .rmask{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em;}
+  .js .rmask__i{display:block;transform:translateY(112%);transition:transform var(--dur-reveal) var(--ease-signature);}
+  .js .reveal.is-in .rmask__i{transform:translateY(0);}
+
+  /* [2] MENU DISHES cascade row by row (moment: cascata dei piatti). */
+  .js .reveal--rows{opacity:1;transform:none;}
+  .js .reveal--rows .menu-list li,
+  .js .reveal--rows .menu-note{opacity:0;transform:translateY(18px);}
+  .js .reveal--rows.is-in .menu-list li,
+  .js .reveal--rows.is-in .menu-note{
+    opacity:1;transform:none;
+    transition:opacity var(--dur-reveal) var(--ease-signature),
+               transform var(--dur-reveal) var(--ease-signature);
+  }
+  .js .reveal--rows.is-in .menu-list li:nth-child(1){transition-delay:.05s;}
+  .js .reveal--rows.is-in .menu-list li:nth-child(2){transition-delay:.14s;}
+  .js .reveal--rows.is-in .menu-list li:nth-child(3){transition-delay:.23s;}
+  .js .reveal--rows.is-in .menu-list li:nth-child(4){transition-delay:.32s;}
+  .js .reveal--rows.is-in .menu-list li:nth-child(5){transition-delay:.41s;}
+  .js .reveal--rows.is-in .menu-note{transition-delay:.50s;}
+
+  /* [role] home-cooking categories cascade inside the band */
+  .js .band__text.is-in .cats li{animation:row-in var(--dur-reveal) var(--ease-signature) both;}
+  .js .band__text.is-in .cats li:nth-child(1){animation-delay:.12s;}
+  .js .band__text.is-in .cats li:nth-child(2){animation-delay:.21s;}
+  .js .band__text.is-in .cats li:nth-child(3){animation-delay:.30s;}
+  @keyframes row-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+
+  /* [3] PARALLAX DEPTH in la sala — background photo and foreground
+         detail translate at different rates (JS-driven, gated).
+         Both photos are overscanned (scale 1.16) so translation stays
+         inside their clip box — never a gap at any offset. */
+  .js .photo--parallax{transform:scale(1.16);}
+
+  /* [5] CTA + contact micro-interactions — pointer only.
+         A brace-underline draws once, the button settles up with a
+         soft spring-like landing, presses give physical feedback. */
+  @media (hover:hover) and (pointer:fine){
+    .btn--primary{position:relative;transition:transform var(--dur-micro) var(--ease-signature),
+                                              box-shadow var(--dur-micro) var(--ease-micro);}
+    .btn--primary::after{
+      content:"";position:absolute;left:1.3rem;right:1.3rem;bottom:.5rem;height:2px;
+      background:var(--brand-accent-ink);opacity:.9;
+      transform:scaleX(0);transform-origin:left center;
+      transition:transform var(--dur-reveal) var(--ease-signature);
+    }
+    .btn--primary:hover::after,.btn--primary:focus-visible::after{transform:scaleX(1);}
+    .btn--primary:active{transform:translateY(-1px) scale(.985);}
+    .menu-aside .photo,.map-visual .photo,.quartiere .photo{transition:transform var(--dur-reveal) var(--ease-signature);}
+    .menu-aside:hover .photo,.map-visual:hover .photo,.quartiere > .reveal:hover .photo{transform:scale(1.05);}
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media(max-width:960px){
+    .spread{grid-template-columns:1fr;}
+    .rail{position:static;order:2;}
+    .rail__card{max-width:520px;}
+  }
+  @media(max-width:760px){
+    .nav-links{
+      position:absolute;left:0;right:0;top:100%;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--brand-surface);
+      border-bottom:1px solid var(--brand-line);
+      padding:.5rem clamp(4vw,4vw,4vw);
+      max-height:0;overflow:hidden;visibility:hidden;
+      transition:max-height var(--dur-micro) var(--ease-micro),visibility 0s linear var(--dur-micro);
+    }
+    .nav-links.open{max-height:70vh;visibility:visible;transition:max-height var(--dur-reveal) var(--ease-signature);}
+    .nav-links a{padding:.9rem .2rem;border-bottom:1px solid var(--brand-line);}
+    .nav-links a::after{display:none;}
+    .nav-links .nav-cta{margin:.7rem 0 .5rem;}
+    .nav-toggle{display:inline-flex;}
+    .hero__inner{grid-template-columns:1fr;min-height:auto;gap:1.2rem;}
+    .hero__sign{justify-self:stretch;text-align:left;max-width:none;margin-top:.4rem;}
+    .action-bar{display:grid;}
+    body{padding-bottom:76px;}
+    .scroll-cue{display:none;}
+    .forno__figs{grid-template-columns:1fr 1fr;}
+    .forno__figs .photo--flame{grid-row:span 1;}
+  }
+  @media(max-width:420px){
+    .hero__actions .btn{width:100%;}
+    .proof{width:100%;}
+  }
+
+  /* ============================================================
+     REDUCED MOTION — full support
+     ============================================================ */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{
+      animation-duration:.001ms !important;animation-iteration-count:1 !important;
+      animation-delay:0s !important;
+      transition-duration:.001ms !important;transition-delay:0s !important;
+      scroll-behavior:auto !important;
+    }
+    .js .reveal{opacity:1 !important;transform:none !important;}
+    .js .reveal.is-in.stagger > *{animation:none !important;}
+    .js .rmask__i{transform:none !important;}
+    .js .hero__copy > *,.js .hero__sign,
+    .js .reveal--rows .menu-list li,.js .reveal--rows .menu-note,
+    .js .band__text .cats li,.js .reveal .photo{
+      opacity:1 !important;transform:none !important;animation:none !important;
+    }
+    .js .hero__hearth,.js .hero__planks{
+      clip-path:none !important;animation:none !important;opacity:1 !important;
+    }
+    .js .photo--parallax{transform:none !important;}
+    .story__fill{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <nav class="container nav-inner" aria-label="Navigazione principale">
+    <a class="nav-mark" href="#top"><span class="brace" aria-hidden="true"></span>DEMUS</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#il-forno">Il forno</a>
+      <a href="#pizza">La pizza</a>
+      <a href="#cucina">La cucina</a>
+      <a href="#la-sala">La sala</a>
+      <a href="#quartiere">Il quartiere</a>
+      <a href="#trovaci">Trovaci</a>
+      <a class="btn btn--primary nav-cta" data-cta href="tel:+39025394751">Chiama per prenotare</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============ SOGLIA (HERO) — the wow ============ -->
+<section class="hero" aria-labelledby="wordmark-name">
+  <div class="hero__hearth" aria-hidden="true"></div>
+  <div class="hero__planks" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Ristorante · Pizzeria</p>
+      <h1 class="wordmark" id="wordmark-name">
+        <span class="wordmark__name">DEMUS</span>
+        <span class="wordmark__brace" aria-hidden="true"></span>
+        <span class="wordmark__tag">Taverna e forno a legna</span>
+      </h1>
+      <p class="hero__sub">La taverna in legno di Viale Martini.<br>Al centro, un <b>forno a legna</b> acceso.</p>
+      <p class="hero__value">Pizza cotta a legna, primi e secondi di casa. Ogni sera dalle 19. Per tenere il tavolo basta una telefonata.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" data-cta href="tel:+39025394751">Chiama per prenotare</a>
+        <span class="proof">
+          <span class="stars" aria-hidden="true">★★★★<span class="empty">★</span></span>
+          <span><b>4,2</b> su Google · nel quartiere Martini</span>
+        </span>
+      </div>
+      <span class="hero__phone">Al telefono: <a href="tel:+39025394751">+39 02 5394751</a></span>
+    </div>
+
+    <div class="hero__sign">
+      <span class="brace" aria-hidden="true"></span>
+      <p class="hours">Apriamo alle 19</p>
+      <p>Ogni sera accendiamo il forno. La sala è tutta in legno, la luce arriva dalla fiamma. Entrate quando volete: c'è posto a tavola.</p>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true">Entrate<span class="brace"></span></span>
+</section>
+
+<!-- ============ SPREAD: story column + sticky rail ============ -->
+<div class="container spread">
+  <div class="story">
+    <span class="story__fill" id="storyFill" aria-hidden="true"></span>
+
+    <!-- ---- IL FORNO ---- -->
+    <section class="section" id="il-forno" aria-labelledby="h-forno">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Il centro della sala</p>
+        <h2 id="h-forno"><span class="rmask"><span class="rmask__i">Il forno è acceso. È lui che fa luce.</span></span></h2>
+      </div>
+      <div class="forno">
+        <div class="forno__col reveal">
+          <p class="lede">Lo teniamo acceso ogni sera, in mezzo alla sala.</p>
+          <p>La legna scalda la pietra, la pietra cuoce la pizza. In pochi minuti, davanti a voi. Non è un forno nascosto in cucina: è al centro del locale, e il suo bagliore è l'unica luce di cui la taverna ha bisogno.</p>
+          <p>Da qui esce la pizza, a due passi dal vostro tavolo. Il cornicione si gonfia e si segna di fuoco. È la firma di Demus, ed è la ragione per cui in tanti spingono la porta.</p>
+        </div>
+        <div class="forno__figs reveal">
+          <div class="photo photo--hearth ar-square" role="img" aria-label="Il forno a legna acceso al centro della sala in legno della taverna Demus, con il pizzaiolo che inforna una pizza">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>Il forno in sala</span>
+          </div>
+          <div class="photo photo--flame ar-tall" role="img" aria-label="Dettaglio ravvicinato di una pizza che cuoce dentro il forno a legna tra le fiamme">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>Nella fiamma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- LA TAVOLA · PIZZA A LEGNA ---- -->
+    <section class="section" id="pizza" aria-labelledby="h-pizza">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="brace" aria-hidden="true"></span>La tavola · pizza a legna</p>
+        <h2 id="h-pizza"><span class="rmask"><span class="rmask__i">La pizza, cotta a legna.</span></span></h2>
+        <p class="lede" style="margin-top:1rem;">Impasto leggero, cornicione alto, cottura veloce nella brace. Le classiche di sempre, come le fa una taverna.</p>
+      </div>
+      <div class="menu-block">
+        <div class="reveal reveal--rows">
+          <ul class="menu-list">
+            <li><span class="brace" aria-hidden="true"></span><span class="dish">Margherita</span></li>
+            <li><span class="brace" aria-hidden="true"></span><span class="dish">Marinara</span></li>
+            <li><span class="brace" aria-hidden="true"></span><span class="dish">Diavola</span></li>
+            <li><span class="brace" aria-hidden="true"></span><span class="dish">Ortolana</span></li>
+            <li><span class="brace" aria-hidden="true"></span><span class="dish">Capricciosa</span></li>
+          </ul>
+          <p class="menu-note">Le classiche di sempre, cotte a legna. La carta completa e i prezzi ve li confermiamo in tavola — cambiano con la stagione.</p>
+        </div>
+        <div class="menu-aside reveal">
+          <div class="photo photo--pizza ar-landscape" role="img" aria-label="Pizza cotta a legna con cornicione bruciacchiato su un tavolo di legno della taverna">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>Appena sfornata</span>
+          </div>
+          <p style="margin-top:1.2rem;">Niente asporto travestito: qui la pizza nasce e finisce nella stessa sala, sul tavolo di legno. La ordinate, la vedete cuocere, ve la portiamo calda.</p>
+          <p><a class="link-brace" href="tel:+39025394751">Una pizza per stasera? Chiamateci</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- LA TAVOLA · CUCINA DI CASA (full-bleed band) ---- -->
+    <section class="section" id="cucina" aria-labelledby="h-cucina" style="padding-inline:0;">
+      <div class="band">
+        <div class="band__inner">
+          <div class="band__text reveal">
+            <p class="eyebrow"><span class="brace" aria-hidden="true"></span>La tavola · cucina di casa</p>
+            <h2 id="h-cucina"><span class="rmask"><span class="rmask__i">Non solo pizza: la cucina di casa.</span></span></h2>
+            <p style="margin-top:1rem;">La stessa cucina che accende il forno manda in tavola i primi e i secondi. È la metà «ristorante» di Demus, quella che tiene un tavolo per tutta la sera.</p>
+            <ul class="cats">
+              <li>
+                <span class="brace" aria-hidden="true"></span>
+                <div><h3>Primi di casa</h3><p>Paste fatte in casa, come si mangiano a tavola in famiglia.</p></div>
+              </li>
+              <li>
+                <span class="brace" aria-hidden="true"></span>
+                <div><h3>Secondi della sera</h3><p>Piatti di casa che cambiano con la sera e con la stagione.</p></div>
+              </li>
+              <li>
+                <span class="brace" aria-hidden="true"></span>
+                <div><h3>Contorni e dolci</h3><p>Da accompagnare, o per chiudere senza fretta.</p></div>
+              </li>
+            </ul>
+            <p class="menu-note" style="margin-top:1.4rem;">Il menù del giorno ve lo diciamo in tavola: è di casa, cambia spesso.</p>
+          </div>
+          <div class="band__media reveal">
+            <div class="photo photo--dish" role="img" aria-label="Un primo e un secondo di casa serviti su un tavolo di legno apparecchiato"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- LA SALA (Kinfolk staggered) ---- -->
+    <section class="section" id="la-sala" aria-labelledby="h-sala">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="brace" aria-hidden="true"></span>La sala</p>
+        <h2 id="h-sala"><span class="rmask"><span class="rmask__i">Tutta in legno. Niente pretese.</span></span></h2>
+      </div>
+      <div class="sala-grid">
+        <div class="sala-card sala-a reveal">
+          <span class="brace" aria-hidden="true"></span>
+          <div class="photo photo--room photo--parallax ar-wide" role="img" aria-label="La sala della taverna Demus rivestita in legno, con tavoli apparecchiati e il forno sullo sfondo">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>La sala</span>
+          </div>
+        </div>
+        <div class="sala-card sala-b reveal">
+          <span class="brace" aria-hidden="true"></span>
+          <div class="photo photo--panel ar-tall" role="img" aria-label="Dettaglio dei rivestimenti in legno intagliato della sala, con lampada in ottone e pentola in rame">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>Il legno</span>
+          </div>
+        </div>
+        <div class="sala-card sala-c reveal">
+          <span class="brace" aria-hidden="true"></span>
+          <div class="photo photo--exterior photo--parallax ar-landscape" role="img" aria-label="Tavoli apparecchiati della taverna nella luce calda della sera">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>La sera</span>
+          </div>
+        </div>
+        <div class="sala-text reveal">
+          <p>Pareti in legno recuperato, panche e tavoli veri, luce bassa e calda. Ci si siede vicini, si parla a voce normale, si sta bene.</p>
+          <p>È una taverna di quartiere: informale, familiare, fatta per fermarsi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- IL QUARTIERE ---- -->
+    <section class="section" id="quartiere" aria-labelledby="h-quartiere">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Il quartiere</p>
+        <h2 id="h-quartiere"><span class="rmask"><span class="rmask__i">Il posto sotto casa, in Viale Martini.</span></span></h2>
+      </div>
+      <div class="quartiere">
+        <div class="quartiere__col reveal">
+          <p class="lede">Siamo tra Martini e Corvetto, a Milano.</p>
+          <p>Qui ci si conosce. Vengono le famiglie del quartiere, le coppie a fine giornata, i gruppi di amici che vogliono una cena calda e in confidenza. Non serve l'occasione: basta la voglia di mangiare bene, senza mettersi in ghingheri.</p>
+          <p>È il posto a cui si torna. Il quartiere ci tiene stretti, e noi teniamo il forno acceso per loro.</p>
+          <div class="proof-block">
+            <span class="big">4,2</span>
+            <div>
+              <div class="stars" aria-hidden="true">★★★★<span class="empty">★</span></div>
+              <div class="src">La valutazione media su Google, dalle recensioni del quartiere.</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="photo photo--exterior ar-landscape" role="img" aria-label="L'ingresso illuminato della taverna Demus su una via tranquilla di Milano all'imbrunire">
+            <span class="photo__tag"><span class="brace" aria-hidden="true"></span>All'imbrunire</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- SERATE & PRENOTA ---- -->
+    <section class="section" id="serate" aria-labelledby="h-serate">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Serate & prenota</p>
+        <h2 id="h-serate"><span class="rmask"><span class="rmask__i">Ogni sera, dalle 19. Il tavolo, con una telefonata.</span></span></h2>
+      </div>
+      <div class="serate">
+        <div class="hours-card reveal">
+          <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Quando siamo aperti</p>
+          <div class="hours-line"><span class="day">Ogni sera</span><span class="time open">dalle 19</span></div>
+          <div class="hours-line"><span class="day">A pranzo</span><span class="time">chiuso</span></div>
+          <p class="menu-note" style="margin-top:1rem;color:color-mix(in srgb,var(--brand-accent-ink) 66%,transparent);">Apriamo la sera: accendiamo il forno alle 19. Per il giorno di chiusura settimanale, un colpo di telefono e ve lo diciamo.</p>
+        </div>
+        <div class="serate__cta reveal">
+          <p>Non c'è un'app né un modulo da compilare. Per tenere il tavolo — soprattutto nel weekend o per un gruppo — chiamateci: rispondiamo noi.</p>
+          <a class="phone-big" href="tel:+39025394751">+39 02 5394751</a>
+          <a class="btn btn--primary" data-cta href="tel:+39025394751">Chiama per prenotare</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- TROVACI ---- -->
+    <section class="section" id="trovaci" aria-labelledby="h-trovaci">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Trovaci</p>
+        <h2 id="h-trovaci"><span class="rmask"><span class="rmask__i">Viale Enrico Martini 15, Milano.</span></span></h2>
+      </div>
+      <div class="trovaci">
+        <div class="addr-card reveal">
+          <address>
+            <div class="addr-row">
+              <span class="brace" aria-hidden="true"></span>
+              <span class="v"><span class="k">Indirizzo</span>Viale Enrico Martini 15<br>20139 Milano</span>
+            </div>
+            <div class="addr-row">
+              <span class="brace" aria-hidden="true"></span>
+              <span class="v"><span class="k">Telefono</span><a href="tel:+39025394751">+39 02 5394751</a></span>
+            </div>
+            <div class="addr-row">
+              <span class="brace" aria-hidden="true"></span>
+              <span class="v"><span class="k">Orari</span>Ogni sera dalle 19 · pranzo chiuso</span>
+            </div>
+            <div class="addr-row">
+              <span class="brace" aria-hidden="true"></span>
+              <span class="v"><span class="k">Sui social</span><a href="https://www.facebook.com/pizzeriaristorantedemus/" target="_blank" rel="noopener">Demus su Facebook</a></span>
+            </div>
+          </address>
+          <div class="addr-actions">
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+Demus%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+            <a class="btn btn--primary" data-cta href="tel:+39025394751">Chiama</a>
+          </div>
+        </div>
+        <div class="map-visual reveal">
+          <div class="photo photo--exterior" role="img" aria-label="La facciata illuminata della taverna Demus in Viale Enrico Martini, nel quartiere Martini a Milano"></div>
+          <div class="map-label">
+            <span class="brace" aria-hidden="true"></span>
+            <p><b>In Viale Martini, zona Corvetto.</b> Comodi da raggiungere la sera. Toccate «Apri in Google Maps» per le indicazioni fino alla porta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ STICKY BOOKING RAIL ============ -->
+  <aside class="rail" aria-label="Prenota un tavolo">
+    <div class="rail__card">
+      <p class="eyebrow"><span class="brace" aria-hidden="true"></span>Prenota</p>
+      <p class="rail__hours">Apriamo <span class="open">alle 19</span></p>
+      <p class="muted" style="font-size:.9rem;">Ogni sera. Per il tavolo, una telefonata.</p>
+      <a class="rail__phone" href="tel:+39025394751">+39 02 5394751</a>
+      <a class="btn btn--primary btn--full" data-cta href="tel:+39025394751">Chiama per prenotare</a>
+      <div class="rail__proof">
+        <span class="stars" aria-hidden="true">★★★★<span class="empty">★</span></span>
+        <span><b>4,2</b> su Google, nel quartiere</span>
+      </div>
+      <p class="rail__note">Rispondiamo noi. Nessuna app, nessun modulo: solo il tavolo tenuto per voi.</p>
+    </div>
+  </aside>
+</div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-mark">
+      <div class="wm">DEMUS</div>
+      <div class="brace" style="height:4px;" aria-hidden="true"></div>
+      <p>Taverna e forno a legna in Viale Martini, a Milano. Pizza cotta a legna e cucina di casa, ogni sera dalle 19.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Contatti</h3>
+      <ul>
+        <li><a href="tel:+39025394751">+39 02 5394751</a></li>
+        <li>Viale Enrico Martini 15, 20139 Milano</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+Demus%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a></li>
+        <li><a href="https://www.facebook.com/pizzeriaristorantedemus/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>In tavola</h3>
+      <ul>
+        <li><a href="#il-forno">Il forno a legna</a></li>
+        <li><a href="#pizza">La pizza</a></li>
+        <li><a href="#cucina">La cucina di casa</a></li>
+        <li><a href="#serate">Serate & prenota</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-legal">
+    <span>© Ristorante Pizzeria Demus · Viale Enrico Martini 15, Milano</span>
+    <span>Carta e prezzi indicativi: confermati in tavola. Anteprima di sito a scopo dimostrativo.</span>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY ACTION BAR ============ -->
+<div class="action-bar" aria-label="Chiama Demus">
+  <div class="ab-info">
+    <div class="l">Ogni sera dalle 19 · <span class="accent-num">4,2</span> su Google</div>
+    <div class="n">+39 02 5394751</div>
+  </div>
+  <a class="btn btn--primary" data-cta href="tel:+39025394751">Chiama</a>
+</div>
+
+<script>
+  // Progressive enhancement flag (kept off if JS blocked → content stays visible)
+  document.documentElement.classList.add('js');
+
+  (function(){
+    // --- Mobile nav toggle ---
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    function closeNav(){
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Apri il menu');
+      links.classList.remove('open');
+    }
+    function openNav(){
+      toggle.setAttribute('aria-expanded','true');
+      toggle.setAttribute('aria-label','Chiudi il menu');
+      links.classList.add('open');
+    }
+    toggle.addEventListener('click', function(){
+      (toggle.getAttribute('aria-expanded') === 'true') ? closeNav() : openNav();
+    });
+    // Close on link tap (mobile)
+    links.addEventListener('click', function(e){
+      if(e.target.closest('a')) closeNav();
+    });
+    // Esc closes menu, returns focus to toggle
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){
+        closeNav(); toggle.focus();
+      }
+    });
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // --- Reveal on scroll (signature "brace" warm-in) ---
+    var reveals = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window && !reduce){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }
+        });
+      }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+      reveals.forEach(function(el){ io.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('is-in'); });
+    }
+
+    // --- Count-up on the real aggregate rating (4,2), once, on scroll-in ---
+    var bigRating = document.querySelector('.proof-block .big');
+    if(bigRating && !reduce && 'IntersectionObserver' in window){
+      var target = 4.2;
+      var cObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting) return;
+          cObs.unobserve(en.target);
+          var start = null, dur = 700;
+          function step(ts){
+            if(start === null) start = ts;
+            var t = Math.min(1, (ts - start) / dur);
+            var eased = 1 - Math.pow(1 - t, 3);            // ease-out
+            bigRating.textContent = (target * eased).toFixed(1).replace('.', ',');
+            if(t < 1){ window.requestAnimationFrame(step); }
+            else{ bigRating.textContent = '4,2'; }         // land on the true value
+          }
+          window.requestAnimationFrame(step);
+        });
+      }, {threshold:0.6});
+      cObs.observe(bigRating);
+    }
+
+    // --- Single rAF-batched scroll handler: rail-fill + sala parallax ---
+    var story = document.querySelector('.story');
+    var fill  = document.getElementById('storyFill');
+
+    var paraOn = window.matchMedia('(pointer:fine)').matches
+                 && window.innerWidth >= 900 && !reduce;
+    var sala = document.getElementById('la-sala');
+    var paraLayers = paraOn && sala ? sala.querySelectorAll('.photo--parallax') : [];
+    var bgP = paraLayers[0], fgP = paraLayers[1];
+
+    var ticking = false;
+    function onFrame(){
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+
+      if(story && fill){
+        var r = story.getBoundingClientRect();
+        var total = r.height - vh * 0.5;
+        var passed = (vh * 0.5) - r.top;
+        var pct = total > 0 ? Math.max(0, Math.min(1, passed / total)) : 0;
+        fill.style.setProperty('--p', pct.toFixed(4));
+      }
+
+      if(bgP && fgP){
+        var sr = sala.getBoundingClientRect();
+        var center = sr.top + sr.height / 2;
+        var p = Math.max(-1, Math.min(1, (vh / 2 - center) / (vh / 2 + sr.height / 2)));
+        // background photo lags (slower), foreground detail leads (faster) -> depth.
+        // travel stays inside the 16% overscan so the clip box never gaps.
+        bgP.style.transform = 'translate3d(0,' + (p * 12).toFixed(1) + 'px,0) scale(1.16)';
+        fgP.style.transform = 'translate3d(0,' + (p * -8).toFixed(1) + 'px,0) scale(1.16)';
+      }
+      ticking = false;
+    }
+    function onScroll(){
+      if(!ticking){ window.requestAnimationFrame(onFrame); ticking = true; }
+    }
+    if((story && fill) || (bgP && fgP)){
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('resize', onScroll, {passive:true});
+      onFrame();
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Al·ice — Gelateria artigianale, mantecato in giornata · Sesto San Giovanni (Milano)</title>
+<meta name="description" content="Al·ice: gelateria artigianale a Sesto San Giovanni. Poche carapine mantecate in giornata, base di latte fresco e sorbetti di sola frutta di stagione. Gusti, formati e dove siamo.">
+<link rel="canonical" href="https://al-ice-gelateria.example/">
+
+<!-- Open Graph / social -->
+<meta property="og:title" content="Al·ice — Gelateria artigianale, mantecato in giornata">
+<meta property="og:description" content="Poche carapine mantecate in giornata. Base di latte fresco, sorbetti di sola frutta di stagione. Sesto San Giovanni, Milano.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-vetrina.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts: display Bodoni Moda (headings), body Hanken Grotesk -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "IceCreamShop",
+  "name": "Al-ice",
+  "description": "Gelateria artigianale: poche carapine mantecate in giornata, base di latte fresco e sorbetti di sola frutta di stagione.",
+  "image": "assets/hero-vetrina.jpg",
+  "url": "https://al-ice-gelateria.example/",
+  "telephone": "+393335430143",
+  "priceRange": "€€",
+  "servesCuisine": "Gelato",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Felice Cavallotti, 128",
+    "postalCode": "20099",
+    "addressLocality": "Sesto San Giovanni",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Al-ice%2C+Milano"
+}
+</script>
+
+<style>
+  /* ============ BRAND TOKENS (defined ONCE) ============ */
+  :root{
+    --brand-ink:#17242B;
+    --brand-surface:#F0F3F4;
+    --brand-surface-alt:#E7ECED;
+    --brand-accent:#C3405B;
+    --brand-accent-ink:#FFF7F9;
+    --brand-muted:#4F626A;
+    --brand-line:#D3DBDC;
+
+    --font-display:"Bodoni Moda", Didot, "Bodoni MT", Georgia, serif;
+    --font-body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+    --ease-signature:cubic-bezier(0.16,1,0.3,1);
+    --ease-micro:cubic-bezier(0.33,0,0.2,1);
+    --dur-reveal:720ms;
+    --dur-micro:200ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem, 3rem + 7vw, 9rem);
+    --container:min(1180px, 92vw);
+    --radius:10px;
+
+    --type-hero:clamp(2.8rem, 1.6rem + 6vw, 6.5rem);
+    --type-h2:clamp(1.8rem, 1.2rem + 3vw, 3.4rem);
+    --type-body:clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+
+    --nav-h:70px;
+  }
+
+  /* ============ RESET / BASE ============ */
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    font-weight:400;
+    font-size:var(--type-body);
+    line-height:1.65;
+    color:var(--brand-ink);
+    background:var(--brand-surface);
+    -webkit-font-smoothing:antialiased;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    text-rendering:optimizeLegibility;
+  }
+  img,video{max-width:100%;display:block;}
+  /* shared photo grade so the gallery reads as one cool, high-key shoot */
+  .editorial__main img,.editorial__companion img,.menu__aside img,.sorbetti__photo img,
+  .special__feature img,.luogo__bg img,.luogo__fg img{filter:saturate(1.04) contrast(1.03);}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:var(--font-display);font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin:0;
+    font-optical-sizing:auto;text-wrap:balance;
+  }
+  p{margin:0;max-width:66ch;text-wrap:pretty;}
+  ul{margin:0;padding:0;list-style:none;}
+  :focus-visible{outline:3px solid var(--brand-accent);outline-offset:3px;border-radius:4px;}
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  /* fine grain texture, brand-quiet, never a representational image */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+    opacity:.045;mix-blend-mode:soft-light;
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
+  }
+
+  .container{width:var(--container);margin-inline:auto;}
+  .eyebrow{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brand-muted);
+    margin:0 0 1rem;
+  }
+  .accent{color:var(--brand-accent);}
+  .lead{font-size:clamp(1.1rem,1rem + .6vw,1.45rem);line-height:1.5;color:var(--brand-ink);}
+
+  /* ============ MOTIF: la pallina (dome / semicircle) ============ */
+  .pallina{
+    display:inline-block;
+    width:.62em;height:.31em;
+    background:var(--brand-accent);
+    border-radius:.62em .62em 0 0;   /* dome on one side only */
+    vertical-align:baseline;
+  }
+  .pallina--lg{width:1.1rem;height:.55rem;}
+  .card-pallina{                      /* top-left corner of cards */
+    position:absolute;top:0;left:0;
+    width:26px;height:13px;
+    background:var(--brand-accent);
+    border-radius:0 0 26px 0;
+  }
+  .sep{                                /* section separator with pallina */
+    width:var(--container);margin:0 auto;
+    display:flex;align-items:flex-end;gap:.5rem;
+  }
+  .sep::before{content:"";flex:1;height:1px;background:var(--brand-line);}
+  .sep .pallina{transform:translateY(1px);}
+
+  /* ============ WORDMARK ============ */
+  .wordmark{
+    font-family:var(--font-display);
+    font-weight:500;
+    letter-spacing:-0.02em;
+    line-height:1;
+    white-space:nowrap;
+    display:inline-flex;
+    align-items:baseline;
+  }
+  .wordmark .wm-al{color:var(--brand-ink);}
+  .wordmark .wm-ice{color:var(--brand-accent);}
+  /* the interpunct "·" rendered as a real pallina sitting on the midline */
+  .wordmark .wm-dot{
+    display:inline-block;
+    width:.30em;height:.30em;
+    margin:0 .10em;
+    align-self:center;
+    background:var(--brand-accent);
+    border-radius:.30em .30em .30em 0;  /* scoop-with-paletta dome */
+    transform:translateY(-0.06em) rotate(-8deg);
+  }
+  /* on a light surface (nav/rail) the "Al" stays ink; on the photo hero it's set to surface */
+  .hero .wordmark .wm-al{color:var(--brand-accent-ink);}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb, var(--brand-surface) 88%, transparent);
+    backdrop-filter:saturate(1.1) blur(8px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav__inner{
+    width:var(--container);margin-inline:auto;
+    height:var(--nav-h);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .nav__brand{font-size:1.5rem;text-decoration:none;}
+  .nav__links{display:flex;align-items:center;gap:1.6rem;}
+  .nav__links a{
+    text-decoration:none;font-size:.9rem;font-weight:500;color:var(--brand-muted);
+    padding:.35rem 0;position:relative;transition:color var(--dur-micro) var(--ease-micro);
+  }
+  .nav__links a:hover{color:var(--brand-ink);}
+  .nav__links a[aria-current="page"]{color:var(--brand-accent);}
+  .nav__cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    text-decoration:none;font-weight:600;font-size:.9rem;
+    padding:.6rem 1.1rem;border-radius:var(--radius);
+    transition:transform var(--dur-micro) var(--ease-micro);
+  }
+  .nav__cta:hover{transform:translateY(-1px);}
+  .nav__links .nav__cta{display:none;}   /* the in-menu CTA is mobile-only; desktop uses the direct-child one */
+  .nav__toggle{display:none;background:none;border:1px solid var(--brand-line);border-radius:8px;
+    width:44px;height:44px;cursor:pointer;padding:0;align-items:center;justify-content:center;}
+  .nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{
+    content:"";display:block;width:20px;height:2px;background:var(--brand-ink);position:relative;transition:.2s;}
+  .nav__toggle span::before{position:absolute;top:-6px;}
+  .nav__toggle span::after{position:absolute;top:6px;}
+
+  /* ============ HERO (the wow: oversized wordmark over full-bleed photo) ============ */
+  .hero{position:relative;background:var(--brand-ink);overflow:clip;}
+  .hero__media{position:relative;width:100%;min-height:clamp(560px,82vh,860px);}
+  .hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+  .hero__media::after{ /* legibility scrim */
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(23,36,43,.30) 0%, rgba(23,36,43,.15) 42%, rgba(23,36,43,.66) 100%);
+  }
+  .hero__inner{
+    position:relative;z-index:2;
+    width:var(--container);margin-inline:auto;
+    min-height:clamp(560px,82vh,860px);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding-block:clamp(2rem,6vh,5rem);
+    color:var(--brand-accent-ink);
+  }
+  .hero .eyebrow{color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);}
+  .hero__wordmark{
+    font-size:var(--type-hero);
+    margin:0 0 .4rem;
+    display:block;
+  }
+  .hero__wordmark .wordmark{font-size:inherit;}
+  .hero__wordmark .wm-dot{width:.34em;height:.34em;}
+  .hero__tagline{
+    font-family:var(--font-display);font-style:italic;font-weight:500;
+    font-size:clamp(1.2rem,1rem + 1.4vw,2rem);
+    color:var(--brand-accent-ink);margin:0 0 1.4rem;letter-spacing:-0.01em;
+  }
+  .hero__sub{max-width:46ch;font-size:clamp(1rem,.96rem + .4vw,1.2rem);color:color-mix(in srgb,var(--brand-accent-ink) 92%,transparent);}
+  .hero__sub b{font-weight:600;color:var(--brand-accent-ink);}
+  .hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;margin-top:1.8rem;}
+  .btn-cta{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    text-decoration:none;font-weight:600;font-size:1.02rem;
+    padding:.85rem 1.5rem;border-radius:var(--radius);border:none;cursor:pointer;
+    transition:transform var(--dur-micro) var(--ease-micro),box-shadow var(--dur-micro) var(--ease-micro);
+  }
+  .btn-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(195,64,91,.30);}
+  .btn-cta:active{transform:translateY(0) scale(.98);}
+  .btn-cta .pallina{background:var(--brand-accent-ink);}
+  .hero__phone{font-size:.95rem;color:color-mix(in srgb,var(--brand-accent-ink) 90%,transparent);}
+  .hero__phone a{color:var(--brand-accent-ink);text-decoration:none;font-weight:600;border-bottom:1px solid color-mix(in srgb,var(--brand-accent-ink) 50%,transparent);}
+  .hero__place{margin-top:1.3rem;font-size:.9rem;color:color-mix(in srgb,var(--brand-accent-ink) 80%,transparent);
+    display:flex;align-items:center;gap:.5rem;}
+
+  /* ============ BANCO LAYOUT: sticky rail + scrolling vetrina ============ */
+  .banco{
+    width:var(--container);margin-inline:auto;
+    display:grid;grid-template-columns:300px 1fr;
+    gap:clamp(2rem,4vw,4.5rem);
+    padding-block:clamp(3rem,5vw,5rem);
+    align-items:start;
+  }
+  .rail{position:sticky;top:calc(var(--nav-h) + 20px);align-self:start;
+    display:flex;flex-direction:column;gap:1.4rem;}
+  .rail__card{
+    background:var(--brand-surface-alt);border:1px solid var(--brand-line);
+    border-radius:var(--radius);padding:1.5rem 1.4rem;position:relative;overflow:hidden;
+  }
+  .rail__brand{font-size:2rem;display:block;margin-bottom:.2rem;}
+  .rail__tag{font-family:var(--font-display);font-style:italic;color:var(--brand-muted);font-size:1rem;margin-bottom:1.1rem;}
+  .rail__today{border-top:1px solid var(--brand-line);padding-top:1rem;margin-top:.4rem;}
+  .rail__today .eyebrow{margin-bottom:.5rem;}
+  .rail__flavour{display:flex;align-items:baseline;gap:.55rem;font-family:var(--font-display);font-size:1.35rem;}
+  .rail__note{font-size:.85rem;color:var(--brand-muted);margin-top:.35rem;}
+  .rail__hours{margin-top:1.1rem;font-size:.9rem;color:var(--brand-muted);border-top:1px solid var(--brand-line);padding-top:1rem;}
+  .rail__hours strong{color:var(--brand-ink);font-weight:600;display:block;margin-bottom:.2rem;font-family:var(--font-body);}
+  .rail__hours dl{margin:.3rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.15rem .8rem;}
+  .rail__hours dt{color:var(--brand-ink);}
+  .rail__hours dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;}
+  .rail__btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;width:100%;margin-top:1.2rem;
+    background:var(--brand-ink);color:var(--brand-surface);text-decoration:none;font-weight:600;
+    padding:.8rem 1rem;border-radius:var(--radius);transition:background var(--dur-micro) var(--ease-micro);
+  }
+  .rail__btn:hover{background:color-mix(in srgb,var(--brand-ink) 88%, var(--brand-accent));}
+  .rail__trust{font-size:.82rem;color:var(--brand-muted);line-height:1.5;padding-inline:.2rem;}
+  .rail__trust .pallina{margin-right:.35rem;}
+
+  /* the scrolling vetrina column — pacing varies deliberately, never one flat rhythm */
+  .vetrina{display:flex;flex-direction:column;gap:var(--space-section);}
+  .vetrina > section{scroll-margin-top:calc(var(--nav-h) + 16px);}
+  #gesto{margin-top:clamp(.5rem,1vw,1.5rem);}                 /* tight: flows straight off the hero */
+  #luogo{padding-block:clamp(1rem,2vw,2.2rem);}                 /* a touch more room for the layered photo pair */
+  #contatti{margin-top:clamp(1rem,2vw,2rem);}                   /* the close: a deliberate breath before the ask */
+  .sec-head{margin-bottom:1.6rem;}
+  .sec-head h2{font-size:var(--type-h2);}
+  .sec-ruler{height:4px;width:120px;background:var(--brand-accent);border-radius:4px;margin-top:1.1rem;transform-origin:left;}
+
+  /* ---- Il gesto: editorial composed set (main + offset companion) ---- */
+  .gesto__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;}
+  .editorial{position:relative;overflow:visible;padding-bottom:2.5rem;padding-right:2rem;}
+  .editorial__main{margin:0;border-radius:var(--radius);overflow:hidden;}
+  .editorial__main img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;}
+  .editorial__companion{
+    position:absolute;right:0;bottom:0;width:52%;margin:0;
+    border-radius:var(--radius);overflow:hidden;
+    border:6px solid var(--brand-surface);box-shadow:0 14px 34px rgba(23,36,43,.18);
+  }
+  .editorial__companion img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .prose p + p{margin-top:1rem;}
+  .prose .lead{margin-bottom:1.1rem;}
+  .gesto__points{margin-top:1.4rem;display:grid;gap:.7rem;}
+  .gesto__points li{display:flex;gap:.7rem;align-items:baseline;}
+  .gesto__points .pallina{flex:none;transform:translateY(-2px);}
+
+  /* ---- Menu families ---- */
+  .menu{display:grid;grid-template-columns:1fr;gap:2.4rem;}
+  .menu--split{grid-template-columns:1.15fr .85fr;align-items:start;gap:2.6rem;}
+  .flavour-list{border-top:1px solid var(--brand-line);}
+  .flavour-list li{
+    display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:.35rem .9rem;
+    padding:.95rem 0;border-bottom:1px solid var(--brand-line);
+  }
+  .flavour-list .pallina{transform:translateY(-2px);}
+  .flavour-list .fl-name{font-family:var(--font-display);font-size:1.3rem;font-weight:500;}
+  .flavour-list .fl-desc{color:var(--brand-muted);font-size:.9rem;grid-column:2;line-height:1.4;}
+  .menu__aside{position:relative;}
+  .menu__aside img{width:100%;border-radius:var(--radius);object-fit:cover;object-position:center 32%;aspect-ratio:3/4;
+    box-shadow:0 18px 40px rgba(23,36,43,.14);}
+  .menu__aside .card-pallina{z-index:2;}
+
+  /* formats / prices strip */
+  .formats{margin-top:1.6rem;background:var(--brand-surface-alt);border:1px solid var(--brand-line);
+    border-radius:var(--radius);padding:1.3rem 1.4rem;position:relative;overflow:hidden;}
+  .formats h3{font-size:1.1rem;font-family:var(--font-body);font-weight:600;margin-bottom:.9rem;}
+  .formats ul{display:grid;gap:.55rem;}
+  .formats li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dotted var(--brand-line);padding-bottom:.5rem;}
+  .formats li:last-child{border-bottom:none;}
+  .formats .fl-price{font-weight:600;color:var(--brand-accent);font-variant-numeric:tabular-nums;}
+  .muted-note{font-size:.78rem;color:var(--brand-muted);margin-top:.8rem;line-height:1.4;}
+
+  /* sorbetti: full-bleed-ish band with photo */
+  .sorbetti__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:center;}
+  .sorbetti__photo{margin:0;border-radius:var(--radius);overflow:hidden;}
+  .sorbetti__photo img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+  .chips-inline{display:flex;flex-wrap:wrap;gap:.5rem .7rem;margin-top:1.2rem;}
+  .chips-inline span{font-family:var(--font-display);font-size:1.15rem;display:inline-flex;align-items:baseline;gap:.4rem;}
+
+  /* specialità: compact single-row cards */
+  .special{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .special__feature{grid-row:span 2;position:relative;border-radius:var(--radius);overflow:hidden;min-height:320px;}
+  .special__feature img{width:100%;height:100%;object-fit:cover;object-position:center 30%;position:absolute;inset:0;}
+  .special__feature figcaption{position:absolute;inset:auto 0 0 0;padding:1.3rem;
+    background:linear-gradient(180deg,transparent,rgba(23,36,43,.82));color:var(--brand-accent-ink);}
+  .special__feature h3{font-size:1.5rem;color:var(--brand-accent-ink);}
+  .special__feature p{font-size:.9rem;color:color-mix(in srgb,var(--brand-accent-ink) 88%,transparent);margin-top:.3rem;}
+  .special__item{position:relative;background:var(--brand-surface-alt);border:1px solid var(--brand-line);
+    border-radius:var(--radius);padding:1.4rem 1.3rem 1.3rem;overflow:hidden;}
+  .special__item h3{font-size:1.25rem;margin-bottom:.4rem;}
+  .special__item p{color:var(--brand-muted);font-size:.92rem;}
+  .special__item .fl-price{color:var(--brand-accent);font-weight:600;display:inline-block;margin-top:.6rem;font-variant-numeric:tabular-nums;}
+
+  /* ---- La vetrina (il luogo): layered depth (parallax-ready) ---- */
+  .luogo{position:relative;}
+  .luogo__stage{position:relative;overflow:visible;margin-top:1.5rem;padding-bottom:3rem;}
+  .luogo__bg{margin:0;border-radius:var(--radius);overflow:hidden;}
+  .luogo__bg img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+  .luogo__fg{
+    position:absolute;left:0;bottom:0;width:38%;max-width:280px;margin:0;
+    border-radius:var(--radius);overflow:hidden;
+    border:6px solid var(--brand-surface);box-shadow:0 16px 40px rgba(23,36,43,.22);
+  }
+  .luogo__fg img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+
+  /* ---- FAQ ---- */
+  .faq{display:grid;gap:0;border-top:1px solid var(--brand-line);}
+  .faq details{border-bottom:1px solid var(--brand-line);padding:.4rem 0;}
+  .faq summary{cursor:pointer;list-style:none;padding:1.05rem .2rem;font-family:var(--font-display);
+    font-size:1.2rem;display:flex;align-items:center;gap:.7rem;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .pallina{flex:none;transition:transform var(--dur-micro) var(--ease-micro);}
+  .faq details[open] summary .pallina{transform:rotate(180deg) translateY(-2px);}
+  .faq p{padding:0 .2rem 1.1rem 1.9rem;color:var(--brand-muted);}
+
+  /* ---- Vieni a trovarci ---- */
+  .contact{background:var(--brand-ink);color:var(--brand-surface);border-radius:var(--radius);
+    padding:clamp(1.8rem,4vw,3rem);position:relative;overflow:hidden;}
+  .contact .eyebrow{color:color-mix(in srgb,var(--brand-surface) 70%,transparent);}
+  .contact h2{color:var(--brand-surface);}
+  .contact__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;margin-top:1.6rem;align-items:start;}
+  .contact address{font-style:normal;font-size:1.05rem;line-height:1.7;color:var(--brand-surface);}
+  .contact address .accent{color:color-mix(in srgb,var(--brand-accent) 78%,white);}
+  .contact__row{margin-bottom:1.4rem;}
+  .contact__row .eyebrow{margin-bottom:.4rem;}
+  .contact__phone a{color:var(--brand-surface);text-decoration:none;font-weight:600;font-size:1.15rem;}
+  .contact__actions{display:flex;flex-direction:column;gap:.9rem;}
+  .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    border:1px solid color-mix(in srgb,var(--brand-surface) 55%,transparent);color:var(--brand-surface);
+    text-decoration:none;font-weight:600;padding:.8rem 1.2rem;border-radius:var(--radius);
+    transition:border-color var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);}
+  .btn-outline:hover{border-color:var(--brand-accent);background:color-mix(in srgb,var(--brand-surface) 8%,transparent);}
+  .contact__hours dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem 1rem;margin:.4rem 0 0;color:color-mix(in srgb,var(--brand-surface) 82%,transparent);}
+  .contact__hours dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;}
+  .contact__phone a,.hero__phone a,.rail__flavour,.fl-price{font-variant-numeric:tabular-nums;}
+
+  /* ---- Footer ---- */
+  .footer{width:var(--container);margin-inline:auto;padding:2.5rem 0 6.5rem;
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;
+    border-top:1px solid var(--brand-line);margin-top:var(--space-section);color:var(--brand-muted);font-size:.85rem;}
+  .footer .wordmark{font-size:1.3rem;}
+  .footer__disclaimer{max-width:52ch;line-height:1.5;}
+
+  /* ---- Mobile sticky action bar ---- */
+  .mobile-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    gap:.7rem;padding:.7rem;background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+    backdrop-filter:blur(8px);border-top:1px solid var(--brand-line);
+  }
+  .mobile-bar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.85rem;border-radius:var(--radius);text-decoration:none;font-weight:600;}
+  .mobile-bar .mb-call{background:var(--brand-accent);color:var(--brand-accent-ink);}
+  .mobile-bar .mb-map{background:var(--brand-ink);color:var(--brand-surface);}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:880px){
+    .nav__links{
+      position:absolute;top:var(--nav-h);left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:.5rem var(--container);max-height:0;overflow:hidden;
+      transition:max-height var(--dur-reveal) var(--ease-signature);
+    }
+    .nav__inner{position:relative;width:var(--container);}
+    .nav__links{width:100%;left:50%;transform:translateX(-50%);padding-inline:4vw;}
+    .nav[data-open="true"] .nav__links{max-height:420px;}
+    .nav__links a{padding:.9rem .4rem;border-bottom:1px solid var(--brand-line);}
+    .nav__links .nav__cta{display:inline-flex;margin:.6rem .4rem;justify-content:center;}
+    .nav__toggle{display:inline-flex;}
+    .nav > .nav__inner > .nav__cta{display:none;}
+
+    .banco{grid-template-columns:1fr;gap:2rem;}
+    .rail{position:static;order:2;}
+    .gesto__grid,.menu--split,.sorbetti__grid,.contact__grid{grid-template-columns:1fr;}
+    .editorial{padding-right:0;}
+    .editorial__companion{width:46%;right:-4px;}
+    .menu__aside img{aspect-ratio:16/10;}
+    .special{grid-template-columns:1fr;}
+    .special__feature{grid-row:auto;min-height:260px;}
+    .luogo__fg{width:44%;}
+    .mobile-bar{display:flex;}
+    body{padding-bottom:76px;}
+  }
+  @media (max-width:520px){
+    .hero__media,.hero__inner{min-height:88vh;}
+    .hero__video{object-position:center 38%;}
+    .editorial__companion{width:52%;bottom:-1rem;}
+    .contact__grid{gap:1.6rem;}
+  }
+
+  /* ================= MOTION LAYER ================= *
+   * One motion language: everything eased with --ease-signature (a calm settle,
+   * never a bounce), timed on --dur-reveal / --stagger. Progressive enhancement:
+   * hidden start-states apply ONLY under .js, so with JS off every element is
+   * visible. All of it is disabled under prefers-reduced-motion (block at the end). */
+
+  /* ---- Ambient section-temperature wash (sub-perceptual; brand tokens only) ---- */
+  .tint{
+    position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:transparent;
+    transition:background var(--dur-reveal) var(--ease-signature);
+  }
+
+  /* ---- Chapter rail (desktop only; a plain functional dot, not the pallina motif) ---- */
+  .chapters{
+    position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:55;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .chapters a{
+    width:10px;height:10px;border-radius:50%;background:var(--brand-line);
+    outline-offset:4px;
+    transition:transform var(--dur-micro) var(--ease-signature),background var(--dur-micro) var(--ease-micro);
+  }
+  .chapters a:hover{background:var(--brand-muted);}
+  .chapters a.active{background:var(--brand-accent);transform:scale(1.35);}
+  @media (max-width:980px){ .chapters{display:none;} }
+
+  /* ---- Hero scroll-cinema layers ---- */
+  .hero__stage{position:absolute;inset:0;transform-origin:center;}
+  .hero__media{background:var(--brand-ink) url('assets/hero-vetrina.jpg') center/cover no-repeat;} /* seam still under the video */
+  .hero__video{transition:opacity var(--dur-reveal) var(--ease-signature);}
+  .hero__canvas{
+    position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;
+    transition:opacity var(--dur-micro) linear;
+  }
+
+  /* MOMENT 1 — Hero: clip-path mask rises from the bottom (the only wipe on the page),
+     the logotype's pallina-dot drops and settles, copy rises in sequence. */
+  .js .hero__media{clip-path:inset(100% 0 0 0);animation:hero-wipe 1100ms var(--ease-signature) 120ms both;}
+  .js .hero__inner > *{opacity:0;animation:rise-in var(--dur-reveal) var(--ease-signature) both;}
+  .js .hero__inner > .eyebrow{animation-delay:440ms;}
+  .js .hero__inner > h1{animation-delay:540ms;}
+  .js .hero__inner > .hero__tagline{animation-delay:660ms;}
+  .js .hero__inner > .hero__sub{animation-delay:780ms;}
+  .js .hero__inner > .hero__actions{animation-delay:900ms;}
+  .js .hero__inner > .hero__place{animation-delay:1000ms;}
+  .js .hero__wordmark .wm-dot{animation:dot-drop 760ms var(--ease-signature) 900ms both;}
+  @keyframes hero-wipe{from{clip-path:inset(100% 0 0 0);}to{clip-path:inset(0 0 0 0);}}
+  @keyframes rise-in{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:none;}}
+  @keyframes dot-drop{from{opacity:0;transform:translateY(-150%) rotate(-8deg);}to{opacity:1;transform:translateY(-0.06em) rotate(-8deg);}}
+
+  /* MOMENT 4 — Section-head ruler scrubs its own scaleX to scroll position, and the
+     hero pushes in slightly as it scrolls away. Native scroll-driven; safe fallback. */
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion:no-preference){
+      .js .hero__stage{animation:hero-push linear both;animation-timeline:view();animation-range:exit -5% exit 100%;}
+      .js .sec-ruler{transform:scaleX(0);transform-origin:left;animation:ruler-scrub linear both;animation-timeline:view();animation-range:entry 20% cover 55%;}
+    }
+  }
+  @keyframes hero-push{to{transform:scale(1.06);}}
+  @keyframes ruler-scrub{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
+  /* ---- Shared reveal system, varied by content role (never one identical fade) ---- */
+  /* headings: line-mask rise (single selectable node, split only visually) */
+  .js .h-mask{overflow:hidden;padding-bottom:.09em;}
+  .js .h-mask > h2{transform:translateY(115%);transition:transform var(--dur-reveal) var(--ease-signature);}
+  .js .reveal.is-in .h-mask > h2{transform:translateY(0);}
+
+  /* rise role: eyebrows, prose blocks, cards, faq rows, contact rows */
+  .js .reveal .eyebrow,
+  .js .reveal .prose > *,
+  .js .reveal > .lead,
+  .js .reveal .formats,
+  .js .reveal .special__item,
+  .js .reveal .faq details,
+  .js .reveal .contact__row,
+  .js .reveal .contact__actions{
+    opacity:0;transform:translateY(22px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  .js .reveal.is-in .eyebrow,
+  .js .reveal.is-in .prose > *,
+  .js .reveal.is-in > .lead,
+  .js .reveal.is-in .formats,
+  .js .reveal.is-in .special__item,
+  .js .reveal.is-in .faq details,
+  .js .reveal.is-in .contact__row,
+  .js .reveal.is-in .contact__actions{opacity:1;transform:none;}
+  /* stagger inside repeated groups */
+  .js .reveal.is-in .special__item:nth-child(2),
+  .js .reveal.is-in .faq details:nth-child(2),
+  .js .reveal.is-in .contact__row:nth-child(2){transition-delay:calc(var(--stagger)*1);}
+  .js .reveal.is-in .special__item:nth-child(3),
+  .js .reveal.is-in .faq details:nth-child(3),
+  .js .reveal.is-in .contact__row:nth-child(3){transition-delay:calc(var(--stagger)*2);}
+  .js .reveal.is-in .special__item:nth-child(4),
+  .js .reveal.is-in .faq details:nth-child(4){transition-delay:calc(var(--stagger)*3);}
+  .js .reveal.is-in .special__item:nth-child(5){transition-delay:calc(var(--stagger)*4);}
+
+  /* MOMENT 3 (entrance half) — media scale-in (depth axis), distinct from the Y-rise */
+  .js .reveal .editorial__main,
+  .js .reveal .editorial__companion,
+  .js .reveal .menu__aside,
+  .js .reveal .sorbetti__photo,
+  .js .reveal .special__feature,
+  .js .reveal .luogo__bg{
+    opacity:0;transform:scale(.955);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  .js .reveal.is-in .editorial__main,
+  .js .reveal.is-in .editorial__companion,
+  .js .reveal.is-in .menu__aside,
+  .js .reveal.is-in .sorbetti__photo,
+  .js .reveal.is-in .special__feature,
+  .js .reveal.is-in .luogo__bg{opacity:1;transform:none;}
+  .js .reveal.is-in .editorial__companion{transition-delay:calc(var(--stagger)*1.6);}
+
+  /* MOMENT 2 — Gusti list: per-row cascade sliding in from the left, each row's
+     pallina marker scaling up in sequence (horizontal choreography, not a block fade). */
+  .js .reveal .flavour-list li{
+    opacity:0;transform:translateX(-24px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  .js .reveal .flavour-list li .pallina{
+    transform:translateY(-2px) scale(.15);transform-origin:bottom center;
+    transition:transform var(--dur-reveal) var(--ease-signature);transition-delay:inherit;
+  }
+  .js .reveal.is-in .flavour-list li{opacity:1;transform:none;}
+  .js .reveal.is-in .flavour-list li .pallina{transform:translateY(-2px) scale(1);}
+  .js .reveal.is-in .flavour-list li:nth-child(2){transition-delay:calc(var(--stagger)*1);}
+  .js .reveal.is-in .flavour-list li:nth-child(3){transition-delay:calc(var(--stagger)*2);}
+  .js .reveal.is-in .flavour-list li:nth-child(4){transition-delay:calc(var(--stagger)*3);}
+  .js .reveal.is-in .flavour-list li:nth-child(5){transition-delay:calc(var(--stagger)*4);}
+  .js .reveal.is-in .flavour-list li:nth-child(6){transition-delay:calc(var(--stagger)*5);}
+
+  /* MOMENT 3 (scroll half) — Luogo depth parallax: the two layers translate at
+     different rates (JS-driven on the inner imgs so it never fights the reveal). */
+  .luogo__bg img,.luogo__fg img{will-change:transform;}
+
+  /* MOMENT 5 — Spring press: the pallina motif compresses and resettles on
+     hover / press of gusto cards and CTAs (the one tactile micro-interaction). */
+  .card-pallina{transform-origin:top left;transition:transform var(--dur-micro) var(--ease-signature);}
+  .btn-cta .pallina,.nav__cta .pallina,.rail__btn .pallina,.mobile-bar a .pallina{
+    transform-origin:bottom center;transition:transform var(--dur-micro) var(--ease-signature);
+  }
+  .btn-cta:active .pallina,.nav__cta:active .pallina,.rail__btn:active .pallina,.mobile-bar a:active .pallina{transform:scaleY(.6);}
+
+  /* ---- Pointer-only micro-interactions ---- */
+  @media (hover:hover) and (pointer:fine){
+    .nav__links a:not(.nav__cta){overflow:hidden;}
+    .nav__links a:not(.nav__cta)::after{
+      content:"";position:absolute;left:0;bottom:.05rem;height:2px;width:100%;
+      background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+      transition:transform var(--dur-micro) var(--ease-micro);
+    }
+    .nav__links a:not(.nav__cta):hover::after,
+    .nav__links a:not(.nav__cta):focus-visible::after{transform:scaleX(1);}
+    /* image bulge: menu photo is a single rounded img (no clip needed);
+       the feature figure already clips (overflow:hidden from the base styles) */
+    .menu__aside img,.special__feature img{transition:transform var(--dur-reveal) var(--ease-signature);}
+    .menu__aside:hover img,.special__feature:hover img{transform:scale(1.05);}
+    .special__item:hover .card-pallina,.formats:hover .card-pallina,.menu__aside:hover .card-pallina{transform:scaleY(.6);}
+    .btn-cta:hover .pallina,.rail__btn:hover .pallina{transform:scaleY(.78);}
+  }
+
+  /* ================= REDUCED MOTION: everything still, everything visible ================= */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0ms!important;animation-delay:0ms!important;}
+    .js .hero__media{clip-path:none!important;animation:none!important;}
+    .js .hero__stage{animation:none!important;transform:none!important;}
+    .js .hero__inner > *{opacity:1!important;transform:none!important;animation:none!important;}
+    .js .hero__wordmark .wm-dot{animation:none!important;}
+    .js .h-mask > h2{transform:none!important;}
+    .js .reveal .eyebrow,.js .reveal .prose > *,.js .reveal > .lead,.js .reveal .formats,
+    .js .reveal .special__item,.js .reveal .faq details,.js .reveal .contact__row,.js .reveal .contact__actions,
+    .js .reveal .editorial__main,.js .reveal .editorial__companion,.js .reveal .menu__aside,
+    .js .reveal .sorbetti__photo,.js .reveal .special__feature,.js .reveal .luogo__bg,
+    .js .reveal .flavour-list li{opacity:1!important;transform:none!important;}
+    .js .reveal .flavour-list li .pallina{transform:translateY(-2px) scale(1)!important;}
+    .js .sec-ruler{transform:none!important;animation:none!important;}
+    .hero__canvas{display:none!important;}
+    .tint{background:transparent!important;}
+    .luogo__bg img,.luogo__fg img{transform:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ambient section-temperature wash (sub-perceptual, brand tokens only) -->
+<div class="tint" aria-hidden="true"></div>
+
+<!-- chapter rail: keyboard-focusable section anchors, desktop only -->
+<nav class="chapters" aria-label="Vai alla sezione">
+  <a href="#gesto" aria-label="Il gesto"></a>
+  <a href="#crema" aria-label="Gusti di crema"></a>
+  <a href="#sorbetti" aria-label="Sorbetti di frutta"></a>
+  <a href="#specialita" aria-label="Le specialità"></a>
+  <a href="#luogo" aria-label="Il luogo"></a>
+  <a href="#faq" aria-label="Domande frequenti"></a>
+  <a href="#contatti" aria-label="Vieni a trovarci"></a>
+</nav>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Navigazione principale">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Al·ice, gelateria artigianale">
+      <span class="wordmark" aria-hidden="true"><span class="wm-al">Al</span><span class="wm-dot"></span><span class="wm-ice">ice</span></span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="#gesto">Il gesto</a>
+      <a href="#crema">Gusti di crema</a>
+      <a href="#sorbetti">Sorbetti</a>
+      <a href="#specialita">Specialità</a>
+      <a href="#luogo">Il luogo</a>
+      <a href="#faq">Domande</a>
+      <a href="#contatti">Vieni a trovarci</a>
+      <a class="nav__cta" data-cta href="tel:+393335430143"><span class="pallina" aria-hidden="true"></span>Chiama</a>
+    </div>
+    <a class="nav__cta" data-cta href="tel:+393335430143"><span class="pallina" aria-hidden="true"></span>Chiama</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ============ HERO — l'insegna (THE WOW) ============ -->
+  <header class="hero" id="hero">
+    <div class="hero__media">
+      <div class="hero__stage">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/hero-vetrina.jpg" aria-hidden="true">
+          <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+          <img src="assets/hero-vetrina.jpg" alt="La vetrina di Al·ice con le carapine di gelato artigianale appena mantecato">
+        </video>
+        <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <div class="hero__inner">
+      <p class="eyebrow">Gelateria artigianale · Sesto San Giovanni (Milano)</p>
+      <h1 class="hero__wordmark">
+        <span class="wordmark"><span class="wm-al">Al</span><span class="wm-dot" aria-hidden="true"></span><span class="wm-ice">ice</span></span>
+      </h1>
+      <p class="hero__tagline">mantecato in giornata</p>
+      <p class="hero__sub">Poche carapine, mantecate ogni mattina. <b>Base di latte fresco</b> e sorbetti di sola frutta di stagione. Non venti gusti sempre uguali: piccole quantità che finiscono e si rifanno.</p>
+      <div class="hero__actions">
+        <a class="btn-cta" data-cta href="tel:+393335430143"><span class="pallina" aria-hidden="true"></span>Chiama per informazioni</a>
+        <span class="hero__phone">Siamo al telefono: <a href="tel:+393335430143">+39 333 543 0143</a></span>
+      </div>
+      <p class="hero__place"><span class="pallina" aria-hidden="true"></span>Via Felice Cavallotti 128, Sesto San Giovanni (MI)</p>
+    </div>
+  </header>
+
+  <!-- ============ BANCO: sticky rail + scrolling vetrina ============ -->
+  <div class="banco">
+
+    <!-- Persistent rail -->
+    <aside class="rail" aria-label="Il banco: informazioni sempre visibili">
+      <div class="rail__card">
+        <span class="card-pallina" aria-hidden="true"></span>
+        <span class="wordmark rail__brand"><span class="wm-al">Al</span><span class="wm-dot" aria-hidden="true"></span><span class="wm-ice">ice</span></span>
+        <p class="rail__tag">mantecato in giornata</p>
+
+        <div class="rail__today">
+          <p class="eyebrow">Il gusto del giorno</p>
+          <p class="rail__flavour"><span class="pallina" aria-hidden="true"></span>Pistacchio</p>
+          <p class="rail__note">Cambia con la stagione e con quello che mantechiamo la mattina.</p>
+        </div>
+
+        <div class="rail__hours">
+          <strong>Orari</strong>
+          <dl>
+            <dt>Mar–Ven</dt><dd>15:00 – 22:30</dd>
+            <dt>Sab–Dom</dt><dd>12:00 – 23:00</dd>
+            <dt>Lunedì</dt><dd>chiuso</dd>
+          </dl>
+        </div>
+
+        <a class="rail__btn" data-cta href="https://www.google.com/maps/search/?api=1&query=Al-ice%2C+Milano" target="_blank" rel="noopener">
+          <span class="pallina" aria-hidden="true"></span>Vieni a trovarci
+        </a>
+      </div>
+      <p class="rail__trust"><span class="pallina" aria-hidden="true"></span>Lavorazione artigianale fresca, ogni giorno. Nessun banco industriale gonfiato d’aria.</p>
+    </aside>
+
+    <!-- Scrolling vetrina -->
+    <div class="vetrina">
+
+      <!-- 1. Il gesto — mantecato in giornata -->
+      <section id="gesto" class="reveal">
+        <div class="sec-head">
+          <p class="eyebrow">Il gesto</p>
+          <div class="h-mask"><h2>Mantecato in giornata,<br>in piccole quantità</h2></div>
+          <div class="sec-ruler" aria-hidden="true"></div>
+        </div>
+        <div class="gesto__grid">
+          <div class="editorial">
+            <figure class="editorial__main">
+              <img src="assets/mantecato-hands.jpg" alt="Le mani del gelatiere che mantecano il gelato con la paletta">
+            </figure>
+            <figure class="editorial__companion">
+              <img src="assets/detail-ingredienti.jpg" alt="Ingredienti crudi del gelato: nocciole, limone, latte, pistacchi">
+            </figure>
+          </div>
+          <div class="prose">
+            <p class="lead">Il nostro unico segreto è il lavoro fresco.</p>
+            <p>Ogni mattina partiamo dal latte fresco e da frutta di stagione. Manteciamo poche carapine per volta. Quando un gusto finisce, lo rifacciamo: non lo lasciamo invecchiare in vetrina.</p>
+            <ul class="gesto__points">
+              <li><span class="pallina" aria-hidden="true"></span><span><b>Base di latte fresco</b>, non preparati industriali.</span></li>
+              <li><span class="pallina" aria-hidden="true"></span><span>Sorbetti di <b>sola frutta</b>, senza latte.</span></li>
+              <li><span class="pallina" aria-hidden="true"></span><span>Piccole quantità, mantecate <b>in giornata</b>.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="sep" aria-hidden="true"><span class="pallina"></span></div>
+
+      <!-- 2. I gusti di crema -->
+      <section id="crema" class="reveal">
+        <div class="sec-head">
+          <p class="eyebrow">A base di latte</p>
+          <div class="h-mask"><h2>I gusti di crema</h2></div>
+          <div class="sec-ruler" aria-hidden="true"></div>
+        </div>
+        <div class="menu menu--split">
+          <div>
+            <ul class="flavour-list">
+              <li>
+                <span class="pallina" aria-hidden="true"></span>
+                <span class="fl-name">Fiordilatte</span>
+                <span class="fl-desc">Il nostro punto di partenza: latte fresco e poco zucchero.</span>
+              </li>
+              <li>
+                <span class="pallina" aria-hidden="true"></span>
+                <span class="fl-name">Pistacchio</span>
+                <span class="fl-desc">Pasta di pistacchio, dolce misurato, nessun colorante.</span>
+              </li>
+              <li>
+                <span class="pallina" aria-hidden="true"></span>
+                <span class="fl-name">Nocciola</span>
+                <span class="fl-desc">Tostata e mantecata fino a renderla piena.</span>
+              </li>
+              <li>
+                <span class="pallina" aria-hidden="true"></span>
+                <span class="fl-name">Crema</span>
+                <span class="fl-desc">Tuorlo e scorza di limone, la ricetta di sempre.</span>
+              </li>
+              <li>
+                <span class="pallina" aria-hidden="true"></span>
+                <span class="fl-name">Cioccolato fondente</span>
+                <span class="fl-desc">Scuro e netto, senza latte aggiunto.</span>
+              </li>
+              <li>
+                <span class="pallina" aria-hidden="true"></span>
+                <span class="fl-name">Stracciatella</span>
+                <span class="fl-desc">Fiordilatte con scaglie di fondente colate a mano.</span>
+              </li>
+            </ul>
+
+            <div class="formats">
+              <span class="card-pallina" aria-hidden="true"></span>
+              <h3>Formati e prezzi</h3>
+              <ul>
+                <li><span>Cono o coppetta piccola · 2 gusti</span><span class="fl-price">€ 2,80</span></li>
+                <li><span>Cono o coppetta media · 3 gusti</span><span class="fl-price">€ 3,80</span></li>
+                <li><span>Coppetta grande · 4 gusti</span><span class="fl-price">€ 4,80</span></li>
+                <li><span>Vaschetta d’asporto · 500 g</span><span class="fl-price">€ 12,00</span></li>
+              </ul>
+              <p class="muted-note">Gusti e listino sono indicativi: aggiorniamo la vetrina ogni giorno. Chiamateci per sapere cosa mantechiamo oggi.</p>
+            </div>
+          </div>
+          <figure class="menu__aside">
+            <span class="card-pallina" aria-hidden="true"></span>
+            <img src="assets/cono-held.jpg" alt="Un cono con due palline di gelato tenuto davanti al banco">
+          </figure>
+        </div>
+      </section>
+
+      <div class="sep" aria-hidden="true"><span class="pallina"></span></div>
+
+      <!-- 3. I sorbetti di frutta -->
+      <section id="sorbetti" class="reveal">
+        <div class="sec-head">
+          <p class="eyebrow">Sola frutta, senza latte</p>
+          <div class="h-mask"><h2>I sorbetti di frutta</h2></div>
+          <div class="sec-ruler" aria-hidden="true"></div>
+        </div>
+        <div class="sorbetti__grid">
+          <figure class="sorbetti__photo">
+            <img src="assets/sorbetto-frutta.jpg" alt="Sorbetto di frutta con lamponi e limoni freschi accanto">
+          </figure>
+          <div class="prose">
+            <p class="lead">Solo frutta di stagione e acqua. Niente latte, niente derivati.</p>
+            <p>I sorbetti seguono il mercato: cambiano con la frutta che troviamo matura. Sono l’opzione giusta per chi cerca qualcosa senza latticini, o semplicemente più fresco.</p>
+            <div class="chips-inline" aria-label="Sorbetti tipici di stagione">
+              <span><span class="pallina" aria-hidden="true"></span>Lampone</span>
+              <span><span class="pallina" aria-hidden="true"></span>Limone</span>
+              <span><span class="pallina" aria-hidden="true"></span>Fragola</span>
+              <span><span class="pallina" aria-hidden="true"></span>Mango</span>
+            </div>
+            <p class="muted-note">La frutta cambia con la stagione: alcuni gusti ci sono solo in certi mesi.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="sep" aria-hidden="true"><span class="pallina"></span></div>
+
+      <!-- 4. Le specialità -->
+      <section id="specialita" class="reveal">
+        <div class="sec-head">
+          <p class="eyebrow">Oltre la pallina</p>
+          <div class="h-mask"><h2>Le specialità</h2></div>
+          <div class="sec-ruler" aria-hidden="true"></div>
+        </div>
+        <div class="special">
+          <figure class="special__feature">
+            <img src="assets/specialita-affogato.jpg" alt="Un affogato: pallina di gelato con espresso versato sopra">
+            <figcaption>
+              <h3>Affogato al caffè</h3>
+              <p>Una pallina di fiordilatte, un espresso versato al momento.</p>
+            </figcaption>
+          </figure>
+          <div class="special__item">
+            <span class="card-pallina" aria-hidden="true"></span>
+            <h3>Coppa</h3>
+            <p>Due o tre gusti a scelta, per fermarsi seduti al banco.</p>
+            <span class="fl-price">da € 4,50</span>
+          </div>
+          <div class="special__item">
+            <span class="card-pallina" aria-hidden="true"></span>
+            <h3>Cono gourmet</h3>
+            <p>Cialda croccante e un gusto in evidenza, servito con cura.</p>
+            <span class="fl-price">da € 3,50</span>
+          </div>
+          <div class="special__item">
+            <span class="card-pallina" aria-hidden="true"></span>
+            <h3>Vaschette d’asporto</h3>
+            <p>Da 500 g o 750 g, mantecate al momento da portare a casa.</p>
+            <span class="fl-price">da € 12,00</span>
+          </div>
+          <div class="special__item">
+            <span class="card-pallina" aria-hidden="true"></span>
+            <h3>Su ordinazione</h3>
+            <p>Per una cena o un compleanno, preparaci la vaschetta che vuoi: chiamaci il giorno prima.</p>
+            <a class="fl-price" href="tel:+393335430143" style="text-decoration:none;">Chiama per ordinare →</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="sep" aria-hidden="true"><span class="pallina"></span></div>
+
+      <!-- 5. La vetrina (il luogo) -->
+      <section id="luogo" class="reveal luogo">
+        <div class="sec-head">
+          <p class="eyebrow">Il luogo</p>
+          <div class="h-mask"><h2>La vetrina</h2></div>
+          <div class="sec-ruler" aria-hidden="true"></div>
+        </div>
+        <p class="lead" style="max-width:56ch;">Un banco piccolo e pulito, luce di giorno dalla vetrina. Si vede quello che c'è e come lo serviamo: nessuna montagna gonfiata, solo carapine appena mantecate.</p>
+        <div class="luogo__stage">
+          <figure class="luogo__bg">
+            <img src="assets/banco-interior.jpg" alt="L'interno luminoso della gelateria con il banco e la vetrina">
+          </figure>
+          <figure class="luogo__fg">
+            <img src="assets/macro-scoop.jpg" alt="Macro di una pallina di gelato al pistacchio con il segno della paletta">
+          </figure>
+        </div>
+      </section>
+
+      <div class="sep" aria-hidden="true"><span class="pallina"></span></div>
+
+      <!-- 6. Domande frequenti -->
+      <section id="faq" class="reveal">
+        <div class="sec-head">
+          <p class="eyebrow">Prima di venire</p>
+          <div class="h-mask"><h2>Domande frequenti</h2></div>
+          <div class="sec-ruler" aria-hidden="true"></div>
+        </div>
+        <div class="faq">
+          <details>
+            <summary><span class="pallina" aria-hidden="true"></span>Avete opzioni senza latte?</summary>
+            <p>Sì. I nostri sorbetti sono di sola frutta e acqua, senza latte né derivati. Cambiano con la stagione: chiedete al banco quali ci sono oggi.</p>
+          </details>
+          <details>
+            <summary><span class="pallina" aria-hidden="true"></span>Ci sono gusti senza glutine?</summary>
+            <p>Molti gusti non contengono glutine, ma lavoriamo cialde e biscotti nello stesso locale. Se avete un’intolleranza, chiedeteci prima di ordinare: vi diciamo con precisione cosa potete prendere.</p>
+          </details>
+          <details>
+            <summary><span class="pallina" aria-hidden="true"></span>Si può portare a casa?</summary>
+            <p>Sì, prepariamo vaschette d’asporto da 500 g e 750 g, mantecate al momento. Per quantità più grandi o per una data precisa, chiamateci il giorno prima.</p>
+          </details>
+          <details>
+            <summary><span class="pallina" aria-hidden="true"></span>Quando siete aperti?</summary>
+            <p>Da martedì a domenica, pomeriggio e sera; nel fine settimana anche a pranzo. Il lunedì siamo chiusi. Gli orari precisi li trovate qui sotto, in «Vieni a trovarci».</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="sep" aria-hidden="true"><span class="pallina"></span></div>
+
+      <!-- 7. Vieni a trovarci -->
+      <section id="contatti" class="reveal">
+        <div class="contact">
+          <span class="card-pallina" aria-hidden="true"></span>
+          <p class="eyebrow">Dove siamo</p>
+          <div class="h-mask"><h2>Vieni a trovarci</h2></div>
+          <div class="contact__grid">
+            <div>
+              <div class="contact__row">
+                <p class="eyebrow">Indirizzo</p>
+                <address>
+                  <span class="accent">Al·ice</span> — gelateria artigianale<br>
+                  Via Felice Cavallotti, 128<br>
+                  20099 Sesto San Giovanni (MI)
+                </address>
+              </div>
+              <div class="contact__row contact__phone">
+                <p class="eyebrow">Telefono</p>
+                <a href="tel:+393335430143">+39 333 543 0143</a>
+              </div>
+              <div class="contact__row contact__hours">
+                <p class="eyebrow">Orari</p>
+                <dl>
+                  <dt>Martedì – Venerdì</dt><dd>15:00 – 22:30</dd>
+                  <dt>Sabato – Domenica</dt><dd>12:00 – 23:00</dd>
+                  <dt>Lunedì</dt><dd>chiuso</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="contact__actions">
+              <a class="btn-cta" data-cta href="tel:+393335430143"><span class="pallina" aria-hidden="true"></span>Chiama: +39 333 543 0143</a>
+              <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=Al-ice%2C+Milano" target="_blank" rel="noopener"><span class="pallina" aria-hidden="true"></span>Apri in Google Maps</a>
+              <p class="muted-note" style="color:color-mix(in srgb,var(--brand-surface) 62%,transparent);">A piedi in zona Cavallotti, a Sesto San Giovanni. Passa quando vuoi: manteciamo tutto il giorno.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.vetrina -->
+  </div><!-- /.banco -->
+</main>
+
+<footer class="footer">
+  <div>
+    <span class="wordmark"><span class="wm-al">Al</span><span class="wm-dot" aria-hidden="true"></span><span class="wm-ice">ice</span></span>
+    <p style="margin-top:.4rem;">Gelateria artigianale · Via Felice Cavallotti 128, Sesto San Giovanni (MI)</p>
+  </div>
+  <p class="footer__disclaimer">Orari, gusti e listino riportati sono indicativi e da confermare: la vetrina cambia ogni giorno con quello che mantechiamo. Per la disponibilità del momento, chiamateci al +39 333 543 0143.</p>
+</footer>
+
+<!-- Mobile sticky action bar -->
+<div class="mobile-bar" aria-label="Contatti rapidi">
+  <a class="mb-call" data-cta href="tel:+393335430143"><span class="pallina" aria-hidden="true"></span>Chiama</a>
+  <a class="mb-map" href="https://www.google.com/maps/search/?api=1&query=Al-ice%2C+Milano" target="_blank" rel="noopener">Mappa</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO  = 'IntersectionObserver' in window;
+
+  /* ---------- Mobile nav toggle (aria-expanded, Esc to close, links close on tap) ---------- */
+  (function(){
+    var nav = document.getElementById('nav');
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if(!nav || !toggle || !links) return;
+    function setOpen(open){
+      nav.setAttribute('data-open', open ? 'true' : 'false');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+    }
+    toggle.addEventListener('click', function(){ setOpen(nav.getAttribute('data-open') !== 'true'); });
+    links.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nav.getAttribute('data-open') === 'true'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+
+  /* ---------- Reveal system: ONE rAF-batched IntersectionObserver, unobserve after firing ---------- */
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if(reduce || !hasIO){ items.forEach(function(el){ el.classList.add('is-in'); }); return; }
+    var queue = [], scheduled = false;
+    function flush(){ scheduled = false; queue.forEach(function(el){ el.classList.add('is-in'); }); queue = []; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ io.unobserve(en.target); queue.push(en.target);
+          if(!scheduled){ scheduled = true; requestAnimationFrame(flush); } }
+      });
+    }, {rootMargin:'0px 0px -12% 0px', threshold:0.12});
+    items.forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ---------- Chapter rail: active dot via IntersectionObserver ---------- */
+  (function(){
+    var dots = document.querySelectorAll('.chapters a');
+    if(!dots.length || !hasIO) return;
+    var map = {};
+    dots.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var a = map[en.target.id]; if(!a) return;
+          dots.forEach(function(x){ x.classList.remove('active'); x.removeAttribute('aria-current'); });
+          a.classList.add('active'); a.setAttribute('aria-current','true');
+        }
+      });
+    }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+    document.querySelectorAll('.vetrina > section[id]').forEach(function(s){ io.observe(s); });
+  })();
+
+  /* ---------- Ambient section tint: sub-perceptual temperature crossfade ---------- */
+  (function(){
+    if(reduce || !hasIO) return;
+    var tint = document.querySelector('.tint'); if(!tint) return;
+    var temps = { gesto:'--brand-ink', crema:'--brand-accent', sorbetti:'--brand-accent',
+                  specialita:'--brand-ink', luogo:'--brand-ink', faq:'--brand-accent', contatti:'--brand-ink' };
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var t = temps[en.target.id];
+          tint.style.background = t ? ('color-mix(in srgb, var('+t+') 5%, transparent)') : 'transparent';
+        }
+      });
+    }, {rootMargin:'-50% 0px -50% 0px', threshold:0});
+    document.querySelectorAll('.vetrina > section[id]').forEach(function(s){ io.observe(s); });
+  })();
+
+  /* ---------- Luogo depth parallax: two inner images move at different rates ---------- */
+  (function(){
+    if(reduce) return;
+    var stage = document.querySelector('.luogo__stage');
+    var bg = document.querySelector('.luogo__bg img');
+    var fg = document.querySelector('.luogo__fg img');
+    if(!stage || !bg || !fg) return;
+    var ticking = false;
+    function update(){
+      ticking = false;
+      var r = stage.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if(r.bottom < 0 || r.top > vh) return;
+      var p = (r.top + r.height/2 - vh/2) / vh;      /* -0.5 .. 0 .. +0.5 across the viewport */
+      bg.style.transform = 'translate3d(0,' + (p * -20).toFixed(1) + 'px,0)';
+      fg.style.transform = 'translate3d(0,' + (p *  32).toFixed(1) + 'px,0)';
+    }
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    update();
+  })();
+
+  /* ---------- Hero video: mask the loop seam with a brief crossfade to the poster still ---------- */
+  (function(){
+    if(reduce) return;
+    var v = document.querySelector('.hero__video'); if(!v) return;
+    v.addEventListener('timeupdate', function(){
+      if(!v.duration || isNaN(v.duration)) return;
+      var t = v.currentTime, d = v.duration;
+      v.style.opacity = (t > d - 0.45 || t < 0.35) ? '0.62' : '1';
+    });
+  })();
+
+  /* ---------- Hero canvas frame-scrub (works on every device incl. iOS; a progressive
+       enhancement over the always-on <video> loop; disabled under reduced-motion) ---------- */
+  (function(){
+    if(reduce || !hasIO) return;
+    var canvas = document.querySelector('.hero__canvas');
+    var hero   = document.getElementById('hero');
+    if(!canvas || !hero) return;
+    var ctx = canvas.getContext('2d'); if(!ctx) return;
+
+    var TOTAL = 48;
+    var dir = (window.matchMedia('(max-width: 900px)').matches ? 'mobile' : 'desktop');
+    var frames = new Array(TOTAL);
+    var cur = 0, target = 0, active = false, rafId = null;
+
+    function pad(n){ n = '' + n; while(n.length < 4) n = '0' + n; return n; }
+    function loadFrame(i){
+      if(frames[i]) return;
+      var img = new Image();
+      img.decoding = 'async';
+      img.src = 'assets/hero-frames/' + dir + '/frame-' + pad(i + 1) + '.webp';
+      frames[i] = img;
+    }
+    function ready(img){ return img && img.complete && img.naturalWidth > 0; }
+    function nearest(i){
+      if(ready(frames[i])) return frames[i];
+      for(var d = 1; d < TOTAL; d++){
+        if(ready(frames[i - d])) return frames[i - d];
+        if(ready(frames[i + d])) return frames[i + d];
+      }
+      return null;
+    }
+    function size(){
+      var r = canvas.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width  = Math.max(1, Math.round(r.width  * dpr));
+      canvas.height = Math.max(1, Math.round(r.height * dpr));
+    }
+    function draw(){
+      var f = nearest(Math.round(cur)); if(!f) return;
+      var cw = canvas.width, ch = canvas.height, iw = f.naturalWidth, ih = f.naturalHeight;
+      var s = Math.max(cw / iw, ch / ih), w = iw * s, h = ih * s;
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.drawImage(f, (cw - w) / 2, (ch - h) * 0.4, w, h);   /* object-position ~center 40% */
+    }
+    function progress(){
+      var r = hero.getBoundingClientRect();
+      var travel = Math.max(1, r.height);
+      var p = Math.min(1, Math.max(0, (-r.top) / travel));
+      target = p * (TOTAL - 1);
+      canvas.style.opacity = Math.min(1, (p * 5)).toFixed(3);   /* fade in as the scrub takes over */
+    }
+    function loop(){
+      cur += (target - cur) * 0.12;                            /* LERP for smoothness */
+      if(Math.abs(target - cur) < 0.01) cur = target;
+      draw();
+      if(active) rafId = requestAnimationFrame(loop);
+    }
+    function start(){ if(active) return; active = true; size(); rafId = requestAnimationFrame(loop); }
+    function stop(){ active = false; if(rafId) cancelAnimationFrame(rafId); }
+
+    /* lazy load: a sparse critical set first, then the rest */
+    for(var i = 0; i < TOTAL; i += 6) loadFrame(i);
+    loadFrame(0); loadFrame(TOTAL - 1);
+    setTimeout(function(){ for(var j = 0; j < TOTAL; j++) loadFrame(j); }, 500);
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting) start(); else stop(); });
+    }, {threshold:0});
+    io.observe(hero);
+    window.addEventListener('scroll', progress, {passive:true});
+    window.addEventListener('resize', function(){ size(); }, {passive:true});
+    progress();
+  })();
+})();
+</script>
+</body>
+</html>

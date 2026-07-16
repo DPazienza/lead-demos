@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ottocene — Ristorante di sera a Milano, Porta Venezia | La carta e i prezzi</title>
+<meta name="description" content="Ottocene cucina la tradizione regionale italiana con una mano contemporanea, solo di sera, in una sala raccolta a lume di candela in Via Sirtori a Milano. La carta, i piatti e i prezzi, per prenotare la tavola stasera dalle 19:00.">
+
+<link rel="canonical" href="https://www.ottocene.it/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ottocene — Ristorante di sera a Milano">
+<meta property="og:description" content="La tradizione regionale italiana con una mano contemporanea, solo di sera, a lume di candela in Via Sirtori. Guarda la carta e prenota la tua tavola.">
+<meta property="og:image" content="assets/hero-sala-notte.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ottocene — Ristorante di sera a Milano">
+<meta name="twitter:description" content="La tradizione regionale italiana con una mano contemporanea, solo di sera, a lume di candela in Via Sirtori.">
+<meta name="twitter:image" content="assets/hero-sala-notte.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Mulish:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Ottocene",
+  "servesCuisine": "Cucina regionale italiana",
+  "image": "https://www.ottocene.it/assets/hero-sala-notte.jpg",
+  "url": "https://www.ottocene.it/",
+  "telephone": "+393289282828",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Giuseppe Sirtori, 6",
+    "postalCode": "20129",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Ottocene%2C+Milano",
+  "sameAs": ["https://www.instagram.com/otto.cene/"]
+}
+</script>
+
+<style>
+  /* ============ BRAND TOKENS (defined ONCE) ============ */
+  :root{
+    --brand-ink:#F0E7D6;
+    --brand-surface:#15110C;
+    --brand-surface-alt:#1D1811;
+    --brand-accent:#C6A15C;
+    --brand-accent-ink:#17120B;
+    --brand-muted:#AB9C82;
+    --brand-line:#393226;
+
+    --font-display:'Bodoni Moda','Didot','Bodoni MT',Georgia,serif;
+    --font-body:'Mulish','Helvetica Neue',Arial,sans-serif;
+
+    --ease-signature:cubic-bezier(0.16,1,0.3,1);
+    --ease-micro:cubic-bezier(0.33,1,0.68,1);
+    --dur-reveal:900ms;
+    --dur-micro:220ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem,3rem + 8vw,9rem);
+    --container:min(1180px,92vw);
+    --radius:2px;
+
+    --fs-hero:clamp(2.75rem,1.6rem + 4.6vw,5.25rem);
+    --fs-h2:clamp(1.7rem,1.2rem + 1.8vw,2.6rem);
+    --fs-body:clamp(1rem,0.95rem + 0.22vw,1.15rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    line-height:1.7;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    position:relative;
+  }
+  img,video{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:var(--font-display);font-weight:500;
+    letter-spacing:-0.02em;line-height:1.08;margin:0;
+    font-optical-sizing:auto;text-wrap:balance;
+  }
+  p{margin:0 0 1rem;overflow-wrap:anywhere;text-wrap:pretty;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  :focus-visible{
+    outline:2px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:var(--radius);
+  }
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  /* faint film-grain texture, shared across the whole page so it reads as one late-evening shoot */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:1;
+    pointer-events:none;
+    opacity:.05;
+    mix-blend-mode:soft-light;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container{width:var(--container);margin-inline:auto;}
+
+  /* ============ EYEBROW + IL FILETTO MOTIF ============ */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.7rem;
+    font-family:var(--font-body);
+    font-size:.72rem;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--brand-muted);
+    margin:0 0 1.4rem;
+  }
+  .eyebrow::before{ /* il filetto — vertical tick */
+    content:"";display:inline-block;
+    width:1px;height:1.15em;
+    background:var(--brand-accent);
+  }
+
+  /* ============ WORDMARK (the mark IS the type) ============ */
+  .wordmark{
+    font-family:var(--font-display);
+    font-weight:500;
+    color:var(--brand-ink);
+    letter-spacing:0.04em;
+    line-height:1;
+    display:inline-flex;align-items:center;
+    white-space:nowrap;
+  }
+  .wordmark .seam{ /* the brass hairline splitting otto | cene */
+    display:inline-block;
+    width:1px;
+    height:0.72em;              /* slightly taller than x-height */
+    background:var(--brand-accent);
+    margin:0 0.09em;
+    align-self:center;
+    transform:translateY(0.04em);
+  }
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+    backdrop-filter:blur(9px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav__inner{
+    width:var(--container);margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;padding:1.05rem 0;
+  }
+  .nav__brand{font-size:1.35rem;text-decoration:none;}
+  .nav__links{display:flex;align-items:center;gap:1.8rem;}
+  .nav__link{
+    position:relative;
+    font-size:.82rem;font-weight:600;letter-spacing:0.05em;
+    text-transform:uppercase;text-decoration:none;
+    color:var(--brand-muted);
+    padding:.4rem 0;
+    transition:color var(--dur-micro) var(--ease-micro);
+  }
+  .nav__link:hover,.nav__link:focus-visible{color:var(--brand-ink);}
+  .nav__link.is-active{color:var(--brand-ink);}
+  .nav__link.is-active::after{ /* short brass rule under active nav */
+    content:"";position:absolute;left:0;bottom:-2px;
+    width:22px;height:1px;background:var(--brand-accent);
+  }
+  .nav__cta{
+    font-family:var(--font-body);
+    font-size:.8rem;font-weight:600;letter-spacing:0.05em;
+    text-transform:uppercase;text-decoration:none;
+    color:var(--brand-accent-ink);
+    background:var(--brand-accent);
+    padding:.62rem 1.15rem;border-radius:var(--radius);
+    border:1px solid var(--brand-accent);
+    transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro) var(--ease-micro);
+  }
+  .nav__cta:hover,.nav__cta:focus-visible{opacity:.9;}
+  .nav__cta:active{transform:scale(.97);}
+  .nav__toggle{
+    display:none;
+    background:none;border:1px solid var(--brand-line);
+    color:var(--brand-ink);
+    width:44px;height:44px;border-radius:var(--radius);
+    cursor:pointer;align-items:center;justify-content:center;
+  }
+  .nav__toggle svg{width:20px;height:20px;}
+
+  /* ============ HERO — LA COPERTINA ============ */
+  .hero{
+    position:relative;
+    min-height:clamp(560px,92vh,900px);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    padding:6rem 1.25rem;
+    background:var(--brand-surface);
+  }
+  .hero__media{
+    position:absolute;inset:0;z-index:0;
+    width:100%;height:100%;
+    object-fit:cover;object-position:50% 38%;
+    filter:saturate(1.06) contrast(1.04);
+  }
+  .hero__scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      radial-gradient(70% 60% at 50% 46%,rgba(21,17,12,0.12) 0%,rgba(21,17,12,0.62) 62%,rgba(21,17,12,0.9) 100%),
+      linear-gradient(to bottom,rgba(21,17,12,0.55) 0%,rgba(21,17,12,0.25) 40%,rgba(21,17,12,0.85) 100%);
+  }
+  .hero__inner{position:relative;z-index:2;max-width:760px;}
+  .hero h1{
+    font-size:var(--fs-hero);
+    font-weight:400;
+    margin:0;
+    text-shadow:0 2px 40px rgba(0,0,0,.55);
+  }
+  .hero h1 .wordmark{font-size:inherit;letter-spacing:0.05em;}
+  .hero h1 .wordmark .seam-draw{
+    width:3px;height:0.84em;align-self:center;margin:0 0.11em;overflow:visible;
+    transform:translateY(0.03em);
+    filter:drop-shadow(0 0 12px color-mix(in srgb,var(--brand-accent) 60%,transparent));
+  }
+  .seam-draw line{stroke:var(--brand-accent);} /* CSS token wins over the literal-hex fallback */
+  .hero__tagline{
+    display:block;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(1.1rem,0.9rem + 1vw,1.6rem);
+    color:var(--brand-ink);
+    letter-spacing:0.02em;
+    margin-top:1.1rem;
+  }
+  .hero__lede{
+    color:var(--brand-ink);
+    max-width:46ch;margin:1.6rem auto 2rem;
+    font-size:clamp(1rem,0.95rem + 0.3vw,1.2rem);
+  }
+  .hero__actions{
+    display:flex;flex-wrap:wrap;gap:.9rem 1.1rem;
+    align-items:center;justify-content:center;
+  }
+  .hero__proof{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-size:.9rem;color:var(--brand-ink);
+  }
+  .hero__proof strong{color:var(--brand-accent);font-weight:600;font-variant-numeric:tabular-nums;}
+  .hero__scrolltip{
+    position:absolute;left:50%;bottom:1.5rem;z-index:2;
+    transform:translateX(-50%);
+    font-size:.68rem;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--brand-muted);
+  }
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:var(--font-body);
+    font-size:.86rem;font-weight:600;letter-spacing:0.05em;
+    text-transform:uppercase;text-decoration:none;
+    padding:.85rem 1.5rem;border-radius:var(--radius);
+    cursor:pointer;
+    transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+  }
+  .btn--accent{
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    border:1px solid var(--brand-accent);
+  }
+  .btn--accent:hover,.btn--accent:focus-visible{opacity:.9;}
+  .btn--accent:active{transform:scale(.96);}
+  .btn--ghost{
+    background:transparent;color:var(--brand-ink);
+    border:1px solid color-mix(in srgb,var(--brand-ink) 40%,transparent);
+  }
+  .btn--ghost:hover,.btn--ghost:focus-visible{border-color:var(--brand-accent);color:var(--brand-accent);}
+  .btn--ghost:active{transform:scale(.96);}
+
+  /* star viz */
+  .stars{display:inline-flex;gap:2px;color:var(--brand-accent);line-height:1;}
+  .stars svg{width:1em;height:1em;fill:currentColor;}
+
+  /* ============ SECTION SHELL ============ */
+  /* rhythm is deliberately UNEVEN across sections (dense chapters, then a vast quiet gap) */
+  .section{padding-block:var(--space-section);position:relative;z-index:2;}
+  .section--alt{background:var(--brand-surface-alt);}
+  #maitre{padding-block:calc(var(--space-section) * 0.82) calc(var(--space-section) * 0.7);}
+  #portate{padding-block:calc(var(--space-section) * 0.78) calc(var(--space-section) * 0.95);}
+  #mano{padding-block:calc(var(--space-section) * 1.15);}
+  #sala{padding-block:calc(var(--space-section) * 0.9) calc(var(--space-section) * 1.25);}
+  #tavola{padding-block:calc(var(--space-section) * 1.05);}
+  #prenotare{padding-block:calc(var(--space-section) * 1.3) calc(var(--space-section) * 0.85);}
+  .rule{height:1px;background:var(--brand-line);border:0;margin:0;position:relative;z-index:2;}
+  .section-head{max-width:60ch;}
+  .section-head h2{font-size:var(--fs-h2);}
+  .section-head p{color:var(--brand-muted);margin-top:1rem;}
+
+  /* ============ IL BIGLIETTO DEL MAITRE ============ */
+  .maitre{
+    display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);
+    align-items:center;
+  }
+  .maitre__note p{font-size:clamp(1.05rem,1rem + 0.5vw,1.35rem);line-height:1.7;}
+  .maitre__note .lead-line{font-family:var(--font-display);font-style:italic;color:var(--brand-ink);}
+  .maitre__figure{position:relative;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);}
+  .maitre__figure img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 42%;border-radius:0;
+    aspect-ratio:3/4;max-height:560px;
+    box-shadow:inset 0 -50px 70px -40px rgba(0,0,0,.4);
+    filter:saturate(1.06) contrast(1.04);
+  }
+  .maitre__sig{
+    margin-top:1.4rem;font-family:var(--font-display);font-style:italic;
+    color:var(--brand-muted);font-size:1.05rem;
+  }
+
+  /* ============ LE PORTATE ============ */
+  .portate__intro{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:flex-end;margin-bottom:2.5rem;}
+  .carta-rail{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:minmax(78%,1fr);
+    gap:clamp(1.2rem,3vw,2.4rem);
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:1.4rem;
+    scrollbar-width:thin;
+    scrollbar-color:var(--brand-line) transparent;
+  }
+  .carta-rail::-webkit-scrollbar{height:6px;}
+  .carta-rail::-webkit-scrollbar-thumb{background:var(--brand-line);border-radius:99px;}
+  .portata{scroll-snap-align:start;}
+  .portata__frame{display:block;position:relative;}
+  .portata__img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 38%;
+    box-shadow:0 24px 48px -26px rgba(0,0,0,.6);
+    filter:saturate(1.08) contrast(1.05);
+  }
+  .portata__cat{
+    display:block;margin:1.1rem 0 .5rem;
+    font-size:.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--brand-muted);
+  }
+  .dish{display:flex;align-items:baseline;gap:.4rem;}
+  .dish__name{font-family:var(--font-display);font-size:1.5rem;font-weight:500;}
+  .dish__leader{
+    flex:1 1 auto;min-width:1.2rem;
+    border-bottom:1px dotted var(--brand-accent);
+    transform:translateY(-.28em);
+    opacity:.85;
+  }
+  .dish__price{color:var(--brand-accent);font-weight:600;font-size:1.15rem;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .portata__desc{color:var(--brand-muted);margin-top:.7rem;font-size:.98rem;}
+  .listino-note{margin-top:1.8rem;font-size:.8rem;color:var(--brand-muted);opacity:.85;}
+
+  /* ============ LA MANO IN CUCINA ============ */
+  .mano{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;}
+  .mano__img{
+    width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 30%;
+    box-shadow:0 28px 56px -28px rgba(0,0,0,.6);
+    filter:saturate(1.06) contrast(1.04);
+  }
+  .mano__list{margin-top:1.6rem;display:grid;gap:1.1rem;}
+  .mano__list li{padding-left:1.1rem;position:relative;color:var(--brand-ink);}
+  .mano__list li::before{content:"";position:absolute;left:0;top:.65em;width:12px;height:1px;background:var(--brand-accent);}
+  .mano__list b{font-family:var(--font-display);font-weight:500;font-style:italic;}
+
+  /* ============ LA SALA (editorial set: main + detail) ============ */
+  .sala{position:relative;}
+  .sala__stage{position:relative;margin-top:2.5rem;}
+  .sala__main{
+    width:min(88%,900px);aspect-ratio:16/10;object-fit:cover;object-position:50% 45%;
+    box-shadow:0 32px 64px -28px rgba(0,0,0,.65);
+    filter:saturate(1.05) contrast(1.04);
+  }
+  .sala__detail{
+    position:absolute;right:0;bottom:-2.5rem;
+    width:min(42%,300px);aspect-ratio:3/4;object-fit:cover;
+    border:6px solid var(--brand-surface-alt);
+    box-shadow:0 22px 44px -18px rgba(0,0,0,.7);
+    filter:saturate(1.08) contrast(1.05);
+  }
+  .sala__caption{margin-top:4rem;max-width:52ch;color:var(--brand-muted);}
+  .sala__materials{
+    display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:1.6rem;
+    font-family:var(--font-display);font-style:italic;color:var(--brand-ink);
+  }
+  .sala__materials span{position:relative;padding-left:1rem;}
+  .sala__materials span::before{content:"";position:absolute;left:0;top:.6em;width:1px;height:1em;background:var(--brand-accent);}
+
+  /* ============ LA NOSTRA TAVOLA (social proof) ============ */
+  .tavola{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;}
+  .tavola__img{
+    width:100%;aspect-ratio:16/11;object-fit:cover;object-position:50% 40%;
+    box-shadow:0 30px 60px -26px rgba(0,0,0,.6);
+    filter:saturate(1.06) contrast(1.04);
+  }
+  .rating{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;}
+  .rating__value{font-family:var(--font-display);font-size:clamp(3.2rem,2rem + 5vw,5rem);font-weight:500;color:var(--brand-ink);line-height:.9;font-variant-numeric:tabular-nums;}
+  .rating__stars .stars{font-size:1.25rem;}
+  .rating__source{color:var(--brand-muted);font-size:.9rem;margin-top:.4rem;}
+  .tavola__quote{
+    font-family:var(--font-display);font-style:italic;
+    font-size:clamp(1.2rem,1rem + 1vw,1.7rem);line-height:1.5;
+    margin:1.8rem 0 .8rem;color:var(--brand-ink);
+    border-left:1px solid var(--brand-accent);padding-left:1.3rem;
+  }
+  .tavola__attr{color:var(--brand-muted);font-size:.85rem;}
+
+  /* ============ PRENOTARE ============ */
+  .prenota{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,4rem);align-items:start;}
+  .prenota__panel{
+    background:var(--brand-surface);
+    border:1px solid var(--brand-line);
+    border-radius:var(--radius);
+    padding:clamp(1.6rem,3vw,2.4rem);
+    position:sticky;top:6rem;
+  }
+  .prenota__row{padding:1.1rem 0;border-top:1px solid var(--brand-line);}
+  .prenota__row:first-of-type{border-top:0;padding-top:0;}
+  .prenota__label{font-size:.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-muted);margin-bottom:.35rem;}
+  .prenota__value{font-size:1.05rem;color:var(--brand-ink);font-variant-numeric:tabular-nums;}
+  .prenota__phone{font-family:var(--font-display);font-size:1.5rem;color:var(--brand-ink);text-decoration:none;font-variant-numeric:tabular-nums;letter-spacing:0.01em;}
+  .prenota__phone:hover,.prenota__phone:focus-visible{color:var(--brand-accent);}
+  .prenota__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem;}
+  .prenota__reassure{margin-top:1.4rem;font-size:.82rem;color:var(--brand-muted);}
+  .prenota__lead p{color:var(--brand-muted);}
+  .prenota__lead .hours{
+    font-family:var(--font-display);font-size:clamp(1.6rem,1.2rem + 2vw,2.4rem);
+    color:var(--brand-ink);margin:.4rem 0 1.2rem;
+    font-variant-numeric:tabular-nums;
+  }
+  .prenota__hours-note{font-size:.8rem;color:var(--brand-muted);opacity:.85;}
+
+  /* ============ COLOPHON ============ */
+  .colophon{background:var(--brand-surface);text-align:center;padding-block:clamp(3.5rem,3rem + 5vw,6rem);}
+  .colophon__mark{font-size:clamp(2rem,1.5rem + 3vw,3.4rem);margin-bottom:1.2rem;}
+  .colophon__mark .wordmark .seam{height:0.78em;}
+  .colophon__links{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;margin:1.4rem 0;font-size:.9rem;}
+  .colophon__links a{color:var(--brand-muted);text-decoration:none;transition:color var(--dur-micro) var(--ease-micro);}
+  .colophon__links a:hover,.colophon__links a:focus-visible{color:var(--brand-accent);}
+  .colophon__hours{font-size:.85rem;color:var(--brand-muted);font-variant-numeric:tabular-nums;}
+  .colophon__legal{font-size:.72rem;color:var(--brand-muted);opacity:.7;margin-top:1.8rem;max-width:58ch;margin-inline:auto;}
+
+  /* ============ STICKY MOBILE ACTION BAR ============ */
+  .actionbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:none;
+    align-items:center;justify-content:space-between;gap:.75rem;
+    padding:.7rem clamp(1rem,4vw,1.4rem);
+    padding-bottom:calc(.7rem + env(safe-area-inset-bottom));
+    background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+    backdrop-filter:blur(10px);
+    border-top:1px solid var(--brand-line);
+  }
+  .actionbar__proof{font-size:.8rem;line-height:1.25;color:var(--brand-ink);}
+  .actionbar__proof strong{color:var(--brand-accent);}
+  .actionbar__proof span{display:block;color:var(--brand-muted);font-size:.7rem;}
+  .actionbar .btn{flex:0 0 auto;padding:.7rem 1.15rem;}
+
+  /* ============ MOTION LAYER (pass 3) — "adjusting to the candlelight" ============ */
+  /* Progressive enhancement: every hidden start-state is gated behind html.js, so with
+     JS off / module blocked, all content is fully visible. One motion language: the brand
+     --ease-signature / --dur-reveal / --stagger tokens drive every reveal. */
+
+  /* --- reveal treatments, varied by content role --- */
+  /* text blocks rise from the dark */
+  html.js .rise{opacity:0;transform:translateY(24px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .rise.in,html.js .in .rise{opacity:1;transform:none;}
+
+  /* media scales in — depth, the eye focusing */
+  html.js .media{opacity:0;transform:scale(1.045);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .media.in,html.js .in .media{opacity:1;transform:none;}
+
+  /* grouped cascade: children of a group settle one after another (the maître line-cascade) */
+  html.js .grp > *{opacity:0;transform:translateY(22px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .grp.in > *{opacity:1;transform:none;}
+  /* headings get a mask wipe (top→down) instead of a plain rise */
+  html.js .grp > .head{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(8px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+  html.js .grp.in > .head{opacity:1;clip-path:inset(0 0 0 0);transform:none;}
+  html.js .grp.in > *:nth-child(1){transition-delay:0ms;}
+  html.js .grp.in > *:nth-child(2){transition-delay:var(--stagger);}
+  html.js .grp.in > *:nth-child(3){transition-delay:calc(var(--stagger) * 2);}
+  html.js .grp.in > *:nth-child(4){transition-delay:calc(var(--stagger) * 3);}
+  html.js .grp.in > *:nth-child(5){transition-delay:calc(var(--stagger) * 4);}
+  html.js .grp.in > *:nth-child(6){transition-delay:calc(var(--stagger) * 5);}
+  html.js .grp.in > *:nth-child(7){transition-delay:calc(var(--stagger) * 6);}
+
+  /* --- 'Candle wipe': each plate is uncovered left→right by a brass edge as it enters --- */
+  html.js .portata__frame{position:relative;overflow:hidden;}
+  html.js .wipe-rail .portata__img{clip-path:inset(0 100% 0 0);will-change:clip-path;
+    transition:clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-micro) var(--ease-signature),box-shadow var(--dur-micro) var(--ease-micro),filter var(--dur-micro) var(--ease-micro);}
+  html.js .wipe-rail.in .portata__img{clip-path:inset(0 0 0 0);}
+  html.js .wipe-rail.in .portata:nth-child(2) .portata__img{transition-delay:calc(var(--stagger) * 1.4);}
+  html.js .wipe-rail.in .portata:nth-child(3) .portata__img{transition-delay:calc(var(--stagger) * 2.8);}
+  html.js .wipe-rail.in .portata:nth-child(4) .portata__img{transition-delay:calc(var(--stagger) * 4.2);}
+  /* the brass hairline that sweeps with the wipe (fades out mid-travel so its stop is invisible) */
+  html.js .portata__frame::after{content:"";position:absolute;top:0;bottom:0;left:0;width:2px;
+    background:var(--brand-accent);box-shadow:0 0 12px 1px color-mix(in srgb,var(--brand-accent) 55%,transparent);
+    opacity:0;transform:translateX(0);pointer-events:none;}
+  html.js .wipe-rail.in .portata:nth-child(1) .portata__frame::after{animation:candleEdge var(--dur-reveal) var(--ease-signature) 0ms forwards;}
+  html.js .wipe-rail.in .portata:nth-child(2) .portata__frame::after{animation:candleEdge var(--dur-reveal) var(--ease-signature) calc(var(--stagger) * 1.4) forwards;}
+  html.js .wipe-rail.in .portata:nth-child(3) .portata__frame::after{animation:candleEdge var(--dur-reveal) var(--ease-signature) calc(var(--stagger) * 2.8) forwards;}
+  html.js .wipe-rail.in .portata:nth-child(4) .portata__frame::after{animation:candleEdge var(--dur-reveal) var(--ease-signature) calc(var(--stagger) * 4.2) forwards;}
+  @keyframes candleEdge{0%{opacity:0;transform:translateX(0);}18%{opacity:.85;}100%{opacity:0;transform:translateX(340px);}}
+
+  /* --- 'La carta' horizontal course travel: the ribbon drifts along its own X axis on scroll --- */
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion:no-preference){
+      html.js .carta-rail{animation:cartaTravel linear both;animation-timeline:view();animation-range:entry 5% exit 95%;}
+      @keyframes cartaTravel{from{transform:translateX(1.5%);}to{transform:translateX(-1.5%);}}
+    }
+  }
+
+  /* --- 'Room deepening' in La sala: scroll-scrubbed push-in + a warm vignette closing on the edges --- */
+  .sala__vignette{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;
+    box-shadow:inset 0 0 90px 34px color-mix(in srgb,var(--brand-surface) 90%,transparent);}
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion:no-preference){
+      html.js .sala__stage .sala__main{animation:salaDeepen linear both;animation-timeline:view();animation-range:entry 0% cover 75%;}
+      @keyframes salaDeepen{from{transform:scale(1);}to{transform:scale(1.055);}}
+      html.js .sala__vignette{animation:salaVignette linear both;animation-timeline:view();animation-range:entry 12% cover 85%;}
+      @keyframes salaVignette{from{opacity:0;}to{opacity:1;}}
+    }
+  }
+
+  /* --- Hero 'eye adjusting' entrance: the room lifts from near-black, type settles, seam draws once --- */
+  html.js .hero__media{opacity:0;filter:brightness(0.16) saturate(1.06) contrast(1.04);
+    transition:opacity 1200ms var(--ease-signature),filter 1700ms var(--ease-signature);}
+  html.js .hero.is-loaded .hero__media{opacity:1;filter:saturate(1.06) contrast(1.04);}
+  html.js .hero .wordmark,
+  html.js .hero .hero__tagline,
+  html.js .hero .hero__lede,
+  html.js .hero .hero__actions{opacity:0;transform:translateY(18px);
+    transition:opacity 660ms var(--ease-signature),transform 660ms var(--ease-signature);}
+  html.js .hero.is-loaded .wordmark{opacity:1;transform:none;transition-delay:140ms;}
+  html.js .hero.is-loaded .hero__tagline{opacity:1;transform:none;transition-delay:300ms;}
+  html.js .hero.is-loaded .hero__lede{opacity:1;transform:none;transition-delay:440ms;}
+  html.js .hero.is-loaded .hero__actions{opacity:1;transform:none;transition-delay:560ms;}
+  html.js .hero__scrolltip{opacity:0;transition:opacity 700ms var(--ease-signature) 900ms;}
+  html.js .hero.is-loaded .hero__scrolltip{opacity:1;}
+  /* the brass seam physically draws itself as an SVG stroke */
+  html.js .seam-draw line{stroke-dasharray:44;stroke-dashoffset:44;
+    transition:stroke-dashoffset 900ms var(--ease-signature);}
+  html.js .hero.is-loaded .seam-draw line{stroke-dashoffset:0;transition-delay:660ms;}
+
+  /* --- ambient 'alive' film-grain drift (sub-perceptual; never on text or the CTA) --- */
+  @media (prefers-reduced-motion:no-preference){
+    body::before{animation:grainDrift 18s steps(5) infinite alternate;}
+    @keyframes grainDrift{from{transform:translate(0,0);}to{transform:translate(-3px,2px);}}
+  }
+
+  /* ============ CHAPTER RAIL (desktop) ============ */
+  .chapters{position:fixed;right:clamp(.9rem,1.8vw,1.6rem);top:50%;transform:translateY(-50%);
+    z-index:55;display:none;flex-direction:column;gap:.95rem;align-items:center;padding:.5rem 0;}
+  .chapters::before,.chapters::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;
+    transform:translateX(-50%);}
+  .chapters::before{background:var(--brand-line);}
+  .chapters::after{background:var(--brand-accent);transform:translateX(-50%) scaleY(0);transform-origin:top;}
+  @supports (animation-timeline: scroll()){
+    @media (prefers-reduced-motion:no-preference){
+      .chapters::after{animation:railFill linear both;animation-timeline:scroll(root);}
+      @keyframes railFill{from{transform:translateX(-50%) scaleY(0);}to{transform:translateX(-50%) scaleY(1);}}
+    }
+  }
+  .chapters__dot{position:relative;z-index:1;width:24px;height:24px;display:grid;place-items:center;
+    border-radius:50%;text-decoration:none;}
+  .chapters__dot span{width:7px;height:7px;border-radius:50%;background:var(--brand-line);
+    transition:background var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);}
+  .chapters__dot:hover span,.chapters__dot:focus-visible span{background:var(--brand-muted);}
+  .chapters__dot.is-active span{background:var(--brand-accent);transform:scale(1.6);}
+  @media (min-width:1040px) and (hover:hover) and (pointer:fine){.chapters{display:flex;}}
+
+  /* ============ POINTER MICRO-INTERACTIONS (desktop only) ============ */
+  @media (hover:hover) and (pointer:fine){
+    /* image bulge on card hover (transition is defined on the wipe rule so it stays smooth) */
+    .portata:hover .portata__img{transform:scale(1.03);}
+    /* price leaders extend / brighten as a course is considered */
+    .dish__leader{transition:opacity var(--dur-micro) var(--ease-micro),border-color var(--dur-micro) var(--ease-micro);}
+    .dish__price{transition:transform var(--dur-micro) var(--ease-signature),color var(--dur-micro) var(--ease-micro);}
+    .portata:hover .dish__leader{opacity:1;}
+    .portata:hover .dish__price{transform:translateX(3px);}
+    /* links draw a brass underline from the left */
+    .colophon__links a,.prenota__phone{position:relative;}
+    .colophon__links a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;
+      background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+      transition:transform var(--dur-micro) var(--ease-micro);}
+    .colophon__links a:hover::after,.colophon__links a:focus-visible::after{transform:scaleX(1);}
+  }
+  /* Reserve CTA press: springs down and settles on the signature ease (no new curve, no bounce) */
+  .btn{transition:transform var(--dur-micro) var(--ease-signature),opacity var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro),border-color var(--dur-micro) var(--ease-micro),color var(--dur-micro) var(--ease-micro);}
+  .btn:active{transform:scale(.95);}
+
+  /* ============ RESPONSIVE ============ */
+  @media (min-width:760px){
+    .maitre{grid-template-columns:1.05fr 0.95fr;}
+    .maitre--offset .maitre__note{order:1;}
+    .mano{grid-template-columns:1fr 1fr;}
+    .tavola{grid-template-columns:1fr 1fr;}
+    .prenota{grid-template-columns:1.1fr 0.9fr;}
+  }
+  @media (min-width:980px){
+    .carta-rail{grid-auto-columns:minmax(360px,1fr);}
+  }
+
+  @media (max-width:759px){
+    .nav__links{
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:flex-start;gap:0;
+      background:var(--brand-surface);
+      border-bottom:1px solid var(--brand-line);
+      padding:.5rem 0;
+      display:none;
+    }
+    .nav__links.is-open{display:flex;}
+    .nav__link{width:var(--container);margin-inline:auto;padding:.9rem 0;font-size:.95rem;}
+    .nav__link.is-active::after{display:none;}
+    .nav__cta{display:none;}
+    .nav__toggle{display:inline-flex;}
+    .sala__detail{position:static;width:60%;margin-top:1rem;margin-left:auto;border-width:0;}
+    .sala__caption{margin-top:1.6rem;}
+    .actionbar{display:flex;}
+    body{padding-bottom:5rem;} /* clear space for the sticky action bar */
+    .prenota__panel{position:static;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{
+      animation-duration:0.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.001ms !important;
+      animation-delay:0ms !important;
+      transition-delay:0ms !important;
+    }
+    /* force every reveal to its final visible state, regardless of JS / observer */
+    html.js .rise,html.js .media,html.js .grp > *,html.js .grp > .head{
+      opacity:1 !important;transform:none !important;clip-path:none !important;}
+    html.js .wipe-rail .portata__img{clip-path:none !important;}
+    html.js .portata__frame::after{opacity:0 !important;}
+    html.js .hero__media{opacity:1 !important;filter:saturate(1.06) contrast(1.04) !important;}
+    html.js .hero .wordmark,html.js .hero .hero__tagline,
+    html.js .hero .hero__lede,html.js .hero .hero__actions,
+    html.js .hero__scrolltip{opacity:1 !important;transform:none !important;}
+    html.js .seam-draw line{stroke-dashoffset:0 !important;}
+    .sala__vignette{opacity:0 !important;}
+  }
+</style>
+<script>/* set the JS flag before first paint so reveal start-states never flash for no-JS users */
+document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Navigazione principale">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#copertina" aria-label="Ottocene, torna in cima">
+      <span class="wordmark">otto<span class="seam" aria-hidden="true"></span>cene</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a class="nav__link" href="#maitre">Il maître</a></li>
+      <li><a class="nav__link" href="#portate">Le portate</a></li>
+      <li><a class="nav__link" href="#sala">La sala</a></li>
+      <li><a class="nav__link" href="#tavola">La tavola</a></li>
+      <li><a class="nav__link" href="#prenotare">Prenotare</a></li>
+      <li><a class="nav__cta" data-cta href="tel:+393289282828">Chiama</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ CHAPTER RAIL (desktop nav dots) ============ -->
+<nav class="chapters" aria-label="Sezioni della pagina">
+  <a class="chapters__dot" href="#maitre" aria-label="Il maître"><span aria-hidden="true"></span></a>
+  <a class="chapters__dot" href="#portate" aria-label="Le portate"><span aria-hidden="true"></span></a>
+  <a class="chapters__dot" href="#mano" aria-label="La mano in cucina"><span aria-hidden="true"></span></a>
+  <a class="chapters__dot" href="#sala" aria-label="La sala"><span aria-hidden="true"></span></a>
+  <a class="chapters__dot" href="#tavola" aria-label="La nostra tavola"><span aria-hidden="true"></span></a>
+  <a class="chapters__dot" href="#prenotare" aria-label="Prenotare"><span aria-hidden="true"></span></a>
+</nav>
+
+<main>
+
+<!-- ============ 1 · LA COPERTINA ============ -->
+<header class="hero" id="copertina">
+  <video class="hero__media" autoplay muted loop playsinline poster="assets/hero-sala-notte.jpg"
+         aria-hidden="true">
+    <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+  </video>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <h1>
+      <span class="wordmark">otto<svg class="seam-draw" viewBox="0 0 4 44" preserveAspectRatio="none" aria-hidden="true"><line x1="2" y1="1" x2="2" y2="43" stroke="#C6A15C" stroke-width="2" stroke-linecap="round"/></svg>cene</span>
+      <span class="hero__tagline">Solo di sera</span>
+    </h1>
+    <p class="hero__lede">La tradizione regionale italiana, cucinata con una mano contemporanea. Una sala raccolta a lume di candela, a Porta Venezia. Apriamo quando cala la sera.</p>
+    <div class="hero__actions">
+      <a class="btn btn--accent" data-cta href="tel:+393289282828">Chiama per prenotare</a>
+      <a class="btn btn--ghost" href="#portate">Vedi la carta</a>
+      <span class="hero__proof">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <strong>4,8</strong> su Google
+      </span>
+    </div>
+  </div>
+  <span class="hero__scrolltip" aria-hidden="true">Sfoglia la carta</span>
+</header>
+
+<!-- ============ 2 · IL BIGLIETTO DEL MAITRE ============ -->
+<section class="section" id="maitre" aria-labelledby="maitre-h">
+  <div class="container">
+    <div class="maitre maitre--offset">
+      <div class="maitre__note io grp">
+        <p class="eyebrow">Il biglietto del maître</p>
+        <h2 id="maitre-h" class="head">Un solo turno, quando fuori è già buio.</h2>
+        <p class="lead-line">Cuciniamo la sera, e soltanto la sera.</p>
+        <p>Mettiamo in tavola la tradizione regionale italiana: i tortelli tirati a mano, il brasato, lo zabaione. Piatti che riconoscete, rifiniti con una mano contemporanea.</p>
+        <p>La sala è piccola, in legno scuro e ottone, illuminata a candela. Qui si sta seduti senza fretta, si parla piano, si beve bene. Una cena, non uno spettacolo.</p>
+        <p class="maitre__sig">— La tavola di Ottocene, Via Sirtori, Milano</p>
+      </div>
+      <figure class="maitre__figure io media">
+        <img src="assets/hero-dettaglio-tavola.jpg" alt="Dettaglio di un tavolo apparecchiato: candela in ottone, tovagliolo di lino avorio e posate">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ 3 · LE PORTATE ============ -->
+<section class="section section--alt" id="portate" aria-labelledby="portate-h">
+  <div class="container">
+    <div class="portate__intro">
+      <div class="section-head io grp">
+        <p class="eyebrow">Le portate</p>
+        <h2 id="portate-h" class="head">La carta, dall'antipasto al dolce.</h2>
+        <p>Alcuni dei piatti che troverete stasera. La cucina segue la stagione e le regioni d'Italia, un corso alla volta.</p>
+      </div>
+    </div>
+
+    <ul class="carta-rail io wipe-rail" aria-label="Piatti in carta">
+      <li class="portata">
+        <span class="portata__frame"><img class="portata__img" src="assets/portata-antipasto.jpg" alt="Antipasto regionale impiattato con tocco contemporaneo su piatto scuro"></span>
+        <span class="portata__cat">Antipasto</span>
+        <div class="dish">
+          <span class="dish__name">Affettati e ricotta montata</span>
+          <span class="dish__leader" aria-hidden="true"></span>
+          <span class="dish__price">14 €</span>
+        </div>
+        <p class="portata__desc">Salumi tagliati sottili, ricotta montata, olio nuovo e briciole tostate.</p>
+      </li>
+      <li class="portata">
+        <span class="portata__frame"><img class="portata__img" src="assets/portata-primo.jpg" alt="Primo regionale, tortelli al burro e salvia, impiattato con eleganza contemporanea"></span>
+        <span class="portata__cat">Primo</span>
+        <div class="dish">
+          <span class="dish__name">Tortelli burro e salvia</span>
+          <span class="dish__leader" aria-hidden="true"></span>
+          <span class="dish__price">16 €</span>
+        </div>
+        <p class="portata__desc">Tirati a mano, burro nocciola, salvia e grana a scaglie.</p>
+      </li>
+      <li class="portata">
+        <span class="portata__frame"><img class="portata__img" src="assets/portata-secondo.jpg" alt="Secondo regionale, guancia brasata su polenta, impiattato in chiave moderna"></span>
+        <span class="portata__cat">Secondo</span>
+        <div class="dish">
+          <span class="dish__name">Guancia brasata su polenta</span>
+          <span class="dish__leader" aria-hidden="true"></span>
+          <span class="dish__price">22 €</span>
+        </div>
+        <p class="portata__desc">Brasata lenta, riduzione scura, polenta morbida e verdure di stagione.</p>
+      </li>
+      <li class="portata">
+        <span class="portata__frame"><img class="portata__img" src="assets/portata-dolce.jpg" alt="Dolce regionale, zabaione e amaretto rivisitati con tocco contemporaneo"></span>
+        <span class="portata__cat">Dolce</span>
+        <div class="dish">
+          <span class="dish__name">Zabaione e amaretto</span>
+          <span class="dish__leader" aria-hidden="true"></span>
+          <span class="dish__price">9 €</span>
+        </div>
+        <p class="portata__desc">Il classico zabaione, amaretto croccante, un tocco contemporaneo.</p>
+      </li>
+    </ul>
+    <p class="listino-note">Piatti reali dalla nostra carta. I prezzi qui indicati sono illustrativi e vanno confermati: la carta cambia con la stagione.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ 4 · LA MANO IN CUCINA ============ -->
+<section class="section" id="mano" aria-labelledby="mano-h">
+  <div class="container">
+    <div class="mano">
+      <figure class="mano__figure io media">
+        <img class="mano__img" src="assets/mano-in-cucina.jpg" alt="Le mani dello chef rifiniscono un piatto al passe, di sera">
+      </figure>
+      <div class="io grp">
+        <p class="eyebrow">La mano in cucina</p>
+        <h2 id="mano-h" class="head">La tradizione, rivista con misura.</h2>
+        <p>Partiamo dalla ricetta di casa e le togliamo il superfluo. Stesso sapore, gesto più pulito. Il tocco creativo si vede al passe, non nel nome del piatto.</p>
+        <ul class="mano__list">
+          <li><b>Radice regionale.</b> Ogni portata nasce da una ricetta italiana precisa, non da un'idea astratta.</li>
+          <li><b>Mano contemporanea.</b> Impiattiamo essenziale, dosiamo i grassi, lasciamo respirare il piatto.</li>
+          <li><b>Rifinitura a vista.</b> L'ultimo gesto arriva a candela accesa, poco prima che il piatto esca.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ 5 · LA SALA ============ -->
+<section class="section section--alt" id="sala" aria-labelledby="sala-h">
+  <div class="container">
+    <div class="sala">
+      <div class="section-head io grp">
+        <p class="eyebrow">La sala</p>
+        <h2 id="sala-h" class="head">Metà del piatto è la luce.</h2>
+      </div>
+      <div class="sala__stage io rise">
+        <img class="sala__main" src="assets/sala-angolo.jpg" alt="Un angolo raccolto della sala, panca e tavolo illuminati da una candela">
+        <img class="sala__detail" src="assets/sala-materiali.jpg" alt="Dettaglio dei materiali della sala: ottone, legno di noce scuro e lino avorio">
+        <span class="sala__vignette" aria-hidden="true"></span>
+      </div>
+      <div class="sala__caption io grp">
+        <p>Pochi tavoli, legno scuro, ottone caldo e lino avorio. La luce è bassa e viene dalle candele. Per un locale che apre solo di sera, l'atmosfera è parte della cena.</p>
+        <div class="sala__materials" aria-hidden="true">
+          <span>Noce scuro</span>
+          <span>Ottone</span>
+          <span>Lino avorio</span>
+          <span>Candela</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ 6 · LA NOSTRA TAVOLA (social proof) ============ -->
+<section class="section" id="tavola" aria-labelledby="tavola-h">
+  <div class="container">
+    <div class="tavola">
+      <figure class="io media">
+        <img class="tavola__img" src="assets/tavola-conviviale.jpg" alt="Una tavola conviviale di sera, brindisi con i calici tra amici">
+      </figure>
+      <div class="io grp">
+        <p class="eyebrow">La nostra tavola</p>
+        <h2 id="tavola-h" class="head">Una sera che vale il tavolo.</h2>
+        <div class="rating">
+          <span class="rating__value" data-count="4,8">4,8</span>
+          <span class="rating__stars">
+            <span class="stars" role="img" aria-label="Valutazione media 4,8 su 5">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            </span>
+            <span class="rating__source">Valutazione media su Google, costante nel tempo.</span>
+          </span>
+        </div>
+        <blockquote class="tavola__quote">Chi torna racconta la stessa cosa: piatti familiari fatti con cura, una sala calda, una sera senza fretta.</blockquote>
+        <p class="tavola__attr">Sintesi delle recensioni, non una citazione attribuita a una singola persona.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ 7 · PRENOTARE ============ -->
+<section class="section section--alt" id="prenotare" aria-labelledby="prenota-h">
+  <div class="container">
+    <div class="prenota">
+      <div class="prenota__lead io grp">
+        <p class="eyebrow">Prenotare</p>
+        <h2 id="prenota-h" class="head">Ci si siede dalle 19:00.</h2>
+        <p class="hours">Tutte le sere, dalle 19:00</p>
+        <p>Siamo in Via Giuseppe Sirtori, a due passi da Porta Venezia. La sala è piccola: per la vostra tavola conviene chiamare.</p>
+        <p>Rispondiamo al telefono e fissiamo insieme la sera. Nessun modulo, nessuna attesa.</p>
+        <p class="prenota__hours-note">Orario di apertura serale reale; l'orario di chiusura viene confermato al telefono.</p>
+      </div>
+
+      <aside class="prenota__panel io rise" aria-label="Contatti e indirizzo">
+        <div class="prenota__row">
+          <p class="prenota__label">Telefono</p>
+          <a class="prenota__phone" href="tel:+393289282828">+39 328 9282828</a>
+        </div>
+        <div class="prenota__row">
+          <p class="prenota__label">Indirizzo</p>
+          <p class="prenota__value">Via Giuseppe Sirtori, 6<br>20129 Milano</p>
+        </div>
+        <div class="prenota__row">
+          <p class="prenota__label">Orari</p>
+          <p class="prenota__value">Aperti la sera, dalle 19:00</p>
+        </div>
+        <div class="prenota__actions">
+          <a class="btn btn--accent" data-cta href="tel:+393289282828">Chiama per prenotare</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ottocene%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+        </div>
+        <p class="prenota__reassure">Vi rispondiamo noi, direttamente dalla sala.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 8 · COLOPHON ============ -->
+<footer class="colophon" aria-label="Chiusura">
+  <div class="container">
+    <p class="colophon__mark">
+      <span class="wordmark">otto<span class="seam" aria-hidden="true"></span>cene</span>
+    </p>
+    <p class="colophon__hours">Ristorante di sera · Via Giuseppe Sirtori 6, Milano · dalle 19:00</p>
+    <div class="colophon__links">
+      <a href="tel:+393289282828">+39 328 9282828</a>
+      <a href="https://www.instagram.com/otto.cene/" target="_blank" rel="noopener">Instagram · otto.cene</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Ottocene%2C+Milano" target="_blank" rel="noopener">Come arrivare</a>
+    </div>
+    <p class="colophon__legal">Pagina dimostrativa. I prezzi in carta sono illustrativi e vanno confermati; telefono, indirizzo e valutazione Google sono reali.</p>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE ACTION BAR ============ -->
+<div class="actionbar">
+  <div class="actionbar__proof">
+    <strong>4,8</strong> su Google
+    <span>Ristorante di sera · Porta Venezia</span>
+  </div>
+  <a class="btn btn--accent" data-cta href="tel:+393289282828">Chiama</a>
+</div>
+
+<script>
+  // Honor reduced-motion: hold the hero on its poster still instead of looping
+  (function(){
+    try{
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        var v = document.querySelector('.hero__media');
+        if(v && v.pause){ v.removeAttribute('autoplay'); v.pause(); }
+      }
+    }catch(e){}
+  })();
+
+  // Mobile nav toggle
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    if(!toggle || !links) return;
+    function close(){ links.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Apri il menu'); }
+    function open(){ links.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); toggle.setAttribute('aria-label','Chiudi il menu'); }
+    toggle.addEventListener('click', function(){
+      links.classList.contains('is-open') ? close() : open();
+    });
+    links.addEventListener('click', function(e){ if(e.target.closest('a')) close(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  })();
+
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero 'eye adjusting' entrance — trigger the staggered load sequence after first paint
+  (function(){
+    var hero = document.getElementById('copertina');
+    if(!hero) return;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('is-loaded'); }); });
+  })();
+
+  // Reveal on scroll — ONE observer, treatments are pure CSS by class; unobserve after firing
+  (function(){
+    var els = document.querySelectorAll('.io');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold:0.16, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Count-up on the real aggregate rating — animates 0 -> 4,8 once, then leaves the true value
+  (function(){
+    var el = document.querySelector('[data-count]');
+    if(!el || !('IntersectionObserver' in window)) return;
+    var target = parseFloat(el.getAttribute('data-count').replace(',', '.'));
+    if(isNaN(target)) return;
+    function fmt(n){ return n.toFixed(1).replace('.', ','); }
+    if(REDUCED){ el.textContent = fmt(target); return; }
+    var done = false;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting && !done){
+          done = true; io.unobserve(en.target);
+          var start = null, dur = 1100;
+          function step(ts){
+            if(start === null) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3); // ease-out, settles
+            el.textContent = fmt(target * eased);
+            if(p < 1){ requestAnimationFrame(step); } else { el.textContent = fmt(target); }
+          }
+          requestAnimationFrame(step);
+        }
+      });
+    }, { threshold:0.6 });
+    io.observe(el);
+  })();
+
+  // Active section -> nav link + chapter dot (single observer feeding both)
+  (function(){
+    var nav = {}, dot = {};
+    document.querySelectorAll('.nav__link').forEach(function(a){
+      var id = a.getAttribute('href'); if(id && id.charAt(0)==='#') nav[id.slice(1)] = a;
+    });
+    document.querySelectorAll('.chapters__dot').forEach(function(a){
+      var id = a.getAttribute('href'); if(id && id.charAt(0)==='#') dot[id.slice(1)] = a;
+    });
+    var ids = {}; Object.keys(nav).forEach(function(k){ ids[k]=1; }); Object.keys(dot).forEach(function(k){ ids[k]=1; });
+    var keys = Object.keys(ids);
+    if(!keys.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          keys.forEach(function(id){
+            if(nav[id]) nav[id].classList.remove('is-active');
+            if(dot[id]) dot[id].classList.remove('is-active');
+          });
+          if(nav[en.target.id]) nav[en.target.id].classList.add('is-active');
+          if(dot[en.target.id]) dot[en.target.id].classList.add('is-active');
+        }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    keys.forEach(function(id){ var s = document.getElementById(id); if(s) io.observe(s); });
+  })();
+</script>
+
+</body>
+</html>

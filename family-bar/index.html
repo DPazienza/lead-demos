@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Bar — Un bar di quartiere in Via Emilio Lussu, Milano</title>
+<meta name="description" content="Family Bar, il bar di quartiere di Via Emilio Lussu a Milano. Da soli o in compagnia, cani ammessi, giochi al banco. Aperto Lun–Sab 8–20. Vieni al banco.">
+<link rel="canonical" href="https://www.google.com/maps/search/?api=1&query=Family+Bar%2C+Milano">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family Bar — Un bar di quartiere. Punto.">
+<meta property="og:description" content="Il bar di Via Emilio Lussu a Milano. Da soli o in compagnia, cani ammessi, giochi al banco. Lun–Sab 8–20.">
+<meta property="og:image" content="assets/hero-bancone.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Family Bar",
+  "description": "Bar pub informale di quartiere a Milano: da soli o in compagnia, cani ammessi, giochi al banco.",
+  "image": "assets/hero-bancone.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Emilio Lussu 6",
+    "postalCode": "20128",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "telephone": "+390226309333",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "servesCuisine": ["Caffè","Birra","Cocktail","Vino"],
+  "paymentAccepted": "Carte di credito, carte di debito, NFC",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Family+Bar%2C+Milano"
+}
+</script>
+
+<style>
+  /* ---------- Brand tokens (defined once, referenced everywhere) ---------- */
+  :root{
+    --brand-ink:#241A15;
+    --brand-surface:#F4EBDD;
+    --brand-surface-alt:#ECE1D0;
+    --brand-accent:#C1362B;
+    --brand-accent-ink:#F8F1E7;
+    --brand-muted:#6A5648;
+    --brand-line:#DED0BE;
+
+    --font-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+    --font-body:"Instrument Sans",system-ui,-apple-system,sans-serif;
+
+    --ease-signature:cubic-bezier(0.22,1,0.36,1);
+    --ease-micro:cubic-bezier(0.4,0,0.2,1);
+    --dur-reveal:720ms;
+    --dur-micro:200ms;
+    --stagger:90ms;
+
+    --space-section:clamp(4.5rem,8vw,9rem);
+    --container:min(1180px,92vw);
+    --radius:8px;
+
+    --fs-hero:clamp(2.75rem,1.9rem + 4.2vw,6rem);
+    --fs-h2:clamp(1.75rem,1.3rem + 2.2vw,3rem);
+    --fs-body:clamp(1rem,0.95rem + 0.25vw,1.15rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    font-optical-sizing:auto;
+  }
+  img,video{max-width:100%;height:auto;display:block;}
+  main img{filter:saturate(1.04) contrast(1.03);}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--font-display);letter-spacing:-0.03em;line-height:1.02;margin:0;font-weight:800;text-wrap:balance;}
+  p{margin:0;overflow-wrap:anywhere;text-wrap:pretty;}
+
+  ::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+
+  :focus-visible{
+    outline:3px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .grain{
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    opacity:.045;mix-blend-mode:soft-light;
+  }
+
+  .container{width:var(--container);margin-inline:auto;}
+  .eyebrow{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    color:var(--brand-muted);
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    margin:0;
+  }
+  /* ---- l'anello: the single glass-ring motif (CSS/SVG only) ---- */
+  .ring{
+    width:12px;height:12px;flex:0 0 12px;
+    border:2px solid var(--brand-accent);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .ring--half{
+    border-color:var(--brand-accent) transparent var(--brand-accent) var(--brand-accent);
+    transform:rotate(-45deg);
+  }
+  .divider{
+    display:flex;align-items:center;gap:1rem;
+    border:0;margin:0;
+  }
+  .divider::before,.divider::after{
+    content:"";height:1px;background:var(--brand-line);flex:1;
+  }
+
+  .skip-link{
+    position:absolute;left:-999px;top:0;z-index:200;
+    background:var(--brand-ink);color:var(--brand-accent-ink);
+    padding:.7rem 1.1rem;border-radius:0 0 var(--radius) 0;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ---------- Header / nav ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;padding:.85rem 0;
+  }
+  .nav-brand{
+    font-family:var(--font-display);font-weight:800;letter-spacing:-0.03em;
+    font-size:1.15rem;text-decoration:none;white-space:nowrap;
+  }
+  .nav-brand .ink{color:var(--brand-ink);}
+  .nav-brand .red{color:var(--brand-accent);}
+  .nav-links{
+    display:flex;align-items:center;gap:1.4rem;list-style:none;margin:0;padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;font-size:.92rem;font-weight:500;color:var(--brand-muted);
+    padding:.3rem 0;position:relative;transition:color var(--dur-micro) var(--ease-micro);
+  }
+  .nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--brand-ink);}
+  .nav-links a[aria-current="true"]{color:var(--brand-accent);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink)!important;
+    padding:.6rem 1.05rem;border-radius:var(--radius);font-weight:600;
+    text-decoration:none;white-space:nowrap;
+    transition:background var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  }
+  .nav-cta:hover{background:color-mix(in srgb,var(--brand-accent) 88%,black);}
+  .nav-toggle{
+    display:none;background:none;border:1px solid var(--brand-line);
+    border-radius:var(--radius);padding:.5rem .6rem;cursor:pointer;
+    flex-direction:column;gap:4px;
+  }
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--brand-ink);}
+
+  /* ---------- Wordmark logotype ---------- */
+  .wordmark{
+    font-size:var(--fs-hero);
+    font-weight:800;letter-spacing:-0.03em;line-height:.92;
+    text-transform:lowercase;
+  }
+  .wordmark .wm-family{color:var(--brand-ink);}
+  .wordmark .wm-bar{color:var(--brand-accent);}
+  .wm-i{position:relative;}
+  /* red glass-ring over the dot of the i */
+  .wm-i::after{
+    content:"";position:absolute;left:50%;top:-0.12em;
+    width:.34em;height:.34em;transform:translateX(-50%);
+    border:0.055em solid var(--brand-accent);border-radius:50%;
+  }
+
+  /* ---------- Section scaffolding ---------- */
+  section{position:relative;}
+  .section-pad{padding-block:var(--space-section);}
+  .section-pad--tight{padding-block:clamp(3rem,5vw,4.75rem);}
+  .section-alt{background:var(--brand-surface-alt);}
+  /* motif: hairline broken by a centred ring, marking each section change */
+  #quartiere::before,#casa::before,#banco::before,#persone::before,#parole::before,#contatto::before{
+    content:"";position:absolute;top:0;left:50%;transform:translate(-50%,-7px);
+    width:14px;height:14px;border-radius:50%;border:2px solid var(--brand-accent);
+    background:var(--brand-surface);z-index:2;
+  }
+  #casa::before,#persone::before,#contatto::before{background:var(--brand-surface-alt);}
+  #quartiere::after,#casa::after,#banco::after,#persone::after,#parole::after,#contatto::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--brand-line);
+  }
+  .sec-head{max-width:34ch;margin-bottom:clamp(1.75rem,3vw,2.75rem);}
+  .sec-head h2{font-size:var(--fs-h2);margin-top:.7rem;}
+  .sec-num{
+    font-family:var(--font-body);font-weight:600;font-size:.8rem;
+    color:var(--brand-muted);
+  }
+  .lede{color:var(--brand-muted);max-width:38ch;margin-top:1rem;}
+
+  /* ---------- HERO: la vetrina (the shopfront window) ---------- */
+  .hero{
+    background:var(--brand-ink);
+    color:var(--brand-accent-ink);
+    padding-block:clamp(1rem,2vw,1.75rem) clamp(2rem,4vw,3.25rem);
+    overflow:clip;
+  }
+  .hero-inner{padding-top:clamp(1.25rem,3vw,2.25rem);}
+  /* The pane: a framed window with hand-painted lettering */
+  .vetrina{
+    position:relative;
+    border:2px solid color-mix(in srgb,var(--brand-accent) 55%,var(--brand-ink));
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--brand-ink);
+    box-shadow:0 30px 60px -30px color-mix(in srgb,var(--brand-ink) 75%,transparent);
+  }
+  .vetrina-media{position:relative;aspect-ratio:16/10;}
+  .vetrina-media video,.vetrina-media img{
+    width:100%;height:100%;object-fit:cover;object-position:center 60%;
+    filter:saturate(1.02);
+  }
+  /* painted wordmark + ring on the glass */
+  .vetrina-glass{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;justify-content:flex-start;
+    padding:clamp(1.1rem,3vw,2.4rem);
+    background:linear-gradient(180deg,color-mix(in srgb,var(--brand-ink) 62%,transparent) 0%,color-mix(in srgb,var(--brand-ink) 8%,transparent) 34%,color-mix(in srgb,var(--brand-ink) 8%,transparent) 55%,color-mix(in srgb,var(--brand-ink) 88%,transparent) 100%);
+    pointer-events:none;
+  }
+  .vetrina-glass .painted{pointer-events:auto;}
+  .hero-eyebrow{
+    color:var(--brand-accent-ink);
+    opacity:.9;letter-spacing:.18em;text-transform:uppercase;
+    font-size:.72rem;font-weight:600;
+    display:inline-flex;align-items:center;gap:.5rem;
+  }
+  .hero-eyebrow .ring{border-color:var(--brand-accent);}
+  .hero .wordmark{
+    color:var(--brand-accent-ink);
+    text-shadow:0 2px 18px color-mix(in srgb,var(--brand-ink) 70%,transparent);
+    margin-top:.6rem;
+  }
+  .hero .wordmark .wm-family{color:var(--brand-accent-ink);}
+  .hero .wordmark .wm-bar{color:var(--brand-accent);}
+  .hero .wm-i::after{border-color:var(--brand-accent);}
+  .hero-tagline{
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;
+    font-size:clamp(1.05rem,.9rem+.8vw,1.6rem);
+    color:var(--brand-accent-ink);margin-top:.4rem;
+    text-shadow:0 2px 14px color-mix(in srgb,var(--brand-ink) 65%,transparent);
+  }
+  /* facts strip: notices taped along the bottom of the pane */
+  .vetrina-facts{
+    position:absolute;left:0;right:0;bottom:0;
+    display:flex;flex-wrap:wrap;gap:.5rem;
+    padding:clamp(.9rem,2.5vw,1.4rem);
+    justify-content:flex-start;
+  }
+  .fact-chip{
+    display:inline-flex;align-items:center;gap:.45rem;
+    font-family:var(--font-body);font-weight:600;font-size:.78rem;
+    letter-spacing:.02em;font-variant-numeric:tabular-nums;
+    color:var(--brand-accent-ink);
+    background:color-mix(in srgb,var(--brand-ink) 78%,transparent);
+    border:1px solid var(--brand-accent);
+    border-radius:999px;
+    padding:.4rem .8rem;
+    white-space:nowrap;
+  }
+  .fact-chip .ring{width:9px;height:9px;flex-basis:9px;border-width:2px;}
+  /* hero thesis + CTA block (below the pane on desktop, above photo on mobile) */
+  .hero-thesis{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3rem);
+    align-items:end;margin-top:clamp(1.5rem,3vw,2.4rem);
+  }
+  .hero-thesis h2{
+    font-size:clamp(1.6rem,1.2rem+1.6vw,2.6rem);
+    color:var(--brand-accent-ink);max-width:16ch;
+  }
+  .hero-thesis .hero-lede{color:color-mix(in srgb,var(--brand-accent-ink) 78%,transparent);}
+  .hero-actions{display:flex;flex-direction:column;gap:.9rem;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    padding:.85rem 1.35rem;border-radius:var(--radius);
+    font-family:var(--font-body);font-weight:600;font-size:1rem;
+    text-decoration:none;cursor:pointer;border:1px solid transparent;
+    transition:background var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro),color var(--dur-micro) var(--ease-micro);
+  }
+  .btn-primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+  .btn-primary:hover{background:color-mix(in srgb,var(--brand-accent) 88%,black);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;color:var(--brand-accent-ink);
+    border-color:color-mix(in srgb,var(--brand-accent-ink) 45%,transparent);
+  }
+  .btn-ghost:hover{border-color:var(--brand-accent-ink);}
+  .btn-ink{background:var(--brand-ink);color:var(--brand-accent-ink);}
+  .btn-ink:hover{background:color-mix(in srgb,var(--brand-ink) 82%,black);transform:translateY(-1px);}
+  .hero-phone{
+    font-size:.9rem;color:color-mix(in srgb,var(--brand-accent-ink) 72%,transparent);
+    font-variant-numeric:tabular-nums;
+  }
+  .hero-phone a{color:var(--brand-accent-ink);font-weight:600;text-decoration:none;}
+
+  /* ---------- Il quartiere ---------- */
+  .quartiere-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:center;
+  }
+  .quartiere-figure{border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);}
+  .quartiere-figure img{aspect-ratio:4/3;object-fit:cover;width:100%;}
+  .figcap{
+    font-size:.82rem;color:var(--brand-muted);margin-top:.6rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  /* info rows — Monocle-style label + value on hairlines */
+  .info-rows{margin-top:1.5rem;border-top:1px solid var(--brand-line);}
+  .info-row{
+    display:grid;grid-template-columns:9rem 1fr;gap:1rem;
+    padding:.9rem 0;border-bottom:1px solid var(--brand-line);
+  }
+  .info-row dt{
+    font-family:var(--font-body);font-weight:600;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.1em;color:var(--brand-muted);
+  }
+  .info-row dd{margin:0;font-weight:500;font-variant-numeric:tabular-nums;}
+  .info-row a{color:var(--brand-accent);font-weight:600;text-decoration:none;}
+  .info-row a:hover{text-decoration:underline;}
+
+  /* ---------- Chi ci trova casa (layered image set) ---------- */
+  .casa-intro{max-width:40ch;}
+  .casa-stage{
+    position:relative;margin-top:clamp(2rem,5vw,3.5rem);
+    display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;align-items:start;
+  }
+  .casa-main{grid-column:1 / span 8;border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);}
+  .casa-main img{aspect-ratio:3/2;object-fit:cover;width:100%;}
+  .casa-solo{
+    grid-column:8 / span 5;margin-top:clamp(3rem,7vw,6rem);
+    border-radius:var(--radius);overflow:hidden;border:3px solid var(--brand-surface);
+    box-shadow:0 20px 40px -24px color-mix(in srgb,var(--brand-ink) 50%,transparent);position:relative;z-index:2;
+  }
+  .casa-solo img{aspect-ratio:3/4;object-fit:cover;width:100%;}
+  .casa-cane{
+    grid-column:2 / span 4;margin-top:-2.5rem;
+    border-radius:var(--radius);overflow:hidden;border:3px solid var(--brand-surface);
+    box-shadow:0 20px 40px -24px color-mix(in srgb,var(--brand-ink) 50%,transparent);position:relative;z-index:3;
+  }
+  .casa-cane img{aspect-ratio:1/1;object-fit:cover;width:100%;}
+  .casa-notes{
+    grid-column:7 / span 6;margin-top:1.5rem;
+  }
+  .casa-note{
+    display:flex;gap:.85rem;padding:.9rem 0;border-bottom:1px solid var(--brand-line);
+  }
+  .casa-note:first-child{border-top:1px solid var(--brand-line);}
+  .casa-note h3{font-size:1.05rem;font-weight:600;margin-bottom:.15rem;}
+  .casa-note p{color:var(--brand-muted);font-size:.95rem;}
+  .casa-note .ring{margin-top:.4rem;}
+
+  /* ---------- Al banco (list with hover ring marker) ---------- */
+  .banco-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.25rem);
+    align-items:start;
+  }
+  .banco-media{position:relative;overflow:clip;}
+  .banco-spread{border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);}
+  .banco-spread img{aspect-ratio:4/3;object-fit:cover;width:100%;}
+  .banco-detail{
+    position:absolute;right:-1.25rem;bottom:-1.75rem;width:46%;
+    border-radius:var(--radius);overflow:hidden;border:4px solid var(--brand-surface);
+    box-shadow:0 22px 44px -22px color-mix(in srgb,var(--brand-ink) 55%,transparent);
+  }
+  .banco-detail img{aspect-ratio:1/1;object-fit:cover;width:100%;}
+  .banco-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--brand-line);}
+  .banco-item{
+    display:flex;align-items:baseline;gap:.85rem;
+    padding:1rem 0;border-bottom:1px solid var(--brand-line);
+    position:relative;
+    transition:padding-left var(--dur-micro) var(--ease-micro);
+  }
+  .banco-item .marker{
+    position:absolute;left:-1.25rem;top:1.35rem;opacity:0;
+    transition:opacity var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+    transform:translateX(-4px);
+  }
+  .banco-item:hover,.banco-item:focus-within{padding-left:1.25rem;}
+  .banco-item:hover .marker,.banco-item:focus-within .marker{opacity:1;transform:translateX(0);}
+  .banco-item h3{font-size:1.1rem;font-weight:600;flex:0 0 auto;}
+  .banco-item p{color:var(--brand-muted);font-size:.95rem;flex:1;}
+  .banco-note{margin-top:1.25rem;font-size:.85rem;color:var(--brand-muted);}
+
+  /* ---------- Le persone dietro il banco ---------- */
+  .persone-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:center;
+  }
+  .persone-figure{border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);}
+  .persone-figure img{aspect-ratio:3/2;object-fit:cover;width:100%;}
+  .persone-body p + p{margin-top:1rem;}
+  .persone-body .pull{
+    font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;
+    font-size:clamp(1.25rem,1rem+1.2vw,1.8rem);line-height:1.15;
+    margin-bottom:1.25rem;color:var(--brand-ink);
+  }
+
+  /* ---------- Le parole dei clienti ---------- */
+  .parole-grid{
+    display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:center;
+  }
+  .parole-figure{border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);}
+  .parole-figure img{aspect-ratio:3/4;object-fit:cover;width:100%;}
+  .parole-quotes{display:flex;flex-direction:column;gap:1.5rem;}
+  .parole-quote{
+    border-left:2px solid var(--brand-accent);padding-left:1.15rem;
+  }
+  .parole-quote p{
+    font-family:var(--font-display);font-weight:400;letter-spacing:-0.02em;
+    font-size:clamp(1.2rem,1rem+1vw,1.65rem);line-height:1.25;
+  }
+  .parole-quote span{
+    display:block;margin-top:.55rem;font-family:var(--font-body);
+    font-size:.82rem;color:var(--brand-muted);
+  }
+  .parole-source{
+    margin-top:.5rem;font-size:.85rem;color:var(--brand-muted);
+    display:flex;align-items:center;gap:.5rem;
+  }
+
+  /* ---------- Dettagli e contatto ---------- */
+  .contatto-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:start;
+  }
+  .contatto-facts{list-style:none;margin:1.5rem 0 0;padding:0;border-top:1px solid var(--brand-line);}
+  .contatto-facts li{
+    display:flex;gap:.75rem;align-items:baseline;
+    padding:.85rem 0;border-bottom:1px solid var(--brand-line);
+  }
+  .contatto-facts .ring{margin-top:.35rem;flex-shrink:0;}
+  .contatto-facts strong{font-weight:600;}
+  .contatto-facts span{color:var(--brand-muted);font-size:.92rem;}
+  .contatto-card{
+    background:var(--brand-ink);color:var(--brand-accent-ink);
+    border-radius:var(--radius);padding:clamp(1.5rem,4vw,2.5rem);
+    position:sticky;top:5.5rem;
+  }
+  .contatto-card h3{color:var(--brand-accent-ink);font-size:1.5rem;}
+  .contatto-card .addr{margin-top:1rem;color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);}
+  .contatto-card .addr strong{color:var(--brand-accent-ink);}
+  .contatto-card .hours{
+    margin-top:1.25rem;padding-top:1.25rem;
+    border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 22%,transparent);
+    font-size:.92rem;color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);
+    font-variant-numeric:tabular-nums;
+  }
+  .contatto-card .hours strong{color:var(--brand-accent-ink);}
+  .contatto-actions{display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem;}
+  .contatto-phone{
+    text-align:center;font-size:.9rem;margin-top:.25rem;
+    color:color-mix(in srgb,var(--brand-accent-ink) 72%,transparent);
+    font-variant-numeric:tabular-nums;
+  }
+  .contatto-phone a{color:var(--brand-accent-ink);font-weight:600;text-decoration:none;}
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    background:var(--brand-surface-alt);border-top:1px solid var(--brand-line);
+    padding-block:clamp(2.5rem,5vw,3.5rem);
+  }
+  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:flex-start;}
+  .footer-brand{font-family:var(--font-display);font-weight:800;letter-spacing:-0.03em;font-size:1.3rem;}
+  .footer-brand .ink{color:var(--brand-ink);}
+  .footer-brand .red{color:var(--brand-accent);}
+  .footer-meta{font-size:.85rem;color:var(--brand-muted);max-width:32ch;font-variant-numeric:tabular-nums;}
+  .footer-disclaimer{
+    width:100%;margin-top:1.5rem;padding-top:1.25rem;
+    border-top:1px solid var(--brand-line);
+    font-size:.72rem;color:var(--brand-muted);
+  }
+
+  /* ---------- Sticky mobile action bar ---------- */
+  .mobile-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:120;
+    background:var(--brand-surface);border-top:1px solid var(--brand-line);
+    padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+    box-shadow:0 -8px 24px -16px color-mix(in srgb,var(--brand-ink) 50%,transparent);
+  }
+  .mobile-bar a{
+    display:flex;align-items:center;justify-content:center;gap:.5rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    padding:.85rem;border-radius:var(--radius);font-weight:600;text-decoration:none;
+    width:100%;
+  }
+  .mobile-bar .mb-note{
+    text-align:center;font-size:.72rem;color:var(--brand-muted);margin:0 0 .4rem;
+  }
+
+  /* ============ MOTION LAYER (pass 3) ============ */
+  /* Progressive enhancement: hidden/entrance states apply ONLY with JS on AND
+     motion allowed. JS off OR prefers-reduced-motion => everything visible. */
+  @media (prefers-reduced-motion:no-preference){
+    /* shared reveal system — one IntersectionObserver, varied by content role */
+    html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal.is-in{opacity:1;transform:none;}
+
+    html.js .reveal-media{opacity:0;transform:scale(1.05);transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal-media.is-in{opacity:1;transform:none;}
+
+    html.js .reveal-fade{opacity:0;transition:opacity var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal-fade.is-in{opacity:1;}
+
+    html.js .reveal-rows > *{opacity:0;transform:translateY(16px);transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+    html.js .reveal-rows.is-in > *{opacity:1;transform:none;}
+    html.js .reveal-rows.is-in > *:nth-child(2){transition-delay:var(--stagger);}
+    html.js .reveal-rows.is-in > *:nth-child(3){transition-delay:calc(2 * var(--stagger));}
+    html.js .reveal-rows.is-in > *:nth-child(4){transition-delay:calc(3 * var(--stagger));}
+    html.js .reveal-rows.is-in > *:nth-child(5){transition-delay:calc(4 * var(--stagger));}
+    html.js .reveal-rows.is-in > *:nth-child(6){transition-delay:calc(5 * var(--stagger));}
+
+    /* glass-ring motif draws itself once at each eyebrow (stroke settle) */
+    html.js .eyebrow-ring circle{stroke-dasharray:38;stroke-dashoffset:38;transition:stroke-dashoffset var(--dur-reveal) var(--ease-signature);}
+    html.js .is-in .eyebrow-ring circle{stroke-dashoffset:0;}
+
+    /* HERO load: shutter wipe (clip-path) -> wordmark settle -> facts -> thesis lines */
+    html.js .hero .vetrina-media{clip-path:inset(0 100% 0 0);transition:clip-path 900ms var(--ease-signature);}
+    html.js .hero.is-in .vetrina-media{clip-path:inset(0 0 0 0);}
+
+    html.js .hero .painted > *{opacity:0;transform:translateY(18px);transition:opacity var(--dur-reveal) var(--ease-signature) .34s,transform var(--dur-reveal) var(--ease-signature) .34s;}
+    html.js .hero.is-in .painted > *{opacity:1;transform:none;}
+    html.js .hero .painted .hero-tagline{transition-delay:.46s;}
+
+    html.js .vetrina-facts .fact-chip{opacity:0;transform:translateY(10px);transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+    html.js .hero.is-in .vetrina-facts .fact-chip{opacity:1;transform:none;}
+    html.js .hero.is-in .vetrina-facts .fact-chip:nth-child(1){transition-delay:.56s;}
+    html.js .hero.is-in .vetrina-facts .fact-chip:nth-child(2){transition-delay:.63s;}
+    html.js .hero.is-in .vetrina-facts .fact-chip:nth-child(3){transition-delay:.70s;}
+    html.js .hero.is-in .vetrina-facts .fact-chip:nth-child(4){transition-delay:.77s;}
+
+    /* thesis headline settles one clipped line at a time (per-line cascade) */
+    html.js .hero-thesis .line-inner{transform:translateY(110%);transition:transform var(--dur-reveal) var(--ease-signature);}
+    html.js .hero.is-in .hero-thesis .line-inner{transform:none;}
+    html.js .hero.is-in .hero-thesis .line-mask:nth-child(2) .line-inner{transition-delay:var(--stagger);}
+    html.js .hero-thesis .hero-lede,html.js .hero-actions{opacity:0;transform:translateY(14px);transition:opacity var(--dur-reveal) var(--ease-signature) .2s,transform var(--dur-reveal) var(--ease-signature) .2s;}
+    html.js .hero.is-in .hero-thesis .hero-lede,html.js .hero.is-in .hero-actions{opacity:1;transform:none;}
+
+    /* (2) cheap native scroll-driven push: hero eases back + fades as it exits */
+    @supports (animation-timeline: view()){
+      html.js .vetrina{animation:heroExit linear both;animation-timeline:view();animation-range:exit 0% exit 100%;}
+      @keyframes heroExit{to{transform:translateY(-2%) scale(.985);opacity:.9;}}
+    }
+  }
+
+  .line-mask{display:block;overflow:hidden;}
+  .line-inner{display:block;}
+
+  /* eyebrow ring svg — static, fully drawn by default (JS off / reduced motion) */
+  .eyebrow-ring{width:14px;height:14px;flex:0 0 14px;overflow:visible;transform:rotate(-90deg);}
+  .eyebrow-ring circle{fill:none;stroke:var(--brand-accent);stroke-width:2;}
+
+  /* (5b) hero canvas frame-scrub overlay — desktop scroll-cinema, progressive */
+  .hero-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;transition:opacity .5s var(--ease-signature);}
+  .vetrina-media video{transition:opacity .5s var(--ease-signature);}
+  .vetrina-media.scrub-on .hero-canvas{opacity:1;}
+  .vetrina-media.scrub-on video{opacity:0;}
+
+  /* (6) counter-edge progress + chapter markers — the page spine (desktop) */
+  .chapters{
+    position:fixed;left:22px;top:0;bottom:0;z-index:90;
+    display:none;flex-direction:column;align-items:center;justify-content:space-between;
+    padding-block:16vh;
+  }
+  .chapters-line{
+    position:absolute;top:16vh;bottom:16vh;left:50%;width:3px;transform:translateX(-50%);
+    background:var(--brand-line);border-radius:2px;overflow:hidden;
+  }
+  .chapters-fill{
+    position:absolute;inset:0;background:var(--brand-accent);
+    transform:scaleY(0);transform-origin:top;
+  }
+  .chapters a{
+    position:relative;z-index:1;width:12px;height:12px;border-radius:50%;
+    border:2px solid var(--brand-line);background:var(--brand-surface);
+    transition:border-color var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+  }
+  .chapters a:hover{transform:scale(1.25);border-color:var(--brand-accent);}
+  .chapters a.active{border-color:var(--brand-accent);background:var(--brand-accent);transform:scale(1.15);}
+  @media (min-width:1080px){.chapters{display:flex;}}
+
+  /* (5) Al banco hover: ring marker slides in from left, accent tick fades from right */
+  @media (hover:hover) and (pointer:fine){
+    html.js .banco-item::after{
+      content:"";position:absolute;right:0;top:1.15rem;width:11px;height:11px;
+      border:2px solid var(--brand-accent);border-radius:50%;
+      opacity:0;transform:translateX(12px);
+      transition:opacity var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+    }
+    html.js .banco-item:hover::after,html.js .banco-item:focus-within::after{opacity:1;transform:none;}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .nav-links,.nav-cta.desktop-only{display:none;}
+    .nav-toggle{display:flex;}
+    .nav[data-open="true"] .nav-links{
+      display:flex;position:absolute;left:0;right:0;top:100%;
+      flex-direction:column;gap:0;background:var(--brand-surface);
+      border-bottom:1px solid var(--brand-line);padding:.5rem 0;
+    }
+    .nav[data-open="true"] .nav-links li{width:100%;}
+    .nav[data-open="true"] .nav-links a{
+      display:block;padding:.85rem var(--container);
+      width:var(--container);margin-inline:auto;
+    }
+    .hero-thesis{grid-template-columns:1fr;align-items:start;}
+    .quartiere-grid,.banco-grid,.persone-grid,.parole-grid,.contatto-grid{grid-template-columns:1fr;}
+    .contatto-card{position:static;}
+    /* Chi ci trova casa reflows to a simple stack of framed shots */
+    .casa-stage{display:flex;flex-direction:column;gap:1rem;}
+    .casa-solo,.casa-cane{margin-top:0;}
+    .casa-notes{margin-top:.5rem;}
+    .banco-detail{position:static;width:60%;margin:-2rem 0 0 auto;}
+  }
+  @media (max-width:640px){
+    .vetrina-media{aspect-ratio:4/5;max-height:56vh;}
+    .vetrina-media video,.vetrina-media img{object-position:center 55%;}
+    .fact-chip{font-size:.7rem;padding:.35rem .6rem;}
+    .mobile-bar{display:block;}
+    body{padding-bottom:5.5rem;}
+    .banco-item h3{flex:1 1 100%;}
+    .banco-item p{flex:1 1 100%;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{
+      animation-duration:.001ms!important;
+      animation-iteration-count:1!important;
+      transition-duration:.001ms!important;
+    }
+    .reveal{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+<svg class="grain" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"></feTurbulence>
+    <feColorMatrix type="saturate" values="0"></feColorMatrix>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"></rect>
+</svg>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" id="nav" aria-label="Navigazione principale">
+      <a class="nav-brand" href="#top" aria-label="Family Bar, home">
+        <span class="ink">family</span> <span class="red">bar</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#quartiere">Il quartiere</a></li>
+        <li><a href="#casa">Chi ci trova casa</a></li>
+        <li><a href="#banco">Al banco</a></li>
+        <li><a href="#persone">Le persone</a></li>
+        <li><a href="#parole">I clienti</a></li>
+        <li><a class="nav-cta" data-cta href="tel:+390226309333">Chiama</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="chapters" aria-label="Sezioni della pagina">
+  <span class="chapters-line"><span class="chapters-fill" id="spineFill"></span></span>
+  <a href="#quartiere" aria-label="Il quartiere"></a>
+  <a href="#casa" aria-label="Chi ci trova casa"></a>
+  <a href="#banco" aria-label="Al banco"></a>
+  <a href="#persone" aria-label="Le persone dietro il banco"></a>
+  <a href="#parole" aria-label="Le parole dei clienti"></a>
+  <a href="#contatto" aria-label="Dettagli e contatto"></a>
+</nav>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- 1 · LA VETRINA (hero / wow moment) -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> Via Emilio Lussu 6 · Milano</p>
+      <div class="vetrina">
+        <div class="vetrina-media">
+          <video autoplay muted loop playsinline preload="auto" poster="assets/hero-bancone.jpg">
+            <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+            <img src="assets/hero-bancone.jpg" alt="Il bancone in legno del Family Bar in una luce calda di tarda mattina, con bicchieri, macchina del caffè e uno sgabello libero.">
+          </video>
+          <canvas class="hero-canvas" aria-hidden="true"></canvas>
+        </div>
+        <div class="vetrina-glass">
+          <div class="painted">
+            <h1 class="wordmark" id="hero-heading">
+              <span class="wm-family">fam<span class="wm-i">i</span>ly</span> <span class="wm-bar">bar</span>
+            </h1>
+            <p class="hero-tagline">Da soli o in compagnia</p>
+          </div>
+        </div>
+        <div class="vetrina-facts" aria-hidden="false">
+          <span class="fact-chip"><span class="ring"></span> Lun–Sab 8–20</span>
+          <span class="fact-chip"><span class="ring"></span> Cani ammessi</span>
+          <span class="fact-chip"><span class="ring"></span> Giochi al banco</span>
+          <span class="fact-chip"><span class="ring"></span> Si accettano carte</span>
+        </div>
+      </div>
+
+      <div class="hero-thesis">
+        <div>
+          <h2><span class="line-mask"><span class="line-inner">Un bar di quartiere.</span></span><span class="line-mask"><span class="line-inner"> Punto.</span></span></h2>
+        </div>
+        <div>
+          <p class="hero-lede">Ti fermi un’ora da solo, con una birra e un libro. O arrivi in gruppo, dopo il lavoro. Qui stai a casa in tutti e due i casi.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" data-cta href="tel:+390226309333">Chiama il bar</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Family+Bar%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps</a>
+            <p class="hero-phone">Oppure chiama al <a href="tel:+390226309333">+39 02 2630 9333</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · IL QUARTIERE -->
+  <section class="section-pad" id="quartiere" aria-labelledby="quartiere-h">
+    <div class="container quartiere-grid">
+      <figure class="quartiere-figure reveal-media" style="margin:0;">
+        <img src="assets/facciata-lussu.jpg" alt="La semplice facciata del bar in una tranquilla via residenziale di Milano, con vetrine ampie e due tavolini sul marciapiede.">
+        <figcaption class="figcap"><span class="ring ring--half"></span> La facciata su Via Emilio Lussu.</figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> <span class="sec-num">02 —</span> Il quartiere</p>
+        <h2 id="quartiere-h" style="font-size:var(--fs-h2);margin-top:.7rem;">Su una via tranquilla, a Milano nord.</h2>
+        <p class="lede">Siamo in Via Emilio Lussu, zona 20128. Un posto vero, non una catena: ci trovi la gente che abita e lavora qui intorno.</p>
+        <dl class="info-rows">
+          <div class="info-row">
+            <dt>Indirizzo</dt>
+            <dd>Via Emilio Lussu 6, 20128 Milano (MI)</dd>
+          </div>
+          <div class="info-row">
+            <dt>Orari</dt>
+            <dd>Lun–Sab 08:00–20:00 · Domenica chiuso</dd>
+          </div>
+          <div class="info-row">
+            <dt>Come arrivare</dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&query=Family+Bar%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps →</a></dd>
+          </div>
+          <div class="info-row">
+            <dt>Telefono</dt>
+            <dd><a href="tel:+390226309333">+39 02 2630 9333</a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · CHI CI TROVA CASA -->
+  <section class="section-pad section-alt" id="casa" aria-labelledby="casa-h">
+    <div class="container">
+      <div class="casa-intro reveal">
+        <p class="eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> <span class="sec-num">03 —</span> Chi ci trova casa</p>
+        <h2 id="casa-h" style="font-size:var(--fs-h2);margin-top:.7rem;">Qui c’è posto per tutti.</h2>
+        <p class="lede">Da soli o in gruppo, cane compreso. Senza prenotare per forza, senza spendere troppo. Ci si sente a casa in ogni caso.</p>
+      </div>
+
+      <div class="casa-stage">
+        <figure class="casa-main reveal-media" style="margin:0;">
+          <img src="assets/chi-casa-gruppo.jpg" alt="Un piccolo gruppo di amici che ride attorno a un tavolo di legno, con birre e vino, in un'atmosfera accogliente.">
+        </figure>
+        <figure class="casa-solo reveal-fade" style="margin:0;">
+          <img src="assets/chi-casa-solo.jpg" alt="Una persona seduta da sola a un tavolino vicino alla finestra, con un libro e una birra, in un'atmosfera tranquilla.">
+        </figure>
+        <figure class="casa-cane reveal-fade" style="margin:0;">
+          <img src="assets/chi-casa-cane.jpg" alt="Un cane tranquillo sdraiato sul pavimento accanto alla sedia del proprietario, sotto un tavolino del bar.">
+        </figure>
+        <div class="casa-notes reveal-rows">
+          <div class="casa-note">
+            <span class="ring"></span>
+            <div>
+              <h3>Da soli, senza pensieri</h3>
+              <p>Un’ora tutta per te, con una birra e un libro. Nessuno ti mette fretta.</p>
+            </div>
+          </div>
+          <div class="casa-note">
+            <span class="ring"></span>
+            <div>
+              <h3>In compagnia</h3>
+              <p>Il gruppo del dopo-lavoro trova spazio. Tavoli semplici, niente prenotazione obbligatoria.</p>
+            </div>
+          </div>
+          <div class="casa-note">
+            <span class="ring"></span>
+            <div>
+              <h3>Cani ammessi, ingresso accessibile</h3>
+              <p>Il cane viene con te. Ingresso e bagno sono accessibili in sedia a rotelle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · AL BANCO -->
+  <section class="section-pad" id="banco" aria-labelledby="banco-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> <span class="sec-num">04 —</span> Al banco</p>
+        <h2 id="banco-h">Cosa versiamo.</h2>
+        <p class="lede">Niente di complicato. Le cose che vuoi bere in un bar di quartiere, servite come si deve.</p>
+      </div>
+      <div class="banco-grid">
+        <div class="banco-media reveal-media">
+          <figure class="banco-spread" style="margin:0;">
+            <img src="assets/al-banco-spread.jpg" alt="Sul bancone una birra, un cocktail all'aperitivo, un calice di vino rosso, un espresso e un piatto semplice.">
+          </figure>
+          <figure class="banco-detail" style="margin:0;">
+            <img src="assets/al-banco-detail.jpg" alt="Primo piano di un cocktail all'aperitivo con una fetta d'arancia sul bordo e la condensa sul bicchiere nella luce calda.">
+          </figure>
+        </div>
+        <div class="reveal">
+          <ul class="banco-list">
+            <li class="banco-item"><span class="marker ring"></span><h3>Birra</h3><p>Alla spina e in bottiglia, la base di ogni serata.</p></li>
+            <li class="banco-item"><span class="marker ring"></span><h3>Cocktail</h3><p>Per l’aperitivo o dopo cena, fatti al momento.</p></li>
+            <li class="banco-item"><span class="marker ring"></span><h3>Vino</h3><p>Un calice, rosso o bianco, senza troppi giri.</p></li>
+            <li class="banco-item"><span class="marker ring"></span><h3>Superalcolici</h3><p>Un amaro o un distillato per chiudere.</p></li>
+            <li class="banco-item"><span class="marker ring"></span><h3>Caffè</h3><p>Espresso al banco, a ogni ora del giorno.</p></li>
+            <li class="banco-item"><span class="marker ring"></span><h3>Cibo al bar</h3><p>Qualcosa da mangiare, per accompagnare.</p></li>
+          </ul>
+          <p class="banco-note">Chiedi al banco cosa c’è oggi — il listino cambia e i gestori ti sanno dire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · LE PERSONE DIETRO IL BANCO -->
+  <section class="section-pad section-alt" id="persone" aria-labelledby="persone-h">
+    <div class="container persone-grid">
+      <div class="reveal persone-body">
+        <p class="eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> <span class="sec-num">05 —</span> Le persone dietro il banco</p>
+        <h2 id="persone-h" style="font-size:var(--fs-h2);margin:.7rem 0 1.25rem;">Torni per chi c’è al banco.</h2>
+        <p class="pull">Ti riconoscono dal secondo giro.</p>
+        <p>I gestori sono la ragione per cui la gente torna. Carini e disponibili, lo dicono le recensioni più di ogni altra cosa.</p>
+        <p>È ospitalità vera, non un servizio da catena. Ti salutano, si ricordano cosa bevi, ti fanno sentire a posto — da solo o in compagnia.</p>
+      </div>
+      <figure class="persone-figure reveal-media" style="margin:0;">
+        <img src="assets/gestori-banco.jpg" alt="I due gestori dietro il banco mentre versano da bere e chiacchierano, con i grembiuli e un sorriso spontaneo.">
+      </figure>
+    </div>
+  </section>
+
+  <!-- 6 · LE PAROLE DEI CLIENTI -->
+  <section class="section-pad" id="parole" aria-labelledby="parole-h">
+    <div class="container">
+      <div class="sec-head reveal" style="max-width:40ch;">
+        <p class="eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> <span class="sec-num">06 —</span> Le parole dei clienti</p>
+        <h2 id="parole-h">Cosa raccontano di noi.</h2>
+        <p class="lede">Quello che si ripete di più nelle recensioni, con parole nostre.</p>
+      </div>
+      <div class="parole-grid">
+        <figure class="parole-figure reveal-media" style="margin:0;">
+          <img src="assets/hero-pour-detail.jpg" alt="Un bicchiere di birra chiara appena appoggiato sul bancone, con la condensa sul vetro nella luce calda.">
+        </figure>
+        <div class="parole-quotes reveal-rows">
+          <blockquote class="parole-quote">
+            <p>“Un’atmosfera simpatica e accogliente. Gestori carini e disponibili.”</p>
+            <span>Il tema che ricorre di più fra chi ci lascia una recensione.</span>
+          </blockquote>
+          <blockquote class="parole-quote">
+            <p>“Un buon posto per divertirsi e stare in compagnia.”</p>
+            <span>Chi viene in gruppo lo ripete spesso.</span>
+          </blockquote>
+          <p class="parole-source"><span class="ring ring--half"></span> Sintesi delle recensioni pubbliche del bar, senza nomi né voti inventati.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · DETTAGLI E CONTATTO -->
+  <section class="section-pad--tight section-alt" id="contatto" aria-labelledby="contatto-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><svg class="eyebrow-ring" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle></svg> <span class="sec-num">07 —</span> Dettagli e contatto</p>
+        <h2 id="contatto-h">Vieni al banco.</h2>
+      </div>
+      <div class="contatto-grid">
+        <div>
+          <ul class="contatto-facts reveal-rows">
+            <li><span class="ring"></span><div><strong>Prenotazioni</strong> <span>— accettiamo prenotazioni, ma puoi anche solo passare.</span></div></li>
+            <li><span class="ring"></span><div><strong>Cani ammessi</strong> <span>— il tuo cane è il benvenuto.</span></div></li>
+            <li><span class="ring"></span><div><strong>Accessibilità</strong> <span>— ingresso e bagno accessibili in sedia a rotelle.</span></div></li>
+            <li><span class="ring"></span><div><strong>Pagamenti</strong> <span>— carte di credito, debito e NFC.</span></div></li>
+            <li><span class="ring"></span><div><strong>Giochi da bar</strong> <span>— qualcosa con cui passare il tempo al banco.</span></div></li>
+          </ul>
+        </div>
+        <div class="contatto-card reveal">
+          <h3>Family Bar</h3>
+          <p class="addr"><strong>Via Emilio Lussu 6</strong><br>20128 Milano (MI)</p>
+          <p class="hours"><strong>Orari:</strong><br>Lunedì – Sabato · 08:00 – 20:00<br>Domenica · chiuso</p>
+          <div class="contatto-actions">
+            <a class="btn btn-primary" data-cta href="tel:+390226309333">Chiama per prenotare</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Family+Bar%2C+Milano" target="_blank" rel="noopener" style="border-color:color-mix(in srgb,var(--brand-accent-ink) 45%,transparent);">Apri su Google Maps</a>
+          </div>
+          <p class="contatto-phone">Chiama il <a href="tel:+390226309333">+39 02 2630 9333</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand"><span class="ink">family</span> <span class="red">bar</span></p>
+      <p class="footer-meta" style="margin-top:.5rem;">Da soli o in compagnia. Un bar di quartiere in Via Emilio Lussu, Milano.</p>
+    </div>
+    <div class="footer-meta">
+      Via Emilio Lussu 6, 20128 Milano (MI)<br>
+      Lun–Sab 8–20 · Domenica chiuso<br>
+      <a href="tel:+390226309333" style="color:var(--brand-accent);font-weight:600;text-decoration:none;">+39 02 2630 9333</a>
+    </div>
+    <p class="footer-disclaimer">Pagina dimostrativa realizzata per Family Bar. Indirizzo, orari e contatti sono reali; testi e immagini d’ambiente sono una proposta grafica da confermare con il titolare.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile action bar -->
+<div class="mobile-bar">
+  <p class="mb-note">Vieni al banco, o chiamaci</p>
+  <a data-cta href="tel:+390226309333">Chiama il Family Bar</a>
+</div>
+
+<script>
+(function(){
+  var docEl=document.documentElement;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Mobile nav toggle (keyboard + Esc close) — always on ---- */
+  var nav=document.getElementById('nav'),
+      toggle=document.getElementById('navToggle'),
+      links=document.getElementById('navLinks');
+  function setOpen(open){
+    nav.setAttribute('data-open',open?'true':'false');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+  }
+  toggle.addEventListener('click',function(){setOpen(nav.getAttribute('data-open')!=='true');});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&nav.getAttribute('data-open')==='true'){setOpen(false);toggle.focus();}
+  });
+
+  /* ---- Active-section highlight for nav links + chapter dots ---- */
+  var navMap={},dotMap={};
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){navMap[a.getAttribute('href').slice(1)]=a;});
+  document.querySelectorAll('.chapters a[href^="#"]').forEach(function(a){dotMap[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting)return;
+        var id=en.target.id;
+        if(navMap[id]){Object.keys(navMap).forEach(function(k){navMap[k].removeAttribute('aria-current');});navMap[id].setAttribute('aria-current','true');}
+        if(dotMap[id]){Object.keys(dotMap).forEach(function(k){dotMap[k].classList.remove('active');});dotMap[id].classList.add('active');}
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s);});
+  }
+
+  var video=document.querySelector('.vetrina-media video');
+
+  /* ---- Reduced motion: pause the hero loop, everything already visible, done ---- */
+  if(reduce){
+    if(video){try{video.removeAttribute('autoplay');video.pause();}catch(e){}}
+    return;
+  }
+
+  /* ---- Reveal system: ONE IntersectionObserver, varied by role, unobserve after ---- */
+  var revealEls=document.querySelectorAll('.reveal,.reveal-media,.reveal-fade,.reveal-rows');
+  if('IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(entries,obs){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('is-in');obs.unobserve(en.target);}
+      });
+    },{rootMargin:'0px 0px -12% 0px'});
+    revealEls.forEach(function(el){ro.observe(el);});
+  }else{
+    revealEls.forEach(function(el){el.classList.add('is-in');});
+  }
+
+  /* ---- Hero load choreography: trigger the shutter wipe + settle after first paint ---- */
+  var hero=document.querySelector('.hero');
+  requestAnimationFrame(function(){requestAnimationFrame(function(){if(hero)hero.classList.add('is-in');});});
+
+  /* ---- Hero scroll-cinema: canvas frame-scrub (desktop + fine pointer only) ---- */
+  var wantScrub=window.matchMedia('(min-width:1024px) and (pointer:fine)').matches;
+  var canvas=document.querySelector('.hero-canvas');
+  var media=document.querySelector('.vetrina-media');
+  var ctx=null,FR=48,imgs=[],dir='assets/hero-frames/desktop/',scrubReady=false,cur=0,tgt=0,dpr=1;
+  function fit(){if(!canvas||!media)return;dpr=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.round(media.clientWidth*dpr);canvas.height=Math.round(media.clientHeight*dpr);}
+  function frameName(i){var n=''+(i+1);while(n.length<4)n='0'+n;return dir+'frame-'+n+'.webp';}
+  function drawFrame(i){
+    if(!ctx)return; if(i<0)i=0; if(i>=FR)i=FR-1;
+    var im=imgs[i];
+    if(!im){for(var d=1;d<FR;d++){if(imgs[i-d]){im=imgs[i-d];break;}if(imgs[i+d]){im=imgs[i+d];break;}}}
+    if(!im)return;
+    var cw=canvas.width,ch=canvas.height,iw=im.naturalWidth,ih=im.naturalHeight;
+    var s=Math.max(cw/iw,ch/ih),w=iw*s,h=ih*s;
+    ctx.drawImage(im,(cw-w)/2,(ch-h)*0.6,w,h);
+  }
+  function lerp(){
+    if(scrubReady){cur+=(tgt-cur)*0.12;drawFrame(Math.round(cur));}
+    requestAnimationFrame(lerp);
+  }
+  function startScrub(){
+    if(!wantScrub||!canvas||!media)return;
+    ctx=canvas.getContext('2d');
+    var first=new Image();
+    first.onload=function(){
+      imgs[0]=first;fit();drawFrame(0);
+      media.classList.add('scrub-on');scrubReady=true;
+      for(var i=1;i<FR;i++){(function(k){var im=new Image();im.onload=function(){imgs[k]=im;};im.src=frameName(k);})(i);}
+      requestAnimationFrame(lerp);
+    };
+    first.onerror=function(){/* frames missing -> the <video> loop stays as base */};
+    first.src=frameName(0);
+  }
+
+  /* ---- Single rAF-batched scroll worker: spine fill + casa parallax + scrub target ---- */
+  var spineFill=document.getElementById('spineFill');
+  var casaStage=document.querySelector('.casa-stage');
+  var casaSolo=document.querySelector('.casa-solo');
+  var casaCane=document.querySelector('.casa-cane');
+  var parallaxOn=window.matchMedia('(min-width:900px)').matches;
+  var ticking=false;
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(work);}}
+  function work(){
+    ticking=false;
+    var sy=window.pageYOffset||docEl.scrollTop||0;
+    var dh=docEl.scrollHeight-window.innerHeight;
+    if(spineFill)spineFill.style.transform='scaleY('+(dh>0?Math.max(0,Math.min(1,sy/dh)):0)+')';
+    if(parallaxOn&&casaStage&&casaSolo&&casaCane){
+      var r=casaStage.getBoundingClientRect();
+      var p=Math.max(0,Math.min(1,(window.innerHeight-r.top)/(window.innerHeight+r.height)));
+      var off=(p-0.5)*54;
+      casaSolo.style.transform='translate3d(0,'+(-off)+'px,0)';
+      casaCane.style.transform='translate3d(0,'+(off*0.55)+'px,0)';
+    }
+    if(scrubReady&&hero){
+      var hr=hero.getBoundingClientRect();
+      var prog=Math.max(0,Math.min(1,(-hr.top)/(hr.height*0.85)));
+      tgt=prog*(FR-1);
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',function(){parallaxOn=window.matchMedia('(min-width:900px)').matches;fit();if(scrubReady)drawFrame(Math.round(cur));onScroll();},{passive:true});
+  startScrub();
+  work();
+})();
+</script>
+</body>
+</html>

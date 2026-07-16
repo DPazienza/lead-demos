@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>La Corte — Atelier milanese di doni | Gioielli e Tavola a Milano</title>
+<meta name="description" content="La Corte è un atelier milanese in Via Argelati 40: gli anelli quadrati bronzo e argento di Laura Contri e i bicchieri Ruby glass soffiati a mano, curati sotto un unico tetto. Confezioniamo il dono e lo spediamo ovunque.">
+<link rel="canonical" href="https://www.lacortemilano.it/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Corte — Atelier milanese di doni">
+<meta property="og:description" content="Anelli quadrati di Laura Contri e Ruby glass soffiato a mano, un solo atelier a Milano. Il dono, confezionato e spedito ovunque.">
+<meta property="og:image" content="https://www.lacortemilano.it/assets/hero-vitrine.jpg">
+<meta property="og:url" content="https://www.lacortemilano.it/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "La Corte",
+  "description": "Atelier milanese di doni: gli anelli quadrati bronzo e argento di Laura Contri e i bicchieri Ruby glass soffiati a mano, curati sotto un unico tetto e spediti ovunque.",
+  "image": "https://www.lacortemilano.it/assets/hero-vitrine.jpg",
+  "url": "https://www.lacortemilano.it/",
+  "telephone": "+39 02 8323284",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Argelati Filippo, 40",
+    "addressLocality": "Milano",
+    "postalCode": "20143",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=La+Corte%2C+Milano"
+}
+</script>
+
+<style>
+  /* ============================================================
+     BRAND TOKENS — defined ONCE, referenced everywhere
+     ============================================================ */
+  :root{
+    --brand-ink:#F0EADF;
+    --brand-surface:#16130F;
+    --brand-surface-alt:#1F1B15;
+    --brand-accent:#B98B54;
+    --brand-accent-ink:#16130F;
+    --brand-muted:#A79A85;
+    --brand-line:#342E26;
+    --brand-accent-2:#8C2233;
+
+    --font-display:'Bodoni Moda','Didot','Bodoni MT',Georgia,'Times New Roman',serif;
+    --font-body:'Jost','Futura','Century Gothic',system-ui,sans-serif;
+
+    --ease-signature:cubic-bezier(0.16,1,0.3,1);
+    --ease-micro:cubic-bezier(0.33,0,0.2,1);
+    --dur-reveal:900ms;
+    --dur-micro:240ms;
+    --stagger:90ms;
+
+    --space-section:clamp(5rem,4rem + 6vw,9rem);
+    --container:min(1200px,92vw);
+    --radius:2px;
+
+    --fs-hero:clamp(2.6rem,1.4rem + 5.6vw,6rem);
+    --fs-h2:clamp(1.6rem,1.1rem + 2.4vw,3rem);
+    --fs-body:clamp(1rem,0.95rem + 0.3vw,1.15rem);
+  }
+
+  /* ============================================================
+     RESET / BASE
+     ============================================================ */
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--brand-surface);
+    color:var(--brand-ink);
+    font-family:var(--font-body);
+    font-weight:400;
+    font-size:var(--fs-body);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-kerning:normal;
+    font-variant-ligatures:common-ligatures contextual;
+    font-optical-sizing:auto;
+    position:relative;
+  }
+  img,video{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  p{overflow-wrap:anywhere;text-wrap:pretty;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:400;letter-spacing:-0.02em;line-height:1.08;margin:0;text-wrap:balance;}
+
+  :focus-visible{
+    outline:2px solid var(--brand-accent);
+    outline-offset:3px;
+    border-radius:var(--radius);
+  }
+
+  ::selection{background:var(--brand-accent);color:var(--brand-surface);}
+
+  /* faint material grain — non-representational texture, never a scene */
+  body::after{
+    content:"";
+    position:fixed;inset:0;
+    z-index:3;
+    pointer-events:none;
+    opacity:.045;
+    mix-blend-mode:soft-light;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:180px 180px;
+  }
+
+  /* ambient section tint — sub-perceptual chapter temperature (JS-driven) */
+  .section-tint{
+    position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:transparent;
+    transition:background 900ms var(--ease-signature);
+  }
+
+  /* scroll progress — thin bronze fill along the top */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;width:100%;
+    transform:scaleX(0);transform-origin:0 50%;
+    background:var(--brand-accent);z-index:80;pointer-events:none;
+  }
+
+  .container{width:var(--container);margin-inline:auto;}
+  .eyebrow{
+    font-family:var(--font-body);
+    font-weight:500;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--brand-accent);
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    margin:0 0 1.4rem;
+  }
+  /* motif: il quadro — 1px antique-bronze open square */
+  .eyebrow::before{
+    content:"";
+    width:12px;height:12px;
+    border:1.5px solid var(--brand-accent);
+    display:inline-block;
+    flex:none;
+  }
+  .eyebrow--ruby{color:var(--brand-muted);}
+  .eyebrow--ruby::before{border-color:var(--brand-accent-2);}
+
+  .section-title{font-size:var(--fs-h2);margin-bottom:1.2rem;}
+  .lede{color:var(--brand-muted);max-width:46ch;}
+
+  /* Quadro frame used around media (the vitrine motif) */
+  .quadro-media{position:relative;isolation:isolate;}
+  .quadro-media img,.quadro-media video{
+    width:100%;height:100%;object-fit:cover;border-radius:var(--radius);
+    background:var(--brand-surface-alt);
+  }
+  .quadro-media::after{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border:1px solid color-mix(in srgb,var(--brand-accent) 70%,transparent);
+    pointer-events:none;
+    z-index:2;
+    transition:inset var(--dur-reveal) var(--ease-signature);
+  }
+  .quadro-media--ruby::after{border-color:color-mix(in srgb,var(--brand-accent-2) 75%,transparent);}
+
+  /* bare .quadro-media inside align-items:center offset grids has no definite
+     height, so object-fit:cover has nothing to crop against — give it one */
+  #atelier .quadro-media{aspect-ratio:4/3;}
+  #spedizioni .quadro-media{aspect-ratio:1/1;}
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  .site-header{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--brand-line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;padding:.9rem 0;
+  }
+  .wordmark{
+    font-family:var(--font-display);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    color:var(--brand-ink);
+    font-size:1.05rem;
+    display:inline-flex;align-items:center;gap:.6rem;
+    white-space:nowrap;
+  }
+  .wordmark .mark{
+    width:14px;height:14px;border:1px solid var(--brand-accent);flex:none;
+  }
+  .nav-links{
+    display:flex;align-items:center;gap:1.7rem;
+    list-style:none;margin:0;padding:0;
+  }
+  .nav-links a{
+    position:relative;
+    font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--brand-muted);
+    padding:.4rem 0;
+    border-bottom:1px solid transparent;
+    transition:color var(--dur-micro) var(--ease-micro),border-color var(--dur-micro) var(--ease-micro);
+  }
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--brand-ink);}
+  .nav-links a.active{color:var(--brand-accent);border-bottom-color:var(--brand-accent);}
+
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    font-family:var(--font-body);font-weight:500;
+    font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:.7rem 1.15rem;border-radius:var(--radius);
+    transition:background var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  }
+  .nav-cta:hover{background:color-mix(in srgb,var(--brand-accent) 82%,var(--brand-ink));transform:translateY(-1px);}
+
+  .nav-toggle{
+    display:none;
+    background:none;border:1px solid var(--brand-line);
+    color:var(--brand-ink);
+    width:44px;height:44px;border-radius:var(--radius);
+    cursor:pointer;align-items:center;justify-content:center;
+  }
+  .nav-toggle svg{width:20px;height:20px;}
+
+  /* ============================================================
+     HERO — the lit vitrine (CENTERPIECE)
+     ============================================================ */
+  .hero{
+    position:relative;
+    min-height:clamp(560px,92vh,900px);
+    display:flex;align-items:flex-end;
+    padding:clamp(2rem,4vw,4rem) 0 clamp(3rem,6vw,6rem);
+    overflow:hidden;
+    background:#000;
+  }
+  .hero-media{position:absolute;inset:0;z-index:0;}
+  .hero-media video,.hero-media img{
+    width:100%;height:100%;object-fit:cover;object-position:58% 55%;
+    opacity:.82;
+  }
+  .hero-canvas{
+    position:absolute;inset:0;width:100%;height:100%;
+    opacity:0;pointer-events:none;z-index:1;
+    transition:opacity 200ms linear;
+  }
+  .hero::before{ /* vitrine vignette so type stays legible */
+    content:"";position:absolute;inset:0;z-index:2;
+    background:
+      linear-gradient(to top,var(--brand-surface) 2%,color-mix(in srgb,var(--brand-surface) 30%,transparent) 42%,transparent 72%),
+      linear-gradient(to right,color-mix(in srgb,var(--brand-surface) 70%,transparent),transparent 55%);
+    pointer-events:none;
+  }
+  /* the hairline bronze square that strokes itself around the frame — the wow motif */
+  .hero-frame{
+    position:absolute;
+    inset:clamp(14px,2.4vw,34px);
+    color:var(--brand-accent);
+    z-index:3;pointer-events:none;
+  }
+  .hero-frame svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+  .hero-frame rect{fill:none;stroke:var(--brand-accent);stroke-width:1;}
+  .hero-frame::before,.hero-frame::after{
+    content:"";position:absolute;width:14px;height:14px;border:1.5px solid var(--brand-accent);
+  }
+  .hero-frame::before{top:-7px;left:-7px;}
+  .hero-frame::after{bottom:-7px;right:-7px;}
+
+  .hero-wordmark{ /* small, quiet, top corner — Bottega treatment; this is the H1 */
+    position:absolute;z-index:4;
+    top:clamp(30px,4vw,54px);left:clamp(30px,4vw,54px);
+    font-size:clamp(1rem,.9rem + .5vw,1.35rem);
+    letter-spacing:.22em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:.7rem;
+    margin:0;font-weight:400;color:var(--brand-ink);
+  }
+  .hero-wordmark .mark{width:16px;height:16px;border:1px solid var(--brand-accent);flex:none;}
+  .hero-wordmark small{
+    display:block;font-family:var(--font-body);font-size:.6rem;
+    letter-spacing:.26em;color:var(--brand-muted);margin-top:.3rem;
+  }
+
+  .hero-inner{position:relative;z-index:4;width:var(--container);margin-inline:auto;}
+  .hero-lede{
+    font-family:var(--font-display);
+    font-size:var(--fs-hero);
+    line-height:1.02;
+    max-width:16ch;
+    margin:0 0 1.4rem;
+  }
+  .hero-lede em{font-style:italic;color:var(--brand-accent);}
+  .hero-sub{color:var(--brand-ink);max-width:40ch;margin:0 0 2rem;font-weight:300;}
+  .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--brand-accent);color:var(--brand-accent-ink);
+    font-weight:500;letter-spacing:.06em;
+    padding:.95rem 1.7rem;border-radius:var(--radius);
+    font-variant-numeric:tabular-nums;
+    transition:background var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro);
+  }
+  .btn-primary:hover{background:color-mix(in srgb,var(--brand-accent) 82%,var(--brand-ink));transform:translateY(-1px);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:.55rem;
+    color:var(--brand-ink);border-bottom:1px solid var(--brand-line);
+    padding-bottom:.25rem;font-size:.9rem;letter-spacing:.04em;
+    transition:border-color var(--dur-micro) var(--ease-micro);
+  }
+  .btn-ghost:hover{border-color:var(--brand-accent);}
+
+  .hero-proof{
+    display:flex;align-items:center;gap:.6rem;
+    color:var(--brand-muted);font-size:.85rem;letter-spacing:.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .hero-proof b{color:var(--brand-ink);font-weight:500;}
+  .stars{color:var(--brand-accent);letter-spacing:.12em;font-size:.85rem;}
+
+  /* ============================================================
+     GENERIC SECTION
+     ============================================================ */
+  section{padding-block:var(--space-section);}
+  .band{background:var(--brand-surface-alt);}
+
+  /* uneven rhythm: near-doubled above the diptych halves, tighter above the product band */
+  #gioielli{padding-top:calc(var(--space-section) * 1.2);}
+  #tavola{padding-top:calc(var(--space-section) * 1.9);}
+  #quadro{padding-top:calc(var(--space-section) * 1.7);}
+  #dono{padding-top:calc(var(--space-section) * .6);}
+
+  /* asymmetric offset grid (Cereal) */
+  .offset{
+    display:grid;
+    grid-template-columns:1.35fr .9fr;
+    gap:clamp(1.5rem,4vw,4.5rem);
+    align-items:center;
+  }
+  .offset--rev{grid-template-columns:.9fr 1.35fr;}
+  .offset .text{align-self:end;}
+
+  /* diptych product figure with overlapping companion (art-directed set) */
+  .diptych{position:relative;}
+  .diptych .main{aspect-ratio:4/3;}
+  .diptych .companion{
+    position:absolute;
+    width:42%;
+    aspect-ratio:1/1;
+    right:-4%;
+    bottom:-9%;
+    z-index:3;
+    box-shadow:0 24px 50px -20px rgba(0,0,0,.7);
+  }
+  .diptych--left .companion{right:auto;left:-4%;bottom:-9%;}
+
+  /* named-item list with quadro markers */
+  .named{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:.1rem;}
+  .named li{
+    display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:1rem;
+    padding:.85rem 0;border-top:1px solid var(--brand-line);
+  }
+  .named li:last-child{border-bottom:1px solid var(--brand-line);}
+  .named .q{width:9px;height:9px;border:1.5px solid var(--brand-accent);align-self:center;flex:none;}
+  .named--ruby .q{border-color:var(--brand-accent-2);}
+  .named .name{color:var(--brand-ink);}
+  .named .note{color:var(--brand-muted);font-size:.85rem;text-align:right;}
+
+  /* ============================================================
+     IL QUADRO — motif story
+     ============================================================ */
+  .quadro-story{text-align:center;}
+  .quadro-story .container{max-width:820px;}
+  .quadro-figure{
+    width:clamp(220px,42vw,360px);
+    margin:2.5rem auto 3rem;
+  }
+  .quadro-figure .quadro-media{aspect-ratio:3/4;}
+  .quadro-diamond{
+    width:56px;height:56px;border:1.5px solid var(--brand-accent);
+    margin:0 auto 2.5rem;transform:rotate(45deg);
+  }
+  .quadro-points{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:clamp(1.5rem,4vw,3rem);text-align:left;margin-top:1rem;
+  }
+  .quadro-points h3{font-size:1.05rem;letter-spacing:.02em;margin-bottom:.5rem;color:var(--brand-ink);}
+  .quadro-points p{color:var(--brand-muted);font-size:.92rem;margin:0;}
+  .quadro-points .idx{
+    font-family:var(--font-display);color:var(--brand-accent);
+    font-size:1.1rem;display:block;margin-bottom:.6rem;
+  }
+
+  /* ============================================================
+     IL DONO — horizontal band of confezione tiers
+     ============================================================ */
+  .dono-head{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:end;justify-content:space-between;margin-bottom:2.6rem;}
+  .dono-band{
+    display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);
+    gap:1.2rem;overflow-x:auto;padding-bottom:.6rem;
+    scroll-snap-type:x mandatory;
+  }
+  .dono-card{
+    scroll-snap-align:start;
+    border:1px solid var(--brand-line);
+    border-top:2px solid var(--brand-accent-2);
+    background:var(--brand-surface);
+    padding:1.8rem 1.6rem;border-radius:var(--radius);
+    display:flex;flex-direction:column;gap:.7rem;
+  }
+  .dono-card h3{font-size:1.35rem;color:var(--brand-ink);}
+  .dono-card p{color:var(--brand-muted);font-size:.92rem;margin:0;flex:1;}
+  .dono-price{color:var(--brand-accent);font-family:var(--font-display);font-size:1.25rem;font-variant-numeric:tabular-nums;}
+  .dono-price small{display:block;font-family:var(--font-body);color:var(--brand-muted);font-size:.68rem;letter-spacing:.04em;}
+  .dono-figure{margin-top:3rem;}
+  .dono-figure .quadro-media{aspect-ratio:16/7;}
+  .dono-figure .quadro-media img{object-position:62% 60%;}
+
+  /* ============================================================
+     SPEDIZIONI
+     ============================================================ */
+  .ship .offset .text{align-self:center;}
+  .ship-points{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:1.3rem;}
+  .ship-points li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+  .ship-points .q{width:11px;height:11px;border:1.5px solid var(--brand-accent);margin-top:.45rem;flex:none;}
+  .ship-points strong{color:var(--brand-ink);font-weight:500;display:block;}
+  .ship-points span{color:var(--brand-muted);font-size:.92rem;}
+
+  /* ============================================================
+     VISITA & CONTATTO
+     ============================================================ */
+  .visita-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:stretch;}
+  .visita-media .quadro-media{height:100%;min-height:340px;}
+  .contact-card{
+    border:1px solid var(--brand-line);
+    background:var(--brand-surface-alt);
+    padding:clamp(1.8rem,3vw,2.6rem);border-radius:var(--radius);
+    display:flex;flex-direction:column;gap:1.5rem;
+  }
+  .contact-row{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+  .contact-row .q{width:11px;height:11px;border:1.5px solid var(--brand-accent);margin-top:.5rem;flex:none;}
+  .contact-row .label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);}
+  .contact-row .val{color:var(--brand-ink);font-variant-numeric:tabular-nums;}
+  .contact-row .val a{border-bottom:1px solid var(--brand-line);}
+  .contact-row .val a:hover{border-color:var(--brand-accent);}
+  .contact-proof{
+    display:flex;align-items:center;gap:.8rem;
+    border-top:1px solid var(--brand-line);padding-top:1.3rem;
+    color:var(--brand-muted);font-size:.9rem;
+    font-variant-numeric:tabular-nums;
+  }
+  .contact-proof b{color:var(--brand-ink);font-weight:500;}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.3rem;}
+  .btn-map{
+    display:inline-flex;align-items:center;gap:.55rem;
+    border:1px solid var(--brand-line);color:var(--brand-ink);
+    padding:.85rem 1.3rem;border-radius:var(--radius);font-size:.85rem;letter-spacing:.04em;
+    transition:border-color var(--dur-micro) var(--ease-micro);
+  }
+  .btn-map:hover{border-color:var(--brand-accent);}
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer{border-top:1px solid var(--brand-line);padding:clamp(3rem,5vw,4.5rem) 0 6.5rem;}
+  .footer-grid{display:flex;flex-wrap:wrap;gap:2rem 3rem;justify-content:space-between;align-items:start;}
+  .footer-brand .wordmark{font-size:1.15rem;margin-bottom:.8rem;}
+  .footer-brand p{color:var(--brand-muted);max-width:34ch;font-size:.9rem;}
+  .footer-col h4{font-family:var(--font-body);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin:0 0 1rem;font-weight:500;}
+  .footer-col a,.footer-col p{color:var(--brand-muted);font-size:.9rem;display:block;margin-bottom:.5rem;}
+  .footer-col a:hover{color:var(--brand-ink);}
+  .disclaimer{color:var(--brand-muted);font-size:.72rem;opacity:.75;margin-top:2.5rem;max-width:70ch;}
+
+  /* ============================================================
+     CHAPTER RAIL — desktop-only quadro-dot progress index
+     ============================================================ */
+  .chapter-rail{
+    position:fixed;right:clamp(14px,2vw,26px);top:50%;transform:translateY(-50%);
+    z-index:55;display:none;flex-direction:column;gap:14px;
+  }
+  .chapter-rail a{
+    width:11px;height:11px;flex:none;transform:rotate(45deg);
+    border:1.5px solid var(--brand-line);background:transparent;
+    transition:border-color var(--dur-micro) var(--ease-micro),background var(--dur-micro) var(--ease-micro);
+  }
+  .chapter-rail a:hover,.chapter-rail a:focus-visible{border-color:var(--brand-accent);}
+  .chapter-rail a.active{border-color:var(--brand-accent);background:var(--brand-accent);}
+
+  /* ============================================================
+     STICKY MOBILE ACTION BAR
+     ============================================================ */
+  .action-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:none;
+    align-items:center;gap:.8rem;
+    background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+    backdrop-filter:blur(10px);
+    border-top:1px solid var(--brand-line);
+    padding:.7rem clamp(1rem,4vw,1.4rem);
+    padding-bottom:calc(.7rem + env(safe-area-inset-bottom));
+  }
+  .action-bar .ab-proof{flex:1;line-height:1.25;font-size:.78rem;color:var(--brand-muted);font-variant-numeric:tabular-nums;}
+  .action-bar .ab-proof b{color:var(--brand-ink);display:block;font-size:.9rem;}
+  .action-bar .btn-primary{padding:.8rem 1.3rem;font-size:.85rem;}
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:900px){
+    .nav-links,.nav .nav-cta{display:none;}
+    .nav-toggle{display:inline-flex;}
+    .nav[data-open="true"] .nav-links{
+      display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+      padding:1rem clamp(1rem,4vw,2rem) 1.4rem;
+    }
+    .nav[data-open="true"] .nav-links a{padding:.7rem 0;font-size:.95rem;}
+    .nav[data-open="true"] .nav-links li:last-child{
+      border-top:1px solid var(--brand-line);margin-top:.4rem;padding-top:.4rem;width:100%;
+    }
+    .nav{position:relative;}
+
+    .offset,.offset--rev,.visita-grid,.quadro-points{grid-template-columns:1fr;}
+    .offset .text,.offset--rev .text{order:2;}
+    .diptych .companion{width:38%;right:0;bottom:-7%;}
+    .diptych--left .companion{left:0;}
+    .action-bar{display:flex;}
+    .site-footer{padding-bottom:5.5rem;}
+  }
+
+  @media (max-width:560px){
+    .hero{min-height:auto;padding-top:clamp(4.5rem,22vh,7rem);}
+    .hero-media video,.hero-media img{object-position:62% 60%;}
+    .hero-wordmark{top:18px;left:18px;}
+    .hero-frame{inset:12px;}
+    .hero-lede{font-size:clamp(2.4rem,8vw,3.2rem);max-width:100%;}
+    .hero-inner{padding-top:2rem;}
+    .quadro-points{gap:2rem;}
+    .diptych .companion{width:44%;}
+    .dono-band{grid-auto-columns:minmax(230px,80%);}
+  }
+
+  @media (min-width:1101px) and (pointer:fine){
+    .chapter-rail{display:flex;}
+  }
+
+  /* ============================================================
+     MOTION LAYER — progressive enhancement
+     gated on `.js` AND (prefers-reduced-motion: no-preference)
+     so nothing is ever hidden without JS or under reduced motion
+     ============================================================ */
+  @media (prefers-reduced-motion:no-preference){
+
+    /* --- HERO: vitrine light-up (masked unveil + stroke draw + staggered intro) --- */
+    html.js .hero-media{
+      opacity:0;clip-path:inset(10% 12%);filter:brightness(.14) saturate(.6);
+    }
+    html.js .hero.play .hero-media{
+      opacity:1;clip-path:inset(0%);filter:brightness(1) saturate(1);
+      transition:opacity 1100ms var(--ease-signature),clip-path 1200ms var(--ease-signature),filter 1400ms var(--ease-signature);
+    }
+    html.js .hero-frame rect{stroke-dasharray:100;stroke-dashoffset:100;}
+    html.js .hero.play .hero-frame rect{animation:heroDraw 1500ms var(--ease-signature) 350ms forwards;}
+    html.js .hero-frame::before,html.js .hero-frame::after{opacity:0;transition:opacity var(--dur-reveal) var(--ease-signature) 1500ms;}
+    html.js .hero.play .hero-frame::before,html.js .hero.play .hero-frame::after{opacity:1;}
+
+    html.js .hero-wordmark,html.js .hero-lede,html.js .hero-sub,html.js .hero-actions{
+      opacity:0;transform:translateY(22px);
+      transition:opacity 720ms var(--ease-signature),transform 720ms var(--ease-signature);
+    }
+    html.js .hero.play .hero-wordmark{opacity:1;transform:none;transition-delay:260ms;}
+    html.js .hero.play .hero-lede{opacity:1;transform:none;transition-delay:520ms;}
+    html.js .hero.play .hero-sub{opacity:1;transform:none;transition-delay:680ms;}
+    html.js .hero.play .hero-actions{opacity:1;transform:none;transition-delay:840ms;}
+
+    /* --- SECTION TITLES: per-letter cascade, blur-to-sharp (glyph axis) --- */
+    html.js .section-title{opacity:0;transition:opacity var(--dur-reveal) var(--ease-signature);}
+    html.js .section-title.in{opacity:1;}
+    html.js .section-title .ltr{
+      display:inline-block;opacity:0;transform:translateY(.5em);filter:blur(8px);
+      transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature),filter var(--dur-reveal) var(--ease-signature);
+    }
+    html.js .section-title.in .ltr{opacity:1;transform:none;filter:none;}
+
+    /* --- MEDIA: resolve out of near-black (opacity + brightness, NO transform) --- */
+    html.js main .quadro-media{
+      opacity:0;filter:brightness(.22) saturate(.7);
+      transition:opacity var(--dur-reveal) var(--ease-signature),filter var(--dur-reveal) var(--ease-signature);
+    }
+    html.js main .quadro-media.in{opacity:1;filter:none;}
+    html.js main .diptych .companion{transition-delay:170ms;}
+
+    /* --- SIMPLE ELEMENTS: quiet rise --- */
+    html.js .eyebrow,html.js .lede,html.js .dono-head,html.js .contact-actions,html.js .contact-proof{
+      opacity:0;transform:translateY(16px);
+      transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    }
+    html.js .eyebrow.in,html.js .lede.in,html.js .dono-head.in,html.js .contact-actions.in,html.js .contact-proof.in{
+      opacity:1;transform:none;
+    }
+
+    /* --- ROW GROUPS: cascade along the list (delays set inline by JS) --- */
+    html.js .named li,html.js .ship-points li,html.js .quadro-points > div,
+    html.js .dono-band .dono-card,html.js .footer-grid > *,html.js .contact-card .contact-row{
+      opacity:0;transform:translateY(20px);
+      transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    }
+    html.js .named.in li,html.js .ship-points.in li,html.js .quadro-points.in > div,
+    html.js .dono-band.in .dono-card,html.js .footer-grid.in > *,html.js .contact-card.in .contact-row{
+      opacity:1;transform:none;
+    }
+
+    /* --- HERO scroll push-in (fallback scroll life when canvas is absent) --- */
+    @supports (animation-timeline: view()){
+      html.js .hero-media{animation:heroZoom linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+    }
+
+    /* --- IL QUADRO: scroll-scrubbed rotation, diamond -> square (only scrub moment) --- */
+    @supports (animation-timeline: view()){
+      html.js .quadro-diamond{animation:quadroSpin linear both;animation-timeline:view();animation-range:cover 12% cover 82%;}
+    }
+
+    /* --- IL DONO: horizontal travel band, follows its own L->R geometry (desktop) --- */
+    @supports (animation-timeline: view()){
+      @media (min-width:901px){
+        html.js .dono-band{animation:donoTravel linear both;animation-timeline:view();animation-range:entry 0% exit 100%;}
+      }
+    }
+
+    /* --- SCROLL PROGRESS bar --- */
+    @supports (animation-timeline: scroll()){
+      .scroll-progress{animation:progressGrow linear both;animation-timeline:scroll(root);}
+    }
+  }
+
+  /* --- Ruby-glass tile hover bloom (the only spring/quick + glow moment) --- */
+  @media (hover:hover) and (pointer:fine){
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+      background:var(--brand-accent);transform:scaleX(0);transform-origin:0 50%;
+      transition:transform var(--dur-micro) var(--ease-micro);
+    }
+    .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1);}
+
+    html.js .quadro-media--ruby{transition:transform var(--dur-micro) var(--ease-micro);}
+    html.js .quadro-media--ruby::before{
+      content:"";position:absolute;inset:-14%;z-index:-1;
+      background:radial-gradient(closest-side,color-mix(in srgb,var(--brand-accent-2) 60%,transparent),transparent);
+      opacity:0;filter:blur(22px);pointer-events:none;
+      transition:opacity var(--dur-micro) var(--ease-micro);
+    }
+    html.js .quadro-media--ruby:hover{transform:translateY(-5px);}
+    html.js .quadro-media--ruby:hover::before{opacity:.55;}
+  }
+
+  @keyframes heroDraw{to{stroke-dashoffset:0;}}
+  @keyframes heroZoom{from{transform:scale(1);}to{transform:scale(1.09);}}
+  @keyframes quadroSpin{from{transform:rotate(45deg);}to{transform:rotate(0deg);}}
+  @keyframes donoTravel{from{transform:translateX(2.4%);}to{transform:translateX(-2.4%);}}
+  @keyframes progressGrow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
+  /* ============================================================
+     REDUCED MOTION — full support
+     ============================================================ */
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+      scroll-behavior:auto !important;
+    }
+    html{scroll-behavior:auto;}
+    .hero-canvas,.section-tint{display:none !important;}
+  }
+</style>
+</head>
+
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="section-tint" aria-hidden="true"></div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" id="nav" aria-label="Navigazione principale" data-open="false">
+      <a class="wordmark" href="#top" aria-label="La Corte, atelier milanese">
+        <span class="mark" aria-hidden="true"></span>La Corte
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#atelier">Atelier</a></li>
+        <li><a href="#gioielli">Gioielli</a></li>
+        <li><a href="#tavola">Tavola</a></li>
+        <li><a href="#quadro">Il Quadro</a></li>
+        <li><a href="#dono">Doni</a></li>
+        <li><a href="#spedizioni">Spedizioni</a></li>
+        <li><a href="#visita" class="active">Visita</a></li>
+      </ul>
+      <a class="nav-cta" data-cta href="tel:+39028323284">Chiama l'atelier</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Apri il menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================ CHAPTER RAIL ============================ -->
+<nav class="chapter-rail" aria-label="Indice sezioni">
+  <a href="#atelier" aria-label="L'Atelier"></a>
+  <a href="#gioielli" aria-label="I Gioielli"></a>
+  <a href="#tavola" aria-label="La Tavola"></a>
+  <a href="#quadro" aria-label="Il Quadro"></a>
+  <a href="#dono" aria-label="Il Dono"></a>
+  <a href="#spedizioni" aria-label="Spedizioni"></a>
+  <a href="#visita" aria-label="Visita e Contatto"></a>
+</nav>
+
+<main id="top">
+
+  <!-- ============================ 1 · VITRINE HERO ============================ -->
+  <section class="hero" aria-labelledby="wordmark-h1">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/hero-vitrine.jpg"
+             aria-label="Anteprima animata di un anello quadrato in bronzo accanto a una tazza in Ruby glass, illuminati come la vetrina di una boutique">
+        <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+        <img src="assets/hero-vitrine.jpg" alt="Anello quadrato in bronzo appoggiato a una tazza in Ruby glass su pietra scura, illuminati come la vetrina di una boutique">
+      </video>
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    </div>
+    <div class="hero-frame" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="99" height="99" pathLength="100" vector-effect="non-scaling-stroke"/>
+      </svg>
+    </div>
+
+    <h1 class="hero-wordmark" id="wordmark-h1">
+      <span class="mark" aria-hidden="true"></span>
+      <span>La Corte<small>Atelier milanese di doni</small></span>
+    </h1>
+
+    <div class="hero-inner">
+      <p class="hero-lede">Un atelier. <em>Due mondi</em>, una sola mano.</p>
+      <p class="hero-sub">Gli anelli quadrati di Laura Contri e i bicchieri Ruby glass soffiati a mano, curati sotto un unico tetto. Scegliamo il pezzo, lo confezioniamo, lo spediamo ovunque.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" data-cta href="tel:+39028323284">Chiama l'atelier · 02 8323284</a>
+        <a class="btn-ghost" href="#visita">Vieni in boutique</a>
+        <span class="hero-proof"><span class="stars" aria-hidden="true">★★★★★</span> <b>4,9</b>&nbsp;su Google</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 2 · L'ATELIER ============================ -->
+  <section id="atelier">
+    <div class="container offset">
+      <div class="quadro-media">
+        <img src="assets/atelier-hands.jpg" alt="Le mani di un artigiano posano un anello quadrato in argento su un vassoio in velluto scuro, dentro una vetrina">
+      </div>
+      <div class="text">
+        <p class="eyebrow">L'Atelier</p>
+        <h2 class="section-title">Una sola boutique milanese, due mondi curati a mano.</h2>
+        <p class="lede">Non siamo un negozio di stock. La Corte è un atelier: scegliamo, componiamo e firmiamo ogni pezzo, dal gioiello alla tavola. Chi entra compra l'autografo di chi lo ha fatto, non una scatola qualunque.</p>
+        <p class="lede" style="margin-top:1.2rem;">Da un lato gli anelli quadrati di Laura Contri. Dall'altro i bicchieri e le tazze soffiati a mano. Una stessa geometria — il quadro — li tiene insieme.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 3 · I GIOIELLI ============================ -->
+  <section id="gioielli" class="band">
+    <div class="container offset--rev">
+      <div class="text">
+        <p class="eyebrow">I Gioielli · Laura Contri</p>
+        <h2 class="section-title">Anelli quadrati, dal segno di una firma.</h2>
+        <p class="lede">Bronzo e argento lavorati a mano, con lo spigolo quadrato che diventa la nostra firma. Ogni anello porta il nome di Laura Contri: una geometria sobria, pensata per essere indossata ogni giorno.</p>
+        <ul class="named">
+          <li><span class="q" aria-hidden="true"></span><span class="name">Square Ring — Bronze</span><span class="note">bronzo lavorato a mano</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Silver Square Ring</span><span class="note">argento, spigolo vivo</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Silver Square Rings Tris</span><span class="note">tris impilabile</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Square Ring — Couple</span><span class="note">la coppia</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Anello An</span><span class="note">il segno essenziale</span></li>
+        </ul>
+      </div>
+      <div class="diptych">
+        <div class="quadro-media main">
+          <img src="assets/jewels-rings-set.jpg" alt="Una serie di anelli quadrati in argento e bronzo disposti su velluto scuro">
+        </div>
+        <div class="quadro-media companion">
+          <img src="assets/jewels-tris-macro.jpg" alt="Macro di tre anelli quadrati in argento impilati come un tris su pietra scura">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 4 · LA TAVOLA ============================ -->
+  <section id="tavola">
+    <div class="container offset">
+      <div class="diptych diptych--left">
+        <div class="quadro-media quadro-media--ruby main">
+          <img src="assets/home-ruby-glass.jpg" alt="Bicchieri e tazza in Ruby glass soffiati a mano, luminosi in controluce su una superficie scura">
+        </div>
+        <div class="quadro-media quadro-media--ruby companion">
+          <img src="assets/home-noir-teacup.jpg" alt="Tazza in porcellana nera con filo di platino sul bordo, su un piattino in ardesia scura">
+        </div>
+      </div>
+      <div class="text">
+        <p class="eyebrow eyebrow--ruby">La Tavola</p>
+        <h2 class="section-title">La tavola vestita con la stessa mano.</h2>
+        <p class="lede">Vetro soffiato e porcellana, nei rossi del Ruby glass e nei neri con filo di platino. Lo stesso quadro degli anelli torna nel Deco Quadro: la tavola parla la lingua dell'atelier.</p>
+        <ul class="named named--ruby">
+          <li><span class="q" aria-hidden="true"></span><span class="name">Ruby glass — Tulipa</span><span class="note">soffiato a mano</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Ruby glass — Bamboo</span><span class="note">rosso in controluce</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Tazza Noir · filo platino</span><span class="note">porcellana nera</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Tazza Black</span><span class="note">nero pieno</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Deco Quadro Black</span><span class="note">il quadro sul vetro</span></li>
+          <li><span class="q" aria-hidden="true"></span><span class="name">Verde Acido cup</span><span class="note">l'accento acido</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 5 · IL QUADRO ============================ -->
+  <section id="quadro" class="band quadro-story">
+    <div class="container">
+      <p class="eyebrow" style="justify-content:center;">Il Quadro</p>
+      <h2 class="section-title">Una sola geometria tiene insieme i due mondi.</h2>
+      <p class="lede" style="margin:0 auto;">Il quadro non è un ornamento: è il filo che dimostra che gioiello e tavola escono dalla stessa mano.</p>
+
+      <div class="quadro-figure">
+        <div class="quadro-media">
+          <img src="assets/hero-detail-ring-macro.jpg" alt="Macro estrema di un anello quadrato in bronzo che mostra la finitura del metallo lavorato a mano">
+        </div>
+      </div>
+      <div class="quadro-diamond" aria-hidden="true"></div>
+
+      <div class="quadro-points">
+        <div>
+          <span class="idx">01</span>
+          <h3>Sull'anello</h3>
+          <p>Lo spigolo quadrato è la firma dei Square Ring: netto sul bronzo, vivo sull'argento.</p>
+        </div>
+        <div>
+          <span class="idx">02</span>
+          <h3>Sul vetro</h3>
+          <p>Lo stesso quadro torna inciso nel Deco Quadro Black, dal metallo al vetro soffiato.</p>
+        </div>
+        <div>
+          <span class="idx">03</span>
+          <h3>Sull'atelier</h3>
+          <p>Una geometria coerente: due mezze collezioni che leggono come una sola boutique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 6 · IL DONO / BOMBONIERE ============================ -->
+  <section id="dono">
+    <div class="container">
+      <div class="dono-head">
+        <div>
+          <p class="eyebrow eyebrow--ruby">Il Dono · Bomboniere</p>
+          <h2 class="section-title">Ogni pezzo diventa un dono, confezionato a mano.</h2>
+        </div>
+        <p class="lede">Scegliamo con voi il pezzo — gioiello o tavola — e lo prepariamo come confezione o bombonière. Un solo interlocutore, dalla scelta al pacco.</p>
+      </div>
+
+      <div class="dono-band" role="list" aria-label="Servizi di confezione">
+        <article class="dono-card" role="listitem">
+          <h3>Confezione dono</h3>
+          <p>Il pezzo scelto, avvolto nella nostra carta scura e chiuso con cordoncino bronzo. Pronto da consegnare.</p>
+          <span class="dono-price">da 8&nbsp;€<small>indicativo, su richiesta</small></span>
+        </article>
+        <article class="dono-card" role="listitem">
+          <h3>Bombonière</h3>
+          <p>Per nozze e ricorrenze: piccole serie coordinate di anelli o vetri, confezionate una a una.</p>
+          <span class="dono-price">su misura<small>preventivo in atelier</small></span>
+        </article>
+        <article class="dono-card" role="listitem">
+          <h3>Dono su richiesta</h3>
+          <p>Ci dite l'occasione e il destinatario: componiamo noi il pezzo giusto e lo spediamo ovunque.</p>
+          <span class="dono-price">da 15&nbsp;€<small>confezione + spedizione a parte</small></span>
+        </article>
+        <article class="dono-card" role="listitem">
+          <h3>Biglietto e messaggio</h3>
+          <p>Aggiungiamo un biglietto scritto a mano con il vostro messaggio, incluso in ogni confezione dono.</p>
+          <span class="dono-price">incluso<small>in ogni confezione</small></span>
+        </article>
+      </div>
+
+      <div class="dono-figure">
+        <div class="quadro-media quadro-media--ruby">
+          <img src="assets/bomboniere-gift.jpg" alt="Una scatola scura con un anello in bronzo accanto a un dono avvolto e legato con nastro, su pietra scura">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 7 · SPEDIZIONI ============================ -->
+  <section id="spedizioni" class="band ship">
+    <div class="container offset--rev">
+      <div class="text">
+        <p class="eyebrow">Spedizioni</p>
+        <h2 class="section-title">Dalla boutique di Milano, spedito ovunque.</h2>
+        <p class="lede">Vendiamo in atelier e online. Ogni pezzo parte imballato con cura, con la stessa attenzione con cui lo confezioniamo.</p>
+        <ul class="ship-points">
+          <li><span class="q" aria-hidden="true"></span><span><strong>Online, dallo shop</strong><span>Il catalogo è disponibile sul nostro negozio online (Shopify).</span></span></li>
+          <li><span class="q" aria-hidden="true"></span><span><strong>In boutique a Milano</strong><span>Via Argelati 40: qui vedete e provate il pezzo dal vivo.</span></span></li>
+          <li><span class="q" aria-hidden="true"></span><span><strong>Spedito ovunque</strong><span>Spediamo in Italia e all'estero, con imballo dedicato.</span></span></li>
+        </ul>
+      </div>
+      <div class="quadro-media">
+        <img src="assets/shipping-parcels.jpg" alt="Due pacchi avvolti in carta scura e legati con cordoncino bronzo, pronti per la spedizione su un bancone scuro">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 8 · VISITA & CONTATTO ============================ -->
+  <section id="visita">
+    <div class="container">
+      <p class="eyebrow">Visita &amp; Contatto</p>
+      <h2 class="section-title" style="margin-bottom:2.4rem;">Vieni in atelier, o chiamaci.</h2>
+      <div class="visita-grid">
+        <div class="visita-media">
+          <div class="quadro-media">
+            <img src="assets/boutique-interior.jpg" alt="Interno di una piccola boutique milanese al tramonto, con una vetrina illuminata di anelli e vetri">
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-row">
+            <span class="q" aria-hidden="true"></span>
+            <span><span class="label">Dove siamo</span><span class="val">Via Argelati Filippo, 40<br>20143 Milano (MI)</span></span>
+          </div>
+          <div class="contact-row">
+            <span class="q" aria-hidden="true"></span>
+            <span><span class="label">Telefono</span><span class="val"><a href="tel:+39028323284">02 8323284</a> · +39 02 8323284</span></span>
+          </div>
+          <div class="contact-row">
+            <span class="q" aria-hidden="true"></span>
+            <span><span class="label">Orari</span><span class="val">Apriamo alle 10:30</span></span>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn-primary" data-cta href="tel:+39028323284">Chiama per informazioni</a>
+            <a class="btn-map" href="https://www.google.com/maps/search/?api=1&query=La+Corte%2C+Milano" target="_blank" rel="noopener">Apri su Google Maps</a>
+          </div>
+
+          <div class="contact-proof">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><b>4,9 su Google</b> — il giudizio costante di chi ci ha già scelto in quartiere, in zona Navigli.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="wordmark"><span class="mark" aria-hidden="true"></span>La Corte</span>
+        <p>Atelier milanese di doni. Gli anelli quadrati di Laura Contri e i vetri Ruby glass, curati e spediti ovunque.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Atelier</h4>
+        <a href="#atelier">L'Atelier</a>
+        <a href="#gioielli">I Gioielli</a>
+        <a href="#tavola">La Tavola</a>
+        <a href="#quadro">Il Quadro</a>
+      </div>
+      <div class="footer-col">
+        <h4>Doni &amp; spedizioni</h4>
+        <a href="#dono">Il Dono</a>
+        <a href="#spedizioni">Spedizioni</a>
+        <a href="#visita">Visita &amp; Contatto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <p>Via Argelati Filippo, 40<br>20143 Milano (MI)</p>
+        <a href="tel:+39028323284">02 8323284</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=La+Corte%2C+Milano" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+    <p class="disclaimer">I prezzi delle confezioni sono esempi indicativi, da confermare in atelier. Orario di apertura da confermare. Le immagini illustrano lo stile della boutique.</p>
+  </div>
+</footer>
+
+<!-- ============================ STICKY MOBILE ACTION BAR ============================ -->
+<div class="action-bar">
+  <div class="ab-proof"><b>4,9 su Google</b>Atelier a Milano · Navigli</div>
+  <a class="btn-primary" data-cta href="tel:+39028323284">Chiama · 02 8323284</a>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+    var root = document.documentElement;
+
+    /* ---- mobile nav (works regardless of motion preference) ---- */
+    var nav = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    if(nav && toggle){
+      var setOpen = function(open){
+        nav.setAttribute('data-open', open ? 'true' : 'false');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+      };
+      toggle.addEventListener('click', function(){ setOpen(nav.getAttribute('data-open') !== 'true'); });
+      var navLinks = document.getElementById('nav-links');
+      if(navLinks) navLinks.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && nav.getAttribute('data-open') === 'true'){ setOpen(false); toggle.focus(); }
+      });
+    }
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if(reduce){
+      /* honour reduced motion: stop the autoplaying hero, rest on the poster still */
+      var rv = document.querySelector('.hero-media video');
+      if(rv){ try{ rv.removeAttribute('autoplay'); rv.pause(); }catch(e){} }
+      return; /* content is fully visible — reveal styles are gated on no-preference */
+    }
+
+    /* ---- section-title per-letter split (glyph cascade) ---- */
+    document.querySelectorAll('.section-title').forEach(function(title){
+      var text = title.textContent;
+      var frag = document.createDocumentFragment();
+      for(var i=0;i<text.length;i++){
+        var ch = text[i];
+        if(ch === ' '){ frag.appendChild(document.createTextNode(' ')); continue; }
+        var span = document.createElement('span');
+        span.className = 'ltr';
+        span.textContent = ch;
+        span.style.transitionDelay = (i * 26) + 'ms';
+        frag.appendChild(span);
+      }
+      title.textContent = '';
+      title.appendChild(frag);
+    });
+
+    /* ---- ONE IntersectionObserver reveal system (unobserve after firing) ---- */
+    var GROUP_CHILDREN = {
+      'named':'li', 'ship-points':'li', 'quadro-points':':scope > div',
+      'dono-band':'.dono-card', 'footer-grid':':scope > *', 'contact-card':'.contact-row'
+    };
+    var revEls = document.querySelectorAll(
+      '.section-title, .eyebrow, .lede, .dono-head, .contact-actions, .contact-proof, ' +
+      'main .quadro-media, .named, .ship-points, .quadro-points, .dono-band, .footer-grid, .contact-card'
+    );
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target;
+        el.classList.add('in');
+        /* stagger group children by their order */
+        for(var key in GROUP_CHILDREN){
+          if(el.classList.contains(key)){
+            var kids = el.querySelectorAll(GROUP_CHILDREN[key]);
+            for(var i=0;i<kids.length;i++){ kids[i].style.transitionDelay = (i * 90) + 'ms'; }
+            break;
+          }
+        }
+        io.unobserve(el);
+      });
+    }, { threshold:0.18, rootMargin:'0px 0px -8% 0px' });
+    revEls.forEach(function(el){ io.observe(el); });
+
+    /* ---- hero intro sequence (masked unveil + stroke draw + staggered copy) ---- */
+    var hero = document.querySelector('.hero');
+    if(hero){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('play'); }); }); }
+
+    /* ---- chapter rail active dot + ambient section tint ---- */
+    var railLinks = Array.prototype.slice.call(document.querySelectorAll('.chapter-rail a'));
+    var tint = document.querySelector('.section-tint');
+    var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var id = entry.target.id;
+        railLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+        if(tint){
+          var ruby = (id === 'tavola' || id === 'dono');
+          var col = ruby ? 'var(--brand-accent-2)' : 'var(--brand-accent)';
+          tint.style.background = 'color-mix(in srgb, ' + col + ' 6%, transparent)';
+        }
+      });
+    }, { threshold:0.5, rootMargin:'-25% 0px -45% 0px' });
+    sections.forEach(function(s){ so.observe(s); });
+
+    /* ---- Jewels depth parallax (desktop pointer only) — two layers, two rates ---- */
+    var desktop = window.matchMedia('(min-width:901px) and (pointer:fine)').matches;
+    if(desktop){
+      var gioielli = document.getElementById('gioielli');
+      var jMain = document.querySelector('#gioielli .diptych .main');
+      var jComp = document.querySelector('#gioielli .diptych .companion');
+      if(gioielli && jMain){
+        var pTick = false;
+        var onParallax = function(){
+          if(pTick) return; pTick = true;
+          requestAnimationFrame(function(){
+            var r = gioielli.getBoundingClientRect();
+            var p = (window.innerHeight - r.top) / (window.innerHeight + r.height);
+            p = Math.min(1, Math.max(0, p));
+            var shift = (p - 0.5);
+            jMain.style.transform = 'translateY(' + (-shift * 20).toFixed(2) + 'px)';
+            if(jComp) jComp.style.transform = 'translateY(' + (-shift * 8).toFixed(2) + 'px)';
+            pTick = false;
+          });
+        };
+        window.addEventListener('scroll', onParallax, { passive:true });
+        onParallax();
+      }
+    }
+
+    /* ---- Hero canvas frame-scrub (works on every device incl. iOS) ---- */
+    (function(){
+      var media = document.querySelector('.hero-media');
+      var canvas = document.querySelector('.hero-canvas');
+      if(!media || !canvas || !hero) return;
+      var ctx = canvas.getContext('2d');
+      if(!ctx) return;
+
+      var COUNT = 48;
+      var dir = (window.innerWidth < 768) ? 'mobile' : 'desktop';
+      var base = 'assets/hero-frames/' + dir + '/frame-';
+      var frames = new Array(COUNT);
+      var loaded = 0, ready = false, active = false, running = false;
+      var cur = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      function pad(n){ n = String(n); while(n.length < 4) n = '0' + n; return n; }
+      function size(){
+        var r = media.getBoundingClientRect();
+        if(!r.width) return;
+        canvas.width = Math.round(r.width * dpr);
+        canvas.height = Math.round(r.height * dpr);
+      }
+      function load(i){
+        if(frames[i]) return;
+        var img = new Image();
+        img.decoding = 'async';
+        img.onload = function(){ frames[i] = img; loaded++; if(loaded >= 6) ready = true; };
+        img.onerror = function(){};
+        img.src = base + pad(i + 1) + '.webp';
+      }
+      function nearest(idx){
+        if(frames[idx]) return frames[idx];
+        for(var d = 1; d < COUNT; d++){
+          if(idx - d >= 0 && frames[idx - d]) return frames[idx - d];
+          if(idx + d < COUNT && frames[idx + d]) return frames[idx + d];
+        }
+        return null;
+      }
+      function draw(img){
+        var cw = canvas.width, ch = canvas.height;
+        if(!cw || !ch) return;
+        var iw = img.naturalWidth, ih = img.naturalHeight;
+        var s = Math.max(cw / iw, ch / ih);
+        var w = iw * s, h = ih * s;
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, (cw - w) * 0.58, (ch - h) * 0.55, w, h);
+      }
+      function loop(){
+        if(!active){ running = false; return; }
+        var r = hero.getBoundingClientRect();
+        var target = Math.min(1, Math.max(0, (-r.top) / (r.height || 1)));
+        cur += (target - cur) * 0.12;
+        if(ready){
+          var img = nearest(Math.round(cur * (COUNT - 1)));
+          if(img){ draw(img); canvas.style.opacity = Math.min(1, Math.max(0, cur * 6)).toFixed(3); }
+        }
+        requestAnimationFrame(loop);
+      }
+
+      /* critical frames first (start / mid / end), then the rest lazily */
+      [0, Math.floor(COUNT / 2), COUNT - 1].forEach(load);
+      var k = 1;
+      var fill = setInterval(function(){
+        while(k < COUNT && (k === Math.floor(COUNT / 2))) k++;
+        if(k >= COUNT){ clearInterval(fill); return; }
+        load(k); k++;
+      }, 55);
+
+      size();
+      window.addEventListener('resize', size, { passive:true });
+      var vio = new IntersectionObserver(function(e){
+        active = e[0].isIntersecting;
+        if(active && !running){ running = true; requestAnimationFrame(loop); }
+      }, { threshold:0 });
+      vio.observe(hero);
+    })();
+
+  })();
+</script>
+
+</body>
+</html>

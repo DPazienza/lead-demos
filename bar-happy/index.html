@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bar Happy — bar di quartiere a San Donato, Milano | Prenditi il tuo tempo</title>
+<meta name="description" content="Bar Happy in Via Rogoredo 117, San Donato (Milano). Lo stesso caffè da 1,50 €, un tavolo dove restare: brioche al mattino, un angolo tranquillo di pomeriggio, spritz la sera. 4,6 su 28 recensioni. Chiama e teniamo il tavolo.">
+<link rel="canonical" href="https://www.barhappy-milano.it/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bar Happy — il bar di quartiere dove puoi fermarti">
+<meta property="og:description" content="Via Rogoredo 117, San Donato (Milano). Stesso caffè da 1,50 €, un tavolo dove restare dal mattino all’aperitivo. Nessuno ti mette fretta.">
+<meta property="og:image" content="assets/hero-counter.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bar Happy — il bar di quartiere dove puoi fermarti">
+<meta name="twitter:description" content="Via Rogoredo 117, San Donato (Milano). Stesso caffè da 1,50 €, un tavolo dove restare dal mattino all’aperitivo.">
+<meta name="twitter:image" content="assets/hero-counter.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Newsreader:opsz,ital,wght@6..72,0,400;6..72,0,500;6..72,1,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Bar Happy",
+  "description": "Bar di quartiere a San Donato, Milano. Caffè, brioche e aperitivo a prezzi onesti, in una sala calma dove puoi fermarti.",
+  "telephone": "+39 351 7464833",
+  "url": "https://www.barhappy-milano.it/",
+  "image": "assets/hero-counter.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Rogoredo, 117",
+    "addressLocality": "Milano",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "28"
+  }
+}
+</script>
+
+<style>
+/* ============================================================
+   BAR HAPPY — brand tokens (defined ONCE, referenced everywhere)
+   ============================================================ */
+:root{
+  --brand-ink:#241A12;
+  --brand-surface:#F7F1E6;
+  --brand-surface-alt:#EFE6D6;
+  --brand-accent:#A85510;
+  --brand-accent-ink:#FBF4E7;
+  --brand-muted:#6E5A46;
+  --brand-line:#DED2BE;
+
+  --font-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Newsreader",Georgia,"Times New Roman",serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-reveal:700ms;
+  --dur-micro:220ms;
+  --stagger:80ms;
+
+  --space-section:clamp(4rem,2.5rem + 8vw,9rem);
+  --container:min(1180px,92vw);
+  --radius:14px;
+
+  --fs-hero:clamp(2.6rem,1.7rem + 4.4vw,5.5rem);
+  --fs-h2:clamp(1.6rem,1.15rem + 1.9vw,2.6rem);
+  --fs-body:clamp(1.05rem,1rem + 0.32vw,1.2rem);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+  text-wrap:pretty;
+  position:relative;
+}
+/* fine paper grain — inline SVG feTurbulence, never a generated image */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  opacity:.05;mix-blend-mode:soft-light;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
+  background-size:180px 180px;
+}
+.site-header,main,.site-footer,.mobile-bar{position:relative;z-index:1;}
+img,video{max-width:100%;display:block;}
+a{color:inherit;}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin:0;text-wrap:balance;}
+p{margin:0 0 1rem;overflow-wrap:anywhere;}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink);}
+:focus-visible{
+  outline:3px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:4px;
+}
+.tnum{font-variant-numeric:tabular-nums;}
+
+.container{width:var(--container);margin-inline:auto;}
+.eyebrow{
+  font-family:var(--font-display);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brand-muted);
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  margin:0 0 1rem;
+}
+.eyebrow .chicco{flex:0 0 auto;}
+
+/* ---- il chicco motif (SVG only) ---- */
+.chicco{width:11px;height:11px;display:inline-block;vertical-align:middle;color:var(--brand-accent);}
+.chicco svg{width:100%;height:100%;display:block;}
+
+/* ---- wordmark logotype (off-plaque, two-tone) ---- */
+.wordmark{
+  font-family:var(--font-display);
+  font-weight:700;
+  letter-spacing:-0.03em;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  gap:.28em;
+  white-space:nowrap;
+}
+.wordmark .w-bar{color:var(--brand-ink);}
+.wordmark .w-happy{color:var(--brand-accent);display:inline-flex;align-items:center;gap:.18em;}
+.wordmark .w-happy .chicco{width:.5em;height:.5em;}
+
+/* ============================================================
+   Skip link
+   ============================================================ */
+.skip{
+  position:absolute;left:-999px;top:0;z-index:200;
+  background:var(--brand-ink);color:var(--brand-accent-ink);
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;font-family:var(--font-display);
+}
+.skip:focus{left:0;}
+
+/* ============================================================
+   Header / nav
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.85rem 0;
+}
+.nav .brand{font-size:1.28rem;text-decoration:none;}
+.nav-toggle{
+  display:none;
+  border:1px solid var(--brand-line);background:transparent;color:var(--brand-ink);
+  width:44px;height:44px;border-radius:10px;cursor:pointer;
+  align-items:center;justify-content:center;
+}
+.nav-toggle .bars{display:block;width:20px;height:2px;background:currentColor;position:relative;}
+.nav-toggle .bars::before,.nav-toggle .bars::after{
+  content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;
+}
+.nav-toggle .bars::before{top:-6px;}
+.nav-toggle .bars::after{top:6px;}
+.nav-menu{display:flex;align-items:center;gap:1.6rem;}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none;margin:0;padding:0;}
+.nav-links a{
+  text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:.95rem;
+  color:var(--brand-ink);letter-spacing:-0.01em;padding:.3rem 0;position:relative;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-2px;height:3px;
+  background:var(--brand-accent);transition:right var(--dur-micro) var(--ease-signature);
+}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{right:0;}
+.nav-call{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--font-display);font-weight:600;font-size:.95rem;text-decoration:none;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:.55rem 1rem;border-radius:999px;white-space:nowrap;
+  transition:transform var(--dur-micro) var(--ease-micro);
+}
+.nav-call:hover{transform:scale(1.03);}
+
+/* ============================================================
+   HERO — the insegna over the counter (WOW MOMENT)
+   ============================================================ */
+.hero{position:relative;overflow:clip;background:var(--brand-ink);}
+.hero-media{position:absolute;inset:0;z-index:0;}
+.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 60%;}
+.hero-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,
+     color-mix(in srgb,var(--brand-ink) 30%,transparent) 0%,
+     color-mix(in srgb,var(--brand-ink) 8%,transparent) 30%,
+     color-mix(in srgb,var(--brand-ink) 40%,transparent) 58%,
+     color-mix(in srgb,var(--brand-ink) 78%,transparent) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  min-height:min(88vh,760px);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-block:clamp(4.5rem,7vw,7rem) clamp(2.2rem,5vw,4rem);
+  gap:1.6rem;
+}
+.hero-eyebrow{
+  color:var(--brand-accent-ink);
+  text-shadow:0 1px 8px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+}
+.hero-eyebrow .chicco{color:var(--brand-accent);}
+
+/* the enamel plaque */
+.insegna{margin:0;}
+.plaque{
+  display:inline-block;
+  position:relative;
+  padding:clamp(1rem,2.4vw,2rem) clamp(1.6rem,4vw,3.4rem);
+  background:
+    linear-gradient(155deg,
+      color-mix(in srgb,var(--brand-accent) 82%,#fff 18%) 0%,
+      var(--brand-accent) 44%,
+      color-mix(in srgb,var(--brand-accent) 78%,var(--brand-ink) 22%) 100%);
+  border-radius:2px;
+  /* 10px bevel + soft real drop shadow, hung slightly off-level */
+  border:2px solid color-mix(in srgb,var(--brand-accent) 70%,var(--brand-ink) 30%);
+  box-shadow:
+    inset 0 0 0 3px color-mix(in srgb,var(--brand-accent-ink) 22%,transparent),
+    inset 0 4px 10px color-mix(in srgb,#fff 30%,transparent),
+    inset 0 -6px 14px color-mix(in srgb,var(--brand-ink) 34%,transparent),
+    0 22px 46px -14px color-mix(in srgb,var(--brand-ink) 78%,transparent),
+    0 6px 14px -6px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+  transform:rotate(-1.3deg);
+  transform-origin:top center;
+}
+.plaque::before{
+  /* the fixing at the top pivot */
+  content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  width:16px;height:16px;border-radius:50%;
+  background:color-mix(in srgb,var(--brand-accent) 60%,var(--brand-ink) 40%);
+  box-shadow:0 2px 4px color-mix(in srgb,var(--brand-ink) 60%,transparent),
+             inset 0 1px 2px color-mix(in srgb,#fff 40%,transparent);
+}
+.plaque .lockup{
+  display:flex;align-items:center;gap:.3em;
+  font-size:var(--fs-hero);
+  font-family:var(--font-display);font-weight:700;letter-spacing:-0.03em;line-height:.92;
+  color:var(--brand-accent-ink);
+  text-shadow:0 2px 3px color-mix(in srgb,var(--brand-ink) 45%,transparent);
+}
+.plaque .lockup .w-happy{
+  color:var(--brand-accent-ink);
+  display:inline-flex;align-items:center;gap:.16em;
+  text-decoration:underline;
+  text-decoration-color:color-mix(in srgb,var(--brand-ink) 55%,transparent);
+  text-underline-offset:.12em;
+  text-decoration-thickness:.06em;
+}
+.plaque .chicco{width:.46em;height:.46em;color:var(--brand-accent-ink);}
+.plaque .chicco svg [data-seam]{stroke:color-mix(in srgb,var(--brand-ink) 55%,transparent);}
+.plaque-tagline{
+  margin:.7rem 0 0 .4rem;
+  font-family:var(--font-display);font-weight:600;font-size:1.02rem;letter-spacing:.02em;
+  color:var(--brand-accent-ink);
+  text-shadow:0 1px 6px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+}
+
+.hero-lede{
+  color:var(--brand-accent-ink);
+  max-width:34ch;
+  font-size:clamp(1.15rem,1rem + .7vw,1.5rem);
+  line-height:1.4;
+  margin:0;
+  text-shadow:0 1px 10px color-mix(in srgb,var(--brand-ink) 70%,transparent);
+}
+.hero-lede span{display:block;}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;}
+
+/* social proof next to CTA */
+.proof-inline{
+  display:flex;align-items:center;gap:.6rem;
+  color:var(--brand-accent-ink);font-size:.95rem;
+  text-shadow:0 1px 8px color-mix(in srgb,var(--brand-ink) 70%,transparent);
+}
+.proof-inline strong{font-family:var(--font-display);font-size:1.15rem;}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--font-display);font-weight:600;font-size:1rem;
+  text-decoration:none;cursor:pointer;border:none;
+  padding:.85rem 1.5rem;border-radius:999px;
+  transition:transform var(--dur-micro) var(--ease-micro),box-shadow var(--dur-micro) var(--ease-signature);
+}
+.btn-primary{
+  position:relative;overflow:hidden;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  box-shadow:0 10px 22px -12px color-mix(in srgb,var(--brand-accent) 90%,var(--brand-ink));
+}
+.btn-primary:hover,.btn-primary:focus-visible{transform:scale(1.03);}
+.btn-primary:active{transform:scale(.97);}
+.btn-ghost{
+  background:color-mix(in srgb,var(--brand-accent-ink) 14%,transparent);
+  color:var(--brand-accent-ink);
+  border:1px solid color-mix(in srgb,var(--brand-accent-ink) 55%,transparent);
+}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:color-mix(in srgb,var(--brand-accent-ink) 24%,transparent);}
+.btn-outline{
+  background:transparent;color:var(--brand-ink);
+  border:1px solid var(--brand-ink);
+}
+.btn-outline:hover,.btn-outline:focus-visible{background:var(--brand-ink);color:var(--brand-accent-ink);}
+
+/* companion detail floating over the hero base */
+.hero-detail{
+  position:absolute;z-index:2;right:0;bottom:clamp(-2rem,-3vw,-1rem);
+  width:clamp(140px,20vw,240px);aspect-ratio:1/1;
+  border-radius:var(--radius);overflow:hidden;
+  border:6px solid var(--brand-surface);
+  box-shadow:0 24px 50px -18px color-mix(in srgb,var(--brand-ink) 80%,transparent);
+  transform:rotate(2.2deg);
+}
+.hero-detail img{width:100%;height:100%;object-fit:cover;}
+
+/* ============================================================
+   Shell: content + persistent sticky rail
+   ============================================================ */
+.shell{
+  width:var(--container);margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,24vw,300px);
+  gap:clamp(2rem,4vw,4rem);
+  align-items:start;
+  padding-top:clamp(3rem,6vw,5rem);
+}
+.rail{position:sticky;top:88px;}
+.rail-card{
+  background:var(--brand-surface-alt);
+  border:1px solid var(--brand-line);
+  border-radius:var(--radius);
+  padding:1.5rem 1.4rem;
+}
+.rail-card h2{font-size:1.35rem;margin-bottom:.3rem;}
+.rail-lede{font-size:.98rem;color:var(--brand-muted);margin-bottom:1.1rem;}
+.rail-phone{
+  display:block;font-family:var(--font-display);font-weight:700;font-size:1.5rem;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-0.02em;text-decoration:none;color:var(--brand-ink);margin-bottom:.2rem;
+}
+.rail-phone-note{font-size:.82rem;color:var(--brand-muted);margin-bottom:1.1rem;}
+.rail-card .btn{width:100%;justify-content:center;margin-bottom:.7rem;}
+.rail-proof{
+  display:flex;align-items:center;gap:.55rem;
+  border-top:1px solid var(--brand-line);margin-top:1.1rem;padding-top:1rem;
+  font-size:.9rem;color:var(--brand-muted);
+}
+.rail-proof strong{font-family:var(--font-display);color:var(--brand-ink);font-size:1.05rem;}
+
+/* stars visualization (aggregate only) */
+.stars{--pct:92%;position:relative;display:inline-block;line-height:0;height:1em;width:5.4em;flex:0 0 auto;}
+.stars .row{display:flex;gap:.08em;height:1em;}
+.stars .row svg{width:1em;height:1em;}
+.stars .base svg{color:var(--brand-line);}
+.stars .fill{position:absolute;inset:0;width:var(--pct);overflow:hidden;white-space:nowrap;}
+.stars .fill svg{color:var(--brand-accent);}
+
+/* ============================================================
+   Sections (editorial rhythm — uneven spacing)
+   ============================================================ */
+.sections{min-width:0;}
+.chapter{padding-block:clamp(2.5rem,5vw,4rem);}
+.chapter:first-child{padding-top:0;}
+/* uneven editorial pacing — the differentiator gets room to breathe,
+   the two morning/evening chapters that flank it stay closer together */
+#aperitivo{padding-block:clamp(1.8rem,3.6vw,3rem);}
+#fermarsi{padding-block:clamp(3.6rem,8vw,7rem);}
+#dietro-al-banco{padding-block:clamp(1.8rem,3.6vw,3rem);}
+#recensioni{padding-block:clamp(3.2rem,7vw,6rem);}
+.chapter-head{max-width:52ch;margin-bottom:clamp(1.6rem,3vw,2.4rem);}
+.chapter-title{
+  font-size:var(--fs-h2);margin-bottom:.9rem;
+  display:inline-block;position:relative;padding-bottom:.32em;
+}
+.chapter-title::after{
+  content:"";position:absolute;left:0;bottom:0;height:3px;width:clamp(48px,40%,110px);
+  background:var(--brand-accent);border-radius:2px;
+}
+.lede{font-size:clamp(1.1rem,1rem + .5vw,1.32rem);color:var(--brand-ink);max-width:46ch;}
+.muted{color:var(--brand-muted);}
+
+/* editorial figure: main + offset companion */
+.editorial{position:relative;overflow:clip;padding-block:.5rem;}
+.editorial .fig-main{
+  border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 26px 50px -26px color-mix(in srgb,var(--brand-ink) 60%,transparent);
+}
+.editorial .fig-main img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;}
+.editorial .fig-companion{
+  position:absolute;border-radius:var(--radius);overflow:hidden;
+  border:6px solid var(--brand-surface);
+  box-shadow:0 20px 40px -18px color-mix(in srgb,var(--brand-ink) 70%,transparent);
+}
+.editorial .fig-companion img{width:100%;height:100%;object-fit:cover;}
+figcaption{font-size:.85rem;color:var(--brand-muted);margin-top:.7rem;font-style:italic;}
+
+/* right-offset companion variant */
+.editorial.offset-right .fig-companion{
+  right:-1.5%;bottom:-1.5rem;width:clamp(120px,26%,230px);aspect-ratio:1/1;transform:rotate(2deg);
+}
+.editorial.offset-left .fig-companion{
+  left:-1.5%;top:-1.5rem;width:clamp(120px,24%,210px);aspect-ratio:3/4;transform:rotate(-2.4deg);
+}
+
+/* two-column split (text + editorial) */
+.split{
+  display:grid;grid-template-columns:1fr;gap:clamp(1.8rem,4vw,3.2rem);align-items:center;
+}
+@media(min-width:820px){
+  .split{grid-template-columns:1.05fr 1fr;}
+  .split.flip .split-text{order:2;}
+}
+
+/* menu list with il-chicco markers + price pills */
+.menu{list-style:none;margin:1.4rem 0 0;padding:0;border-top:1px solid var(--brand-line);}
+.menu li{
+  display:flex;align-items:baseline;gap:.8rem;
+  padding:.85rem 0;border-bottom:1px solid var(--brand-line);
+}
+.menu .m-mark{flex:0 0 auto;transform:translateY(2px);}
+.menu .m-name{font-family:var(--font-display);font-weight:600;font-size:1.05rem;}
+.menu .m-desc{color:var(--brand-muted);font-size:.92rem;}
+.menu .m-mid{flex:1 1 auto;min-width:0;}
+.menu .m-leader{
+  flex:1 1 auto;border-bottom:1px dotted var(--brand-line);transform:translateY(-4px);min-width:12px;
+}
+.pill{
+  flex:0 0 auto;
+  position:relative;overflow:hidden;
+  display:inline-block;font-family:var(--font-display);font-weight:700;font-size:.95rem;
+  font-variant-numeric:tabular-nums;
+  background:var(--brand-accent);color:var(--brand-accent-ink);
+  padding:.2rem .7rem;border-radius:999px;
+  transition:transform var(--dur-micro) var(--ease-micro),opacity var(--dur-reveal) var(--ease-signature);
+}
+.pill.tbd{background:transparent;color:var(--brand-muted);border:1px solid var(--brand-line);}
+
+/* section divider with chicco centrepiece */
+.divider{display:flex;align-items:center;gap:1rem;color:var(--brand-line);margin-block:clamp(1rem,3vw,2rem);}
+.divider::before,.divider::after{content:"";height:1px;background:var(--brand-line);flex:1;}
+.divider .chicco{width:14px;height:14px;flex:0 0 auto;}
+
+/* fermarsi differentiator: pull quote */
+.pull{
+  border-left:3px solid var(--brand-accent);
+  padding:.3rem 0 .3rem 1.4rem;margin:1.8rem 0 0;
+  font-family:var(--font-body);font-style:italic;font-size:clamp(1.2rem,1rem + .8vw,1.6rem);
+  line-height:1.35;color:var(--brand-ink);
+}
+.pull .src{display:block;font-style:normal;font-size:.85rem;color:var(--brand-muted);margin-top:.7rem;letter-spacing:.02em;}
+
+/* practical facts grid */
+.facts{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:1px;background:var(--brand-line);
+  border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;
+  grid-template-columns:1fr;}
+@media(min-width:560px){.facts{grid-template-columns:1fr 1fr;}}
+.facts li{background:var(--brand-surface);padding:1.1rem 1.2rem;}
+.facts .f-label{
+  font-family:var(--font-display);font-size:.72rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brand-muted);display:block;margin-bottom:.3rem;}
+.facts .f-value{font-size:1.02rem;font-variant-numeric:tabular-nums;}
+
+/* Dicono di noi — big rating panel */
+.reviews{
+  background:var(--brand-surface-alt);border:1px solid var(--brand-line);border-radius:var(--radius);
+  padding:clamp(1.8rem,4vw,3rem);
+  display:grid;gap:clamp(1.8rem,4vw,3rem);grid-template-columns:1fr;
+}
+@media(min-width:760px){.reviews{grid-template-columns:auto 1fr;align-items:center;}}
+.rating-block{text-align:center;}
+.rating-num{font-family:var(--font-display);font-weight:700;font-size:clamp(3.4rem,2rem + 8vw,5.5rem);
+  font-variant-numeric:tabular-nums;
+  line-height:.9;letter-spacing:-0.04em;color:var(--brand-ink);}
+.rating-num .of{color:var(--brand-muted);font-size:.4em;}
+.rating-stars{margin:.7rem auto .5rem;font-size:1.6rem;display:inline-block;}
+.rating-meta{color:var(--brand-muted);font-size:.95rem;}
+.themes{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;}
+.themes li{display:flex;gap:.85rem;align-items:flex-start;}
+.themes .chicco{flex:0 0 auto;transform:translateY(4px);width:13px;height:13px;}
+.themes .t-title{font-family:var(--font-display);font-weight:600;display:block;font-size:1.05rem;margin-bottom:.15rem;}
+.themes .t-body{color:var(--brand-muted);font-size:.96rem;}
+
+/* Passa a trovarci — contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:clamp(1.8rem,4vw,3rem);align-items:start;}
+@media(min-width:820px){.contact-grid{grid-template-columns:1fr 1fr;}}
+.contact-card{
+  background:var(--brand-surface-alt);border:1px solid var(--brand-line);border-radius:var(--radius);
+  padding:clamp(1.5rem,3vw,2.2rem);
+}
+.contact-line{display:flex;gap:.7rem;padding:.7rem 0;border-bottom:1px solid var(--brand-line);align-items:baseline;}
+.contact-line:last-child{border-bottom:none;}
+.contact-line .cl-label{font-family:var(--font-display);font-size:.72rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brand-muted);flex:0 0 6.5rem;}
+.contact-line .cl-value{flex:1;min-width:0;font-variant-numeric:tabular-nums;}
+.contact-line a{color:var(--brand-ink);}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem;}
+.contact-media{border-radius:var(--radius);overflow:hidden;position:relative;
+  box-shadow:0 26px 50px -26px color-mix(in srgb,var(--brand-ink) 60%,transparent);}
+.contact-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;}
+
+/* second enamel plaque — the sign-off (WOW woven through) */
+.signoff{display:flex;justify-content:center;padding-top:clamp(2rem,4vw,3rem);}
+.plaque.plaque-sm{transform:rotate(-1.1deg);padding:.8rem 1.6rem;}
+.plaque.plaque-sm .lockup{font-size:clamp(1.8rem,1.2rem + 3vw,2.8rem);}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer{
+  background:var(--brand-ink);color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);
+  margin-top:var(--space-section);
+  padding:clamp(2.5rem,5vw,4rem) 0 5.5rem;
+}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;}
+@media(min-width:720px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr;}}
+.site-footer .brand-lg{font-size:1.6rem;margin-bottom:.8rem;display:inline-flex;}
+.site-footer .wordmark .w-bar{color:var(--brand-accent-ink);}
+.site-footer h3{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--brand-accent-ink) 60%,transparent);margin-bottom:.9rem;font-weight:600;}
+.site-footer a{color:var(--brand-accent-ink);text-decoration:none;}
+.site-footer a:hover{text-decoration:underline;}
+.footer-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:.98rem;}
+.footer-note{
+  margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid color-mix(in srgb,var(--brand-accent-ink) 20%,transparent);
+  font-size:.8rem;color:color-mix(in srgb,var(--brand-accent-ink) 55%,transparent);line-height:1.6;
+}
+
+/* ============================================================
+   Sticky mobile action bar
+   ============================================================ */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:120;
+  display:none;gap:.6rem;padding:.6rem;
+  background:color-mix(in srgb,var(--brand-surface) 96%,transparent);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--brand-line);
+}
+.mobile-bar .btn{flex:1;justify-content:center;padding:.8rem 1rem;font-size:.98rem;}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;}
+  .rail{display:none;}
+}
+@media(max-width:720px){
+  .nav-toggle{display:inline-flex;}
+  .nav-menu{
+    position:absolute;left:0;right:0;top:100%;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:.5rem 0 1rem;
+    clip-path:inset(0 0 100% 0);pointer-events:none;
+    transition:clip-path var(--dur-reveal) var(--ease-signature);
+  }
+  .nav-menu.open{clip-path:inset(0 0 0 0);pointer-events:auto;}
+  .nav-links{flex-direction:column;align-items:stretch;gap:0;}
+  .nav-links a{padding:.9rem var(--container-pad,0);width:var(--container);margin-inline:auto;
+    border-bottom:1px solid var(--brand-line);}
+  .nav-links a::after{display:none;}
+  .nav-call{width:var(--container);margin:1rem auto 0;justify-content:center;}
+  .mobile-bar{display:flex;}
+  .hero-inner{min-height:auto;justify-content:flex-start;
+    padding-block:clamp(2.4rem,8vw,3.5rem) clamp(2.4rem,7vw,3.5rem);}
+  .hero-detail{display:none;}
+  .site-footer{padding-bottom:6rem;}
+}
+@media(max-width:520px){
+  .editorial .fig-companion{position:static;width:auto;margin-top:1rem;transform:none;
+    border-width:4px;aspect-ratio:16/10;}
+  .editorial.offset-left .fig-companion,.editorial.offset-right .fig-companion{aspect-ratio:16/10;}
+  .hero-actions{gap:.8rem;}
+  .btn{width:100%;justify-content:center;}
+  .hero-actions .btn{width:auto;}
+}
+
+/* ============================================================
+   MOTION LAYER (pass 3) — one language: --ease-signature reveals,
+   --ease-micro micro-interactions. The insegna is the SOLE signature.
+   Entrance states live under html.anim (added by JS only when motion
+   is allowed) so JS-off / reduced-motion = everything fully visible.
+   ============================================================ */
+
+/* -- SIGNATURE: the insegna hangs, swings once, settles, holds -- */
+@media(prefers-reduced-motion:no-preference){
+  .plaque{animation:insegna-settle 1150ms var(--ease-signature) both;}
+  @keyframes insegna-settle{
+    0%{transform:translateY(-14px) rotate(6deg);}
+    34%{transform:translateY(0) rotate(-3.4deg);}
+    58%{transform:translateY(0) rotate(-0.1deg);}
+    80%{transform:translateY(0) rotate(-1.9deg);}
+    100%{transform:translateY(0) rotate(-1.3deg);}
+  }
+  .plaque.plaque-sm{animation:none;}
+
+  /* hero load entrance — pure CSS (no JS dep, no FOUC): rises on parse */
+  .hero-eyebrow{animation:heroRise 620ms var(--ease-signature) both;animation-delay:.08s;}
+  .insegna{animation:heroRise 620ms var(--ease-signature) both;animation-delay:.16s;}
+  .hero-lede{animation:heroRise 620ms var(--ease-signature) both;animation-delay:.34s;}
+  .hero-actions{animation:heroRise 620ms var(--ease-signature) both;animation-delay:.46s;}
+  .proof-inline{animation:heroRise 620ms var(--ease-signature) both;animation-delay:.56s;}
+  @keyframes heroRise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+
+  /* hero media: gentle scroll-driven push-in as it exits (native, gated) */
+  @supports (animation-timeline:view()){
+    html.anim .hero-media{animation:heroPush linear both;animation-timeline:view();animation-range:exit 0% exit 100%;}
+    @keyframes heroPush{to{transform:scale(1.09);}}
+  }
+}
+
+/* seam-mask: brief opacity dip near the loop boundary hides the cut */
+.hero-media video{transition:opacity 340ms var(--ease-signature);}
+.hero-media video.seam{opacity:.7;}
+
+/* -- shared reveal system (IO-driven, below the fold) -- */
+html.anim .reveal-title{clip-path:inset(0 0 106% 0);transform:translateY(.2em);
+  transition:clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);will-change:clip-path;}
+html.anim .reveal-title.is-in{clip-path:inset(0 0 -.14em 0);transform:none;}
+
+html.anim .reveal-up{opacity:0;transform:translateY(20px);
+  transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  transition-delay:var(--d,0ms);}
+html.anim .reveal-up.is-in{opacity:1;transform:none;}
+
+html.anim .reveal-media{opacity:0;transform:scale(.94);
+  transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);}
+html.anim .reveal-media.is-in{opacity:1;transform:none;}
+
+/* COUNTER-WIPE image reveal — horizontal clip led by a 3px amber edge */
+html.anim .wipe{position:relative;}
+html.anim .wipe>img{clip-path:inset(0 100% 0 0);
+  transition:clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);will-change:clip-path;}
+html.anim .wipe.is-in>img{clip-path:inset(0 0 0 0);}
+html.anim .wipe .edge{position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent calc(100% - 3px),var(--brand-accent) calc(100% - 3px));
+  transform:translateX(-100%);opacity:0;
+  transition:transform var(--dur-reveal) var(--ease-signature),opacity var(--dur-reveal) var(--ease-signature);}
+html.anim .wipe.is-in .edge{transform:translateX(0);opacity:1;}
+
+/* MENU-LINE cascade — the chicco marker draws a beat before its text */
+html.anim .menu li .m-mark{opacity:0;transform:scale(.2);
+  transition:opacity 320ms var(--ease-signature),transform 380ms var(--ease-micro);transition-delay:var(--d,0ms);}
+html.anim .menu li.is-in .m-mark{opacity:1;transform:none;}
+html.anim .menu li .m-mid{opacity:0;transform:translateY(12px);
+  transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  transition-delay:calc(var(--d,0ms) + 130ms);}
+html.anim .menu li.is-in .m-mid{opacity:1;transform:none;}
+html.anim .menu li .pill{opacity:0;transition-delay:0ms,calc(var(--d,0ms) + 130ms);}
+html.anim .menu li.is-in .pill{opacity:1;}
+
+/* nav scroll-spy — the active-nav il-chicco underline fills */
+.nav-links a.is-active{color:var(--brand-accent);}
+.nav-links a.is-active::after{right:0;}
+
+/* section scroll-progress bar — the amber counter-underline at page scale */
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:130;
+  transform-origin:left;transform:scaleX(0);background:var(--brand-accent);pointer-events:none;}
+@supports (animation-timeline:scroll()){
+  html.anim .scroll-progress{animation:sp-grow linear both;animation-timeline:scroll(root);}
+  @keyframes sp-grow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+}
+
+/* SPRITZ FILL on scroll — a glass gauge (desktop) / a fill line (mobile) */
+.spritz-gauge{position:fixed;left:clamp(10px,2vw,30px);top:50%;transform:translateY(-50%);
+  width:34px;height:172px;z-index:90;opacity:0;pointer-events:none;
+  transition:opacity 360ms var(--ease-signature);}
+.spritz-gauge.show{opacity:1;}
+.spritz-gauge svg{width:100%;height:100%;overflow:visible;}
+.spritz-gauge .glass{fill:none;stroke:var(--brand-muted);stroke-width:1.4;opacity:.55;}
+.spritz-gauge .fill{fill:var(--brand-accent);transform-origin:bottom;transform:scaleY(0);}
+.spritz-line{height:4px;border-radius:2px;background:var(--brand-line);overflow:hidden;margin-top:1.1rem;max-width:220px;}
+.spritz-line>i{display:block;height:100%;background:var(--brand-accent);transform-origin:left;transform:scaleX(0);}
+@media(max-width:1099px){.spritz-gauge{display:none;}}
+@media(min-width:1100px){.spritz-line{display:none;}}
+
+/* MICRO-INTERACTIONS — springy press + amber fill wipes in from the left */
+@media(hover:hover) and (pointer:fine){
+  .btn-primary,.pill{isolation:isolate;}
+  .btn-primary::after,.pill::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:color-mix(in srgb,var(--brand-accent) 70%,var(--brand-ink));
+    transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature);}
+  .btn-primary:hover::after,.btn-primary:focus-visible::after,
+  .pill:hover::after,.pill:focus-visible::after{transform:scaleX(1);}
+  .pill:hover{transform:translateY(-1px) scale(1.05);}
+  .fig-main img,.contact-media img{transition:transform var(--dur-reveal) var(--ease-signature);}
+  .editorial:hover .fig-main img{transform:scale(1.04);}
+}
+.btn-primary:active,.pill:active{transform:scale(.95);}
+
+/* ---- reduced motion: everything still, visible, immediate ---- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;}
+  .nav-menu{transition:none;}
+  .spritz-gauge,.spritz-line,.scroll-progress{display:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- reusable SVG symbols (il chicco + star) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="chicco" viewBox="0 0 10 12">
+    <path d="M5 0.4 C7.6 2.2 7.6 9.8 5 11.6 C2.4 9.8 2.4 2.2 5 0.4 Z" fill="currentColor"/>
+    <path data-seam d="M5 1.2 C6 3.6 6 8.4 5 10.8" stroke="currentColor" stroke-width="0.5"
+          fill="none" opacity="0.45"/>
+  </symbol>
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M12 2.2l2.9 6.05 6.65.79-4.9 4.55 1.3 6.56L12 17.9l-5.95 3.25 1.3-6.56-4.9-4.55 6.65-.79z"
+          fill="currentColor"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#main">Salta al contenuto</a>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Navigazione principale">
+    <a class="brand" href="#top" aria-label="Bar Happy — inizio pagina">
+      <span class="wordmark">
+        <span class="w-bar">Bar</span>
+        <span class="w-happy">Happy<span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Apri il menu">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="#al-banco">Al banco</a></li>
+        <li><a href="#aperitivo">Aperitivo</a></li>
+        <li><a href="#fermarsi">Fermarsi</a></li>
+        <li><a href="#quartiere">Il quartiere</a></li>
+        <li><a href="#recensioni">Recensioni</a></li>
+      </ul>
+      <a class="nav-call" href="tel:+393517464833">
+        <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+        Chiama
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============ HERO — insegna over the counter ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="assets/hero-counter.jpg"
+           aria-label="Il bancone di marmo di Bar Happy con un cestino di brioche fresche e tazzine da caffè nella luce del mattino">
+      <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+      <img src="assets/hero-counter.jpg"
+           alt="Il bancone di marmo di Bar Happy con un cestino di brioche fresche e tazzine da caffè nella luce del mattino">
+    </video>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-inner container">
+    <p class="eyebrow hero-eyebrow">
+      <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+      Bar di quartiere · San Donato, Milano
+    </p>
+
+    <h1 class="insegna" id="hero-title">
+      <span class="plaque">
+        <span class="lockup">
+          <span class="w-bar" style="color:inherit">Bar</span>
+          <span class="w-happy">Happy<span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></span>
+        </span>
+      </span>
+      <span class="plaque-tagline">Prenditi il tuo tempo</span>
+    </h1>
+
+    <p class="hero-lede">
+      <span>Lo stesso caffè da 1,50 €, un tavolo dove restare.</span>
+      <span>Dalla brioche del mattino allo spritz della sera.</span>
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" data-cta href="tel:+393517464833">
+        <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+        Chiama per prenotare un tavolo
+      </a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+         target="_blank" rel="noopener">Guarda dove siamo</a>
+    </div>
+
+    <p class="proof-inline">
+      <span class="stars" style="--pct:92%" role="img" aria-label="Valutazione media 4,6 su 5">
+        <span class="row base" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+        <span class="row fill" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+      </span>
+      <span><strong>4,6</strong> su 28 recensioni — nel quartiere, costante nel tempo</span>
+    </p>
+  </div>
+
+  <div class="hero-detail" aria-hidden="false">
+    <img src="assets/hero-brioche-macro.jpg" alt="Primo piano di un cornetto brioche fresco e dorato su un piattino">
+  </div>
+</section>
+
+<!-- ============ SHELL: chapters + sticky rail ============ -->
+<div class="shell">
+
+  <div class="sections">
+
+    <!-- 2 · AL BANCO -->
+    <section class="chapter" id="al-banco" aria-labelledby="al-banco-title">
+      <div class="split">
+        <div class="split-text">
+          <div class="chapter-head">
+            <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>Al banco</p>
+            <h2 class="chapter-title" id="al-banco-title">Il mattino comincia qui</h2>
+            <p class="lede">Un caffè al banco e una brioche appena sfornata.
+              È la ragione per cui i clienti tornano ogni giorno — semplice, calda, sempre uguale.</p>
+          </div>
+          <p class="muted">Le brioche le prendiamo fresche ogni mattina: vuote, alla crema, al cioccolato.
+            Il caffè costa quello di sempre, e nessuno ti guarda male se ti fermi due minuti in più.</p>
+
+          <ul class="menu" aria-label="Al banco — la mattina">
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Caffè espresso</span><br><span class="m-desc">al banco, come si deve</span></span>
+              <span class="pill">1,50 €</span>
+            </li>
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Cappuccino</span><br><span class="m-desc">latte fresco, schiuma morbida</span></span>
+              <span class="pill">1,60 €</span>
+            </li>
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Brioche del mattino</span><br><span class="m-desc">vuota, crema o cioccolato</span></span>
+              <span class="pill">1,30 €</span>
+            </li>
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Caffè + brioche</span><br><span class="m-desc">la colazione di tutti i giorni</span></span>
+              <span class="pill">2,70 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="editorial offset-right">
+          <div class="fig-main">
+            <img src="assets/banco-caffe-pour.jpg"
+                 alt="Un cappuccino con arte sulla schiuma appoggiato sul bancone accanto alla macchina del caffè">
+          </div>
+          <div class="fig-companion">
+            <img src="assets/banco-brioche-tray.jpg"
+                 alt="Un vassoio di brioche fresche in fila sul bancone al mattino">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="divider" role="presentation"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></div>
+
+    <!-- 3 · L'APERITIVO -->
+    <section class="chapter" id="aperitivo" aria-labelledby="aperitivo-title">
+      <div class="split flip">
+        <div class="split-text">
+          <div class="chapter-head">
+            <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>L’aperitivo</p>
+            <h2 class="chapter-title" id="aperitivo-title">La sera, la stessa sala</h2>
+            <p class="lede">Quando cala il sole lo stesso bancone diventa aperitivo.
+              Spritz, un cocktail onesto, qualche stuzzichino — e i prezzi restano quelli di quartiere.</p>
+          </div>
+          <p class="muted">Niente conto che sorprende: qui si beve bene senza pensarci troppo,
+            dal calice di vino allo spritz, con qualcosa da sgranocchiare sul tavolo.</p>
+
+          <ul class="menu" aria-label="Aperitivo — la sera">
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Spritz della casa</span><br><span class="m-desc">arancia, ghiaccio, il classico</span></span>
+              <span class="pill">5,00 €</span>
+            </li>
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Negroni / Americano</span><br><span class="m-desc">al banco, ben fatti</span></span>
+              <span class="pill">6,00 €</span>
+            </li>
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Calice di vino</span><br><span class="m-desc">rosso o bianco della settimana</span></span>
+              <span class="pill">4,00 €</span>
+            </li>
+            <li>
+              <span class="m-mark chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              <span class="m-mid"><span class="m-name">Stuzzichini della casa</span><br><span class="m-desc">olive, patatine, taglieri piccoli</span></span>
+              <span class="pill tbd">inclusi</span>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="editorial offset-left">
+          <div class="fig-main">
+            <img src="assets/aperitivo-spritz.jpg"
+                 alt="Due spritz ambrati con stuzzichini su un tavolino di marmo all’ora dorata">
+          </div>
+          <div class="fig-companion">
+            <img src="assets/aperitivo-stuzzichini-detail.jpg"
+                 alt="Primo piano di stuzzichini per l’aperitivo in ciotoline bianche sul bancone">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="divider" role="presentation"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></div>
+
+    <!-- 4 · UN POSTO PER FERMARSI (differentiator) -->
+    <section class="chapter" id="fermarsi" aria-labelledby="fermarsi-title">
+      <div class="chapter-head">
+        <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>Un posto per fermarsi</p>
+        <h2 class="chapter-title" id="fermarsi-title">Nessuno ti mette fretta</h2>
+        <p class="lede">Questo è quello che ci rende diversi: non un banco mordi-e-fuggi,
+          ma una sala calma dove puoi davvero sederti e restare.</p>
+      </div>
+
+      <figure class="editorial offset-right">
+        <div class="fig-main">
+          <img src="assets/sala-corner.jpg"
+               alt="Un angolo tranquillo vicino alla finestra dove qualcuno lavora con calma davanti a un caffè">
+        </div>
+        <div class="fig-companion">
+          <img src="assets/sala-laptop-detail.jpg"
+               alt="Un portatile, un taccuino e un cappuccino su un tavolo di legno del bar">
+        </div>
+      </figure>
+
+      <p class="muted" style="margin-top:1.6rem;max-width:52ch;">
+        Di mattina è colazione, di pomeriggio è l’angolo dove ci si porta il computer e si lavora in tranquillità,
+        di sera è aperitivo. Cambia la luce, non il prezzo — e non cambia il fatto che puoi fermarti quanto vuoi.
+      </p>
+
+      <blockquote class="pull">
+        “Un posto tranquillo dove sedersi senza sentirsi di fretta, con prezzi onesti e persone gentili.”
+        <span class="src">Il tema che torna più spesso nelle recensioni — parafrasi, non una citazione firmata</span>
+      </blockquote>
+    </section>
+
+    <div class="divider" role="presentation"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></div>
+
+    <!-- 5 · DIETRO AL BANCO (people) -->
+    <section class="chapter" id="dietro-al-banco" aria-labelledby="dietro-title">
+      <div class="split">
+        <figure class="editorial">
+          <div class="fig-main">
+            <img src="assets/gestore-al-banco.jpg"
+                 alt="Una barista accogliente al lavoro dietro il bancone di Bar Happy"
+                 style="aspect-ratio:4/5;object-position:50% 22%;">
+          </div>
+        </figure>
+        <div class="split-text">
+          <div class="chapter-head">
+            <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>Dietro al banco</p>
+            <h2 class="chapter-title" id="dietro-title">Le stesse facce, ogni giorno</h2>
+            <p class="lede">Quello che i clienti nominano di più non è un piatto: sono le persone.
+              I gestori che ti riconoscono, ti salutano per nome e ti fanno sentire a casa.</p>
+          </div>
+          <p class="muted">È questo che trasforma “un bar” nel “mio bar”: un sorriso vero,
+            un prezzo onesto tenuto per scelta, la voglia di farti stare bene senza montare su niente.
+            Vieni una volta e la seconda ti ricordiamo già.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="presentation"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></div>
+
+    <!-- 6 · IL QUARTIERE -->
+    <section class="chapter" id="quartiere" aria-labelledby="quartiere-title">
+      <div class="chapter-head">
+        <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>Il quartiere</p>
+        <h2 class="chapter-title" id="quartiere-title">A San Donato, in Via Rogoredo</h2>
+        <p class="lede">Siamo in Via Rogoredo 117, tra le case e gli uffici di San Donato.
+          Facile da raggiungere, con qualche tavolino fuori per i giorni di sole.</p>
+      </div>
+
+      <figure class="editorial offset-left">
+        <div class="fig-main">
+          <img src="assets/dehors-outdoor.jpg"
+               alt="Un tavolino con due sedie sul marciapiede davanti al bar">
+        </div>
+        <div class="fig-companion">
+          <img src="assets/neighbourhood-street.jpg"
+               alt="Una via residenziale tranquilla nella zona di San Donato a Milano">
+        </div>
+      </figure>
+
+      <ul class="facts">
+        <li><span class="f-label">Indirizzo</span><span class="f-value">Via Rogoredo, 117 · Milano</span></li>
+        <li><span class="f-label">Fuori</span><span class="f-value">Dehors con tavolini sul marciapiede</span></li>
+        <li><span class="f-label">Accessibile</span><span class="f-value">Ingresso accessibile in carrozzina</span></li>
+        <li><span class="f-label">Pagamenti</span><span class="f-value">Carte e contactless accettati</span></li>
+      </ul>
+      <div class="contact-actions">
+        <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+           target="_blank" rel="noopener">Apri in Google Maps</a>
+      </div>
+    </section>
+
+    <div class="divider" role="presentation"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></div>
+
+    <!-- 7 · DICONO DI NOI -->
+    <section class="chapter" id="recensioni" aria-labelledby="recensioni-title">
+      <div class="chapter-head">
+        <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>Dicono di noi</p>
+        <h2 class="chapter-title" id="recensioni-title">4,6 su 28 recensioni</h2>
+        <p class="lede">Un giudizio che resta alto e costante nel tempo, costruito su poche cose ripetute:
+          gentilezza, prezzi onesti, calma e brioche buone.</p>
+      </div>
+
+      <div class="reviews">
+        <div class="rating-block">
+          <div class="rating-num"><span class="count" data-count-to="4.6" data-count-dec="1">4,6</span><span class="of"> / 5</span></div>
+          <span class="stars rating-stars" style="--pct:92%" role="img" aria-label="Valutazione media 4,6 su 5 stelle">
+            <span class="row base" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+            <span class="row fill" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+          </span>
+          <p class="rating-meta"><span class="count" data-count-to="28">28</span> recensioni · Google<br>costante negli anni</p>
+        </div>
+
+        <ul class="themes">
+          <li>
+            <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+            <span><span class="t-title">Personale gentile e accogliente</span>
+              <span class="t-body">Il tema più ricorrente: chi lavora al banco ti fa sentire il benvenuto.</span></span>
+          </li>
+          <li>
+            <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+            <span><span class="t-title">Prezzi onesti</span>
+              <span class="t-body">Caffè e aperitivo a cifre di quartiere, senza sorprese sul conto.</span></span>
+          </li>
+          <li>
+            <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+            <span><span class="t-title">Atmosfera calma</span>
+              <span class="t-body">Un posto dove ci si può sedere e restare, senza sentirsi di fretta.</span></span>
+          </li>
+          <li>
+            <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+            <span><span class="t-title">Brioche buonissime</span>
+              <span class="t-body">La colazione che i clienti nominano più spesso.</span></span>
+          </li>
+        </ul>
+      </div>
+      <p class="muted" style="font-size:.85rem;margin-top:1rem;">
+        Temi ricavati dall’insieme delle recensioni pubbliche, riportati in parafrasi.
+        Non mostriamo nomi o foto di singoli clienti.
+      </p>
+    </section>
+
+    <div class="divider" role="presentation"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></div>
+
+    <!-- 8 · PASSA A TROVARCI -->
+    <section class="chapter" id="contatti" aria-labelledby="contatti-title">
+      <div class="chapter-head">
+        <p class="eyebrow"><span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>Passa a trovarci</p>
+        <h2 class="chapter-title" id="contatti-title">Prenota un tavolo per l’aperitivo</h2>
+        <p class="lede">Non serve un modulo online. Chiamaci e teniamo il tavolo pronto per te —
+          per l’aperitivo o per una colazione con calma.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-line">
+            <span class="cl-label">Telefono</span>
+            <span class="cl-value"><a href="tel:+393517464833">+39 351 7464833</a></span>
+          </div>
+          <div class="contact-line">
+            <span class="cl-label">Dove siamo</span>
+            <span class="cl-value">Via Rogoredo, 117 · Milano<br>
+              <a href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+                 target="_blank" rel="noopener">Apri in Google Maps</a></span>
+          </div>
+          <div class="contact-line">
+            <span class="cl-label">Orari</span>
+            <span class="cl-value">Lun–Sab 06:30–20:00 · Dom 07:00–13:00
+              <br><span class="muted" style="font-size:.82rem;">Esempio da confermare con noi</span></span>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" data-cta href="tel:+393517464833">
+              <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+              Chiama per prenotare
+            </a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+               target="_blank" rel="noopener">Come arrivare</a>
+          </div>
+        </div>
+
+        <div class="contact-media">
+          <img src="assets/facade-insegna.jpg"
+               alt="La luminosa vetrina esterna di Bar Happy su una via tranquilla">
+        </div>
+      </div>
+
+      <div class="signoff">
+        <span class="plaque plaque-sm" aria-hidden="true">
+          <span class="lockup">
+            <span class="w-bar" style="color:inherit">Bar</span>
+            <span class="w-happy">Happy<span class="chicco"><svg><use href="#chicco"/></svg></span></span>
+          </span>
+        </span>
+      </div>
+    </section>
+
+  </div><!-- /.sections -->
+
+  <!-- persistent sticky rail -->
+  <aside class="rail" aria-label="Prenota un tavolo">
+    <div class="rail-card">
+      <h2>Prenota un tavolo</h2>
+      <p class="rail-lede">Nessun modulo. Una telefonata e il tavolo è tuo.</p>
+      <a class="rail-phone" href="tel:+393517464833">+39 351 7464833</a>
+      <p class="rail-phone-note">Tocca per chiamare · oppure chiama dal fisso</p>
+      <a class="btn btn-primary" data-cta href="tel:+393517464833">
+        <span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span>
+        Chiama per prenotare
+      </a>
+      <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+         target="_blank" rel="noopener">Dove siamo</a>
+      <p class="rail-proof">
+        <span class="stars" style="--pct:92%;font-size:1rem" role="img" aria-label="4,6 su 5">
+          <span class="row base" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+          <span class="row fill" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+        </span>
+        <span><strong>4,6</strong> · 28 recensioni</span>
+      </p>
+    </div>
+  </aside>
+
+</div><!-- /.shell -->
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <span class="brand-lg">
+        <span class="wordmark">
+          <span class="w-bar">Bar</span>
+          <span class="w-happy">Happy<span class="chicco" aria-hidden="true"><svg><use href="#chicco"/></svg></span></span>
+        </span>
+      </span>
+      <p class="muted" style="color:color-mix(in srgb,var(--brand-accent-ink) 75%,transparent);max-width:32ch;">
+        Il bar di quartiere a San Donato dove puoi prenderti il tuo tempo — dal caffè del mattino all’aperitivo.
+      </p>
+    </div>
+    <div>
+      <h3>Dove siamo</h3>
+      <ul class="footer-list">
+        <li>Via Rogoredo, 117 · Milano</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+               target="_blank" rel="noopener">Apri in Google Maps</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contatti</h3>
+      <ul class="footer-list">
+        <li><a href="tel:+393517464833">+39 351 7464833</a></li>
+        <li>Lun–Sab 06:30–20:00</li>
+        <li>Dom 07:00–13:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-note">
+    Prezzi, orari e voci di menù sono indicativi e vanno confermati con il bar.
+    Valutazione 4,6 su 28 recensioni pubbliche. Indirizzo e telefono reali.
+  </div>
+</footer>
+
+<!-- sticky mobile action bar -->
+<div class="mobile-bar" aria-label="Azioni rapide">
+  <a class="btn btn-primary" data-cta href="tel:+393517464833">Chiama</a>
+  <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Bar+Happy%2C+Milano"
+     target="_blank" rel="noopener">Mappa</a>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var RM=false;
+  try{RM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  root.classList.add('js');
+
+  /* ---- mobile nav toggle (always available) ---- */
+  var toggle=document.getElementById('navToggle');
+  var menu=document.getElementById('navMenu');
+  if(toggle&&menu){
+    var closeM=function(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Apri il menu');};
+    var openM=function(){menu.classList.add('open');toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','Chiudi il menu');};
+    toggle.addEventListener('click',function(){menu.classList.contains('open')?closeM():openM();});
+    menu.addEventListener('click',function(e){if(e.target.closest('a'))closeM();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){closeM();toggle.focus();}});
+  }
+
+  var video=document.querySelector('.hero-media video');
+
+  /* ---- reduced motion: pause the hero clip, leave EVERYTHING visible ---- */
+  if(RM){
+    if(video){try{video.removeAttribute('autoplay');video.removeAttribute('loop');video.pause();}catch(e){}}
+    return; /* no .anim class -> no entrance/scroll motion, full content shown */
+  }
+
+  /* ================= motion enabled ================= */
+  try{
+    root.classList.add('anim');
+
+    /* page scroll-progress bar */
+    var sp=document.createElement('div');sp.className='scroll-progress';sp.setAttribute('aria-hidden','true');
+    document.body.appendChild(sp);
+
+    /* one reveal observer, unobserve after firing */
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});
+    },{threshold:0.15,rootMargin:'0px 0px -6% 0px'});
+    var add=function(el,cls){if(el){el.classList.add(cls);io.observe(el);}};
+
+    /* headings -> vertical clip-mask reveal */
+    document.querySelectorAll('.chapter-title').forEach(function(el){add(el,'reveal-title');});
+    /* eyebrows, ledes, supporting copy -> soft rise */
+    document.querySelectorAll('.chapter-head .eyebrow, .chapter-head .lede').forEach(function(el){add(el,'reveal-up');});
+    document.querySelectorAll('.chapter > .muted, .split-text > .muted, .pull, .facts, .contact-card, .signoff').forEach(function(el){add(el,'reveal-up');});
+    add(document.querySelector('.rating-block'),'reveal-up');
+    document.querySelectorAll('.themes li').forEach(function(li,i){li.style.setProperty('--d',(i*80)+'ms');add(li,'reveal-up');});
+
+    /* main photos -> counter-wipe with amber leading edge */
+    document.querySelectorAll('.fig-main, .contact-media').forEach(function(fig){
+      fig.classList.add('wipe');
+      var edge=document.createElement('span');edge.className='edge';edge.setAttribute('aria-hidden','true');
+      fig.appendChild(edge);
+      io.observe(fig);
+    });
+    /* companion details -> depth scale-in (aperitivo companion is parallax-owned) */
+    document.querySelectorAll('.fig-companion img').forEach(function(img){
+      if(img.closest('#aperitivo'))return;
+      add(img,'reveal-media');
+    });
+    /* divider motif -> scale-in */
+    document.querySelectorAll('.divider .chicco').forEach(function(el){add(el,'reveal-media');});
+    /* menu rows -> per-line cascade (marker then text), delays reset per list */
+    document.querySelectorAll('.menu').forEach(function(m){
+      m.querySelectorAll('li').forEach(function(li,i){li.style.setProperty('--d',(i*80)+'ms');io.observe(li);});
+    });
+
+    /* count-up on the two genuinely true numbers (4,6 rating and 28 reviews) */
+    var cIO=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){if(en.isIntersecting){runCount(en.target);cIO.unobserve(en.target);}});
+    },{threshold:0.6});
+    function runCount(el){
+      var to=parseFloat(el.getAttribute('data-count-to'));var dec=parseInt(el.getAttribute('data-count-dec')||'0',10);
+      if(isNaN(to)){return;}
+      var start=null,dur=1100,fmt=function(v){return v.toFixed(dec).replace('.',',');};
+      function step(ts){if(start===null)start=ts;var p=Math.min((ts-start)/dur,1);var e=1-Math.pow(1-p,3);
+        el.textContent=fmt(to*e);if(p<1)requestAnimationFrame(step);else el.textContent=fmt(to);}
+      requestAnimationFrame(step);
+    }
+    document.querySelectorAll('[data-count-to]').forEach(function(el){cIO.observe(el);});
+
+    /* hero loop seam-mask — dip opacity near the cut so the restart is invisible */
+    if(video){
+      video.addEventListener('timeupdate',function(){
+        if(!video.duration||isNaN(video.duration))return;
+        var rem=video.duration-video.currentTime;
+        if(rem<0.34||video.currentTime<0.18)video.classList.add('seam');else video.classList.remove('seam');
+      });
+    }
+
+    /* spritz gauge (desktop) + fill line (mobile) — scroll-scrubbed */
+    var ap=document.getElementById('aperitivo');
+    var gauge=null,gfill=null,mline=null;
+    if(ap){
+      gauge=document.createElement('div');gauge.className='spritz-gauge';gauge.setAttribute('aria-hidden','true');
+      gauge.innerHTML='<svg viewBox="0 0 34 172"><defs><clipPath id="glassClip"><path d="M6 6 L28 6 L24 150 Q24 158 17 158 Q10 158 10 150 Z"/></clipPath></defs><path class="glass" d="M6 6 L28 6 L24 150 Q24 158 17 158 Q10 158 10 150 Z"/><g clip-path="url(#glassClip)"><rect class="fill" x="0" y="0" width="34" height="172"/></g></svg>';
+      document.body.appendChild(gauge);gfill=gauge.querySelector('.fill');
+      var head=ap.querySelector('.chapter-head');
+      if(head){var ml=document.createElement('div');ml.className='spritz-line';ml.setAttribute('aria-hidden','true');ml.innerHTML='<i></i>';head.appendChild(ml);mline=ml.querySelector('i');}
+    }
+    /* aperitivo depth parallax — foreground glass drifts against a held
+       background counter (two rates -> a shallow z-gap). Desktop/fine only.
+       Only the foreground moves, so the background keeps its counter-wipe. */
+    var apFg=ap?ap.querySelector('.fig-companion'):null;
+    if(apFg)apFg.style.willChange='transform';
+    var pxOK=function(){try{return window.matchMedia('(min-width:641px) and (pointer:fine)').matches;}catch(e){return false;}};
+
+    /* nav scroll-spy -> active-nav indicator */
+    var spy={};
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){var id=a.getAttribute('href').slice(1);if(id)spy[id]=a;});
+    var spyIO=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){var a=spy[en.target.id];if(!a)return;
+        if(en.isIntersecting){for(var k in spy)spy[k].classList.remove('is-active');a.classList.add('is-active');}});
+    },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(spy).forEach(function(id){var s=document.getElementById(id);if(s)spyIO.observe(s);});
+
+    /* single rAF-batched scroll handler (transform/opacity only) */
+    var vh=window.innerHeight,ticking=false;
+    function frame(){
+      ticking=false;
+      if(!ap)return;
+      var r=ap.getBoundingClientRect();
+      var prog=(vh-r.top)/(vh+r.height);prog=prog<0?0:prog>1?1:prog;
+      if(gfill)gfill.style.transform='scaleY('+prog.toFixed(3)+')';
+      if(mline)mline.style.transform='scaleX('+prog.toFixed(3)+')';
+      if(gauge)gauge.classList.toggle('show',r.top<vh*0.9&&r.bottom>vh*0.1);
+      if(apFg){
+        if(pxOK()){
+          var c=(r.top+r.height/2-vh/2)/vh;c=c<-1?-1:c>1?1:c;
+          apFg.style.transform='rotate(-2.4deg) translateY('+(c*16).toFixed(1)+'px)';
+        }else{
+          apFg.style.transform=''; /* narrow/touch: CSS owns the static companion */
+        }
+      }
+    }
+    function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',function(){vh=window.innerHeight;onScroll();});
+    frame();
+
+  }catch(err){
+    /* any failure -> strip .anim so nothing is ever left hidden */
+    root.classList.remove('anim');
+  }
+})();
+</script>
+
+</body>
+</html>

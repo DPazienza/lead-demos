@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Friend Circle — Cucina ricercata e serata continua · Milano</title>
+<meta name="description" content="Friend Circle, Via Padova 228 a Milano: una cucina ricercata e un bancone da cocktail nella stessa sala. Aperitivo, cena impiattata e serate a tema. Prenota chiamandoci.">
+
+<link rel="canonical" href="https://www.friendcircle.milano/">
+<meta property="og:title" content="Friend Circle — cucina e serata, un solo circle · Milano">
+<meta property="og:description" content="Piatti ricercati e cocktail nella stessa stanza, in Via Padova a Milano. Aperitivo, cena e serate a tema: eat, drink, party and repeat.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-table.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Friend Circle · Milano">
+<meta name="twitter:description" content="Cucina ricercata e cocktail nella stessa sala. Via Padova 228, Milano.">
+<meta name="twitter:image" content="assets/hero-table.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Friend Circle",
+  "url": "https://www.friendcircle.milano/",
+  "image": "assets/hero-table.jpg",
+  "telephone": "+39 324 5685703",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Padova 228",
+    "postalCode": "20132",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Friend+Circle%2C+Milano"
+}
+</script>
+
+<style>
+:root{
+  /* ── brand tokens — defined ONCE, referenced everywhere ── */
+  --brand-ink:#F3EBDD;
+  --brand-surface:#14100C;
+  --brand-surface-alt:#1E1811;
+  --brand-accent:#C6A15B;
+  --brand-accent-ink:#14100C;
+  --brand-muted:#B9A88F;
+  --brand-line:#35291B;
+
+  --font-display:'Bodoni Moda','Didot','Times New Roman',serif;
+  --font-body:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+
+  --ease-signature:cubic-bezier(0.16,1,0.3,1);
+  --ease-micro:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-reveal:900ms;
+  --dur-micro:220ms;
+  --stagger:90ms;
+
+  --space-section:clamp(5rem,4rem + 6vw,9rem);
+  --container:min(1200px,92vw);
+  --radius:2px;
+
+  --fs-hero:clamp(2.75rem,2rem + 5vw,6rem);
+  --fs-h2:clamp(1.75rem,1.3rem + 2vw,3rem);
+  --fs-body:clamp(1rem,0.95rem + 0.3vw,1.15rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  position:relative;
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:anywhere;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  font-optical-sizing:auto;
+  text-rendering:optimizeLegibility;
+  text-wrap:pretty;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+button{font:inherit;cursor:pointer}
+
+/* microtypography — the mark itself, quietly, everywhere text is selected */
+::selection{background:var(--brand-accent);color:var(--brand-surface)}
+
+/* focus visibility — brand-coloured ring */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--brand-accent);
+  outline-offset:3px;
+  border-radius:var(--radius);
+}
+
+/* numerals that must line up — phone, address, hours */
+.nums{font-variant-numeric:tabular-nums}
+
+/* one faint, fixed film-grain layer over the whole page — matches the shoot's grain,
+   never a per-image asset; SVG feTurbulence, not a generated texture */
+body::before{
+  content:"";
+  position:fixed;inset:-48px;
+  z-index:3;
+  pointer-events:none;
+  opacity:.045;
+  mix-blend-mode:soft-light;
+  transform:translateY(var(--grain-par,0px)); /* grain layer — slowest parallax rate */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.container{width:var(--container);margin-inline:auto}
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--brand-muted);
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  margin:0;
+}
+/* eyebrow bullet as a tiny open ring (the motif, smallest) */
+.eyebrow::before{
+  content:"";
+  width:.5rem;height:.5rem;border-radius:50%;
+  border:1.5px solid var(--brand-accent);
+  flex:none;
+}
+.sec-num{
+  font-family:var(--font-display);
+  color:var(--brand-accent);
+  font-size:.95rem;
+  letter-spacing:.05em;
+}
+
+/* section divider — hairline broken by a centred gold ring (the motif) */
+.ring-divider{
+  width:var(--container);
+  margin:0 auto;
+  display:flex;align-items:center;gap:1rem;
+  color:var(--brand-line);
+}
+.ring-divider::before,.ring-divider::after{
+  content:"";height:1px;background:var(--brand-line);flex:1 1 auto;
+}
+.ring-divider span{
+  width:.85rem;height:.85rem;border-radius:50%;
+  border:1.5px solid var(--brand-accent);flex:none;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.95rem 1.7rem;
+  border-radius:var(--radius);
+  font-weight:500;font-size:.95rem;letter-spacing:.02em;
+  border:1px solid transparent;
+  transition:transform var(--dur-micro) var(--ease-micro),background var(--dur-micro) ease,color var(--dur-micro) ease;
+  text-align:center;
+}
+.btn-primary{background:var(--brand-accent);color:var(--brand-accent-ink);}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--brand-line);color:var(--brand-ink)}
+.btn-ghost:hover{border-color:var(--brand-accent);color:var(--brand-accent)}
+
+/* ─────────────── HEADER / NAV ─────────────── */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--brand-surface) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{
+  width:var(--container);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.9rem 0;
+}
+/* wordmark — 'Circle' literally circled by the motif */
+.wordmark{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:0.02em;
+  font-size:1.3rem;
+  display:inline-flex;align-items:baseline;gap:.4rem;
+  line-height:1;
+}
+.wordmark .circled{
+  position:relative;
+  padding:.12em .55em;
+}
+.wordmark .circled::before{
+  content:"";
+  position:absolute;inset:-0.05em -0.1em;
+  border:1.5px solid var(--brand-accent);
+  border-radius:50%;
+  pointer-events:none;
+}
+.nav-links{
+  display:flex;align-items:center;gap:1.6rem;list-style:none;margin:0;padding:0;
+}
+.nav-links a{
+  font-size:.9rem;color:var(--brand-muted);
+  transition:color var(--dur-micro) ease;
+  padding:.3rem 0;
+}
+.nav-links a:hover,.nav-links a.is-active{color:var(--brand-ink)}
+.nav-cta{margin-left:.4rem}
+.nav-toggle{
+  display:none;
+  background:none;border:1px solid var(--brand-line);border-radius:var(--radius);
+  width:44px;height:44px;color:var(--brand-ink);
+  align-items:center;justify-content:center;
+}
+.nav-toggle svg{width:20px;height:20px}
+
+/* ─────────────── HERO — the wow: the ring ─────────────── */
+.hero{
+  position:relative;
+  padding:clamp(2.5rem,2rem + 4vw,5rem) 0 var(--space-section);
+  text-align:center;
+  overflow:hidden;
+}
+.hero-inner{width:var(--container);margin-inline:auto;display:flex;flex-direction:column;align-items:center}
+.hero-claim-top{margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+
+/* the ring stage: media composition encircled by the gold ring */
+.ring-stage{
+  position:relative;
+  width:min(560px,86vw);
+  aspect-ratio:1/1;
+  margin-inline:auto;
+}
+.ring-media{
+  position:absolute;inset:11%;
+  border-radius:50%;
+  overflow:hidden;
+  background:var(--brand-surface-alt);
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.9) inset,0 20px 60px -20px rgba(0,0,0,.7);
+  transform:translateY(var(--plate-par,0px)); /* plate layer — slowest parallax rate */
+}
+/* the ring + its dot travel together as one z-layer for parallax (wrapper only) */
+.ring-layer{position:absolute;inset:0;transform:translateY(var(--ring-par,0px))}
+.ring-media video,.ring-media img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+}
+/* dark scrim so the wordmark stays legible over the composition */
+.ring-media::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 45%,rgba(20,16,12,.72) 0%,rgba(20,16,12,.35) 55%,rgba(20,16,12,.15) 100%);
+}
+/* the gold ring itself (largest instance of the motif) */
+.ring-svg{
+  position:absolute;inset:0;width:100%;height:100%;
+  overflow:visible;
+  transform:rotate(-90deg); /* start the drawn arc from the top */
+  filter:drop-shadow(0 0 10px color-mix(in srgb,var(--brand-accent) 55%,transparent));
+}
+.ring-track{fill:none;stroke:color-mix(in srgb,var(--brand-accent) 16%,transparent);stroke-width:.6}
+.ring-arc{
+  fill:none;stroke:var(--brand-accent);stroke-width:1;stroke-linecap:round;
+  stroke-dasharray:245 44;      /* ~85% drawn on load */
+  stroke-dashoffset:0;
+}
+/* the travelling progress marker — a rotating wrapper carries the dot round the circumference */
+.ring-marker{
+  position:absolute;inset:0;
+  transform:rotate(var(--ring-progress,8deg));
+  transition:transform var(--dur-reveal) var(--ease-signature);
+  pointer-events:none;
+}
+.ring-marker .dot{
+  position:absolute;top:calc(11% - 7px);left:calc(50% - 7px);
+  width:14px;height:14px;border-radius:50%;
+  background:var(--brand-accent);
+  box-shadow:0 0 14px 2px color-mix(in srgb,var(--brand-accent) 70%,transparent);
+}
+/* wordmark centred INSIDE the ring */
+.hero-mark{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.4rem;padding:0 6%;
+  z-index:2;
+}
+.hero-mark h1{
+  font-size:var(--fs-hero);
+  margin:0;line-height:.98;
+}
+.hero-mark .fc-friend{display:block;font-weight:400}
+.hero-mark .fc-circle{
+  display:inline-block;position:relative;font-weight:600;
+  padding:.06em .3em;
+}
+.hero-mark .fc-circle::before{
+  content:"";position:absolute;inset:0.02em -0.02em;
+  border:1.5px solid var(--brand-accent);border-radius:50%;
+  filter:drop-shadow(0 0 6px color-mix(in srgb,var(--brand-accent) 45%,transparent));
+}
+.hero-mark .hero-tagline{
+  font-family:var(--font-body);
+  font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--brand-accent);
+}
+/* four modes marked on the circumference — the ring IS the navigation */
+.ring-modes{position:absolute;inset:0;z-index:2;pointer-events:none}
+.ring-modes a{
+  position:absolute;pointer-events:auto;
+  font-family:var(--font-body);
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brand-muted);
+  transform:translate(-50%,-50%);
+  transition:color var(--dur-micro) ease;
+  white-space:nowrap;
+}
+.ring-modes a:hover{color:var(--brand-accent)}
+.ring-modes a::before{
+  content:"";display:block;width:.4rem;height:.4rem;margin:0 auto .3rem;
+  border-radius:50%;border:1.5px solid var(--brand-accent);
+}
+/* kept inside the stage bounds so nothing can clip or push horizontal scroll */
+.ring-modes .m-top{left:50%;top:5%}
+.ring-modes .m-right{left:85%;top:50%}
+.ring-modes .m-bottom{left:50%;top:95%}
+.ring-modes .m-left{left:15%;top:50%}
+
+.hero-below{margin-top:clamp(2rem,4vw,3.2rem);display:flex;flex-direction:column;align-items:center;gap:1.4rem}
+.hero-below .claim{
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem,1rem + 1.6vw,2.1rem);
+  max-width:22ch;line-height:1.15;
+}
+.hero-below .claim .accent{color:var(--brand-accent)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.hero-phone{font-size:.9rem;color:var(--brand-muted)}
+.hero-phone a{color:var(--brand-ink);border-bottom:1px solid var(--brand-line)}
+/* mode list fallback shown only on small screens */
+.mode-list{display:none}
+
+/* ─────────────── generic section shell ─────────────── */
+section{position:relative}
+.section-head{display:flex;flex-direction:column;gap:.9rem;margin-bottom:clamp(2rem,4vw,3.4rem)}
+.section-head h2{font-size:var(--fs-h2);max-width:16ch}
+.section-head .lead{color:var(--brand-muted);max-width:52ch}
+.pad-lg{padding-block:var(--space-section)}
+.pad-md{padding-block:clamp(3.5rem,3rem + 4vw,6rem)}
+.pad-xl{padding-block:clamp(6rem,5rem + 8vw,11rem)}
+.alt{background:var(--brand-surface-alt)}
+
+/* ── Manifesto ── */
+.manifesto{overflow:hidden}
+.manifesto-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.manifesto-copy .big{
+  font-family:var(--font-display);
+  font-size:clamp(1.6rem,1.2rem + 2vw,2.6rem);
+  line-height:1.18;margin-bottom:1.4rem;
+}
+.manifesto-copy .big em{font-style:italic;color:var(--brand-accent)}
+.manifesto-copy p+p{margin-top:1rem;color:var(--brand-muted)}
+.manifesto-modes{list-style:none;padding:0;margin:1.8rem 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem 1.4rem}
+.manifesto-modes li{display:flex;gap:.7rem;align-items:baseline;font-size:.95rem}
+.manifesto-modes li::before{
+  content:"";width:.55rem;height:.55rem;flex:none;border-radius:50%;
+  border:1.5px solid var(--brand-accent);transform:translateY(-1px);
+}
+.manifesto-modes b{font-weight:500;color:var(--brand-ink)}
+.manifesto-modes span{color:var(--brand-muted)}
+.manifesto-media{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 70px -35px rgba(0,0,0,.8)}
+.manifesto-media img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+
+/* ── La Cucina — off-axis editorial grid ── */
+.cucina-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.dish-list{display:flex;flex-direction:column;border-top:1px solid var(--brand-line)}
+.dish{
+  display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;
+  padding:1.3rem 0;border-bottom:1px solid var(--brand-line);
+}
+.dish .marker{
+  width:.9rem;height:.9rem;margin-top:.5rem;grid-row:1/3;
+  display:block;flex:none;
+}
+.dish .marker svg{width:100%;height:100%;display:block;overflow:visible;transform:rotate(-90deg)}
+.dish .marker circle{
+  fill:none;stroke:var(--brand-accent);stroke-width:2;stroke-linecap:round;
+  stroke-dasharray:63;stroke-dashoffset:21; /* rests as an OPEN ring (the motif) */
+}
+.dish h3{transition:color var(--dur-micro) var(--ease-micro)}
+.dish h3{font-size:1.2rem;font-weight:600}
+.dish p{color:var(--brand-muted);font-size:.95rem;grid-column:2}
+/* the cucina image set: main shot + offset companion, art-directed overlap */
+.cucina-media{position:relative;min-height:clamp(320px,42vw,460px)}
+.cucina-media .m-main{
+  position:relative;width:78%;margin-left:auto;
+  border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;
+  box-shadow:0 30px 70px -35px rgba(0,0,0,.8);
+}
+.cucina-media .m-detail{
+  position:absolute;left:0;bottom:-1.5rem;width:52%;
+  border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1;
+  border:1px solid var(--brand-line);
+  box-shadow:0 24px 50px -24px rgba(0,0,0,.85);
+}
+.cucina-media img{width:100%;height:100%;object-fit:cover}
+.cucina-media figcaption{
+  position:absolute;right:0;top:-1.9rem;
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);
+}
+
+/* ── Signature spotlight — Aesop breathing room ── */
+.signature{overflow:hidden}
+.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.signature-media{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;box-shadow:0 40px 90px -40px rgba(0,0,0,.85)}
+.signature-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+/* the one anchor section that breaks the centred column: the spotlight plate bleeds past
+   the grid track toward the edge, the enormous negative space around it doing the talking */
+@media (min-width:901px){
+  .signature-grid{grid-template-columns:1.15fr .85fr}
+  .signature-media{width:calc(100% + 3.5rem);margin-left:-3.5rem}
+}
+.signature-copy .eyebrow{margin-bottom:1.3rem}
+.signature-copy h2{font-size:clamp(2rem,1.4rem + 3vw,3.6rem);margin-bottom:1.3rem;font-style:italic}
+.signature-copy .oro{font-style:normal}
+.signature-copy p{color:var(--brand-muted);max-width:46ch}
+.signature-copy .note{margin-top:1.6rem;font-size:.9rem;color:var(--brand-ink)}
+.signature-copy .note .marker-ring{
+  display:inline-block;width:.6rem;height:.6rem;margin-right:.5rem;
+  border-radius:50%;border:1.5px solid var(--brand-accent);vertical-align:middle;
+}
+
+/* ── Cocktail bar — full-bleed band with layered set ── */
+.cocktail-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.cocktail-copy .drinks{list-style:none;padding:0;margin:1.6rem 0 0;display:flex;flex-direction:column;gap:.9rem}
+.cocktail-copy .drinks li{display:flex;gap:.7rem;align-items:baseline;color:var(--brand-muted)}
+.cocktail-copy .drinks li b{color:var(--brand-ink);font-weight:500}
+.cocktail-copy .drinks li::before{
+  content:"";width:.55rem;height:.55rem;flex:none;border-radius:50%;
+  border:1.5px solid var(--brand-accent);transform:translateY(-1px);
+}
+.cocktail-media{position:relative;min-height:clamp(320px,40vw,440px)}
+.cocktail-media .m-main{
+  width:70%;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/2;
+  box-shadow:0 26px 60px -30px rgba(0,0,0,.8);
+}
+.cocktail-media .m-main img{object-position:center 32%}
+.cocktail-media .m-detail{
+  position:absolute;right:0;bottom:-1.5rem;width:40%;
+  border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;
+  border:1px solid var(--brand-line);
+  box-shadow:0 24px 50px -24px rgba(0,0,0,.85);
+}
+.cocktail-media img{width:100%;height:100%;object-fit:cover}
+
+/* ── Eventi & Nights — full-bleed image band ── */
+.eventi{position:relative;overflow:hidden;padding-block:clamp(4rem,3rem + 6vw,8rem)}
+.eventi-bg{position:absolute;inset:0;z-index:0}
+.eventi-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.eventi-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.94) 0%,rgba(20,16,12,.8) 45%,rgba(20,16,12,.55) 100%)}
+.eventi .container{position:relative;z-index:1}
+.eventi-copy{max-width:34rem}
+.eventi-nights{list-style:none;padding:0;margin:1.8rem 0 0;display:flex;flex-direction:column;gap:1.1rem}
+.eventi-nights li{border-top:1px solid var(--brand-line);padding-top:1.1rem}
+.eventi-nights h3{font-size:1.15rem;margin-bottom:.25rem}
+.eventi-nights p{color:var(--brand-muted);font-size:.95rem}
+
+/* ── Prenota — persistent booking with sticky rail ── */
+.prenota-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.prenota-copy h2{font-size:var(--fs-h2);margin-bottom:1.2rem}
+.prenota-copy .lead{color:var(--brand-muted);max-width:46ch}
+.prenota-steps{list-style:none;padding:0;margin:1.8rem 0 0;display:flex;flex-direction:column;gap:1.1rem}
+.prenota-steps li{display:flex;gap:.9rem;align-items:baseline}
+.prenota-steps .n{font-family:var(--font-display);color:var(--brand-accent);font-size:1rem;flex:none;width:1.4rem}
+.prenota-steps b{font-weight:500}
+.prenota-steps span{display:block;color:var(--brand-muted);font-size:.92rem}
+.book-card{
+  position:sticky;top:5.5rem;
+  background:var(--brand-surface);
+  border:1px solid var(--brand-line);
+  border-radius:var(--radius);
+  padding:clamp(1.6rem,3vw,2.2rem);
+  display:flex;flex-direction:column;gap:1.1rem;
+}
+.book-card .eyebrow{margin-bottom:.2rem}
+.book-card h3{font-size:1.5rem}
+.book-card .phone-big{
+  font-family:var(--font-display);font-size:1.6rem;color:var(--brand-accent);
+}
+.book-card .phone-big a{color:inherit}
+.book-card p{font-size:.9rem;color:var(--brand-muted)}
+.book-card .btn{width:100%}
+.book-card .reassure{
+  border-top:1px solid var(--brand-line);padding-top:1rem;
+  font-size:.85rem;color:var(--brand-muted);
+}
+
+/* ── Dove siamo — styled address block + real map link, no illustrated map ── */
+.dove-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.dove-panel{
+  border:1px solid var(--brand-line);border-radius:var(--radius);
+  background:var(--brand-surface-alt);
+  padding:clamp(1.8rem,4vw,3rem);
+  display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem;
+}
+.dove-panel .ring-emblem{
+  width:clamp(88px,16vw,132px);height:clamp(88px,16vw,132px);
+  border-radius:50%;border:1.5px solid var(--brand-accent);
+  position:relative;flex:none;
+  filter:drop-shadow(0 0 12px color-mix(in srgb,var(--brand-accent) 32%,transparent));
+}
+.dove-panel .ring-emblem::after{
+  content:"";position:absolute;top:-5px;left:calc(50% - 5px);
+  width:10px;height:10px;border-radius:50%;background:var(--brand-accent);
+  box-shadow:0 0 10px 2px color-mix(in srgb,var(--brand-accent) 60%,transparent);
+}
+.dove-panel h3{font-size:1.4rem}
+.dove-panel p{color:var(--brand-muted);max-width:34ch}
+.dove-info address{font-style:normal}
+.dove-info .addr{font-family:var(--font-display);font-size:1.4rem;margin:1rem 0 .3rem;line-height:1.3}
+.dove-info .city{color:var(--brand-muted);margin-bottom:1.4rem}
+.dove-info dl{margin:1.6rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.dove-info dt{color:var(--brand-accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding-top:.15rem}
+.dove-info dd{margin:0;color:var(--brand-ink)}
+.dove-info dd small{display:block;color:var(--brand-muted);font-size:.8rem}
+.dove-actions{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* ── Footer ── */
+.site-footer{background:var(--brand-surface-alt);border-top:1px solid var(--brand-line);padding-block:clamp(3rem,4vw,4.5rem)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem}
+.footer-brand .wordmark{font-size:1.6rem;margin-bottom:1rem}
+.footer-brand p{color:var(--brand-muted);max-width:34ch;font-size:.95rem}
+.footer-col h3{font-family:var(--font-body);font-weight:500;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-accent);margin:0 0 1rem}
+.footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem}
+.footer-col a,.footer-col li{color:var(--brand-muted);font-size:.95rem}
+.footer-col a:hover{color:var(--brand-ink)}
+.footer-bottom{width:var(--container);margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--brand-line);display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--brand-muted);font-size:.8rem}
+
+/* ── sticky mobile action bar ── */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:none;
+  gap:.6rem;padding:.7rem;
+  background:color-mix(in srgb,var(--brand-surface) 94%,transparent);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--brand-line);
+}
+.mobile-bar .btn{flex:1}
+.mobile-bar .btn-ghost{flex:0 0 auto;padding-inline:1.1rem}
+
+/* the illustrative disclaimer — single, discreet */
+.demo-note{color:var(--brand-muted);font-size:.78rem;opacity:.85}
+
+/* ─────────────── RESPONSIVE ─────────────── */
+@media (max-width:900px){
+  .manifesto-grid,.cucina-layout,.signature-grid,.cocktail-grid,.prenota-grid,.dove-grid{grid-template-columns:1fr}
+  .signature-grid{gap:2rem}
+  .book-card{position:static}
+  .cucina-media .m-detail{position:static;width:60%;margin-top:2.5rem;bottom:auto}
+  .cocktail-media .m-detail{position:static;width:55%;margin-top:2rem;right:auto;bottom:auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media (max-width:720px){
+  .nav-links,.nav .nav-cta{display:none}
+  .nav-toggle{display:inline-flex}
+  .site-header.open .nav-links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;
+    position:absolute;left:0;right:0;top:100%;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:1.4rem var(--container-pad,5vw);width:100%;
+  }
+  .site-header.open .nav-links .nav-cta{display:block;margin:.4rem 0 0}
+  .site-header.open .nav-links .btn{display:inline-flex}
+  .mobile-bar{display:flex}
+  body{padding-bottom:4.7rem}
+  /* mode labels on the ring can crowd on a phone → drop the ring-text, keep the ring + dot,
+     and present the four modes as a plain labelled list beneath (no orphan markers) */
+  .ring-modes{display:none}
+  .mode-list{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem .4rem;
+    margin-top:1.6rem;list-style:none;padding:0;
+  }
+  .mode-list li{display:flex;align-items:center}
+  .mode-list a{
+    display:inline-flex;align-items:center;gap:.45rem;
+    font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);
+    padding:.35rem .2rem;
+  }
+  .mode-list a::before{content:"";width:.42rem;height:.42rem;border-radius:50%;border:1.5px solid var(--brand-accent)}
+  .mode-list .sep{color:var(--brand-line)}
+  .footer-grid{grid-template-columns:1fr}
+  .manifesto-modes{grid-template-columns:1fr}
+}
+@media (max-width:420px){
+  .hero-mark h1{font-size:clamp(2rem,7vw,2.6rem)}
+}
+
+/* ═══════════════ MOTION LAYER (pass 3) ═══════════════
+   One motion language, all on --ease-signature / --ease-micro and the brand tokens.
+   Every reveal base-state lives behind BOTH `html.js` (so content is fully visible
+   with JS off) AND prefers-reduced-motion:no-preference (so reduced-motion shows
+   everything immediately, no transform, no wait). */
+
+/* fixed scroll-progress hairline — the evening's arc, page-wide (JS-driven scaleX) */
+.scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:70;
+  background:var(--brand-accent);transform:scaleX(0);transform-origin:0 50%;
+  opacity:.9;pointer-events:none;display:none;
+}
+html.js .scroll-progress{display:block}
+
+/* one slow candle-warm ambient glow, drifting — sub-perceptual "alive" texture */
+.ambient-glow{
+  position:fixed;z-index:1;pointer-events:none;
+  width:62vmax;height:62vmax;left:50%;top:40%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,color-mix(in srgb,var(--brand-accent) 9%,transparent) 0%,transparent 60%);
+  opacity:.32;mix-blend-mode:screen;display:none;
+}
+html.js .ambient-glow{display:block}
+
+/* desktop chapter rail — stops on the circle, small ring markers (the motif) */
+.chapter-rail{
+  position:fixed;right:1.4rem;top:50%;transform:translateY(-50%);
+  z-index:55;display:none;flex-direction:column;gap:.85rem;align-items:center;
+}
+.chapter-rail a{
+  width:.72rem;height:.72rem;border-radius:50%;
+  border:1.5px solid color-mix(in srgb,var(--brand-accent) 55%,transparent);
+  transition:background var(--dur-micro) var(--ease-micro),transform var(--dur-micro) var(--ease-micro),border-color var(--dur-micro) var(--ease-micro);
+}
+.chapter-rail a:hover{border-color:var(--brand-accent);transform:scale(1.2)}
+.chapter-rail a.is-active{background:var(--brand-accent);border-color:var(--brand-accent);transform:scale(1.15)}
+@media (min-width:1180px) and (pointer:fine){
+  html.js .chapter-rail{display:flex}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  /* progress + ambient only breathe when motion is welcome */
+  html.js .ambient-glow{animation:glowDrift 16s var(--ease-signature) infinite alternate}
+
+  /* ── SHARED REVEAL SYSTEM — varied by content role, never one fade ── */
+  /* headings: a clip-mask rise ("text rises into being"), not a fade */
+  html.js [data-reveal="head"]{
+    opacity:0;clip-path:inset(0 0 108% 0);transform:translateY(10px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),clip-path var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  html.js [data-reveal="head"].in{opacity:1;clip-path:inset(0 0 -12% 0);transform:none}
+
+  /* lead / block copy: a quiet lift */
+  html.js [data-reveal="up"]{
+    opacity:0;transform:translateY(26px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  html.js [data-reveal="up"].in{opacity:1;transform:none}
+
+  /* media: surfaces from shadow — scales down into place */
+  html.js [data-reveal="media"]{
+    opacity:0;transform:scale(1.055);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  html.js [data-reveal="media"].in{opacity:1;transform:none}
+
+  /* list rows: a staggered vertical cascade along the list */
+  html.js [data-reveal="rows"] > *{
+    opacity:0;transform:translateY(22px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--i,0) * var(--stagger));
+  }
+  html.js [data-reveal="rows"].in > *{opacity:1;transform:none}
+
+  /* La Cucina dishes: diagonal travel along the grid's own off-axis line
+     (comparable X and Y so it reads as DIAGONAL, not a slide-up) */
+  html.js [data-reveal="diag"] > *{
+    opacity:0;transform:translate(-32px,32px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--i,0) * var(--stagger));
+  }
+  html.js [data-reveal="diag"].in > *{opacity:1;transform:none}
+
+  /* ── HERO on-load choreography — pure CSS, auto-runs on load, NEVER waits on JS
+        (so the above-the-fold hero fully animates and settles even if the main
+        script fails to run; JS only adds the scroll scrub + parallax on top) ── */
+
+  /* the gold arc DRAWS once on load (dashoffset), then the dot scrubs to scroll */
+  html.js .ring-arc{animation:arcDraw 1500ms var(--ease-signature) 150ms both}
+
+  /* moment 1 — the composition unveils through a radial clip growing from centre */
+  html.js .ring-media{animation:clipUnveil 1100ms var(--ease-signature) 200ms both}
+
+  /* wordmark + tagline + actions rise in sequence */
+  html.js .hero [data-hero]{animation:heroRise 700ms var(--ease-signature) both;animation-delay:calc(var(--d,0) * 1ms)}
+
+  /* moment 5 — the claim resolves word by word */
+  html.js .claim .w{display:inline-block;animation:wordRise 520ms var(--ease-signature) both;animation-delay:calc(var(--wi,0) * 70ms + 650ms)}
+  /* the final "repeat." loops a slow, gentle fade — the circle returning to its start.
+     the ONE deliberate loop on the page, slow and shallow so it whispers, not pulses */
+  html.js .claim .loop-tail{animation:wordRise 520ms var(--ease-signature) 930ms both,tailReturn 5s var(--ease-signature) 3.2s infinite}
+
+  /* moment 6 (ring half) — a thin gold ring DRAWS closed around each dish on hover */
+  @media (hover:hover) and (pointer:fine){
+    html.js .dish .marker circle{transition:stroke-dashoffset var(--dur-reveal) var(--ease-micro)}
+    html.js .dish:hover .marker circle,html.js .dish:focus-within .marker circle{stroke-dashoffset:0}
+    html.js .dish:hover h3,html.js .dish:focus-within h3{color:var(--brand-accent)}
+
+    /* moment 6 (photo half) — the image lifts from a low-saturation shadow to full warmth */
+    html.js .hoverimg{overflow:hidden}
+    html.js .hoverimg img{
+      filter:saturate(.9) brightness(.95);
+      transition:filter var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    }
+    html.js .hoverimg:hover img,html.js .hoverimg:focus-within img{filter:saturate(1.05);transform:scale(1.05)}
+
+    /* nav underline draws from the left */
+    html.js .nav-links a{position:relative}
+    html.js .nav-links a::after{
+      content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;
+      background:var(--brand-accent);transform:scaleX(0);transform-origin:0 50%;
+      transition:transform var(--dur-micro) var(--ease-signature);
+    }
+    html.js .nav-links a:hover::after,html.js .nav-links a:focus-visible::after{transform:scaleX(1)}
+  }
+}
+
+@keyframes arcDraw{from{stroke-dashoffset:289}to{stroke-dashoffset:0}}
+@keyframes clipUnveil{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(72% at 50% 50%)}}
+@keyframes heroRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes wordRise{from{opacity:0;transform:translateY(0.5em)}to{opacity:1;transform:none}}
+@keyframes tailReturn{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes glowDrift{
+  0%{transform:translate(-50%,-50%) scale(1)}
+  100%{transform:translate(-48%,-53%) scale(1.08)}
+}
+
+/* ─────────────── REDUCED MOTION ─────────────── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .ring-marker{transition:none}
+  html{scroll-behavior:auto}
+  .ambient-glow{animation:none !important}
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="ambient-glow" aria-hidden="true"></div>
+<nav class="chapter-rail" id="chapterRail" aria-label="Vai alla sezione">
+  <a href="#top" data-label="Home" aria-label="Hero"></a>
+  <a href="#manifesto" data-label="Il concept" aria-label="Il concept"></a>
+  <a href="#cucina" data-label="La cucina" aria-label="La cucina"></a>
+  <a href="#signature" data-label="Il piatto simbolo" aria-label="Il piatto simbolo"></a>
+  <a href="#cocktail" data-label="Il bancone" aria-label="Il bancone"></a>
+  <a href="#eventi" data-label="Eventi" aria-label="Eventi e nights"></a>
+  <a href="#prenota" data-label="Prenota" aria-label="Prenota"></a>
+  <a href="#dove" data-label="Dove siamo" aria-label="Dove siamo"></a>
+</nav>
+<a class="skip-link" href="#cucina" style="position:absolute;left:-999px;top:0;background:var(--brand-accent);color:var(--brand-accent-ink);padding:.6rem 1rem;border-radius:var(--radius);z-index:100;" onfocus="this.style.left='1rem'" onblur="this.style.left='-999px'">Vai al menu</a>
+
+<!-- ─────────── HEADER ─────────── -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav" aria-label="Navigazione principale">
+    <a href="#top" class="wordmark" aria-label="Friend Circle — home">
+      <span>Friend</span><span class="circled">Circle</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#cucina">Cucina</a></li>
+      <li><a href="#cocktail">Cocktail</a></li>
+      <li><a href="#eventi">Eventi</a></li>
+      <li><a href="#dove">Dove siamo</a></li>
+      <li class="nav-cta"><a class="btn btn-primary" data-cta href="tel:+393245685703">Chiama per prenotare</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ─────────── 1 · HERO RING — the wow ─────────── -->
+  <section class="hero" aria-labelledby="heroMark">
+    <div class="hero-inner">
+      <p class="eyebrow hero-claim-top" data-hero style="--d:0">Cucina &amp; cocktail · Via Padova, Milano</p>
+
+      <div class="ring-stage">
+        <div class="ring-media">
+          <video autoplay muted loop playsinline preload="auto" poster="assets/hero-table.jpg" id="heroVideo"
+                 aria-label="Piatto d’autore e un cocktail ambrato su un tavolo scuro, in luce calda da sera">
+            <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+            <img src="assets/hero-table.jpg" alt="Piatto d’autore e un cocktail ambrato su un tavolo scuro, in luce calda da sera">
+          </video>
+        </div>
+
+        <div class="ring-layer">
+          <svg class="ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="ring-track" cx="50" cy="50" r="46"/>
+            <circle class="ring-arc" cx="50" cy="50" r="46"/>
+          </svg>
+          <div class="ring-marker" id="ringMarker"><span class="dot"></span></div>
+        </div>
+
+        <div class="hero-mark" data-hero style="--d:200">
+          <h1 id="heroMark">
+            <span class="fc-friend">Friend</span>
+            <span class="fc-circle">Circle</span>
+          </h1>
+          <span class="hero-tagline">It’s a circle</span>
+        </div>
+
+        <nav class="ring-modes" data-hero style="--d:350" aria-label="Le quattro anime della serata">
+          <a class="m-top" href="#cucina">Cucina</a>
+          <a class="m-right" href="#cocktail">Cocktail</a>
+          <a class="m-bottom" href="#eventi">Nights</a>
+          <a class="m-left" href="#eventi">Eventi</a>
+        </nav>
+      </div>
+
+      <ul class="mode-list" aria-label="Le quattro anime della serata">
+        <li><a href="#cucina">Cucina</a></li><li class="sep" aria-hidden="true">·</li>
+        <li><a href="#cocktail">Cocktail</a></li><li class="sep" aria-hidden="true">·</li>
+        <li><a href="#eventi">Eventi</a></li><li class="sep" aria-hidden="true">·</li>
+        <li><a href="#eventi">Nights</a></li>
+      </ul>
+
+      <div class="hero-below">
+        <p class="claim"><span class="w" style="--wi:0">Eat,</span> <span class="w" style="--wi:1">drink,</span> <span class="w" style="--wi:2">party</span> <span class="w" style="--wi:3">and</span> <span class="w loop-tail" style="--wi:4">repeat.</span><br><span class="accent w" style="--wi:5">It’s a circle.</span></p>
+        <div class="hero-actions" data-hero style="--d:950">
+          <a class="btn btn-primary" id="magneticCta" data-cta href="tel:+393245685703">Chiama per prenotare</a>
+          <a class="btn btn-ghost" href="#cucina">Sfoglia la cucina</a>
+        </div>
+        <p class="hero-phone" data-hero style="--d:1060">Prenoti in un attimo, al telefono: <a class="nums" href="tel:+393245685703">+39 324 5685703</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ring-divider" role="presentation"><span></span></div>
+
+  <!-- ─────────── 2 · MANIFESTO ─────────── -->
+  <section class="manifesto pad-lg" id="manifesto" aria-labelledby="manifestoTitle">
+    <div class="container">
+      <div class="manifesto-grid">
+        <div class="manifesto-copy">
+          <p class="eyebrow"><span class="sec-num">01</span> &nbsp;Il concept</p>
+          <h2 id="manifestoTitle" class="big" data-reveal="head">Una sala sola.<br><em>Quattro modi</em> di viverla.</h2>
+          <p data-reveal="up">Da noi la serata non cambia indirizzo. Si comincia con l’aperitivo, si continua con una cena impiattata come si deve, si finisce con un cocktail e una serata a tema. Tutto nella stessa stanza.</p>
+          <p data-reveal="up">È il nostro modo di stare a Milano: cucina ricercata dove di solito si va solo a bere. Un posto che gira e torna sempre al punto di partenza — il tavolo con gli amici.</p>
+          <ul class="manifesto-modes" data-reveal="rows">
+            <li><b>Aperitivo</b><span>&nbsp;— l’inizio</span></li>
+            <li><b>Cena</b><span>&nbsp;— impiattata</span></li>
+            <li><b>Cocktail</b><span>&nbsp;— al bancone</span></li>
+            <li><b>Nights</b><span>&nbsp;— a tema</span></li>
+          </ul>
+        </div>
+        <figure class="manifesto-media hoverimg" data-reveal="media">
+          <img src="assets/interior-room.jpg" alt="La sala calda e scura del ristorante prima del servizio, con bancone illuminato in fondo">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── 3 · LA CUCINA ─────────── -->
+  <section class="cucina alt pad-md" id="cucina" aria-labelledby="cucinaTitle">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="sec-num">02</span> &nbsp;La cucina</p>
+        <h2 id="cucinaTitle" data-reveal="head">Piatti ricercati, dalla stessa sala dei cocktail.</h2>
+        <p class="lead" data-reveal="up">Niente di generico. Materie scelte, impiattate con cura, pensate per condividere e per far durare la serata. Ecco cosa esce dalla nostra cucina.</p>
+      </div>
+
+      <div class="cucina-layout">
+        <div class="dish-list" data-reveal="diag">
+          <article class="dish">
+            <span class="marker" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>
+            <h3>Struncatura “Circle”</h3>
+            <p>Olive taggiasche, pomodoro secco e capperi di Pantelleria.</p>
+          </article>
+          <article class="dish">
+            <span class="marker" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>
+            <h3>Tartare di filetto</h3>
+            <p>Battuta al coltello, capperi di Pantelleria e formaggio fresco.</p>
+          </article>
+          <article class="dish">
+            <span class="marker" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>
+            <h3>Caciocavallo alla piastra</h3>
+            <p>Scaglie di sale Maldon e un filo di miele.</p>
+          </article>
+          <article class="dish">
+            <span class="marker" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>
+            <h3>Piovra croccante</h3>
+            <p>Cotta a lungo, finita in padella fino alla crosta.</p>
+          </article>
+          <article class="dish">
+            <span class="marker" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>
+            <h3>Gamberoni alla catalana</h3>
+            <p>Con pomodoro, cipolla di Tropea e freschezza di agrumi.</p>
+          </article>
+        </div>
+
+        <figure class="cucina-media" data-reveal="media">
+          <figcaption>Dal coltello al tavolo</figcaption>
+          <div class="m-main hoverimg"><img src="assets/plates-share.jpg" alt="Vista dall’alto di piatti da condividere su un tavolo scuro: caciocavallo, salumi, hummus e crudités"></div>
+          <div class="m-detail hoverimg"><img src="assets/dish-tartare.jpg" alt="Dettaglio ravvicinato della tartare di filetto con capperi su piatto scuro"></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── 4 · SIGNATURE SPOTLIGHT ─────────── -->
+  <section class="signature pad-xl" id="signature" aria-labelledby="signatureTitle">
+    <div class="container">
+      <div class="signature-grid">
+        <figure class="signature-media hoverimg" data-reveal="media">
+          <img src="assets/dish-risotto.jpg" alt="Risotto allo zafferano spolverato di liquirizia nera, il piatto simbolo oro nero e oro giallo">
+        </figure>
+        <div class="signature-copy">
+          <p class="eyebrow"><span class="sec-num">03</span> &nbsp;Il piatto simbolo</p>
+          <h2 id="signatureTitle" data-reveal="head"><span class="oro">Oro nero</span> e <span class="oro">oro giallo</span></h2>
+          <p data-reveal="up">Un risotto allo zafferano, spolverato di liquirizia in polvere. L’oro giallo dello zafferano incontra il nero della liquirizia: è il piatto che dà il nome ai nostri colori, e il motivo per cui questa sala respira attorno a un solo, grande cerchio.</p>
+          <p class="note" data-reveal="up"><span class="marker-ring" aria-hidden="true"></span>Un piatto solo, tutto lo spazio che merita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ring-divider" role="presentation"><span></span></div>
+
+  <!-- ─────────── 5 · COCKTAIL BAR ─────────── -->
+  <section class="cocktail pad-md" id="cocktail" aria-labelledby="cocktailTitle">
+    <div class="container">
+      <div class="cocktail-grid">
+        <div class="cocktail-copy">
+          <p class="eyebrow"><span class="sec-num">04</span> &nbsp;Il bancone</p>
+          <h2 id="cocktailTitle" data-reveal="head">La metà “drink” del circle.</h2>
+          <p class="lead" data-reveal="up">Quando la cucina rallenta, il bancone accende la serata. Miscelati al momento, aperitivo curato, e la stessa luce calda su ogni bicchiere.</p>
+          <ul class="drinks" data-reveal="rows">
+            <li><b>Aperitivo Friend</b> — il nostro modo di aprire la serata</li>
+            <li><b>Signature del bancone</b> — miscelati d’autore, impiattati come i piatti</li>
+            <li><b>Bollicine e calici</b> — per chi vuole restare leggero</li>
+          </ul>
+        </div>
+
+        <figure class="cocktail-media" data-reveal="media">
+          <div class="m-main hoverimg"><img src="assets/cocktail-pour.jpg" alt="Un barman prepara un cocktail al bancone scuro illuminato di caldo"></div>
+          <div class="m-detail hoverimg"><img src="assets/cocktail-glass.jpg" alt="Un cocktail ambrato che brilla su un bancone scuro"></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── 6 · EVENTI & NIGHTS ─────────── -->
+  <section class="eventi" id="eventi" aria-labelledby="eventiTitle">
+    <div class="eventi-bg" aria-hidden="true">
+      <img src="assets/eventi-night.jpg" alt="">
+    </div>
+    <div class="container">
+      <div class="eventi-copy">
+        <p class="eyebrow"><span class="sec-num">05</span> &nbsp;Eventi &amp; nights</p>
+        <h2 id="eventiTitle" data-reveal="head">La serata non finisce con il dolce.</h2>
+        <p class="lead" style="color:var(--brand-muted)" data-reveal="up">Le nostre serate a tema sono il motivo per cui si torna. Dopo cena la sala cambia ritmo: musica, bancone acceso, la stessa gente attorno al cerchio.</p>
+        <ul class="eventi-nights" data-reveal="rows">
+          <li>
+            <h3>Serate a tema</h3>
+            <p>Un appuntamento che cambia pelle: la sala si veste per la nottata.</p>
+          </li>
+          <li>
+            <h3>After dinner</h3>
+            <p>Si resta seduti, si passa ai cocktail, la serata continua da sola.</p>
+          </li>
+          <li>
+            <h3>Su misura</h3>
+            <p>Compleanni e gruppi: prenotate la sala, ci pensiamo noi. Chiamateci.</p>
+          </li>
+        </ul>
+        <div style="margin-top:2rem"><a class="btn btn-primary" data-cta href="tel:+393245685703">Chiama per la tua serata</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── 7 · PRENOTA ─────────── -->
+  <section class="prenota alt pad-lg" id="prenota" aria-labelledby="prenotaTitle">
+    <div class="container">
+      <div class="prenota-grid">
+        <div class="prenota-copy">
+          <p class="eyebrow"><span class="sec-num">06</span> &nbsp;La tavola</p>
+          <h2 id="prenotaTitle" data-reveal="head">Prenotate il tavolo. Al resto pensiamo noi.</h2>
+          <p class="lead" data-reveal="up">Un posto dove si mangia davvero bene e la serata non si ferma. La prenotazione è semplice: una telefonata e il tavolo è vostro.</p>
+          <ol class="prenota-steps" data-reveal="rows">
+            <li><span class="n">1</span><span><b>Chiamateci</b><span>Diteci giorno, ora e in quanti siete.</span></span></li>
+            <li><span class="n">2</span><span><b>Scegliamo insieme</b><span>Cena, aperitivo o l’intera serata: costruiamo la vostra.</span></span></li>
+            <li><span class="n">3</span><span><b>Vi aspettiamo</b><span>Arrivate. Da lì in poi è tutto un circle.</span></span></li>
+          </ol>
+        </div>
+
+        <aside class="book-card" aria-labelledby="bookTitle" data-reveal="up">
+          <p class="eyebrow">Prenota ora</p>
+          <h3 id="bookTitle">Un tavolo al Circle</h3>
+          <p>La prenotazione si fa al telefono, con noi. Rispondiamo e sistemiamo tutto in un minuto.</p>
+          <p class="phone-big nums"><a href="tel:+393245685703">+39 324 5685703</a></p>
+          <a class="btn btn-primary" data-cta href="tel:+393245685703">Chiama per prenotare</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Friend+Circle%2C+Milano" target="_blank" rel="noopener">Vedi su Google Maps</a>
+          <p class="reassure">Via Padova 228, in zona NoLo. Facile da raggiungere, facile da ritrovare — perché la serata torna sempre qui.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── 8 · DOVE SIAMO ─────────── -->
+  <section class="dove pad-md" id="dove" aria-labelledby="doveTitle">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="sec-num">07</span> &nbsp;Dove siamo</p>
+        <h2 id="doveTitle" data-reveal="head">In Via Padova, cuore di NoLo.</h2>
+      </div>
+      <div class="dove-grid">
+        <div class="dove-info" data-reveal="up">
+          <address>
+            <p class="addr nums">Via Padova, 228</p>
+            <p class="city nums">20132 Milano · zona NoLo</p>
+          </address>
+          <dl>
+            <dt>Telefono</dt>
+            <dd><a class="nums" href="tel:+393245685703" style="border-bottom:1px solid var(--brand-line)">+39 324 5685703</a></dd>
+            <dt>Zona</dt>
+            <dd>NoLo, a nord-est del centro — ben servita da mezzi e serate.</dd>
+            <dt>Orari</dt>
+            <dd>Aperti la sera, dall’aperitivo a tarda notte.<small>Orari indicativi — confermateli con una chiamata.</small></dd>
+          </dl>
+          <div class="dove-actions">
+            <a class="btn btn-primary" data-cta href="tel:+393245685703">Chiama per prenotare</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Friend+Circle%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          </div>
+        </div>
+
+        <aside class="dove-panel" aria-labelledby="arrivoTitle" data-reveal="media">
+          <span class="ring-emblem" aria-hidden="true"></span>
+          <h3 id="arrivoTitle">Come arrivare</h3>
+          <p>Siamo in Via Padova, in NoLo — il quartiere che a nord-est del centro si accende la sera. Ben servito dai mezzi, comodo per continuare la serata a piedi.</p>
+          <p>Aprite la mappa e vi portiamo dritti all’ingresso.</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Friend+Circle%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer class="site-footer" aria-label="Contatti e informazioni">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark"><span>Friend</span><span class="circled">Circle</span></span>
+      <p>Cucina ricercata e cocktail nella stessa sala, in Via Padova a Milano. Eat, drink, party and repeat. It’s a circle.</p>
+    </div>
+    <div class="footer-col">
+      <h3>La serata</h3>
+      <ul>
+        <li><a href="#cucina">La cucina</a></li>
+        <li><a href="#cocktail">Il bancone</a></li>
+        <li><a href="#eventi">Eventi &amp; nights</a></li>
+        <li><a href="#prenota">Prenota</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Trovaci</h3>
+      <ul>
+        <li>Via Padova, 228</li>
+        <li>20132 Milano · NoLo</li>
+        <li><a class="nums" href="tel:+393245685703">+39 324 5685703</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Friend+Circle%2C+Milano" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Friend Circle · Milano</span>
+    <span class="demo-note">Anteprima dimostrativa — orari e listino da confermare con il locale.</span>
+  </div>
+</footer>
+
+<!-- ─────────── sticky mobile action bar ─────────── -->
+<div class="mobile-bar" aria-label="Azioni rapide">
+  <a class="btn btn-primary" data-cta href="tel:+393245685703">Chiama per prenotare</a>
+  <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Friend+Circle%2C+Milano" target="_blank" rel="noopener" aria-label="Apri la mappa">Mappa</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var finePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  // ── mobile nav toggle (always on — accessibility, not decoration) ──
+  var header=document.getElementById('siteHeader');
+  var toggle=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  function setOpen(open){
+    header.classList.toggle('open',open);
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+  }
+  if(toggle){
+    toggle.addEventListener('click',function(){setOpen(!header.classList.contains('open'));});
+    links.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+  }
+
+  // ── honour reduced-motion: freeze the hero cinemagraph on its poster still ──
+  var video=document.getElementById('heroVideo');
+  if(reduce && video){
+    video.removeAttribute('autoplay');video.removeAttribute('loop');
+    try{video.pause();}catch(e){}
+  }
+
+  // The hero on-load choreography (arc draw, radial unveil, word cascade) is pure CSS
+  // and auto-runs — no JS needed. JS only layers the scroll scrub + parallax on top.
+  var hero=document.querySelector('.hero');
+
+  if(!reduce){
+    // ── ONE rAF-batched scroll handler: ring dot scrub + hero parallax + progress ──
+    var marker=document.getElementById('ringMarker');
+    var ringLayer=document.querySelector('.ring-layer');
+    var plate=document.querySelector('.ring-media');
+    var bodyEl=document.body;
+    var progress=document.getElementById('scrollProgress');
+    var heroEl=hero;
+    var ticking=false;
+    function onScroll(){
+      ticking=false;
+      var doc=document.documentElement;
+      var max=(doc.scrollHeight-doc.clientHeight)||1;
+      var y=window.scrollY;
+      var p=Math.min(1,Math.max(0,y/max));
+
+      // page-wide progress hairline (GPU scaleX)
+      if(progress)progress.style.transform='scaleX('+p.toFixed(4)+')';
+
+      // signature: the dot travels the ring's circumference, bound to scroll offset
+      if(marker)marker.style.setProperty('--ring-progress',(8+p*344).toFixed(1)+'deg');
+
+      // moment 4: three hero z-layers drift at DIFFERENT rates while the hero is in view
+      var hh=heroEl?heroEl.offsetHeight:0;
+      if(hh){
+        var hv=Math.min(y,hh); // only parallax within the hero's own scroll range
+        if(plate)plate.style.setProperty('--plate-par',(hv*0.03).toFixed(1)+'px');    // plate — slow
+        if(ringLayer)ringLayer.style.setProperty('--ring-par',(hv*0.055).toFixed(1)+'px'); // ring + dot — faster
+        bodyEl.style.setProperty('--grain-par',(hv*0.02).toFixed(1)+'px');            // grain — slowest
+      }
+    }
+    window.addEventListener('scroll',function(){
+      if(!ticking){ticking=true;requestAnimationFrame(onScroll);}
+    },{passive:true});
+    onScroll();
+
+    // ── seamless loop: mask the cinemagraph's restart with a brief opacity dip ──
+    if(video){
+      video.style.transition='opacity 340ms linear';
+      video.addEventListener('timeupdate',function(){
+        if(!video.duration)return;
+        var t=video.currentTime, d=video.duration;
+        video.style.opacity=(t>d-0.4 || t<0.4)?'0.72':'1';
+      });
+    }
+
+    // ── shared reveal system: ONE IntersectionObserver, unobserve after firing ──
+    var revealEls=document.querySelectorAll('[data-reveal]');
+    if('IntersectionObserver' in window && revealEls.length){
+      // index children of cascading groups so their stagger is content-ordered
+      document.querySelectorAll('[data-reveal="rows"],[data-reveal="diag"]').forEach(function(group){
+        Array.prototype.forEach.call(group.children,function(child,i){child.style.setProperty('--i',i);});
+      });
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+        });
+      },{rootMargin:'0px 0px -12% 0px',threshold:0.12});
+      revealEls.forEach(function(el){io.observe(el);});
+    }else{
+      revealEls.forEach(function(el){el.classList.add('in');});
+    }
+
+    // ── magnetic primary CTA (desktop only, capped so it can never cause overflow) ──
+    var cta=document.getElementById('magneticCta');
+    if(cta && finePointer){
+      cta.addEventListener('pointermove',function(e){
+        var r=cta.getBoundingClientRect();
+        var mx=(e.clientX-(r.left+r.width/2))/r.width;
+        var my=(e.clientY-(r.top+r.height/2))/r.height;
+        cta.style.transform='translate('+(mx*10).toFixed(1)+'px,'+(my*8).toFixed(1)+'px)';
+      });
+      cta.addEventListener('pointerleave',function(){cta.style.transform='';});
+    }
+  }else{
+    // reduced-motion: reveals must never gate content — show everything now
+    document.querySelectorAll('[data-reveal]').forEach(function(el){el.classList.add('in');});
+  }
+
+  // ── chapter rail: active dot via IntersectionObserver (navigation, so it runs
+  //    regardless of reduced-motion; only the smooth-scroll is disabled by CSS) ──
+  var rail=document.getElementById('chapterRail');
+  if(rail && 'IntersectionObserver' in window){
+    var dots=Array.prototype.slice.call(rail.querySelectorAll('a'));
+    // pair each dot to its real section element (the first dot tracks the HERO,
+    // not <main id="top">, which would otherwise stay "active" the whole page)
+    var sections=[document.querySelector('.hero'),
+      document.getElementById('manifesto'),document.getElementById('cucina'),
+      document.getElementById('signature'),document.getElementById('cocktail'),
+      document.getElementById('eventi'),document.getElementById('prenota'),
+      document.getElementById('dove')];
+    var secObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting && en.target._dot){
+          dots.forEach(function(x){x.classList.remove('is-active');x.removeAttribute('aria-current');});
+          en.target._dot.classList.add('is-active');
+          en.target._dot.setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+    sections.forEach(function(s,i){if(s){s._dot=dots[i];secObs.observe(s);}});
+  }
+})();
+</script>
+</body>
+</html>

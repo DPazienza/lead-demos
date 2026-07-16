@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Carbonazo — Peruviano alla brace in zona Lotto, Milano</title>
+<meta name="description" content="El Carbonazo: pollo a la brasa girato sulla brace vera, porzioni giganti da condividere a 10–20 € a testa. Peruviano di quartiere a Lotto, Milano. Prenota con una telefonata.">
+<link rel="canonical" href="https://elcarbonazo.example/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="El Carbonazo — Peruviano alla brace, Milano">
+<meta property="og:description" content="Pollo a la brasa sulla brace vera, porzioni giganti da condividere a 10–20 € a testa. Peruviano di quartiere a Lotto, Milano.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-brasa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El Carbonazo — Peruviano alla brace, Milano">
+<meta name="twitter:description" content="Pollo a la brasa sulla brace vera, porzioni giganti da condividere. Zona Lotto, Milano.">
+<meta name="twitter:image" content="assets/hero-brasa.jpg">
+<meta name="theme-color" content="#241811">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+<!-- LocalBusiness / Restaurant schema — real data only -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "El Carbonazo",
+  "servesCuisine": "Peruviana",
+  "description": "Ristorante peruviano di quartiere a Lotto, Milano. Pollo a la brasa sulla brace vera e porzioni giganti da condividere.",
+  "image": "assets/hero-brasa.jpg",
+  "telephone": "+393803691481",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Mariotto Albertinelli, 5",
+    "postalCode": "20148",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "18:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday"], "opens": "18:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "22:00" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4",
+    "bestRating": "5",
+    "reviewCount": "323"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=El+Carbonazo%2C+Milano",
+  "sameAs": ["https://www.instagram.com/elcarbonazo"]
+}
+</script>
+
+<style>
+:root{
+  /* palette — brief tokens, defined once */
+  --brand-ink:#241811;
+  --brand-surface:#F9F2E7;
+  --brand-surface-alt:#F1E7D6;
+  --brand-accent:#C0341D;
+  --brand-accent-ink:#FCF4EA;
+  --brand-muted:#6B5644;
+  --brand-line:#E1D3BE;
+  --brand-accent-2:#D2912A;
+  /* type */
+  --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --fs-hero:clamp(2.8rem, 1.5rem + 6vw, 6.4rem);
+  --fs-h2:clamp(1.85rem, 1.2rem + 3vw, 3.4rem);
+  --fs-body:clamp(1rem, 0.95rem + 0.35vw, 1.15rem);
+  /* motion */
+  --ease-signature:cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-micro:cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-reveal:720ms;
+  --dur-micro:220ms;
+  --stagger:90ms;
+  /* space */
+  --space-section:clamp(4.5rem, 3rem + 7vw, 9rem);
+  --container:min(1180px, 92vw);
+  --radius:6px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip;max-width:100%}
+html{scroll-behavior:smooth}
+body{
+  position:relative;
+  margin:0;
+  background:var(--brand-surface);
+  color:var(--brand-ink);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures contextual;
+  text-wrap:pretty;
+}
+/* fine paper grain — inline SVG feTurbulence, never a generated image */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  opacity:.045;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,video{max-width:100%;height:auto;display:block}
+/* one shared photographic grade so the gallery reads as one shoot */
+.brasa img,.dish img,.ed-main,.ed-detail,.trovarci-media img{
+  filter:saturate(1.05) contrast(1.03);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--brand-ink) 8%, transparent);
+}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:900;letter-spacing:-0.02em;line-height:1.02;margin:0;font-optical-sizing:auto;text-wrap:balance}
+p{margin:0}
+p,li{text-wrap:pretty}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--brand-accent);outline-offset:3px;border-radius:2px}
+::selection{background:var(--brand-accent);color:var(--brand-accent-ink)}
+.tnum{font-variant-numeric:tabular-nums}
+
+.container{width:var(--container);margin-inline:auto}
+.eyebrow{
+  font-family:var(--font-body);font-weight:700;font-size:.72rem;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-muted);
+  display:inline-flex;align-items:center;gap:.6em;margin:0 0 1.1rem;
+}
+.skip{
+  position:absolute;left:-999px;top:0;z-index:200;
+  background:var(--brand-ink);color:var(--brand-surface);padding:.7rem 1rem;border-radius:0 0 var(--radius) 0;
+}
+.skip:focus{left:0}
+
+/* ---- il rombo-brace motif ---- */
+.rombo{
+  width:7px;height:7px;flex:0 0 7px;background:var(--brand-accent);
+  transform:rotate(45deg);position:relative;display:inline-block;
+}
+.rombo.dot::after{
+  content:"";position:absolute;inset:2px;background:var(--brand-accent-2);
+}
+.rombo-rule{
+  border:0;height:4px;width:100%;background:none;position:relative;margin:0;
+}
+.rombo-rule::before{
+  content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--brand-line);
+}
+.rombo-rule::after{
+  content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;
+  background:var(--brand-accent);transform:translate(-50%,-50%) rotate(45deg);
+}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;justify-content:center;
+  font-family:var(--font-body);font-weight:700;font-size:1rem;line-height:1;
+  padding:.95rem 1.4rem;border-radius:999px;text-decoration:none;cursor:pointer;
+  border:1px solid transparent;transition:transform var(--dur-micro) var(--ease-micro), background var(--dur-micro) ease;
+}
+.btn-accent{background:var(--brand-accent);color:var(--brand-accent-ink)}
+.btn-accent:hover{transform:translateY(-2px) scale(1.02)}
+.btn-ghost{background:transparent;color:var(--brand-ink);border-color:var(--brand-line)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--brand-accent)}
+.btn-block{width:100%}
+
+/* ---- wordmark ---- */
+.wordmark{
+  font-family:var(--font-display);font-weight:900;text-transform:uppercase;
+  letter-spacing:-0.01em;line-height:.95;
+}
+.wm-o{position:relative;display:inline-block}
+.wm-tacca{
+  position:absolute;left:50%;bottom:-0.22em;width:.16em;height:.16em;
+  min-width:8px;min-height:8px;background:var(--brand-accent);
+  transform:translateX(-50%) rotate(45deg);
+}
+.wm-tacca::after{content:"";position:absolute;inset:26%;background:var(--brand-accent-2)}
+
+/* ---- site header / nav ---- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb, var(--brand-surface) 92%, transparent);
+  backdrop-filter:saturate(1.2) blur(8px);
+  border-bottom:1px solid var(--brand-line);
+}
+.nav{display:flex;align-items:center;gap:1rem;padding:.85rem 0;width:var(--container);margin-inline:auto}
+.brandmini{font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:0;font-size:1.15rem;text-decoration:none;color:var(--brand-ink);margin-right:auto}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--brand-ink);opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--brand-accent)}
+.nav-cta{margin-left:.5rem}
+.nav-toggle{display:none;background:none;border:1px solid var(--brand-line);border-radius:var(--radius);width:44px;height:44px;flex:0 0 44px;cursor:pointer;align-items:center;justify-content:center}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+  content:"";display:block;width:20px;height:2px;background:var(--brand-ink);position:relative;transition:transform var(--dur-micro) ease,opacity var(--dur-micro) ease}
+.nav-toggle span::before{position:absolute;top:-6px}
+.nav-toggle span::after{position:absolute;top:6px}
+.nav-toggle[aria-expanded="true"] span{background:transparent}
+.nav-toggle[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---- HERO / Insegna: la carta viva ---- */
+.hero{position:relative;overflow:hidden;background:var(--brand-ink);color:var(--brand-accent-ink)}
+.hero-fallback{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0;
+}
+.hero-media{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:1;
+}
+.hero-glow{
+  position:absolute;z-index:2;left:50%;top:52%;width:80vw;max-width:900px;aspect-ratio:1;
+  transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(circle, color-mix(in srgb, var(--brand-accent) 82%, transparent) 0%, transparent 62%);
+  mix-blend-mode:screen;opacity:.55;
+  animation:brace-breath 6s ease-in-out infinite;
+}
+@keyframes brace-breath{
+  0%,100%{opacity:.42;transform:translate(-50%,-50%) scale(.94)}
+  50%{opacity:.66;transform:translate(-50%,-50%) scale(1.06)}
+}
+.hero-shade{position:absolute;inset:0;z-index:3;background:
+  linear-gradient(180deg, color-mix(in srgb,var(--brand-ink) 55%,transparent) 0%, transparent 26%, color-mix(in srgb,var(--brand-ink) 78%,transparent) 92%);}
+.hero-inner{position:relative;z-index:4;width:var(--container);margin-inline:auto;
+  min-height:clamp(560px,92vh,880px);display:flex;flex-direction:column;justify-content:flex-end;
+  padding:5.5rem 0 3rem;}
+.hero-eyebrow{color:var(--brand-accent-ink);opacity:.9}
+.hero h1{font-size:clamp(3rem,1.5rem + 8vw,7rem);letter-spacing:-0.03em;margin:0 0 .2rem}
+.hero-tagline{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;font-size:.9rem;color:color-mix(in srgb, var(--brand-accent-ink) 84%, transparent);margin:0 0 1.6rem}
+
+/* the lavagna-menu — six signature dishes as a hand-written board */
+.lavagna{margin:0 0 1.8rem;max-width:20ch}
+.lavagna li{
+  font-family:var(--font-display);font-weight:600;font-size:var(--fs-h2);line-height:1.04;
+  letter-spacing:-0.02em;display:flex;align-items:baseline;gap:.7rem;padding:.06em 0;
+}
+.lavagna li .rombo{transform:translateY(-0.15em) rotate(45deg)}
+.lavagna li:nth-child(even){margin-left:clamp(.6rem,4vw,3.2rem)}
+.lavagna li:nth-child(3){margin-left:clamp(.3rem,2vw,1.6rem)}
+
+.hero-sub{max-width:32ch;font-size:clamp(1rem,.95rem + .4vw,1.25rem);color:var(--brand-accent-ink);opacity:.95;margin:0 0 1.8rem}
+.hero-sub b{color:var(--brand-accent);font-weight:700}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;align-items:center}
+.hero-proof{display:flex;align-items:center;gap:.6rem;font-size:.95rem;color:var(--brand-accent-ink)}
+.hero-phone{font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ---- section scaffolding ---- */
+main section{scroll-margin-top:76px}
+.section{width:var(--container);margin-inline:auto}
+.section-divider{width:var(--container);margin:0 auto}
+.sec-head{max-width:52ch}
+.sec-head h2{font-size:var(--fs-h2);margin:.2rem 0 .9rem}
+.lead{color:var(--brand-muted);font-size:1.1rem}
+
+/* La Brasa */
+.brasa{padding-block:var(--space-section);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.brasa .copy p{margin:0 0 .55rem;max-width:34ch}
+.brasa figure{margin:0;position:relative}
+.brasa img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+.figcap{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted);margin-top:.7rem;display:flex;gap:.55rem;align-items:center}
+
+/* I Piatti gallery */
+.piatti{padding-block:var(--space-section);background:var(--brand-surface-alt)}
+.piatti .inner{width:var(--container);margin-inline:auto}
+.piatti-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.4rem,3vw,2.6rem);margin-top:2.6rem}
+.dish{margin:0}
+.dish img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius)}
+.dish-name{font-family:var(--font-display);font-weight:600;font-size:1.45rem;letter-spacing:-0.01em;margin:.9rem 0 .2rem;display:flex;align-items:baseline;gap:.55rem}
+.dish p{color:var(--brand-muted);font-size:.98rem;max-width:38ch}
+/* editorial stagger — baselines differ */
+.dish:nth-child(2){margin-top:clamp(0px,4vw,3rem)}
+.dish:nth-child(3){margin-top:clamp(0px,-2vw,0px)}
+.dish:nth-child(4){margin-top:clamp(0px,3vw,2.4rem)}
+.piatti-note{margin-top:2.2rem;font-size:1.05rem;color:var(--brand-ink);display:flex;gap:.6rem;align-items:baseline}
+
+/* Le Porzioni */
+.porzioni{padding-block:var(--space-section);display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(1.5rem,5vw,4.5rem);align-items:center}
+.porzioni .copy p{margin:0 0 .55rem;max-width:32ch}
+.price-tag{margin:1.4rem 0 .4rem;display:flex;align-items:baseline;gap:.7rem}
+.price-tag .num{font-family:var(--font-display);font-weight:900;font-size:clamp(2.6rem,1.5rem+4vw,4.2rem);color:var(--brand-accent);line-height:1;font-variant-numeric:tabular-nums}
+.price-tag .lbl{font-size:.95rem;color:var(--brand-muted);max-width:14ch}
+
+/* editorial image set: main + offset detail */
+.editorial{position:relative;margin:0}
+.ed-main{width:88%;border-radius:var(--radius);aspect-ratio:3/2;object-fit:cover}
+.ed-detail{position:absolute;width:42%;border-radius:var(--radius);object-fit:cover;box-shadow:0 18px 40px -18px rgba(36,24,17,.55);border:5px solid var(--brand-surface)}
+.editorial.pd .ed-main{margin-left:auto}
+.editorial.pd .ed-detail{left:0;bottom:-10%;aspect-ratio:3/4}
+
+/* La Sala e il Quartiere */
+.sala{padding-block:var(--space-section);background:var(--brand-surface-alt)}
+.sala .inner{width:var(--container);margin-inline:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,5vw,4.5rem);align-items:center}
+.editorial.sd .ed-main{margin-right:auto}
+.editorial.sd .ed-detail{right:0;top:-9%;aspect-ratio:1/1;width:40%}
+.facts{margin-top:1.6rem;display:grid;gap:.7rem}
+.facts li{display:flex;gap:.7rem;align-items:baseline;font-weight:500}
+.facts li b{font-weight:700}
+
+/* Dicono di Noi */
+.review{padding-block:var(--space-section);text-align:center}
+.review .inner{width:var(--container);margin-inline:auto;max-width:820px}
+.rating-big{font-family:var(--font-display);font-weight:900;font-size:clamp(4rem,2rem+12vw,9rem);line-height:.9;color:var(--brand-accent);letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.rating-big span{color:var(--brand-ink);font-size:.42em;font-weight:600}
+.stars{display:inline-flex;gap:.35rem;margin:.6rem 0 1rem;justify-content:center}
+.stars svg{width:30px;height:30px}
+.review-count{font-weight:700;letter-spacing:.02em}
+.review-themes{font-family:var(--font-display);font-weight:400;font-size:clamp(1.3rem,1rem+2vw,2.1rem);line-height:1.28;color:var(--brand-ink);margin:2rem auto 0;max-width:24ch}
+.review-src{margin-top:1.4rem;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted)}
+
+/* Asporto e Consegna */
+.asporto{background:var(--brand-ink);color:var(--brand-accent-ink)}
+.asporto .inner{width:var(--container);margin-inline:auto;padding-block:clamp(3rem,2rem+5vw,6rem);
+  display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(1.4rem,4vw,3.5rem);align-items:center}
+.asporto .eyebrow{color:color-mix(in srgb, var(--brand-accent-ink) 78%, transparent)}
+.asporto h2{color:var(--brand-accent-ink)}
+.asporto p{margin:.9rem 0 0;color:color-mix(in srgb,var(--brand-accent-ink) 82%,transparent);max-width:34ch}
+.asporto .side{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+.asporto .side .note{font-size:.9rem;color:color-mix(in srgb,var(--brand-accent-ink) 70%,transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .95rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--brand-accent-ink) 30%,transparent);font-size:.9rem;font-weight:600}
+
+/* Vieni a Trovarci */
+.trovarci{padding-block:var(--space-section)}
+.trovarci .inner{width:var(--container);margin-inline:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.6rem,5vw,4rem);align-items:start}
+.contact-card{
+  position:sticky;top:92px;background:var(--brand-surface-alt);border:1px solid var(--brand-line);
+  border-radius:var(--radius);padding:clamp(1.4rem,3vw,2rem);display:grid;gap:1.1rem;align-self:start;
+}
+.contact-card h3{font-family:var(--font-display);font-weight:600;font-size:1.3rem}
+.info-row{display:grid;gap:.15rem}
+.info-row .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted)}
+.info-row .v{font-weight:600;font-variant-numeric:tabular-nums}
+.hours-list{display:grid;gap:.3rem;font-size:.98rem;font-variant-numeric:tabular-nums}
+.hours-list li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--brand-line);padding-bottom:.3rem}
+.hours-list li.closed{color:var(--brand-accent);font-weight:700}
+.hours-list .d{color:var(--brand-muted)}
+.trovarci-media{margin:0}
+.trovarci-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+.trovarci-media figcaption{margin-top:.7rem;font-size:.85rem;color:var(--brand-muted)}
+.contact-links{display:grid;gap:.7rem}
+
+/* footer */
+.site-footer{background:var(--brand-surface-alt);border-top:1px solid var(--brand-line);padding-block:clamp(2.5rem,2rem+3vw,4rem)}
+.footer-inner{width:var(--container);margin-inline:auto;display:flex;flex-wrap:wrap;gap:1.6rem 3rem;justify-content:space-between;align-items:flex-start}
+.footer-inner .wordmark{font-size:1.6rem}
+.footer-col{display:grid;gap:.35rem;font-size:.92rem;color:var(--brand-muted)}
+.footer-col a{color:var(--brand-ink);text-decoration:none;font-weight:600}
+.footer-col a:hover{color:var(--brand-accent)}
+.fine-print{width:var(--container);margin:2rem auto 0;font-size:.78rem;color:var(--brand-muted);border-top:1px solid var(--brand-line);padding-top:1.2rem}
+
+/* mobile sticky action bar */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+  gap:.7rem;align-items:center;padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom,0px));
+  background:color-mix(in srgb,var(--brand-surface) 96%,transparent);
+  border-top:1px solid var(--brand-line);backdrop-filter:blur(8px);
+}
+.mobile-bar .mb-proof{display:flex;flex-direction:column;line-height:1.15;font-size:.8rem}
+.mobile-bar .mb-proof b{font-size:.95rem}
+.mobile-bar .btn{flex:1;padding:.85rem 1rem}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .brasa,.porzioni{grid-template-columns:1fr}
+  .sala .inner,.asporto .inner,.trovarci .inner{grid-template-columns:1fr}
+  .piatti-grid{gap:1.6rem}
+  .dish:nth-child(n){margin-top:0}
+  .contact-card{position:static;order:-1}
+  .editorial{max-width:520px}
+}
+@media (max-width:760px){
+  .nav-toggle{display:inline-flex}
+  .nav-links{
+    position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;
+    background:var(--brand-surface);border-bottom:1px solid var(--brand-line);
+    padding:1rem var(--container);gap:.2rem;
+    width:100%;transform-origin:top;display:none;
+  }
+  .nav[data-open="true"] .nav-links{display:flex}
+  .nav-links a{padding:.85rem .2rem;border-bottom:1px solid var(--brand-line)}
+  .nav-links .nav-cta{margin:.6rem 0 0}
+  .nav-links a.btn{border-bottom:1px solid transparent}
+  .mobile-bar{display:flex}
+  .site-footer{padding-bottom:6rem}
+  .piatti-grid{grid-template-columns:1fr}
+  /* compact the hero so headline + CTA stay in the first viewport */
+  .hero-inner{min-height:auto;padding:1.4rem 0 2rem;justify-content:flex-start}
+  .hero{position:relative}
+  .hero-media,.hero-fallback{object-position:center 35%}
+  .hero h1{margin-bottom:.1rem}
+  .hero-tagline{margin-bottom:1rem}
+  .lavagna{margin-bottom:1.2rem}
+  .lavagna li{padding:.02em 0}
+  .hero-sub{margin-bottom:1.2rem}
+}
+@media (max-width:420px){
+  .lavagna li{font-size:clamp(1.7rem,7vw,2.3rem)}
+  .lavagna li:nth-child(even),.lavagna li:nth-child(3){margin-left:0}
+}
+
+/* ===================== MOTION LAYER (pass 3) ===================== */
+/* hero scroll-scrub canvas — additive, hidden until frames load & scrolling */
+.hero-scan{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:0;
+  transition:opacity var(--dur-micro) linear;pointer-events:none}
+
+/* Barra della brace — scroll-progress ember bar down the I Piatti section */
+.piatti{position:relative}
+.carta-bar{position:absolute;left:0;top:0;bottom:0;width:4px;z-index:1;
+  background:color-mix(in srgb,var(--brand-accent) 90%,var(--brand-ink));
+  transform-origin:top;transform:scaleY(1)}
+
+/* everything below is motion-only: gated behind JS (.js) AND no-preference,
+   so with JS off OR reduced-motion every element is fully visible, untransformed */
+@media (prefers-reduced-motion:no-preference){
+
+  /* --- shared scroll reveal system (varies by content role) --- */
+  .js .rs :where(.eyebrow,.lead,p,.price-tag,.review-count,.review-themes,.review-src,figcaption,.stars,.contact-links,.dish-name,.facts li,.chip){
+    opacity:0;transform:translateY(20px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+  }
+  .js .rs.in :where(.eyebrow,.lead,p,.price-tag,.review-count,.review-themes,.review-src,figcaption,.stars,.contact-links,.dish-name,.facts li,.chip){
+    opacity:1;transform:none;
+  }
+  /* media = scale-in (depth), not a fade */
+  .js .rs figure:not(.dish){opacity:0;transform:scale(1.045);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature)}
+  .js .rs.in figure:not(.dish){opacity:1;transform:none}
+
+  /* Piatti serviti — each plate wipes in left→right under a clip mask */
+  .js .piatti.rs .dish img{clip-path:inset(0 100% 0 0);
+    transition:clip-path var(--dur-reveal) var(--ease-signature),opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-micro);opacity:.4}
+  .js .piatti.rs.in .dish img{clip-path:inset(0 0 0 0);opacity:1}
+  .js .piatti.rs.in .dish:nth-child(1) img{transition-delay:0ms}
+  .js .piatti.rs.in .dish:nth-child(2) img{transition-delay:var(--stagger)}
+  .js .piatti.rs.in .dish:nth-child(3) img{transition-delay:calc(var(--stagger)*2)}
+  .js .piatti.rs.in .dish:nth-child(4) img{transition-delay:calc(var(--stagger)*3)}
+  .js .piatti.rs.in .dish:nth-child(5) img{transition-delay:calc(var(--stagger)*4)}
+  /* dish caption/desc rise with a matching stagger */
+  .js .piatti.rs.in .dish:nth-child(2) :where(.dish-name,p){transition-delay:var(--stagger)}
+  .js .piatti.rs.in .dish:nth-child(3) :where(.dish-name,p){transition-delay:calc(var(--stagger)*2)}
+  .js .piatti.rs.in .dish:nth-child(4) :where(.dish-name,p){transition-delay:calc(var(--stagger)*3)}
+  .js .piatti.rs.in .dish:nth-child(5) :where(.dish-name,p){transition-delay:calc(var(--stagger)*4)}
+
+  /* list cascades follow the list geometry */
+  .js .rs.in ul.facts li,.js .rs.in .chips .chip{transition-delay:calc(var(--li,0)*var(--stagger))}
+  .js .rs ul.facts li:nth-child(2){--li:1}
+  .js .rs ul.facts li:nth-child(3){--li:2}
+  .js .rs ul.facts li:nth-child(4){--li:3}
+  .js .rs .chips .chip:nth-child(2){--li:1}
+  .js .rs .chips .chip:nth-child(3){--li:2}
+
+  /* Cascata della carta — section titles reveal word-by-word, mask rising */
+  .js [data-split].split-ready .wm{display:inline-block;overflow:hidden;vertical-align:top;
+    padding-bottom:.14em;margin-bottom:-.14em}
+  .js [data-split].split-ready .wi{display:inline-block;transform:translateY(115%);
+    transition:transform var(--dur-reveal) var(--ease-signature)}
+  .js [data-split].split-ready.in .wi{transform:translateY(0)}
+
+  /* --- hero on-load choreography --- */
+  .js .hero .hero-inner > *{--hi:0}
+  .js .hero .hero-inner > *:nth-child(2){--hi:1}
+  .js .hero .hero-inner > *:nth-child(3){--hi:2}
+  .js .hero .hero-inner > *:nth-child(4){--hi:3}
+  .js .hero .hero-inner > *:nth-child(5){--hi:4}
+  .js .hero .hero-inner > *:nth-child(6){--hi:5}
+  .js .hero [data-hero]{opacity:0;transform:translateY(16px);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature);
+    transition-delay:calc(var(--hi,0)*var(--stagger))}
+  .js .hero.hero-in [data-hero]{opacity:1;transform:none}
+
+  /* Righe della carta — menu lines travel in from the left along their baseline */
+  .js .hero .lavagna li{opacity:0;transform:translateX(-1.5em);
+    transition:opacity var(--dur-reveal) var(--ease-signature),transform var(--dur-reveal) var(--ease-signature)}
+  .js .hero.hero-in .lavagna li{opacity:1;transform:none}
+  .js .hero .lavagna li:nth-child(1){transition-delay:.30s}
+  .js .hero .lavagna li:nth-child(2){transition-delay:.39s}
+  .js .hero .lavagna li:nth-child(3){transition-delay:.48s}
+  .js .hero .lavagna li:nth-child(4){transition-delay:.57s}
+  .js .hero .lavagna li:nth-child(5){transition-delay:.66s}
+  .js .hero .lavagna li:nth-child(6){transition-delay:.75s}
+
+  /* Barra della brace — native scroll-driven fill, safe fallback = full bar */
+  @supports (animation-timeline: view()){
+    .piatti{view-timeline:--carta block}
+    .carta-bar{transform:scaleY(0);animation:carta-heat linear both;
+      animation-timeline:--carta;animation-range:entry 8% exit 92%}
+    @keyframes carta-heat{to{transform:scaleY(1)}}
+  }
+}
+
+/* Prenota e chip — physical elastic settle on gesture (hover/press) */
+.btn:active{transform:scale(.96);transition-duration:120ms}
+@media (hover:hover) and (pointer:fine){
+  .chip{transition:transform var(--dur-micro) var(--ease-micro),border-color var(--dur-micro) ease}
+  .chip:hover{transform:translateY(-2px)}
+  .dish img{transition:transform var(--dur-reveal) var(--ease-micro),clip-path var(--dur-reveal) var(--ease-signature),opacity var(--dur-reveal) var(--ease-signature)}
+  .dish:hover img{transform:scale(1.035)}
+  .ed-main,.ed-detail{transition:transform var(--dur-reveal) var(--ease-micro)}
+  .editorial:hover .ed-detail{transform:translateY(-4px)}
+  /* nav underline draws from the left */
+  .nav-links a:not(.btn){position:relative}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:100%;
+    background:var(--brand-accent);transform:scaleX(0);transform-origin:left;
+    transition:transform var(--dur-micro) var(--ease-signature)}
+  .nav-links a:not(.btn):hover::after,.nav-links a:not(.btn):focus-visible::after{transform:scaleX(1)}
+}
+.chip:active{transform:scale(.96)}
+
+/* reduced motion — kill every animation/transition, show everything at rest */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero-glow{animation:none;opacity:.42}
+  .hero-scan{display:none}
+  .carta-bar{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=' js';</script>
+<a class="skip" href="#main">Salta al contenuto</a>
+
+<header class="site-header">
+  <nav class="nav" id="nav" aria-label="Navigazione principale">
+    <a class="brandmini" href="#top">El Carbonazo</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Apri il menu">
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#brasa">La Brasa</a></li>
+      <li><a href="#piatti">I Piatti</a></li>
+      <li><a href="#porzioni">Le Porzioni</a></li>
+      <li><a href="#sala">La Sala</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
+      <li><a href="#trovarci">Dove siamo</a></li>
+      <li class="nav-cta"><a class="btn btn-accent" data-cta href="tel:+393803691481">Chiama</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- INSEGNA — la carta viva (wow moment) -->
+  <section class="hero" id="top" aria-label="El Carbonazo, peruviano alla brace">
+    <img class="hero-fallback" src="assets/hero-brasa.jpg" alt="Polli interi che girano sulla rotisserie a carbone tra le braci incandescenti di El Carbonazo">
+    <video class="hero-media" autoplay muted loop playsinline poster="assets/hero-brasa.jpg" aria-hidden="true">
+      <source src="assets/hero-cinemagraph.mp4" type="video/mp4">
+    </video>
+    <canvas class="hero-scan" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow hero-eyebrow" data-hero><span class="rombo dot" aria-hidden="true"></span> Peruviano di quartiere · Lotto, Milano</p>
+      <h1 class="wordmark" data-hero>EL&nbsp;CARBONAZ<span class="wm-o">O<span class="wm-tacca" aria-hidden="true"></span></span></h1>
+      <p class="hero-tagline" data-hero>Peruviano alla brace</p>
+
+      <ul class="lavagna" aria-label="I nostri sei piatti firma">
+        <li><span class="rombo" aria-hidden="true"></span>Pollo a la brasa</li>
+        <li><span class="rombo" aria-hidden="true"></span>Ceviche mixto</li>
+        <li><span class="rombo" aria-hidden="true"></span>Papa rellena</li>
+        <li><span class="rombo" aria-hidden="true"></span>Causa</li>
+        <li><span class="rombo" aria-hidden="true"></span>Lomo saltado</li>
+        <li><span class="rombo" aria-hidden="true"></span>Pollo alla griglia</li>
+      </ul>
+
+      <p class="hero-sub" data-hero>Giriamo il pollo a la brasa sulla brace vera. Porzioni giganti, da condividere a tavola. <b>10–20 € a testa.</b></p>
+
+      <div class="hero-actions" data-hero>
+        <a class="btn btn-accent" data-cta href="tel:+393803691481">Chiama per prenotare</a>
+        <span class="hero-phone">+39 380 369 1481</span>
+        <span class="hero-proof"><span class="rombo dot" aria-hidden="true"></span> 4/5 su 323 recensioni Google</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA BRASA -->
+  <section class="brasa rs" id="brasa">
+    <div class="copy">
+      <p class="eyebrow"><span class="rombo" aria-hidden="true"></span> La Brasa</p>
+      <h2 data-split>Il pollo gira sulla brace. Vera.</h2>
+      <p>La brace è accesa tutto il giorno.</p>
+      <p>Il pollo gira lento sul carbone, non nel forno.</p>
+      <p>La pelle diventa croccante, dentro resta succoso.</p>
+      <p>È il gesto che facciamo da sempre. Ed è quello che non si copia.</p>
+    </div>
+    <figure>
+      <img src="assets/hero-detail-embers.jpg" alt="Macro della pelle croccante del pollo alla brace sui carboni ardenti">
+      <figcaption class="figcap"><span class="rombo" aria-hidden="true"></span> Pelle croccante · brace di carbone</figcaption>
+    </figure>
+  </section>
+
+  <div class="section-divider"><hr class="rombo-rule" aria-hidden="true"></div>
+
+  <!-- I PIATTI -->
+  <section class="piatti rs" id="piatti">
+    <div class="carta-bar" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="rombo" aria-hidden="true"></span> I Piatti</p>
+        <h2 data-split>Cosa mettiamo in tavola</h2>
+        <p class="lead">La carta è corta e sincera. Questi sono i piatti che ordinano tutti.</p>
+      </div>
+      <div class="piatti-grid">
+        <figure class="dish">
+          <img src="assets/dish-pollo-brasa.jpg" alt="Piatto abbondante di pollo a la brasa con patatine, insalata e salsa aji verde">
+          <h3 class="dish-name"><span class="rombo" aria-hidden="true"></span> Pollo a la brasa</h3>
+          <p>Il nostro piatto firma. Pollo alla brace con patatine e salsa aji verde.</p>
+        </figure>
+        <figure class="dish">
+          <img src="assets/dish-ceviche-mixto.jpg" alt="Ceviche mixto peruviano con pesce e frutti di mare, mais e patata dolce">
+          <h3 class="dish-name"><span class="rombo" aria-hidden="true"></span> Ceviche mixto</h3>
+          <p>Pesce e frutti di mare nel leche de tigre, con mais e patata dolce. Freschissimo.</p>
+        </figure>
+        <figure class="dish">
+          <img src="assets/dish-papa-rellena.jpg" alt="Papa rellena peruviana dorata con ripieno di carne e salsa criolla">
+          <h3 class="dish-name"><span class="rombo" aria-hidden="true"></span> Papa rellena</h3>
+          <p>Purè di patate fritto, ripieno di carne. Croccante fuori, morbido dentro.</p>
+        </figure>
+        <figure class="dish">
+          <img src="assets/dish-causa.jpg" alt="Causa peruviana a strati di patata gialla, pollo e avocado">
+          <h3 class="dish-name"><span class="rombo" aria-hidden="true"></span> Causa</h3>
+          <p>Patata gialla all'aji amarillo a strati, con pollo e avocado. Servita fresca.</p>
+        </figure>
+        <figure class="dish">
+          <img src="assets/dish-lomo-saltado.jpg" alt="Lomo saltado peruviano con manzo saltato, patatine e riso">
+          <h3 class="dish-name"><span class="rombo" aria-hidden="true"></span> Lomo saltado</h3>
+          <p>Manzo saltato con cipolla e pomodoro, patatine e riso. Un piatto pieno.</p>
+        </figure>
+        <div class="dish" style="align-self:center">
+          <p class="piatti-note"><span class="rombo dot" aria-hidden="true"></span> E poi il pollo alla griglia, per chi lo vuole più semplice. La carta cambia col mercato: chiedi cosa c’è di fresco oggi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE PORZIONI -->
+  <section class="porzioni rs" id="porzioni">
+    <div class="copy">
+      <p class="eyebrow"><span class="rombo" aria-hidden="true"></span> Le Porzioni</p>
+      <h2 data-split>Porzioni giganti. Prezzo onesto.</h2>
+      <p>Qui si mangia per condividere.</p>
+      <p>I piatti arrivano pieni. Si mettono al centro. Si divide.</p>
+      <p>Nessuno si alza con la fame.</p>
+      <div class="price-tag">
+        <span class="num">10–20 €</span>
+        <span class="lbl"><span class="rombo" aria-hidden="true"></span> a testa, detto senza giri di parole</span>
+      </div>
+    </div>
+    <figure class="editorial pd">
+      <img class="ed-main" src="assets/porzioni-share.jpg" alt="Tavolo pieno di piatti peruviani abbondanti condivisi tra amici">
+      <img class="ed-detail" src="assets/porzioni-detail-ingredients.jpg" alt="Ingredienti freschi peruviani: lime, aji amarillo, mais viola e coriandolo">
+    </figure>
+  </section>
+
+  <div class="section-divider"><hr class="rombo-rule" aria-hidden="true"></div>
+
+  <!-- LA SALA E IL QUARTIERE -->
+  <section class="sala rs" id="sala">
+    <div class="inner">
+      <div class="copy">
+        <p class="eyebrow"><span class="rombo" aria-hidden="true"></span> La Sala e il Quartiere</p>
+        <h2 data-split>Una sala conviviale, in zona Lotto</h2>
+        <p>Siamo a due passi dal MUDEC, nel quartiere Lotto.</p>
+        <p>Tavoli vicini, voci, piatti che passano di mano. Atmosfera di quartiere.</p>
+        <ul class="facts">
+          <li><span class="rombo dot" aria-hidden="true"></span> <b>Accessibile</b>&nbsp;in sedia a rotelle</li>
+          <li><span class="rombo dot" aria-hidden="true"></span> <b>Wi-Fi</b>&nbsp;in sala</li>
+          <li><span class="rombo dot" aria-hidden="true"></span> <b>Prenotazione</b>&nbsp;con una telefonata</li>
+          <li><span class="rombo dot" aria-hidden="true"></span> <b>Zona Lotto</b>&nbsp;· vicino al MUDEC</li>
+        </ul>
+      </div>
+      <figure class="editorial sd">
+        <img class="ed-main" src="assets/sala-interior.jpg" alt="Interno accogliente della sala di El Carbonazo con tavoli conviviali">
+        <img class="ed-detail" src="assets/sala-detail-table.jpg" alt="Dettaglio di un tavolo apparecchiato con salsa aji e chicha morada">
+      </figure>
+    </div>
+  </section>
+
+  <!-- DICONO DI NOI -->
+  <section class="review rs" id="recensioni">
+    <div class="inner">
+      <p class="eyebrow" style="justify-content:center"><span class="rombo" aria-hidden="true"></span> Dicono di Noi</p>
+      <h2 class="rating-big">4<span>/5</span></h2>
+      <div class="stars" role="img" aria-label="Valutazione media 4 su 5 stelle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--brand-accent)" d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="var(--brand-accent)" stroke-width="1.6" d="M12 3.2l2.5 5.4 5.9.6-4.4 3.9 1.2 5.8L12 16.6 6.8 18.9 8 13.1 3.6 9.2l5.9-.6z"/></svg>
+      </div>
+      <p class="review-count"><span data-to="323">323</span> recensioni su Google</p>
+      <p class="review-themes">Quello che scrivono si ripete: porzioni davvero giganti e saporite, ingredienti freschissimi, peruviano autentico, servizio ottimo.</p>
+      <p class="review-src">Aggregato Google · costante nel tempo</p>
+    </div>
+  </section>
+
+  <!-- ASPORTO E CONSEGNA -->
+  <section class="asporto rs" id="asporto">
+    <div class="inner">
+      <div class="copy">
+        <p class="eyebrow"><span class="rombo" aria-hidden="true"></span> Asporto e Consegna</p>
+        <h2 data-split>Anche da portare via</h2>
+        <p>Non riesci a passare? Prepariamo tutto per l'asporto. Consegniamo a domicilio, anche su Deliveroo. Le stesse porzioni, a casa tua.</p>
+        <div class="chips">
+          <span class="chip"><span class="rombo" aria-hidden="true"></span> Asporto</span>
+          <span class="chip"><span class="rombo" aria-hidden="true"></span> Consegna a domicilio</span>
+          <span class="chip"><span class="rombo" aria-hidden="true"></span> Deliveroo</span>
+        </div>
+      </div>
+      <div class="side">
+        <a class="btn btn-accent" data-cta href="tel:+393803691481">Chiama per ordinare</a>
+        <p class="note">+39 380 369 1481 — ti diciamo tempi e disponibilità del giorno.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIENI A TROVARCI -->
+  <section class="trovarci rs" id="trovarci">
+    <div class="inner">
+      <div class="col-main">
+        <p class="eyebrow"><span class="rombo" aria-hidden="true"></span> Vieni a Trovarci</p>
+        <h2 data-split>Vieni a trovarci</h2>
+        <p class="lead" style="margin-bottom:1.4rem">Siamo in Via Mariotto Albertinelli, in zona Lotto. Prenota con una telefonata: bastano due parole.</p>
+        <figure class="trovarci-media">
+          <img src="assets/quartiere-lotto.jpg" alt="Strada tranquilla di quartiere a Milano, zona Lotto">
+          <figcaption><span class="rombo" aria-hidden="true"></span> Il quartiere Lotto, a due passi dal MUDEC.</figcaption>
+        </figure>
+      </div>
+
+      <aside class="contact-card" aria-label="Contatti e orari">
+        <h3>El Carbonazo</h3>
+        <div class="info-row">
+          <span class="k">Indirizzo</span>
+          <span class="v">Via Mariotto Albertinelli, 5<br>20148 Milano (MI)</span>
+        </div>
+        <div class="info-row">
+          <span class="k">Telefono</span>
+          <span class="v">+39 380 369 1481</span>
+        </div>
+        <div class="info-row">
+          <span class="k">Orari</span>
+          <ul class="hours-list">
+            <li><span class="d">Lunedì</span><span>12–15 · 18–22</span></li>
+            <li class="closed"><span class="d" style="color:inherit">Martedì</span><span>Chiuso</span></li>
+            <li><span class="d">Mercoledì</span><span>12–15 · 18–22</span></li>
+            <li><span class="d">Giovedì</span><span>12–15 · 18–22</span></li>
+            <li><span class="d">Venerdì</span><span>12–15 · 18–22</span></li>
+            <li><span class="d">Sabato</span><span>12–22</span></li>
+            <li><span class="d">Domenica</span><span>12–22</span></li>
+          </ul>
+        </div>
+        <div class="contact-links">
+          <a class="btn btn-accent btn-block" data-cta href="tel:+393803691481">Chiama per prenotare</a>
+          <a class="btn btn-ghost btn-block" href="https://www.google.com/maps/search/?api=1&amp;query=El+Carbonazo%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+          <a class="btn btn-ghost btn-block" href="https://www.instagram.com/elcarbonazo" target="_blank" rel="noopener">Seguici su Instagram</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="wordmark" style="color:var(--brand-ink)">EL&nbsp;CARBONAZ<span class="wm-o">O<span class="wm-tacca" aria-hidden="true"></span></span></p>
+      <p style="color:var(--brand-muted);margin-top:.4rem">Peruviano alla brace · Quartiere Lotto, Milano</p>
+    </div>
+    <div class="footer-col">
+      <strong style="color:var(--brand-ink)">Dove</strong>
+      <span>Via Mariotto Albertinelli, 5</span>
+      <span>20148 Milano (MI)</span>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=El+Carbonazo%2C+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
+    </div>
+    <div class="footer-col">
+      <strong style="color:var(--brand-ink)">Contatti</strong>
+      <a href="tel:+393803691481">+39 380 369 1481</a>
+      <a href="https://www.instagram.com/elcarbonazo" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="footer-col">
+      <strong style="color:var(--brand-ink)">Orari</strong>
+      <span>Lun 12–15 · 18–22</span>
+      <span>Mar chiuso</span>
+      <span>Mer–Ven 12–15 · 18–22</span>
+      <span>Sab–Dom 12–22</span>
+    </div>
+  </div>
+  <p class="fine-print">© El Carbonazo, Milano. Porzioni, orari e disponibilità del giorno si confermano al telefono.</p>
+</footer>
+
+<!-- mobile sticky action bar -->
+<div class="mobile-bar" aria-label="Azioni rapide">
+  <div class="mb-proof"><b>4/5</b><span>323 recensioni</span></div>
+  <a class="btn btn-accent" data-cta href="tel:+393803691481">Chiama per prenotare</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = false;
+  try{ reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+
+  /* ---------- mobile nav toggle ---------- */
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  function setOpen(open){
+    nav.setAttribute('data-open', open ? 'true' : 'false');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+  }
+  if(toggle){
+    toggle.addEventListener('click', function(){ setOpen(nav.getAttribute('data-open') !== 'true'); });
+    links.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nav.getAttribute('data-open') === 'true'){ setOpen(false); toggle.focus(); }
+    });
+  }
+
+  /* Reduced motion: pause the decorative hero loop; skip every added animation. */
+  if(reduce){
+    var vr = document.querySelector('.hero-media');
+    if(vr){ vr.removeAttribute('autoplay'); if(vr.pause) try{vr.pause();}catch(e){} }
+    return; /* CSS already shows all content at rest — nothing else to do */
+  }
+
+  /* Hero on-load choreography — scheduled FIRST so no later failure can strand
+     the (JS-hidden) hero content off-screen. */
+  var hero = document.querySelector('.hero');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ if(hero) hero.classList.add('hero-in'); }); });
+
+  /* ---------- Cascata della carta: split section titles into words ----------
+     Runs before the observer attaches; it's synchronous, so .split-ready is set
+     before any (async) IntersectionObserver callback fires. Guarded so a failure
+     here can never block the reveal system below. */
+  document.querySelectorAll('[data-split]').forEach(function(h){
+    var original = h.textContent;
+    try{
+      var parts = original.split(/(\s+)/);
+      h.textContent = '';
+      parts.forEach(function(w){
+        if(w.trim() === ''){ h.appendChild(document.createTextNode(w)); return; }
+        var outer = document.createElement('span'); outer.className = 'wm';
+        var inner = document.createElement('span'); inner.className = 'wi'; inner.textContent = w;
+        outer.appendChild(inner); h.appendChild(outer);
+      });
+      h.querySelectorAll('.wi').forEach(function(el,i){ el.style.transitionDelay = (i*90)+'ms'; });
+      h.classList.add('split-ready');
+    }catch(e){ h.textContent = original; } // never leave a mangled heading
+  });
+
+  /* ---------- Shared reveal system (one rAF-batched observer) ----------
+     This is what un-hides content, so it is set up defensively: any failure
+     falls back to revealing everything immediately (never stranded hidden). */
+  try{
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { rootMargin:'0px 0px -10% 0px', threshold:0.12 });
+      document.querySelectorAll('.rs, [data-split]').forEach(function(el){ io.observe(el); });
+    } else {
+      document.querySelectorAll('.rs, [data-split]').forEach(function(el){ el.classList.add('in'); });
+    }
+  }catch(e){
+    document.querySelectorAll('.rs, [data-split]').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- Count-up on the real review number ---------- */
+  var counter = document.querySelector('[data-to]');
+  if(counter && 'IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ countUp(en.target); io2.unobserve(en.target); }
+      });
+    }, { threshold:0.6 });
+    io2.observe(counter);
+  }
+  function countUp(el){
+    var to = parseInt(el.getAttribute('data-to'),10) || 0, start = null, dur = 1100;
+    function step(ts){
+      if(start===null) start = ts;
+      var t = Math.min(1,(ts-start)/dur), eased = 1-Math.pow(1-t,3);
+      el.textContent = Math.round(eased*to);
+      if(t<1) requestAnimationFrame(step); else el.textContent = to;
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- Parallasse della brace + scroll-scrub cinema ----------
+     Layered, strictly additive: base <video> loop always works; the canvas
+     scrub and parallax only run here (never under reduced-motion). If frames
+     fail to load, the canvas simply stays hidden and the video keeps looping. */
+  var video = document.querySelector('.hero-media');
+  var fallback = document.querySelector('.hero-fallback');
+  var glow = document.querySelector('.hero-glow');
+  var canvas = document.querySelector('.hero-scan');
+  var ctx = (canvas && canvas.getContext) ? canvas.getContext('2d') : null;
+
+  var N = 48, frames = new Array(N), anyLoaded = false;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var isMobile = false;
+  try{ isMobile = window.matchMedia('(max-width:700px)').matches; }catch(e){}
+  var dir = 'assets/hero-frames/' + (isMobile ? 'mobile' : 'desktop') + '/';
+  function pad(n){ return ('000'+n).slice(-4); }
+
+  if(ctx){
+    // load frame 1 first (critical), then the rest lazily
+    var order = [1];
+    for(var k=2;k<=N;k++) order.push(k);
+    order.forEach(function(n){
+      var im = new Image();
+      im.decoding = 'async';
+      im.onload = function(){ frames[n-1] = im; anyLoaded = true; };
+      im.onerror = function(){};
+      im.src = dir + 'frame-' + pad(n) + '.webp';
+    });
+  }
+
+  function sizeCanvas(){
+    if(!canvas || !hero) return;
+    var r = hero.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.round(r.width * dpr));
+    canvas.height = Math.max(1, Math.round(r.height * dpr));
+  }
+  function draw(idx){
+    if(!ctx) return;
+    idx = Math.max(0, Math.min(N-1, Math.round(idx)));
+    var im = frames[idx];
+    if(!im){ // nearest already-loaded frame
+      for(var d=1; d<N; d++){
+        if(frames[idx-d]){ im = frames[idx-d]; break; }
+        if(frames[idx+d]){ im = frames[idx+d]; break; }
+      }
+    }
+    if(!im) return;
+    var cw = canvas.width, ch = canvas.height, iw = im.naturalWidth, ih = im.naturalHeight;
+    if(!iw || !ih) return;
+    var s = Math.max(cw/iw, ch/ih), w = iw*s, h = ih*s, x = (cw-w)/2, y = (ch-h)*0.4;
+    ctx.clearRect(0,0,cw,ch);
+    ctx.drawImage(im, x, y, w, h);
+  }
+
+  var cur = 0, ticking = false;
+  function update(){
+    ticking = false;
+    if(!hero) return;
+    var r = hero.getBoundingClientRect();
+    var h = hero.offsetHeight || 1;
+    var p = Math.min(1, Math.max(0, -r.top / h)); // 0 = hero at top, 1 = scrolled one hero-height
+    var z = 1 + p*0.06;
+
+    if(glow) glow.style.translate = '0 ' + (p*h*-0.12).toFixed(1) + 'px';
+    if(video){ video.style.scale = z.toFixed(4); video.style.translate = '0 ' + (p*h*-0.04).toFixed(1) + 'px'; }
+    if(fallback){ fallback.style.scale = z.toFixed(4); fallback.style.translate = '0 ' + (p*h*-0.04).toFixed(1) + 'px'; }
+
+    if(canvas && anyLoaded){
+      var target = p*(N-1);
+      cur += (target-cur)*0.15;                       // LERP smoothing
+      draw(cur);
+      canvas.style.scale = z.toFixed(4);
+      canvas.style.opacity = (p > 0.015 && p < 0.99) ? '1' : '0'; // living loop at rest, scrub while moving
+      if(Math.abs(target-cur) > 0.08){ requestAnimationFrame(update); ticking = true; }
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+
+  if(canvas || glow || video){
+    sizeCanvas();
+    window.addEventListener('scroll', onScroll, { passive:true });
+    window.addEventListener('resize', function(){ sizeCanvas(); onScroll(); }, { passive:true });
+    // draw an initial frame once frames arrive, so a scrub-back to top looks right
+    var warm = setInterval(function(){ if(anyLoaded){ draw(0); onScroll(); clearInterval(warm); } }, 120);
+    setTimeout(function(){ clearInterval(warm); }, 4000);
+    onScroll();
+  }
+})();
+</script>
+</body>
+</html>
